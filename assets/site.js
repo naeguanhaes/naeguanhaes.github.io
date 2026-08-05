@@ -274,14 +274,56 @@
     pedidoInstalar = e;
     if (btnInstalar) btnInstalar.hidden = false;
   });
-  if (btnInstalar) {
-    btnInstalar.addEventListener('click', function () {
-      if (!pedidoInstalar) return;
-      pedidoInstalar.prompt();
-      pedidoInstalar.userChoice.finally(function () {
-        pedidoInstalar = null;
-        btnInstalar.hidden = true;
+  var ehIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+              (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  var jaInstalado = (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) ||
+                    navigator.standalone === true;
+
+  function passosIOS(botao) {
+    if (document.getElementById('passos-ios')) {
+      document.getElementById('passos-ios').scrollIntoView({ behavior: reduzir ? 'auto' : 'smooth', block: 'center' });
+      return;
+    }
+    var caixa = document.createElement('div');
+    caixa.id = 'passos-ios';
+    caixa.className = 'card reveal visivel';
+    caixa.style.setProperty('--c', 'var(--turquesa)');
+    caixa.style.marginTop = 'var(--s3)';
+    caixa.innerHTML =
+      '<span class="rotulo">No iPhone e no iPad</span>' +
+      '<h3>Três toques para deixar o NAE na tela inicial</h3>' +
+      '<ul class="limpa" style="--c: var(--turquesa)">' +
+        '<li>Toque no botão <b>Compartilhar</b> — o quadradinho com a seta para cima, na barra do Safari.</li>' +
+        '<li>Deslize a lista e escolha <b>Adicionar à Tela de Início</b>.</li>' +
+        '<li>Toque em <b>Adicionar</b>, no canto superior direito.</li>' +
+      '</ul>' +
+      '<p style="font-size:.92rem;color:var(--muted)">' +
+        'Se você abriu este site pelo Instagram ou pelo WhatsApp, primeiro toque nos três pontinhos ' +
+        'e escolha <b>Abrir no Safari</b> — só por lá o iPhone oferece essa opção.' +
+      '</p>' +
+      '<div><button class="btn ghost pequeno" type="button" style="--c: var(--turquesa)">Entendi, fechar</button></div>';
+
+    var destino = botao.closest('.hero') || botao.parentElement;
+    destino.parentElement.insertBefore(caixa, destino.nextSibling);
+    caixa.querySelector('button').addEventListener('click', function () { caixa.remove(); });
+    caixa.scrollIntoView({ behavior: reduzir ? 'auto' : 'smooth', block: 'center' });
+  }
+
+  if (btnInstalar && !jaInstalado) {
+    if (ehIOS) {
+      /* a Apple não deixa o site oferecer a instalação: ensinamos o caminho */
+      btnInstalar.hidden = false;
+      btnInstalar.textContent = 'Instalar no iPhone';
+      btnInstalar.addEventListener('click', function () { passosIOS(btnInstalar); });
+    } else {
+      btnInstalar.addEventListener('click', function () {
+        if (!pedidoInstalar) return;
+        pedidoInstalar.prompt();
+        pedidoInstalar.userChoice.finally(function () {
+          pedidoInstalar = null;
+          btnInstalar.hidden = true;
+        });
       });
-    });
+    }
   }
 })();

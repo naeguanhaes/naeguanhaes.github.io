@@ -252,9 +252,11 @@ code, .mono { font-family: var(--mono); font-size: .92em; }
 .btn.pequeno { font-size: .82rem; padding: .42rem .95rem; }
 
 ul.limpa { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .55rem; }
-ul.limpa li { display: flex; gap: .65rem; align-items: baseline; color: var(--ink-2); }
+/* o item NÃO pode ser flex: isso quebraria o texto corrido em pedaços */
+ul.limpa li { position: relative; padding-left: 1.2rem; color: var(--ink-2); }
 ul.limpa li::before {
-  content: ""; width: .5rem; height: .5rem; flex: none; transform: translateY(-.1rem);
+  content: ""; position: absolute; left: 0; top: .58em;
+  width: .5rem; height: .5rem;
   background: var(--c, var(--coral)); border-radius: 99px 2px 99px 99px;
 }
 
