@@ -4,7 +4,7 @@ Site do **NAE — Núcleo de Apoio ao Estudante** da **UEMG, Unidade Guanhães**
 São páginas HTML, uma folha de estilo e alguns scripts: sem dependências e sem
 etapa de compilação. Para publicar, basta enviar os arquivos.
 
-**No ar em:** https://jonbarbosas.github.io/nae-guanhaes/
+**No ar em:** https://naeguanhaes.github.io/
 **Coordenação:** Jonatan Barbosa Silva
 **Contato do NAE:** nae.guanhaes@uemg.br — sala no **Prédio do Administrativo**,
 atendimento às terças e quintas das 18h às 19h; quartas mediante agendamento por e-mail.
@@ -96,19 +96,20 @@ continua vendo a versão antiga.
 Já está configurado: envie para a branch `main` e o site atualiza em cerca de
 um minuto. Configuração em *Settings → Pages*: branch `main`, pasta `/ (root)`.
 
-### Endereço curto e institucional (pendente)
+### Endereço próprio da UEMG (opcional)
 
-Hoje o endereço é `jonbarbosas.github.io/nae-guanhaes`, que carrega um nome de
-usuário pessoal. Para trocar por um endereço da Universidade:
+O endereço atual, `naeguanhaes.github.io`, já é institucional: pertence à
+organização do NAE, não a uma conta pessoal, e é gratuito. Se um dia a
+Universidade quiser um endereço no domínio dela:
 
 1. Peça à área de TI da UEMG um subdomínio — por exemplo `nae.guanhaes.uemg.br`.
-2. Peça que criem um registro **CNAME** apontando esse nome para `jonbarbosas.github.io`.
+2. Peça que criem um registro **CNAME** apontando esse nome para `naeguanhaes.github.io`.
 3. No repositório, crie um arquivo chamado `CNAME` (sem extensão) com o endereço
    dentro, ou informe-o em *Settings → Pages → Custom domain*.
 4. Marque *Enforce HTTPS* depois que o certificado for emitido.
 
-Os QR codes já impressos continuam funcionando: o endereço antigo segue
-respondendo e pode ser redirecionado.
+O endereço anterior (`jonbarbosas.github.io/nae-guanhaes`) continua no ar como
+redirecionamento, para os QR codes já impressos não quebrarem.
 
 ---
 

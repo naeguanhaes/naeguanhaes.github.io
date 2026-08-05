@@ -51,49 +51,9 @@
   --mono:  ui-monospace, "Cascadia Mono", Consolas, "SF Mono", Menlo, monospace;
 
   --s1: .375rem; --s2: .75rem; --s3: 1.125rem; --s4: 1.75rem; --s5: 2.75rem; --s6: 4.5rem;
+  color-scheme: light;
   --radius: 18px;
   --radius-s: 12px;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --marca-azul: #7BA6C8; --marca-vermelho: #F0576C;
-    --azul: #6FA6D2; --azul-esc: #A8CBE6;
-    --turquesa: #3EBAD2; --verde: #4FC38C; --ambar: #EBB44A;
-    --coral: #F0846A; --lilas: #9A8FE0; --vermelho: #F0576C;
-    --paper: #0A151F; --paper-2: #0E1D29; --surface: #12212E; --surface-2: #182836;
-    --ink: #E9F1F7; --ink-2: #C4D6E3; --muted: #97AEC0;
-    --line: #263B4D; --hair: #1D2F3F; --ring: #6FA6D2;
-    --on-brand: #071520; --shot-dim: .9;
-    --sh-1: 0 1px 2px rgba(0,0,0,.45), 0 12px 26px -18px rgba(0,0,0,.9);
-    --sh-2: 0 2px 6px rgba(0,0,0,.5), 0 26px 50px -26px rgba(0,0,0,1);
-  }
-}
-
-:root[data-theme="dark"] {
-  --marca-azul: #7BA6C8; --marca-vermelho: #F0576C;
-  --azul: #6FA6D2; --azul-esc: #A8CBE6;
-  --turquesa: #3EBAD2; --verde: #4FC38C; --ambar: #EBB44A;
-  --coral: #F0846A; --lilas: #9A8FE0; --vermelho: #F0576C;
-  --paper: #0A151F; --paper-2: #0E1D29; --surface: #12212E; --surface-2: #182836;
-  --ink: #E9F1F7; --ink-2: #C4D6E3; --muted: #97AEC0;
-  --line: #263B4D; --hair: #1D2F3F; --ring: #6FA6D2;
-  --on-brand: #071520; --shot-dim: .9;
-  --sh-1: 0 1px 2px rgba(0,0,0,.45), 0 12px 26px -18px rgba(0,0,0,.9);
-  --sh-2: 0 2px 6px rgba(0,0,0,.5), 0 26px 50px -26px rgba(0,0,0,1);
-}
-
-:root[data-theme="light"] {
-  --marca-azul: #40688B; --marca-vermelho: #D91F35;
-  --azul: #35618A; --azul-esc: #22475F;
-  --turquesa: #1795AE; --verde: #2E9A6B; --ambar: #E09A1E;
-  --coral: #E4674A; --lilas: #7166B8; --vermelho: #D91F35;
-  --paper: #F2F6FA; --paper-2: #E8EFF6; --surface: #FFFFFF; --surface-2: #F5F9FC;
-  --ink: #16303F; --ink-2: #35566C; --muted: #61798D;
-  --line: #D5E2EC; --hair: #E8F0F6; --ring: #35618A;
-  --on-brand: #FFFFFF; --shot-dim: 1;
-  --sh-1: 0 1px 2px rgba(24,60,90,.05), 0 10px 24px -18px rgba(24,60,90,.4);
-  --sh-2: 0 2px 6px rgba(24,60,90,.07), 0 24px 48px -26px rgba(24,60,90,.45);
 }
 
 /* ── Base ─────────────────────────────────────────────── */
