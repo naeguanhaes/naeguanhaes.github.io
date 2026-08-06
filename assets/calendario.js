@@ -73,21 +73,45 @@
     caixaProximos.innerHTML = futuros.map(function (ev) { return itemHTML(ev, true); }).join('');
   }
 
-  /* ── Ano inteiro, mês a mês ───────────────────────── */
+  /* ── Ano mês a mês: o atual primeiro, os antigos escondidos ── */
   function montarAno() {
     if (!caixaAno) return;
     var mesAtual = new Date().getMonth();
-    var html = '';
+    var futuros = '', passados = '', mesesPassados = 0;
 
     for (var m = 0; m < 12; m++) {
       var doMes = C.eventos.filter(function (ev) { return mesDe(ev.ini) === m; });
       if (!doMes.length) continue;
-      html += '<section class="cal-mes' + (m === mesAtual ? ' atual' : '') + '">' +
-                '<h3>' + U.MESES[m] + (m === mesAtual ? ' · mês atual' : '') + '</h3>' +
-                '<div class="cal-lista">' + doMes.map(function (ev) { return itemHTML(ev, false); }).join('') + '</div>' +
-              '</section>';
+      var sec = '<section class="cal-mes' + (m === mesAtual ? ' atual' : '') + '">' +
+                  '<h3>' + U.MESES[m] + (m === mesAtual ? ' · mês atual' : '') + '</h3>' +
+                  '<div class="cal-lista">' + doMes.map(function (ev) { return itemHTML(ev, false); }).join('') + '</div>' +
+                '</section>';
+      if (m < mesAtual) { passados += sec; mesesPassados++; }
+      else futuros += sec;
+    }
+
+    var html = futuros;
+    if (passados) {
+      html += '<div class="cal-passados-caixa">' +
+                '<button class="btn ghost pequeno" type="button" id="cal-passados-btn" style="--c: var(--lilas)">' +
+                  'Mostrar os meses anteriores (' + mesesPassados + ')' +
+                '</button>' +
+                '<div id="cal-passados" class="cal-grid" hidden>' + passados + '</div>' +
+              '</div>';
     }
     caixaAno.innerHTML = html;
+
+    var b = document.getElementById('cal-passados-btn');
+    if (b) {
+      b.addEventListener('click', function () {
+        var cx = document.getElementById('cal-passados');
+        cx.hidden = !cx.hidden;
+        b.textContent = cx.hidden
+          ? 'Mostrar os meses anteriores (' + mesesPassados + ')'
+          : 'Esconder os meses anteriores';
+        filtrar();
+      });
+    }
   }
 
   function filtrar() {

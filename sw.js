@@ -5,7 +5,7 @@
    isso apaga o cache antigo e busca tudo de novo.
    ═══════════════════════════════════════════════════════ */
 
-var VERSAO = 'nae-v10';
+var VERSAO = 'nae-v11';
 
 var ESSENCIAIS = [
   './',

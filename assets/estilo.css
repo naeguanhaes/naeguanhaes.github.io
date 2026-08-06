@@ -626,6 +626,10 @@ table.grade td.agora {
   background: color-mix(in srgb, var(--verde) 17%, var(--surface));
   box-shadow: inset 4px 0 0 var(--verde);
 }
+table.grade td.realce {
+  background: color-mix(in srgb, var(--ambar) 16%, var(--surface));
+  box-shadow: inset 0 0 0 2px var(--ambar);
+}
 .disc { font-weight: 650; color: var(--ink); display: block; line-height: 1.35; }
 .doc { display: block; font-size: .71rem; color: var(--muted); font-style: italic; margin-top: .2rem; line-height: 1.3; }
 .doc button { background: none; border: 0; padding: 0; cursor: pointer; text-align: left; font: inherit; color: inherit; text-decoration: underline dotted; }
@@ -664,6 +668,9 @@ table.grade td.agora {
   white-space: nowrap; flex: none; min-width: 4.4rem; font-variant-numeric: tabular-nums;
 }
 .cal-evento .oque { color: var(--ink-2); }
+.cal-passados-caixa { grid-column: 1 / -1; display: flex; flex-direction: column; gap: var(--s4); align-items: flex-start; }
+.cal-passados-caixa > .cal-grid { width: 100%; }
+#cal-passados .cal-mes { opacity: .75; }
 
 /* ── Novidades ─────────────────────────────────────────── */
 .novidades-lista { display: flex; flex-direction: column; gap: .85rem; }
@@ -1070,6 +1077,12 @@ html[data-fonte="3"] body { font-size: 21px; }
   .reveal { opacity: 1 !important; transform: none !important; }
   .passo-corpo, .secao-corpo { display: flex !important; }
   details.passo .mais, details.secao .mais { display: none; }
+
+  /* impressão dos horários: só o cabeçalho, o título e a grade */
+  .pg-horarios .lede, .pg-horarios .note, .pg-horarios .card,
+  .pg-horarios .dica-mapa, .pg-horarios .trilha, .pg-horarios .compartilhar,
+  .pg-horarios .turma-acoes { display: none !important; }
+  .pg-horarios .turma-head { background: none; }
 }
 
 /* ── Telas do AVA Moodle ──────────────────────────────── */

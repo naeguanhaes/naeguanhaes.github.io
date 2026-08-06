@@ -434,6 +434,20 @@
   var artigos = [];
   var cursoAtivo = 'todos', termo = '';
 
+  /* acende as células das aulas de um professor */
+  function realcarProfessor(nome) {
+    document.querySelectorAll('table.grade td.realce').forEach(function (td) {
+      td.classList.remove('realce');
+    });
+    if (!nome) return;
+    document.querySelectorAll('.doc button[data-prof]').forEach(function (b) {
+      if (b.getAttribute('data-prof') === nome) {
+        var td = b.closest('td');
+        if (td) td.classList.add('realce');
+      }
+    });
+  }
+
   function marcarMinhaTurma() {
     var meu = U.ler('turma');
     artigos.forEach(function (a) {
@@ -481,6 +495,7 @@
     if (campo) {
       campo.addEventListener('input', function (e) {
         termo = U.normaliza(e.target.value.trim());
+        realcarProfessor(null);
         aplicar();
       });
     }
@@ -490,13 +505,16 @@
       if (!alvo) return;
 
       if (alvo.hasAttribute('data-prof') && campo) {
-        campo.value = alvo.getAttribute('data-prof');
+        var nomeProf = alvo.getAttribute('data-prof');
+        campo.value = nomeProf;
         termo = U.normaliza(campo.value);
         cursoAtivo = 'todos';
         document.querySelectorAll('.chip[data-curso]').forEach(function (o) {
           o.setAttribute('aria-pressed', o.getAttribute('data-curso') === 'todos' ? 'true' : 'false');
         });
         aplicar();
+        realcarProfessor(nomeProf);
+        if (U.toast) U.toast('Mostrando todas as aulas de ' + nomeProf + '.');
         campo.scrollIntoView({ behavior: U.reduzir ? 'auto' : 'smooth', block: 'center' });
         return;
       }
