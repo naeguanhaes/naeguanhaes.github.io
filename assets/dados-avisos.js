@@ -25,9 +25,9 @@ window.DADOS_AVISOS = {
     {
       tipo: 'novidade',
       ate: '2026-09-15',
-      texto: 'O site do NAE agora mostra a sua aula de hoje, o calendário acadêmico 2026 e funciona sem internet depois da primeira visita.',
-      link: 'calendario.html',
-      textoLink: 'ver calendário'
+      texto: 'Novo no site: como entrar no AVA Moodle e no Lyceum, com passo a passo do primeiro acesso e da recuperação de senha.',
+      link: 'sistemas.html',
+      textoLink: 'ver o passo a passo'
     }
   ]
 };

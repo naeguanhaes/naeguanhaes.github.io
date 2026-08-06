@@ -5,12 +5,13 @@
    isso apaga o cache antigo e busca tudo de novo.
    ═══════════════════════════════════════════════════════ */
 
-var VERSAO = 'nae-v5';
+var VERSAO = 'nae-v6';
 
 var ESSENCIAIS = [
   './',
   './index.html',
   './email.html',
+  './sistemas.html',
   './horarios.html',
   './calendario.html',
   './mapa.html',

@@ -1,4 +1,5 @@
-# NAE Guanhães — site do Núcleo de Apoio ao Estudante
+| `sistemas.html` | AVA Moodle e Lyceum: links e passo a passo do acesso |
+| `horarios.html` | Grade 2026.2, com "hoje/agora", minha turma e exportação |# NAE Guanhães — site do Núcleo de Apoio ao Estudante
 
 Site do **NAE — Núcleo de Apoio ao Estudante** da **UEMG, Unidade Guanhães**.
 São páginas HTML, uma folha de estilo e alguns scripts: sem dependências e sem

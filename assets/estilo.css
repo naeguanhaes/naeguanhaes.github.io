@@ -17,6 +17,7 @@
   --ambar:    #E09A1E;
   --coral:    #E4674A;
   --lilas:    #7166B8;
+  --petroleo: #0F7C7B;
   --vermelho: #D91F35;
 
   --paper:     #F2F6FA;
@@ -402,16 +403,16 @@ ul.limpa li::before {
 .porta:hover .porta-seta { transform: translateX(4px); background: var(--c); color: #fff; }
 .porta > * { position: relative; z-index: 1; }
 .porta-ico {
-  grid-row: 1 / span 3; width: 3.1rem; height: 3.1rem; border-radius: 16px;
+  grid-column: 1; grid-row: 1 / span 3; width: 3.1rem; height: 3.1rem; border-radius: 16px;
   display: grid; place-items: center; flex: none;
   background: color-mix(in srgb, var(--c) 14%, var(--surface));
   color: var(--c); margin-right: .4rem;
 }
-.porta-tag { font-size: .67rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; color: var(--c); }
-.porta-h { font-family: var(--serif); font-size: 1.26rem; font-weight: 600; line-height: 1.2; display: block; margin-top: .2rem; }
-.porta-p { font-size: .93rem; color: var(--muted); display: block; margin-top: .4rem; }
+.porta-tag { grid-column: 2; grid-row: 1; font-size: .67rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; color: var(--c); }
+.porta-h { grid-column: 2; grid-row: 2; font-family: var(--serif); font-size: 1.26rem; font-weight: 600; line-height: 1.2; display: block; margin-top: .2rem; }
+.porta-p { grid-column: 2; grid-row: 3; font-size: .93rem; color: var(--muted); display: block; margin-top: .4rem; }
 .porta-seta {
-  grid-row: 1 / span 3; align-self: center;
+  grid-column: 3; grid-row: 1 / span 3; align-self: center;
   width: 2rem; height: 2rem; border-radius: 99px;
   display: grid; place-items: center; font-size: 1rem;
   background: var(--surface-2); color: var(--muted);
@@ -767,3 +768,27 @@ footer::before {
   main { padding-block: 0; }
   .reveal { opacity: 1 !important; transform: none !important; }
 }
+
+/* ── Telas do AVA Moodle ──────────────────────────────── */
+.ms.moodle { width: min(400px, 100%); gap: .6rem; }
+.ms.moodle .ms-btn { background: #0F6CBF; border-radius: 4px; font-weight: 600; }
+.ms.moodle .ms-link { color: #0F6CBF; }
+.ms-topo {
+  display: flex; align-items: center; justify-content: space-between; gap: .6rem;
+  border-bottom: 1px solid #E0E0E0; padding-bottom: .5rem; margin-bottom: .2rem;
+}
+.ms-menu { display: flex; gap: .7rem; font-size: .62rem; color: #444; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; }
+.ms-menu span.ativo { color: #0F6CBF; border-bottom: 2px solid #0F6CBF; padding-bottom: .15rem; }
+.ms-faixa { background: #17567E; color: #fff; text-align: center; padding: .9rem .6rem; font-weight: 700; font-size: .95rem; border-radius: 3px; }
+.ms-curso {
+  display: flex; gap: .6rem; align-items: center;
+  border: 1px solid #DDD; border-radius: 5px; padding: .5rem; font-size: .78rem;
+}
+.ms-curso .capa { width: 3.2rem; height: 2.2rem; border-radius: 3px; background: #17567E; flex: none; }
+.ms-curso .capa.laranja { background: #F58020; }
+.ms-abas { display: flex; gap: .7rem; font-size: .7rem; color: #555; flex-wrap: wrap; }
+.ms-abas span:first-child { color: #0F6CBF; font-weight: 700; border-bottom: 2px solid #0F6CBF; }
+.ms-lateral { border: 1px solid #DDD; border-radius: 5px; padding: .45rem; display: flex; flex-direction: column; gap: .3rem; font-size: .72rem; }
+.ms-lateral b { font-size: .68rem; color: #333; }
+.ms-lateral i { background: #F3F5F7; border: 1px solid #E2E6EA; border-radius: 4px; padding: .28rem .45rem; font-style: normal; color: #444; }
+.ms-avatar { width: 1.6rem; height: 1.6rem; border-radius: 99px; background: #C9D6E0; display: inline-grid; place-items: center; font-size: .6rem; color: #33556B; font-weight: 700; }
