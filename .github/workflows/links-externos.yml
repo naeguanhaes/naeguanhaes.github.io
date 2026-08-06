@@ -1,0 +1,58 @@
+# Confere toda semana se os endereços de fora do site continuam no ar.
+# Se algum morrer, abre uma tarefa no repositório avisando a coordenação.
+name: Vigia dos links externos
+
+on:
+  schedule:
+    # toda segunda-feira às 09h de Brasília (12h UTC)
+    - cron: '0 12 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  conferir:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar o repositório
+        uses: actions/checkout@v4
+
+      - name: Testar os endereços externos
+        id: teste
+        continue-on-error: true
+        run: node ferramentas/checar-links-externos.js
+
+      - name: Abrir tarefa quando algum link quebrar
+        if: steps.teste.outcome == 'failure'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            let corpo = 'Um ou mais endereços externos do site pararam de responder.';
+            try {
+              corpo += '\n\n' + fs.readFileSync('links-quebrados.txt', 'utf8');
+            } catch (e) {}
+            corpo += '\n\nConfira cada um no navegador antes de mexer: alguns sites bloqueiam ' +
+                     'robôs e podem estar funcionando normalmente para as pessoas. ' +
+                     'Se o endereço mudou de verdade, corrija a página indicada e publique.' +
+                     '\n\nVerificado automaticamente pelo vigia semanal.';
+
+            const titulo = 'Link externo fora do ar no site do NAE';
+            const abertas = await github.rest.issues.listForRepo({
+              owner: context.repo.owner, repo: context.repo.repo,
+              state: 'open', labels: 'links'
+            });
+            const jaExiste = abertas.data.find(i => i.title === titulo);
+            if (jaExiste) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner, repo: context.repo.repo,
+                issue_number: jaExiste.number, body: corpo
+              });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner, repo: context.repo.repo,
+                title: titulo, body: corpo, labels: ['links']
+              });
+            }

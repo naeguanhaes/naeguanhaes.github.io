@@ -5,7 +5,7 @@
    isso apaga o cache antigo e busca tudo de novo.
    ═══════════════════════════════════════════════════════ */
 
-var VERSAO = 'nae-v12';
+var VERSAO = 'nae-v13';
 
 var ESSENCIAIS = [
   './',
@@ -19,6 +19,12 @@ var ESSENCIAIS = [
   './sobre.html',
   './contato.html',
   './apoio.html',
+  './avisos.html',
+  './privacidade.html',
+  './planner.html',
+  './editais.html',
+  './calouro.html',
+  './semestres.html',
   './cartaz.html',
   './404.html',
   './offline.html',
@@ -33,7 +39,10 @@ var ESSENCIAIS = [
   './assets/dados-avisos.js',
   './assets/dados-novidades.js',
   './assets/dados-busca.js',
+  './assets/dados-editais.js',
   './assets/min/busca.min.js',
+  './assets/min/planner.min.js',
+  './historico/semestres/indice.js',
   './assets/logo-topo.webp',
   './assets/simbolo-nae.webp',
   './assets/logo-nae.png',

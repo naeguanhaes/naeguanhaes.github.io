@@ -9,16 +9,20 @@
   --marca-azul:     #40688B;
   --marca-vermelho: #D91F35;
 
-  /* família de apoio, harmonizada com o azul da marca */
+  /* família de apoio, harmonizada com o azul da marca.
+     Todas as cores usadas em texto passam de 4.5 de contraste
+     sobre o branco, conforme as WCAG 2.1 nível AA. O âmbar é a
+     única exceção e serve apenas para faixas e ícones grandes. */
   --azul:     #35618A;
   --azul-esc: #22475F;
-  --turquesa: #1795AE;
-  --verde:    #2E9A6B;
+  --turquesa: #148096;
+  --verde:    #28855D;
   --ambar:    #E09A1E;
-  --coral:    #E4674A;
+  --ambar-txt:#8A5E06;
+  --coral:    #BE563E;
   --lilas:    #7166B8;
   --petroleo: #0F7C7B;
-  --rosa:     #C0517E;
+  --rosa:     #BD507C;
   --vermelho: #D91F35;
 
   --paper:     #F2F6FA;
@@ -123,8 +127,9 @@ p  { margin: 0; }
   padding: .7rem 0; font-size: .93rem;
 }
 .aviso .wrap { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; }
+/* o texto da faixa é branco: estes fundos passam de 4.5 de contraste */
 .aviso.urgente  { --c: #C21F32; }
-.aviso.atencao  { --c: #B0740C; }
+.aviso.atencao  { --c: #91600A; }
 .aviso.novidade { --c: #157F95; }
 .aviso .selo {
   font-size: .66rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
@@ -203,6 +208,8 @@ main { padding-block: var(--s5) var(--s6); display: block; }
   background: color-mix(in srgb, var(--c) 11%, transparent); pointer-events: none;
 }
 .card > * { position: relative; z-index: 1; }
+/* o título do cartão é h2 por semântica, mas continua com o tamanho de cartão */
+.card > h2 { font-size: 1.16rem; letter-spacing: -.005em; color: var(--ink); }
 .card > .rotulo {
   display: inline-flex; align-items: center; gap: .45rem; align-self: flex-start;
   font-size: .67rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase;
@@ -309,7 +316,9 @@ ul.limpa li::before {
   transition: background .16s, transform .16s;
 }
 .hero-contagem:hover { background: rgba(255,255,255,.24); color: #fff; transform: translateY(-2px); }
-.hero-contagem b { color: #9FE4EE; font-variant-numeric: tabular-nums; }
+.hero-contagem b { color: #9FE4EE; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.hero-contagem span:not(.hc-dot) { min-width: 0; }
+@media (max-width: 560px) { .hero-contagem { align-items: flex-start; line-height: 1.45; } }
 .hero-contagem .hc-dot { width: .5rem; height: .5rem; border-radius: 99px 2px 99px 99px; background: var(--marca-vermelho); flex: none; }
 
 /* hero em tons de acolhimento (página de apoio) */
@@ -912,6 +921,195 @@ details.secao[open] > summary .mais { transform: rotate(45deg); background: var(
 .loja span small { display: block; font-size: .64rem; font-weight: 500; opacity: .85; letter-spacing: .04em; }
 .loja svg { flex: none; }
 
+/* ── Alto contraste ────────────────────────────────────── */
+/* continua sendo tema claro, apenas mais forte: texto quase preto,
+   fundos brancos, bordas visíveis e cores escurecidas */
+html[data-contraste="alto"] {
+  --paper: #FFFFFF;
+  --paper-2: #FFFFFF;
+  --surface: #FFFFFF;
+  --surface-2: #F2F2F2;
+  --ink: #000000;
+  --ink-2: #1A1A1A;
+  --muted: #333333;
+  --line: #555555;
+  --hair: #767676;
+  --azul: #0B3D6B;
+  --azul-esc: #06263F;
+  --turquesa: #005E70;
+  --verde: #14603F;
+  --ambar: #6E4400;
+  --coral: #9A2E14;
+  --lilas: #3C2F86;
+  --petroleo: #04524F;
+  --rosa: #8A1E4C;
+  --vermelho: #A50A1C;
+  --marca-azul: #0B3D6B;
+}
+html[data-contraste="alto"] body { background: #fff; }
+html[data-contraste="alto"] .card,
+html[data-contraste="alto"] .porta,
+html[data-contraste="alto"] .turma,
+html[data-contraste="alto"] .agora,
+html[data-contraste="alto"] details.faq,
+html[data-contraste="alto"] details.passo,
+html[data-contraste="alto"] details.secao,
+html[data-contraste="alto"] .app-caixa,
+html[data-contraste="alto"] .filtros,
+html[data-contraste="alto"] .busca-caixa { border: 2px solid #000; box-shadow: none; }
+html[data-contraste="alto"] .card::after,
+html[data-contraste="alto"] .porta::after,
+html[data-contraste="alto"] .hero::before,
+html[data-contraste="alto"] .hero::after { display: none; }
+html[data-contraste="alto"] .hero,
+html[data-contraste="alto"] .hero.rosa,
+html[data-contraste="alto"] .agora-topo { background: #06263F; }
+html[data-contraste="alto"] .hero .eyebrow { color: #FFE9A8; }
+html[data-contraste="alto"] a { text-decoration: underline; }
+html[data-contraste="alto"] .nav-link,
+html[data-contraste="alto"] .atalho,
+html[data-contraste="alto"] .chip,
+html[data-contraste="alto"] .acao,
+html[data-contraste="alto"] .btn-topo { border-color: #000; color: #000; }
+html[data-contraste="alto"] .nav-link[aria-current="page"] { color: #fff; }
+html[data-contraste="alto"] .btn { box-shadow: none; border: 2px solid #000; }
+html[data-contraste="alto"] .btn.ghost { color: #000; }
+html[data-contraste="alto"] table.grade th,
+html[data-contraste="alto"] table.grade td { border-color: #767676; }
+html[data-contraste="alto"] .doc,
+html[data-contraste="alto"] figcaption,
+html[data-contraste="alto"] .porta-p { color: #1A1A1A; font-style: normal; }
+html[data-contraste="alto"] .aviso.novidade { --c: #0A4A57; }
+html[data-contraste="alto"] .aviso.atencao  { --c: #6E4400; }
+html[data-contraste="alto"] .aviso.urgente  { --c: #8C0F1F; }
+html[data-contraste="alto"] .hero-contagem { background: rgba(255,255,255,.16); border-color: #fff; }
+html[data-contraste="alto"] .hero-contagem b { color: #FFE9A8; }
+html[data-contraste="alto"] .cal-evento.passado { opacity: 1; }
+.btn-topo[aria-pressed="true"] { background: var(--marca-azul); border-color: var(--marca-azul); color: #fff; }
+
+/* ── Cronômetro de estudos ─────────────────────────────── */
+.cronometro {
+  --c: var(--petroleo);
+  display: flex; flex-direction: column; align-items: center; gap: var(--s2);
+  text-align: center;
+}
+.cronometro[data-fase="pausa"], .cronometro[data-fase="longa"] { --c: var(--verde); }
+.cro-selo {
+  font-size: .68rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase;
+  color: #fff; background: var(--c); border-radius: 99px; padding: .22rem .85rem;
+}
+.cro-visor {
+  font-family: var(--mono); font-variant-numeric: tabular-nums;
+  font-size: clamp(3.2rem, 2rem + 8vw, 5rem); font-weight: 700;
+  color: var(--c); line-height: 1; letter-spacing: -.02em;
+}
+.cro-frase { font-size: .95rem; color: var(--ink-2); max-width: 34ch; }
+.cro-acoes { display: flex; gap: .5rem; flex-wrap: wrap; justify-content: center; }
+.cro-ciclos { font-size: .82rem; color: var(--muted); }
+
+/* ── Planner do semestre ───────────────────────────────── */
+.planner-folha { display: flex; flex-direction: column; gap: var(--s4); }
+.planner-pagina {
+  --c: var(--azul);
+  background: var(--surface); border: 1px solid var(--hair); border-radius: var(--radius);
+  box-shadow: var(--sh-1); padding: var(--s4);
+  display: flex; flex-direction: column; gap: var(--s2);
+}
+.planner-topo {
+  display: flex; align-items: center; gap: var(--s3); flex-wrap: wrap;
+  border-bottom: 3px solid var(--c); padding-bottom: var(--s2); margin-bottom: .3rem;
+}
+.planner-topo img { height: 3rem; width: auto; }
+.planner-tit { display: flex; flex-direction: column; }
+.planner-tit b { font-family: var(--serif); font-size: 1.35rem; color: var(--azul-esc); line-height: 1.2; }
+.planner-tit span { font-size: .85rem; color: var(--muted); }
+.planner-num {
+  margin-left: auto; text-align: right; flex: none;
+  font-size: .68rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--c);
+}
+.planner-num small { display: block; font-size: .78rem; font-weight: 600; letter-spacing: 0; text-transform: none; color: var(--muted); margin-top: .15rem; }
+.planner-h {
+  font-family: var(--sans); font-size: .68rem; font-weight: 800; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--c); margin: .5rem 0 -.2rem;
+}
+
+.planner-nome { display: grid; grid-template-columns: 1fr 1fr 1.4fr; gap: var(--s3); }
+.planner-nome span { display: flex; flex-direction: column; gap: .1rem; }
+.planner-nome b { font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.planner-nome i { display: block; border-bottom: 1px solid var(--line); height: 1.15rem; }
+
+.planner-pagina table { width: 100%; border-collapse: collapse; }
+.planner-pagina th, .planner-pagina td { border: 1px solid var(--line); padding: .32rem .45rem; text-align: left; vertical-align: top; }
+.planner-pagina thead th {
+  background: color-mix(in srgb, var(--c) 12%, var(--surface));
+  color: color-mix(in srgb, var(--c) 85%, var(--ink));
+  font-size: .6rem; letter-spacing: .1em; text-transform: uppercase; text-align: center;
+}
+.planner-grade { font-size: .72rem; }
+.planner-grade tbody th { text-align: center; font-family: var(--mono); font-size: .64rem; white-space: nowrap; background: var(--surface-2); width: 5.4rem; }
+.planner-grade td b { display: block; font-weight: 650; line-height: 1.25; color: var(--ink); }
+.planner-grade td i { display: block; font-size: .62rem; color: var(--muted); font-style: normal; margin-top: .1rem; }
+.planner-grade td.col-ead { background: color-mix(in srgb, var(--lilas) 7%, var(--surface)); }
+
+.planner-lista { font-size: .72rem; }
+.planner-lista td { vertical-align: middle; }
+.pl-tag { font-size: .56rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.pl-num { text-align: center; font-variant-numeric: tabular-nums; width: 4.6rem; }
+.pl-forte { font-weight: 800; color: var(--vermelho); }
+
+.planner-semanas { font-size: .72rem; }
+.planner-semanas .sem-marca { width: 1.9rem; text-align: center; color: var(--muted); font-variant-numeric: tabular-nums; }
+.planner-semanas .sem-data { font-family: var(--mono); font-size: .66rem; white-space: nowrap; width: 6.6rem; }
+.planner-semanas .sem-prazo { width: 42%; }
+.planner-semanas .sem-anota { height: 1.5rem; }
+.planner-semanas tr.tem-prazo { background: color-mix(in srgb, var(--ambar) 12%, var(--surface)); }
+.planner-semanas tr.tem-feriado { background: color-mix(in srgb, var(--vermelho) 8%, var(--surface)); }
+
+.planner-notas-tab { font-size: .72rem; }
+.planner-notas-tab td { height: 1.55rem; }
+.planner-notas-tab .pl-disc { width: 34%; font-weight: 650; }
+.planner-notas-tab .pl-soma { background: var(--surface-2); width: 4.4rem; }
+
+.planner-faltas { font-size: .72rem; }
+.planner-faltas .pl-disc { width: 34%; font-weight: 650; }
+.planner-faltas .pl-quadros { line-height: 0; }
+.planner-faltas .pl-quadros i {
+  display: inline-block; width: .8rem; height: .8rem; margin: .12rem .16rem 0 0;
+  border: 1px solid var(--line); border-radius: 3px;
+}
+
+.planner-regra {
+  border-left: 4px solid var(--c);
+  background: color-mix(in srgb, var(--c) 8%, var(--surface));
+  border-radius: 0 var(--radius-s) var(--radius-s) 0;
+  padding: .45rem .7rem; font-size: .74rem; color: var(--ink-2);
+}
+.planner-regra b { color: color-mix(in srgb, var(--c) 80%, var(--ink)); }
+
+.planner-caixas { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s3); margin-top: .3rem; }
+.planner-caixa { border: 1px solid var(--line); border-radius: var(--radius-s); padding: .5rem .7rem; }
+.planner-caixa.alta { grid-column: 1 / -1; }
+.planner-caixa b { font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: .2rem; }
+.planner-linhas { display: flex; flex-direction: column; gap: .85rem; padding-top: .5rem; }
+.planner-linhas i { display: block; border-bottom: 1px dotted var(--line); }
+
+.planner-contatos {
+  border: 1px dashed var(--line); border-radius: var(--radius-s);
+  padding: .5rem .7rem; display: flex; flex-direction: column; gap: .12rem; font-size: .68rem; color: var(--ink-2);
+}
+.planner-contatos b { font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: .15rem; }
+
+.planner-obs { font-size: .66rem; color: var(--muted); }
+.planner-rodape {
+  display: flex; justify-content: space-between; gap: var(--s2); flex-wrap: wrap;
+  font-size: .62rem; color: var(--muted); border-top: 1px solid var(--hair);
+  padding-top: .4rem; margin-top: auto;
+}
+@media (max-width: 700px) {
+  .planner-nome, .planner-caixas { grid-template-columns: 1fr; }
+  .planner-pagina { padding: var(--s3); overflow-x: auto; }
+}
+
 /* ── Tamanho do texto (A- / A+) ────────────────────────── */
 html[data-fonte="0"] body { font-size: 15px; }
 html[data-fonte="2"] body { font-size: 19px; }
@@ -1096,6 +1294,43 @@ html[data-fonte="3"] body { font-size: 21px; }
   .pg-horarios .dica-mapa, .pg-horarios .trilha, .pg-horarios .compartilhar,
   .pg-horarios .turma-acoes { display: none !important; }
   .pg-horarios .turma-head { background: none; }
+
+  /* impressão do calendário: as datas, em duas colunas, sem enfeite */
+  .pg-calendario .lede, .pg-calendario .trilha, .pg-calendario .card,
+  .pg-calendario .grid2, .pg-calendario .compartilhar,
+  .pg-calendario #cal-passados-btn { display: none !important; }
+  .pg-calendario #cal-passados[hidden] { display: block !important; }
+  .pg-calendario .cal-grid { display: block; columns: 2; column-gap: 10mm; }
+  .pg-calendario .cal-mes { break-inside: avoid; margin-bottom: 5mm; }
+  .pg-calendario .cal-evento {
+    border: 0; border-left: 3px solid #999; border-radius: 0;
+    padding: .12rem .4rem; font-size: 8.5pt; background: none !important;
+    opacity: 1 !important; box-shadow: none;
+  }
+  .pg-calendario .cal-evento .quando { min-width: 3.4rem; font-size: 8pt; }
+  .pg-calendario .dica-mapa { font-size: 7.5pt; }
+
+  /* planner: quatro folhas A4, uma por página */
+  .pg-planner .topbar, .pg-planner .nav, .pg-planner footer,
+  .pg-planner .trilha, .pg-planner .planner-ajuda, .pg-planner .note { display: none !important; }
+  .pg-planner main { padding: 0; }
+  .pg-planner .wrap { width: 100%; }
+  .pg-planner .planner-folha { gap: 0; }
+  .pg-planner .planner-pagina {
+    border: 0; box-shadow: none; padding: 0; gap: 6pt;
+    break-after: page; page-break-after: always;
+    min-height: 253mm;
+  }
+  .pg-planner .planner-pagina:last-child { break-after: auto; page-break-after: auto; }
+  .pg-planner .planner-pagina table { font-size: 7.6pt; }
+  .pg-planner .planner-grade { font-size: 7.2pt; }
+  .pg-planner .planner-pagina th,
+  .pg-planner .planner-pagina td { border-color: #999; padding: 2.4pt 3.4pt; }
+  .pg-planner .planner-linhas i,
+  .pg-planner .planner-faltas .pl-quadros i { border-color: #999; }
+  .pg-planner .planner-topo img { height: 16mm; }
+  .pg-planner .planner-semanas tr { break-inside: avoid; }
+  .pg-planner .planner-obs, .pg-planner .planner-rodape { font-size: 6.4pt; }
 }
 
 /* ── Telas do AVA Moodle ──────────────────────────────── */

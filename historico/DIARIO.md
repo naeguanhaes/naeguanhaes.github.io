@@ -3,6 +3,26 @@
 Registro do que mudou e quando, do mais recente para o mais antigo.
 Ao fazer uma alteração relevante, acrescente uma entrada no topo.
 
+## 06/08/2026 · quinta rodada
+
+- Planner do semestre: caderno de 4 folhas A4 com grade, mapa das semanas,
+  controle de notas e controle de faltas, com o limite calculado por disciplina
+- Cronômetro de estudos em blocos de 25 minutos, na página de ferramentas
+- Mural de avisos (`avisos.html`) com todo o histórico de comunicados;
+  avisos agora podem ser agendados com o campo `de`
+- Botão que copia mensagem pronta para o grupo, em 6 páginas
+- Página de privacidade, explicando que não há cookies nem coleta de dados
+- Inspetor de acessibilidade (`ferramentas/checar-acessibilidade.js`) no
+  workflow. Ele encontrou e obrigou a corrigir: contraste do turquesa, verde,
+  coral, rosa e da faixa âmbar, títulos pulando de h1 para h3, e a contagem
+  regressiva sem nome acessível
+- Vigia semanal dos links externos, abrindo tarefa quando algum morre
+- Painel "hoje" passa a anunciar a próxima aula quando o dia acaba
+- Impressão própria do calendário, em duas colunas
+- Atalho da turma escolhida no menu, alto contraste, imagens em carregamento
+  tardio, e `semestres.html` criada oculta
+- sw em nae-v13
+
 ## 06/08/2026 · quarta rodada
 
 - Contagem regressiva no hero da página inicial (próxima data do calendário)

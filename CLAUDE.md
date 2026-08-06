@@ -34,21 +34,41 @@ de mudanças estão na pasta [`historico/`](historico/CONTEXTO.md).
    `assets/dados-novidades.js`.
 6. Página ou seção nova? Inclua no índice `assets/dados-busca.js`, no menu de
    todas as páginas e na lista `ESSENCIAIS` do `sw.js`.
-7. Rode `node ferramentas/checar-site.js` (travessões, links quebrados,
-   cache offline e divs). O workflow roda essa inspeção de novo e
-   **bloqueia a publicação** se algo falhar.
+7. Rode as duas inspeções. O workflow roda as duas de novo e
+   **bloqueia a publicação** se qualquer uma falhar:
+   ```bash
+   node ferramentas/checar-site.js
+   node ferramentas/checar-acessibilidade.js
+   ```
 8. Commit e push na branch `main`. A publicação é feita pelo workflow
    `.github/workflows/publicar.yml` (GitHub Actions).
 
 ## Páginas prontas porém OCULTAS (decisão do coordenador)
 
+Existe um lembrete agendado para **11 de janeiro de 2027** trazendo estas três
+de volta à mesa. Para ativar qualquer uma: tirar o `<meta name="robots"
+content="noindex">` e o comentário de página oculta, incluir o link no menu de
+todas as páginas, acrescentar ao índice da busca (`assets/dados-busca.js`),
+conferir que já está no `sw.js` e anunciar em `assets/dados-novidades.js`.
+
 - **`editais.html`** (com `assets/dados-editais.js`): aguardando o primeiro
-  edital. Para ativar: acrescentar um edital no arquivo de dados, tirar o
-  `<meta name="robots" content="noindex">` da página, incluir o link no menu
-  de todas as páginas, no índice da busca, no `sw.js` e anunciar nas novidades.
+  edital. Enquanto a lista está vazia, a página mostra um aviso simpático.
 - **`calouro.html`** (guia "Comece por aqui"): aguardando a chegada de
-  calouros (não entra turma nova em 2026.2). Mesmos passos para ativar.
-- As duas já funcionam por endereço direto, para o coordenador revisar.
+  calouros, já que não entra turma nova em 2026.2.
+- **`semestres.html`** (com `historico/semestres/indice.js`): arquivo das
+  grades de semestres encerrados. Aguardando existir mais de um semestre.
+  As instruções de como arquivar estão dentro do próprio arquivo de índice.
+
+As três já funcionam por endereço direto, para o coordenador revisar.
+
+## Rotinas automáticas
+
+- **Publicação**: `.github/workflows/publicar.yml`, a cada push na `main`,
+  com as inspeções barrando o deploy quando encontram problema.
+- **Vigia dos links externos**: `.github/workflows/links-externos.yml`,
+  toda segunda-feira às 09h. Se um endereço de fora morrer, abre uma tarefa
+  no repositório avisando. Sites que bloqueiam robô ficam na lista
+  `TOLERADOS` dentro de `ferramentas/checar-links-externos.js`.
 
 ## Endereços e contas
 

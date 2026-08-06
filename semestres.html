@@ -3,8 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Horários de aulas 2026.2 · NAE Guanhães | UEMG</title>
-<meta name="description" content="Grade de horários 2026.2 dos cursos de Direito e Engenharia Civil da UEMG · Unidade Guanhães.">
+<title>Semestres anteriores · NAE Guanhães | UEMG</title>
+<meta name="description" content="Arquivo das grades de horários de semestres já encerrados.">
+<!-- Página ainda oculta: sem link no menu e fora dos buscadores até o coordenador ativar. -->
+<meta name="robots" content="noindex">
 <link rel="icon" href="assets/favicon-nae.png" type="image/png">
 <meta name="theme-color" content="#40688B">
 <meta name="color-scheme" content="light">
@@ -14,20 +16,10 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="NAE Guanhães">
 <meta name="mobile-web-app-capable" content="yes">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="NAE Guanhães · Núcleo de Apoio ao Estudante">
-<meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="Horários de aulas 2026.2 · NAE Guanhães | UEMG">
-<meta property="og:description" content="Grade de horários 2026.2 dos cursos de Direito e Engenharia Civil da UEMG · Unidade Guanhães.">
-<meta property="og:url" content="https://naeguanhaes.github.io/horarios.html">
-<meta property="og:image" content="https://naeguanhaes.github.io/assets/og-nae.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
 <script>try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentElement.setAttribute("data-fonte",f);var c=localStorage.getItem("nae:contraste");if(c==="sim")document.documentElement.setAttribute("data-contraste","alto")}catch(e){}</script>
 <link rel="stylesheet" href="assets/min/estilo.min.css">
 </head>
-<body class="pg-horarios">
+<body>
 
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
 
@@ -67,61 +59,29 @@
   </div>
 </nav>
 
+
 <main class="wrap stack-m" id="conteudo">
 
-  <nav class="trilha" aria-label="Você está aqui" style="--c: var(--turquesa)">
-    <a href="index.html">Início</a><span class="separa">›</span><span aria-current="page">Horários de Aulas</span>
+  <nav class="trilha" aria-label="Você está aqui" style="--c: var(--muted)">
+    <a href="index.html">Início</a><span class="separa">›</span><a href="horarios.html">Horários de Aulas</a><span class="separa">›</span><span aria-current="page">Semestres anteriores</span>
   </nav>
 
-
   <div class="col stack-s">
-    <div class="titulo-sec" style="--c: var(--cyan)">
-      <span class="eyebrow" style="--c: var(--cyan)">Semestre 2026.2</span>
-      <h1>Horários de aulas</h1>
+    <div class="titulo-sec" style="--c: var(--muted)">
+      <span class="eyebrow" style="--c: var(--muted)">Arquivo</span>
+      <h1>Semestres anteriores</h1>
     </div>
     <p class="lede">
-      Grade completa dos cursos de <b>Direito</b> e <b>Engenharia Civil</b> da Unidade Guanhães,
-      com a sala de cada turma. Filtre pelo curso ou busque por disciplina, professor, período ou sala.
+      As grades de horários de semestres já encerrados ficam guardadas aqui, para
+      consulta e conferência. A grade em vigor está sempre na página de
+      <a href="horarios.html">horários de aulas</a>.
     </p>
   </div>
 
-  <div class="filtros">
-    <div class="chips" role="group" aria-label="Filtrar por curso">
-      <button class="chip" type="button" data-curso="todos" aria-pressed="true" style="--c: var(--navy)">Todos</button>
-      <button class="chip" type="button" data-curso="Direito" aria-pressed="false" style="--c: var(--blue)">Direito</button>
-      <button class="chip" type="button" data-curso="Engenharia Civil" aria-pressed="false" style="--c: var(--green)">Engenharia Civil</button>
-    </div>
-    <div class="busca">
-      <label for="in-busca" style="position:absolute;left:-9999px">Buscar</label>
-      <input id="in-busca" type="search" placeholder="Buscar disciplina, professor, período ou sala…" autocomplete="off">
-    </div>
-    <span class="contagem" id="contagem"></span>
-  </div>
+  <div id="arquivo-semestres" class="stack-s"></div>
 
-  <div class="note info col">
-    <p><b>Legenda</b> <span class="tag hib">Híbrida</span> parte presencial, parte a distância · <span class="tag ead">EaD</span> totalmente a distância · <span class="tag est">Estágio</span> prática real ou simulada · <span class="tag opt">Optativa</span> disciplina eletiva.</p>
-  </div>
-
-  <div id="lista-turmas"></div>
-
-  <p class="dica-mapa" style="display:flex;flex-wrap:wrap;gap:.6rem;align-items:center">
-    <span class="atualizado" data-atualizado="horarios"></span>
-    Fonte: quadro oficial de horários da Unidade Guanhães, 2026.2. Alterações pontuais são divulgadas pela coordenação de curso.
-  </p>
-
-  <div class="card col reveal" style="--c: var(--green)">
-    <span class="rotulo">Não achou sua sala?</span>
-    <h2>Veja onde ela fica</h2>
-    <p>O mapa do campus mostra a planta da unidade com todas as salas, laboratórios e serviços.</p>
-    <div class="compartilhar">
-      <a class="btn ghost" href="mapa.html" style="--c: var(--verde)">Abrir o mapa do campus →</a>
-      <a class="btn ghost" data-compartilhar
-         data-titulo="Horários de aulas · NAE Guanhães"
-         data-texto="Os horários das aulas da UEMG Guanhães estão aqui:"
-         data-url="https://naeguanhaes.github.io/horarios.html"
-         style="--c: var(--turquesa)">Enviar para um colega</a>
-      <button class="btn ghost" type="button" data-texto-grupo="Os horários das aulas 2026.2 estão no site do NAE, com a sala de cada turma e a aula de hoje em destaque:" data-titulo="Horários de aulas 2026.2" data-url="https://naeguanhaes.github.io/horarios.html" style="--c: var(--turquesa)">📋 Copiar mensagem para o grupo</button>
-    </div>
+  <div class="note col">
+    <p><b>Como funciona</b> Ao trocar de semestre, o arquivo antigo é copiado para <code>historico/semestres/</code> e passa a aparecer nesta lista. Nada se perde ao atualizar os horários.</p>
   </div>
 
 </main>
@@ -131,9 +91,9 @@
     <p>NAE · Núcleo de Apoio ao Estudante · UEMG Unidade Guanhães<br>Coordenação: Jonatan Barbosa Silva</p>
     <div class="foot-links">
       <a href="index.html">Início</a>
-      <a href="email.html">E-mail institucional</a>
       <a href="sistemas.html">Sistemas</a>
-      <a href="mapa.html">Mapa</a>
+      <a href="horarios.html">Horários</a>
+      <a href="calendario.html">Calendário</a>
       <a href="contato.html">Contato</a>
       <a href="avisos.html">Avisos</a>
       <a href="privacidade.html">Privacidade</a>
@@ -143,12 +103,37 @@
   </div>
 </footer>
 
+
 <script src="assets/dados-avisos.js"></script>
-<script src="assets/dados-horarios.js"></script>
 <script src="assets/min/site.min.js"></script>
 <script src="assets/dados-busca.js"></script>
 <script src="assets/min/busca.min.js"></script>
-<script src="assets/min/horarios.min.js"></script>
+<script src="historico/semestres/indice.js"></script>
+<script>
+(function () {
+  'use strict';
+  var U = window.NAE, A = window.ARQUIVO_SEMESTRES;
+  var caixa = document.getElementById('arquivo-semestres');
+  if (!U || !caixa) return;
+
+  var itens = (A && A.semestres) || [];
+  if (!itens.length) {
+    caixa.innerHTML = '<div class="card col" style="--c: var(--muted)">' +
+      '<span class="rotulo">Por enquanto</span><h2>Nenhum semestre arquivado ainda</h2>' +
+      '<p>O primeiro arquivo nasce quando o semestre 2026.2 for encerrado e substituído pelo seguinte.</p></div>';
+    return;
+  }
+
+  caixa.innerHTML = itens.map(function (s) {
+    return '<div class="card reveal visivel" style="--c: var(--azul)">' +
+      '<span class="rotulo">Semestre ' + U.escapar(s.semestre) + '</span>' +
+      '<h2>' + U.escapar(s.titulo || ('Grade de horários ' + s.semestre)) + '</h2>' +
+      '<p>' + U.escapar(s.resumo || '') + '</p>' +
+      '<div><a class="btn ghost" style="--c: var(--azul)" href="' + U.escapar(s.arquivo) + '">Abrir o arquivo →</a></div>' +
+    '</div>';
+  }).join('');
+})();
+</script>
 <script data-goatcounter="https://naeguanhaes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>

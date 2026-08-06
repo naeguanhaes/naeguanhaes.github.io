@@ -10,17 +10,24 @@
           'atencao'  → âmbar    (prazo terminando, lembrete)
           'novidade' → turquesa (algo novo no site, evento)
 
+   de:    primeiro dia em que o aviso aparece (AAAA-MM-DD, opcional).
+          Sem esse campo, entra no ar assim que você publicar.
+          COM esse campo, o aviso fica agendado e aparece sozinho no dia.
    ate:   último dia em que o aviso aparece (AAAA-MM-DD)
    link / textoLink: opcionais
 
-   Exemplo:
-     { tipo: 'urgente', ate: '2026-08-12',
-       texto: 'As aulas do 6º período de Direito estão suspensas nesta quinta.',
-       link: 'horarios.html', textoLink: 'ver horários' }
+   Nada é apagado desta lista: os avisos vencidos saem da faixa do topo
+   mas continuam no mural (avisos.html), virando o registro do que o
+   NAE comunicou. Só apague um item se ele foi publicado por engano.
+
+   Exemplo de aviso agendado:
+     { tipo: 'atencao', de: '2026-09-20', ate: '2026-09-25',
+       texto: 'Última semana para o ajuste de matrícula.',
+       link: 'calendario.html', textoLink: 'ver o calendário' }
    ═══════════════════════════════════════════════════════ */
 
 window.DADOS_AVISOS = {
-  atualizadoEm: '2026-08-05',
+  atualizadoEm: '2026-08-06',
   avisos: [
     {
       tipo: 'novidade',

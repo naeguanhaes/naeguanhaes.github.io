@@ -9,7 +9,7 @@
 <meta name="color-scheme" content="light">
 <meta name="robots" content="noindex">
 <link rel="icon" href="assets/favicon-nae.png" type="image/png">
-<script>try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentElement.setAttribute("data-fonte",f)}catch(e){}</script>
+<script>try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentElement.setAttribute("data-fonte",f);var c=localStorage.getItem("nae:contraste");if(c==="sim")document.documentElement.setAttribute("data-contraste","alto")}catch(e){}</script>
 <link rel="stylesheet" href="assets/min/estilo.min.css">
 </head>
 <body>
@@ -44,12 +44,12 @@
         <a class="btn ghost" href="index.html">Ir para o início</a>
       </div>
     </div>
-    <img class="hero-marca" src="assets/simbolo-nae.webp" alt="" aria-hidden="true">
+    <img class="hero-marca" src="assets/simbolo-nae.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
   </div>
 
   <div class="card col reveal visivel" style="--c: var(--turquesa)">
     <span class="rotulo">Funciona sem internet</span>
-    <h3>O que você pode abrir agora mesmo</h3>
+    <h2>O que você pode abrir agora mesmo</h2>
     <ul class="limpa" style="--c: var(--turquesa)">
       <li><a href="horarios.html"><b>Horários de aulas</b></a>: a grade completa, com salas e professores.</li>
       <li><a href="calendario.html"><b>Calendário acadêmico</b></a>: feriados, prazos e datas do semestre.</li>

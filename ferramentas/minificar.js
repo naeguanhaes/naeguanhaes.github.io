@@ -22,7 +22,7 @@ const RAIZ = path.join(__dirname, '..');
 const ORIGEM = path.join(RAIZ, 'assets');
 const DESTINO = path.join(ORIGEM, 'min');
 
-const JS = ['site.js', 'busca.js', 'horarios.js', 'calendario.js', 'mapa.js'];
+const JS = ['site.js', 'busca.js', 'horarios.js', 'calendario.js', 'mapa.js', 'planner.js'];
 const CSS = ['estilo.css'];
 
 if (!fs.existsSync(DESTINO)) fs.mkdirSync(DESTINO);

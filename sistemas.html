@@ -24,7 +24,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<script>try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentElement.setAttribute("data-fonte",f)}catch(e){}</script>
+<script>try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentElement.setAttribute("data-fonte",f);var c=localStorage.getItem("nae:contraste");if(c==="sim")document.documentElement.setAttribute("data-contraste","alto")}catch(e){}</script>
 <link rel="stylesheet" href="assets/min/estilo.min.css">
 </head>
 <body>
@@ -45,6 +45,7 @@
     <div class="topo-acoes">
       <button class="btn-topo" type="button" data-fonte-menos aria-label="Diminuir o tamanho do texto" title="Texto menor">A-</button>
       <button class="btn-topo" type="button" data-fonte-mais aria-label="Aumentar o tamanho do texto" title="Texto maior">A+</button>
+      <button class="btn-topo" type="button" data-contraste-btn aria-pressed="false" aria-label="Alternar o alto contraste" title="Ligar o alto contraste">◐</button>
       <button class="btn-topo" type="button" data-abrir-busca aria-label="Buscar no site" title="Buscar no site (tecla /)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.8-3.8"></path></svg></button>
     </div>
   </div>
@@ -57,9 +58,10 @@
     <a class="nav-link" href="sistemas.html" aria-current="page" style="--c: var(--petroleo)"><i class="dot"></i>Sistemas Acadêmicos</a>
     <a class="nav-link" href="horarios.html" style="--c: var(--turquesa)"><i class="dot"></i>Horários de Aulas</a>
     <a class="nav-link" href="calendario.html" style="--c: var(--lilas)"><i class="dot"></i>Calendário Acadêmico</a>
-    <a class="nav-link" href="calculadora.html" style="--c: var(--turquesa)"><i class="dot"></i>Calculadora</a>
+    <a class="nav-link" href="calculadora.html" style="--c: var(--turquesa)"><i class="dot"></i>Ferramentas</a>
     <a class="nav-link" href="mapa.html" style="--c: var(--verde)"><i class="dot"></i>Mapa do Campus</a>
     <a class="nav-link" href="apoio.html" style="--c: var(--rosa)"><i class="dot"></i>Apoio Psicológico</a>
+    <a class="nav-link" href="avisos.html" style="--c: var(--turquesa)"><i class="dot"></i>Avisos</a>
     <a class="nav-link" href="sobre.html" style="--c: var(--ambar)"><i class="dot"></i>Sobre o NAE</a>
     <a class="nav-link" href="contato.html" style="--c: var(--coral)"><i class="dot"></i>Fale com o NAE</a>
   </div>
@@ -129,7 +131,7 @@
     <div class="secao-corpo">
     <div class="card" style="--c: var(--azul)">
       <span class="rotulo">O que digitar em cada campo</span>
-      <h3>Na primeira vez, os dados já são conhecidos</h3>
+      <h2>Na primeira vez, os dados já são conhecidos</h2>
       <p>
         Você não cria cadastro. Na primeira entrada, o sistema aceita o seu registro
         acadêmico como usuário e a sua data de nascimento como senha.
@@ -188,7 +190,7 @@
 
     <div class="card reveal" style="--c: var(--petroleo)">
       <span class="rotulo">Antes de tudo</span>
-      <h3>Um login só para os dois sistemas</h3>
+      <h2>Um login só para os dois sistemas</h2>
       <p>
         O Lyceum e o AVA Moodle são <b>integrados</b>. Por isso a orientação da UEMG é
         simples: tente entrar no Moodle com <b>os mesmos dados que você usa no Lyceum</b>.
@@ -398,7 +400,7 @@
   <div class="grid2">
     <div class="card reveal" style="--c: var(--coral)">
       <span class="rotulo">Suporte</span>
-      <h3>Continua sem conseguir entrar?</h3>
+      <h2>Continua sem conseguir entrar?</h2>
       <p>
         A equipe de Ensino a Distância da UEMG atende as dúvidas do AVA pelo e-mail
         <a href="mailto:coordenadoria.ead@uemg.br">coordenadoria.ead@uemg.br</a>.
@@ -413,7 +415,7 @@
 
     <div class="card reveal" style="--c: var(--azul)">
       <span class="rotulo">Cadastro</span>
-      <h3>Quando o problema é o cadastro</h3>
+      <h2>Quando o problema é o cadastro</h2>
       <p>
         Se o e-mail de recuperação não chega, ou se os seus dados aparecem errados, o ajuste
         não é feito no AVA. É na <b>secretaria acadêmica da unidade</b>, que atualiza o cadastro
@@ -510,7 +512,7 @@
 
   <div class="card col reveal" style="--c: var(--turquesa)">
     <span class="rotulo">Fontes</span>
-    <h3>De onde vieram estas orientações</h3>
+    <h2>De onde vieram estas orientações</h2>
     <p>
       Do material oficial da UEMG: <b>“AVA Moodle UEMG, primeiro acesso discentes”</b> e
       <b>“Manual de Acesso para Alunos”</b>, da Coordenadoria de EaD, além das orientações
@@ -526,6 +528,13 @@
     </div>
   </div>
 
+  <div class="card col reveal" style="--c: var(--petroleo)">
+    <span class="rotulo">Ajude um colega</span>
+    <h2>Repasse este guia</h2>
+    <p>Muita gente trava na mesma coisa e não sabe que existe ajuda. Copie a mensagem pronta e cole no grupo da sua turma.</p>
+    <div><button class="btn ghost" type="button" data-texto-grupo="Como entrar no AVA Moodle e no Lyceum, com o passo a passo do primeiro acesso e o link do aplicativo UEMG+ Estudante:" data-titulo="Sistemas acadêmicos" data-url="https://naeguanhaes.github.io/sistemas.html" style="--c: var(--petroleo)">📋 Copiar mensagem para o grupo</button></div>
+  </div>
+
 </main>
 
 <footer>
@@ -537,6 +546,8 @@
       <a href="horarios.html">Horários</a>
       <a href="calendario.html">Calendário</a>
       <a href="contato.html">Contato</a>
+      <a href="avisos.html">Avisos</a>
+      <a href="privacidade.html">Privacidade</a>
     </div>
     <p class="assinatura">Desenvolvido por <b>Jonatan Barbosa Silva</b></p>
     <p class="foot-versao">Site conferido e atualizado em 6 de agosto de 2026</p>

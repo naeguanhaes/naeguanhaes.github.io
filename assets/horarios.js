@@ -67,6 +67,51 @@
     return juntas;
   }
 
+  /* uma linha de aula do painel */
+  function linhaAulaHTML(a) {
+    var agora = agoraEmMinutos();
+    var ini = U.minutosDe(a.ini), fim = U.minutosDe(a.fim);
+    var emCurso = agora >= ini && agora < fim;
+    var passou = agora >= fim;
+    var proxima = !passou && !emCurso;
+    var selo = emCurso ? '<span class="selo"><span class="pulso"></span>agora</span>'
+             : proxima ? '<span class="selo">a seguir</span>'
+             : '<span class="selo" style="background:var(--muted)">encerrada</span>';
+    var d = marcador(a.disciplina);
+    return '<div class="agora-linha' + (emCurso ? ' ao-vivo' : '') + '"' +
+           (passou ? ' style="opacity:.55"' : '') + '>' +
+             selo +
+             '<span class="hora">' + U.escapar(a.rotulo) + '</span>' +
+             '<span class="disciplina">' + U.escapar(d.nome) + d.tag + '</span>' +
+             '<span class="onde">' + U.escapar(a.sala) + '</span>' +
+             (a.professor ? '<span class="prof">' + U.escapar(a.professor) + '</span>' : '') +
+           '</div>';
+  }
+
+  /* procura o próximo dia letivo com aula e anuncia a primeira delas */
+  function proximoDiaHTML(turma, hoje, abertura) {
+    for (var passo = 1; passo <= 7; passo++) {
+      var d = new Date(hoje.getFullYear(), hoje.getMonth(), hoje.getDate() + passo);
+      var dia = d.getDay();
+      if (dia < 1 || dia > 5) continue;
+      var aulas = aulasDoDia(turma, dia - 1);
+      if (!aulas.length) continue;
+
+      var a = aulas[0];
+      var quando = passo === 1 ? 'amanhã' : U.DIAS_CURTOS[dia].toLowerCase();
+      var dm = marcador(a.disciplina);
+      return '<p class="agora-vazio">' + abertura + ' A próxima é <b>' + quando + '</b>:</p>' +
+             '<div class="agora-linha" style="--c: var(--lilas)">' +
+               '<span class="selo" style="background:var(--lilas)">próxima aula</span>' +
+               '<span class="hora">' + U.escapar(a.rotulo) + '</span>' +
+               '<span class="disciplina">' + U.escapar(dm.nome) + dm.tag + '</span>' +
+               '<span class="onde">' + U.escapar(a.sala) + '</span>' +
+               (a.professor ? '<span class="prof">' + U.escapar(a.professor) + '</span>' : '') +
+             '</div>';
+    }
+    return '<p class="agora-vazio">' + abertura + ' Não encontrei a próxima aula presencial desta turma na grade.</p>';
+  }
+
   function montarPainel() {
     if (!painel) return;
 
@@ -83,31 +128,17 @@
     if (!turma) {
       corpo = '<p class="agora-vazio">Escolha a sua turma abaixo e esta caixa passa a mostrar a aula de hoje sempre que você abrir o site.</p>';
     } else if (col < 0) {
-      corpo = '<p class="agora-vazio">Hoje é ' + U.DIAS_CURTOS[hoje.getDay()].toLowerCase() +
-              '. Não há aulas presenciais. A próxima aula do <b>' + U.escapar(turma.periodo) + '</b> é na segunda-feira.</p>';
+      corpo = proximoDiaHTML(turma, hoje, 'Hoje é ' + U.DIAS_CURTOS[hoje.getDay()].toLowerCase() +
+              ', não há aulas presenciais.');
     } else {
       var aulas = aulasDoDia(turma, col);
       if (!aulas.length) {
-        corpo = '<p class="agora-vazio">Sem aula presencial hoje para o <b>' + U.escapar(turma.periodo) + '</b>. Bom descanso.</p>';
+        corpo = proximoDiaHTML(turma, hoje, 'Sem aula presencial hoje para o <b>' + U.escapar(turma.periodo) + '</b>.');
+      } else if (agora >= U.minutosDe(aulas[aulas.length - 1].fim)) {
+        corpo = aulas.map(linhaAulaHTML).join('') +
+                proximoDiaHTML(turma, hoje, 'As aulas de hoje terminaram.');
       } else {
-        corpo = aulas.map(function (a) {
-          var ini = U.minutosDe(a.ini), fim = U.minutosDe(a.fim);
-          var emCurso = agora >= ini && agora < fim;
-          var passou = agora >= fim;
-          var proxima = !passou && !emCurso;
-          var selo = emCurso ? '<span class="selo"><span class="pulso"></span>agora</span>'
-                   : proxima ? '<span class="selo">a seguir</span>'
-                   : '<span class="selo" style="background:var(--muted)">encerrada</span>';
-          var d = marcador(a.disciplina);
-          return '<div class="agora-linha' + (emCurso ? ' ao-vivo' : '') + '"' +
-                 (passou ? ' style="opacity:.55"' : '') + '>' +
-                   selo +
-                   '<span class="hora">' + U.escapar(a.rotulo) + '</span>' +
-                   '<span class="disciplina">' + U.escapar(d.nome) + d.tag + '</span>' +
-                   '<span class="onde">' + U.escapar(a.sala) + '</span>' +
-                   (a.professor ? '<span class="prof">' + U.escapar(a.professor) + '</span>' : '') +
-                 '</div>';
-        }).join('');
+        corpo = aulas.map(linhaAulaHTML).join('');
       }
     }
 
@@ -197,6 +228,7 @@
           '<button class="acao" type="button" data-ics="' + t.id + '">📅 calendário</button>' +
           '<button class="acao" type="button" data-imagem="' + t.id + '">🖼 salvar imagem</button>' +
           '<button class="acao" type="button" data-link="' + t.id + '">🔗 copiar link</button>' +
+          '<a class="acao" href="planner.html?turma=' + t.id + '">📋 planner</a>' +
           '<button class="acao" type="button" data-imprimir="' + t.id + '">imprimir</button>' +
         '</span>' +
       '</div>' +

@@ -27,6 +27,8 @@ jobs:
         run: node ferramentas/checar-dados.js
       - name: Inspecionar o site (travessões, links, cache offline, divs)
         run: node ferramentas/checar-site.js
+      - name: Inspecionar a acessibilidade (WCAG 2.1 AA)
+        run: node ferramentas/checar-acessibilidade.js
 
   publicar:
     needs: verificar

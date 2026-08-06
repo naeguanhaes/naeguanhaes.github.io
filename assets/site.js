@@ -95,6 +95,50 @@
     });
   });
 
+  /* ── Alto contraste ───────────────────────────────── */
+  (function altoContraste() {
+    var ligado = ler('contraste') === 'sim';
+    function aplicar() {
+      if (ligado) document.documentElement.setAttribute('data-contraste', 'alto');
+      else document.documentElement.removeAttribute('data-contraste');
+      document.querySelectorAll('[data-contraste-btn]').forEach(function (b) {
+        b.setAttribute('aria-pressed', ligado ? 'true' : 'false');
+        b.setAttribute('title', ligado ? 'Desligar o alto contraste' : 'Ligar o alto contraste');
+      });
+    }
+    aplicar();
+    document.querySelectorAll('[data-contraste-btn]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        ligado = !ligado;
+        guardar('contraste', ligado ? 'sim' : 'nao');
+        aplicar();
+        toast(ligado ? 'Alto contraste ligado.' : 'Alto contraste desligado.');
+      });
+    });
+  })();
+
+  /* ── Atalho da minha turma no menu ────────────────── */
+  (function atalhoTurma() {
+    var id = ler('turma');
+    if (!id) return;
+    var menu = document.querySelector('.nav-in');
+    if (!menu || menu.querySelector('[data-atalho-turma]')) return;
+
+    var rotulo = 'Minha turma';
+    if (window.DADOS_HORARIOS) {
+      var t = (window.DADOS_HORARIOS.turmas || []).filter(function (x) { return x.id === id; })[0];
+      if (t) rotulo = t.periodo + ' de ' + (t.curso === 'Direito' ? 'Direito' : 'Engenharia');
+    }
+    var a = document.createElement('a');
+    a.className = 'nav-link nav-turma';
+    a.setAttribute('data-atalho-turma', '');
+    a.href = 'horarios.html?turma=' + encodeURIComponent(id);
+    a.style.setProperty('--c', 'var(--verde)');
+    a.innerHTML = '<i class="dot"></i>' + escapar(rotulo);
+    a.title = 'Ir direto para a grade da sua turma';
+    menu.appendChild(a);
+  })();
+
   /* ── Tamanho do texto (A- / A+) ───────────────────── */
   (function tamanhoDoTexto() {
     var MIN = 0, MAX = 3;
@@ -129,7 +173,8 @@
 
     var hoje = hojeISO();
     var vigentes = (window.DADOS_AVISOS.avisos || []).filter(function (a) {
-      if (a.ate && a.ate < hoje) return false;
+      if (a.de && a.de > hoje) return false;      /* agendado, ainda não chegou a hora */
+      if (a.ate && a.ate < hoje) return false;    /* venceu, vive no mural */
       return ler('aviso-fechado') !== a.texto;
     });
     if (!vigentes.length) return;
@@ -347,6 +392,91 @@
                '</span>' +
              '</div>';
     }).join('');
+  })();
+
+  /* ── Texto pronto para o grupo ────────────────────── */
+  document.querySelectorAll('[data-texto-grupo]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var titulo = b.getAttribute('data-titulo') || document.title.split('·')[0].trim();
+      var chamada = b.getAttribute('data-texto-grupo');
+      var url = b.getAttribute('data-url') || 'https://naeguanhaes.github.io/';
+      var msg = '*NAE · Núcleo de Apoio ao Estudante · UEMG Guanhães*\n\n' +
+                '*' + titulo + '*\n' + chamada + '\n\n' + url;
+      copiarTexto(msg, function () {
+        toast('Mensagem copiada! Agora é só colar no grupo.');
+      });
+    });
+  });
+
+  /* ── Cronômetro de estudos ────────────────────────── */
+  (function cronometro() {
+    var caixa = document.getElementById('cronometro');
+    if (!caixa) return;
+
+    var FASES = {
+      foco:   { minutos: 25, rotulo: 'Foco', frase: 'Vinte e cinco minutos só nisso. Deixe o celular longe.' },
+      pausa:  { minutos: 5,  rotulo: 'Pausa curta', frase: 'Levante, beba água, olhe para longe da tela.' },
+      longa:  { minutos: 15, rotulo: 'Pausa longa', frase: 'Você fechou quatro blocos. Descanse de verdade.' }
+    };
+
+    var fase = 'foco', restam = FASES.foco.minutos * 60, rodando = false, timer = null, ciclos = 0;
+
+    var visor  = caixa.querySelector('[data-cro-visor]');
+    var selo   = caixa.querySelector('[data-cro-fase]');
+    var frase  = caixa.querySelector('[data-cro-frase]');
+    var btnIr  = caixa.querySelector('[data-cro-ir]');
+    var btnZero = caixa.querySelector('[data-cro-zerar]');
+    var conta  = caixa.querySelector('[data-cro-ciclos]');
+
+    function pintar() {
+      var m = Math.floor(restam / 60), s = restam % 60;
+      visor.textContent = String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+      selo.textContent = FASES[fase].rotulo;
+      frase.textContent = FASES[fase].frase;
+      caixa.setAttribute('data-fase', fase);
+      btnIr.textContent = rodando ? 'Pausar' : (restam === FASES[fase].minutos * 60 ? 'Começar' : 'Continuar');
+      conta.textContent = ciclos === 0 ? 'Nenhum bloco fechado ainda'
+        : ciclos === 1 ? '1 bloco de foco fechado hoje'
+        : ciclos + ' blocos de foco fechados hoje';
+      document.title = rodando ? visor.textContent + ' · ' + FASES[fase].rotulo : tituloOriginal;
+    }
+
+    var tituloOriginal = document.title;
+
+    function trocarFase() {
+      if (fase === 'foco') {
+        ciclos++;
+        fase = (ciclos % 4 === 0) ? 'longa' : 'pausa';
+      } else {
+        fase = 'foco';
+      }
+      restam = FASES[fase].minutos * 60;
+      rodando = false;
+      if (timer) { clearInterval(timer); timer = null; }
+      toast(fase === 'foco' ? 'Pausa encerrada. Bora para mais um bloco.' : 'Bloco fechado! Hora da pausa.');
+      pintar();
+    }
+
+    function tique() {
+      restam--;
+      if (restam <= 0) { trocarFase(); return; }
+      pintar();
+    }
+
+    btnIr.addEventListener('click', function () {
+      rodando = !rodando;
+      if (rodando) timer = setInterval(tique, 1000);
+      else if (timer) { clearInterval(timer); timer = null; }
+      pintar();
+    });
+
+    btnZero.addEventListener('click', function () {
+      if (timer) { clearInterval(timer); timer = null; }
+      fase = 'foco'; restam = FASES.foco.minutos * 60; rodando = false; ciclos = 0;
+      pintar();
+    });
+
+    pintar();
   })();
 
   /* ── Compartilhar ─────────────────────────────────── */

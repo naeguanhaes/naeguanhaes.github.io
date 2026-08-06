@@ -49,6 +49,30 @@ window.DADOS_BUSCA = {
       k: 'calculadora media nota pontos passar aprovacao final faltas frequencia 75 60 reprovar quanto preciso'
     },
     {
+      t: 'Planner do semestre para imprimir',
+      d: 'Uma folha A4 com a sua grade, as semanas e os prazos já marcados.',
+      u: 'planner.html',
+      k: 'planner agenda imprimir folha semestre organizar semanas parede papel cronograma'
+    },
+    {
+      t: 'Cronômetro de estudos',
+      d: 'Blocos de 25 minutos com pausa, para render mais na hora de estudar.',
+      u: 'calculadora.html#cronometro-secao',
+      k: 'cronometro timer pomodoro estudar foco concentracao tempo estudo'
+    },
+    {
+      t: 'Mural de avisos',
+      d: 'Todos os comunicados do NAE, com data, dos mais recentes aos antigos.',
+      u: 'avisos.html',
+      k: 'aviso mural comunicado recado historico noticias suspensao'
+    },
+    {
+      t: 'Privacidade',
+      d: 'O que o site coleta e o que não coleta. Sem cookies e sem cadastro.',
+      u: 'privacidade.html',
+      k: 'privacidade lgpd dados cookie cadastro seguranca politica'
+    },
+    {
       t: 'Horários de aulas 2026.2',
       d: 'Grade completa de Direito e Engenharia Civil, com sala e professor.',
       u: 'horarios.html',

@@ -19,6 +19,20 @@ window.DADOS_NOVIDADES = {
   itens: [
     {
       data: '2026-08-06',
+      titulo: 'Planner, cronômetro e mural de avisos',
+      texto: 'Folha do semestre para imprimir, blocos de estudo cronometrados e o histórico de todos os comunicados do NAE.',
+      link: 'calculadora.html',
+      textoLink: 'ver as ferramentas'
+    },
+    {
+      data: '2026-08-06',
+      titulo: 'Alto contraste para quem precisa',
+      texto: 'Ao lado do A+ no topo, um botão deixa o site com cores bem mais fortes, sem sair do modo claro.',
+      link: 'privacidade.html',
+      textoLink: 'ver também a privacidade'
+    },
+    {
+      data: '2026-08-06',
       titulo: 'Página de apoio psicológico',
       texto: 'CAPS gratuito em Guanhães, plataformas com preço social e o CVV 188, tudo reunido em um lugar só.',
       link: 'apoio.html',

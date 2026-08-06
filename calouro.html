@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="NAE Guanhães">
 <meta name="mobile-web-app-capable" content="yes">
-<script>try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentElement.setAttribute("data-fonte",f)}catch(e){}</script>
+<script>try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentElement.setAttribute("data-fonte",f);var c=localStorage.getItem("nae:contraste");if(c==="sim")document.documentElement.setAttribute("data-contraste","alto")}catch(e){}</script>
 <link rel="stylesheet" href="assets/min/estilo.min.css">
 </head>
 <body>
@@ -37,6 +37,7 @@
     <div class="topo-acoes">
       <button class="btn-topo" type="button" data-fonte-menos aria-label="Diminuir o tamanho do texto" title="Texto menor">A-</button>
       <button class="btn-topo" type="button" data-fonte-mais aria-label="Aumentar o tamanho do texto" title="Texto maior">A+</button>
+      <button class="btn-topo" type="button" data-contraste-btn aria-pressed="false" aria-label="Alternar o alto contraste" title="Ligar o alto contraste">◐</button>
       <button class="btn-topo" type="button" data-abrir-busca aria-label="Buscar no site" title="Buscar no site (tecla /)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.8-3.8"></path></svg></button>
     </div>
   </div>
@@ -49,9 +50,10 @@
     <a class="nav-link" href="sistemas.html" style="--c: var(--petroleo)"><i class="dot"></i>Sistemas Acadêmicos</a>
     <a class="nav-link" href="horarios.html" style="--c: var(--turquesa)"><i class="dot"></i>Horários de Aulas</a>
     <a class="nav-link" href="calendario.html" style="--c: var(--lilas)"><i class="dot"></i>Calendário Acadêmico</a>
-    <a class="nav-link" href="calculadora.html" style="--c: var(--turquesa)"><i class="dot"></i>Calculadora</a>
+    <a class="nav-link" href="calculadora.html" style="--c: var(--turquesa)"><i class="dot"></i>Ferramentas</a>
     <a class="nav-link" href="mapa.html" style="--c: var(--verde)"><i class="dot"></i>Mapa do Campus</a>
     <a class="nav-link" href="apoio.html" style="--c: var(--rosa)"><i class="dot"></i>Apoio Psicológico</a>
+    <a class="nav-link" href="avisos.html" style="--c: var(--turquesa)"><i class="dot"></i>Avisos</a>
     <a class="nav-link" href="sobre.html" style="--c: var(--ambar)"><i class="dot"></i>Sobre o NAE</a>
     <a class="nav-link" href="contato.html" style="--c: var(--coral)"><i class="dot"></i>Fale com o NAE</a>
   </div>
@@ -73,7 +75,7 @@
         tarde você resolve o semestre inteiro.
       </p>
     </div>
-    <img class="hero-marca" src="assets/simbolo-nae.webp" alt="" aria-hidden="true">
+    <img class="hero-marca" src="assets/simbolo-nae.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
   </div>
 
   <div class="stack-m">
@@ -195,6 +197,8 @@
       <a href="email.html">E-mail institucional</a>
       <a href="sistemas.html">Sistemas</a>
       <a href="contato.html">Contato</a>
+      <a href="avisos.html">Avisos</a>
+      <a href="privacidade.html">Privacidade</a>
     </div>
     <p class="assinatura">Desenvolvido por <b>Jonatan Barbosa Silva</b></p>
     <p class="foot-versao">Site conferido e atualizado em 6 de agosto de 2026</p>
