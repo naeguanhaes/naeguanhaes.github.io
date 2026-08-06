@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════
-   NAE Guanhães — grade de horários
+   NAE Guanhães · grade de horários
    Lê window.DADOS_HORARIOS (assets/dados-horarios.js).
    Monta: painel "hoje/agora", grade completa, minha turma,
    exportação para o calendário e filtro por professor.
@@ -59,7 +59,7 @@
       var ult = juntas[juntas.length - 1];
       if (ult && ult.disciplina === a.disciplina && ult.fim === a.ini) {
         ult.fim = a.fim;
-        ult.rotulo = ult.rotulo.split('–')[0] + '–' + a.rotulo.split('–')[1];
+        ult.rotulo = ult.rotulo.split('-')[0] + '-' + a.rotulo.split('-')[1];
       } else {
         juntas.push(Object.assign({}, a));
       }
@@ -84,7 +84,7 @@
       corpo = '<p class="agora-vazio">Escolha a sua turma abaixo e esta caixa passa a mostrar a aula de hoje sempre que você abrir o site.</p>';
     } else if (col < 0) {
       corpo = '<p class="agora-vazio">Hoje é ' + U.DIAS_CURTOS[hoje.getDay()].toLowerCase() +
-              ' — não há aulas presenciais. A próxima aula do <b>' + U.escapar(turma.periodo) + '</b> é na segunda-feira.</p>';
+              '. Não há aulas presenciais. A próxima aula do <b>' + U.escapar(turma.periodo) + '</b> é na segunda-feira.</p>';
     } else {
       var aulas = aulasDoDia(turma, col);
       if (!aulas.length) {
@@ -111,7 +111,7 @@
       }
     }
 
-    var opcoes = ['<option value="">— escolher —</option>'].concat(
+    var opcoes = ['<option value="">escolher a turma…</option>'].concat(
       D.turmas.map(function (t) {
         return '<option value="' + t.id + '"' + (t.id === idSalvo ? ' selected' : '') + '>' +
                U.escapar(t.curso + ' · ' + t.periodo) + '</option>';
@@ -158,7 +158,7 @@
 
     if (!cel) {
       classes.push('vaga');
-      return '<td class="' + classes.join(' ') + '">—</td>';
+      return '<td class="' + classes.join(' ') + '">·</td>';
     }
     var agora = agoraEmMinutos();
     if (col === colHoje && linha.ini &&
@@ -199,7 +199,7 @@
         '</span>' +
       '</div>' +
       '<div class="rolagem"><table class="grade">' +
-        '<caption class="so-leitor">Grade de ' + U.escapar(t.curso + ' — ' + t.periodo) + ', ' + U.escapar(t.sala) + '</caption>' +
+        '<caption class="so-leitor">Grade de ' + U.escapar(t.curso + ', ' + t.periodo) + ', ' + U.escapar(t.sala) + '</caption>' +
         '<thead>' + thead + '</thead><tbody>' + tbody + '</tbody></table></div>' +
     '</article>';
   }
@@ -232,7 +232,7 @@
           'DTEND:' + data + 'T' + l.fim.replace(':', '') + '00',
           'RRULE:FREQ=WEEKLY;UNTIL=' + ate,
           'SUMMARY:' + esc(cel[0]),
-          'LOCATION:' + esc(turma.sala + ' — UEMG Unidade Guanhães'),
+          'LOCATION:' + esc(turma.sala + ' · UEMG Unidade Guanhães'),
           'DESCRIPTION:' + esc(turma.curso + ' · ' + turma.periodo + (prof ? ' · ' + prof : '')),
           'END:VEVENT'
         );

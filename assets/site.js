@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════
-   NAE Guanhães — comportamentos compartilhados
+   NAE Guanhães · comportamentos compartilhados
    Expõe utilidades em window.NAE para as outras páginas.
    ═══════════════════════════════════════════════════════ */
 (function () {
@@ -293,13 +293,13 @@
       '<span class="rotulo">No iPhone e no iPad</span>' +
       '<h3>Três toques para deixar o NAE na tela inicial</h3>' +
       '<ul class="limpa" style="--c: var(--turquesa)">' +
-        '<li>Toque no botão <b>Compartilhar</b> — o quadradinho com a seta para cima, na barra do Safari.</li>' +
+        '<li>Toque no botão <b>Compartilhar</b>, o quadradinho com a seta para cima, na barra do Safari.</li>' +
         '<li>Deslize a lista e escolha <b>Adicionar à Tela de Início</b>.</li>' +
         '<li>Toque em <b>Adicionar</b>, no canto superior direito.</li>' +
       '</ul>' +
       '<p style="font-size:.92rem;color:var(--muted)">' +
         'Se você abriu este site pelo Instagram ou pelo WhatsApp, primeiro toque nos três pontinhos ' +
-        'e escolha <b>Abrir no Safari</b> — só por lá o iPhone oferece essa opção.' +
+        'e escolha <b>Abrir no Safari</b>, porque só por lá o iPhone oferece essa opção.' +
       '</p>' +
       '<div><button class="btn ghost pequeno" type="button" style="--c: var(--turquesa)">Entendi, fechar</button></div>';
 

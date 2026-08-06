@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════
-   DADOS — Avisos do NAE
+   DADOS · Avisos do NAE
    ───────────────────────────────────────────────────────
    A faixa de aviso aparece no topo de todas as páginas.
    Para publicar um aviso, acrescente um item na lista abaixo.

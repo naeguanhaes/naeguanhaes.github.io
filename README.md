@@ -1,13 +1,13 @@
 | `sistemas.html` | AVA Moodle e Lyceum: links e passo a passo do acesso |
-| `horarios.html` | Grade 2026.2, com "hoje/agora", minha turma e exportação |# NAE Guanhães — site do Núcleo de Apoio ao Estudante
+| `horarios.html` | Grade 2026.2, com "hoje/agora", minha turma e exportação |# NAE Guanhães · site do Núcleo de Apoio ao Estudante
 
-Site do **NAE — Núcleo de Apoio ao Estudante** da **UEMG, Unidade Guanhães**.
+Site do **NAE · Núcleo de Apoio ao Estudante** da **UEMG, Unidade Guanhães**.
 São páginas HTML, uma folha de estilo e alguns scripts: sem dependências e sem
 etapa de compilação. Para publicar, basta enviar os arquivos.
 
 **No ar em:** https://naeguanhaes.github.io/
 **Coordenação:** Jonatan Barbosa Silva
-**Contato do NAE:** nae.guanhaes@uemg.br — sala no **Prédio do Administrativo**,
+**Contato do NAE:** nae.guanhaes@uemg.br, sala no **Prédio do Administrativo**,
 atendimento às terças e quintas das 18h às 19h; quartas mediante agendamento por e-mail.
 
 ---
@@ -31,7 +31,7 @@ atendimento às terças e quintas das 18h às 19h; quartas mediante agendamento 
 ## Atualizar o conteúdo
 
 **Toda a informação que muda de semestre está em `assets/dados-*.js`.**
-Esses arquivos são só dados — não há lógica dentro deles.
+Esses arquivos são só dados, não há lógica dentro deles.
 
 | Arquivo | O que guarda |
 | --- | --- |
@@ -49,7 +49,7 @@ Ela acusa o que o olho não pega: duas turmas na mesma sala no mesmo horário,
 um professor em dois lugares ao mesmo tempo, sigla de professor inexistente,
 horário invertido, data fora do ano. Se acusar erro, corrija antes de publicar.
 
-Lembre-se de atualizar o campo `atualizadoEm` — ele vira o carimbo
+Lembre-se de atualizar o campo `atualizadoEm`, que vira o carimbo
 "Conferido em …" que aparece para o estudante.
 
 ### Publicar um aviso
@@ -73,7 +73,7 @@ assets/site.js               avisos, carrossel, compartilhar, instalação
 assets/horarios.js           grade, painel "hoje", minha turma, exportação .ics
 assets/calendario.js         calendário acadêmico
 assets/mapa.js               ocupação das salas agora e alternância planta/lista
-assets/dados-*.js            DADOS — é aqui que se atualiza o conteúdo
+assets/dados-*.js            DADOS: é aqui que se atualiza o conteúdo
 assets/logo-nae.png          marca oficial (assinatura completa)
 assets/simbolo-nae.png       símbolo isolado
 assets/favicon-nae.png       ícone do site
@@ -87,7 +87,7 @@ ferramentas/checar-dados.js  checagem dos dados
 ### Funciona sem internet
 
 O `sw.js` guarda o site no aparelho na primeira visita. **Ao publicar mudanças,
-troque o número da `VERSAO` no topo do arquivo** — sem isso, quem já visitou
+troque o número da `VERSAO` no topo do arquivo**. Sem isso, quem já visitou
 continua vendo a versão antiga.
 
 ---
@@ -103,7 +103,7 @@ O endereço atual, `naeguanhaes.github.io`, já é institucional: pertence à
 organização do NAE, não a uma conta pessoal, e é gratuito. Se um dia a
 Universidade quiser um endereço no domínio dela:
 
-1. Peça à área de TI da UEMG um subdomínio — por exemplo `nae.guanhaes.uemg.br`.
+1. Peça à área de TI da UEMG um subdomínio, por exemplo `nae.guanhaes.uemg.br`.
 2. Peça que criem um registro **CNAME** apontando esse nome para `naeguanhaes.github.io`.
 3. No repositório, crie um arquivo chamado `CNAME` (sem extensão) com o endereço
    dentro, ou informe-o em *Settings → Pages → Custom domain*.
@@ -126,10 +126,10 @@ git checkout v1-antes-da-repaginacao
 
 ## Fontes dos dados
 
-- Manual de Redefinição de Senha (Discente) — UEMG
-- Horário de Aulas — UEMG Guanhães 2026.2
-- Mapa de Salas 2026.2 — UEMG Guanhães
-- Calendário Acadêmico 2026 — Resolução COEPE/UEMG nº 530, de 11/12/2025
+- Manual de Redefinição de Senha (Discente) · UEMG
+- Horário de Aulas · UEMG Guanhães 2026.2
+- Mapa de Salas 2026.2 · UEMG Guanhães
+- Calendário Acadêmico 2026, Resolução COEPE/UEMG nº 530, de 11/12/2025
 
 ---
 

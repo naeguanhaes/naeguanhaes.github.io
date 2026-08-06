@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════
-   NAE Guanhães — mapa do campus
+   NAE Guanhães · mapa do campus
    • mostra qual turma ocupa cada sala neste momento
    • alterna entre a planta e uma lista, boa para o celular
    ═══════════════════════════════════════════════════════ */
@@ -109,8 +109,8 @@
       { qual: 'Sala nº 8', sala: '8', cor: 'var(--verde)' }
     ]},
     { nome: 'Outros prédios', itens: [
-      { qual: 'Prédio do Administrativo — sala do NAE', link: 'contato.html', quem: 'terças e quintas, 18h–19h', cor: 'var(--coral)' },
-      { qual: 'Prédio Anexo — sala do NPJ', quem: 'Prática Real · Direito', cor: 'var(--azul)' }
+      { qual: 'Prédio do Administrativo · sala do NAE', link: 'contato.html', quem: 'terças e quintas, 18h às 19h', cor: 'var(--coral)' },
+      { qual: 'Prédio Anexo · sala do NPJ', quem: 'Prática Real · Direito', cor: 'var(--azul)' }
     ]}
   ];
 

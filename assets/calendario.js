@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════
-   NAE Guanhães — calendário acadêmico
+   NAE Guanhães · calendário acadêmico
    Lê window.DADOS_CALENDARIO (assets/dados-calendario.js).
    ═══════════════════════════════════════════════════════ */
 (function () {
@@ -49,8 +49,8 @@
     var e = estado(ev);
     var agora = e !== 'hoje' ? ''
       : ev.ini === ev.fim
-        ? ' <b style="color:var(--turquesa)">— é hoje</b>'
-        : ' <b style="color:var(--turquesa)">— em andamento</b>';
+        ? ' <b style="color:var(--turquesa)">· é hoje</b>'
+        : ' <b style="color:var(--turquesa)">· em andamento</b>';
     return '<div class="cal-evento ' + ev.tipo + ' ' + (e === 'passado' ? 'passado' : e === 'hoje' ? 'hoje' : '') + '"' +
            ' data-tipo="' + ev.tipo + '">' +
              '<span class="quando">' + U.escapar(comMes ? comMesHTML(ev) : quando(ev)) + '</span>' +
