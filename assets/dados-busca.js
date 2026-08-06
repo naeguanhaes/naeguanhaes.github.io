@@ -45,7 +45,7 @@ window.DADOS_BUSCA = {
     {
       t: 'Calculadora de média e faltas',
       d: 'Veja quantos pontos faltam para passar e quantas faltas ainda cabem.',
-      u: 'sistemas.html#calculadora',
+      u: 'calculadora.html',
       k: 'calculadora media nota pontos passar aprovacao final faltas frequencia 75 60 reprovar quanto preciso'
     },
     {

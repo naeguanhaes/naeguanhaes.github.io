@@ -5,7 +5,7 @@
    isso apaga o cache antigo e busca tudo de novo.
    ═══════════════════════════════════════════════════════ */
 
-var VERSAO = 'nae-v9';
+var VERSAO = 'nae-v10';
 
 var ESSENCIAIS = [
   './',
@@ -14,6 +14,7 @@ var ESSENCIAIS = [
   './sistemas.html',
   './horarios.html',
   './calendario.html',
+  './calculadora.html',
   './mapa.html',
   './sobre.html',
   './contato.html',

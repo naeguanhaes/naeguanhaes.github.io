@@ -57,6 +57,7 @@
     <a class="nav-link" href="sistemas.html" aria-current="page" style="--c: var(--petroleo)"><i class="dot"></i>Sistemas Acadêmicos</a>
     <a class="nav-link" href="horarios.html" style="--c: var(--turquesa)"><i class="dot"></i>Horários de Aulas</a>
     <a class="nav-link" href="calendario.html" style="--c: var(--lilas)"><i class="dot"></i>Calendário Acadêmico</a>
+    <a class="nav-link" href="calculadora.html" style="--c: var(--turquesa)"><i class="dot"></i>Calculadora</a>
     <a class="nav-link" href="mapa.html" style="--c: var(--verde)"><i class="dot"></i>Mapa do Campus</a>
     <a class="nav-link" href="apoio.html" style="--c: var(--rosa)"><i class="dot"></i>Apoio Psicológico</a>
     <a class="nav-link" href="sobre.html" style="--c: var(--ambar)"><i class="dot"></i>Sobre o NAE</a>
@@ -114,13 +115,19 @@
   </div>
 
   <!-- ══ Lyceum ══ -->
-  <div class="stack-m" id="lyceum">
-    <div class="titulo-sec col" style="--c: var(--azul)">
-      <span class="eyebrow" style="--c: var(--azul)">Sistema acadêmico</span>
-      <h2>Primeiro acesso ao Lyceum</h2>
-    </div>
-
-    <div class="card reveal" style="--c: var(--azul)">
+  <details class="secao reveal" id="lyceum" style="--c: var(--azul)">
+    <summary>
+      <span class="secao-ico" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2.5"></rect><path d="M8 8h8M8 12h8M8 16h5"></path></svg>
+      </span>
+      <span class="secao-tit">
+        <b>Primeiro acesso ao Lyceum</b>
+        <span class="sub">Clique para abrir: o que digitar como usuário e como senha</span>
+      </span>
+      <span class="mais" aria-hidden="true">+</span>
+    </summary>
+    <div class="secao-corpo">
+    <div class="card" style="--c: var(--azul)">
       <span class="rotulo">O que digitar em cada campo</span>
       <h3>Na primeira vez, os dados já são conhecidos</h3>
       <p>
@@ -162,57 +169,22 @@
         <p><b>Esqueceu depois?</b> Use o link <b>Esqueceu a senha?</b>, na própria tela de entrada.</p>
       </div>
     </div>
-
-    <!-- ══ Aplicativo ══ -->
-    <div class="app-caixa reveal" id="app">
-      <svg class="app-icone" viewBox="0 0 64 64" role="img" aria-label="Ícone do aplicativo UEMG+ Estudante">
-        <rect width="64" height="64" rx="14" fill="#1F3A63"></rect>
-        <circle cx="32" cy="32" r="21" fill="#F0B93B"></circle>
-        <rect x="14" y="14" width="16" height="16" rx="2" fill="#FFFFFF"></rect>
-        <rect x="34" y="14" width="16" height="16" rx="2" fill="#FFFFFF"></rect>
-        <rect x="14" y="34" width="16" height="16" rx="2" fill="#FFFFFF"></rect>
-        <rect x="34" y="34" width="16" height="16" rx="2" fill="#FFFFFF"></rect>
-        <text x="22" y="27" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#1F3A63">U</text>
-        <text x="42" y="27" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#1F3A63">E</text>
-        <text x="22" y="47" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#1F3A63">M</text>
-        <text x="42" y="47" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#1F3A63">G</text>
-      </svg>
-      <div class="app-texto">
-        <span class="eyebrow" style="--c: var(--azul-esc)">Aplicativo oficial</span>
-        <h3>UEMG+ Estudante</h3>
-        <p>
-          Baixe o aplicativo no celular ou no tablet e acesse os principais recursos do
-          sistema de gestão integrada na versão móvel do Lyceum UEMG. O login é o mesmo
-          do Lyceum no navegador.
-        </p>
-        <div class="app-lojas">
-          <a class="loja" href="https://play.google.com/store/apps/details?id=br.com.techne.lyceum.uemg&hl=pt_BR" target="_blank" rel="noopener noreferrer">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M3.6 2.2c-.3.3-.5.8-.5 1.4v16.8c0 .6.2 1.1.5 1.4l.1.1 9.4-9.4v-.2L3.7 2.1l-.1.1z"></path>
-              <path d="M16.3 15.6l-3.2-3.1v-.2l3.2-3.2.1.1 3.7 2.1c1.1.6 1.1 1.6 0 2.2l-3.8 2.1z"></path>
-              <path d="M16.4 15.5L13.1 12.3 3.6 21.8c.4.4 1 .4 1.7.1l11.1-6.4"></path>
-              <path d="M16.4 8.5L5.3 2.1c-.7-.4-1.3-.3-1.7.1l9.5 9.4 3.3-3.1z"></path>
-            </svg>
-            <span>Google Play<small>ANDROID</small></span>
-          </a>
-          <a class="loja" href="https://apps.apple.com/br/app/uemg/id6478564031" target="_blank" rel="noopener noreferrer">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M16.4 12.7c0-2.2 1.8-3.3 1.9-3.4-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.7.8-3.3.8-.7 0-1.7-.8-2.8-.8-1.5 0-2.8.8-3.5 2.1-1.5 2.6-.4 6.5 1.1 8.6.7 1 1.6 2.2 2.7 2.2 1.1 0 1.5-.7 2.8-.7 1.3 0 1.6.7 2.8.7 1.2 0 1.9-1.1 2.6-2.1.8-1.2 1.2-2.4 1.2-2.4-.1 0-2.3-.9-2.3-3.3z"></path>
-              <path d="M14.3 5.9c.6-.7 1-1.7.9-2.7-.9 0-2 .6-2.6 1.3-.6.6-1.1 1.7-.9 2.6 1 .1 2-.5 2.6-1.2z"></path>
-            </svg>
-            <span>App Store<small>IPHONE E IPAD</small></span>
-          </a>
-        </div>
-      </div>
     </div>
-  </div>
+  </details>
 
   <!-- ══ Moodle ══ -->
-  <div class="stack-m" id="passo-a-passo">
-    <div class="titulo-sec col" style="--c: var(--petroleo)">
-      <span class="eyebrow" style="--c: var(--petroleo)">Do login ao seu curso</span>
-      <h2>Passo a passo do AVA Moodle</h2>
-    </div>
+  <details class="secao reveal" id="passo-a-passo" style="--c: var(--petroleo)">
+    <summary>
+      <span class="secao-ico" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4L2 8.5l10 4.5 10-4.5z"></path><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"></path><path d="M22 8.5v6"></path></svg>
+      </span>
+      <span class="secao-tit">
+        <b>Passo a passo do AVA Moodle</b>
+        <span class="sub">Clique para abrir: do login ao seu curso, em 8 etapas com as telas</span>
+      </span>
+      <span class="mais" aria-hidden="true">+</span>
+    </summary>
+    <div class="secao-corpo">
 
     <div class="card reveal" style="--c: var(--petroleo)">
       <span class="rotulo">Antes de tudo</span>
@@ -453,72 +425,49 @@
         <li>Secretaria: <a href="mailto:secretaria.guanhaes@uemg.br">secretaria.guanhaes@uemg.br</a></li>
       </ul>
     </div>
-  </div>
-
-  <!-- ══ Calculadora ══ -->
-  <div class="stack-m" id="calculadora">
-    <div class="titulo-sec col" style="--c: var(--turquesa)">
-      <span class="eyebrow" style="--c: var(--turquesa)">Ferramenta do estudante</span>
-      <h2>Calculadora de média e faltas</h2>
     </div>
-    <p class="col lede" style="font-size:1.02rem">
-      Na UEMG, a regra geral é simples: <b>60 dos 100 pontos</b> do semestre e
-      <b>75% de presença</b> em cada disciplina. Use as duas caixas abaixo para saber
-      como você está.
-    </p>
+  </details>
 
-    <div class="calc">
-      <div class="card reveal" style="--c: var(--turquesa)">
-        <span class="rotulo">Nota</span>
-        <h3>Quantos pontos ainda preciso?</h3>
-        <div class="builder">
-          <div class="field">
-            <label for="calc-obtidos">Pontos que você já garantiu</label>
-            <input id="calc-obtidos" type="number" inputmode="numeric" min="0" max="100" step="0.1" placeholder="ex.: 34">
-          </div>
-          <div class="field">
-            <label for="calc-distribuidos">Pontos já distribuídos pela disciplina</label>
-            <input id="calc-distribuidos" type="number" inputmode="numeric" min="0" max="100" step="0.1" placeholder="ex.: 50">
-          </div>
-        </div>
-        <div class="calc-res" id="calc-nota-res" aria-live="polite">
-          Preencha os dois campos acima e o resultado aparece aqui.
-        </div>
-        <p style="font-size:.85rem;color:var(--muted)">
-          Exemplo: se já foram distribuídos 50 pontos em provas e trabalhos e você garantiu 34,
-          a caixa mostra quantos dos 50 pontos restantes você ainda precisa conquistar.
-        </p>
-      </div>
-
-      <div class="card reveal" style="--c: var(--verde)">
-        <span class="rotulo">Frequência</span>
-        <h3>Quantas faltas ainda cabem?</h3>
-        <div class="builder">
-          <div class="field">
-            <label for="calc-aulas">Total de aulas da disciplina no semestre</label>
-            <input id="calc-aulas" type="number" inputmode="numeric" min="1" max="200" step="1" placeholder="ex.: 72">
-          </div>
-          <div class="field">
-            <label for="calc-faltas">Faltas que você já tem</label>
-            <input id="calc-faltas" type="number" inputmode="numeric" min="0" max="200" step="1" placeholder="ex.: 6">
-          </div>
-        </div>
-        <div class="calc-res" id="calc-faltas-res" aria-live="polite">
-          Preencha os dois campos acima e o resultado aparece aqui.
-        </div>
-        <p style="font-size:.85rem;color:var(--muted)">
-          Dica: uma disciplina com 2 aulas por semana em um semestre de 18 semanas tem cerca
-          de 36 aulas. Cada horário na grade conta como uma aula.
-        </p>
-      </div>
-    </div>
-
-    <div class="note col">
+  <!-- ══ Aplicativo ══ -->
+  <div class="app-caixa reveal" id="app">
+    <svg class="app-icone" viewBox="0 0 64 64" role="img" aria-label="Ícone do aplicativo UEMG+ Estudante">
+      <rect width="64" height="64" rx="14" fill="#1F3A63"></rect>
+      <circle cx="32" cy="32" r="21" fill="#F0B93B"></circle>
+      <rect x="14" y="14" width="16" height="16" rx="2" fill="#FFFFFF"></rect>
+      <rect x="34" y="14" width="16" height="16" rx="2" fill="#FFFFFF"></rect>
+      <rect x="14" y="34" width="16" height="16" rx="2" fill="#FFFFFF"></rect>
+      <rect x="34" y="34" width="16" height="16" rx="2" fill="#FFFFFF"></rect>
+      <text x="22" y="27" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#1F3A63">U</text>
+      <text x="42" y="27" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#1F3A63">E</text>
+      <text x="22" y="47" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#1F3A63">M</text>
+      <text x="42" y="47" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#1F3A63">G</text>
+    </svg>
+    <div class="app-texto">
+      <span class="eyebrow" style="--c: var(--azul-esc)">Aplicativo oficial</span>
+      <h3>UEMG+ Estudante</h3>
       <p>
-        <b>Vale conferir</b> Esta calculadora usa a regra geral da UEMG. Algumas disciplinas,
-        como estágios, têm critérios próprios no plano de ensino. Na dúvida, a palavra final
-        é sempre a do professor e da secretaria acadêmica.
+        Baixe o aplicativo no celular ou no tablet e acesse os principais recursos do
+        sistema de gestão integrada na versão móvel do Lyceum UEMG. O login é o mesmo
+        do Lyceum no navegador.
       </p>
+      <div class="app-lojas">
+        <a class="loja" href="https://play.google.com/store/apps/details?id=br.com.techne.lyceum.uemg&hl=pt_BR" target="_blank" rel="noopener noreferrer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M3.6 2.2c-.3.3-.5.8-.5 1.4v16.8c0 .6.2 1.1.5 1.4l.1.1 9.4-9.4v-.2L3.7 2.1l-.1.1z"></path>
+            <path d="M16.3 15.6l-3.2-3.1v-.2l3.2-3.2.1.1 3.7 2.1c1.1.6 1.1 1.6 0 2.2l-3.8 2.1z"></path>
+            <path d="M16.4 15.5L13.1 12.3 3.6 21.8c.4.4 1 .4 1.7.1l11.1-6.4"></path>
+            <path d="M16.4 8.5L5.3 2.1c-.7-.4-1.3-.3-1.7.1l9.5 9.4 3.3-3.1z"></path>
+          </svg>
+          <span>Google Play<small>ANDROID</small></span>
+        </a>
+        <a class="loja" href="https://apps.apple.com/br/app/uemg/id6478564031" target="_blank" rel="noopener noreferrer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M16.4 12.7c0-2.2 1.8-3.3 1.9-3.4-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.7.8-3.3.8-.7 0-1.7-.8-2.8-.8-1.5 0-2.8.8-3.5 2.1-1.5 2.6-.4 6.5 1.1 8.6.7 1 1.6 2.2 2.7 2.2 1.1 0 1.5-.7 2.8-.7 1.3 0 1.6.7 2.8.7 1.2 0 1.9-1.1 2.6-2.1.8-1.2 1.2-2.4 1.2-2.4-.1 0-2.3-.9-2.3-3.3z"></path>
+            <path d="M14.3 5.9c.6-.7 1-1.7.9-2.7-.9 0-2 .6-2.6 1.3-.6.6-1.1 1.7-.9 2.6 1 .1 2-.5 2.6-1.2z"></path>
+          </svg>
+          <span>App Store<small>IPHONE E IPAD</small></span>
+        </a>
+      </div>
     </div>
   </div>
 
@@ -607,82 +556,25 @@
   botao.addEventListener('click', function () {
     var abrir = botao.getAttribute('data-aberto') !== 'sim';
     passos.forEach(function (p) { p.open = abrir; });
+    if (abrir) { var sec = document.getElementById('passo-a-passo'); if (sec) sec.open = true; }
     botao.setAttribute('data-aberto', abrir ? 'sim' : 'nao');
     botao.textContent = abrir ? 'Fechar todas as etapas' : 'Abrir todas as etapas';
   });
 })();
-
-/* calculadora de média e faltas */
+/* quando o endereço aponta para uma seção fechada, abre */
 (function () {
-  function num(id) {
-    var el = document.getElementById(id);
-    if (!el || el.value === '') return null;
-    var v = parseFloat(String(el.value).replace(',', '.'));
-    return isNaN(v) ? null : v;
-  }
-  function mostrar(id, classe, html) {
+  function abrir() {
+    var id = window.location.hash.slice(1);
+    if (!id) return;
     var el = document.getElementById(id);
     if (!el) return;
-    el.className = 'calc-res' + (classe ? ' ' + classe : '');
-    el.innerHTML = html;
+    if (el.tagName === 'DETAILS') el.open = true;
+    var pai = el.closest ? el.closest('details') : null;
+    if (pai) pai.open = true;
+    el.scrollIntoView({ block: 'start' });
   }
-
-  function nota() {
-    var obtidos = num('calc-obtidos');
-    var distribuidos = num('calc-distribuidos');
-    if (obtidos === null || distribuidos === null) {
-      mostrar('calc-nota-res', '', 'Preencha os dois campos acima e o resultado aparece aqui.');
-      return;
-    }
-    if (obtidos < 0 || distribuidos < 0 || distribuidos > 100 || obtidos > distribuidos) {
-      mostrar('calc-nota-res', 'olho', 'Confira os valores: os pontos garantidos não podem passar dos pontos já distribuídos, e o total do semestre é 100.');
-      return;
-    }
-    var restantes = Math.round((100 - distribuidos) * 10) / 10;
-    var faltam = Math.round(Math.max(0, 60 - obtidos) * 10) / 10;
-    if (faltam === 0) {
-      mostrar('calc-nota-res', 'boa', '<b>Você já garantiu os 60 pontos.</b> Aprovação por nota assegurada. Continue firme e cuide da frequência.');
-    } else if (faltam > restantes) {
-      mostrar('calc-nota-res', 'ruim', 'Você precisa de <b>' + faltam + '</b> pontos, mas só restam <b>' + restantes + '</b> em disputa. Pelos 100 pontos do semestre não dá mais para chegar aos 60. Converse com o professor e com a secretaria sobre as possibilidades, como o exame especial.');
-    } else {
-      var pct = restantes > 0 ? Math.round((faltam / restantes) * 100) : 0;
-      var tom = pct > 75 ? 'olho' : 'boa';
-      mostrar('calc-nota-res', tom, 'Faltam <b>' + faltam + ' pontos</b> para os 60. Ainda há <b>' + restantes + '</b> em disputa, então você precisa de cerca de <b>' + pct + '%</b> do que vem pela frente.');
-    }
-  }
-
-  function faltas() {
-    var total = num('calc-aulas');
-    var tidas = num('calc-faltas');
-    if (total === null || tidas === null) {
-      mostrar('calc-faltas-res', '', 'Preencha os dois campos acima e o resultado aparece aqui.');
-      return;
-    }
-    if (total < 1 || tidas < 0 || tidas > total) {
-      mostrar('calc-faltas-res', 'olho', 'Confira os valores: as faltas não podem passar do total de aulas.');
-      return;
-    }
-    var limite = Math.floor(total * 0.25);
-    var sobram = limite - tidas;
-    if (sobram > limite * 0.4) {
-      mostrar('calc-faltas-res', 'boa', 'Você pode faltar no máximo <b>' + limite + '</b> aulas nessa disciplina. Ainda cabem <b>' + sobram + '</b> faltas, mas guarde essa margem para imprevistos de verdade.');
-    } else if (sobram > 0) {
-      mostrar('calc-faltas-res', 'olho', 'Atenção: o limite é <b>' + limite + '</b> faltas e você já usou <b>' + tidas + '</b>. Só cabem mais <b>' + sobram + '</b>. A partir daqui, cada presença conta.');
-    } else if (sobram === 0) {
-      mostrar('calc-faltas-res', 'olho', '<b>Margem esgotada.</b> O limite é ' + limite + ' faltas e você chegou nele. Mais uma falta pode reprovar por frequência, independentemente da nota.');
-    } else {
-      mostrar('calc-faltas-res', 'ruim', 'Você já passou do limite de <b>' + limite + '</b> faltas. Procure a secretaria acadêmica e o professor o quanto antes para entender a sua situação.');
-    }
-  }
-
-  ['calc-obtidos', 'calc-distribuidos'].forEach(function (id) {
-    var el = document.getElementById(id);
-    if (el) el.addEventListener('input', nota);
-  });
-  ['calc-aulas', 'calc-faltas'].forEach(function (id) {
-    var el = document.getElementById(id);
-    if (el) el.addEventListener('input', faltas);
-  });
+  window.addEventListener('hashchange', abrir);
+  abrir();
 })();
 </script>
 <script data-goatcounter="https://naeguanhaes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>

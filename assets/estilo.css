@@ -299,6 +299,11 @@ ul.limpa li::before {
 }
 @media (max-width: 820px) { .hero-marca { display: none; } }
 
+/* hero em tons de acolhimento (página de apoio) */
+.hero.rosa { background: linear-gradient(122deg, #6E2643 0%, #A64069 52%, #7166B8 100%); }
+.hero.rosa .eyebrow { color: #F5C6D8; }
+.hero.rosa::after { background: #40688B; opacity: .5; }
+
 /* ── Painel "hoje / agora" ────────────────────────────── */
 .agora {
   --c: var(--turquesa);
@@ -660,6 +665,23 @@ table.grade td.agora {
 }
 .cal-evento .oque { color: var(--ink-2); }
 
+/* ── Novidades ─────────────────────────────────────────── */
+.novidades-lista { display: flex; flex-direction: column; gap: .85rem; }
+.novidade { display: flex; gap: 1rem; align-items: flex-start; }
+.novidade .quando {
+  font-family: var(--mono); font-size: .78rem; font-weight: 700;
+  color: var(--turquesa); white-space: nowrap; flex: none;
+  font-variant-numeric: tabular-nums; margin-top: .12rem;
+  background: #E2F2F6;
+  background: color-mix(in srgb, var(--turquesa) 12%, var(--surface));
+  border: 1px solid #BFE2EA;
+  border: 1px solid color-mix(in srgb, var(--turquesa) 25%, transparent);
+  border-radius: 99px; padding: .12rem .55rem;
+}
+.novidade .oque { display: flex; flex-direction: column; gap: .12rem; font-size: .93rem; }
+.novidade .oque b { color: var(--ink); }
+.novidade .oque > span { color: var(--muted); }
+
 /* ── Planta e mapa ────────────────────────────────────── */
 .planta-caixa {
   background: var(--surface); border: 1px solid var(--hair);
@@ -801,6 +823,53 @@ details.passo[open] .mais { transform: rotate(45deg); background: var(--c); colo
   display: flex; flex-direction: column; gap: var(--s2);
 }
 .passo-corpo > p { color: var(--ink-2); }
+
+/* ── Seção inteira que abre ao clicar ──────────────────── */
+details.secao {
+  --c: var(--azul);
+  background: var(--surface); border: 1px solid var(--hair);
+  border-radius: var(--radius); box-shadow: var(--sh-1);
+  overflow: hidden; transition: border-color .18s, box-shadow .18s;
+  scroll-margin-top: 5rem;
+}
+details.secao:hover { border-color: color-mix(in srgb, var(--c) 35%, var(--hair)); }
+details.secao[open] { border-color: color-mix(in srgb, var(--c) 45%, var(--hair)); box-shadow: var(--sh-2); }
+details.secao > summary {
+  cursor: pointer; list-style: none;
+  display: flex; align-items: center; gap: var(--s3);
+  padding: var(--s3) var(--s4);
+}
+details.secao > summary::-webkit-details-marker { display: none; }
+details.secao[open] > summary {
+  background: color-mix(in srgb, var(--c) 7%, var(--surface));
+  border-bottom: 1px solid var(--hair);
+}
+.secao-ico {
+  width: 3.1rem; height: 3.1rem; border-radius: 16px; flex: none;
+  display: grid; place-items: center;
+  background: color-mix(in srgb, var(--c) 14%, var(--surface)); color: var(--c);
+}
+.secao-tit { display: flex; flex-direction: column; gap: .15rem; min-width: 0; }
+.secao-tit b {
+  font-family: var(--serif); font-weight: 600; color: var(--ink);
+  font-size: clamp(1.25rem, 1rem + 1vw, 1.65rem); line-height: 1.2;
+}
+.secao-tit .sub { font-size: .9rem; color: var(--muted); }
+details.secao > summary .mais {
+  margin-left: auto; flex: none;
+  width: 2.2rem; height: 2.2rem; border-radius: 99px;
+  display: grid; place-items: center;
+  background: color-mix(in srgb, var(--c) 13%, var(--surface));
+  color: var(--c); font-family: var(--sans); font-weight: 800; font-size: 1.15rem;
+  transition: background .18s, color .18s, transform .18s;
+}
+details.secao > summary:hover .mais { background: var(--c); color: #fff; }
+details.secao[open] > summary .mais { transform: rotate(45deg); background: var(--c); color: #fff; }
+.secao-corpo { padding: var(--s4); display: flex; flex-direction: column; gap: var(--s3); }
+@media (max-width: 560px) {
+  details.secao > summary { padding: var(--s2) var(--s3); }
+  .secao-corpo { padding: var(--s3); }
+}
 
 /* ── Aplicativo nas lojas ──────────────────────────────── */
 .app-caixa {
@@ -999,8 +1068,8 @@ html[data-fonte="3"] body { font-size: 21px; }
   table.grade thead th { background: #eee !important; color: #000 !important; }
   main { padding-block: 0; }
   .reveal { opacity: 1 !important; transform: none !important; }
-  .passo-corpo { display: flex !important; }
-  details.passo .mais { display: none; }
+  .passo-corpo, .secao-corpo { display: flex !important; }
+  details.passo .mais, details.secao .mais { display: none; }
 }
 
 /* ── Telas do AVA Moodle ──────────────────────────────── */

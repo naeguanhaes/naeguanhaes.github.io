@@ -34,8 +34,8 @@ window.DADOS_NOVIDADES = {
     {
       data: '2026-08-06',
       titulo: 'Calculadora de média e faltas',
-      texto: 'Descubra quantos pontos ainda precisa para os 60 e quantas faltas cabem sem reprovar.',
-      link: 'sistemas.html#calculadora',
+      texto: 'Descubra quantos pontos ainda precisa para os 60 e quantas faltas cabem sem reprovar. Agora em uma aba própria.',
+      link: 'calculadora.html',
       textoLink: 'usar a calculadora'
     },
     {

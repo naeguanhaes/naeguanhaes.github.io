@@ -20,6 +20,7 @@
     { t: 'Onde fica minha sala?', u: 'mapa.html', c: 'var(--verde)' },
     { t: 'Que aula tenho hoje?', u: 'horarios.html', c: 'var(--turquesa)' },
     { t: 'Quando é o próximo feriado?', u: 'calendario.html', c: 'var(--lilas)' },
+    { t: 'Quantas faltas posso ter?', u: 'calculadora.html', c: 'var(--turquesa)' },
     { t: 'Preciso de apoio psicológico', u: 'apoio.html', c: 'var(--rosa)' }
   ];
 
