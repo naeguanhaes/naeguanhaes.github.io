@@ -5,6 +5,10 @@ Ao fazer uma alteração relevante, acrescente uma entrada no topo.
 
 ## 06/08/2026 · quinta rodada
 
+- Correção do coordenador: cada faixa da grade vale DUAS aulas de 50 minutos,
+  não uma. O planner passou a calcular a partir da duração de cada faixa
+  (100 minutos dividido por 50), então o limite de faltas dobrou e ficou correto
+
 - Planner do semestre: caderno de 4 folhas A4 com grade, mapa das semanas,
   controle de notas e controle de faltas, com o limite calculado por disciplina
 - Cronômetro de estudos em blocos de 25 minutos, na página de ferramentas

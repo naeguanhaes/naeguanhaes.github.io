@@ -1077,6 +1077,8 @@ html[data-contraste="alto"] .cal-evento.passado { opacity: 1; }
   display: inline-block; width: .8rem; height: .8rem; margin: .12rem .16rem 0 0;
   border: 1px solid var(--line); border-radius: 3px;
 }
+/* respiro a cada quatro quadrados: é uma noite inteira de aula */
+.planner-faltas .pl-quadros i.grupo { margin-right: .6rem; }
 
 .planner-regra {
   border-left: 4px solid var(--c);

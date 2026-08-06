@@ -61,19 +61,30 @@
     });
   }
 
+  /* Cada faixa da grade dura 100 minutos e vale DUAS aulas de 50.
+     O horário de 19h às 20h40 são 2 aulas, e o de 20h50 às 22h30 são
+     outras 2: uma noite inteira dá 4 aulas, e 4 faltas para quem some. */
+  function aulasDaFaixa(linha) {
+    if (!linha.ini || !linha.fim) return 2;
+    var minutos = U.minutosDe(linha.fim) - U.minutosDe(linha.ini);
+    return Math.max(1, Math.round(minutos / 50));
+  }
+
   /* uma entrada por disciplina, com professor, quantas aulas por semana
      e o limite de faltas do semestre */
   function disciplinas(turma, totalSemanas) {
     var mapa = {};
     turma.linhas.forEach(function (l) {
+      var aulas = aulasDaFaixa(l);
       l.celulas.forEach(function (cel, col) {
         if (!cel) return;
         var nome = limpo(cel[0]);
         if (!mapa[nome]) {
-          mapa[nome] = { nome: nome, tag: marca(cel[0]), prof: D.professores[cel[1]] || '', porSemana: 0, ead: 0 };
+          mapa[nome] = { nome: nome, tag: marca(cel[0]), prof: D.professores[cel[1]] || '', porSemana: 0, faixas: 0, ead: 0 };
         }
-        mapa[nome].porSemana++;
-        if (col === 5) mapa[nome].ead++;
+        mapa[nome].porSemana += aulas;
+        mapa[nome].faixas++;
+        if (col === 5) mapa[nome].ead += aulas;
         if (!mapa[nome].prof && cel[1]) mapa[nome].prof = D.professores[cel[1]] || '';
       });
     });
@@ -126,6 +137,7 @@
       return '<tr>' +
         '<td><b>' + U.escapar(d.nome) + '</b>' + (d.tag ? ' <span class="pl-tag">' + U.escapar(d.tag) + '</span>' : '') + '</td>' +
         '<td>' + U.escapar(d.prof) + '</td>' +
+        '<td class="pl-num">' + d.faixas + '</td>' +
         '<td class="pl-num">' + d.porSemana + '</td>' +
         '<td class="pl-num">' + d.total + '</td>' +
         '<td class="pl-num pl-forte">' + d.limite + '</td>' +
@@ -144,11 +156,12 @@
         '<table class="planner-grade"><thead>' + thead + '</thead><tbody>' + tbody + '</tbody></table>' +
         '<h3 class="planner-h">Disciplinas do semestre</h3>' +
         '<table class="planner-lista">' +
-          '<thead><tr><th>Disciplina</th><th>Professor</th><th>Aulas por semana</th><th>Aulas no semestre</th><th>Limite de faltas</th></tr></thead>' +
+          '<thead><tr><th>Disciplina</th><th>Professor</th><th>Encontros por semana</th><th>Aulas por semana</th><th>Aulas no semestre</th><th>Limite de faltas</th></tr></thead>' +
           '<tbody>' + listaDisc + '</tbody>' +
         '</table>' +
-        '<p class="planner-obs">O limite de faltas considera 75% de presença sobre ' + sem.length +
-        ' semanas de aula. Disciplinas com aula a distância podem ter controle próprio: confirme no plano de ensino.</p>' +
+        '<p class="planner-obs"><b>Como a conta é feita</b> Cada faixa da grade dura 100 minutos e vale <b>duas aulas</b> de 50. ' +
+        'Uma noite inteira, das 19h às 22h30, são <b>quatro aulas</b>. O limite considera 75% de presença sobre ' + sem.length +
+        ' semanas. Disciplinas com aula a distância podem ter controle próprio: confirme no plano de ensino.</p>' +
         RODAPE +
       '</section>';
 
@@ -210,7 +223,11 @@
     /* ── folha 4: faltas e anotações ── */
     var linhasFalta = disc.map(function (d) {
       var quadros = '';
-      for (var i = 0; i < Math.max(6, Math.min(d.limite, 20)); i++) quadros += '<i></i>';
+      var quantos = Math.max(6, Math.min(d.limite, 28));
+      for (var i = 0; i < quantos; i++) {
+        /* a cada 4, um respiro: é o tamanho de uma noite inteira de aula */
+        quadros += '<i' + ((i + 1) % 4 === 0 && i + 1 < quantos ? ' class="grupo"' : '') + '></i>';
+      }
       return '<tr>' +
         '<td class="pl-disc">' + U.escapar(d.nome) + '</td>' +
         '<td class="pl-num pl-forte">' + d.limite + '</td>' +
@@ -222,7 +239,9 @@
       '<section class="planner-pagina" style="--c: ' + cor + '">' +
         cabecalhoFolha(t, 4, 'Faltas e anotações') +
         '<div class="planner-regra">' +
-          '<b>Atenção</b> Cada horário da grade conta como <b>uma aula</b>. Se você faltar uma noite inteira de quatro horários, marque <b>quatro quadrados</b>.' +
+          '<b>Atenção</b> Cada faixa da grade vale <b>duas aulas</b>: das 19h às 20h40 são duas, ' +
+          'e das 20h50 às 22h30 são mais duas. Faltou a noite inteira, marque <b>quatro quadrados</b>. ' +
+          'Os quadrados estão agrupados de quatro em quatro justamente por isso.' +
         '</div>' +
         '<h3 class="planner-h">Marque um quadrado a cada falta</h3>' +
         '<table class="planner-faltas">' +
