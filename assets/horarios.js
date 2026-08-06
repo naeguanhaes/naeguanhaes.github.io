@@ -195,9 +195,11 @@
         '<span class="turma-acoes">' +
           '<button class="acao" type="button" data-minha="' + t.id + '">minha turma</button>' +
           '<button class="acao" type="button" data-ics="' + t.id + '">📅 calendário</button>' +
+          '<button class="acao" type="button" data-imagem="' + t.id + '">🖼 salvar imagem</button>' +
           '<button class="acao" type="button" data-imprimir="' + t.id + '">imprimir</button>' +
         '</span>' +
       '</div>' +
+      '<p class="dica-rolagem">arraste a tabela para o lado para ver a semana inteira</p>' +
       '<div class="rolagem"><table class="grade">' +
         '<caption class="so-leitor">Grade de ' + U.escapar(t.curso + ', ' + t.periodo) + ', ' + U.escapar(t.sala) + '</caption>' +
         '<thead>' + thead + '</thead><tbody>' + tbody + '</tbody></table></div>' +
@@ -246,6 +248,186 @@
     a.download = 'horarios-' + turma.id + '.ics';
     document.body.appendChild(a); a.click();
     setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+  }
+
+  /* ── Grade em imagem (PNG para a galeria) ─────────── */
+  function baixarPNG(turma) {
+    var logo = new Image();
+    logo.onload = function () { desenharGrade(turma, logo); };
+    logo.onerror = function () { desenharGrade(turma, null); };
+    logo.src = 'assets/logo-nae.png';
+  }
+
+  function desenharGrade(turma, logo) {
+    var AZUL = '#40688B', VERMELHO = '#D91F35', ESC = '#22475F',
+        INK = '#16303F', INK2 = '#35566C', MUTED = '#61798D',
+        HAIR = '#E8F0F6', LINHA = '#D5E2EC';
+    var corCurso = turma.curso === 'Direito' ? '#35618A' : '#2E9A6B';
+
+    var W = 1500, M = 48;
+    var colHora = 120, colDia = (W - 2 * M - colHora) / 6;
+    var F_DISC = '600 15px "Segoe UI", Arial, sans-serif';
+    var F_PROF = 'italic 12.5px "Segoe UI", Arial, sans-serif';
+
+    var canvas = document.createElement('canvas');
+    var ctx = canvas.getContext('2d');
+
+    function quebrar(texto, fonte, largura) {
+      ctx.font = fonte;
+      var palavras = String(texto).split(' ');
+      var linhas = [], atual = '';
+      palavras.forEach(function (p) {
+        var tent = atual ? atual + ' ' + p : p;
+        if (ctx.measureText(tent).width > largura && atual) { linhas.push(atual); atual = p; }
+        else atual = tent;
+      });
+      if (atual) linhas.push(atual);
+      return linhas;
+    }
+
+    function caixaRedonda(x, y, w, h, r) {
+      ctx.beginPath();
+      ctx.moveTo(x + r, y);
+      ctx.arcTo(x + w, y, x + w, y + h, r);
+      ctx.arcTo(x + w, y + h, x, y + h, r);
+      ctx.arcTo(x, y + h, x, y, r);
+      ctx.arcTo(x, y, x + w, y, r);
+      ctx.closePath();
+    }
+
+    /* mede as linhas antes de definir a altura da imagem */
+    var linhas = turma.linhas.map(function (l) {
+      var cels = l.celulas.map(function (cel) {
+        if (!cel) return null;
+        var prof = D.professores[cel[1]] || '';
+        return {
+          disc: quebrar(cel[0], F_DISC, colDia - 26),
+          prof: prof ? quebrar(prof, F_PROF, colDia - 26) : []
+        };
+      });
+      var alto = 56;
+      cels.forEach(function (c) {
+        if (!c) return;
+        var precisa = 24 + c.disc.length * 19 + (c.prof.length ? c.prof.length * 16 + 6 : 0);
+        if (precisa > alto) alto = precisa;
+      });
+      return { l: l, cels: cels, alto: alto };
+    });
+
+    var altoCabec = 152, altoTh = 46, altoRodape = 66;
+    var corpoAlto = linhas.reduce(function (s, r) { return s + r.alto; }, 0);
+    var H = altoCabec + altoTh + corpoAlto + altoRodape + M;
+
+    canvas.width = W * 2; canvas.height = H * 2;
+    ctx.scale(2, 2);
+
+    /* fundo e faixa da marca */
+    ctx.fillStyle = '#F2F6FA'; ctx.fillRect(0, 0, W, H);
+    ctx.fillStyle = AZUL; ctx.fillRect(0, 0, W * 0.58, 10);
+    ctx.fillStyle = VERMELHO; ctx.fillRect(W * 0.58, 0, W * 0.42, 10);
+
+    /* cantos decorativos, como no site */
+    ctx.fillStyle = 'rgba(64,104,139,.10)';
+    ctx.beginPath(); ctx.moveTo(W, H); ctx.arc(W, H, 130, Math.PI, Math.PI * 1.5); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = 'rgba(217,31,53,.10)';
+    ctx.beginPath(); ctx.moveTo(W, H); ctx.arc(W, H, 78, Math.PI, Math.PI * 1.5); ctx.closePath(); ctx.fill();
+
+    /* cabeçalho com a logo */
+    if (logo) {
+      caixaRedonda(M, 30, 208, 96, 14);
+      ctx.fillStyle = '#FFFFFF'; ctx.fill();
+      ctx.strokeStyle = LINHA; ctx.lineWidth = 1; ctx.stroke();
+      var lw = 184, lh = lw * (logo.height / logo.width);
+      ctx.drawImage(logo, M + 12, 30 + (96 - lh) / 2, lw, lh);
+    }
+    var tx = M + (logo ? 236 : 0);
+    ctx.fillStyle = ESC;
+    ctx.font = '700 27px Georgia, "Times New Roman", serif';
+    ctx.fillText('Horários de aulas · ' + (D.semestre || ''), tx, 62);
+    ctx.fillStyle = corCurso;
+    ctx.font = '700 18px "Segoe UI", Arial, sans-serif';
+    ctx.fillText(turma.curso + ' · ' + turma.periodo + ' · ' + turma.turma, tx, 90);
+    ctx.fillStyle = MUTED;
+    ctx.font = '400 14px "Segoe UI", Arial, sans-serif';
+    ctx.fillText(turma.sala + '  ·  UEMG Unidade Guanhães', tx, 114);
+
+    /* cabeçalho da tabela */
+    var y = altoCabec, x0 = M, tabelaW = W - 2 * M;
+    caixaRedonda(x0, y, tabelaW, altoTh + corpoAlto, 12);
+    ctx.fillStyle = '#FFFFFF'; ctx.fill();
+    ctx.save(); ctx.clip();
+
+    ctx.fillStyle = corCurso; ctx.fillRect(x0, y, tabelaW, altoTh);
+    ctx.fillStyle = '#FFFFFF';
+    ctx.font = '800 12.5px "Segoe UI", Arial, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('HORÁRIO', x0 + colHora / 2, y + 29);
+    DIAS.forEach(function (d, i) {
+      ctx.fillText(d.toUpperCase(), x0 + colHora + colDia * i + colDia / 2, y + 29);
+    });
+
+    /* corpo */
+    var yl = y + altoTh;
+    linhas.forEach(function (r, ri) {
+      if (ri % 2 === 1) { ctx.fillStyle = '#F8FBFD'; ctx.fillRect(x0, yl, tabelaW, r.alto); }
+      /* coluna EaD com fundo próprio */
+      ctx.fillStyle = 'rgba(113,102,184,.07)';
+      ctx.fillRect(x0 + colHora + colDia * 5, yl, colDia, r.alto);
+      /* hora */
+      ctx.fillStyle = '#F5F9FC'; ctx.fillRect(x0, yl, colHora, r.alto);
+      ctx.fillStyle = INK2;
+      ctx.font = '700 13px Consolas, monospace';
+      ctx.textAlign = 'center';
+      ctx.fillText(r.l.rotulo, x0 + colHora / 2, yl + r.alto / 2 + 4);
+      /* células */
+      r.cels.forEach(function (c, ci) {
+        var cx = x0 + colHora + colDia * ci;
+        if (!c) {
+          ctx.fillStyle = 'rgba(97,121,141,.4)';
+          ctx.font = '400 14px "Segoe UI", Arial, sans-serif';
+          ctx.fillText('·', cx + colDia / 2, yl + r.alto / 2 + 4);
+          return;
+        }
+        ctx.textAlign = 'left';
+        var ty = yl + 24;
+        ctx.fillStyle = INK; ctx.font = F_DISC;
+        c.disc.forEach(function (ln) { ctx.fillText(ln, cx + 13, ty); ty += 19; });
+        ctx.fillStyle = MUTED; ctx.font = F_PROF;
+        c.prof.forEach(function (ln) { ty += ci === 0 ? 0 : 0; ctx.fillText(ln, cx + 13, ty); ty += 16; });
+        ctx.textAlign = 'center';
+      });
+      /* divisórias */
+      ctx.strokeStyle = HAIR; ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(x0, yl); ctx.lineTo(x0 + tabelaW, yl); ctx.stroke();
+      yl += r.alto;
+    });
+    for (var ci = 0; ci <= 6; ci++) {
+      var vx = x0 + colHora + colDia * ci;
+      if (ci === 6) vx = x0 + tabelaW;
+      ctx.beginPath(); ctx.moveTo(ci === 0 ? x0 + colHora : vx, y + altoTh);
+      ctx.lineTo(ci === 0 ? x0 + colHora : vx, y + altoTh + corpoAlto); ctx.stroke();
+    }
+    ctx.restore();
+    ctx.strokeStyle = LINHA;
+    caixaRedonda(x0, y, tabelaW, altoTh + corpoAlto, 12); ctx.stroke();
+
+    /* rodapé */
+    ctx.textAlign = 'left';
+    ctx.fillStyle = AZUL;
+    ctx.font = '700 15px "Segoe UI", Arial, sans-serif';
+    ctx.fillText('naeguanhaes.github.io', M, H - 34);
+    ctx.fillStyle = MUTED;
+    ctx.font = '400 12.5px "Segoe UI", Arial, sans-serif';
+    ctx.fillText('NAE · Núcleo de Apoio ao Estudante · Conferido em ' + U.dataBR(D.atualizadoEm), M + 200, H - 34);
+
+    canvas.toBlob(function (blob) {
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'horarios-' + turma.id + '.png';
+      document.body.appendChild(a); a.click();
+      setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+      if (U.toast) U.toast('Imagem salva! Procure nos downloads ou na galeria.');
+    }, 'image/png');
   }
 
   /* ── Montagem da lista ────────────────────────────── */
@@ -304,7 +486,7 @@
     }
 
     lista.addEventListener('click', function (e) {
-      var alvo = e.target.closest('[data-prof], [data-ics], [data-imprimir], [data-minha]');
+      var alvo = e.target.closest('[data-prof], [data-ics], [data-imagem], [data-imprimir], [data-minha]');
       if (!alvo) return;
 
       if (alvo.hasAttribute('data-prof') && campo) {
@@ -319,11 +501,13 @@
         return;
       }
 
-      var id = alvo.getAttribute('data-ics') || alvo.getAttribute('data-imprimir') || alvo.getAttribute('data-minha');
+      var id = alvo.getAttribute('data-ics') || alvo.getAttribute('data-imagem') ||
+               alvo.getAttribute('data-imprimir') || alvo.getAttribute('data-minha');
       var turma = D.turmas.filter(function (t) { return t.id === id; })[0];
       if (!turma) return;
 
       if (alvo.hasAttribute('data-ics')) { baixarICS(turma); return; }
+      if (alvo.hasAttribute('data-imagem')) { baixarPNG(turma); return; }
 
       if (alvo.hasAttribute('data-minha')) {
         if (U.ler('turma') === id) U.apagar('turma'); else U.guardar('turma', id);

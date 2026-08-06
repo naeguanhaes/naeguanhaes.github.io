@@ -52,7 +52,7 @@ H.turmas.forEach((t) => {
       return;
     }
     if (l.ini && l.fim && min(l.ini) >= min(l.fim)) {
-      erros.push(`${t.id}, linha ${l.rotulo}: horário invertido (${l.ini}–${l.fim})`);
+      erros.push(`${t.id}, linha ${l.rotulo}: horário invertido (${l.ini}-${l.fim})`);
     }
 
     l.celulas.forEach((cel, dia) => {
@@ -89,7 +89,7 @@ function conflitos(mapa, rotulo, nomeDe) {
         if (a.turma === b.turma) continue;
         if (a.ini < b.fim && b.ini < a.fim) {
           erros.push(
-            `${rotulo} ${nomeDe(quem)} — ${DIAS[dia]}: "${a.turma}" (${a.rotulo}, ${a.disciplina}) ` +
+            `${rotulo} ${nomeDe(quem)} · ${DIAS[dia]}: "${a.turma}" (${a.rotulo}, ${a.disciplina}) ` +
             `e "${b.turma}" (${b.rotulo}, ${b.disciplina}) se sobrepõem`
           );
         }
@@ -104,7 +104,7 @@ conflitos(ocupacaoProf, 'Professor', (s) => H.professores[s] || s);
 const usados = new Set();
 H.turmas.forEach((t) => t.linhas.forEach((l) => l.celulas.forEach((c) => { if (c) usados.add(c[1]); })));
 Object.keys(H.professores).forEach((k) => {
-  if (!usados.has(k)) alertas.push(`professor cadastrado e não usado: ${k} — ${H.professores[k]}`);
+  if (!usados.has(k)) alertas.push(`professor cadastrado e não usado: ${k} · ${H.professores[k]}`);
 });
 
 if (!/^\d{4}-\d{2}-\d{2}$/.test(H.atualizadoEm || '')) erros.push('dados-horarios: atualizadoEm ausente ou fora do formato AAAA-MM-DD');
@@ -134,9 +134,9 @@ const turmas = H.turmas.length;
 const aulas = H.turmas.reduce((n, t) => n + t.linhas.reduce((m, l) => m + l.celulas.filter(Boolean).length, 0), 0);
 
 console.log('');
-console.log('  Horários ' + H.semestre + ' — ' + turmas + ' turmas, ' + aulas + ' aulas, ' + Object.keys(H.professores).length + ' professores');
-if (C) console.log('  Calendário ' + C.ano + ' — ' + C.eventos.length + ' datas');
-if (A) console.log('  Avisos — ' + (A.avisos || []).length + ' cadastrados');
+console.log('  Horários ' + H.semestre + ' · ' + turmas + ' turmas, ' + aulas + ' aulas, ' + Object.keys(H.professores).length + ' professores');
+if (C) console.log('  Calendário ' + C.ano + ' · ' + C.eventos.length + ' datas');
+if (A) console.log('  Avisos · ' + (A.avisos || []).length + ' cadastrados');
 console.log('');
 
 if (alertas.length) {

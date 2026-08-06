@@ -1,11 +1,11 @@
 /* ═══════════════════════════════════════════════════════
-   NAE Guanhães — trabalhador de serviço (offline)
+   NAE Guanhães · trabalhador de serviço (offline)
    Guarda o site no aparelho para funcionar sem internet.
    Ao publicar mudanças, troque o número da VERSAO abaixo:
    isso apaga o cache antigo e busca tudo de novo.
    ═══════════════════════════════════════════════════════ */
 
-var VERSAO = 'nae-v8';
+var VERSAO = 'nae-v9';
 
 var ESSENCIAIS = [
   './',
@@ -17,19 +17,22 @@ var ESSENCIAIS = [
   './mapa.html',
   './sobre.html',
   './contato.html',
+  './apoio.html',
   './404.html',
   './manifest.webmanifest',
-  './assets/estilo.css',
-  './assets/site.js',
-  './assets/horarios.js',
-  './assets/calendario.js',
-  './assets/mapa.js',
+  './assets/min/estilo.min.css',
+  './assets/min/site.min.js',
+  './assets/min/horarios.min.js',
+  './assets/min/calendario.min.js',
+  './assets/min/mapa.min.js',
   './assets/dados-horarios.js',
   './assets/dados-calendario.js',
   './assets/dados-avisos.js',
   './assets/dados-novidades.js',
-  './assets/logo-nae.png',
-  './assets/simbolo-nae.png',
+  './assets/dados-busca.js',
+  './assets/min/busca.min.js',
+  './assets/logo-topo.webp',
+  './assets/simbolo-nae.webp',
   './assets/favicon-nae.png',
   './assets/icone-192.png',
   './assets/icone-512.png'

@@ -24,7 +24,8 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="assets/estilo.css">
+<script>try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentElement.setAttribute("data-fonte",f)}catch(e){}</script>
+<link rel="stylesheet" href="assets/min/estilo.min.css">
 </head>
 <body>
 
@@ -35,11 +36,16 @@
 <header class="topbar">
   <div class="wrap topbar-in">
     <a class="brand" href="index.html">
-      <img class="marca" src="assets/logo-nae.png" alt="NAE · Núcleo de Apoio ao Estudante · Unidade Guanhães">
+      <img class="marca" src="assets/logo-topo.webp" width="620" height="279" alt="NAE · Núcleo de Apoio ao Estudante · Unidade Guanhães">
     </a>
     <div class="unidade">
       <b>UEMG · Unidade Guanhães</b>
       Coordenação: Jonatan Barbosa Silva
+    </div>
+    <div class="topo-acoes">
+      <button class="btn-topo" type="button" data-fonte-menos aria-label="Diminuir o tamanho do texto" title="Texto menor">A-</button>
+      <button class="btn-topo" type="button" data-fonte-mais aria-label="Aumentar o tamanho do texto" title="Texto maior">A+</button>
+      <button class="btn-topo" type="button" data-abrir-busca aria-label="Buscar no site" title="Buscar no site (tecla /)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.8-3.8"></path></svg></button>
     </div>
   </div>
 </header>
@@ -52,12 +58,17 @@
     <a class="nav-link" href="horarios.html" style="--c: var(--turquesa)"><i class="dot"></i>Horários de Aulas</a>
     <a class="nav-link" href="calendario.html" style="--c: var(--lilas)"><i class="dot"></i>Calendário Acadêmico</a>
     <a class="nav-link" href="mapa.html" style="--c: var(--verde)"><i class="dot"></i>Mapa do Campus</a>
+    <a class="nav-link" href="apoio.html" style="--c: var(--rosa)"><i class="dot"></i>Apoio Psicológico</a>
     <a class="nav-link" href="sobre.html" style="--c: var(--ambar)"><i class="dot"></i>Sobre o NAE</a>
     <a class="nav-link" href="contato.html" style="--c: var(--coral)"><i class="dot"></i>Fale com o NAE</a>
   </div>
 </nav>
 
 <main class="wrap stack" id="conteudo">
+
+  <nav class="trilha" aria-label="Você está aqui" style="--c: var(--petroleo)">
+    <a href="index.html">Início</a><span class="separa">›</span><span aria-current="page">Sistemas Acadêmicos</span>
+  </nav>
 
   <div class="col stack-s">
     <div class="titulo-sec" style="--c: var(--petroleo)">
@@ -153,7 +164,7 @@
     </div>
 
     <!-- ══ Aplicativo ══ -->
-    <div class="app-caixa reveal">
+    <div class="app-caixa reveal" id="app">
       <svg class="app-icone" viewBox="0 0 64 64" role="img" aria-label="Ícone do aplicativo UEMG+ Estudante">
         <rect width="64" height="64" rx="14" fill="#1F3A63"></rect>
         <circle cx="32" cy="32" r="21" fill="#F0B93B"></circle>
@@ -444,6 +455,73 @@
     </div>
   </div>
 
+  <!-- ══ Calculadora ══ -->
+  <div class="stack-m" id="calculadora">
+    <div class="titulo-sec col" style="--c: var(--turquesa)">
+      <span class="eyebrow" style="--c: var(--turquesa)">Ferramenta do estudante</span>
+      <h2>Calculadora de média e faltas</h2>
+    </div>
+    <p class="col lede" style="font-size:1.02rem">
+      Na UEMG, a regra geral é simples: <b>60 dos 100 pontos</b> do semestre e
+      <b>75% de presença</b> em cada disciplina. Use as duas caixas abaixo para saber
+      como você está.
+    </p>
+
+    <div class="calc">
+      <div class="card reveal" style="--c: var(--turquesa)">
+        <span class="rotulo">Nota</span>
+        <h3>Quantos pontos ainda preciso?</h3>
+        <div class="builder">
+          <div class="field">
+            <label for="calc-obtidos">Pontos que você já garantiu</label>
+            <input id="calc-obtidos" type="number" inputmode="numeric" min="0" max="100" step="0.1" placeholder="ex.: 34">
+          </div>
+          <div class="field">
+            <label for="calc-distribuidos">Pontos já distribuídos pela disciplina</label>
+            <input id="calc-distribuidos" type="number" inputmode="numeric" min="0" max="100" step="0.1" placeholder="ex.: 50">
+          </div>
+        </div>
+        <div class="calc-res" id="calc-nota-res" aria-live="polite">
+          Preencha os dois campos acima e o resultado aparece aqui.
+        </div>
+        <p style="font-size:.85rem;color:var(--muted)">
+          Exemplo: se já foram distribuídos 50 pontos em provas e trabalhos e você garantiu 34,
+          a caixa mostra quantos dos 50 pontos restantes você ainda precisa conquistar.
+        </p>
+      </div>
+
+      <div class="card reveal" style="--c: var(--verde)">
+        <span class="rotulo">Frequência</span>
+        <h3>Quantas faltas ainda cabem?</h3>
+        <div class="builder">
+          <div class="field">
+            <label for="calc-aulas">Total de aulas da disciplina no semestre</label>
+            <input id="calc-aulas" type="number" inputmode="numeric" min="1" max="200" step="1" placeholder="ex.: 72">
+          </div>
+          <div class="field">
+            <label for="calc-faltas">Faltas que você já tem</label>
+            <input id="calc-faltas" type="number" inputmode="numeric" min="0" max="200" step="1" placeholder="ex.: 6">
+          </div>
+        </div>
+        <div class="calc-res" id="calc-faltas-res" aria-live="polite">
+          Preencha os dois campos acima e o resultado aparece aqui.
+        </div>
+        <p style="font-size:.85rem;color:var(--muted)">
+          Dica: uma disciplina com 2 aulas por semana em um semestre de 18 semanas tem cerca
+          de 36 aulas. Cada horário na grade conta como uma aula.
+        </p>
+      </div>
+    </div>
+
+    <div class="note col">
+      <p>
+        <b>Vale conferir</b> Esta calculadora usa a regra geral da UEMG. Algumas disciplinas,
+        como estágios, têm critérios próprios no plano de ensino. Na dúvida, a palavra final
+        é sempre a do professor e da secretaria acadêmica.
+      </p>
+    </div>
+  </div>
+
   <div class="stack-m">
     <div class="titulo-sec col" style="--c: var(--petroleo)">
       <span class="eyebrow" style="--c: var(--petroleo)">Dúvidas comuns</span>
@@ -512,11 +590,14 @@
       <a href="contato.html">Contato</a>
     </div>
     <p class="assinatura">Desenvolvido por <b>Jonatan Barbosa Silva</b></p>
+    <p class="foot-versao">Site conferido e atualizado em 6 de agosto de 2026</p>
   </div>
 </footer>
 
 <script src="assets/dados-avisos.js"></script>
-<script src="assets/site.js"></script>
+<script src="assets/min/site.min.js"></script>
+<script src="assets/dados-busca.js"></script>
+<script src="assets/min/busca.min.js"></script>
 <script>
 /* abre e fecha todas as etapas de uma vez */
 (function () {
@@ -530,6 +611,80 @@
     botao.textContent = abrir ? 'Fechar todas as etapas' : 'Abrir todas as etapas';
   });
 })();
+
+/* calculadora de média e faltas */
+(function () {
+  function num(id) {
+    var el = document.getElementById(id);
+    if (!el || el.value === '') return null;
+    var v = parseFloat(String(el.value).replace(',', '.'));
+    return isNaN(v) ? null : v;
+  }
+  function mostrar(id, classe, html) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    el.className = 'calc-res' + (classe ? ' ' + classe : '');
+    el.innerHTML = html;
+  }
+
+  function nota() {
+    var obtidos = num('calc-obtidos');
+    var distribuidos = num('calc-distribuidos');
+    if (obtidos === null || distribuidos === null) {
+      mostrar('calc-nota-res', '', 'Preencha os dois campos acima e o resultado aparece aqui.');
+      return;
+    }
+    if (obtidos < 0 || distribuidos < 0 || distribuidos > 100 || obtidos > distribuidos) {
+      mostrar('calc-nota-res', 'olho', 'Confira os valores: os pontos garantidos não podem passar dos pontos já distribuídos, e o total do semestre é 100.');
+      return;
+    }
+    var restantes = Math.round((100 - distribuidos) * 10) / 10;
+    var faltam = Math.round(Math.max(0, 60 - obtidos) * 10) / 10;
+    if (faltam === 0) {
+      mostrar('calc-nota-res', 'boa', '<b>Você já garantiu os 60 pontos.</b> Aprovação por nota assegurada. Continue firme e cuide da frequência.');
+    } else if (faltam > restantes) {
+      mostrar('calc-nota-res', 'ruim', 'Você precisa de <b>' + faltam + '</b> pontos, mas só restam <b>' + restantes + '</b> em disputa. Pelos 100 pontos do semestre não dá mais para chegar aos 60. Converse com o professor e com a secretaria sobre as possibilidades, como o exame especial.');
+    } else {
+      var pct = restantes > 0 ? Math.round((faltam / restantes) * 100) : 0;
+      var tom = pct > 75 ? 'olho' : 'boa';
+      mostrar('calc-nota-res', tom, 'Faltam <b>' + faltam + ' pontos</b> para os 60. Ainda há <b>' + restantes + '</b> em disputa, então você precisa de cerca de <b>' + pct + '%</b> do que vem pela frente.');
+    }
+  }
+
+  function faltas() {
+    var total = num('calc-aulas');
+    var tidas = num('calc-faltas');
+    if (total === null || tidas === null) {
+      mostrar('calc-faltas-res', '', 'Preencha os dois campos acima e o resultado aparece aqui.');
+      return;
+    }
+    if (total < 1 || tidas < 0 || tidas > total) {
+      mostrar('calc-faltas-res', 'olho', 'Confira os valores: as faltas não podem passar do total de aulas.');
+      return;
+    }
+    var limite = Math.floor(total * 0.25);
+    var sobram = limite - tidas;
+    if (sobram > limite * 0.4) {
+      mostrar('calc-faltas-res', 'boa', 'Você pode faltar no máximo <b>' + limite + '</b> aulas nessa disciplina. Ainda cabem <b>' + sobram + '</b> faltas, mas guarde essa margem para imprevistos de verdade.');
+    } else if (sobram > 0) {
+      mostrar('calc-faltas-res', 'olho', 'Atenção: o limite é <b>' + limite + '</b> faltas e você já usou <b>' + tidas + '</b>. Só cabem mais <b>' + sobram + '</b>. A partir daqui, cada presença conta.');
+    } else if (sobram === 0) {
+      mostrar('calc-faltas-res', 'olho', '<b>Margem esgotada.</b> O limite é ' + limite + ' faltas e você chegou nele. Mais uma falta pode reprovar por frequência, independentemente da nota.');
+    } else {
+      mostrar('calc-faltas-res', 'ruim', 'Você já passou do limite de <b>' + limite + '</b> faltas. Procure a secretaria acadêmica e o professor o quanto antes para entender a sua situação.');
+    }
+  }
+
+  ['calc-obtidos', 'calc-distribuidos'].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) el.addEventListener('input', nota);
+  });
+  ['calc-aulas', 'calc-faltas'].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) el.addEventListener('input', faltas);
+  });
+})();
 </script>
+<script data-goatcounter="https://naeguanhaes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 {
-  "name": "NAE Guanhães — Núcleo de Apoio ao Estudante",
+  "name": "NAE Guanhães · Núcleo de Apoio ao Estudante",
   "short_name": "NAE Guanhães",
-  "description": "E-mail institucional, horários de aulas, calendário acadêmico e mapa do campus da UEMG — Unidade Guanhães.",
+  "description": "E-mail institucional, horários de aulas, calendário acadêmico e mapa do campus da UEMG · Unidade Guanhães.",
   "lang": "pt-BR",
   "start_url": "./index.html",
   "scope": "./",

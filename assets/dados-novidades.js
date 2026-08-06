@@ -19,6 +19,27 @@ window.DADOS_NOVIDADES = {
   itens: [
     {
       data: '2026-08-06',
+      titulo: 'Página de apoio psicológico',
+      texto: 'CAPS gratuito em Guanhães, plataformas com preço social e o CVV 188, tudo reunido em um lugar só.',
+      link: 'apoio.html',
+      textoLink: 'conhecer a página'
+    },
+    {
+      data: '2026-08-06',
+      titulo: 'Busca em todo o site',
+      texto: 'Toque na lupa no topo de qualquer página e digite o que procura. No computador, a tecla de barra também abre a busca.',
+      link: 'index.html',
+      textoLink: 'experimentar'
+    },
+    {
+      data: '2026-08-06',
+      titulo: 'Calculadora de média e faltas',
+      texto: 'Descubra quantos pontos ainda precisa para os 60 e quantas faltas cabem sem reprovar.',
+      link: 'sistemas.html#calculadora',
+      textoLink: 'usar a calculadora'
+    },
+    {
+      data: '2026-08-06',
       titulo: 'Sistemas acadêmicos no site',
       texto: 'AVA Moodle, Lyceum e o aplicativo UEMG+ Estudante, com o passo a passo do primeiro acesso e da recuperação de senha.',
       link: 'sistemas.html',

@@ -1,5 +1,4 @@
-| `sistemas.html` | AVA Moodle e Lyceum: links e passo a passo do acesso |
-| `horarios.html` | Grade 2026.2, com "hoje/agora", minha turma e exportação |# NAE Guanhães · site do Núcleo de Apoio ao Estudante
+# NAE Guanhães · site do Núcleo de Apoio ao Estudante
 
 Site do **NAE · Núcleo de Apoio ao Estudante** da **UEMG, Unidade Guanhães**.
 São páginas HTML, uma folha de estilo e alguns scripts: sem dependências e sem
@@ -16,11 +15,13 @@ atendimento às terças e quintas das 18h às 19h; quartas mediante agendamento 
 
 | Arquivo | Conteúdo |
 | --- | --- |
-| `index.html` | Início: aula de hoje, carrossel de serviços e atalhos |
+| `index.html` | Início: busca, aula de hoje, carrossel de serviços e atalhos |
 | `email.html` | Guia ilustrado do e-mail institucional (10 etapas) |
-| `horarios.html` | Grade 2026.2, com "hoje/agora", minha turma e exportação |
-| `calendario.html` | Calendário acadêmico 2026 |
+| `sistemas.html` | AVA Moodle, Lyceum, app UEMG+ e calculadora de média e faltas |
+| `horarios.html` | Grade 2026.2, com "hoje/agora", minha turma e exportações |
+| `calendario.html` | Calendário acadêmico 2026, com exportação .ics |
 | `mapa.html` | Planta do campus e lista de ambientes |
+| `apoio.html` | Apoio psicológico: CAPS, plataformas com preço social e CVV |
 | `sobre.html` | O que é o NAE e o que ele faz |
 | `contato.html` | Sala do NAE, atendimento e contatos |
 | `cartaz.html` | Cartaz A4 + 4 cartões para imprimir, com QR code |
@@ -38,6 +39,8 @@ Esses arquivos são só dados, não há lógica dentro deles.
 | `assets/dados-horarios.js` | turmas, salas, professores e a grade de aulas |
 | `assets/dados-calendario.js` | datas do calendário acadêmico |
 | `assets/dados-avisos.js` | faixa de aviso que aparece no topo do site |
+| `assets/dados-novidades.js` | cartão "Novidades" da página inicial e da Sobre |
+| `assets/dados-busca.js` | índice da busca interna (um item por página ou seção) |
 
 Depois de editar qualquer um deles, **rode a checagem**:
 
@@ -68,27 +71,49 @@ data em `ate`. Tipos: `urgente` (vermelho), `atencao` (âmbar), `novidade` (turq
 ## Estrutura
 
 ```
-assets/estilo.css            folha de estilo (tema claro e escuro)
-assets/site.js               avisos, carrossel, compartilhar, instalação
-assets/horarios.js           grade, painel "hoje", minha turma, exportação .ics
-assets/calendario.js         calendário acadêmico
+assets/estilo.css            folha de estilo (sempre em tema claro)
+assets/site.js               avisos, carrossel, toast, fonte A+/A-, instalação
+assets/busca.js              busca interna (lupa do topo e pílula do hero)
+assets/horarios.js           grade, painel "hoje", minha turma, .ics e imagem PNG
+assets/calendario.js         calendário acadêmico e exportação .ics
 assets/mapa.js               ocupação das salas agora e alternância planta/lista
 assets/dados-*.js            DADOS: é aqui que se atualiza o conteúdo
-assets/logo-nae.png          marca oficial (assinatura completa)
-assets/simbolo-nae.png       símbolo isolado
+assets/min/                  versões compactadas usadas pelas páginas
+assets/logo-nae.png          marca oficial (usada no cartaz e na imagem da grade)
+assets/logo-topo.webp        marca leve do cabeçalho das páginas
+assets/simbolo-nae.webp      símbolo leve com transparência (hero)
 assets/favicon-nae.png       ícone do site
 assets/icone-192/512.png     ícones de instalação no celular
 assets/og-nae.png            imagem de prévia ao compartilhar
 manifest.webmanifest         dados de instalação (PWA)
 sw.js                        cache offline
 ferramentas/checar-dados.js  checagem dos dados
+ferramentas/minificar.js     recompacta CSS e JS para assets/min/
 ```
+
+### CSS e JS compactados
+
+As páginas carregam as versões de `assets/min/`. **Depois de editar qualquer
+arquivo `.js` ou `.css` de `assets/` (menos os `dados-*.js`), rode:**
+
+```bash
+node ferramentas/minificar.js
+```
+
+Os `dados-*.js` são carregados sem compactação de propósito: atualizar horários
+ou avisos não depende dessa etapa. Requisito, uma vez só: `npm i -g terser clean-css-cli`.
 
 ### Funciona sem internet
 
 O `sw.js` guarda o site no aparelho na primeira visita. **Ao publicar mudanças,
 troque o número da `VERSAO` no topo do arquivo**. Sem isso, quem já visitou
 continua vendo a versão antiga.
+
+### Contador de acessos
+
+Todas as páginas enviam uma contagem anônima ao GoatCounter, sem cookies e sem
+dados pessoais. O painel fica em https://naeguanhaes.goatcounter.com e só o
+dono da conta enxerga.
 
 ---
 

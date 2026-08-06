@@ -50,14 +50,77 @@
     return d.getFullYear() + '-' + m + '-' + dia;
   }
 
+  /* ── Aviso em balão (toast) ───────────────────────── */
+  var toastEl = null, toastTimer = null;
+  function toast(msg) {
+    if (!toastEl) {
+      toastEl = document.createElement('div');
+      toastEl.className = 'toast';
+      toastEl.setAttribute('role', 'status');
+      document.body.appendChild(toastEl);
+    }
+    toastEl.textContent = msg;
+    toastEl.classList.add('no-ar');
+    if (toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toastEl.classList.remove('no-ar'); }, 2400);
+  }
+
+  function copiarTexto(texto, aoCopiar) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(texto).then(aoCopiar, function () {});
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = texto; document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); aoCopiar(); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+  }
+
   window.NAE = {
     DIAS_CURTOS: DIAS_CURTOS,
     MESES: MESES,
     guardar: guardar, ler: ler, apagar: apagar,
     minutosDe: minutosDe, escapar: escapar, normaliza: normaliza,
     dataBR: dataBR, hojeISO: hojeISO,
+    toast: toast, copiar: copiarTexto,
     reduzir: reduzir
   };
+
+  /* ── Copiar com um toque ──────────────────────────── */
+  document.querySelectorAll('[data-copiar]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      copiarTexto(b.getAttribute('data-copiar'), function () {
+        toast(b.getAttribute('data-copiado') || 'Copiado com sucesso!');
+      });
+    });
+  });
+
+  /* ── Tamanho do texto (A- / A+) ───────────────────── */
+  (function tamanhoDoTexto() {
+    var MIN = 0, MAX = 3;
+    var atual = parseInt(ler('fonte') || '1', 10);
+    if (isNaN(atual) || atual < MIN || atual > MAX) atual = 1;
+
+    function aplicar() {
+      if (atual === 1) document.documentElement.removeAttribute('data-fonte');
+      else document.documentElement.setAttribute('data-fonte', String(atual));
+      guardar('fonte', String(atual));
+    }
+    aplicar();
+
+    document.querySelectorAll('[data-fonte-mais], [data-fonte-menos]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var mais = b.hasAttribute('data-fonte-mais');
+        var novo = atual + (mais ? 1 : -1);
+        if (novo < MIN || novo > MAX) {
+          toast(mais ? 'Este já é o maior tamanho de letra.' : 'Este já é o menor tamanho de letra.');
+          return;
+        }
+        atual = novo; aplicar();
+        toast('Tamanho do texto: ' + ['menor', 'normal', 'grande', 'muito grande'][atual] + '.');
+      });
+    });
+  })();
 
   /* ── Faixa de avisos ──────────────────────────────── */
   (function avisos() {
