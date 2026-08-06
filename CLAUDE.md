@@ -83,6 +83,13 @@ As três já funcionam por endereço direto, para o coordenador revisar.
 
 ## Fatos que aparecem no site (não inventar, conferir aqui)
 
+- **Aulas no semestre**: cada faixa da grade dura 100 minutos e vale DUAS
+  aulas de 50. Os totais oficiais por ritmo semanal ficam na tabela
+  , dentro de : 4 aulas por semana
+  são 72 no semestre, 3 são 54, 2 são 32 e 1 são 18. O limite de faltas é 25%
+  desse total. Números informados pela coordenação; não recalcular pelo
+  calendário.
+
 - Sala do NAE: **Prédio do Administrativo**. Atendimento **terças e quintas,
   das 18h às 19h**; quartas somente com agendamento prévio por e-mail.
 - UEMG Unidade Guanhães: Rodovia BR-259, nº 2250, Bairro Nova União,

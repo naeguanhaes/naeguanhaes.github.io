@@ -88,9 +88,12 @@
         if (!mapa[nome].prof && cel[1]) mapa[nome].prof = D.professores[cel[1]] || '';
       });
     });
+    var oficial = D.aulasNoSemestre || {};
     return Object.keys(mapa).sort().map(function (k) {
       var d = mapa[k];
-      d.total = d.porSemana * totalSemanas;
+      /* o número oficial da coordenação manda mais do que a conta pelo
+         calendário, porque já desconta feriados e semanas de avaliação */
+      d.total = oficial[d.porSemana] || (d.porSemana * totalSemanas);
       d.limite = Math.floor(d.total * 0.25);
       return d;
     });
@@ -160,8 +163,8 @@
           '<tbody>' + listaDisc + '</tbody>' +
         '</table>' +
         '<p class="planner-obs"><b>Como a conta é feita</b> Cada faixa da grade dura 100 minutos e vale <b>duas aulas</b> de 50. ' +
-        'Uma noite inteira, das 19h às 22h30, são <b>quatro aulas</b>. O limite considera 75% de presença sobre ' + sem.length +
-        ' semanas. Disciplinas com aula a distância podem ter controle próprio: confirme no plano de ensino.</p>' +
+        'Uma noite inteira, das 19h às 22h30, são <b>quatro aulas</b>. O total do semestre é o número oficial da coordenação, ' +
+        'e o limite de faltas é 25% dele. Disciplinas com aula a distância podem ter controle próprio: confirme no plano de ensino.</p>' +
         RODAPE +
       '</section>';
 

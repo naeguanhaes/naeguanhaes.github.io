@@ -13,9 +13,39 @@
    ═══════════════════════════════════════════════════════ */
 
 window.DADOS_HORARIOS = {
-  atualizadoEm: '2026-08-05',
+  atualizadoEm: '2026-08-06',
   semestre: '2026.2',
   fonte: 'Quadro oficial de horários da UEMG · Unidade Guanhães',
+
+  /* ── Aulas no semestre, por ritmo semanal ───────────────
+     Cada faixa da grade dura 100 minutos e vale duas aulas
+     de 50. Somando as faixas, uma disciplina tem 1, 2, 3 ou
+     4 aulas por semana.
+
+     A tabela abaixo diz quantas aulas cada ritmo tem no
+     semestre inteiro. Estes são os números OFICIAIS,
+     informados pela coordenação: eles mandam mais do que
+     qualquer conta feita pelo calendário, porque descontam
+     feriados, recessos e semanas de avaliação.
+
+     O planner usa isto para calcular o limite de faltas,
+     que é sempre 25% do total.
+
+     ritmo semanal : aulas no semestre  (limite de faltas)
+     ──────────────────────────────────────────────────────
+              4    :        72                 18
+              3    :        54                 13
+              2    :        32                  8
+              1    :        18                  4
+
+     Mudou a duração do semestre? Ajuste só esta tabela.
+     ────────────────────────────────────────────────────── */
+  aulasNoSemestre: {
+    1: 18,
+    2: 32,
+    3: 54,
+    4: 72
+  },
 
   professores: {
     IS: 'Prof. Me. Isaac Maynart Carvalho Moyses Souza',

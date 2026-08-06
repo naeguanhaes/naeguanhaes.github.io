@@ -7,7 +7,11 @@ Ao fazer uma alteração relevante, acrescente uma entrada no topo.
 
 - Correção do coordenador: cada faixa da grade vale DUAS aulas de 50 minutos,
   não uma. O planner passou a calcular a partir da duração de cada faixa
-  (100 minutos dividido por 50), então o limite de faltas dobrou e ficou correto
+  (100 minutos dividido por 50)
+- Segunda correção: o total de aulas no semestre passa a vir da tabela oficial
+   em dados-horarios.js (4 por semana são 72, 3 são 54,
+  2 são 32, 1 são 18), e não de uma conta pelo calendário. Isso também curou
+  um defeito: a conta antiga encolhia conforme o semestre avançava
 
 - Planner do semestre: caderno de 4 folhas A4 com grade, mapa das semanas,
   controle de notas e controle de faltas, com o limite calculado por disciplina
