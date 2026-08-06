@@ -34,8 +34,21 @@ de mudanças estão na pasta [`historico/`](historico/CONTEXTO.md).
    `assets/dados-novidades.js`.
 6. Página ou seção nova? Inclua no índice `assets/dados-busca.js`, no menu de
    todas as páginas e na lista `ESSENCIAIS` do `sw.js`.
-7. Commit e push na branch `main`. A publicação é feita pelo workflow
+7. Rode `node ferramentas/checar-site.js` (travessões, links quebrados,
+   cache offline e divs). O workflow roda essa inspeção de novo e
+   **bloqueia a publicação** se algo falhar.
+8. Commit e push na branch `main`. A publicação é feita pelo workflow
    `.github/workflows/publicar.yml` (GitHub Actions).
+
+## Páginas prontas porém OCULTAS (decisão do coordenador)
+
+- **`editais.html`** (com `assets/dados-editais.js`): aguardando o primeiro
+  edital. Para ativar: acrescentar um edital no arquivo de dados, tirar o
+  `<meta name="robots" content="noindex">` da página, incluir o link no menu
+  de todas as páginas, no índice da busca, no `sw.js` e anunciar nas novidades.
+- **`calouro.html`** (guia "Comece por aqui"): aguardando a chegada de
+  calouros (não entra turma nova em 2026.2). Mesmos passos para ativar.
+- As duas já funcionam por endereço direto, para o coordenador revisar.
 
 ## Endereços e contas
 

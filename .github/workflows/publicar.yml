@@ -18,7 +18,18 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar o repositório
+        uses: actions/checkout@v4
+      - name: Checar os dados de horários, calendário e avisos
+        run: node ferramentas/checar-dados.js
+      - name: Inspecionar o site (travessões, links, cache offline, divs)
+        run: node ferramentas/checar-site.js
+
   publicar:
+    needs: verificar
     runs-on: ubuntu-latest
     environment:
       name: github-pages

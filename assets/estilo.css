@@ -299,6 +299,19 @@ ul.limpa li::before {
 }
 @media (max-width: 820px) { .hero-marca { display: none; } }
 
+/* contagem regressiva do hero */
+.hero-contagem {
+  display: inline-flex; align-items: center; gap: .55rem;
+  margin-top: .9rem; text-decoration: none;
+  background: rgba(255,255,255,.13); color: #fff;
+  border: 1px solid rgba(255,255,255,.35); border-radius: 99px;
+  font-size: .88rem; font-weight: 600; padding: .45rem 1.05rem;
+  transition: background .16s, transform .16s;
+}
+.hero-contagem:hover { background: rgba(255,255,255,.24); color: #fff; transform: translateY(-2px); }
+.hero-contagem b { color: #9FE4EE; font-variant-numeric: tabular-nums; }
+.hero-contagem .hc-dot { width: .5rem; height: .5rem; border-radius: 99px 2px 99px 99px; background: var(--marca-vermelho); flex: none; }
+
 /* hero em tons de acolhimento (página de apoio) */
 .hero.rosa { background: linear-gradient(122deg, #6E2643 0%, #A64069 52%, #7166B8 100%); }
 .hero.rosa .eyebrow { color: #F5C6D8; }

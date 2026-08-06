@@ -304,6 +304,28 @@
   }
 
 
+  /* ── Contagem regressiva do hero ──────────────────── */
+  (function contagem() {
+    var caixa = document.getElementById('contagem-hero');
+    if (!caixa || !window.DADOS_CALENDARIO) return;
+
+    var hoje = hojeISO();
+    var proximo = (window.DADOS_CALENDARIO.eventos || [])
+      .filter(function (ev) { return !ev.semData && ev.ini >= hoje; })
+      .sort(function (a, b) { return a.ini < b.ini ? -1 : 1; })[0];
+    if (!proximo) { caixa.remove(); return; }
+
+    var dias = Math.round((new Date(proximo.ini + 'T12:00:00') - new Date(hoje + 'T12:00:00')) / 86400000);
+    var quando = dataBR(proximo.ini).slice(0, 5);
+    var texto;
+    if (dias === 0) texto = '<b>É hoje:</b> <span>' + escapar(proximo.titulo) + '</span>';
+    else if (dias === 1) texto = '<b>Amanhã:</b> <span>' + escapar(proximo.titulo) + '</span>';
+    else texto = 'Faltam <b>' + dias + ' dias</b> para: <span>' + escapar(proximo.titulo) + ' (' + quando + ')</span>';
+
+    caixa.innerHTML = '<span class="hc-dot" aria-hidden="true"></span>' + texto;
+    caixa.hidden = false;
+  })();
+
   /* ── Novidades do site ────────────────────────────── */
   (function novidades() {
     var caixa = document.getElementById('novidades-lista');

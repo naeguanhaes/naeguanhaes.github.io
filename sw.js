@@ -5,7 +5,7 @@
    isso apaga o cache antigo e busca tudo de novo.
    ═══════════════════════════════════════════════════════ */
 
-var VERSAO = 'nae-v11';
+var VERSAO = 'nae-v12';
 
 var ESSENCIAIS = [
   './',
@@ -19,7 +19,9 @@ var ESSENCIAIS = [
   './sobre.html',
   './contato.html',
   './apoio.html',
+  './cartaz.html',
   './404.html',
+  './offline.html',
   './manifest.webmanifest',
   './assets/min/estilo.min.css',
   './assets/min/site.min.js',
@@ -34,6 +36,7 @@ var ESSENCIAIS = [
   './assets/min/busca.min.js',
   './assets/logo-topo.webp',
   './assets/simbolo-nae.webp',
+  './assets/logo-nae.png',
   './assets/favicon-nae.png',
   './assets/icone-192.png',
   './assets/icone-512.png'
@@ -75,7 +78,7 @@ self.addEventListener('fetch', function (e) {
           return resp;
         })
         .catch(function () {
-          return caches.match(req).then(function (r) { return r || caches.match('./index.html'); });
+          return caches.match(req).then(function (r) { return r || caches.match('./offline.html'); });
         })
     );
     return;

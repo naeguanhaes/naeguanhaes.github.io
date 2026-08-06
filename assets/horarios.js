@@ -196,6 +196,7 @@
           '<button class="acao" type="button" data-minha="' + t.id + '">minha turma</button>' +
           '<button class="acao" type="button" data-ics="' + t.id + '">📅 calendário</button>' +
           '<button class="acao" type="button" data-imagem="' + t.id + '">🖼 salvar imagem</button>' +
+          '<button class="acao" type="button" data-link="' + t.id + '">🔗 copiar link</button>' +
           '<button class="acao" type="button" data-imprimir="' + t.id + '">imprimir</button>' +
         '</span>' +
       '</div>' +
@@ -501,7 +502,7 @@
     }
 
     lista.addEventListener('click', function (e) {
-      var alvo = e.target.closest('[data-prof], [data-ics], [data-imagem], [data-imprimir], [data-minha]');
+      var alvo = e.target.closest('[data-prof], [data-ics], [data-imagem], [data-link], [data-imprimir], [data-minha]');
       if (!alvo) return;
 
       if (alvo.hasAttribute('data-prof') && campo) {
@@ -520,12 +521,22 @@
       }
 
       var id = alvo.getAttribute('data-ics') || alvo.getAttribute('data-imagem') ||
+               alvo.getAttribute('data-link') ||
                alvo.getAttribute('data-imprimir') || alvo.getAttribute('data-minha');
       var turma = D.turmas.filter(function (t) { return t.id === id; })[0];
       if (!turma) return;
 
       if (alvo.hasAttribute('data-ics')) { baixarICS(turma); return; }
       if (alvo.hasAttribute('data-imagem')) { baixarPNG(turma); return; }
+
+      if (alvo.hasAttribute('data-link')) {
+        var endereco = window.location.origin + window.location.pathname + '?turma=' + turma.id;
+        if (window.location.protocol === 'file:') endereco = window.location.pathname + '?turma=' + turma.id;
+        U.copiar(endereco, function () {
+          U.toast('Link da turma copiado! Cole no grupo e todo mundo cai direto na grade.');
+        });
+        return;
+      }
 
       if (alvo.hasAttribute('data-minha')) {
         if (U.ler('turma') === id) U.apagar('turma'); else U.guardar('turma', id);
@@ -548,16 +559,23 @@
     aplicar();
     marcarMinhaTurma();
 
-    /* chegada pelo mapa: horarios.html?sala=6#sala-6 */
-    var pedido = new URLSearchParams(window.location.search).get('sala');
-    if (!pedido && /^#sala-\d+$/.test(window.location.hash)) pedido = window.location.hash.replace('#sala-', '');
-    if (pedido) {
-      var alvoSala = lista.querySelector('.turma[data-sala="' + pedido.replace(/[^0-9]/g, '') + '"]');
-      if (alvoSala) {
-        alvoSala.classList.add('destaque');
-        setTimeout(function () { alvoSala.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 120);
-        setTimeout(function () { alvoSala.classList.remove('destaque'); }, 4500);
-      }
+    /* chegada por link: horarios.html?sala=6 (do mapa) ou ?turma=dir-2 (link copiado) */
+    var busca = new URLSearchParams(window.location.search);
+    var alvoChegada = null;
+
+    var pedidoTurma = busca.get('turma');
+    if (pedidoTurma) {
+      alvoChegada = lista.querySelector('.turma[data-turma="' + pedidoTurma.replace(/[^a-z0-9-]/g, '') + '"]');
+    }
+    if (!alvoChegada) {
+      var pedido = busca.get('sala');
+      if (!pedido && /^#sala-\d+$/.test(window.location.hash)) pedido = window.location.hash.replace('#sala-', '');
+      if (pedido) alvoChegada = lista.querySelector('.turma[data-sala="' + pedido.replace(/[^0-9]/g, '') + '"]');
+    }
+    if (alvoChegada) {
+      alvoChegada.classList.add('destaque');
+      setTimeout(function () { alvoChegada.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 120);
+      setTimeout(function () { alvoChegada.classList.remove('destaque'); }, 4500);
     }
   }
 

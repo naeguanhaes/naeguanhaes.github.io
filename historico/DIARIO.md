@@ -3,6 +3,18 @@
 Registro do que mudou e quando, do mais recente para o mais antigo.
 Ao fazer uma alteração relevante, acrescente uma entrada no topo.
 
+## 06/08/2026 · quarta rodada
+
+- Contagem regressiva no hero da página inicial (próxima data do calendário)
+- Botão "copiar link" da turma: horarios.html?turma=... abre já destacada
+- Inspetor automático `ferramentas/checar-site.js` rodando no workflow:
+  travessões, links quebrados, cache offline e divs; falhou, não publica
+- Offline reforçado: o site inteiro entra no cache na primeira visita
+  (inclusive o cartaz) e a falta de conexão cai em `offline.html` própria
+- Páginas prontas e OCULTAS aguardando ativação: `editais.html`
+  (sem edital ainda) e `calouro.html` (sem calouros em 2026.2)
+- sw em nae-v12
+
 ## 06/08/2026 · terceira rodada
 
 - Calendário passa a mostrar o mês atual primeiro; anteriores atrás de botão

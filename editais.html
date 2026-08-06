@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Editais e bolsas · NAE Guanhães | UEMG</title>
+<meta name="description" content="Editais de assistência estudantil, monitoria, extensão e pesquisa da UEMG Unidade Guanhães, com prazos e links oficiais.">
+<!-- Página ainda oculta: sem link no menu e fora dos buscadores até o coordenador ativar. -->
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/favicon-nae.png" type="image/png">
+<meta name="theme-color" content="#40688B">
+<meta name="color-scheme" content="light">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/icone-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="NAE Guanhães">
+<meta name="mobile-web-app-capable" content="yes">
+<script>try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentElement.setAttribute("data-fonte",f)}catch(e){}</script>
+<link rel="stylesheet" href="assets/min/estilo.min.css">
+</head>
+<body>
+
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<div id="avisos"></div>
+
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="index.html">
+      <img class="marca" src="assets/logo-topo.webp" width="620" height="279" alt="NAE · Núcleo de Apoio ao Estudante · Unidade Guanhães">
+    </a>
+    <div class="unidade">
+      <b>UEMG · Unidade Guanhães</b><br>
+      Coordenação: Jonatan Barbosa Silva
+    </div>
+    <div class="topo-acoes">
+      <button class="btn-topo" type="button" data-fonte-menos aria-label="Diminuir o tamanho do texto" title="Texto menor">A-</button>
+      <button class="btn-topo" type="button" data-fonte-mais aria-label="Aumentar o tamanho do texto" title="Texto maior">A+</button>
+      <button class="btn-topo" type="button" data-abrir-busca aria-label="Buscar no site" title="Buscar no site (tecla /)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.8-3.8"></path></svg></button>
+    </div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Seções do site">
+  <div class="wrap nav-in">
+    <a class="nav-link" href="index.html" style="--c: var(--azul-esc)"><i class="dot"></i>Início</a>
+    <a class="nav-link" href="email.html" style="--c: var(--azul)"><i class="dot"></i>Ajuda com E-mail Institucional</a>
+    <a class="nav-link" href="sistemas.html" style="--c: var(--petroleo)"><i class="dot"></i>Sistemas Acadêmicos</a>
+    <a class="nav-link" href="horarios.html" style="--c: var(--turquesa)"><i class="dot"></i>Horários de Aulas</a>
+    <a class="nav-link" href="calendario.html" style="--c: var(--lilas)"><i class="dot"></i>Calendário Acadêmico</a>
+    <a class="nav-link" href="calculadora.html" style="--c: var(--turquesa)"><i class="dot"></i>Calculadora</a>
+    <a class="nav-link" href="mapa.html" style="--c: var(--verde)"><i class="dot"></i>Mapa do Campus</a>
+    <a class="nav-link" href="apoio.html" style="--c: var(--rosa)"><i class="dot"></i>Apoio Psicológico</a>
+    <a class="nav-link" href="sobre.html" style="--c: var(--ambar)"><i class="dot"></i>Sobre o NAE</a>
+    <a class="nav-link" href="contato.html" style="--c: var(--coral)"><i class="dot"></i>Fale com o NAE</a>
+  </div>
+</nav>
+
+<main class="wrap stack" id="conteudo">
+
+  <nav class="trilha" aria-label="Você está aqui" style="--c: var(--ambar)">
+    <a href="index.html">Início</a><span class="separa">›</span><span aria-current="page">Editais e Bolsas</span>
+  </nav>
+
+  <div class="col stack-s">
+    <div class="titulo-sec" style="--c: var(--ambar)">
+      <span class="eyebrow" style="--c: var(--ambar)">Oportunidades</span>
+      <h1>Editais e bolsas</h1>
+    </div>
+    <p class="lede">
+      Assistência estudantil, monitoria, extensão e pesquisa: os editais que valem
+      para a Unidade Guanhães ficam reunidos aqui, com o prazo bem visível e o
+      link oficial de cada um.
+    </p>
+  </div>
+
+  <div class="filtros" id="editais-filtros" hidden>
+    <div class="chips" role="group" aria-label="Filtrar por tipo de edital">
+      <button class="chip" type="button" data-edital-tipo="todos" aria-pressed="true" style="--c: var(--azul-esc)">Todos</button>
+      <button class="chip" type="button" data-edital-tipo="assistencia" aria-pressed="false" style="--c: var(--coral)">Assistência estudantil</button>
+      <button class="chip" type="button" data-edital-tipo="monitoria" aria-pressed="false" style="--c: var(--azul)">Monitoria</button>
+      <button class="chip" type="button" data-edital-tipo="extensao" aria-pressed="false" style="--c: var(--verde)">Extensão</button>
+      <button class="chip" type="button" data-edital-tipo="pesquisa" aria-pressed="false" style="--c: var(--lilas)">Pesquisa</button>
+    </div>
+  </div>
+
+  <div id="editais-lista" class="stack-s"></div>
+
+  <div class="note col">
+    <p>
+      <b>Fique de olho</b> Os prazos desta página são um resumo. Antes de se inscrever,
+      leia sempre o edital completo no link oficial, porque é ele que vale. Dúvida na
+      documentação? O NAE ajuda a montar: <a href="contato.html">fale com o Núcleo</a>.
+    </p>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <p>NAE · Núcleo de Apoio ao Estudante · UEMG Unidade Guanhães<br>Coordenação: Jonatan Barbosa Silva</p>
+    <div class="foot-links">
+      <a href="index.html">Início</a>
+      <a href="calendario.html">Calendário</a>
+      <a href="contato.html">Contato</a>
+    </div>
+    <p class="assinatura">Desenvolvido por <b>Jonatan Barbosa Silva</b></p>
+    <p class="foot-versao">Site conferido e atualizado em 6 de agosto de 2026</p>
+  </div>
+</footer>
+
+<script src="assets/dados-avisos.js"></script>
+<script src="assets/min/site.min.js"></script>
+<script src="assets/dados-busca.js"></script>
+<script src="assets/min/busca.min.js"></script>
+<script src="assets/dados-editais.js"></script>
+<script>
+/* monta a lista de editais com selo de prazo calculado */
+(function () {
+  'use strict';
+  var U = window.NAE, D = window.DADOS_EDITAIS;
+  var caixa = document.getElementById('editais-lista');
+  if (!U || !D || !caixa) return;
+
+  var hoje = U.hojeISO();
+  var CORES = { assistencia: 'var(--coral)', monitoria: 'var(--azul)', extensao: 'var(--verde)', pesquisa: 'var(--lilas)', outro: 'var(--ambar)' };
+  var NOMES = { assistencia: 'Assistência estudantil', monitoria: 'Monitoria', extensao: 'Extensão', pesquisa: 'Pesquisa', outro: 'Oportunidade' };
+
+  function dias(a, b) {
+    return Math.round((new Date(b + 'T12:00:00') - new Date(a + 'T12:00:00')) / 86400000);
+  }
+
+  function selo(e) {
+    if (hoje < e.abre) return { classe: 'olho', texto: 'Em breve · abre em ' + U.dataBR(e.abre).slice(0, 5) };
+    if (hoje > e.encerra) return { classe: 'ruim', texto: 'Encerrado em ' + U.dataBR(e.encerra).slice(0, 5) };
+    var faltam = dias(hoje, e.encerra);
+    if (faltam === 0) return { classe: 'olho', texto: 'ÚLTIMO DIA de inscrição' };
+    if (faltam <= 5) return { classe: 'olho', texto: 'Encerra em ' + faltam + (faltam === 1 ? ' dia' : ' dias') };
+    return { classe: 'boa', texto: 'Inscrições abertas até ' + U.dataBR(e.encerra).slice(0, 5) };
+  }
+
+  /* encerrados somem depois de 30 dias */
+  var itens = (D.itens || []).filter(function (e) {
+    return !(hoje > e.encerra && dias(e.encerra, hoje) > 30);
+  });
+
+  if (!itens.length) {
+    caixa.innerHTML =
+      '<div class="card col reveal visivel" style="--c: var(--ambar)">' +
+        '<span class="rotulo">Por enquanto</span>' +
+        '<h3>Nenhum edital aberto no momento</h3>' +
+        '<p>Assim que um edital for publicado, ele aparece aqui com o prazo e o link oficial. ' +
+        'Enquanto isso, vale acompanhar o <a href="https://www.uemg.br" target="_blank" rel="noopener noreferrer">site da UEMG</a> ' +
+        'e os murais da unidade.</p>' +
+      '</div>';
+    return;
+  }
+
+  document.getElementById('editais-filtros').hidden = false;
+
+  caixa.innerHTML = itens.map(function (e) {
+    var s = selo(e);
+    var cor = CORES[e.tipo] || CORES.outro;
+    return '<div class="card reveal visivel" data-edital="' + U.escapar(e.tipo || 'outro') + '" style="--c: ' + cor + '">' +
+      '<span class="rotulo">' + U.escapar(NOMES[e.tipo] || NOMES.outro) + '</span>' +
+      '<h3>' + U.escapar(e.titulo) + '</h3>' +
+      '<p>' + U.escapar(e.resumo) + '</p>' +
+      '<div class="calc-res ' + s.classe + '">' + U.escapar(s.texto) + '</div>' +
+      (e.link ? '<div><a class="btn ghost" style="--c: ' + cor + '" href="' + U.escapar(e.link) + '" target="_blank" rel="noopener noreferrer">Ler o edital completo →</a></div>' : '') +
+    '</div>';
+  }).join('');
+
+  document.querySelectorAll('[data-edital-tipo]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var tipo = b.getAttribute('data-edital-tipo');
+      document.querySelectorAll('[data-edital-tipo]').forEach(function (o) {
+        o.setAttribute('aria-pressed', o === b ? 'true' : 'false');
+      });
+      document.querySelectorAll('[data-edital]').forEach(function (c) {
+        c.hidden = tipo !== 'todos' && c.getAttribute('data-edital') !== tipo;
+      });
+    });
+  });
+})();
+</script>
+<script data-goatcounter="https://naeguanhaes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
