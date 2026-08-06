@@ -240,6 +240,30 @@
     }
   }
 
+
+  /* ── Novidades do site ────────────────────────────── */
+  (function novidades() {
+    var caixa = document.getElementById('novidades-lista');
+    if (!caixa || !window.DADOS_NOVIDADES) return;
+
+    var itens = (window.DADOS_NOVIDADES.itens || []).slice(0, 4);
+    if (!itens.length) { caixa.innerHTML = '<p class="agora-vazio">Nada de novo por aqui no momento.</p>'; return; }
+
+    caixa.innerHTML = itens.map(function (n) {
+      var p = String(n.data).split('-');
+      var quando = p[2] + '/' + p[1];
+      return '<div class="novidade">' +
+               '<span class="quando">' + escapar(quando) + '</span>' +
+               '<span class="oque">' +
+                 '<b>' + escapar(n.titulo) + '</b>' +
+                 '<span>' + escapar(n.texto) +
+                   (n.link ? ' <a href="' + escapar(n.link) + '">' + escapar(n.textoLink || 'ver') + ' →</a>' : '') +
+                 '</span>' +
+               '</span>' +
+             '</div>';
+    }).join('');
+  })();
+
   /* ── Compartilhar ─────────────────────────────────── */
   document.querySelectorAll('[data-compartilhar]').forEach(function (b) {
     var titulo = b.getAttribute('data-titulo') || document.title;

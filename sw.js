@@ -5,7 +5,7 @@
    isso apaga o cache antigo e busca tudo de novo.
    ═══════════════════════════════════════════════════════ */
 
-var VERSAO = 'nae-v7';
+var VERSAO = 'nae-v8';
 
 var ESSENCIAIS = [
   './',
@@ -27,6 +27,7 @@ var ESSENCIAIS = [
   './assets/dados-horarios.js',
   './assets/dados-calendario.js',
   './assets/dados-avisos.js',
+  './assets/dados-novidades.js',
   './assets/logo-nae.png',
   './assets/simbolo-nae.png',
   './assets/favicon-nae.png',
