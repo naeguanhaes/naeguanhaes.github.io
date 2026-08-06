@@ -85,11 +85,10 @@ As três já funcionam por endereço direto, para o coordenador revisar.
 
 - **Aulas no semestre**: cada faixa da grade dura 100 minutos e vale DUAS
   aulas de 50. Os totais oficiais por ritmo semanal ficam na tabela
-  , dentro de : 4 aulas por semana
+  `aulasNoSemestre`, dentro de `assets/dados-horarios.js`: 4 aulas por semana
   são 72 no semestre, 3 são 54, 2 são 32 e 1 são 18. O limite de faltas é 25%
-  desse total. Números informados pela coordenação; não recalcular pelo
+  desse total. Números informados pela coordenação, não recalcular pelo
   calendário.
-
 - Sala do NAE: **Prédio do Administrativo**. Atendimento **terças e quintas,
   das 18h às 19h**; quartas somente com agendamento prévio por e-mail.
 - UEMG Unidade Guanhães: Rodovia BR-259, nº 2250, Bairro Nova União,
@@ -104,9 +103,17 @@ As três já funcionam por endereço direto, para o coordenador revisar.
 
 ## Estrutura em uma linha cada
 
-Páginas: `index`, `email`, `sistemas`, `horarios`, `calendario`, `calculadora`,
-`mapa`, `apoio`, `sobre`, `contato`, `cartaz` (imprimível), `404`.
+Páginas no ar: `index`, `email`, `sistemas`, `horarios`, `calendario`,
+`calculadora` (aparece como Ferramentas no menu, tem calculadora e cronômetro),
+`planner`, `mapa`, `apoio`, `avisos`, `sobre`, `contato`, `privacidade`,
+`cartaz` (imprimível), `404`, `offline`.
+Páginas ocultas: `editais`, `calouro`, `semestres`.
+
 Dados editáveis: `assets/dados-horarios.js`, `dados-calendario.js`,
-`dados-avisos.js`, `dados-novidades.js`, `dados-busca.js`.
-Ferramentas: `ferramentas/checar-dados.js` e `ferramentas/minificar.js`.
+`dados-avisos.js`, `dados-novidades.js`, `dados-busca.js`, `dados-editais.js`,
+e `historico/semestres/indice.js`.
+
+Ferramentas: `checar-dados.js`, `checar-site.js`, `checar-acessibilidade.js`,
+`checar-links-externos.js` e `minificar.js`, todas em `ferramentas/`.
+
 O restante está detalhado no `README.md` e em `historico/CONTEXTO.md`.
