@@ -59,9 +59,26 @@ try {
   process.exit(0);
 }
 
+/* No workflow, o certo é comparar com o que ESTAVA no ar antes do envio,
+   e não com o commit anterior: um envio pode levar vários commits de uma
+   vez, e aí a troca da VERSAO estaria em um commit do meio do caminho.
+   O GitHub informa esse ponto de partida em github.event.before, que o
+   publicar.yml repassa em NAE_BASE. */
+function existe(ref) {
+  /* nada de ref^{commit} aqui: o acento circunflexo é escape no shell do
+     Windows e a conferência falharia calada, caindo na regra antiga */
+  try { return git('cat-file -t ' + ref) === 'commit'; } catch (e) { return false; }
+}
+
+var enviado = (process.env.NAE_BASE || '').trim();
+if (/^0+$/.test(enviado)) enviado = '';   /* primeiro envio da branch */
+
 let mudados, base;
 try {
-  if (solto) {
+  if (enviado && existe(enviado)) {
+    base = enviado;
+    mudados = git('diff --name-only ' + enviado + ' HEAD');
+  } else if (solto) {
     base = 'HEAD';
     mudados = git('diff --name-only HEAD');
   } else {

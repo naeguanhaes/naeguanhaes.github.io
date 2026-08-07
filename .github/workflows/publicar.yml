@@ -24,8 +24,10 @@ jobs:
       - name: Baixar o repositório
         uses: actions/checkout@v4
         with:
-          # dois commits, porque o inspetor da VERSAO compara com o anterior
-          fetch-depth: 2
+          # histórico inteiro: o inspetor da VERSAO compara com o commit que
+          # estava publicado antes deste envio, que pode estar vários commits
+          # atrás quando se envia mais de um de uma vez
+          fetch-depth: 0
       - name: Checar os dados de horários, calendário e avisos
         run: node ferramentas/checar-dados.js
       - name: Inspecionar o site (travessões, links, cache offline, divs)
@@ -37,6 +39,9 @@ jobs:
       - name: Conferir se assets/min está em dia com as origens
         run: node ferramentas/checar-minificados.js
       - name: Cobrar a troca da VERSAO do cache offline
+        env:
+          # o que estava no ar antes deste envio
+          NAE_BASE: ${{ github.event.before }}
         run: node ferramentas/checar-versao.js
 
   publicar:
