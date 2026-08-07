@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Horários de aulas 2026.2 · NAE Guanhães | UEMG</title>
-<meta name="description" content="Grade de horários 2026.2 dos cursos de Direito e Engenharia Civil da UEMG · Unidade Guanhães.">
+<title>Estágio · NAE Guanhães | UEMG</title>
+<meta name="description" content="Regras do estágio obrigatório e do não obrigatório nos cursos de Direito e Engenharia Civil da UEMG Guanhães, com carga horária e a partir de qual período.">
 <link rel="icon" href="assets/favicon-nae.png" type="image/png">
 <meta name="theme-color" content="#40688B">
 <meta name="color-scheme" content="light">
@@ -17,9 +17,9 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="NAE Guanhães · Núcleo de Apoio ao Estudante">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="Horários de aulas 2026.2 · NAE Guanhães | UEMG">
-<meta property="og:description" content="Grade de horários 2026.2 dos cursos de Direito e Engenharia Civil da UEMG · Unidade Guanhães.">
-<meta property="og:url" content="https://naeguanhaes.github.io/horarios.html">
+<meta property="og:title" content="Estágio · NAE Guanhães | UEMG">
+<meta property="og:description" content="Regras do estágio obrigatório e do não obrigatório nos cursos de Direito e Engenharia Civil da UEMG Guanhães, com carga horária e a partir de qual período.">
+<meta property="og:url" content="https://naeguanhaes.github.io/estagio.html">
 <meta property="og:image" content="https://naeguanhaes.github.io/assets/og-nae.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -27,7 +27,7 @@
 <script>try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentElement.setAttribute("data-fonte",f);var c=localStorage.getItem("nae:contraste");if(c==="sim")document.documentElement.setAttribute("data-contraste","alto")}catch(e){}</script>
 <link rel="stylesheet" href="assets/min/estilo.min.css">
 </head>
-<body class="pg-horarios">
+<body>
 
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
 
@@ -59,12 +59,12 @@
       <a class="nav-link" href="curso.html" style="--c: var(--azul-esc)"><i class="dot"></i>Visão geral do curso</a>
       <a class="nav-link" href="matriz.html" style="--c: var(--azul)"><i class="dot"></i>Matriz curricular</a>
       <a class="nav-link" href="atividades.html" style="--c: var(--coral)"><i class="dot"></i>Atividades complementares</a>
-      <a class="nav-link" href="estagio.html" style="--c: var(--verde)"><i class="dot"></i>Estágio</a>
+      <a class="nav-link" href="estagio.html" aria-current="page" style="--c: var(--verde)"><i class="dot"></i>Estágio</a>
       <a class="nav-link" href="tcc.html" style="--c: var(--lilas)"><i class="dot"></i>Trabalho de Conclusão</a>
       <a class="nav-link" href="secretaria.html" style="--c: var(--turquesa)"><i class="dot"></i>Secretaria e regras</a>
     </div>
     <div class="nav-grupo" data-grupo="Aulas e prazos" style="--c: var(--turquesa)">
-      <a class="nav-link" href="horarios.html" aria-current="page" style="--c: var(--turquesa)"><i class="dot"></i>Horários de aulas</a>
+      <a class="nav-link" href="horarios.html" style="--c: var(--turquesa)"><i class="dot"></i>Horários de aulas</a>
       <a class="nav-link" href="calendario.html" style="--c: var(--lilas)"><i class="dot"></i>Calendário acadêmico</a>
       <a class="nav-link" href="calculadora.html" style="--c: var(--turquesa)"><i class="dot"></i>Ferramentas do estudante</a>
       <a class="nav-link" href="mapa.html" style="--c: var(--verde)"><i class="dot"></i>Mapa do campus</a>
@@ -79,62 +79,37 @@
   </div>
 </nav>
 
+
 <main class="wrap stack-m" id="conteudo">
 
-  <nav class="trilha" aria-label="Você está aqui" style="--c: var(--turquesa)">
-    <a href="index.html">Início</a><span class="separa">›</span><span aria-current="page">Horários de Aulas</span>
+  <nav class="trilha" aria-label="Você está aqui" style="--c: var(--verde)">
+    <a href="index.html">Início</a><span class="separa">›</span><a href="curso.html">Meu curso</a><span class="separa">›</span><span aria-current="page">Estágio</span>
   </nav>
 
-
   <div class="col stack-s">
-    <div class="titulo-sec" style="--c: var(--cyan)">
-      <span class="eyebrow" style="--c: var(--cyan)">Semestre 2026.2</span>
-      <h1>Horários de aulas</h1>
+    <div class="titulo-sec" style="--c: var(--verde)">
+      <span class="eyebrow" style="--c: var(--verde)">Prática profissional</span>
+      <h1>Estágio</h1>
     </div>
+  </div>
+
     <p class="lede">
-      Grade completa dos cursos de <b>Direito</b> e <b>Engenharia Civil</b> da Unidade Guanhães,
-      com a sala de cada turma. Filtre pelo curso ou busque por disciplina, professor, período ou sala.
+      O estágio obrigatório é requisito para receber o diploma, e cada curso tem a sua
+      regra: em Direito, ele acontece dentro do Núcleo de Práticas Jurídicas; em
+      Engenharia Civil, são 165 horas que podem começar já no 6º período.
     </p>
-  </div>
 
-  <div class="filtros">
-    <div class="chips" role="group" aria-label="Filtrar por curso">
-      <button class="chip" type="button" data-curso="todos" aria-pressed="true" style="--c: var(--navy)">Todos</button>
-      <button class="chip" type="button" data-curso="Direito" aria-pressed="false" style="--c: var(--blue)">Direito</button>
-      <button class="chip" type="button" data-curso="Engenharia Civil" aria-pressed="false" style="--c: var(--green)">Engenharia Civil</button>
+    <div data-curso-seletor></div>
+    <div id="estagio-painel"></div>
+
+    <div class="note col">
+      <p>
+        <b>Estágio de fora conta?</b> Em Direito, o estágio profissional externo não substitui
+        a Prática Real, mas vale como atividade complementar, com 30 horas por semestre e teto
+        de 90 horas. Em Engenharia Civil, existe o estágio não obrigatório, que soma à formação
+        sem substituir o obrigatório. Confirme sempre com a Coordenação antes de assinar contrato.
+      </p>
     </div>
-    <div class="busca">
-      <label for="in-busca" style="position:absolute;left:-9999px">Buscar</label>
-      <input id="in-busca" type="search" placeholder="Buscar disciplina, professor, período ou sala…" autocomplete="off">
-    </div>
-    <span class="contagem" id="contagem"></span>
-  </div>
-
-  <div class="note info col">
-    <p><b>Legenda</b> <span class="tag hib">Híbrida</span> parte presencial, parte a distância · <span class="tag ead">EaD</span> totalmente a distância · <span class="tag est">Estágio</span> prática real ou simulada · <span class="tag opt">Optativa</span> disciplina eletiva.</p>
-  </div>
-
-  <div id="lista-turmas"></div>
-
-  <p class="dica-mapa" style="display:flex;flex-wrap:wrap;gap:.6rem;align-items:center">
-    <span class="atualizado" data-atualizado="horarios"></span>
-    Fonte: quadro oficial de horários da Unidade Guanhães, 2026.2. Alterações pontuais são divulgadas pela coordenação de curso.
-  </p>
-
-  <div class="card col reveal" style="--c: var(--green)">
-    <span class="rotulo">Não achou sua sala?</span>
-    <h2>Veja onde ela fica</h2>
-    <p>O mapa do campus mostra a planta da unidade com todas as salas, laboratórios e serviços.</p>
-    <div class="compartilhar">
-      <a class="btn ghost" href="mapa.html" style="--c: var(--verde)">Abrir o mapa do campus →</a>
-      <a class="btn ghost" data-compartilhar
-         data-titulo="Horários de aulas · NAE Guanhães"
-         data-texto="Os horários das aulas da UEMG Guanhães estão aqui:"
-         data-url="https://naeguanhaes.github.io/horarios.html"
-         style="--c: var(--turquesa)">Enviar para um colega</a>
-      <button class="btn ghost" type="button" data-texto-grupo="Os horários das aulas 2026.2 estão no site do NAE, com a sala de cada turma e a aula de hoje em destaque:" data-titulo="Horários de aulas 2026.2" data-url="https://naeguanhaes.github.io/horarios.html" style="--c: var(--turquesa)">📋 Copiar mensagem para o grupo</button>
-    </div>
-  </div>
 
 </main>
 
@@ -143,9 +118,9 @@
     <p>NAE · Núcleo de Apoio ao Estudante · UEMG Unidade Guanhães<br>Coordenação: Jonatan Barbosa Silva</p>
     <div class="foot-links">
       <a href="index.html">Início</a>
-      <a href="email.html">E-mail institucional</a>
       <a href="sistemas.html">Sistemas</a>
-      <a href="mapa.html">Mapa</a>
+      <a href="horarios.html">Horários</a>
+      <a href="calendario.html">Calendário</a>
       <a href="contato.html">Contato</a>
       <a href="avisos.html">Avisos</a>
       <a href="privacidade.html">Privacidade</a>
@@ -155,12 +130,13 @@
   </div>
 </footer>
 
+
 <script defer src="assets/dados-avisos.js"></script>
-<script defer src="assets/dados-horarios.js"></script>
 <script defer src="assets/min/site.min.js"></script>
 <script defer src="assets/dados-busca.js"></script>
 <script defer src="assets/min/busca.min.js"></script>
-<script defer src="assets/min/horarios.min.js"></script>
+<script defer src="assets/dados-curso.js"></script>
+<script defer src="assets/min/curso.min.js"></script>
 <script data-goatcounter="https://naeguanhaes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>

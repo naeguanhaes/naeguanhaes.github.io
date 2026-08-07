@@ -20,12 +20,78 @@
 <meta property="og:title" content="Sistemas Acadêmicos · AVA Moodle e Lyceum | NAE Guanhães">
 <meta property="og:description" content="Links de acesso ao AVA Moodle, ao Lyceum e ao aplicativo UEMG+ Estudante, com o passo a passo do primeiro acesso.">
 <meta property="og:url" content="https://naeguanhaes.github.io/sistemas.html">
-<meta property="og:image" content="https://naeguanhaes.github.io/assets/og-nae.png">
+<meta property="og:image" content="https://naeguanhaes.github.io/assets/og-nae.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <script>try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentElement.setAttribute("data-fonte",f);var c=localStorage.getItem("nae:contraste");if(c==="sim")document.documentElement.setAttribute("data-contraste","alto")}catch(e){}</script>
 <link rel="stylesheet" href="assets/min/estilo.min.css">
+<!-- dados estruturados: inicio (gerado por ferramentas/gerar-dados-estruturados.js) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Qual é a diferença entre o Lyceum e o AVA Moodle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O Lyceum é o sistema acadêmico: matrícula, ajuste de disciplinas, notas oficiais, faltas e histórico. O AVA Moodle é a sala de aula virtual: materiais, fóruns, envio de trabalhos e atividades das disciplinas. Os dois são integrados e usam o mesmo login."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual é o meu Registro Acadêmico?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "É o seu número de matrícula, no formato xx-00000. Ele consta nos documentos de matrícula. Em caso de dúvida, a secretaria acadêmica informa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Preciso criar uma conta no Moodle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não. A conta vem do sistema acadêmico. Tente entrar com os mesmos dados do Lyceum e, se não funcionar, use “Perdeu a senha?” para definir uma nova."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Troquei a senha no Moodle. Ela vale no Lyceum também?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Os sistemas são integrados e a orientação da UEMG é manter o mesmo login e a mesma senha nos dois. Se depois de trocar você tiver problema em um deles, avise o NAE ou a coordenadoria de EaD."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O e-mail de recuperação não chegou.",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Confira o spam e a aba de promoções. Se não estiver lá, é provável que o e-mail cadastrado esteja desatualizado, e quem corrige isso é a secretaria acadêmica da unidade."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Minha disciplina não aparece no Painel.",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Verifique nas abas “Não iniciados” e “Removidos da visualização”, porque um curso pode estar escondido ali. Se ainda assim não aparecer, pode ser que o professor não tenha aberto a turma ou que a sua matrícula na disciplina não esteja concluída. Nesse caso, fale com a coordenação do curso."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Esse é o mesmo login do e-mail institucional?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não. O e-mail institucional (@discente.uemg.br) é do Microsoft 365 e tem senha própria, com outro processo de recuperação. Para esse, veja o guia do e-mail institucional."
+      }
+    }
+  ]
+}
+</script>
+<!-- dados estruturados: fim -->
 </head>
 <body>
 
@@ -54,16 +120,28 @@
 <nav class="nav" aria-label="Seções do site">
   <div class="wrap nav-in">
     <a class="nav-link" href="index.html" style="--c: var(--azul-esc)"><i class="dot"></i>Início</a>
-    <a class="nav-link" href="email.html" style="--c: var(--azul)"><i class="dot"></i>Ajuda com E-mail Institucional</a>
-    <a class="nav-link" href="sistemas.html" aria-current="page" style="--c: var(--petroleo)"><i class="dot"></i>Sistemas Acadêmicos</a>
-    <a class="nav-link" href="horarios.html" style="--c: var(--turquesa)"><i class="dot"></i>Horários de Aulas</a>
-    <a class="nav-link" href="calendario.html" style="--c: var(--lilas)"><i class="dot"></i>Calendário Acadêmico</a>
-    <a class="nav-link" href="calculadora.html" style="--c: var(--turquesa)"><i class="dot"></i>Ferramentas</a>
-    <a class="nav-link" href="mapa.html" style="--c: var(--verde)"><i class="dot"></i>Mapa do Campus</a>
-    <a class="nav-link" href="apoio.html" style="--c: var(--rosa)"><i class="dot"></i>Apoio Psicológico</a>
-    <a class="nav-link" href="avisos.html" style="--c: var(--turquesa)"><i class="dot"></i>Avisos</a>
     <a class="nav-link" href="sobre.html" style="--c: var(--ambar)"><i class="dot"></i>Sobre o NAE</a>
-    <a class="nav-link" href="contato.html" style="--c: var(--coral)"><i class="dot"></i>Fale com o NAE</a>
+    <div class="nav-grupo" data-grupo="Meu curso" style="--c: var(--azul)">
+      <a class="nav-link" href="curso.html" style="--c: var(--azul-esc)"><i class="dot"></i>Visão geral do curso</a>
+      <a class="nav-link" href="matriz.html" style="--c: var(--azul)"><i class="dot"></i>Matriz curricular</a>
+      <a class="nav-link" href="atividades.html" style="--c: var(--coral)"><i class="dot"></i>Atividades complementares</a>
+      <a class="nav-link" href="estagio.html" style="--c: var(--verde)"><i class="dot"></i>Estágio</a>
+      <a class="nav-link" href="tcc.html" style="--c: var(--lilas)"><i class="dot"></i>Trabalho de Conclusão</a>
+      <a class="nav-link" href="secretaria.html" style="--c: var(--turquesa)"><i class="dot"></i>Secretaria e regras</a>
+    </div>
+    <div class="nav-grupo" data-grupo="Aulas e prazos" style="--c: var(--turquesa)">
+      <a class="nav-link" href="horarios.html" style="--c: var(--turquesa)"><i class="dot"></i>Horários de aulas</a>
+      <a class="nav-link" href="calendario.html" style="--c: var(--lilas)"><i class="dot"></i>Calendário acadêmico</a>
+      <a class="nav-link" href="calculadora.html" style="--c: var(--turquesa)"><i class="dot"></i>Ferramentas do estudante</a>
+      <a class="nav-link" href="mapa.html" style="--c: var(--verde)"><i class="dot"></i>Mapa do campus</a>
+    </div>
+    <div class="nav-grupo" data-grupo="Sistemas" style="--c: var(--petroleo)">
+      <a class="nav-link" href="email.html" style="--c: var(--azul)"><i class="dot"></i>E-mail institucional</a>
+      <a class="nav-link" href="sistemas.html" aria-current="page" style="--c: var(--petroleo)"><i class="dot"></i>AVA Moodle e Lyceum</a>
+    </div>
+    <a class="nav-link" href="apoio.html" style="--c: var(--rosa)"><i class="dot"></i>Apoio psicológico</a>
+    <a class="nav-link" href="avisos.html" style="--c: var(--turquesa)"><i class="dot"></i>Avisos</a>
+    <a class="nav-link nav-cta" href="contato.html" style="--c: var(--coral)"><i class="dot"></i>Fale com o NAE</a>
   </div>
 </nav>
 
@@ -550,14 +628,14 @@
       <a href="privacidade.html">Privacidade</a>
     </div>
     <p class="assinatura">Desenvolvido por <b>Jonatan Barbosa Silva</b></p>
-    <p class="foot-versao">Site conferido e atualizado em 6 de agosto de 2026</p>
+    <p class="foot-versao">Site conferido e atualizado em 7 de agosto de 2026</p>
   </div>
 </footer>
 
-<script src="assets/dados-avisos.js"></script>
-<script src="assets/min/site.min.js"></script>
-<script src="assets/dados-busca.js"></script>
-<script src="assets/min/busca.min.js"></script>
+<script defer src="assets/dados-avisos.js"></script>
+<script defer src="assets/min/site.min.js"></script>
+<script defer src="assets/dados-busca.js"></script>
+<script defer src="assets/min/busca.min.js"></script>
 <script>
 /* abre e fecha todas as etapas de uma vez */
 (function () {

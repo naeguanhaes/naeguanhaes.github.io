@@ -3,6 +3,83 @@
 Registro do que mudou e quando, do mais recente para o mais antigo.
 Ao fazer uma alteração relevante, acrescente uma entrada no topo.
 
+## 07/08/2026 · sétima rodada (o curso entra no site)
+
+O site passou a responder também as perguntas que vinham do Projeto
+Pedagógico e ninguém lia: o PPC de Direito tem 192 páginas e o de Engenharia
+Civil, 175.
+
+- **Seção "Meu curso"**, com cinco páginas novas alimentadas por
+  `assets/dados-curso.js`, transcrito dos dois PPCs:
+  - `matriz.html`: a grade dos dois cursos, período a período, com carga
+    horária e pré-requisitos. O estudante marca o que já cursou, vê a
+    porcentagem concluída e descobre quais disciplinas ainda estão travadas
+  - `atividades.html`: contador de atividades complementares. São 210 horas em
+    Direito, sob pena de não colar grau, e 30 horas em Engenharia Civil, com a
+    tabela de modalidades, tetos e comprovantes
+  - `estagio.html` e `tcc.html`: regras dos dois cursos, incluindo o Núcleo de
+    Práticas Jurídicas, as 165 horas da Engenharia e as linhas de pesquisa
+  - `secretaria.html`: os direitos que quase ninguém conhece, com a resolução
+    de cada um
+- **Exame especial na calculadora.** O site dizia só "60 pontos e 75% de
+  frequência". Quem simulava 45 pontos lia "não dá mais para chegar aos 60" e
+  concluía que estava reprovado. Agora a calculadora mostra a nota máxima
+  possível e, quando ela cai entre 40 e 59, explica o direito ao exame
+  especial (Resolução COEPE/UEMG nº 249/2020). A calculadora de faltas passou
+  a citar a compensação de faltas e a justificativa em 48 horas
+- **Base normativa do NAE na página Sobre**: Resolução nº 201/2010, PNAES e
+  PEAES. Procurar o Núcleo é exercer um direito, não pedir favor
+- **Menu com submenus.** Eram 11 itens soltos, 1 777 px de faixa, e as cinco
+  páginas novas levariam isso a mais de 2 600 px. Agora são 8 títulos, três
+  deles abrindo painel: Meu curso, Aulas e prazos e Sistemas. Sem JavaScript
+  os links do grupo continuam aparecendo soltos, então nada fica inacessível.
+  Teclado completo: setas, Home, End, Escape devolvendo o foco ao botão
+- sw em nae-v14, agora com as seis páginas novas no cache offline
+
+## 06/08/2026 · sexta rodada (bastidores)
+
+Rodada quase toda de bastidores: o estudante vê pouca diferença na tela, e é
+justamente esse o ponto. O que mudou foi a chance de o site publicar coisa
+errada sem ninguém perceber.
+
+- **Aviso urgente agora chega no mesmo dia.** O `sw.js` guardava os
+  `assets/dados-*.js` com a regra do cache primeiro, então quem já tinha
+  visitado o site continuava lendo o aviso velho até alguém trocar a `VERSAO`.
+  Esses arquivos passaram a ir pela rede primeiro, com prazo de 2,5 segundos e
+  queda para o guardado. A promessa do README, de que publicar aviso não exige
+  ferramenta nenhuma, finalmente é verdade
+- **Bug dos avisos:** o site guardava só o último aviso fechado pelo aluno.
+  Fechar o segundo fazia o primeiro reaparecer. Agora guarda a lista toda, e
+  limpa sozinho o que saiu do ar
+- **Três inspetores novos**, todos rodando no workflow e barrando a publicação:
+  - `checar-minificados.js`: pega quem editou um `.js` ou `.css` e esqueceu de
+    rodar o minificar. Era a falha mais silenciosa possível, o site publicava o
+    código antigo sem erro nenhum na tela
+  - `checar-versao.js`: cobra a troca da `VERSAO` do `sw.js` quando muda algo
+    que o estudante baixa
+  - `checar-consistencia.js`: menu igual em todas as páginas, data do rodapé
+    igual, sintaxe dos scripts escritos dentro das páginas, página nova no
+    índice da busca, no cache e no sitemap
+- **Busca no teclado e no leitor de tela:** o foco não escapa mais do diálogo,
+  as setas percorrem os resultados e a quantidade de achados é anunciada
+- **Encontrado pelo Google:** `sitemap.xml`, `robots.txt` e dados estruturados
+  (o cartão do NAE com endereço e horário; o FAQ do e-mail e dos sistemas).
+  As perguntas do FAQ são lidas do próprio HTML, então nunca divergem do que
+  está escrito na tela
+- **Peso:** imagem de compartilhamento de 387 KB para 57 KB (JPEG),
+  `logo-nae-original.png` e `simbolo-nae.png` saíram do repositório por não
+  serem usados por página nenhuma, e os scripts das páginas viraram `defer`
+- **Menu:** "Fale com o NAE" ganhou peso visual de botão (coral, texto branco,
+  contraste 4,6:1), continuando por último na faixa, por decisão do
+  coordenador. A faixa também ganhou degradê nas bordas, que acende só do lado
+  em que existe menu escondido: antes o estudante via dois itens e meio no
+  celular e nada indicava que havia mais
+- **Continuidade:** `historico/CONTINUIDADE.md` com o que precisa acontecer
+  para o site sobreviver a uma troca de coordenação, e o vigia mensal do
+  frescor (`frescor.yml`), que abre tarefa quando a grade, o calendário ou os
+  carimbos de data começam a envelhecer
+- sw em nae-v14
+
 ## 06/08/2026 · quinta rodada
 
 - Correção do coordenador: cada faixa da grade vale DUAS aulas de 50 minutos,

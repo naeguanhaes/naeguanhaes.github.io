@@ -25,6 +25,12 @@ atendimento às terças e quintas das 18h às 19h; quartas mediante agendamento 
 | `sobre.html` | O que é o NAE e o que ele faz |
 | `contato.html` | Sala do NAE, atendimento e contatos |
 | `cartaz.html` | Cartaz A4 + 4 cartões para imprimir, com QR code |
+| `curso.html` | Meu curso: porta de entrada das cinco páginas abaixo |
+| `matriz.html` | Matriz curricular dos dois cursos, com pré-requisitos e marcação do que já cursei |
+| `atividades.html` | Contador de atividades complementares, com a tabela de modalidades |
+| `estagio.html` | Regras de estágio de cada curso |
+| `tcc.html` | Regras do Trabalho de Conclusão de Curso |
+| `secretaria.html` | Exame especial, faltas, revisão de prova, dispensa e outros pedidos |
 | `404.html` | Página de endereço não encontrado |
 
 ---
@@ -84,11 +90,11 @@ assets/logo-topo.webp        marca leve do cabeçalho das páginas
 assets/simbolo-nae.webp      símbolo leve com transparência (hero)
 assets/favicon-nae.png       ícone do site
 assets/icone-192/512.png     ícones de instalação no celular
-assets/og-nae.png            imagem de prévia ao compartilhar
+assets/og-nae.jpg            imagem de prévia ao compartilhar
 manifest.webmanifest         dados de instalação (PWA)
 sw.js                        cache offline
-ferramentas/checar-dados.js  checagem dos dados
-ferramentas/minificar.js     recompacta CSS e JS para assets/min/
+sitemap.xml, robots.txt      gerados, dizem ao Google o que existe no site
+ferramentas/                 inspetores e geradores (lista completa no CLAUDE.md)
 ```
 
 ### CSS e JS compactados
@@ -101,13 +107,32 @@ node ferramentas/minificar.js
 ```
 
 Os `dados-*.js` são carregados sem compactação de propósito: atualizar horários
-ou avisos não depende dessa etapa. Requisito, uma vez só: `npm i -g terser clean-css-cli`.
+ou avisos não depende dessa etapa. Se `terser` e `clean-css-cli` não estiverem
+instalados, a ferramenta chama os dois pelo `npx` sozinha. Para deixar rápido:
+`npm i -g terser clean-css-cli`.
+
+Esquecer de recompactar publicaria o código antigo sem erro nenhum na tela. Por
+isso o `minificar.js` grava a impressão digital das origens em
+`assets/min/origem.json`, e o `checar-minificados.js` confere antes de publicar.
 
 ### Funciona sem internet
 
 O `sw.js` guarda o site no aparelho na primeira visita. **Ao publicar mudanças,
 troque o número da `VERSAO` no topo do arquivo**. Sem isso, quem já visitou
-continua vendo a versão antiga.
+continua vendo a versão antiga. O `checar-versao.js` cobra essa troca antes da
+publicação, então é difícil esquecer.
+
+Os `assets/dados-*.js` são a exceção: eles vão **pela rede primeiro**, com prazo
+de 2,5 segundos e queda para a cópia guardada. É isso que faz um aviso urgente
+aparecer no mesmo dia, sem depender da troca da `VERSAO`. Sem internet, o
+estudante continua vendo a última versão que baixou.
+
+### Encontrado pelo Google
+
+`sitemap.xml` e `robots.txt` saem de `node ferramentas/gerar-sitemap.js`. Os
+dados estruturados (o cartão do NAE com endereço e horário, e as perguntas do
+FAQ) saem de `node ferramentas/gerar-dados-estruturados.js`, que lê as perguntas
+do próprio HTML da página. Nenhum dos dois se edita à mão.
 
 ### Contador de acessos
 

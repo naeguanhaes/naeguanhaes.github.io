@@ -13,6 +13,42 @@
 window.DADOS_BUSCA = {
   itens: [
     {
+      t: "Meu curso · o que o PPC exige",
+      d: "Matriz, atividades complementares, estágio, TCC e regras da secretaria em um lugar só.",
+      u: "curso.html",
+      k: "curso ppc projeto pedagogico regras grade formacao direito engenharia civil"
+    },
+    {
+      t: "Matriz curricular",
+      d: "Disciplinas por período, carga horária e pré-requisitos, com marcação do que já cursei.",
+      u: "matriz.html",
+      k: "matriz grade curricular disciplinas periodo pre-requisito prerequisito carga horaria creditos o que falta"
+    },
+    {
+      t: "Atividades complementares",
+      d: "Quantas horas o seu curso exige, o que conta e como protocolar.",
+      u: "atividades.html",
+      k: "atividades complementares horas certificado comprovante monitoria palestra congresso colar grau 210 30"
+    },
+    {
+      t: "Estágio",
+      d: "Quando começa, quantas horas são e o que vale como estágio em cada curso.",
+      u: "estagio.html",
+      k: "estagio supervisionado obrigatorio nucleo praticas juridicas npj 165 horas lei 11788"
+    },
+    {
+      t: "Trabalho de Conclusão de Curso",
+      d: "Formato aceito, orientação, banca e linhas de pesquisa.",
+      u: "tcc.html",
+      k: "tcc monografia artigo banca orientador defesa abnt linhas de pesquisa"
+    },
+    {
+      t: "Exame especial, faltas e revisão de prova",
+      d: "De 40 a 59 pontos ainda dá exame especial. Atestado tem 48 horas para justificar.",
+      u: "secretaria.html",
+      k: "exame especial 40 59 pontos reprovado falta atestado justificar 48 horas revisao de prova dispensa disciplina aproveitamento adaptacao proficiencia abreviacao secretaria"
+    },
+    {
       t: 'Ajuda com o e-mail institucional',
       d: 'Primeiro acesso e redefinição de senha, explicados tela por tela.',
       u: 'email.html',

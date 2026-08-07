@@ -81,6 +81,46 @@ CAPS I de Guanhães (SUS, gratuito), plataformas pagas com preço social
 (PsyMeet e Conexa, sem parceria com a UEMG ou com o NAE), o CVV 188 e o
 próprio NAE para uma primeira conversa. Em risco imediato: SAMU 192.
 
+### Não prometa acompanhamento psicológico pelo nivelamento
+
+O PPC do curso de Direito (item 5.2.2, Programa de nivelamento) lista quatro
+módulos, e um deles é "acompanhamento psicológico". **Isso é letra morta.**
+O PPC de Direito foi elaborado pela Unidade de Diamantina e passou a ser
+ofertado em Guanhães a partir de 2024 sem alteração da proposta pedagógica, e
+esse módulo descreve uma realidade que não existe nesta unidade. Confirmado
+pelo coordenador em 07/08/2026.
+
+Consequências práticas, para quem for mexer nas páginas:
+
+- `apoio.html` está **correto** ao dizer que o campus não tem psicólogos. Não
+  acrescente atendimento psicológico da unidade com base na leitura do PPC.
+- Em `assets/dados-curso.js`, o item "Nivelamento" cita de propósito apenas os
+  módulos de português instrumental, textos filosóficos e oratória. A omissão
+  do quarto módulo é deliberada, não é esquecimento.
+- Se um dia a unidade passar a ter profissional de psicologia, aí sim os dois
+  textos mudam, e a fonte passa a ser o ato que criou o serviço, não o PPC.
+
+## Os PPCs têm trechos desatualizados. Confira antes de copiar
+
+Os dois Projetos Pedagógicos são a fonte do que está em
+`assets/dados-curso.js` e das páginas da seção "Meu curso". São documentos
+oficiais e valem como fonte para carga horária, pré-requisitos, estágio, TCC e
+atividades complementares. Mas o PPC de Direito foi elaborado pela Unidade de
+Diamantina e passou a ser ofertado em Guanhães a partir de 2024 sem alteração
+da proposta pedagógica: alguns trechos descrevem outra realidade e outro
+momento. Os desvios já identificados, todos confirmados pelo coordenador em
+07/08/2026:
+
+| O que o PPC diz | O que vale de verdade |
+| --- | --- |
+| Sistemas acadêmicos são WebGiz, WebGiz professor, Giz Acadêmico, Athenas e Sophia (item 5.2.3 do PPC de Direito) | Os sistemas em uso são o **AVA Moodle**, o **Lyceum** e o aplicativo **UEMG+ Estudante**, exatamente como `sistemas.html` documenta. O trecho do PPC está desatualizado, não copie |
+| O programa de nivelamento inclui acompanhamento psicológico | Letra morta. A unidade não tem profissional de psicologia. Detalhes na seção de conteúdo sensível, acima |
+
+A regra geral: quando o PPC descrever um **serviço, sistema ou estrutura** da
+unidade, confirme com a coordenação antes de publicar. Quando descrever
+**regra curricular** (carga horária, pré-requisito, prazo, banca), ele é a
+fonte, e a resolução citada nele é a fonte da fonte.
+
 ## Fontes oficiais dos dados
 
 - Manual de Redefinição de Senha (Discente) · UEMG

@@ -139,6 +139,161 @@
     menu.appendChild(a);
   })();
 
+  /* ── Submenus do topo ─────────────────────────────── */
+  (function submenus() {
+    /* No HTML os links de cada grupo ficam soltos dentro de um
+       .nav-grupo, então sem JavaScript o menu continua sendo uma
+       lista de links que funciona. Aqui eles são recolhidos em um
+       painel que abre no clique, com teclado e leitor de tela. */
+    var barra = document.querySelector('.nav');
+    var faixa = document.querySelector('.nav-in');
+    if (!barra || !faixa) return;
+
+    var grupos = Array.prototype.slice.call(faixa.querySelectorAll('.nav-grupo'));
+    if (!grupos.length) return;
+
+    var painelAberto = null, botaoAberto = null;
+
+    function fechar(devolverFoco) {
+      if (!painelAberto) return;
+      painelAberto.hidden = true;
+      botaoAberto.setAttribute('aria-expanded', 'false');
+      if (devolverFoco) botaoAberto.focus();
+      painelAberto = null;
+      botaoAberto = null;
+    }
+
+    function posicionar(botao, painel) {
+      var rb = botao.getBoundingClientRect();
+      var rn = barra.getBoundingClientRect();
+      painel.style.top = rn.height + 'px';
+      if (window.innerWidth <= 560) {
+        painel.style.left = '.6rem';
+        painel.style.right = '.6rem';
+        return;
+      }
+      painel.style.right = 'auto';
+      var largura = painel.offsetWidth;
+      var esquerda = Math.min(rb.left - rn.left, rn.width - largura - 12);
+      painel.style.left = Math.max(12, esquerda) + 'px';
+    }
+
+    function abrir(botao, painel) {
+      fechar(false);
+      painel.hidden = false;
+      botao.setAttribute('aria-expanded', 'true');
+      posicionar(botao, painel);
+      painelAberto = painel;
+      botaoAberto = botao;
+    }
+
+    grupos.forEach(function (grupo, i) {
+      var rotulo = grupo.getAttribute('data-grupo') || 'Mais';
+      var id = 'submenu-' + (i + 1);
+      var links = Array.prototype.slice.call(grupo.querySelectorAll('a'));
+      if (!links.length) return;
+
+      var temAtual = links.some(function (a) { return a.getAttribute('aria-current') === 'page'; });
+
+      var painel = document.createElement('div');
+      painel.className = 'nav-painel';
+      painel.id = id;
+      painel.hidden = true;
+      painel.setAttribute('role', 'group');
+      painel.setAttribute('aria-label', rotulo);
+      links.forEach(function (a) { painel.appendChild(a); });
+
+      var botao = document.createElement('button');
+      botao.type = 'button';
+      botao.className = 'nav-link nav-botao' + (temAtual ? ' tem-atual' : '');
+      botao.id = 'botao-' + id;
+      botao.setAttribute('aria-expanded', 'false');
+      botao.setAttribute('aria-controls', id);
+      botao.innerHTML = '<i class="dot"></i>' + escapar(rotulo) +
+                        '<span class="nav-seta" aria-hidden="true">▾</span>';
+      painel.setAttribute('aria-labelledby', botao.id);
+
+      grupo.appendChild(botao);
+      barra.appendChild(painel);
+
+      botao.addEventListener('click', function () {
+        if (painel.hidden) abrir(botao, painel); else fechar(false);
+      });
+
+      botao.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') {
+          if (painel.hidden) {
+            e.preventDefault();
+            abrir(botao, painel);
+            links[0].focus();
+          }
+        }
+      });
+
+      painel.addEventListener('keydown', function (e) {
+        var onde = links.indexOf(document.activeElement);
+        if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+          e.preventDefault();
+          var passo = e.key === 'ArrowDown' ? 1 : -1;
+          var proximo = (onde + passo + links.length) % links.length;
+          links[proximo].focus();
+        } else if (e.key === 'Home') {
+          e.preventDefault(); links[0].focus();
+        } else if (e.key === 'End') {
+          e.preventDefault(); links[links.length - 1].focus();
+        }
+      });
+    });
+
+    /* Escape fecha e devolve o foco ao botão; clique fora e rolagem fecham */
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && painelAberto) fechar(true);
+    });
+    document.addEventListener('click', function (e) {
+      if (!painelAberto) return;
+      if (painelAberto.contains(e.target) || botaoAberto.contains(e.target)) return;
+      fechar(false);
+    });
+    document.addEventListener('focusin', function (e) {
+      if (!painelAberto) return;
+      if (painelAberto.contains(e.target) || botaoAberto.contains(e.target)) return;
+      fechar(false);
+    });
+    faixa.addEventListener('scroll', function () { fechar(false); }, { passive: true });
+    window.addEventListener('resize', function () { fechar(false); });
+  })();
+
+  /* ── Pista de rolagem do menu ─────────────────────── */
+  (function pistaDoMenu() {
+    /* a faixa de seções rola para os lados e não dava sinal disso:
+       no celular o estudante via dois itens e meio e não sabia que
+       havia mais. O degradê acende só do lado em que há menu escondido */
+    var faixa = document.querySelector('.nav-in');
+    if (!faixa) return;
+    var barra = faixa.parentNode;
+    if (!barra || !barra.classList.contains('nav')) return;
+
+    var pendente = null;
+    function medir() {
+      var sobra = faixa.scrollWidth - faixa.clientWidth;
+      var posicao = Math.round(faixa.scrollLeft);
+      barra.classList.toggle('tem-mais', sobra > 8 && posicao < sobra - 4);
+      barra.classList.toggle('tem-antes', posicao > 4);
+    }
+    function adiar() {
+      if (pendente) return;
+      pendente = setTimeout(function () { pendente = null; medir(); }, 80);
+    }
+
+    faixa.addEventListener('scroll', adiar, { passive: true });
+    window.addEventListener('resize', adiar);
+    /* o A+ e o A- mudam a largura dos itens, então vale medir de novo */
+    document.querySelectorAll('[data-fonte-mais], [data-fonte-menos]').forEach(function (b) {
+      b.addEventListener('click', function () { setTimeout(medir, 60); });
+    });
+    medir();
+  })();
+
   /* ── Tamanho do texto (A- / A+) ───────────────────── */
   (function tamanhoDoTexto() {
     var MIN = 0, MAX = 3;
@@ -171,11 +326,24 @@
     var caixa = document.getElementById('avisos');
     if (!caixa || !window.DADOS_AVISOS) return;
 
+    /* guarda TODOS os avisos que o aluno já fechou, não só o último:
+       com um só, fechar o segundo fazia o primeiro voltar a aparecer */
+    function lerFechados() {
+      var lista = [];
+      try { lista = JSON.parse(ler('avisos-fechados') || '[]'); } catch (e) { lista = []; }
+      if (!Array.isArray(lista)) lista = [];
+      var antigo = ler('aviso-fechado');   /* formato anterior, de um aviso só */
+      if (antigo && lista.indexOf(antigo) === -1) lista.push(antigo);
+      return lista;
+    }
+
+    var todos = window.DADOS_AVISOS.avisos || [];
+    var fechados = lerFechados();
     var hoje = hojeISO();
-    var vigentes = (window.DADOS_AVISOS.avisos || []).filter(function (a) {
+    var vigentes = todos.filter(function (a) {
       if (a.de && a.de > hoje) return false;      /* agendado, ainda não chegou a hora */
       if (a.ate && a.ate < hoje) return false;    /* venceu, vive no mural */
-      return ler('aviso-fechado') !== a.texto;
+      return fechados.indexOf(a.texto) === -1;
     });
     if (!vigentes.length) return;
 
@@ -196,7 +364,15 @@
     caixa.appendChild(el);
 
     el.querySelector('.fechar').addEventListener('click', function () {
-      guardar('aviso-fechado', a.texto);
+      fechados.push(a.texto);
+      /* só continua guardando o que ainda existe na lista de avisos,
+         para a memória do navegador não crescer sem fim */
+      var textosVivos = todos.map(function (x) { return x.texto; });
+      var limpos = fechados.filter(function (t, i) {
+        return textosVivos.indexOf(t) !== -1 && fechados.indexOf(t) === i;
+      });
+      guardar('avisos-fechados', JSON.stringify(limpos));
+      apagar('aviso-fechado');
       el.remove();
     });
   })();

@@ -18,6 +18,20 @@ window.DADOS_NOVIDADES = {
   atualizadoEm: '2026-08-06',
   itens: [
     {
+      data: '2026-08-07',
+      titulo: 'Meu curso: o que o PPC exige de você',
+      texto: 'Matriz curricular com pré-requisitos, contador de atividades complementares, estágio, TCC e as regras da secretaria, incluindo o exame especial de 40 a 59 pontos.',
+      link: 'curso.html',
+      textoLink: 'ver o meu curso'
+    },
+    {
+      data: '2026-08-06',
+      titulo: 'Busca que funciona no teclado',
+      texto: 'A tecla / abre a busca, as setas percorrem os resultados e quem usa leitor de tela ouve quantos foram encontrados.',
+      link: 'index.html',
+      textoLink: 'experimentar a busca'
+    },
+    {
       data: '2026-08-06',
       titulo: 'Planner, cronômetro e mural de avisos',
       texto: 'Folha do semestre para imprimir, blocos de estudo cronometrados e o histórico de todos os comunicados do NAE.',

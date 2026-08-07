@@ -180,6 +180,53 @@ p  { margin: 0; }
 }
 .nav-link[aria-current="page"] .dot { background: rgba(255,255,255,.8); opacity: 1; }
 
+/* "Fale com o NAE": a ação mais valiosa do site, logo no começo da faixa
+   e com peso visual de botão, não de link solto */
+.nav-link.nav-cta { color: #fff; background: var(--coral); border-color: var(--coral); box-shadow: var(--sh-cor); }
+.nav-link.nav-cta .dot { background: rgba(255,255,255,.85); opacity: 1; }
+.nav-link.nav-cta:hover,
+.nav-link.nav-cta:focus-visible {
+  color: #fff; background: color-mix(in srgb, var(--coral) 86%, #000);
+  border-color: color-mix(in srgb, var(--coral) 86%, #000);
+}
+
+/* Submenus. Sem JavaScript, o .nav-grupo não existe para o leiaute
+   (display: contents) e os links do grupo aparecem soltos na faixa,
+   como antes. Com JavaScript, eles viram um painel que abre no botão */
+.nav-grupo { display: contents; }
+.nav-botao { cursor: pointer; background: none; font: inherit; }
+.nav-seta { font-size: .72em; opacity: .75; margin-left: .05rem; }
+.nav-botao.tem-atual { color: var(--ink); border-color: color-mix(in srgb, var(--c, var(--azul)) 45%, transparent); }
+.nav-botao[aria-expanded="true"] { color: var(--ink); background: var(--surface-2); border-color: var(--line); }
+.nav-painel {
+  position: absolute; z-index: 60; min-width: 13.5rem; max-width: min(22rem, calc(100vw - 1.2rem));
+  display: flex; flex-direction: column; gap: .15rem;
+  padding: .4rem; border: 1px solid var(--line); border-radius: 14px;
+  background: var(--surface); box-shadow: 0 14px 32px rgba(16, 39, 58, .16);
+}
+.nav-painel .nav-link { border-radius: 10px; white-space: normal; }
+html[data-contraste="alto"] .nav-painel { border: 2px solid #000; box-shadow: none; }
+
+/* Pista de que a faixa rola para os lados. As bordas ficam alinhadas com o
+   .wrap, e o degradê só aparece quando existe menu escondido daquele lado
+   (as classes são ligadas em site.js) */
+.nav::before, .nav::after {
+  content: ""; position: absolute; top: 0; bottom: 1px; width: 2.4rem;
+  pointer-events: none; opacity: 0; transition: opacity .18s ease;
+}
+.nav::before {
+  left: max(1.25rem, calc((100% - 1160px) / 2));
+  background: linear-gradient(to left, transparent, var(--surface) 78%);
+}
+.nav::after {
+  right: max(1.25rem, calc((100% - 1160px) / 2));
+  background: linear-gradient(to right, transparent, var(--surface) 78%);
+}
+.nav.tem-antes::before, .nav.tem-mais::after { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .nav::before, .nav::after { transition: none; }
+}
+
 /* ── Conteúdo ─────────────────────────────────────────── */
 main { padding-block: var(--s5) var(--s6); display: block; }
 
@@ -972,6 +1019,7 @@ html[data-contraste="alto"] .chip,
 html[data-contraste="alto"] .acao,
 html[data-contraste="alto"] .btn-topo { border-color: #000; color: #000; }
 html[data-contraste="alto"] .nav-link[aria-current="page"] { color: #fff; }
+html[data-contraste="alto"] .nav-link.nav-cta { color: #fff; background: var(--coral); border-color: #000; }
 html[data-contraste="alto"] .btn { box-shadow: none; border: 2px solid #000; }
 html[data-contraste="alto"] .btn.ghost { color: #000; }
 html[data-contraste="alto"] table.grade th,
@@ -1273,6 +1321,79 @@ html[data-fonte="3"] body { font-size: 21px; }
 .calc-res.boa { --c: var(--verde); background: color-mix(in srgb, var(--verde) 10%, var(--surface)); }
 .calc-res.olho { --c: var(--ambar); background: color-mix(in srgb, var(--ambar) 10%, var(--surface)); }
 .calc-res.ruim { --c: var(--vermelho); background: color-mix(in srgb, var(--vermelho) 8%, var(--surface)); }
+
+/* ── Páginas do curso (matriz, atividades, estágio, TCC) ── */
+.fonte-ppc { font-size: .82rem; color: var(--muted); margin: 0; }
+
+.periodo { margin-block: var(--s3); }
+.periodo-h {
+  display: flex; align-items: baseline; justify-content: space-between; gap: .75rem;
+  font-size: 1.05rem; padding-bottom: .4rem; margin-bottom: .6rem;
+  border-bottom: 2px solid color-mix(in srgb, var(--c, var(--azul)) 35%, transparent);
+  color: var(--c, var(--azul));
+}
+.periodo-ch { font-size: .82rem; font-weight: 600; color: var(--muted); white-space: nowrap; }
+
+.disciplinas { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .3rem; }
+.disciplina {
+  display: grid; grid-template-columns: 1fr auto; gap: .2rem .75rem; align-items: baseline;
+  padding: .55rem .7rem; border: 1px solid var(--line); border-radius: 12px;
+  background: var(--surface);
+}
+.disciplina label { display: flex; align-items: baseline; gap: .55rem; cursor: pointer; margin: 0; font-weight: 500; }
+.disciplina input { width: 1.05rem; height: 1.05rem; flex: none; accent-color: var(--azul); cursor: pointer; }
+.disc-ch { font-size: .84rem; color: var(--muted); white-space: nowrap; }
+.disc-pre { grid-column: 1 / -1; font-size: .82rem; color: var(--muted); padding-left: 1.6rem; }
+.disc-pre b { color: var(--coral); }
+.disciplina.feita { background: color-mix(in srgb, var(--verde) 8%, var(--surface)); border-color: color-mix(in srgb, var(--verde) 30%, transparent); }
+.disciplina.feita .disc-nome { text-decoration: line-through; text-decoration-color: color-mix(in srgb, var(--verde) 60%, transparent); }
+.disciplina.travada { border-style: dashed; }
+.etiqueta {
+  font-size: .7rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
+  color: var(--muted); border: 1px solid var(--line); border-radius: 99px; padding: .05rem .4rem;
+}
+
+.progresso { margin-block: var(--s2); }
+.progresso-topo { display: flex; align-items: baseline; justify-content: space-between; gap: .75rem; flex-wrap: wrap; margin-bottom: .4rem; }
+.progresso-topo b { font-size: 1.1rem; }
+.progresso-topo span { font-size: .88rem; color: var(--muted); }
+.progresso-nota { font-size: .84rem; color: var(--muted); margin: .5rem 0 0; }
+.barra { height: .55rem; border-radius: 99px; background: var(--surface-2); overflow: hidden; }
+.barra span { display: block; height: 100%; border-radius: 99px; transition: width .3s ease; }
+@media (prefers-reduced-motion: reduce) { .barra span { transition: none; } }
+
+.btn-limpo {
+  background: none; border: 0; padding: 0; font: inherit; font-size: .84rem;
+  color: var(--azul); text-decoration: underline; cursor: pointer;
+}
+.btn-limpo:hover { color: var(--azul-esc); }
+
+.rolagem-tabela { overflow-x: auto; }
+.tabela-ppc { width: 100%; border-collapse: collapse; font-size: .9rem; min-width: 34rem; }
+.tabela-ppc th, .tabela-ppc td { text-align: left; padding: .6rem .7rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+.tabela-ppc thead th { background: var(--surface-2); font-size: .82rem; letter-spacing: .01em; }
+.tabela-ppc td b { color: var(--azul-esc); font-size: .8rem; text-transform: uppercase; letter-spacing: .03em; }
+
+.ativ-form { display: flex; gap: .6rem; align-items: flex-end; flex-wrap: wrap; margin-block: var(--s2); }
+.ativ-form .field { flex: 1 1 14rem; }
+.ativ-form .campo-curto { flex: 0 0 7rem; }
+.ativ-lista { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .3rem; }
+.ativ-lista li {
+  display: flex; align-items: baseline; gap: .6rem; padding: .5rem .7rem;
+  border: 1px solid var(--line); border-radius: 12px; background: var(--surface);
+}
+.ativ-lista li span { flex: 1; }
+.ativ-lista li b { white-space: nowrap; color: var(--azul-esc); }
+.ativ-vazio { color: var(--muted); font-size: .9rem; }
+
+.regras { margin: 0; }
+.regras dt { font-weight: 700; color: var(--ink); margin-top: .9rem; }
+.regras dt:first-child { margin-top: 0; }
+.regras dd { margin: .2rem 0 0; color: var(--ink-2); }
+
+html[data-contraste="alto"] .disciplina,
+html[data-contraste="alto"] .ativ-lista li { border-color: #000; }
+html[data-contraste="alto"] .etiqueta { border-color: #000; color: #000; }
 
 /* ── Impressão ────────────────────────────────────────── */
 @media print {

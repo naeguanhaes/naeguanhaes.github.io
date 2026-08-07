@@ -26,21 +26,36 @@ de mudanças estão na pasta [`historico/`](historico/CONTEXTO.md).
    e só siga com "Nenhum erro encontrado".
 2. Se mexeu em qualquer `.js` ou `.css` de `assets/` (menos `dados-*.js`):
    rode `node ferramentas/minificar.js`. As páginas carregam `assets/min/`.
-3. **Troque a `VERSAO` no topo de `sw.js`** (nae-v11 vira nae-v12, e assim
+3. **Troque a `VERSAO` no topo de `sw.js`** (nae-v14 vira nae-v15, e assim
    por diante). Sem isso, quem já visitou continua na versão antiga.
+   **Exceção:** mexer só em `assets/dados-*.js` não exige troca. Desde a
+   nae-v14 esses arquivos vão pela rede primeiro, então um aviso novo chega
+   ao estudante no mesmo dia. O `checar-versao.js` sabe dessa diferença e
+   não cobra à toa.
 4. Atualize a data do rodapé "Site conferido e atualizado em ..." nas páginas
-   (uma troca de texto em todas de uma vez).
+   (uma troca de texto em todas de uma vez). O `checar-consistencia.js`
+   reclama se uma página ficar para trás.
 5. Mudança visível para o aluno? Acrescente um item no TOPO de
    `assets/dados-novidades.js`.
 6. Página ou seção nova? Inclua no índice `assets/dados-busca.js`, no menu de
-   todas as páginas e na lista `ESSENCIAIS` do `sw.js`.
-7. Rode as duas inspeções. O workflow roda as duas de novo e
+   todas as páginas, na lista `ESSENCIAIS` do `sw.js` e rode
+   `node ferramentas/gerar-sitemap.js`.
+7. Mexeu em pergunta do FAQ (`email.html`, `sistemas.html`) ou no endereço,
+   telefone e horário de atendimento? Rode
+   `node ferramentas/gerar-dados-estruturados.js`, que reescreve o que o
+   Google lê. As perguntas saem do próprio HTML, então não se digita nada
+   duas vezes.
+8. Rode as seis inspeções. O workflow roda todas de novo e
    **bloqueia a publicação** se qualquer uma falhar:
    ```bash
+   node ferramentas/checar-dados.js
    node ferramentas/checar-site.js
    node ferramentas/checar-acessibilidade.js
+   node ferramentas/checar-consistencia.js
+   node ferramentas/checar-minificados.js
+   node ferramentas/checar-versao.js
    ```
-8. Commit e push na branch `main`. A publicação é feita pelo workflow
+9. Commit e push na branch `main`. A publicação é feita pelo workflow
    `.github/workflows/publicar.yml` (GitHub Actions).
 
 ## Páginas prontas porém OCULTAS (decisão do coordenador)
@@ -64,11 +79,16 @@ As três já funcionam por endereço direto, para o coordenador revisar.
 ## Rotinas automáticas
 
 - **Publicação**: `.github/workflows/publicar.yml`, a cada push na `main`,
-  com as inspeções barrando o deploy quando encontram problema.
+  com as seis inspeções barrando o deploy quando encontram problema.
 - **Vigia dos links externos**: `.github/workflows/links-externos.yml`,
   toda segunda-feira às 09h. Se um endereço de fora morrer, abre uma tarefa
   no repositório avisando. Sites que bloqueiam robô ficam na lista
   `TOLERADOS` dentro de `ferramentas/checar-links-externos.js`.
+- **Vigia do frescor dos dados**: `.github/workflows/frescor.yml`, dia 1 de
+  cada mês às 09h. Abre tarefa quando o semestre da grade não bate mais com o
+  mês corrente, quando o calendário vira o ano, quando um carimbo
+  "conferido em" passa de 120 dias ou quando avisos vencidos há muito tempo
+  continuam na lista. Não bloqueia nada: só lembra.
 
 ## Endereços e contas
 
@@ -100,6 +120,33 @@ As três já funcionam por endereço direto, para o coordenador revisar.
 - CAPS I Guanhães: Praça Néria Coelho Guimarães, 36, Centro. (33) 3421-3345,
   segunda a sexta das 07h às 17h, Instagram @saudementaldeguanhaes.
 - Semestre atual dos horários: 2026.2, em `assets/dados-horarios.js`.
+- **Aprovação, com a regra completa** (Resolução COEPE/UEMG nº 249/2020):
+  60 dos 100 pontos e 75% de frequência. Quem fecha de **40 a 59 pontos** com a
+  frequência mínima tem direito ao **exame especial**, prova única de todo o
+  conteúdo; tirando 60 nela, o professor lança 60. Revisão de prova: cinco dias
+  úteis da divulgação. Atestado de menos de sete dias: justificativa em 48h.
+- **Cursos** (fonte: PPCs, em `assets/dados-curso.js`): Direito tem 4.230 horas,
+  282 créditos, 10 a 14 semestres e **210 horas** de atividades complementares.
+  Engenharia Civil tem 3.750 horas, 250 créditos, 10 a 15 semestres, **30 horas**
+  de atividades complementares e estágio de 165 horas a partir do 6º período.
+  Os dois têm 40 vagas anuais e funcionam à noite.
+- **O campus não tem psicólogos.** O PPC de Direito cita "acompanhamento
+  psicológico" como módulo do programa de nivelamento, mas isso é letra morta
+  herdada do PPC da Unidade de Diamantina (confirmado pelo coordenador em
+  07/08/2026). Não prometa esse atendimento em página nenhuma. O detalhe está
+  em `historico/CONTEXTO.md`, na seção de conteúdo sensível.
+- **Sistemas acadêmicos em uso: AVA Moodle, Lyceum e o aplicativo UEMG+
+  Estudante**, como está em `sistemas.html`. O PPC de Direito cita WebGiz, Giz
+  Acadêmico, Athenas e Sophia: trecho desatualizado, não copiar (confirmado
+  pelo coordenador em 07/08/2026).
+- Regra para usar os PPCs: eles valem como fonte para **regra curricular**
+  (carga horária, pré-requisito, prazo, banca). Quando descreverem **serviço,
+  sistema ou estrutura da unidade**, confirme com a coordenação antes de
+  publicar. A lista dos desvios já conhecidos está em `historico/CONTEXTO.md`.
+- O NAE foi criado na UEMG pela **Resolução nº 201/2010**, com base no PNAES e
+  no PEAES. O PPC de Engenharia o chama de "Núcleo de Atendimento ao
+  Estudante"; o nome que o site usa continua sendo o da logo, "Núcleo de Apoio
+  ao Estudante", por decisão do coordenador.
 
 ## Estrutura em uma linha cada
 
@@ -107,13 +154,41 @@ Páginas no ar: `index`, `email`, `sistemas`, `horarios`, `calendario`,
 `calculadora` (aparece como Ferramentas no menu, tem calculadora e cronômetro),
 `planner`, `mapa`, `apoio`, `avisos`, `sobre`, `contato`, `privacidade`,
 `cartaz` (imprimível), `404`, `offline`.
+Seção "Meu curso": `curso` (visão geral), `matriz`, `atividades`, `estagio`,
+`tcc`, `secretaria`. Todas alimentadas por `assets/dados-curso.js`.
 Páginas ocultas: `editais`, `calouro`, `semestres`.
+
+O menu tem 8 títulos, e três deles abrem submenu (Meu curso, Aulas e prazos,
+Sistemas). No HTML os links do grupo ficam soltos dentro de um
+`<div class="nav-grupo" data-grupo="...">`: sem JavaScript eles aparecem como
+links normais, e o `site.js` é que os recolhe no painel. Ao mexer no menu,
+troque em todas as páginas de uma vez, porque o `checar-consistencia.js` exige
+que o bloco seja idêntico em todas.
 
 Dados editáveis: `assets/dados-horarios.js`, `dados-calendario.js`,
 `dados-avisos.js`, `dados-novidades.js`, `dados-busca.js`, `dados-editais.js`,
-e `historico/semestres/indice.js`.
+`dados-curso.js` (transcrição dos PPCs, com a fonte de cada número) e
+`historico/semestres/indice.js`.
 
-Ferramentas: `checar-dados.js`, `checar-site.js`, `checar-acessibilidade.js`,
-`checar-links-externos.js` e `minificar.js`, todas em `ferramentas/`.
+Ferramentas, todas em `ferramentas/`:
 
-O restante está detalhado no `README.md` e em `historico/CONTEXTO.md`.
+| Arquivo | Para quê |
+| --- | --- |
+| `checar-dados.js` | choque de sala e de professor, horário e data inválidos |
+| `checar-site.js` | travessões, links quebrados, cache offline, divs |
+| `checar-acessibilidade.js` | WCAG 2.1 AA: alt, rótulo, contraste, títulos |
+| `checar-consistencia.js` | menu, rodapé, sintaxe dos scripts, busca, sitemap |
+| `checar-minificados.js` | `assets/min/` em dia com as origens |
+| `checar-versao.js` | cobra a troca da `VERSAO` do `sw.js` |
+| `checar-frescor.js` | dados envelhecendo (roda todo mês, não bloqueia) |
+| `checar-links-externos.js` | endereços de fora que morreram |
+| `minificar.js` | recompacta para `assets/min/` e grava `origem.json` |
+| `gerar-sitemap.js` | `sitemap.xml` e `robots.txt` |
+| `gerar-dados-estruturados.js` | JSON-LD do NAE e do FAQ, lido do próprio HTML |
+
+Gerados por ferramenta, não editar à mão: `sitemap.xml`, `robots.txt`,
+`assets/min/`, e os blocos entre "dados estruturados: inicio" e "fim" no
+`<head>` de `index`, `contato`, `email` e `sistemas`.
+
+O restante está detalhado no `README.md`, em `historico/CONTEXTO.md` e, para
+o dia em que a coordenação mudar de mãos, em `historico/CONTINUIDADE.md`.

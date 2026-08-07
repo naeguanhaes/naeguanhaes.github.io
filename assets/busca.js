@@ -34,7 +34,15 @@
     };
   });
 
-  var painel = null, campo = null, caixaRes = null, ultimoFoco = null;
+  var painel = null, campo = null, caixaRes = null, anuncio = null, ultimoFoco = null;
+
+  /* tudo que recebe foco dentro do diálogo, na ordem da tela */
+  function focaveis() {
+    var caixa = painel.querySelector('.busca-caixa');
+    return Array.prototype.slice.call(
+      caixa.querySelectorAll('a[href], button, input, [tabindex]:not([tabindex="-1"])')
+    ).filter(function (el) { return el.offsetParent !== null || el === campo; });
+  }
 
   function montar() {
     painel = document.createElement('div');
@@ -52,12 +60,14 @@
             return '<a class="atalho" href="' + a.u + '" style="--c: ' + a.c + '">' + U.escapar(a.t) + '</a>';
           }).join('') +
         '</div>' +
-        '<div class="busca-res" id="busca-res" role="listbox" aria-label="Resultados"></div>' +
+        '<div class="busca-res" id="busca-res" aria-label="Resultados"></div>' +
+        '<p class="so-leitor" id="busca-anuncio" role="status" aria-live="polite"></p>' +
       '</div>';
     document.body.appendChild(painel);
 
     campo = painel.querySelector('#busca-campo');
     caixaRes = painel.querySelector('#busca-res');
+    anuncio = painel.querySelector('#busca-anuncio');
 
     campo.addEventListener('input', function () { procurar(campo.value); });
     campo.addEventListener('keydown', function (e) {
@@ -70,6 +80,36 @@
     painel.addEventListener('click', function (e) { if (e.target === painel) fechar(); });
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && !painel.hidden) fechar();
+    });
+
+    /* teclado dentro do diálogo: setas passeiam pelos resultados e o
+       Tab não escapa para a página que ficou atrás do véu */
+    painel.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        var itens = [campo].concat(
+          Array.prototype.slice.call(caixaRes.querySelectorAll('a.busca-item'))
+        );
+        if (itens.length < 2) return;
+        e.preventDefault();
+        var onde = itens.indexOf(document.activeElement);
+        var passo = e.key === 'ArrowDown' ? 1 : -1;
+        var proximo = onde === -1 ? (passo === 1 ? 1 : itens.length - 1)
+                                  : (onde + passo + itens.length) % itens.length;
+        itens[proximo].focus();
+        return;
+      }
+
+      if (e.key !== 'Tab') return;
+      var lista = focaveis();
+      if (!lista.length) return;
+      var primeiro = lista[0], ultimo = lista[lista.length - 1];
+      if (e.shiftKey && document.activeElement === primeiro) {
+        e.preventDefault(); ultimo.focus();
+      } else if (!e.shiftKey && document.activeElement === ultimo) {
+        e.preventDefault(); primeiro.focus();
+      } else if (lista.indexOf(document.activeElement) === -1) {
+        e.preventDefault(); primeiro.focus();
+      }
     });
   }
 
@@ -93,6 +133,7 @@
 
     if (!termos.length) {
       caixaRes.innerHTML = '<p class="busca-dica">Digite acima ou toque em uma das dúvidas frequentes.</p>';
+      avisar('');
       return;
     }
 
@@ -118,6 +159,7 @@
       caixaRes.innerHTML =
         '<p class="busca-dica">Nada encontrado para <b>' + U.escapar(texto) + '</b>. ' +
         'Tente outra palavra, ou <a href="contato.html">pergunte ao NAE</a>.</p>';
+      avisar('Nada encontrado.');
       return;
     }
 
@@ -128,6 +170,18 @@
                '<span class="bi-d">' + U.escapar(it.d) + '</span>' +
              '</a>';
     }).join('');
+
+    avisar(achados.length === 1 ? '1 resultado. Use as setas para percorrer.'
+                                : achados.length + ' resultados. Use as setas para percorrer.');
+  }
+
+  /* fala com quem usa leitor de tela, sem mudar nada na tela */
+  var relogioAviso = null;
+  function avisar(texto) {
+    if (!anuncio) return;
+    if (relogioAviso) clearTimeout(relogioAviso);
+    /* espera a digitação parar, para não tagarelar a cada letra */
+    relogioAviso = setTimeout(function () { anuncio.textContent = texto; }, 500);
   }
 
   gatilhos.forEach(function (g) {
