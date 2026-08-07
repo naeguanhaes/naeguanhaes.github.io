@@ -28,7 +28,7 @@ const ORIGEM = path.join(RAIZ, 'assets');
 const DESTINO = path.join(ORIGEM, 'min');
 const MANIFESTO = path.join(DESTINO, 'origem.json');
 
-const JS = ['site.js', 'busca.js', 'horarios.js', 'calendario.js', 'mapa.js', 'planner.js', 'curso.js'];
+const JS = ['site.js', 'busca.js', 'horarios.js', 'calendario.js', 'mapa.js', 'planner.js', 'curso.js', 'requerimentos.js'];
 const CSS = ['estilo.css'];
 const FONTES = JS.concat(CSS);
 

@@ -56,7 +56,12 @@ de mudanças estão na pasta [`historico/`](historico/CONTEXTO.md).
    node ferramentas/checar-minificados.js
    node ferramentas/checar-versao.js
    ```
-9. Commit e push na branch `main`. A publicação é feita pelo workflow
+9. Commit e push na branch `main`, **sem perguntar**: o coordenador autorizou
+   a publicação automática em 07/08/2026, porque o workflow já barra o deploy
+   quando um inspetor falha. Depois do push, confira a conclusão do workflow e
+   o site publicado, e relate. Isso não vale para ação destrutiva (apagar
+   arquivo, reescrever histórico, mexer em conta ou domínio): essas continuam
+   pedindo confirmação. A publicação é feita pelo workflow
    `.github/workflows/publicar.yml` (GitHub Actions).
 
 ## Páginas prontas porém OCULTAS (decisão do coordenador)
@@ -153,8 +158,8 @@ As três já funcionam por endereço direto, para o coordenador revisar.
 
 Páginas no ar: `index`, `email`, `sistemas` (porta de entrada), `moodle`,
 `lyceum` (com o aplicativo UEMG+), `horarios`, `calendario`,
-`calculadora`, `cronometro`, `planner` (as três ferramentas, cada uma na sua
-página, reunidas no grupo Ferramentas do menu),
+`calculadora`, `cronometro`, `planner`, `requerimentos` (as ferramentas, cada
+uma na sua página, reunidas no grupo Ferramentas do menu),
 `mapa`, `apoio`, `avisos`, `sobre`, `contato`, `privacidade`,
 `cartaz` (imprimível), `404`, `offline`.
 Seção "Meu curso": `curso` (visão geral), `matriz`, `atividades`, `estagio`,

@@ -36,6 +36,7 @@ atendimento às terças e quintas das 18h às 19h; quartas mediante agendamento 
 | `calculadora.html` | Calculadora de média e faltas, com a regra do exame especial |
 | `cronometro.html` | Cronômetro de estudos em blocos de 25 minutos |
 | `planner.html` | Planner do semestre em 4 folhas A4 para imprimir |
+| `requerimentos.html` | Gerador de requerimentos para a secretaria, com a resolução citada |
 | `404.html` | Página de endereço não encontrado |
 
 ---

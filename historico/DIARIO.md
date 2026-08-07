@@ -3,6 +3,27 @@
 Registro do que mudou e quando, do mais recente para o mais antigo.
 Ao fazer uma alteração relevante, acrescente uma entrada no topo.
 
+## 07/08/2026 · décima rodada (gerador de requerimentos e agendamento)
+
+- **`requerimentos.html`**, ferramenta nova: o estudante escolhe o pedido,
+  preenche os campos e o site monta o requerimento inteiro, já citando a
+  resolução correta, pronto para conferir, imprimir e entregar. Três modelos,
+  todos com base escrita em `assets/dados-requerimentos.js`:
+  - aproveitamento de estudos e adaptação curricular, pela Resolução
+    COEPE/UEMG nº 250/2020
+  - trancamento de matrícula, com o prazo do calendário acadêmico
+  Cada modelo traz também quando pedir, onde entregar, o que levar junto e um
+  aviso do que confirmar na secretaria. A impressão sai só com a folha
+- **Agendamento na página de contato**: um formulário monta a mensagem de
+  agendamento e abre o programa de e-mail do estudante com tudo preenchido.
+  Nada é enviado pelo site, e há botão de copiar para quem não tem e-mail
+  configurado no aparelho
+- **Privacidade:** a página passou a listar o que o gerador guarda. O CPF
+  nunca é salvo, e o resto só fica se a pessoa marcar a caixinha
+- A partir de agora, commit e push são automáticos ao fim de cada rodada,
+  autorizado pelo coordenador, porque o workflow já barra deploy com erro
+- sw em nae-v17
+
 ## 07/08/2026 · nona rodada (menu reorganizado e ferramentas separadas)
 
 Reorganização definida pelo coordenador. O topo passou a ter oito títulos,

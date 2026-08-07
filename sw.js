@@ -5,7 +5,7 @@
    isso apaga o cache antigo e busca tudo de novo.
    ═══════════════════════════════════════════════════════ */
 
-var VERSAO = 'nae-v16';
+var VERSAO = 'nae-v17';
 
 /* Arquivos de dados (avisos, horários, calendário, editais, semestres).
    Estes NÃO seguem a regra do cache primeiro: um aviso urgente precisa
@@ -25,6 +25,7 @@ var ESSENCIAIS = [
   './calendario.html',
   './calculadora.html',
   './cronometro.html',
+  './requerimentos.html',
   './mapa.html',
   './sobre.html',
   './contato.html',
@@ -57,9 +58,11 @@ var ESSENCIAIS = [
   './assets/dados-busca.js',
   './assets/dados-editais.js',
   './assets/dados-curso.js',
+  './assets/dados-requerimentos.js',
   './assets/min/busca.min.js',
   './assets/min/planner.min.js',
   './assets/min/curso.min.js',
+  './assets/min/requerimentos.min.js',
   './historico/semestres/indice.js',
   './assets/logo-topo.webp',
   './assets/simbolo-nae.webp',

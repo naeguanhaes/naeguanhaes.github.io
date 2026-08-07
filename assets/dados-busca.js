@@ -13,6 +13,12 @@
 window.DADOS_BUSCA = {
   itens: [
     {
+      t: "Gerador de requerimentos",
+      d: "Monta o pedido de aproveitamento, trancamento ou adaptacao com a resolucao certa.",
+      u: "requerimentos.html",
+      k: "requerimento pedido secretaria protocolo aproveitamento de estudos dispensa disciplina trancamento trancar adaptacao curricular modelo documento imprimir"
+    },
+    {
       t: "AVA Moodle · aulas e materiais",
       d: "Primeiro acesso em 8 etapas, com as telas, e o que fazer quando nao entra.",
       u: "moodle.html",

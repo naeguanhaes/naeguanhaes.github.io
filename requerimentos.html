@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Estágio · NAE Guanhães | UEMG</title>
-<meta name="description" content="Regras do estágio obrigatório e do não obrigatório nos cursos de Direito e Engenharia Civil da UEMG Guanhães, com carga horária e a partir de qual período.">
+<title>Gerador de requerimentos · NAE Guanhães | UEMG</title>
+<meta name="description" content="Monte o requerimento de aproveitamento de estudos, trancamento de matrícula ou adaptação curricular já com a resolução certa, pronto para imprimir e entregar.">
 <link rel="icon" href="assets/favicon-nae.png" type="image/png">
 <meta name="theme-color" content="#40688B">
 <meta name="color-scheme" content="light">
@@ -17,9 +17,9 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="NAE Guanhães · Núcleo de Apoio ao Estudante">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="Estágio · NAE Guanhães | UEMG">
-<meta property="og:description" content="Regras do estágio obrigatório e do não obrigatório nos cursos de Direito e Engenharia Civil da UEMG Guanhães, com carga horária e a partir de qual período.">
-<meta property="og:url" content="https://naeguanhaes.github.io/estagio.html">
+<meta property="og:title" content="Gerador de requerimentos · NAE Guanhães | UEMG">
+<meta property="og:description" content="Monte o requerimento de aproveitamento de estudos, trancamento de matrícula ou adaptação curricular já com a resolução certa, pronto para imprimir e entregar.">
+<meta property="og:url" content="https://naeguanhaes.github.io/requerimentos.html">
 <meta property="og:image" content="https://naeguanhaes.github.io/assets/og-nae.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -27,7 +27,7 @@
 <script>try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentElement.setAttribute("data-fonte",f);var c=localStorage.getItem("nae:contraste");if(c==="sim")document.documentElement.setAttribute("data-contraste","alto")}catch(e){}</script>
 <link rel="stylesheet" href="assets/min/estilo.min.css">
 </head>
-<body>
+<body class="pg-requerimento">
 
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
 
@@ -69,13 +69,13 @@
       <a class="nav-link" href="calculadora.html" style="--c: var(--turquesa)"><i class="dot"></i>Calculadora de média e faltas</a>
       <a class="nav-link" href="cronometro.html" style="--c: var(--petroleo)"><i class="dot"></i>Cronômetro de estudos</a>
       <a class="nav-link" href="planner.html" style="--c: var(--verde)"><i class="dot"></i>Planner do semestre</a>
-      <a class="nav-link" href="requerimentos.html" style="--c: var(--azul)"><i class="dot"></i>Gerador de requerimentos</a>
+      <a class="nav-link" href="requerimentos.html" aria-current="page" style="--c: var(--azul)"><i class="dot"></i>Gerador de requerimentos</a>
     </div>
     <div class="nav-grupo" data-grupo="Meu curso" style="--c: var(--azul)">
       <a class="nav-link" href="curso.html" style="--c: var(--azul-esc)"><i class="dot"></i>Visão geral do curso</a>
       <a class="nav-link" href="matriz.html" style="--c: var(--azul)"><i class="dot"></i>Matriz curricular</a>
       <a class="nav-link" href="atividades.html" style="--c: var(--coral)"><i class="dot"></i>Atividades complementares</a>
-      <a class="nav-link" href="estagio.html" aria-current="page" style="--c: var(--verde)"><i class="dot"></i>Estágio</a>
+      <a class="nav-link" href="estagio.html" style="--c: var(--verde)"><i class="dot"></i>Estágio</a>
       <a class="nav-link" href="tcc.html" style="--c: var(--lilas)"><i class="dot"></i>Trabalho de Conclusão</a>
       <a class="nav-link" href="secretaria.html" style="--c: var(--turquesa)"><i class="dot"></i>Secretaria e regras</a>
     </div>
@@ -89,36 +89,54 @@
 </nav>
 
 
-<main class="wrap stack-m" id="conteudo">
+<main class="wrap stack" id="conteudo">
 
-  <nav class="trilha" aria-label="Você está aqui" style="--c: var(--verde)">
-    <a href="index.html">Início</a><span class="separa">›</span><a href="curso.html">Meu curso</a><span class="separa">›</span><span aria-current="page">Estágio</span>
+  <nav class="trilha" aria-label="Você está aqui" style="--c: var(--azul)">
+    <a href="index.html">Início</a><span class="separa">›</span><span aria-current="page">Gerador de requerimentos</span>
   </nav>
 
   <div class="col stack-s">
-    <div class="titulo-sec" style="--c: var(--verde)">
-      <span class="eyebrow" style="--c: var(--verde)">Prática profissional</span>
-      <h1>Estágio</h1>
+    <div class="titulo-sec" style="--c: var(--azul)">
+      <span class="eyebrow" style="--c: var(--azul)">Papelada resolvida</span>
+      <h1>Gerador de requerimentos</h1>
     </div>
+    <p class="lede">
+      Escolha o pedido, preencha os campos e o site monta o requerimento <b>já com a
+      resolução certa citada</b>, pronto para você conferir, imprimir e entregar na
+      Secretaria Acadêmica. Nada é enviado a lugar nenhum: o texto é montado no seu
+      próprio aparelho.
+    </p>
   </div>
 
-    <p class="lede">
-      O estágio obrigatório é requisito para receber o diploma, e cada curso tem a sua
-      regra: em Direito, ele acontece dentro do Núcleo de Práticas Jurídicas; em
-      Engenharia Civil, são 165 horas que podem começar já no 6º período.
+  <div id="req-seletor"></div>
+  <div id="req-contexto"></div>
+
+  <form id="req-forma" class="stack-s" autocomplete="off"></form>
+
+  <div class="req-acoes">
+    <button class="btn" type="button" id="req-imprimir" style="--c: var(--azul)">Imprimir ou salvar em PDF</button>
+    <button class="btn ghost" type="button" id="req-copiar" style="--c: var(--azul)">Copiar o texto</button>
+    <button class="btn ghost" type="button" id="req-limpar" style="--c: var(--muted)">Limpar os campos</button>
+  </div>
+
+  <div id="req-avisos" aria-live="polite"></div>
+  <div id="req-documento"></div>
+
+  <div class="note col">
+    <p>
+      <b>O NAE ajuda a entregar</b> Se ficar em dúvida sobre o que escrever, sobre qual
+      documento anexar ou sobre o prazo, <a href="contato.html">fale com o Núcleo</a>
+      antes de protocolar. Em pedido com prazo curto, como a justificativa de falta em
+      48 horas, procure no mesmo dia.
     </p>
+  </div>
 
-    <div data-curso-seletor></div>
-    <div id="estagio-painel"></div>
-
-    <div class="note col">
-      <p>
-        <b>Estágio de fora conta?</b> Em Direito, o estágio profissional externo não substitui
-        a Prática Real, mas vale como atividade complementar, com 30 horas por semestre e teto
-        de 90 horas. Em Engenharia Civil, existe o estágio não obrigatório, que soma à formação
-        sem substituir o obrigatório. Confirme sempre com a Coordenação antes de assinar contrato.
-      </p>
-    </div>
+  <div class="note col">
+    <p>
+      <b>Onde estão as regras</b> Cada pedido desta página está explicado, com a
+      resolução completa, em <a href="secretaria.html">Secretaria e regras acadêmicas</a>.
+    </p>
+  </div>
 
 </main>
 
@@ -144,8 +162,8 @@
 <script defer src="assets/min/site.min.js"></script>
 <script defer src="assets/dados-busca.js"></script>
 <script defer src="assets/min/busca.min.js"></script>
-<script defer src="assets/dados-curso.js"></script>
-<script defer src="assets/min/curso.min.js"></script>
+<script defer src="assets/dados-requerimentos.js"></script>
+<script defer src="assets/min/requerimentos.min.js"></script>
 <script data-goatcounter="https://naeguanhaes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>

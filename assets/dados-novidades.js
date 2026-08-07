@@ -19,6 +19,13 @@ window.DADOS_NOVIDADES = {
   itens: [
     {
       data: '2026-08-07',
+      titulo: 'Gerador de requerimentos para a secretaria',
+      texto: 'Aproveitamento de estudos, trancamento e adaptação curricular: o site monta o pedido com a resolução certa, pronto para imprimir e entregar.',
+      link: 'requerimentos.html',
+      textoLink: 'montar o meu requerimento'
+    },
+    {
+      data: '2026-08-07',
       titulo: 'Menu novo e cada ferramenta na sua página',
       texto: 'O topo do site foi reorganizado em oito seções, e a calculadora, o cronômetro e o planner ganharam páginas próprias.',
       link: 'calculadora.html',

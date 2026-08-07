@@ -1387,6 +1387,37 @@ html[data-contraste="alto"] .disciplina,
 html[data-contraste="alto"] .ativ-lista li { border-color: #000; }
 html[data-contraste="alto"] .etiqueta { border-color: #000; color: #000; }
 
+/* ── Gerador de requerimentos ─────────────────────────── */
+.req-bloco { border: 1px solid var(--line); border-radius: 14px; padding: var(--s2); margin: 0 0 var(--s2); }
+.req-bloco legend { font-weight: 700; color: var(--azul-esc); padding-inline: .4rem; }
+.req-campos { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: var(--s2); }
+.req-campos .campo-longo { grid-column: 1 / -1; }
+.req-campos textarea {
+  width: 100%; font: inherit; font-size: .95rem; padding: .6rem .7rem;
+  border: 1px solid var(--line); border-radius: 10px; background: var(--surface); resize: vertical;
+}
+.req-dica { display: block; font-size: .8rem; color: var(--muted); margin-bottom: .2rem; }
+.req-guardar { display: flex; align-items: flex-start; gap: .5rem; margin-top: var(--s2); font-size: .88rem; color: var(--ink-2); }
+.req-guardar input { margin-top: .2rem; accent-color: var(--azul); }
+.req-acoes { display: flex; flex-wrap: wrap; gap: .6rem; }
+
+/* a folha imita o papel que vai ser entregue na secretaria */
+.folha {
+  background: #fff; border: 1px solid var(--line); border-radius: 4px;
+  padding: clamp(1.4rem, 4vw, 2.6rem); max-width: 46rem; margin-inline: auto;
+  font-size: .98rem; line-height: 1.75; color: var(--ink); text-align: justify;
+}
+.folha p { margin: 0 0 1rem; }
+.folha-tit { text-align: center; text-transform: uppercase; letter-spacing: .08em; font-size: 1.05rem; margin: 0 0 2rem; }
+.folha-para { text-align: left; margin-bottom: 2rem; }
+.folha-sub { margin-bottom: .3rem; }
+.folha-lista { margin: 0 0 1rem; padding-left: 1.2rem; }
+.folha-lista li { margin-bottom: .2rem; }
+.folha-local { text-align: right; margin-top: 2rem; }
+.folha-assina { margin-top: 2.5rem; text-align: center; }
+.folha-linha { display: block; width: min(22rem, 100%); height: 1px; background: var(--ink); margin: 0 auto .4rem; }
+.folha-assina p { text-align: center; font-size: .92rem; }
+
 /* ── Impressão ────────────────────────────────────────── */
 @media print {
   @page { size: A4 portrait; margin: 12mm; }
@@ -1424,6 +1455,17 @@ html[data-contraste="alto"] .etiqueta { border-color: #000; color: #000; }
   }
   .pg-calendario .cal-evento .quando { min-width: 3.4rem; font-size: 8pt; }
   .pg-calendario .dica-mapa { font-size: 7.5pt; }
+
+  /* requerimento: sai só a folha, que é o que vai para a secretaria */
+  .pg-requerimento .topbar, .pg-requerimento .lede, .pg-requerimento .trilha,
+  .pg-requerimento .titulo-sec, .pg-requerimento #req-seletor,
+  .pg-requerimento #req-contexto, .pg-requerimento #req-forma,
+  .pg-requerimento .req-acoes, .pg-requerimento #req-avisos,
+  .pg-requerimento .note, .pg-requerimento footer { display: none !important; }
+  .pg-requerimento .folha {
+    border: 0; padding: 0; max-width: none; font-size: 11.5pt; line-height: 1.7;
+  }
+  .pg-requerimento main { padding: 0; }
 
   /* planner: quatro folhas A4, uma por página */
   .pg-planner .topbar, .pg-planner .nav, .pg-planner footer,
