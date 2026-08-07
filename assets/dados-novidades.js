@@ -19,6 +19,13 @@ window.DADOS_NOVIDADES = {
   itens: [
     {
       data: '2026-08-07',
+      titulo: 'Menu novo e cada ferramenta na sua página',
+      texto: 'O topo do site foi reorganizado em oito seções, e a calculadora, o cronômetro e o planner ganharam páginas próprias.',
+      link: 'calculadora.html',
+      textoLink: 'ver as ferramentas'
+    },
+    {
+      data: '2026-08-07',
       titulo: 'AVA Moodle e Lyceum, cada um na sua página',
       texto: 'O passo a passo de cada sistema ficou separado, e o aplicativo UEMG+ Estudante agora fica junto do Lyceum.',
       link: 'sistemas.html',

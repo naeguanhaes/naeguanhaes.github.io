@@ -3,6 +3,24 @@
 Registro do que mudou e quando, do mais recente para o mais antigo.
 Ao fazer uma alteração relevante, acrescente uma entrada no topo.
 
+## 07/08/2026 · nona rodada (menu reorganizado e ferramentas separadas)
+
+Reorganização definida pelo coordenador. O topo passou a ter oito títulos,
+cinco deles abrindo painel:
+
+    Início · Sistemas · Aulas e prazos · Ferramentas · Meu curso ·
+    Apoio psicológico · Avisos · Sobre o NAE
+
+- **As ferramentas viraram três páginas**, uma por ferramenta, e o grupo do
+  menu lista as três: `calculadora.html` (média e faltas), `cronometro.html`
+  (novo, blocos de 25 minutos) e `planner.html`, que já existia mas não
+  aparecia no menu. Cada página aponta as outras duas no fim do conteúdo
+- **"Fale com o NAE" passou para dentro de "Sobre o NAE"**, que virou grupo
+  com duas entradas: o que é o NAE e o contato
+- A lógica do cronômetro já morava no `site.js` compartilhado, então a
+  separação foi só de HTML
+- sw em nae-v16
+
 ## 07/08/2026 · oitava rodada (cada sistema na sua página)
 
 - **AVA Moodle e Lyceum separados**, por decisão do coordenador. Eram uma

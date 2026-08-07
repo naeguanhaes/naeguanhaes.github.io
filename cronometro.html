@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Trabalho de Conclusão de Curso · NAE Guanhães | UEMG</title>
-<meta name="description" content="Como funciona o TCC nos cursos de Direito e Engenharia Civil da UEMG Guanhães: formato aceito, orientação, banca e linhas de pesquisa.">
+<title>Cronômetro de estudos · NAE Guanhães | UEMG</title>
+<meta name="description" content="Cronômetro de estudos em blocos de 25 minutos de foco e 5 de pausa, com pausa maior a cada quatro blocos. Funciona no celular e no computador.">
 <link rel="icon" href="assets/favicon-nae.png" type="image/png">
 <meta name="theme-color" content="#40688B">
 <meta name="color-scheme" content="light">
@@ -17,9 +17,9 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="NAE Guanhães · Núcleo de Apoio ao Estudante">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="Trabalho de Conclusão de Curso · NAE Guanhães | UEMG">
-<meta property="og:description" content="Como funciona o TCC nos cursos de Direito e Engenharia Civil da UEMG Guanhães: formato aceito, orientação, banca e linhas de pesquisa.">
-<meta property="og:url" content="https://naeguanhaes.github.io/tcc.html">
+<meta property="og:title" content="Cronômetro de estudos · NAE Guanhães | UEMG">
+<meta property="og:description" content="Cronômetro de estudos em blocos de 25 minutos de foco e 5 de pausa, com pausa maior a cada quatro blocos. Funciona no celular e no computador.">
+<meta property="og:url" content="https://naeguanhaes.github.io/cronometro.html">
 <meta property="og:image" content="https://naeguanhaes.github.io/assets/og-nae.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -67,7 +67,7 @@
     </div>
     <div class="nav-grupo" data-grupo="Ferramentas" style="--c: var(--turquesa)">
       <a class="nav-link" href="calculadora.html" style="--c: var(--turquesa)"><i class="dot"></i>Calculadora de média e faltas</a>
-      <a class="nav-link" href="cronometro.html" style="--c: var(--petroleo)"><i class="dot"></i>Cronômetro de estudos</a>
+      <a class="nav-link" href="cronometro.html" aria-current="page" style="--c: var(--petroleo)"><i class="dot"></i>Cronômetro de estudos</a>
       <a class="nav-link" href="planner.html" style="--c: var(--verde)"><i class="dot"></i>Planner do semestre</a>
     </div>
     <div class="nav-grupo" data-grupo="Meu curso" style="--c: var(--azul)">
@@ -75,7 +75,7 @@
       <a class="nav-link" href="matriz.html" style="--c: var(--azul)"><i class="dot"></i>Matriz curricular</a>
       <a class="nav-link" href="atividades.html" style="--c: var(--coral)"><i class="dot"></i>Atividades complementares</a>
       <a class="nav-link" href="estagio.html" style="--c: var(--verde)"><i class="dot"></i>Estágio</a>
-      <a class="nav-link" href="tcc.html" aria-current="page" style="--c: var(--lilas)"><i class="dot"></i>Trabalho de Conclusão</a>
+      <a class="nav-link" href="tcc.html" style="--c: var(--lilas)"><i class="dot"></i>Trabalho de Conclusão</a>
       <a class="nav-link" href="secretaria.html" style="--c: var(--turquesa)"><i class="dot"></i>Secretaria e regras</a>
     </div>
     <a class="nav-link" href="apoio.html" style="--c: var(--rosa)"><i class="dot"></i>Apoio psicológico</a>
@@ -87,37 +87,56 @@
   </div>
 </nav>
 
+<main class="wrap stack" id="conteudo">
 
-<main class="wrap stack-m" id="conteudo">
-
-  <nav class="trilha" aria-label="Você está aqui" style="--c: var(--lilas)">
-    <a href="index.html">Início</a><span class="separa">›</span><a href="curso.html">Meu curso</a><span class="separa">›</span><span aria-current="page">Trabalho de Conclusão de Curso</span>
+  <nav class="trilha" aria-label="Você está aqui" style="--c: var(--petroleo)">
+    <a href="index.html">Início</a><span class="separa">›</span><span aria-current="page">Cronômetro de estudos</span>
   </nav>
 
   <div class="col stack-s">
-    <div class="titulo-sec" style="--c: var(--lilas)">
-      <span class="eyebrow" style="--c: var(--lilas)">Reta final do curso</span>
-      <h1>Trabalho de Conclusão de Curso</h1>
+    <div class="titulo-sec" style="--c: var(--petroleo)">
+      <span class="eyebrow" style="--c: var(--petroleo)">Para render mais</span>
+      <h1>Cronômetro de estudos</h1>
+    </div>
+    <p class="lede">
+      Vinte e cinco minutos de foco, cinco de pausa, e uma pausa maior a cada quatro blocos. Funciona porque o cérebro rende mais em blocos curtos do que em horas seguidas de leitura arrastada.
+    </p>
+  </div>
+
+<div class="stack-m" id="cronometro-secao">
+        
+    <div class="card col reveal" style="--c: var(--petroleo)">
+      <div class="cronometro" id="cronometro" data-fase="foco">
+        <span class="cro-selo" data-cro-fase>Foco</span>
+        <span class="cro-visor" data-cro-visor role="timer" aria-live="off">25:00</span>
+        <p class="cro-frase" data-cro-frase>Vinte e cinco minutos só nisso.</p>
+        <div class="cro-acoes">
+          <button class="btn" type="button" data-cro-ir style="--c: var(--petroleo)">Começar</button>
+          <button class="btn ghost" type="button" data-cro-zerar style="--c: var(--petroleo)">Zerar</button>
+        </div>
+        <span class="cro-ciclos" data-cro-ciclos aria-live="polite">Nenhum bloco fechado ainda</span>
+      </div>
+    </div>
+
+    <div class="note col">
+      <p><b>Deixe esta aba aberta</b> O tempo aparece também no título da aba, então você acompanha o cronômetro mesmo estudando em outra janela. Ao fechar a página, a contagem recomeça.</p>
     </div>
   </div>
 
-    <p class="lede">
-      O TCC assusta de longe e encolhe de perto. Ele começa antes do último semestre, em
-      disciplinas próprias de preparação, e termina em uma defesa diante de banca. Aqui
-      está o que o Projeto Pedagógico do seu curso exige.
-    </p>
-
-    <div data-curso-seletor></div>
-    <div id="tcc-painel"></div>
-
-    <div class="note col">
-      <p>
-        <b>Dica de quem já passou</b> Escolha o tema pelo que você aguenta ler durante um ano,
-        não pelo que parece impressionante. E procure o orientador cedo: professor bom orienta
-        poucos por semestre. Precisa de ajuda com normas da ABNT ou com a escrita?
-        <a href="contato.html">Fale com o NAE</a>.
-      </p>
+  <div class="grid2">
+    <div class="card reveal" style="--c: var(--turquesa)">
+      <span class="rotulo">Outra ferramenta</span>
+      <h2>Calculadora de média e faltas</h2>
+      <p>Quantos pontos faltam para os 60 e quantas faltas ainda cabem.</p>
+      <div><a class="btn ghost" href="calculadora.html" style="--c: var(--turquesa)">Abrir →</a></div>
     </div>
+    <div class="card reveal" style="--c: var(--verde)">
+      <span class="rotulo">Outra ferramenta</span>
+      <h2>Planner do semestre</h2>
+      <p>Quatro folhas A4 com grade, semanas, notas e faltas, para imprimir.</p>
+      <div><a class="btn ghost" href="planner.html" style="--c: var(--verde)">Abrir →</a></div>
+    </div>
+  </div>
 
 </main>
 
@@ -138,13 +157,10 @@
   </div>
 </footer>
 
-
 <script defer src="assets/dados-avisos.js"></script>
 <script defer src="assets/min/site.min.js"></script>
 <script defer src="assets/dados-busca.js"></script>
 <script defer src="assets/min/busca.min.js"></script>
-<script defer src="assets/dados-curso.js"></script>
-<script defer src="assets/min/curso.min.js"></script>
 <script data-goatcounter="https://naeguanhaes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>

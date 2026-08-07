@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ferramentas do estudante · calculadora, cronômetro e planner | NAE Guanhães</title>
-<meta name="description" content="Calculadora de média e faltas, cronômetro de estudos e planner do semestre para imprimir. As ferramentas do estudante da UEMG Guanhães.">
+<title>Calculadora de média e faltas · NAE Guanhães | UEMG</title>
+<meta name="description" content="Descubra quantos pontos ainda faltam para os 60 e quantas faltas cabem sem reprovar por frequência, com a regra do exame especial explicada.">
 <link rel="icon" href="assets/favicon-nae.png" type="image/png">
 <meta name="theme-color" content="#40688B">
 <meta name="color-scheme" content="light">
@@ -17,8 +17,8 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="NAE Guanhães · Núcleo de Apoio ao Estudante">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="Ferramentas do estudante · NAE Guanhães | UEMG">
-<meta property="og:description" content="Calculadora de média e faltas, cronômetro de estudos e planner do semestre. As ferramentas do estudante da UEMG Guanhães.">
+<meta property="og:title" content="Calculadora de média e faltas · NAE Guanhães | UEMG">
+<meta property="og:description" content="Descubra quantos pontos ainda faltam para os 60 e quantas faltas cabem sem reprovar por frequência, com a regra do exame especial explicada.">
 <meta property="og:url" content="https://naeguanhaes.github.io/calculadora.html">
 <meta property="og:image" content="https://naeguanhaes.github.io/assets/og-nae.jpg">
 <meta property="og:image:width" content="1200">
@@ -54,7 +54,22 @@
 <nav class="nav" aria-label="Seções do site">
   <div class="wrap nav-in">
     <a class="nav-link" href="index.html" style="--c: var(--azul-esc)"><i class="dot"></i>Início</a>
-    <a class="nav-link" href="sobre.html" style="--c: var(--ambar)"><i class="dot"></i>Sobre o NAE</a>
+    <div class="nav-grupo" data-grupo="Sistemas" style="--c: var(--petroleo)">
+      <a class="nav-link" href="sistemas.html" style="--c: var(--petroleo)"><i class="dot"></i>Visão geral dos sistemas</a>
+      <a class="nav-link" href="email.html" style="--c: var(--azul)"><i class="dot"></i>E-mail institucional</a>
+      <a class="nav-link" href="moodle.html" style="--c: var(--petroleo)"><i class="dot"></i>AVA Moodle</a>
+      <a class="nav-link" href="lyceum.html" style="--c: var(--azul)"><i class="dot"></i>Lyceum e app UEMG+</a>
+    </div>
+    <div class="nav-grupo" data-grupo="Aulas e prazos" style="--c: var(--turquesa)">
+      <a class="nav-link" href="horarios.html" style="--c: var(--turquesa)"><i class="dot"></i>Horários de aulas</a>
+      <a class="nav-link" href="calendario.html" style="--c: var(--lilas)"><i class="dot"></i>Calendário acadêmico</a>
+      <a class="nav-link" href="mapa.html" style="--c: var(--verde)"><i class="dot"></i>Mapa do campus</a>
+    </div>
+    <div class="nav-grupo" data-grupo="Ferramentas" style="--c: var(--turquesa)">
+      <a class="nav-link" href="calculadora.html" aria-current="page" style="--c: var(--turquesa)"><i class="dot"></i>Calculadora de média e faltas</a>
+      <a class="nav-link" href="cronometro.html" style="--c: var(--petroleo)"><i class="dot"></i>Cronômetro de estudos</a>
+      <a class="nav-link" href="planner.html" style="--c: var(--verde)"><i class="dot"></i>Planner do semestre</a>
+    </div>
     <div class="nav-grupo" data-grupo="Meu curso" style="--c: var(--azul)">
       <a class="nav-link" href="curso.html" style="--c: var(--azul-esc)"><i class="dot"></i>Visão geral do curso</a>
       <a class="nav-link" href="matriz.html" style="--c: var(--azul)"><i class="dot"></i>Matriz curricular</a>
@@ -63,49 +78,33 @@
       <a class="nav-link" href="tcc.html" style="--c: var(--lilas)"><i class="dot"></i>Trabalho de Conclusão</a>
       <a class="nav-link" href="secretaria.html" style="--c: var(--turquesa)"><i class="dot"></i>Secretaria e regras</a>
     </div>
-    <div class="nav-grupo" data-grupo="Aulas e prazos" style="--c: var(--turquesa)">
-      <a class="nav-link" href="horarios.html" style="--c: var(--turquesa)"><i class="dot"></i>Horários de aulas</a>
-      <a class="nav-link" href="calendario.html" style="--c: var(--lilas)"><i class="dot"></i>Calendário acadêmico</a>
-      <a class="nav-link" href="calculadora.html" aria-current="page" style="--c: var(--turquesa)"><i class="dot"></i>Ferramentas do estudante</a>
-      <a class="nav-link" href="mapa.html" style="--c: var(--verde)"><i class="dot"></i>Mapa do campus</a>
-    </div>
-    <div class="nav-grupo" data-grupo="Sistemas" style="--c: var(--petroleo)">
-      <a class="nav-link" href="sistemas.html" style="--c: var(--petroleo)"><i class="dot"></i>Visão geral dos sistemas</a>
-      <a class="nav-link" href="email.html" style="--c: var(--azul)"><i class="dot"></i>E-mail institucional</a>
-      <a class="nav-link" href="moodle.html" style="--c: var(--petroleo)"><i class="dot"></i>AVA Moodle</a>
-      <a class="nav-link" href="lyceum.html" style="--c: var(--azul)"><i class="dot"></i>Lyceum e app UEMG+</a>
-    </div>
     <a class="nav-link" href="apoio.html" style="--c: var(--rosa)"><i class="dot"></i>Apoio psicológico</a>
     <a class="nav-link" href="avisos.html" style="--c: var(--turquesa)"><i class="dot"></i>Avisos</a>
-    <a class="nav-link" href="contato.html" style="--c: var(--coral)"><i class="dot"></i>Fale com o NAE</a>
+    <div class="nav-grupo" data-grupo="Sobre o NAE" style="--c: var(--ambar)">
+      <a class="nav-link" href="sobre.html" style="--c: var(--ambar)"><i class="dot"></i>O que é o NAE</a>
+      <a class="nav-link" href="contato.html" style="--c: var(--coral)"><i class="dot"></i>Fale com o NAE</a>
+    </div>
   </div>
 </nav>
 
 <main class="wrap stack" id="conteudo">
 
   <nav class="trilha" aria-label="Você está aqui" style="--c: var(--turquesa)">
-    <a href="index.html">Início</a><span class="separa">›</span><span aria-current="page">Ferramentas</span>
+    <a href="index.html">Início</a><span class="separa">›</span><span aria-current="page">Calculadora de média e faltas</span>
   </nav>
 
   <div class="col stack-s">
     <div class="titulo-sec" style="--c: var(--turquesa)">
-      <span class="eyebrow" style="--c: var(--turquesa)">Tudo em um lugar</span>
-      <h1>Ferramentas do estudante</h1>
+      <span class="eyebrow" style="--c: var(--turquesa)">Nota e frequência</span>
+      <h1>Calculadora de média e faltas</h1>
     </div>
+    <p class="lede">
+      Na UEMG, a regra geral é simples: <b>60 dos 100 pontos</b> do semestre e <b>75% de presença</b> em cada disciplina. Use as duas caixas abaixo para saber como você está, e o que fazer se a conta não fechar.
+    </p>
   </div>
 
-  <!-- ══ Calculadora ══ -->
-  <div class="stack-m" id="calculadora">
-    <div class="titulo-sec col" style="--c: var(--turquesa)">
-      <span class="eyebrow" style="--c: var(--turquesa)">Nota e frequência</span>
-      <h2>Calculadora de média e faltas</h2>
-    </div>
-    <p class="col lede" style="font-size:1.02rem">
-      Na UEMG, a regra geral é simples: <b>60 dos 100 pontos</b> do semestre e
-      <b>75% de presença</b> em cada disciplina. Use as duas caixas abaixo para saber
-      como você está.
-    </p>
-
+<div class="stack-m" id="calculadora">
+        
     <div class="calc">
       <div class="card reveal" style="--c: var(--turquesa)">
         <span class="rotulo">Nota</span>
@@ -162,54 +161,26 @@
     </div>
   </div>
 
-  <div class="stack-m" id="cronometro-secao">
-    <div class="titulo-sec col" style="--c: var(--petroleo)">
-      <span class="eyebrow" style="--c: var(--petroleo)">Para render mais</span>
-      <h2>Cronômetro de estudos</h2>
-    </div>
-    <p class="col lede" style="font-size:1.02rem">
-      Vinte e cinco minutos de foco, cinco de pausa, e uma pausa maior a cada quatro
-      blocos. Funciona porque o cérebro rende mais em blocos curtos do que em horas
-      seguidas de leitura arrastada.
-    </p>
-
-    <div class="card col reveal" style="--c: var(--petroleo)">
-      <div class="cronometro" id="cronometro" data-fase="foco">
-        <span class="cro-selo" data-cro-fase>Foco</span>
-        <span class="cro-visor" data-cro-visor role="timer" aria-live="off">25:00</span>
-        <p class="cro-frase" data-cro-frase>Vinte e cinco minutos só nisso.</p>
-        <div class="cro-acoes">
-          <button class="btn" type="button" data-cro-ir style="--c: var(--petroleo)">Começar</button>
-          <button class="btn ghost" type="button" data-cro-zerar style="--c: var(--petroleo)">Zerar</button>
-        </div>
-        <span class="cro-ciclos" data-cro-ciclos aria-live="polite">Nenhum bloco fechado ainda</span>
-      </div>
-    </div>
-
-    <div class="note col">
-      <p><b>Deixe esta aba aberta</b> O tempo aparece também no título da aba, então você acompanha o cronômetro mesmo estudando em outra janela. Ao fechar a página, a contagem recomeça.</p>
-    </div>
-  </div>
-
-  <div class="card col reveal" style="--c: var(--turquesa)">
-    <span class="rotulo">Leve para o papel</span>
-    <h2>Planner do semestre</h2>
-    <p>Uma folha A4 com a sua grade, todas as semanas até o fim do semestre e os prazos do calendário já marcados, para imprimir e colar na parede.</p>
-    <div class="compartilhar">
-      <a class="btn ghost" href="planner.html" style="--c: var(--turquesa)">Abrir o planner →</a>
-      <button class="btn ghost" type="button"
-        data-texto-grupo="Calculadora de média e faltas, cronômetro de estudos e planner do semestre para imprimir. Tudo no site do NAE:"
-        data-titulo="Ferramentas do estudante"
-        data-url="https://naeguanhaes.github.io/calculadora.html"
-        style="--c: var(--verde)">📋 Copiar mensagem para o grupo</button>
-    </div>
-  </div>
-
-  <div class="card col reveal" style="--c: var(--petroleo)">
+<div class="card col reveal" style="--c: var(--petroleo)">
     <span class="rotulo">E as notas oficiais?</span>
     <h2>Elas ficam no Lyceum</h2>
     <p>Esta calculadora ajuda no planejamento, mas as notas e faltas que valem são as lançadas no sistema acadêmico.</p>
-    <div><a class="btn ghost" href="sistemas.html" style="--c: var(--petroleo)">Ver como acessar o Lyceum →</a></div>
+    <div><a class="btn ghost" href="lyceum.html" style="--c: var(--petroleo)">Ver como acessar o Lyceum →</a></div>
+  </div>
+
+  <div class="grid2">
+    <div class="card reveal" style="--c: var(--petroleo)">
+      <span class="rotulo">Outra ferramenta</span>
+      <h2>Cronômetro de estudos</h2>
+      <p>Blocos de 25 minutos de foco com pausa, para render mais.</p>
+      <div><a class="btn ghost" href="cronometro.html" style="--c: var(--petroleo)">Abrir →</a></div>
+    </div>
+    <div class="card reveal" style="--c: var(--verde)">
+      <span class="rotulo">Outra ferramenta</span>
+      <h2>Planner do semestre</h2>
+      <p>Quatro folhas A4 com grade, semanas, notas e faltas, para imprimir.</p>
+      <div><a class="btn ghost" href="planner.html" style="--c: var(--verde)">Abrir →</a></div>
+    </div>
   </div>
 
 </main>

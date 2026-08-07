@@ -105,7 +105,7 @@ window.DADOS_BUSCA = {
     {
       t: 'Cronômetro de estudos',
       d: 'Blocos de 25 minutos com pausa, para render mais na hora de estudar.',
-      u: 'calculadora.html#cronometro-secao',
+      u: 'cronometro.html',
       k: 'cronometro timer pomodoro estudar foco concentracao tempo estudo'
     },
     {

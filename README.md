@@ -33,6 +33,9 @@ atendimento às terças e quintas das 18h às 19h; quartas mediante agendamento 
 | `estagio.html` | Regras de estágio de cada curso |
 | `tcc.html` | Regras do Trabalho de Conclusão de Curso |
 | `secretaria.html` | Exame especial, faltas, revisão de prova, dispensa e outros pedidos |
+| `calculadora.html` | Calculadora de média e faltas, com a regra do exame especial |
+| `cronometro.html` | Cronômetro de estudos em blocos de 25 minutos |
+| `planner.html` | Planner do semestre em 4 folhas A4 para imprimir |
 | `404.html` | Página de endereço não encontrado |
 
 ---

@@ -153,15 +153,18 @@ As três já funcionam por endereço direto, para o coordenador revisar.
 
 Páginas no ar: `index`, `email`, `sistemas` (porta de entrada), `moodle`,
 `lyceum` (com o aplicativo UEMG+), `horarios`, `calendario`,
-`calculadora` (aparece como Ferramentas no menu, tem calculadora e cronômetro),
-`planner`, `mapa`, `apoio`, `avisos`, `sobre`, `contato`, `privacidade`,
+`calculadora`, `cronometro`, `planner` (as três ferramentas, cada uma na sua
+página, reunidas no grupo Ferramentas do menu),
+`mapa`, `apoio`, `avisos`, `sobre`, `contato`, `privacidade`,
 `cartaz` (imprimível), `404`, `offline`.
 Seção "Meu curso": `curso` (visão geral), `matriz`, `atividades`, `estagio`,
 `tcc`, `secretaria`. Todas alimentadas por `assets/dados-curso.js`.
 Páginas ocultas: `editais`, `calouro`, `semestres`.
 
-O menu tem 8 títulos, e três deles abrem submenu: Meu curso (6 itens),
-Aulas e prazos (4) e Sistemas (visão geral, e-mail, AVA Moodle, Lyceum). No HTML os links do grupo ficam soltos dentro de um
+O menu tem 8 títulos, nesta ordem definida pelo coordenador: Início, Sistemas,
+Aulas e prazos, Ferramentas, Meu curso, Apoio psicológico, Avisos e Sobre o
+NAE. Cinco abrem submenu; Início, Apoio e Avisos são link direto. O contato
+mora dentro de Sobre o NAE. No HTML os links do grupo ficam soltos dentro de um
 `<div class="nav-grupo" data-grupo="...">`: sem JavaScript eles aparecem como
 links normais, e o `site.js` é que os recolhe no painel. Ao mexer no menu,
 troque em todas as páginas de uma vez, porque o `checar-consistencia.js` exige
