@@ -17,7 +17,9 @@ atendimento às terças e quintas das 18h às 19h; quartas mediante agendamento 
 | --- | --- |
 | `index.html` | Início: busca, aula de hoje, carrossel de serviços e atalhos |
 | `email.html` | Guia ilustrado do e-mail institucional (10 etapas) |
-| `sistemas.html` | AVA Moodle, Lyceum, app UEMG+ e calculadora de média e faltas |
+| `sistemas.html` | Porta de entrada: qual é a diferença entre os dois sistemas |
+| `moodle.html` | AVA Moodle: primeiro acesso em 8 etapas, com as telas |
+| `lyceum.html` | Lyceum: primeiro acesso e o aplicativo UEMG+ Estudante |
 | `horarios.html` | Grade 2026.2, com "hoje/agora", minha turma e exportações |
 | `calendario.html` | Calendário acadêmico 2026, com exportação .ics |
 | `mapa.html` | Planta do campus e lista de ambientes |

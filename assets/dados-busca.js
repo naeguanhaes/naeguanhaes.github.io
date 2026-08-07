@@ -13,6 +13,18 @@
 window.DADOS_BUSCA = {
   itens: [
     {
+      t: "AVA Moodle · aulas e materiais",
+      d: "Primeiro acesso em 8 etapas, com as telas, e o que fazer quando nao entra.",
+      u: "moodle.html",
+      k: "moodle ava aula material atividade forum trabalho nota senha perdeu entrar login painel disciplina"
+    },
+    {
+      t: "Lyceum · matricula, notas e faltas",
+      d: "Primeiro acesso ao sistema academico e o aplicativo UEMG+ Estudante.",
+      u: "lyceum.html",
+      k: "lyceum matricula nota falta historico registro academico primeiro acesso senha data de nascimento aplicativo uemg+ celular"
+    },
+    {
       t: "Meu curso · o que o PPC exige",
       d: "Matriz, atividades complementares, estágio, TCC e regras da secretaria em um lugar só.",
       u: "curso.html",
@@ -69,13 +81,13 @@ window.DADOS_BUSCA = {
     {
       t: 'Lyceum · notas e matrícula',
       d: 'Onde ver notas, faltas, histórico e fazer a matrícula. Primeiro acesso explicado.',
-      u: 'sistemas.html#lyceum',
+      u: 'lyceum.html',
       k: 'lyceum nota falta historico matricula boletim sistema academico registro ra aluno responsavel senha primeiro acesso'
     },
     {
       t: 'Aplicativo UEMG+ Estudante',
       d: 'O Lyceum no celular, para Android e iPhone.',
-      u: 'sistemas.html#app',
+      u: 'lyceum.html#app',
       k: 'app aplicativo celular uemg+ estudante android iphone ios play store baixar instalar'
     },
     {

@@ -15,8 +15,15 @@
    ═══════════════════════════════════════════════════════ */
 
 window.DADOS_NOVIDADES = {
-  atualizadoEm: '2026-08-06',
+  atualizadoEm: '2026-08-07',
   itens: [
+    {
+      data: '2026-08-07',
+      titulo: 'AVA Moodle e Lyceum, cada um na sua página',
+      texto: 'O passo a passo de cada sistema ficou separado, e o aplicativo UEMG+ Estudante agora fica junto do Lyceum.',
+      link: 'sistemas.html',
+      textoLink: 'ver os sistemas'
+    },
     {
       data: '2026-08-07',
       titulo: 'Meu curso: o que o PPC exige de você',

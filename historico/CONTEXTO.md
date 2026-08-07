@@ -63,9 +63,18 @@ www.jonatanbarbosa@gmail.com, institucional nae.guanhaes@uemg.br).
   desenhada em canvas com a logo.
 - `calendario.js`: o ano é montado com o mês atual primeiro; meses anteriores
   ficam atrás do botão "Mostrar os meses anteriores".
-- `sistemas.html`: as seções do Lyceum e do Moodle são `details.secao`
-  (abrem ao clicar). Um script no fim da página abre a seção certa quando o
-  endereço traz `#lyceum` ou `#passo-a-passo`. O app UEMG+ fica acima do FAQ.
+- **Os sistemas ficam em três páginas** desde 07/08/2026, por decisão do
+  coordenador: `sistemas.html` é a porta de entrada que explica a diferença
+  entre os dois e leva a cada guia; `moodle.html` tem o passo a passo do AVA
+  em 8 etapas; `lyceum.html` tem o primeiro acesso ao Lyceum e o aplicativo
+  UEMG+ Estudante. Os endereços antigos com âncora (`sistemas.html#lyceum`,
+  `#passo-a-passo` e `#app`) foram reapontados dentro do site, e
+  `sistemas.html` continua existindo justamente para não quebrar link antigo
+  que alguém tenha compartilhado.
+- Em `moodle.html` e `lyceum.html` o conteúdo está dentro de `details.secao`
+  com o atributo `open`: em página dedicada o assunto aparece de cara, e o
+  estudante ainda pode recolher. O script que abre a seção pela âncora do
+  endereço ficou só em `moodle.html`, que é onde há etapas numeradas.
 - Impressão de horários: a folha sai só com cabeçalho, título e grade
   (regras `@media print` com a classe `pg-horarios` no body).
 - Tamanho de fonte A-/A+: atributo `data-fonte` no `<html>`, aplicado cedo

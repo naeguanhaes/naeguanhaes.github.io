@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AVA Moodle · primeiro acesso passo a passo | NAE Guanhães</title>
+<meta name="description" content="Como entrar no AVA Moodle da UEMG: primeiro acesso, recuperação de senha e onde encontrar as suas disciplinas, em 8 etapas com as telas.">
+<meta name="theme-color" content="#40688B">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="assets/favicon-nae.png" type="image/png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/icone-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="NAE Guanhães">
+<meta name="mobile-web-app-capable" content="yes">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NAE Guanhães · Núcleo de Apoio ao Estudante">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="AVA Moodle · primeiro acesso passo a passo | NAE Guanhães">
+<meta property="og:description" content="Como entrar no AVA Moodle da UEMG: primeiro acesso, recuperação de senha e onde encontrar as suas disciplinas, em 8 etapas com as telas.">
+<meta property="og:url" content="https://naeguanhaes.github.io/moodle.html">
+<meta property="og:image" content="https://naeguanhaes.github.io/assets/og-nae.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script>try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentElement.setAttribute("data-fonte",f);var c=localStorage.getItem("nae:contraste");if(c==="sim")document.documentElement.setAttribute("data-contraste","alto")}catch(e){}</script>
+<link rel="stylesheet" href="assets/min/estilo.min.css">
+<!-- dados estruturados: inicio (gerado por ferramentas/gerar-dados-estruturados.js) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Preciso criar uma conta no Moodle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não. A conta vem do sistema acadêmico. Tente entrar com os mesmos dados do Lyceum e, se não funcionar, use “Perdeu a senha?” para definir uma nova."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Troquei a senha no Moodle. Ela vale no Lyceum também?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Os sistemas são integrados e a orientação da UEMG é manter o mesmo login e a mesma senha nos dois. Se depois de trocar você tiver problema em um deles, avise o NAE ou a coordenadoria de EaD."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O e-mail de recuperação não chegou.",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Confira o spam e a aba de promoções. Se não estiver lá, é provável que o e-mail cadastrado esteja desatualizado, e quem corrige isso é a secretaria acadêmica da unidade."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Minha disciplina não aparece no Painel.",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Verifique nas abas “Não iniciados” e “Removidos da visualização”, porque um curso pode estar escondido ali. Se ainda assim não aparecer, pode ser que o professor não tenha aberto a turma ou que a sua matrícula na disciplina não esteja concluída. Nesse caso, fale com a coordenação do curso."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Esse é o mesmo login do e-mail institucional?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não. O e-mail institucional (@discente.uemg.br) é do Microsoft 365 e tem senha própria, com outro processo de recuperação. Para esse, veja o guia do e-mail institucional."
+      }
+    }
+  ]
+}
+</script>
+<!-- dados estruturados: fim -->
+</head>
+<body>
+
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<div id="avisos"></div>
+
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="index.html">
+      <img class="marca" src="assets/logo-topo.webp" width="620" height="279" alt="NAE · Núcleo de Apoio ao Estudante · Unidade Guanhães">
+    </a>
+    <div class="unidade">
+      <b>UEMG · Unidade Guanhães</b>
+      Coordenação: Jonatan Barbosa Silva
+    </div>
+    <div class="topo-acoes">
+      <button class="btn-topo" type="button" data-fonte-menos aria-label="Diminuir o tamanho do texto" title="Texto menor">A-</button>
+      <button class="btn-topo" type="button" data-fonte-mais aria-label="Aumentar o tamanho do texto" title="Texto maior">A+</button>
+      <button class="btn-topo" type="button" data-contraste-btn aria-pressed="false" aria-label="Alternar o alto contraste" title="Ligar o alto contraste">◐</button>
+      <button class="btn-topo" type="button" data-abrir-busca aria-label="Buscar no site" title="Buscar no site (tecla /)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.8-3.8"></path></svg></button>
+    </div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Seções do site">
+  <div class="wrap nav-in">
+    <a class="nav-link" href="index.html" style="--c: var(--azul-esc)"><i class="dot"></i>Início</a>
+    <a class="nav-link" href="sobre.html" style="--c: var(--ambar)"><i class="dot"></i>Sobre o NAE</a>
+    <div class="nav-grupo" data-grupo="Meu curso" style="--c: var(--azul)">
+      <a class="nav-link" href="curso.html" style="--c: var(--azul-esc)"><i class="dot"></i>Visão geral do curso</a>
+      <a class="nav-link" href="matriz.html" style="--c: var(--azul)"><i class="dot"></i>Matriz curricular</a>
+      <a class="nav-link" href="atividades.html" style="--c: var(--coral)"><i class="dot"></i>Atividades complementares</a>
+      <a class="nav-link" href="estagio.html" style="--c: var(--verde)"><i class="dot"></i>Estágio</a>
+      <a class="nav-link" href="tcc.html" style="--c: var(--lilas)"><i class="dot"></i>Trabalho de Conclusão</a>
+      <a class="nav-link" href="secretaria.html" style="--c: var(--turquesa)"><i class="dot"></i>Secretaria e regras</a>
+    </div>
+    <div class="nav-grupo" data-grupo="Aulas e prazos" style="--c: var(--turquesa)">
+      <a class="nav-link" href="horarios.html" style="--c: var(--turquesa)"><i class="dot"></i>Horários de aulas</a>
+      <a class="nav-link" href="calendario.html" style="--c: var(--lilas)"><i class="dot"></i>Calendário acadêmico</a>
+      <a class="nav-link" href="calculadora.html" style="--c: var(--turquesa)"><i class="dot"></i>Ferramentas do estudante</a>
+      <a class="nav-link" href="mapa.html" style="--c: var(--verde)"><i class="dot"></i>Mapa do campus</a>
+    </div>
+    <div class="nav-grupo" data-grupo="Sistemas" style="--c: var(--petroleo)">
+      <a class="nav-link" href="sistemas.html" style="--c: var(--petroleo)"><i class="dot"></i>Visão geral dos sistemas</a>
+      <a class="nav-link" href="email.html" style="--c: var(--azul)"><i class="dot"></i>E-mail institucional</a>
+      <a class="nav-link" href="moodle.html" aria-current="page" style="--c: var(--petroleo)"><i class="dot"></i>AVA Moodle</a>
+      <a class="nav-link" href="lyceum.html" style="--c: var(--azul)"><i class="dot"></i>Lyceum e app UEMG+</a>
+    </div>
+    <a class="nav-link" href="apoio.html" style="--c: var(--rosa)"><i class="dot"></i>Apoio psicológico</a>
+    <a class="nav-link" href="avisos.html" style="--c: var(--turquesa)"><i class="dot"></i>Avisos</a>
+    <a class="nav-link" href="contato.html" style="--c: var(--coral)"><i class="dot"></i>Fale com o NAE</a>
+  </div>
+</nav>
+
+<main class="wrap stack" id="conteudo">
+
+  <nav class="trilha" aria-label="Você está aqui" style="--c: var(--petroleo)">
+    <a href="index.html">Início</a><span class="separa">›</span><a href="sistemas.html">Sistemas acadêmicos</a><span class="separa">›</span><span aria-current="page">AVA Moodle</span>
+  </nav>
+
+  <div class="col stack-s">
+    <div class="titulo-sec" style="--c: var(--petroleo)">
+      <span class="eyebrow" style="--c: var(--petroleo)">Aulas, materiais e atividades</span>
+      <h1>AVA Moodle</h1>
+    </div>
+    <p class="lede">
+      O AVA Moodle é a <b>sala de aula virtual</b>: é lá que ficam os materiais das disciplinas, os fóruns, o envio de trabalhos e as atividades. O login é o mesmo do Lyceum, então não há cadastro novo a fazer. Abaixo, o primeiro acesso em 8 etapas, com as telas.
+    </p>
+  </div>
+
+  <div class="stack-s">
+    <a class="porta" href="https://ava.uemg.br/login/index.php" target="_blank" rel="noopener noreferrer" style="--c: var(--petroleo)">
+      <span class="porta-ico" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 4L2 8.5l10 4.5 10-4.5z"></path>
+          <path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"></path>
+          <path d="M22 8.5v6"></path>
+        </svg>
+      </span>
+      <span class="porta-tag">Aulas e atividades</span>
+      <span class="porta-h">AVA Moodle</span>
+      <span class="porta-p">Materiais das disciplinas, fóruns, envio de trabalhos e notas das atividades.</span>
+      <span class="porta-seta" aria-hidden="true">→</span>
+    </a>
+  </div>
+
+<details class="secao reveal" open id="passo-a-passo" style="--c: var(--petroleo)">
+    <summary>
+      <span class="secao-ico" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4L2 8.5l10 4.5 10-4.5z"></path><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"></path><path d="M22 8.5v6"></path></svg>
+      </span>
+      <span class="secao-tit">
+        <b>Passo a passo do AVA Moodle</b>
+        <span class="sub">Do login ao seu curso, em 8 etapas com as telas</span>
+      </span>
+      <span class="mais" aria-hidden="true">+</span>
+    </summary>
+    <div class="secao-corpo">
+
+    <div class="card reveal" style="--c: var(--petroleo)">
+      <span class="rotulo">Antes de tudo</span>
+      <h2>Um login só para os dois sistemas</h2>
+      <p>
+        O Lyceum e o AVA Moodle são <b>integrados</b>. Por isso a orientação da UEMG é
+        simples: tente entrar no Moodle com <b>os mesmos dados que você usa no Lyceum</b>.
+        Se funcionar, está resolvido, porque não há cadastro separado a fazer.
+      </p>
+      <div class="note alerta">
+        <p><b>O e-mail é a peça-chave</b> A mensagem de recuperação vai para o endereço cadastrado no sistema. Se ele estiver desatualizado, nada chega, e quem corrige o cadastro é a <b>secretaria acadêmica da unidade</b>.</p>
+      </div>
+    </div>
+
+    <p class="dica-mapa">Clique em cada etapa para abrir as instruções e as telas.</p>
+
+    <div class="passos-topo">
+      <button class="btn ghost pequeno" type="button" id="abrir-passos" style="--c: var(--petroleo)">Abrir todas as etapas</button>
+    </div>
+
+    <div class="passos">
+
+      <details class="passo reveal">
+        <summary><span class="num">1</span> Abra o AVA e clique em “Acessar” <span class="mais" aria-hidden="true">+</span></summary>
+        <div class="passo-corpo">
+          <p>Entre em <a href="https://ava.uemg.br/login/index.php" target="_blank" rel="noopener noreferrer">ava.uemg.br</a>. Na tela inicial, o botão <b>Acessar</b> fica no canto superior direito.</p>
+          <figure class="shot">
+            <div class="janela">
+              <div class="janela-barra" aria-hidden="true"><i></i><i></i><i></i><span class="janela-url">ava.uemg.br</span></div>
+              <div class="janela-tela">
+                <div class="ms moodle">
+                  <div class="ms-topo">
+                    <span class="ms-logo">Universidade do Estado<br>de Minas Gerais</span>
+                    <span class="linha-alvo">
+                      <span class="ms-btn alvo" style="padding:.25rem .8rem;font-size:.72rem">Acessar</span>
+                      <span class="aponta">clique aqui</span>
+                    </span>
+                  </div>
+                  <div class="ms-menu"><span class="ativo">Página inicial</span><span>Cursos</span><span>Contato</span><span>FAQ</span></div>
+                  <div class="ms-faixa">Ambiente Virtual<br>de Aprendizagem</div>
+                  <div class="ms-aviso">Notícias da Coordenadoria de Ensino a Distância</div>
+                </div>
+              </div>
+            </div>
+            <figcaption>Tela 1: página inicial do AVA, com o botão de acesso em destaque.</figcaption>
+          </figure>
+        </div>
+      </details>
+
+      <details class="passo reveal">
+        <summary><span class="num">2</span> Entre com os mesmos dados do Lyceum <span class="mais" aria-hidden="true">+</span></summary>
+        <div class="passo-corpo">
+          <p>Preencha <b>Identificação de usuário</b> e <b>Senha</b>, e clique em <b>Acessar</b>. Se der certo, pule para a etapa 5.</p>
+          <figure class="shot">
+            <div class="janela">
+              <div class="janela-barra" aria-hidden="true"><i></i><i></i><i></i><span class="janela-url">ava.uemg.br/login/index.php</span></div>
+              <div class="janela-tela">
+                <div class="ms moodle">
+                  <div class="ms-logo">Ambiente Virtual de Aprendizagem</div>
+                  <div class="ms-label">Identificação de usuário</div>
+                  <div class="ms-input box vazio">&nbsp;</div>
+                  <div class="ms-label">Senha</div>
+                  <div class="ms-input box vazio">&nbsp;</div>
+                  <div class="ms-btn" style="text-align:center">Acessar</div>
+                  <div class="linha-alvo">
+                    <span class="ms-link alvo">Perdeu a senha?</span>
+                    <span class="aponta">se não entrar</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <figcaption>Tela 2: login do AVA. O link de recuperação fica logo abaixo do botão.</figcaption>
+          </figure>
+        </div>
+      </details>
+
+      <details class="passo reveal">
+        <summary><span class="num">3</span> Não entrou? Clique em “Perdeu a senha?” <span class="mais" aria-hidden="true">+</span></summary>
+        <div class="passo-corpo">
+          <p>Você vai para uma página com <b>dois campos de busca</b>. Preencha <b>apenas um</b> deles e clique no botão <b>Buscar</b> correspondente.</p>
+          <figure class="shot">
+            <div class="janela">
+              <div class="janela-barra" aria-hidden="true"><i></i><i></i><i></i><span class="janela-url">ava.uemg.br · recuperação de senha</span></div>
+              <div class="janela-tela">
+                <div class="ms moodle">
+                  <div class="ms-aviso">Para redefinir sua senha, preencha seu usuário ou seu e-mail abaixo. Se a sua conta for encontrada, será enviada uma mensagem com as instruções para restabelecer o acesso.</div>
+                  <div class="ms-title" style="font-size:.95rem">Buscar por identificação de usuário</div>
+                  <div class="ms-label">Identificação de usuário</div>
+                  <div class="linha-alvo">
+                    <span class="ms-input box alvo" style="flex:1 1 9rem">CPF ou matrícula</span>
+                    <span class="aponta">um ou outro</span>
+                  </div>
+                  <div class="ms-btn" style="align-self:flex-start;padding:.28rem .9rem;font-size:.75rem">Buscar</div>
+                  <div class="ms-title" style="font-size:.95rem">Buscar pelo endereço de e-mail</div>
+                  <div class="ms-label">Endereço de e-mail</div>
+                  <div class="ms-input box vazio">&nbsp;</div>
+                  <div class="ms-btn" style="align-self:flex-start;padding:.28rem .9rem;font-size:.75rem">Buscar</div>
+                </div>
+              </div>
+            </div>
+            <figcaption>Tela 3: recuperação. Use CPF, matrícula ou e-mail, basta um.</figcaption>
+          </figure>
+          <div class="note info">
+            <p><b>Qual usar?</b> Se você sabe a matrícula, comece por ela. Se não, o CPF costuma funcionar. O e-mail só encontra a conta se for exatamente o que está cadastrado no sistema.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="passo reveal">
+        <summary><span class="num">4</span> Abra o e-mail e crie a nova senha <span class="mais" aria-hidden="true">+</span></summary>
+        <div class="passo-corpo">
+          <p>A mensagem com as instruções chega no <b>e-mail cadastrado</b> no sistema. Confira também o <b>spam</b> ou lixo eletrônico, porque é comum ela cair lá.</p>
+          <ul class="limpa" style="--c: var(--petroleo)">
+            <li>Abra a mensagem e siga o link de redefinição.</li>
+            <li>Crie a nova senha e guarde, porque <b>ela vale para o AVA e para o Lyceum</b>.</li>
+            <li>Não chegou nada? Provavelmente o e-mail cadastrado está desatualizado. Fale com a secretaria acadêmica.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="passo reveal">
+        <summary><span class="num">5</span> No Painel, encontre as suas disciplinas <span class="mais" aria-hidden="true">+</span></summary>
+        <div class="passo-corpo">
+          <p>Depois de entrar, você cai no menu <b>Painel</b>, com o resumo dos cursos. Em <b>Meus cursos</b> dá para filtrar por <i>Em andamento</i>, <i>Não iniciados</i>, <i>Encerrados</i>, <i>Favoritos</i> e <i>Removidos da visualização</i>. Clique no curso para abrir.</p>
+          <figure class="shot">
+            <div class="janela">
+              <div class="janela-barra" aria-hidden="true"><i></i><i></i><i></i><span class="janela-url">ava.uemg.br · painel</span></div>
+              <div class="janela-tela">
+                <div class="ms moodle">
+                  <div class="ms-topo">
+                    <span class="ms-menu"><span class="ativo">Painel</span><span>Contato</span><span>FAQ</span></span>
+                    <span class="ms-avatar">JB</span>
+                  </div>
+                  <div class="ms-title" style="font-size:1rem">Meus cursos</div>
+                  <div class="ms-abas"><span>Todos</span><span>Em andamento</span><span>Não iniciados</span><span>Encerrados</span><span>Favoritos</span></div>
+                  <div class="ms-curso">
+                    <span class="capa"></span>
+                    <span><b>Direito Constitucional 2</b><br><span style="color:#777">0 de 8 atividades concluídas</span></span>
+                  </div>
+                  <div class="ms-curso">
+                    <span class="capa laranja"></span>
+                    <span><b>Direitos Humanos</b><br><span style="color:#777">0 de 5 atividades concluídas</span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <figcaption>Tela 4: o Painel, com a lista das suas disciplinas.</figcaption>
+          </figure>
+          <div class="note">
+            <p><b>Organize a sua lista</b> Nos <b>três pontinhos</b> da imagem de cada curso você pode <i>favoritar</i> ou <i>remover da visualização</i>. Também dá para ordenar por nome do curso ou por último acesso.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="passo reveal">
+        <summary><span class="num">6</span> Dentro da disciplina, use o menu lateral <span class="mais" aria-hidden="true">+</span></summary>
+        <div class="passo-corpo">
+          <p>Ao abrir o curso, um <b>menu na lateral esquerda</b> reúne os módulos, os recursos, os fóruns e as atividades. É por ali que você chega ao material de cada aula.</p>
+          <figure class="shot">
+            <div class="janela">
+              <div class="janela-barra" aria-hidden="true"><i></i><i></i><i></i><span class="janela-url">ava.uemg.br · curso</span></div>
+              <div class="janela-tela">
+                <div class="ms moodle">
+                  <div class="ms-topo">
+                    <span class="linha-alvo">
+                      <span class="ms-btn alvo" style="padding:.2rem .5rem;font-size:.7rem">☰</span>
+                      <span class="aponta">menu do curso</span>
+                    </span>
+                    <span class="ms-avatar">JB</span>
+                  </div>
+                  <div class="ms-lateral">
+                    <b>Menu do curso</b>
+                    <i>Boas-vindas</i>
+                    <i>Módulo 1: introdução</i>
+                    <i>Materiais de leitura</i>
+                    <i>Fórum de dúvidas</i>
+                    <i>Atividade avaliativa</i>
+                  </div>
+                  <div class="ms-abas"><span>Curso</span><span>Participantes</span><span>Notas</span></div>
+                </div>
+              </div>
+            </div>
+            <figcaption>Tela 5: menu lateral com os módulos e as atividades da disciplina.</figcaption>
+          </figure>
+        </div>
+      </details>
+
+      <details class="passo reveal">
+        <summary><span class="num">7</span> Fale com o professor pelo balão de conversa <span class="mais" aria-hidden="true">+</span></summary>
+        <div class="passo-corpo">
+          <p>No topo da tela, o <b>balão de conversa</b> abre as mensagens. É por ali que você escreve para o professor da disciplina, sem precisar de e-mail.</p>
+        </div>
+      </details>
+
+      <details class="passo reveal">
+        <summary><span class="num">8</span> Confira o seu perfil e o FAQ <span class="mais" aria-hidden="true">+</span></summary>
+        <div class="passo-corpo">
+          <p>
+            Clicando na <b>sua foto ou nas iniciais</b>, no menu superior, você abre o <b>Perfil</b>.
+            Em <b>Sobre mim</b> ficam os seus dados. Em <b>Configurações</b> dá para corrigi-los.
+            Em <b>Cursos</b> aparece tudo em que você está inscrito.
+          </p>
+          <p>No menu <b>FAQ</b> há respostas para as dúvidas mais comuns, inclusive como trocar a senha estando logado.</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+  <!-- ══ Ajuda ══ -->
+  <div class="grid2">
+    <div class="card reveal" style="--c: var(--coral)">
+      <span class="rotulo">Suporte</span>
+      <h2>Continua sem conseguir entrar?</h2>
+      <p>
+        A equipe de Ensino a Distância da UEMG atende as dúvidas do AVA pelo e-mail
+        <a href="mailto:coordenadoria.ead@uemg.br">coordenadoria.ead@uemg.br</a>.
+      </p>
+      <p>
+        Se preferir, procure o NAE por <a href="mailto:nae.guanhaes@uemg.br">nae.guanhaes@uemg.br</a>.
+        Envie os <b>prints do que você tentou</b> e da tela onde o erro aparece, que a gente
+        acompanha o caso com você.
+      </p>
+      <div><a class="btn ghost" href="contato.html" style="--c: var(--coral)">Falar com o NAE →</a></div>
+    </div>
+
+    <div class="card reveal" style="--c: var(--azul)">
+      <span class="rotulo">Cadastro</span>
+      <h2>Quando o problema é o cadastro</h2>
+      <p>
+        Se o e-mail de recuperação não chega, ou se os seus dados aparecem errados, o ajuste
+        não é feito no AVA. É na <b>secretaria acadêmica da unidade</b>, que atualiza o cadastro
+        no Lyceum, e o Moodle acompanha.
+      </p>
+      <ul class="limpa" style="--c: var(--azul)">
+        <li>Leve um documento com foto.</li>
+        <li>Confira o e-mail pessoal e o telefone registrados.</li>
+        <li>Secretaria: <a href="mailto:secretaria.guanhaes@uemg.br">secretaria.guanhaes@uemg.br</a></li>
+      </ul>
+    </div>
+    </div>
+  </details>
+
+  <div class="stack-m">
+    <div class="titulo-sec col" style="--c: var(--petroleo)">
+      <span class="eyebrow" style="--c: var(--petroleo)">Dúvidas comuns</span>
+      <h2>Perguntas frequentes</h2>
+    </div>
+    <div>
+      <details class="faq">
+              <summary>Preciso criar uma conta no Moodle?</summary>
+              <p>Não. A conta vem do sistema acadêmico. Tente entrar com os mesmos dados do Lyceum e, se não funcionar, use “Perdeu a senha?” para definir uma nova.</p>
+            </details>
+      <details class="faq">
+              <summary>Troquei a senha no Moodle. Ela vale no Lyceum também?</summary>
+              <p>Os sistemas são integrados e a orientação da UEMG é manter o mesmo login e a mesma senha nos dois. Se depois de trocar você tiver problema em um deles, avise o NAE ou a coordenadoria de EaD.</p>
+            </details>
+      <details class="faq">
+              <summary>O e-mail de recuperação não chegou.</summary>
+              <p>Confira o spam e a aba de promoções. Se não estiver lá, é provável que o e-mail cadastrado esteja desatualizado, e quem corrige isso é a secretaria acadêmica da unidade.</p>
+            </details>
+      <details class="faq">
+              <summary>Minha disciplina não aparece no Painel.</summary>
+              <p>Verifique nas abas “Não iniciados” e “Removidos da visualização”, porque um curso pode estar escondido ali. Se ainda assim não aparecer, pode ser que o professor não tenha aberto a turma ou que a sua matrícula na disciplina não esteja concluída. Nesse caso, fale com a coordenação do curso.</p>
+            </details>
+      <details class="faq">
+              <summary>Esse é o mesmo login do e-mail institucional?</summary>
+              <p>Não. O e-mail institucional (@discente.uemg.br) é do Microsoft 365 e tem senha própria, com outro processo de recuperação. Para esse, veja o <a href="email.html">guia do e-mail institucional</a>.</p>
+            </details>
+    </div>
+  </div>
+
+<div class="card col reveal" style="--c: var(--turquesa)">
+    <span class="rotulo">Fontes</span>
+    <h2>De onde vieram estas orientações</h2>
+    <p>
+      Do material oficial da UEMG: <b>“AVA Moodle UEMG, primeiro acesso discentes”</b> e
+      <b>“Manual de Acesso para Alunos”</b>, da Coordenadoria de EaD, além das orientações
+      de primeiro acesso ao Lyceum. Telas e menus podem mudar com as atualizações do sistema.
+      Se encontrar algo diferente, avise o NAE que a gente corrige.
+    </p>
+    <div class="compartilhar">
+      <a class="btn ghost" data-compartilhar
+         data-titulo="AVA Moodle · primeiro acesso"
+         data-texto="Como entrar no AVA Moodle da UEMG, passo a passo:"
+         data-url="https://naeguanhaes.github.io/moodle.html"
+         style="--c: var(--turquesa)">Enviar para um colega</a>
+    </div>
+  </div>
+
+<div class="card col reveal" style="--c: var(--petroleo)">
+    <span class="rotulo">Ajude um colega</span>
+    <h2>Repasse este guia</h2>
+    <p>Muita gente trava na mesma coisa e não sabe que existe ajuda. Copie a mensagem pronta e cole no grupo da sua turma.</p>
+    <div><button class="btn ghost" type="button" data-texto-grupo="Como entrar no AVA Moodle da UEMG, com o passo a passo do primeiro acesso e da recuperação de senha:" data-titulo="AVA Moodle" data-url="https://naeguanhaes.github.io/moodle.html" style="--c: var(--petroleo)">📋 Copiar mensagem para o grupo</button></div>
+  </div>
+
+  <div class="note col">
+    <p><b>Procurando notas, faltas ou matrícula?</b> Isso não fica no Moodle, e sim no Lyceum. Veja o <a href="lyceum.html">guia do Lyceum e do aplicativo UEMG+ Estudante</a>.</p>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <p>NAE · Núcleo de Apoio ao Estudante · UEMG Unidade Guanhães<br>Coordenação: Jonatan Barbosa Silva</p>
+    <div class="foot-links">
+      <a href="index.html">Início</a>
+      <a href="email.html">E-mail institucional</a>
+      <a href="horarios.html">Horários</a>
+      <a href="calendario.html">Calendário</a>
+      <a href="contato.html">Contato</a>
+      <a href="avisos.html">Avisos</a>
+      <a href="privacidade.html">Privacidade</a>
+    </div>
+    <p class="assinatura">Desenvolvido por <b>Jonatan Barbosa Silva</b></p>
+    <p class="foot-versao">Site conferido e atualizado em 7 de agosto de 2026</p>
+  </div>
+</footer>
+
+<script defer src="assets/dados-avisos.js"></script>
+<script defer src="assets/min/site.min.js"></script>
+<script defer src="assets/dados-busca.js"></script>
+<script defer src="assets/min/busca.min.js"></script>
+<script>
+/* abre e fecha todas as etapas de uma vez */
+(function () {
+  var botao = document.getElementById('abrir-passos');
+  if (!botao) return;
+  var passos = document.querySelectorAll('details.passo');
+  botao.addEventListener('click', function () {
+    var abrir = botao.getAttribute('data-aberto') !== 'sim';
+    passos.forEach(function (p) { p.open = abrir; });
+    if (abrir) { var sec = document.getElementById('passo-a-passo'); if (sec) sec.open = true; }
+    botao.setAttribute('data-aberto', abrir ? 'sim' : 'nao');
+    botao.textContent = abrir ? 'Fechar todas as etapas' : 'Abrir todas as etapas';
+  });
+})();
+/* quando o endereço aponta para uma seção fechada, abre */
+(function () {
+  function abrir() {
+    var id = window.location.hash.slice(1);
+    if (!id) return;
+    var el = document.getElementById(id);
+    if (!el) return;
+    if (el.tagName === 'DETAILS') el.open = true;
+    var pai = el.closest ? el.closest('details') : null;
+    if (pai) pai.open = true;
+    el.scrollIntoView({ block: 'start' });
+  }
+  window.addEventListener('hashchange', abrir);
+  abrir();
+})();
+</script>
+<script data-goatcounter="https://naeguanhaes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

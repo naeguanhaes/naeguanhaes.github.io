@@ -180,21 +180,14 @@ p  { margin: 0; }
 }
 .nav-link[aria-current="page"] .dot { background: rgba(255,255,255,.8); opacity: 1; }
 
-/* "Fale com o NAE": a ação mais valiosa do site, logo no começo da faixa
-   e com peso visual de botão, não de link solto */
-.nav-link.nav-cta { color: #fff; background: var(--coral); border-color: var(--coral); box-shadow: var(--sh-cor); }
-.nav-link.nav-cta .dot { background: rgba(255,255,255,.85); opacity: 1; }
-.nav-link.nav-cta:hover,
-.nav-link.nav-cta:focus-visible {
-  color: #fff; background: color-mix(in srgb, var(--coral) 86%, #000);
-  border-color: color-mix(in srgb, var(--coral) 86%, #000);
-}
-
 /* Submenus. Sem JavaScript, o .nav-grupo não existe para o leiaute
    (display: contents) e os links do grupo aparecem soltos na faixa,
    como antes. Com JavaScript, eles viram um painel que abre no botão */
 .nav-grupo { display: contents; }
-.nav-botao { cursor: pointer; background: none; font: inherit; }
+/* só a família de fonte é herdada. O atalho "font: inherit" apagaria o
+   tamanho e o peso que .nav-link define, e o botão sairia diferente dos
+   links vizinhos */
+.nav-botao { cursor: pointer; background: none; font-family: inherit; }
 .nav-seta { font-size: .72em; opacity: .75; margin-left: .05rem; }
 .nav-botao.tem-atual { color: var(--ink); border-color: color-mix(in srgb, var(--c, var(--azul)) 45%, transparent); }
 .nav-botao[aria-expanded="true"] { color: var(--ink); background: var(--surface-2); border-color: var(--line); }
@@ -1019,7 +1012,6 @@ html[data-contraste="alto"] .chip,
 html[data-contraste="alto"] .acao,
 html[data-contraste="alto"] .btn-topo { border-color: #000; color: #000; }
 html[data-contraste="alto"] .nav-link[aria-current="page"] { color: #fff; }
-html[data-contraste="alto"] .nav-link.nav-cta { color: #fff; background: var(--coral); border-color: #000; }
 html[data-contraste="alto"] .btn { box-shadow: none; border: 2px solid #000; }
 html[data-contraste="alto"] .btn.ghost { color: #000; }
 html[data-contraste="alto"] table.grade th,

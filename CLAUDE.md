@@ -40,7 +40,8 @@ de mudanças estão na pasta [`historico/`](historico/CONTEXTO.md).
 6. Página ou seção nova? Inclua no índice `assets/dados-busca.js`, no menu de
    todas as páginas, na lista `ESSENCIAIS` do `sw.js` e rode
    `node ferramentas/gerar-sitemap.js`.
-7. Mexeu em pergunta do FAQ (`email.html`, `sistemas.html`) ou no endereço,
+7. Mexeu em pergunta do FAQ (`email.html`, `sistemas.html`, `moodle.html`,
+   `lyceum.html`) ou no endereço,
    telefone e horário de atendimento? Rode
    `node ferramentas/gerar-dados-estruturados.js`, que reescreve o que o
    Google lê. As perguntas saem do próprio HTML, então não se digita nada
@@ -150,7 +151,8 @@ As três já funcionam por endereço direto, para o coordenador revisar.
 
 ## Estrutura em uma linha cada
 
-Páginas no ar: `index`, `email`, `sistemas`, `horarios`, `calendario`,
+Páginas no ar: `index`, `email`, `sistemas` (porta de entrada), `moodle`,
+`lyceum` (com o aplicativo UEMG+), `horarios`, `calendario`,
 `calculadora` (aparece como Ferramentas no menu, tem calculadora e cronômetro),
 `planner`, `mapa`, `apoio`, `avisos`, `sobre`, `contato`, `privacidade`,
 `cartaz` (imprimível), `404`, `offline`.
@@ -158,8 +160,8 @@ Seção "Meu curso": `curso` (visão geral), `matriz`, `atividades`, `estagio`,
 `tcc`, `secretaria`. Todas alimentadas por `assets/dados-curso.js`.
 Páginas ocultas: `editais`, `calouro`, `semestres`.
 
-O menu tem 8 títulos, e três deles abrem submenu (Meu curso, Aulas e prazos,
-Sistemas). No HTML os links do grupo ficam soltos dentro de um
+O menu tem 8 títulos, e três deles abrem submenu: Meu curso (6 itens),
+Aulas e prazos (4) e Sistemas (visão geral, e-mail, AVA Moodle, Lyceum). No HTML os links do grupo ficam soltos dentro de um
 `<div class="nav-grupo" data-grupo="...">`: sem JavaScript eles aparecem como
 links normais, e o `site.js` é que os recolhe no painel. Ao mexer no menu,
 troque em todas as páginas de uma vez, porque o `checar-consistencia.js` exige
@@ -188,7 +190,7 @@ Ferramentas, todas em `ferramentas/`:
 
 Gerados por ferramenta, não editar à mão: `sitemap.xml`, `robots.txt`,
 `assets/min/`, e os blocos entre "dados estruturados: inicio" e "fim" no
-`<head>` de `index`, `contato`, `email` e `sistemas`.
+`<head>` de `index`, `contato`, `email`, `sistemas`, `moodle` e `lyceum`.
 
 O restante está detalhado no `README.md`, em `historico/CONTEXTO.md` e, para
 o dia em que a coordenação mudar de mãos, em `historico/CONTINUIDADE.md`.

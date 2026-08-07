@@ -3,6 +3,28 @@
 Registro do que mudou e quando, do mais recente para o mais antigo.
 Ao fazer uma alteração relevante, acrescente uma entrada no topo.
 
+## 07/08/2026 · oitava rodada (cada sistema na sua página)
+
+- **AVA Moodle e Lyceum separados**, por decisão do coordenador. Eram uma
+  página só, com tudo dentro de seções que abriam ao clicar:
+  - `moodle.html`: o passo a passo do AVA em 8 etapas, com as telas, mais o
+    suporte da Coordenadoria de EaD e o que fazer quando o problema é cadastro
+  - `lyceum.html`: o primeiro acesso ao Lyceum e, junto dele, o aplicativo
+    **UEMG+ Estudante**, que é a versão do Lyceum para o celular
+  - `sistemas.html` continua existindo como porta de entrada, explicando a
+    diferença entre os dois e levando a cada guia. Ela também segura os links
+    antigos que já foram compartilhados por aí
+  - As perguntas do FAQ foram distribuídas conforme o assunto, e os dados
+    estruturados de cada página são regerados a partir do próprio HTML
+- **Menu:** o grupo Sistemas agora abre com quatro itens (visão geral, e-mail,
+  AVA Moodle, Lyceum e app). O destaque de botão do "Fale com o NAE" saiu, a
+  pedido do coordenador
+- **Correção:** os três botões de submenu apareciam com fonte diferente dos
+  links vizinhos. O culpado era um `font: inherit` no CSS, que é atalho e
+  zerava também o tamanho e o peso definidos em `.nav-link`. Passou a herdar
+  só a família da fonte
+- sw em nae-v15
+
 ## 07/08/2026 · sétima rodada (o curso entra no site)
 
 O site passou a responder também as perguntas que vinham do Projeto

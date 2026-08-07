@@ -127,7 +127,7 @@ console.log('');
   console.log('  ' + p + ': cartão do NAE (endereço, telefone, atendimento)');
 });
 
-['email.html', 'sistemas.html'].forEach(p => {
+['email.html', 'sistemas.html', 'moodle.html', 'lyceum.html'].forEach(p => {
   const texto = fs.readFileSync(path.join(RAIZ, p), 'utf8');
   const perguntas = perguntasDe(texto);
   if (!perguntas.length) {
