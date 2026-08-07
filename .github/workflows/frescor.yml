@@ -1,0 +1,58 @@
+# Confere todo mês se a informação do site envelheceu: semestre da grade,
+# ano do calendário, idade dos carimbos "conferido em", avisos vencidos.
+# Se algo estiver velho, abre uma tarefa no repositório avisando a coordenação.
+# Não publica nem bloqueia nada: só lembra.
+name: Vigia do frescor dos dados
+
+on:
+  schedule:
+    # dia 1 de cada mês, 09h de Brasília (12h UTC)
+    - cron: '0 12 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  conferir:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar o repositório
+        uses: actions/checkout@v4
+
+      - name: Conferir o frescor dos dados
+        id: teste
+        continue-on-error: true
+        run: node ferramentas/checar-frescor.js
+
+      - name: Abrir tarefa quando algo estiver envelhecendo
+        if: steps.teste.outcome == 'failure'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            let corpo = 'A conferência mensal encontrou informação do site que pode ter envelhecido.';
+            try {
+              corpo += '\n\n' + fs.readFileSync('frescor.txt', 'utf8');
+            } catch (e) {}
+            corpo += '\n\nNada quebrou e nada foi publicado: isto é só um lembrete. ' +
+                     'Depois de atualizar, lembre de trocar a VERSAO no topo do `sw.js` ' +
+                     'e a data do rodapé.' +
+                     '\n\nVerificado automaticamente pelo vigia mensal do frescor.';
+            const titulo = 'Conferência mensal: dados do site para revisar';
+            const abertas = await github.rest.issues.listForRepo({
+              owner: context.repo.owner, repo: context.repo.repo, state: 'open'
+            });
+            const jaExiste = abertas.data.find(i => i.title === titulo);
+            if (jaExiste) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner, repo: context.repo.repo,
+                issue_number: jaExiste.number, body: corpo
+              });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner, repo: context.repo.repo,
+                title: titulo, body: corpo
+              });
+            }

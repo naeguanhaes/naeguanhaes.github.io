@@ -1,0 +1,5 @@
+# Site do NAE · Núcleo de Apoio ao Estudante · UEMG Unidade Guanhães
+User-agent: *
+Allow: /
+
+Sitemap: https://naeguanhaes.github.io/sitemap.xml

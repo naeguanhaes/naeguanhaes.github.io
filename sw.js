@@ -5,7 +5,14 @@
    isso apaga o cache antigo e busca tudo de novo.
    ═══════════════════════════════════════════════════════ */
 
-var VERSAO = 'nae-v13';
+var VERSAO = 'nae-v14';
+
+/* Arquivos de dados (avisos, horários, calendário, editais, semestres).
+   Estes NÃO seguem a regra do cache primeiro: um aviso urgente precisa
+   chegar ao aluno na mesma visita, mesmo que a VERSAO acima não tenha
+   sido trocada. Vão pela rede, com prazo curto e queda para o guardado. */
+var PADRAO_DADOS = /\/assets\/dados-[a-z-]+\.js$|\/historico\/semestres\/indice\.js$/;
+var PRAZO_DADOS = 2500;
 
 var ESSENCIAIS = [
   './',
@@ -21,6 +28,12 @@ var ESSENCIAIS = [
   './apoio.html',
   './avisos.html',
   './privacidade.html',
+  './curso.html',
+  './matriz.html',
+  './atividades.html',
+  './estagio.html',
+  './tcc.html',
+  './secretaria.html',
   './planner.html',
   './editais.html',
   './calouro.html',
@@ -40,8 +53,10 @@ var ESSENCIAIS = [
   './assets/dados-novidades.js',
   './assets/dados-busca.js',
   './assets/dados-editais.js',
+  './assets/dados-curso.js',
   './assets/min/busca.min.js',
   './assets/min/planner.min.js',
+  './assets/min/curso.min.js',
   './historico/semestres/indice.js',
   './assets/logo-topo.webp',
   './assets/simbolo-nae.webp',
@@ -89,6 +104,35 @@ self.addEventListener('fetch', function (e) {
         .catch(function () {
           return caches.match(req).then(function (r) { return r || caches.match('./offline.html'); });
         })
+    );
+    return;
+  }
+
+  /* dados: rede primeiro, com prazo. Passou do prazo ou faltou rede,
+     entrega o que estiver guardado e atualiza o cache em segundo plano */
+  if (PADRAO_DADOS.test(url.pathname)) {
+    e.respondWith(
+      caches.open(VERSAO).then(function (c) {
+        return c.match(req).then(function (guardado) {
+          return new Promise(function (resolver) {
+            var entregue = false;
+            function entregar(resp) {
+              if (!entregue && resp) { entregue = true; resolver(resp); }
+            }
+            var relogio = setTimeout(function () { entregar(guardado); }, PRAZO_DADOS);
+            fetch(req).then(function (resp) {
+              clearTimeout(relogio);
+              if (resp && resp.ok) c.put(req, resp.clone());
+              entregar(resp);
+            }).catch(function () {
+              clearTimeout(relogio);
+              entregar(guardado);
+              /* sem rede e sem cópia guardada: não há o que entregar */
+              if (!entregue) { entregue = true; resolver(Response.error()); }
+            });
+          });
+        });
+      })
     );
     return;
   }

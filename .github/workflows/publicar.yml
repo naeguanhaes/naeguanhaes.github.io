@@ -23,12 +23,21 @@ jobs:
     steps:
       - name: Baixar o repositório
         uses: actions/checkout@v4
+        with:
+          # dois commits, porque o inspetor da VERSAO compara com o anterior
+          fetch-depth: 2
       - name: Checar os dados de horários, calendário e avisos
         run: node ferramentas/checar-dados.js
       - name: Inspecionar o site (travessões, links, cache offline, divs)
         run: node ferramentas/checar-site.js
       - name: Inspecionar a acessibilidade (WCAG 2.1 AA)
         run: node ferramentas/checar-acessibilidade.js
+      - name: Inspecionar a consistência (menu, rodapé, busca, sitemap)
+        run: node ferramentas/checar-consistencia.js
+      - name: Conferir se assets/min está em dia com as origens
+        run: node ferramentas/checar-minificados.js
+      - name: Cobrar a troca da VERSAO do cache offline
+        run: node ferramentas/checar-versao.js
 
   publicar:
     needs: verificar
