@@ -15,8 +15,15 @@
    ═══════════════════════════════════════════════════════ */
 
 window.DADOS_NOVIDADES = {
-  atualizadoEm: '2026-08-07',
+  atualizadoEm: '2026-08-12',
   itens: [
+    {
+      data: '2026-08-12',
+      titulo: 'Atividades complementares: a partir de quando cada uma conta',
+      texto: 'O Colegiado aprovou a regulamentação aditiva do Quadro 02. A regra geral é que só conta o que foi feito depois do seu ingresso no curso de Direito. A tabela agora mostra isso modalidade por modalidade, com as exceções.',
+      link: 'atividades.html',
+      textoLink: 'ver a tabela'
+    },
     {
       data: '2026-08-12',
       titulo: 'Períodos que abrem ao clicar, na matriz',

@@ -129,6 +129,19 @@ As três já funcionam por endereço direto, para o coordenador revisar.
   frequência mínima tem direito ao **exame especial**, prova única de todo o
   conteúdo; tirando 60 nela, o professor lança 60. Revisão de prova: cinco dias
   úteis da divulgação. Atestado de menos de sete dias: justificativa em 48h.
+- **Atividades complementares de Direito, termo inicial**: a
+  **regulamentação aditiva** aprovada pelo Colegiado na **Reunião nº 3 (2026-1),
+  de 11 de março de 2026**, não mexeu em nenhuma hora nem em nenhum teto do
+  Quadro 02: as 25 modalidades continuam com os mesmos números do PPC. O que ela
+  fez foi fixar **a partir de quando** cada uma conta, no campo `desdeQuando` de
+  `assets/dados-curso.js`. A regra geral é a data de ingresso no curso de Direito
+  desta unidade. Três detalhes do documento original, para quem for reconferir:
+  o texto usa "ano de ingresso" nos itens 5 a 8 e "data do ingresso" nos itens 9
+  a 25; a explicação do item 6 (defesa de mestrado ou doutorado) repete por
+  engano "trabalho de conclusão de curso de graduação", copiada do item 5, e o
+  site publica só a parte operante dela; e o item 4 contempla dois casos, quem
+  dispensou as práticas reais e quem estagiou fora da área jurídica. O PDF
+  digitalizado da minuta ficou fora do repositório.
 - **Cursos** (fonte: PPCs, em `assets/dados-curso.js`): Direito tem 4.230 horas,
   282 créditos, 10 a 14 semestres e **210 horas** de atividades complementares.
   Engenharia Civil tem 3.750 horas, 250 créditos, 10 a 15 semestres, **30 horas**
