@@ -72,8 +72,6 @@ content="noindex">` e o comentário de página oculta, incluir o link no menu de
 todas as páginas, acrescentar ao índice da busca (`assets/dados-busca.js`),
 conferir que já está no `sw.js` e anunciar em `assets/dados-novidades.js`.
 
-- **`editais.html`** (com `assets/dados-editais.js`): aguardando o primeiro
-  edital. Enquanto a lista está vazia, a página mostra um aviso simpático.
 - **`calouro.html`** (guia "Comece por aqui"): aguardando a chegada de
   calouros, já que não entra turma nova em 2026.2.
 - **`semestres.html`** (com `historico/semestres/indice.js`): arquivo das

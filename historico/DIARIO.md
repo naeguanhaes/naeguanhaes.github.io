@@ -10,8 +10,8 @@ Ao fazer uma alteração relevante, acrescente uma entrada no topo.
   começam fechados, menos o período que o estudante informou na página de
   atividades, que abre sozinho. Período inteiro concluído ganha um sinal verde.
   Tem botão para abrir e fechar todos de uma vez.
-- ** saiu do escondido**: entrou no menu, no índice da busca e no
-  sitemap, e perdeu o . Enquanto  estiver
+- **`editais.html` saiu do escondido**: entrou no menu, no índice da busca e no
+  sitemap, e perdeu o `noindex`. Enquanto `assets/dados-editais.js` estiver
   vazio, a página mostra o aviso de que não há edital aberto.
 - sw em nae-v21.
 
