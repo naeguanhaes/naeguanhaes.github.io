@@ -135,13 +135,16 @@ As três já funcionam por endereço direto, para o coordenador revisar.
   Quadro 02: as 25 modalidades continuam com os mesmos números do PPC. O que ela
   fez foi fixar **a partir de quando** cada uma conta, no campo `desdeQuando` de
   `assets/dados-curso.js`. A regra geral é a data de ingresso no curso de Direito
-  desta unidade. Três detalhes do documento original, para quem for reconferir:
-  o texto usa "ano de ingresso" nos itens 5 a 8 e "data do ingresso" nos itens 9
-  a 25; a explicação do item 6 (defesa de mestrado ou doutorado) repete por
-  engano "trabalho de conclusão de curso de graduação", copiada do item 5, e o
-  site publica só a parte operante dela; e o item 4 contempla dois casos, quem
-  dispensou as práticas reais e quem estagiou fora da área jurídica. O PDF
-  digitalizado da minuta ficou fora do repositório.
+  desta unidade. **O critério é sempre a DATA da matrícula do estudante**: o
+  documento do Colegiado oscila entre "ano de ingresso" (itens 5 a 8) e "data do
+  ingresso" (itens 9 a 25), e o coordenador decidiu em 12/08/2026 que vale a data
+  para todas as modalidades, para não conviverem dois critérios no mesmo quadro.
+  Não reintroduza a contagem por ano. Mais dois detalhes do documento original,
+  para quem for reconferir: a explicação do item 6 (defesa de mestrado ou
+  doutorado) repete por engano "trabalho de conclusão de curso de graduação",
+  copiada do item 5, e o site publica só a parte operante dela; e o item 4
+  contempla dois casos, quem dispensou as práticas reais e quem estagiou fora da
+  área jurídica. O PDF digitalizado da minuta ficou fora do repositório.
 - **Cursos** (fonte: PPCs, em `assets/dados-curso.js`): Direito tem 4.230 horas,
   282 créditos, 10 a 14 semestres e **210 horas** de atividades complementares.
   Engenharia Civil tem 3.750 horas, 250 créditos, 10 a 15 semestres, **30 horas**

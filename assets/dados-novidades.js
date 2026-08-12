@@ -20,7 +20,7 @@ window.DADOS_NOVIDADES = {
     {
       data: '2026-08-12',
       titulo: 'Atividades complementares: a partir de quando cada uma conta',
-      texto: 'O Colegiado aprovou a regulamentação aditiva do Quadro 02. A regra geral é que só conta o que foi feito depois do seu ingresso no curso de Direito. A tabela agora mostra isso modalidade por modalidade, com as exceções.',
+      texto: 'O Colegiado aprovou a regulamentação aditiva do Quadro 02. A regra é que só conta o que tem data posterior à sua matrícula no curso de Direito. A tabela agora mostra isso modalidade por modalidade, com as exceções.',
       link: 'atividades.html',
       textoLink: 'ver a tabela'
     },
