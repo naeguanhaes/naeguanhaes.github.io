@@ -1317,14 +1317,51 @@ html[data-fonte="3"] body { font-size: 21px; }
 /* ── Páginas do curso (matriz, atividades, estágio, TCC) ── */
 .fonte-ppc { font-size: .82rem; color: var(--muted); margin: 0; }
 
-.periodo { margin-block: var(--s3); }
-.periodo-h {
-  display: flex; align-items: baseline; justify-content: space-between; gap: .75rem;
-  font-size: 1.05rem; padding-bottom: .4rem; margin-bottom: .6rem;
-  border-bottom: 2px solid color-mix(in srgb, var(--c, var(--azul)) 35%, transparent);
-  color: var(--c, var(--azul));
+/* cada período abre ao clicar */
+details.periodo {
+  --c: var(--azul);
+  background: var(--surface); border: 1px solid var(--hair);
+  border-radius: var(--radius); box-shadow: var(--sh-1);
+  overflow: hidden; margin-block: .5rem;
+  transition: border-color .18s, box-shadow .18s;
 }
-.periodo-ch { font-size: .82rem; font-weight: 600; color: var(--muted); white-space: nowrap; }
+details.periodo:hover { border-color: color-mix(in srgb, var(--c) 35%, var(--hair)); }
+details.periodo[open] { border-color: color-mix(in srgb, var(--c) 45%, var(--hair)); box-shadow: var(--sh-2); }
+details.periodo > summary {
+  cursor: pointer; list-style: none;
+  display: flex; align-items: baseline; gap: .5rem .9rem; flex-wrap: wrap;
+  padding: var(--s2) var(--s3); min-height: 3rem;
+}
+details.periodo > summary::-webkit-details-marker { display: none; }
+details.periodo[open] > summary {
+  background: color-mix(in srgb, var(--c) 8%, var(--surface));
+  border-bottom: 1px solid var(--hair);
+}
+.periodo-h {
+  font-family: var(--serif); font-size: 1.12rem; font-weight: 600;
+  color: var(--c); margin: 0; letter-spacing: -.005em;
+}
+.periodo-conta { font-size: .84rem; color: var(--muted); }
+.periodo-conta b { color: var(--verde); font-weight: 700; }
+.periodo-ch { font-size: .82rem; font-weight: 600; color: var(--muted); white-space: nowrap; margin-left: auto; }
+.periodo-mais {
+  flex: none; align-self: center;
+  width: 1.8rem; height: 1.8rem; border-radius: 99px;
+  display: grid; place-items: center;
+  background: color-mix(in srgb, var(--c) 13%, var(--surface));
+  color: var(--c); font-family: var(--sans); font-weight: 800; font-size: 1.05rem;
+  transition: background .18s, color .18s, transform .18s;
+}
+details.periodo > summary:hover .periodo-mais { background: var(--c); color: #fff; }
+details.periodo[open] .periodo-mais { transform: rotate(45deg); background: var(--c); color: #fff; }
+details.periodo .disciplinas { padding: var(--s3); }
+details.periodo.periodo-ok > summary { background: color-mix(in srgb, var(--verde) 9%, var(--surface)); }
+details.periodo.periodo-ok .periodo-h::after { content: " ✓"; color: var(--verde); }
+.periodos-topo { display: flex; justify-content: flex-end; margin-top: var(--s2); }
+@media (max-width: 560px) {
+  details.periodo > summary { gap: .3rem .7rem; }
+  .periodo-ch { margin-left: 0; }
+}
 
 .disciplinas { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .3rem; }
 .disciplina {

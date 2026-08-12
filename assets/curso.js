@@ -197,12 +197,27 @@
         if (feitas.indexOf(d.cod) !== -1) horasFeitas += d.ch;
       });
 
+      /* o período que o estudante disse cursar, na página de atividades,
+         já abre; sem essa informação, todos começam fechados */
+      var meuPeriodo = parseInt(U.ler('periodo-' + c.id) || '0', 10);
+
       matriz.innerHTML = c.periodos.map(function (p) {
-        return '<section class="periodo" aria-labelledby="periodo-' + p.n + '">' +
-          '<h2 class="periodo-h" id="periodo-' + p.n + '" style="--c: ' + c.cor + '">' +
-            p.n + 'º período' +
-            '<span class="periodo-ch">' + p.disciplinas.reduce(function (s, d) { return s + d.ch; }, 0) + ' h</span>' +
-          '</h2>' +
+        var chPeriodo = p.disciplinas.reduce(function (s, d) { return s + d.ch; }, 0);
+        var feitasAqui = p.disciplinas.filter(function (d) { return feitas.indexOf(d.cod) !== -1; }).length;
+        var completo = feitasAqui === p.disciplinas.length;
+        var abrir = p.n === meuPeriodo;
+
+        return '<details class="periodo' + (completo ? ' periodo-ok' : '') + '"' +
+                 ' style="--c: ' + c.cor + '"' + (abrir ? ' open' : '') + ' data-periodo="' + p.n + '">' +
+          '<summary>' +
+            '<h2 class="periodo-h" id="periodo-' + p.n + '">' + p.n + 'º período</h2>' +
+            '<span class="periodo-conta">' +
+              p.disciplinas.length + (p.disciplinas.length === 1 ? ' disciplina' : ' disciplinas') +
+              (feitasAqui ? ', <b>' + feitasAqui + ' cursada' + (feitasAqui > 1 ? 's' : '') + '</b>' : '') +
+            '</span>' +
+            '<span class="periodo-ch">' + chPeriodo + ' h</span>' +
+            '<span class="periodo-mais" aria-hidden="true">+</span>' +
+          '</summary>' +
           '<ul class="disciplinas">' +
             p.disciplinas.map(function (d) {
               var feita = feitas.indexOf(d.cod) !== -1;
@@ -230,8 +245,22 @@
               '</li>';
             }).join('') +
           '</ul>' +
-        '</section>';
-      }).join('');
+        '</details>';
+      }).join('') +
+      '<div class="periodos-topo">' +
+        '<button class="btn ghost pequeno" type="button" id="abrir-periodos" style="--c: ' + c.cor + '">' +
+          'Abrir todos os períodos</button>' +
+      '</div>';
+
+      var btnTodos = matriz.querySelector('#abrir-periodos');
+      if (btnTodos) {
+        btnTodos.addEventListener('click', function () {
+          var abrir = btnTodos.getAttribute('data-aberto') !== 'sim';
+          matriz.querySelectorAll('details.periodo').forEach(function (d) { d.open = abrir; });
+          btnTodos.setAttribute('data-aberto', abrir ? 'sim' : 'nao');
+          btnTodos.textContent = abrir ? 'Fechar todos os períodos' : 'Abrir todos os períodos';
+        });
+      }
 
       matriz.querySelectorAll('input[data-cod]').forEach(function (caixa) {
         caixa.addEventListener('change', function () {

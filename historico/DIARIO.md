@@ -3,6 +3,21 @@
 Registro do que mudou e quando, do mais recente para o mais antigo.
 Ao fazer uma alteração relevante, acrescente uma entrada no topo.
 
+## 12/08/2026 · décima terceira rodada (períodos clicáveis e editais no ar)
+
+- Na matriz, cada período virou uma caixa que **abre ao clicar**, com resumo no
+  cabeçalho: quantas disciplinas, quantas já cursadas e a carga horária. Todos
+  começam fechados, menos o período que o estudante informou na página de
+  atividades, que abre sozinho. Período inteiro concluído ganha um sinal verde.
+  Tem botão para abrir e fechar todos de uma vez.
+- ** saiu do escondido**: entrou no menu, no índice da busca e no
+  sitemap, e perdeu o . Enquanto  estiver
+  vazio, a página mostra o aviso de que não há edital aberto.
+- sw em nae-v21.
+
+O inspetor de consistência pegou o sitemap desatualizado ao habilitar editais,
+que é exatamente o tipo de esquecimento que ele existe para evitar.
+
 ## 12/08/2026 · décima segunda rodada (ementas, bibliografias e egresso)
 
 Com os dois PPCs em mãos, o maior volume de conteúdo parado entrou no site.

@@ -19,6 +19,20 @@ window.DADOS_NOVIDADES = {
   itens: [
     {
       data: '2026-08-12',
+      titulo: 'Períodos que abrem ao clicar, na matriz',
+      texto: 'Cada período virou uma caixa que abre e fecha, mostrando quantas disciplinas tem e quantas você já cursou. Fica bem mais fácil achar o seu.',
+      link: 'matriz.html',
+      textoLink: 'ver a matriz'
+    },
+    {
+      data: '2026-08-12',
+      titulo: 'Editais e bolsas no menu',
+      texto: 'A página de editais entrou no ar: assistência estudantil, monitoria, extensão e pesquisa, sempre com o prazo em destaque e o link oficial.',
+      link: 'editais.html',
+      textoLink: 'ver os editais'
+    },
+    {
+      data: '2026-08-12',
       titulo: 'Ementa e bibliografia de todas as disciplinas',
       texto: 'Em cada disciplina da matriz, um link abre o que ela cobre e a lista de livros do PPC. São 190 disciplinas e mais de 1.500 referências, incluindo todas as optativas.',
       link: 'matriz.html',

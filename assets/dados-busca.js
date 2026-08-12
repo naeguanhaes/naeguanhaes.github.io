@@ -169,6 +169,12 @@ window.DADOS_BUSCA = {
       k: 'mapa campus planta sala onde fica biblioteca laboratorio informatica fisica topografia auditorio cantina banheiro patio secretaria npj administrativo anexo'
     },
     {
+      t: 'Editais e bolsas',
+      d: 'Assistência estudantil, monitoria, extensão e pesquisa, com prazo e link oficial.',
+      u: 'editais.html',
+      k: 'edital editais bolsa bolsas auxilio assistencia estudantil monitoria extensao pesquisa inscricao prazo oportunidade ajuda financeira dinheiro'
+    },
+    {
       t: 'Apoio psicológico',
       d: 'CAPS gratuito em Guanhães, plataformas com preço social e o CVV 188.',
       u: 'apoio.html',
