@@ -43,6 +43,30 @@ window.DADOS_CURSO = {
       integralizacao: { min: 10, max: 14 },
       fonte: 'PPC do curso de Direito, Resolução COEPE/UEMG nº 458, de 06/03/2024',
 
+      /* Seção 2.2 do PPC, "Perfil do egresso" */
+      egresso: {
+        resumo: 'O curso quer formar um profissional capaz de ler a realidade, interpretar a lei e resolver conflitos, dentro e fora do tribunal, sempre com compromisso ético e com o acesso de todos à justiça.',
+        perfil: [
+          'Capacidade de aprendizado constante, indispensável para atingir a excelência profissional.',
+          'Leitura, compreensão e elaboração de textos, atos e documentos jurídicos ou normativos, com as normas técnicas corretas.',
+          'Interpretação e aplicação do Direito, articulando o conhecimento teórico com a solução de problemas.',
+          'Comunicação com desenvoltura e precisão.',
+          'Domínio dos instrumentos de metodologia jurídica, para compreender e aplicar os conceitos fundamentais do Direito.',
+          'Atuação técnico-jurídica adequada em instâncias administrativas, judiciais ou legislativas.',
+          'Técnicas de raciocínio, argumentação e reflexão crítica para propor soluções jurídicas.',
+          'Compreensão da hermenêutica e dos métodos de interpretação da legislação, da jurisprudência e da doutrina.',
+          'Resolução de conflitos pela via litigiosa, pela negociação, pela mediação, pela conciliação e pela arbitragem.',
+          'Atuação regida por valores éticos e comprometida com o acesso universal à justiça.'
+        ],
+        atuacaoTitulo: 'Onde o egresso costuma atuar',
+        atuacao: [
+          'Poder Judiciário', 'Ministério Público', 'Defensoria Pública',
+          'Delegacias de Polícia', 'Escritórios de advocacia',
+          'Magistério superior, com apoio do curso para o ingresso na pós-graduação'
+        ],
+        atuacaoNota: 'O PPC cita estes campos ao descrever as parcerias e os convênios do curso, na seção sobre a articulação com a prática. A lista não é exaustiva, e o Direito abre muitas outras portas.'
+      },
+
       resumo: [
         { item: 'Disciplinas obrigatórias', horas: 3390, creditos: 226 },
         { item: 'Disciplinas optativas', horas: 150, creditos: 10 },
@@ -161,7 +185,9 @@ window.DADOS_CURSO = {
         'Sistema Penal e Política Criminal', 'Teoria da Argumentação Jurídica',
         'Teoria da Justiça', 'Teoria do Direito', 'Tópicos em Direito Administrativo',
         'Tópico em Direito Civil', 'Tópicos em Direito Constitucional',
-        'Tópicos em Direito do Trabalho e Previdenciário', 'Tópicos em Direito Empresarial'
+        'Tópicos em Direito do Trabalho e Previdenciário', 'Tópicos em Direito Empresarial',
+        'Tópicos em Direito Financeiro, Econômico e Tributário', 'Tópicos em Direito Penal',
+        'Tópicos em Teoria do Direito'
       ],
       optativasNota: 'Cada optativa vale 30 horas-relógio e 2 créditos. São 5 optativas ao longo do curso, do 3º ao 10º período.',
 
@@ -246,6 +272,26 @@ window.DADOS_CURSO = {
       cargaTotal: 3750,
       creditos: 250,
       integralizacao: { min: 10, max: 15 },
+
+      /* Seções 3.4 "Perfil do egresso" e 3.6 "Áreas de atuação" do PPC */
+      egresso: {
+        resumo: 'A formação segue as Diretrizes Curriculares Nacionais de Engenharia, o Artigo 3º da Resolução CNE/CES nº 2/2019, e mira um engenheiro com base técnica forte e olhar humano sobre o que constrói.',
+        perfil: [
+          'Visão ampla e humanista, com espírito crítico, criativo, cooperativo e ético, sobre uma formação técnica forte.',
+          'Aptidão para pesquisar, desenvolver, adaptar e usar novas tecnologias, com atuação inovadora e empreendedora.',
+          'Capacidade de reconhecer a necessidade de quem vai usar a obra e de formular, analisar e resolver problemas de engenharia com criatividade.',
+          'Perspectiva multidisciplinar e transdisciplinar na prática profissional.',
+          'Consideração dos aspectos globais, políticos, econômicos, sociais, ambientais, culturais e de segurança e saúde no trabalho.',
+          'Atuação isenta e comprometida com a responsabilidade social e com o desenvolvimento sustentável.'
+        ],
+        atuacaoTitulo: 'Os nove campos de atuação da Engenharia Civil',
+        atuacao: [
+          'Construção Civil', 'Sistemas Estruturais', 'Geotecnia', 'Hidrotecnia',
+          'Saneamento Básico', 'Tecnologia Hidrossanitária', 'Recursos Naturais',
+          'Recursos Energéticos', 'Gestão Ambiental'
+        ],
+        atuacaoNota: 'Campos definidos no Anexo II da Resolução nº 1.048/2013 do Sistema CONFEA/CREA, que é o que dá as atribuições profissionais do engenheiro civil.'
+      },
       fonte: 'PPC do curso de Engenharia Civil, Unidade Guanhães, 2024',
 
       resumo: [
@@ -350,8 +396,22 @@ window.DADOS_CURSO = {
         ] }
       ],
 
-      optativas: [],
-      optativasNota: 'As optativas do 7º e do 8º período valem 45 horas-relógio e 3 créditos cada. A lista da oferta muda a cada semestre: confirme com a Coordenação do Curso.',
+      optativas: [
+        'Alvenaria Estrutural', 'Análise Experimental dos Materiais', 'Cartografia Aplicada',
+        'Confiabilidade das Estruturas', 'Corrosão e Proteção dos Materiais',
+        'Desenho Informatizado Aplicado à Engenharia', 'Direito Ambiental', 'Direito e Inovação',
+        'Direito Minerário', 'Direito Urbanístico', 'Drenagem Urbana',
+        'Edifícios de Concreto Armado', 'Empreendedorismo',
+        'Engenharia Ambiental aplicada à Engenharia Civil', 'Fundamentos de Climatologia',
+        'Geoprocessamento', 'Gestão Ambiental', 'Gestão e Garantia da Qualidade',
+        'Hidrogeologia Aplicada', 'Infraestrutura de Estradas e Vias Urbanas',
+        'Inglês Instrumental', 'Introdução à Língua Brasileira de Sinais (LIBRAS)',
+        'Materiais Refratários', 'Método dos Elementos Finitos', 'Mineralogia',
+        'Modelagem Computacional de Estruturas', 'Modelagem da Informação da Construção (BIM)',
+        'Pedologia e Conservação do Solo', 'Sistemas de Abastecimento de Água',
+        'Sistemas de Esgotamento Sanitário', 'Tópicos Especiais em Engenharia Civil'
+      ],
+      optativasNota: 'As optativas do 7º e do 8º período valem 45 horas-relógio e 3 créditos cada. Esta é a lista completa do ementário do PPC; a oferta de cada semestre é menor, então confirme com a Coordenação do Curso o que vai abrir.',
 
       atividades: {
         total: 30,

@@ -18,6 +18,20 @@ window.DADOS_NOVIDADES = {
   atualizadoEm: '2026-08-07',
   itens: [
     {
+      data: '2026-08-12',
+      titulo: 'Ementa e bibliografia de todas as disciplinas',
+      texto: 'Em cada disciplina da matriz, um link abre o que ela cobre e a lista de livros do PPC. São 190 disciplinas e mais de 1.500 referências, incluindo todas as optativas.',
+      link: 'matriz.html',
+      textoLink: 'abrir a matriz'
+    },
+    {
+      data: '2026-08-12',
+      titulo: 'Perfil do egresso e onde se trabalha',
+      texto: 'O que se espera de quem se forma em cada curso e os campos de atuação da profissão, direto do PPC.',
+      link: 'curso.html',
+      textoLink: 'ver no meu curso'
+    },
+    {
       data: '2026-08-07',
       titulo: 'Gerador de requerimentos para a secretaria',
       texto: 'Aproveitamento de estudos, trancamento e adaptação curricular: o site monta o pedido com a resolução certa, pronto para imprimir e entregar.',

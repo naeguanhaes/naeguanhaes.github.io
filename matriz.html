@@ -105,12 +105,27 @@
     <p class="lede">
       As disciplinas do seu curso, período a período, com a carga horária e o que é
       pré-requisito de quê. <b>Marque o que você já cursou</b>: o site calcula quanto
-      falta e avisa quais disciplinas ainda estão travadas por pré-requisito.
+      falta e avisa quais disciplinas ainda estão travadas por pré-requisito. Em cada
+      disciplina, o link <b>ementa e bibliografia</b> abre o conteúdo do PPC e a lista
+      de livros indicados.
     </p>
 
     <div data-curso-seletor></div>
     <div id="matriz-resumo"></div>
     <div id="matriz-lista" class="stack-s"></div>
+
+    <div class="stack-m" id="optativas">
+      <div class="titulo-sec col" style="--c: var(--lilas)">
+        <span class="eyebrow" style="--c: var(--lilas)">Para escolher com calma</span>
+        <h2>Disciplinas optativas</h2>
+      </div>
+      <p class="col">
+        Estas são todas as optativas previstas no PPC do seu curso. Abra a ementa antes
+        de escolher: é o jeito de saber o que a disciplina cobre e quais livros você vai
+        precisar. A oferta de cada semestre é menor que esta lista.
+      </p>
+      <div id="optativas-lista" class="stack-s"></div>
+    </div>
 
     <div class="note col">
       <p>
@@ -146,6 +161,7 @@
 <script defer src="assets/dados-busca.js"></script>
 <script defer src="assets/min/busca.min.js"></script>
 <script defer src="assets/dados-curso.js"></script>
+<script defer src="assets/dados-ementas.js"></script>
 <script defer src="assets/min/curso.min.js"></script>
 <script data-goatcounter="https://naeguanhaes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>

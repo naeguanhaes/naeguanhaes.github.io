@@ -43,6 +43,18 @@ window.DADOS_BUSCA = {
       k: "matriz grade curricular disciplinas periodo pre-requisito prerequisito carga horaria creditos o que falta"
     },
     {
+      t: "Ementas e bibliografia das disciplinas",
+      d: "O que cada disciplina cobre e quais livros o PPC indica, em toda a matriz.",
+      u: "matriz.html",
+      k: "ementa ementario bibliografia livro leitura conteudo programa materia optativa escolher plano de ensino isbn autor referencia"
+    },
+    {
+      t: "Perfil do egresso e áreas de atuação",
+      d: "O que se espera de quem se forma e onde o profissional trabalha.",
+      u: "curso.html",
+      k: "egresso perfil atuacao mercado trabalho carreira profissao onde trabalhar formado futuro competencias crea confea"
+    },
+    {
       t: "Atividades complementares",
       d: "Quantas horas o seu curso exige, o que conta e como protocolar.",
       u: "atividades.html",

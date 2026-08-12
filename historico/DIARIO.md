@@ -3,6 +3,36 @@
 Registro do que mudou e quando, do mais recente para o mais antigo.
 Ao fazer uma alteração relevante, acrescente uma entrada no topo.
 
+## 12/08/2026 · décima segunda rodada (ementas, bibliografias e egresso)
+
+Com os dois PPCs em mãos, o maior volume de conteúdo parado entrou no site.
+
+- **`assets/dados-ementas.js`**, arquivo novo de 299 KB: a ementa e as
+  bibliografias de **190 disciplinas**, com **1.513 referências**. Direito
+  fechou 95 de 95; Engenharia, 95 de 99, e as 4 que faltam não são disciplinas
+  de verdade (atividades, extensão, estágio e o marcador de optativa).
+- Na matriz, cada disciplina ganhou o link **ementa e bibliografia**, que abre
+  no lugar. O conteúdo só é montado no primeiro clique.
+- Seção nova de **optativas** na matriz, com ementa de cada uma. É onde a
+  informação mais pesa: o estudante escolhe sabendo o que cai e quais livros
+  vai precisar.
+- **Perfil do egresso e áreas de atuação** na página do curso, das seções 2.2
+  do PPC de Direito e 3.4 e 3.6 do de Engenharia. Os nove campos da Engenharia
+  vêm do Anexo II da Resolução 1.048/2013 do CONFEA/CREA.
+- As listas de optativas estavam incompletas e foram corrigidas: faltavam 3 no
+  Direito e as 31 da Engenharia, que estavam com a lista vazia.
+- sw em nae-v20.
+
+Como a extração foi feita, para quem precisar repetir: `pdftotext -layout`,
+um parser por formato (o Direito centraliza o nome, a Engenharia usa
+"DISCIPLINA:"), casamento por semelhança de nome com trava no número romano,
+e conferência humana de tudo abaixo de 0.9 de semelhança. Os scripts ficaram
+no scratchpad da sessão. Três defeitos encontrados e corrigidos no caminho:
+o `\r` do pdftotext quebrava a âncora de fim de linha, o corte das referências
+comia a primeira sílaba do sobrenome (BOBBIO virava BIO), e a desambiguação
+por tamanho de ementa fazia "Tópicos em Teoria do Direito" roubar o lugar de
+"Teoria do Direito".
+
 ## 07/08/2026 · décima primeira rodada (ritmo das atividades complementares)
 
 Pedido do coordenador: o estudante precisa entender com clareza **quantas

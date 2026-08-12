@@ -83,7 +83,89 @@
     });
   }
 
+  /* ── Perfil do egresso e áreas de atuação ─────────── */
+  var egressoEl = document.getElementById('egresso-painel');
+  if (egressoEl) {
+    aoTrocar(function (c) {
+      var e = c.egresso;
+      if (!e) { egressoEl.innerHTML = ''; return; }
+      egressoEl.innerHTML =
+        '<div class="card col" style="--c: ' + c.cor + '">' +
+          '<span class="rotulo">Onde este curso leva</span>' +
+          '<h2>O que se espera de quem se forma</h2>' +
+          '<p>' + U.escapar(e.resumo) + '</p>' +
+          '<ul class="limpa" style="--c: ' + c.cor + '">' +
+            e.perfil.map(function (p) { return '<li>' + U.escapar(p) + '</li>'; }).join('') +
+          '</ul>' +
+        '</div>' +
+        '<div class="card col" style="--c: var(--verde)">' +
+          '<span class="rotulo">Mercado</span>' +
+          '<h2>' + U.escapar(e.atuacaoTitulo) + '</h2>' +
+          '<div class="atuacao-selos">' +
+            e.atuacao.map(function (a) {
+              return '<span class="atuacao-selo">' + U.escapar(a) + '</span>';
+            }).join('') +
+          '</div>' +
+          '<p class="fonte-ppc">' + U.escapar(e.atuacaoNota) + '</p>' +
+        '</div>';
+    });
+  }
+
   /* ── Matriz curricular ────────────────────────────── */
+  /* ── Ementa e bibliografia de cada disciplina ─────── */
+  var EMENTAS = window.DADOS_EMENTAS || null;
+
+  function ementaDe(curso, chave) {
+    if (!EMENTAS || !EMENTAS[curso.id]) return null;
+    return EMENTAS[curso.id][chave] || null;
+  }
+
+  function botaoEmenta(curso, chave, nome) {
+    if (!ementaDe(curso, chave)) return '';
+    return '<button class="disc-ementa" type="button" data-ementa="' + U.escapar(chave) + '"' +
+           ' aria-expanded="false" aria-label="Ver a ementa de ' + U.escapar(nome) + '">' +
+           'ementa e bibliografia</button>' +
+           '<div class="ementa-caixa" hidden></div>';
+  }
+
+  function montaEmenta(e) {
+    function listaRefs(titulo, refs) {
+      if (!refs || !refs.length) return '';
+      return '<div class="ementa-biblio">' +
+               '<b>' + titulo + '</b>' +
+               '<ol>' + refs.map(function (r) { return '<li>' + U.escapar(r) + '</li>'; }).join('') + '</ol>' +
+             '</div>';
+    }
+    return '<div class="ementa-txt"><b>Ementa</b><p>' + U.escapar(e.ementa) + '</p></div>' +
+           listaRefs('Bibliografia básica', e.basica) +
+           listaRefs('Bibliografia complementar', e.complementar) +
+           (!e.basica.length && !e.complementar.length
+             ? '<p class="ementa-nota">O PPC não traz bibliografia para esta disciplina. O professor indica a leitura no plano de ensino.</p>'
+             : '');
+  }
+
+  /* Um só ouvinte para a lista inteira, em vez de um por disciplina.
+     O curso é lido na hora do clique, porque o estudante pode trocar
+     de Direito para Engenharia com a lista já na tela. */
+  function ligarEmentas(caixaRaiz) {
+    caixaRaiz.addEventListener('click', function (ev) {
+      var b = ev.target.closest('[data-ementa]');
+      if (!b || !caixaRaiz.contains(b)) return;
+      var alvo = b.nextElementSibling;
+      if (!alvo || !alvo.classList.contains('ementa-caixa')) return;
+
+      var abrindo = alvo.hidden;
+      if (abrindo && !alvo.innerHTML) {
+        var e = ementaDe(achar(atual), b.getAttribute('data-ementa'));
+        if (!e) return;
+        alvo.innerHTML = montaEmenta(e);
+      }
+      alvo.hidden = !abrindo;
+      b.setAttribute('aria-expanded', abrindo ? 'true' : 'false');
+      b.textContent = abrindo ? 'fechar a ementa' : 'ementa e bibliografia';
+    });
+  }
+
   var matriz = document.getElementById('matriz-lista');
   if (matriz) {
     var resumoEl = document.getElementById('matriz-resumo');
@@ -140,6 +222,7 @@
                   '</span>' +
                 '</label>' +
                 '<span class="disc-ch">' + d.ch + ' h</span>' +
+                botaoEmenta(c, d.cod, d.nome) +
                 (nomes.length
                   ? '<span class="disc-pre">Depende de: ' + U.escapar(nomes.join(', ')) +
                     (liberada ? '' : ' <b>(ainda falta cursar)</b>') + '</span>'
@@ -190,6 +273,28 @@
     }
 
     aoTrocar(desenhar);
+    ligarEmentas(matriz);
+  }
+
+  /* ── Ementas das optativas ────────────────────────── */
+  var optativasEl = document.getElementById('optativas-lista');
+  if (optativasEl) {
+    aoTrocar(function (c) {
+      var lista = c.optativas || [];
+      if (!lista.length) {
+        optativasEl.innerHTML = '<p class="ativ-vazio">' + U.escapar(c.optativasNota || '') + '</p>';
+        return;
+      }
+      optativasEl.innerHTML =
+        '<p class="ementa-nota">' + U.escapar(c.optativasNota || '') + '</p>' +
+        '<ul class="disciplinas">' + lista.map(function (nome) {
+          return '<li class="disciplina">' +
+            '<span class="disc-nome">' + U.escapar(nome) + '</span>' +
+            botaoEmenta(c, 'OPT:' + nome, nome) +
+          '</li>';
+        }).join('') + '</ul>';
+    });
+    ligarEmentas(optativasEl);
   }
 
   /* ── Atividades complementares ────────────────────── */
