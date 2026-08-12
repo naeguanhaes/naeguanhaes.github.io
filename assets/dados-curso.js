@@ -169,14 +169,38 @@ window.DADOS_CURSO = {
         total: 210,
         prazo: 'Podem ser feitas desde o 1º semestre, de forma cumulativa, e precisam estar concluídas até o 10º semestre. Sem elas não há colação de grau, porque são componente curricular obrigatório das Diretrizes Curriculares.',
         comoProtocolar: 'Os comprovantes vão em requerimento justificado e documentado, para a Coordenação do Curso validar. Depois a Coordenação comunica a Secretaria Acadêmica, que lança no histórico escolar.',
+        /* Quadro 02 do PPC, transcrito inteiro: 25 modalidades em três grupos.
+           Os grupos (Ensino, Extensão e Pesquisa) são os do próprio quadro. */
         tabela: [
-          { grupo: 'Ensino', atividade: 'Aprovação em disciplina cursada em curso de Direito, não usada para dispensa ou aproveitamento', porEvento: '30 h por disciplina', teto: 30, comprovante: 'Histórico escolar com o plano de ensino da disciplina' },
-          { grupo: 'Ensino', atividade: 'Aprovação em disciplina cursada em outro curso de graduação, não usada como eletiva', porEvento: '30 h por disciplina', teto: 30, comprovante: 'Histórico escolar com o plano de ensino da disciplina' },
-          { grupo: 'Ensino', atividade: 'Monitoria acadêmica', porEvento: '30 h por semestre', teto: 90, comprovante: 'Certificado emitido por órgão competente' },
-          { grupo: 'Ensino', atividade: 'Estágio profissional extracurricular', porEvento: '30 h por semestre', teto: 90, comprovante: 'Declaração do supervisor com período, início e término' },
-          { grupo: 'Ensino', atividade: 'Participação em sessão pública de defesa (como ouvinte)', porEvento: '1 h por sessão', teto: 30, comprovante: 'Declaração de participação assinada' }
+          { grupo: 'Ensino', atividade: 'Aprovação em disciplina cursada em curso de Direito, não utilizada para dispensa ou aproveitamento de curso', porEvento: '30 h por disciplina', teto: 30, comprovante: 'Histórico escolar com o plano de ensino da disciplina' },
+          { grupo: 'Ensino', atividade: 'Aprovação em disciplina cursada em outro curso de graduação, não utilizada como eletiva', porEvento: '30 h por disciplina', teto: 30, comprovante: 'Histórico escolar com o plano de ensino da disciplina' },
+          { grupo: 'Ensino', atividade: 'Desenvolvimento de atividade de monitoria', porEvento: '30 h por semestre', teto: 90, comprovante: 'Certificado emitido por órgão competente' },
+          { grupo: 'Ensino', atividade: 'Realização de estágio profissional extracurricular', porEvento: '30 h por semestre', teto: 90, comprovante: 'Declaração do supervisor de estágio, com avaliação, período de realização, data de início e de término' },
+          { grupo: 'Ensino', atividade: 'Participação em sessão pública de defesa de monografia ou trabalho de conclusão de curso de graduação', porEvento: '1 h por defesa', teto: 30, comprovante: 'Declaração de participação como ouvinte, assinada pelo orientador do trabalho (Formulário 1)' },
+          { grupo: 'Ensino', atividade: 'Participação em sessão pública de defesa de mestrado ou doutorado', porEvento: '2 h por defesa', teto: 30, comprovante: 'Declaração de participação como ouvinte, assinada pelo orientador do trabalho (Formulário 1)' },
+          { grupo: 'Ensino', atividade: 'Participação em audiência e em sessões de julgamento perante o Poder Judiciário, não contabilizadas para o estágio obrigatório', porEvento: '2 h por audiência', teto: 30, comprovante: 'Declaração de participação como ouvinte, assinada pelo servidor público responsável (Formulário 2)' },
+          { grupo: 'Ensino', atividade: 'Participação em audiência em órgãos públicos', porEvento: '2 h por audiência', teto: 30, comprovante: 'Declaração de participação como ouvinte, assinada pelo setor responsável (Formulário 3)' },
+          { grupo: 'Ensino', atividade: 'Realização de curso de atualização com duração superior a 180 horas', porEvento: '60 h por curso', teto: 60, comprovante: 'Certificado ou declaração de participação' },
+          { grupo: 'Ensino', atividade: 'Participação em programa de intercâmbio ou mobilidade acadêmica reconhecido pela UEMG', porEvento: '30 h por semestre', teto: 60, comprovante: 'Certificado ou declaração de participação' },
+          { grupo: 'Ensino', atividade: 'Realização de curso de informática, língua portuguesa, línguas estrangeiras e afins', porEvento: '15 h por semestre', teto: 60, comprovante: 'Certificado ou declaração de participação' },
+
+          { grupo: 'Extensão', atividade: 'Participação em projeto de extensão desenvolvido no âmbito da UEMG', porEvento: '15 h por semestre', teto: 90, comprovante: 'Certificado ou declaração do coordenador do grupo ou de outro órgão competente' },
+          { grupo: 'Extensão', atividade: 'Participação em projeto de extensão desenvolvido no âmbito de outras instituições de ensino superior', porEvento: '10 h por semestre', teto: 30, comprovante: 'Certificado ou declaração do coordenador do grupo ou de outro órgão competente' },
+          { grupo: 'Extensão', atividade: 'Participação formal em órgãos de representação estudantil, colegiado de curso, outras estruturas formais de integração do corpo discente ou representação de turma', porEvento: '15 h por semestre', teto: 90, comprovante: 'Certificado ou declaração da Direção da Unidade' },
+          { grupo: 'Extensão', atividade: 'Participação em comissão organizadora de evento de extensão desenvolvido no âmbito da UEMG', porEvento: '15 h por evento organizado', teto: 60, comprovante: 'Certificado ou declaração de participação' },
+          { grupo: 'Extensão', atividade: 'Participação em comissão organizadora de evento de extensão desenvolvido no âmbito de outras instituições de ensino superior', porEvento: '10 h por evento organizado', teto: 30, comprovante: 'Certificado ou declaração de participação' },
+          { grupo: 'Extensão', atividade: 'Participação em eventos como congressos, jornadas, simpósios, encontros, aulas inaugurais, palestras, fóruns e atividades artísticas promovidos pela UEMG, por outras instituições de ensino superior ou por organizações juridicamente relevantes', porEvento: '30 h por semestre', teto: 90, comprovante: 'Certificado de participação' },
+
+          { grupo: 'Pesquisa', atividade: 'Participação em grupo de pesquisa regularmente inscrito no Diretório dos Grupos de Pesquisa do CNPq', porEvento: '15 h por semestre', teto: 90, comprovante: 'Certificado ou declaração do coordenador do grupo' },
+          { grupo: 'Pesquisa', atividade: 'Publicação de livro de caráter científico com registro no ISBN', porEvento: '30 h por obra', teto: 30, comprovante: 'Cópia da ficha catalográfica da obra' },
+          { grupo: 'Pesquisa', atividade: 'Publicação de artigo científico em periódico indexado no Qualis/CAPES, em anais de evento nacional ou internacional, ou capítulo de livro em obra com ISBN', porEvento: '15 h por artigo ou capítulo publicado', teto: 60, comprovante: 'Cópia da ficha catalográfica do periódico e da publicação realizada' },
+          { grupo: 'Pesquisa', atividade: 'Publicação de resumo ou resumo expandido em anais de evento nacional ou internacional, ou em obra coletiva com ISBN decorrente do evento', porEvento: '5 h por resumo publicado', teto: 30, comprovante: 'Cópia da ficha catalográfica dos anais do evento e da publicação realizada' },
+          { grupo: 'Pesquisa', atividade: 'Apresentação de trabalho em evento nacional ou internacional', porEvento: '3 h por apresentação', teto: 15, comprovante: 'Certificado ou declaração de participação' },
+          { grupo: 'Pesquisa', atividade: 'Participação em comissão organizadora de evento acadêmico-científico desenvolvido no âmbito da UEMG', porEvento: '15 h por evento organizado', teto: 60, comprovante: 'Certificado ou declaração de participação' },
+          { grupo: 'Pesquisa', atividade: 'Participação em comissão organizadora de evento acadêmico-científico desenvolvido no âmbito de outras instituições de ensino superior', porEvento: '10 h por evento organizado', teto: 30, comprovante: 'Certificado ou declaração de participação' },
+          { grupo: 'Pesquisa', atividade: 'Participação em grupo de estudos regularmente inscrito no âmbito da Coordenadoria de Pesquisa da Unidade', porEvento: '10 h por semestre', teto: 50, comprovante: 'Certificado ou declaração de participação' }
         ],
-        tabelaNota: 'O PPC traz outras modalidades além destas, nos grupos de pesquisa e de extensão. Antes de contar com uma atividade, confirme o enquadramento e o limite com a Coordenação do Curso.'
+        tabelaNota: 'Quadro 02 do PPC de Direito, transcrito na íntegra. O próprio PPC abre uma porta: outras atividades não descritas no quadro podem ser avaliadas e consideradas pela Coordenação do Curso. Na dúvida sobre o enquadramento, pergunte antes de contar com as horas.'
       },
 
       estagio: {
@@ -331,16 +355,39 @@ window.DADOS_CURSO = {
 
       atividades: {
         total: 30,
-        prazo: 'São 30 horas distribuídas ao longo dos dez períodos do curso, conforme o quadro de carga horária do PPC.',
-        comoProtocolar: 'O cumprimento é comprovado com carga horária, instituição ou responsável e relatório, sob planejamento, registro e supervisão da Coordenação do Curso. O regulamento completo está no Apêndice 1 do PPC.',
+        prazo: 'São no mínimo 30 horas, integralizadas ao longo do curso. Só valem atividades feitas durante o curso, e apenas as realizadas depois da aprovação do regulamento. No início do último semestre letivo, entregue a Ficha de Avaliação (A1.2) no setor de Atividades Complementares.',
+        comoProtocolar: 'O lançamento é feito pelo próprio estudante, direto no sistema acadêmico, anexando o comprovante de cada atividade. Guarde tudo em uma pasta desde o primeiro semestre. O regulamento completo está no Apêndice 1 do PPC.',
+        /* Quadro A1.1 do Apêndice 1 do PPC, transcrito inteiro: 17 modalidades.
+           O PPC não separa as modalidades em grupos, ao contrário do de Direito.
+           A divisão abaixo é apenas para facilitar a leitura, e está avisada na
+           nota da tabela. Cada modalidade tem teto de 30 horas, salvo indicação. */
         tabela: [
-          { grupo: 'Pesquisa', atividade: 'Projetos de pesquisa e programas de iniciação científica', porEvento: 'conforme o regulamento', teto: 30, comprovante: 'Certificado ou declaração com carga horária' },
-          { grupo: 'Ensino', atividade: 'Monitoria', porEvento: 'conforme o regulamento', teto: 30, comprovante: 'Certificado emitido por órgão competente' },
-          { grupo: 'Extensão', atividade: 'Projetos de extensão e módulos temáticos', porEvento: 'conforme o regulamento', teto: 30, comprovante: 'Certificado ou declaração com carga horária' },
-          { grupo: 'Eventos', atividade: 'Seminários, simpósios, congressos, conferências, concursos e exposições', porEvento: 'conforme o regulamento', teto: 30, comprovante: 'Certificado de participação' },
-          { grupo: 'Ensino', atividade: 'Disciplinas optativas de outros cursos da UEMG ou de outra instituição, afins à Engenharia Civil, presenciais ou a distância', porEvento: 'conforme o regulamento', teto: 30, comprovante: 'Histórico escolar ou certificado' }
+          { grupo: 'Atuação e vivência', atividade: 'Atuação junto a Centros e Núcleos, em atividade relacionada à profissão com prazo inferior a 4 meses (acima disso vira Estágio Supervisionado)', porEvento: '30 h', teto: 30, comprovante: 'Declaração do coordenador do projeto e do Centro ou Núcleo' },
+          { grupo: 'Atuação e vivência', atividade: 'Atuação junto a Centros e Núcleos em atividade não relacionada à profissão, autorizada pela Coordenação do Curso', porEvento: '15 h', teto: 30, comprovante: 'Avaliação pelo professor orientador' },
+          { grupo: 'Atuação e vivência', atividade: 'Participação em diretório acadêmico (DA) ou diretório central dos estudantes (DCE)', porEvento: '15 h', teto: 30, comprovante: 'Declaração do coordenador do curso e do presidente do DA ou DCE' },
+          { grupo: 'Atuação e vivência', atividade: 'Atividade acompanhada por profissional especializado em área afim ao curso, por tempo determinado de até 2 meses, validada antes pela Coordenação. Inclui projetos em empresas juniores', porEvento: 'até 30 h, ou até 15 h quando o prazo for indeterminado', teto: 30, comprovante: 'Documento comprobatório e declaração do responsável pela atividade ou pelo diretor da empresa júnior' },
+          { grupo: 'Atuação e vivência', atividade: 'Curso de línguas ou de informática', porEvento: '25% da carga horária do curso', teto: 30, comprovante: 'Documento comprobatório' },
+
+          { grupo: 'Pesquisa', atividade: 'Projeto de iniciação científica, orientado preferencialmente por professor da UEMG Unidade Guanhães, em trabalho extraclasse', porEvento: '30 h pelo desenvolvimento do projeto', teto: 30, comprovante: 'Trabalho de pesquisa e relatório de conclusão, avaliados pelo professor orientador' },
+          { grupo: 'Pesquisa', atividade: 'Publicação de artigo técnico em livro, anais ou revista especializada na área de pesquisa e ensino', porEvento: '15 h por publicação', teto: 30, comprovante: 'Artigo e documento comprobatório da publicação, avaliados pelo professor orientador' },
+          { grupo: 'Pesquisa', atividade: 'Publicação de resumo de artigo técnico em revista ou jornal na área de pesquisa e ensino', porEvento: '15 h por resumo', teto: 30, comprovante: 'Resumo e documento comprobatório. Publicado o artigo e o resumo do mesmo trabalho, só uma das opções conta' },
+          { grupo: 'Pesquisa', atividade: 'Produção coletiva ou individual elaborada pelo estudante e apresentada publicamente na área de pesquisa e ensino', porEvento: '15 h por projeto', teto: 30, comprovante: 'Cópia do projeto, avaliada pelo professor responsável' },
+
+          { grupo: 'Ensino', atividade: 'Monitoria de disciplina já cursada, apoiando o professor', porEvento: '30 h', teto: 30, comprovante: 'Relatório avaliado pelo professor responsável, mais certificado se a disciplina foi feita em outra instituição' },
+          { grupo: 'Ensino', atividade: 'Disciplina afim, presencial ou a distância, cursada além dos créditos exigidos, na UEMG ou em outra instituição, com autorização prévia da Coordenação', porEvento: '25% da carga horária da disciplina, até 15 h', teto: 15, comprovante: 'Documento comprobatório e validação prévia pelo colegiado do curso' },
+
+          { grupo: 'Eventos', atividade: 'Palestras, exposições e mostras afins na área de pesquisa e ensino, com duração mínima de 2 horas', porEvento: 'de 2 h a 30 h por evento', teto: 30, comprovante: 'Documento comprobatório anexado ao relatório sobre o conteúdo do evento' },
+          { grupo: 'Eventos', atividade: 'Oficinas ou eventos afins na área de pesquisa e ensino, com duração mínima de 4 horas-aula', porEvento: 'de 3 h a 30 h por evento', teto: 30, comprovante: 'Documento comprobatório anexado ao relatório sobre o conteúdo do evento' },
+          { grupo: 'Eventos', atividade: 'Workshops ou minicursos afins na área de pesquisa e ensino', porEvento: 'de 3 h a 30 h por evento', teto: 30, comprovante: 'Documento comprobatório anexado ao relatório sobre o conteúdo do evento' },
+          { grupo: 'Eventos', atividade: 'Seminários, congressos, fóruns, cursos ou eventos afins na área de pesquisa e ensino', porEvento: 'de 3 h a 30 h por evento', teto: 30, comprovante: 'Documento comprobatório anexado ao relatório sobre o conteúdo do evento' },
+          { grupo: 'Eventos', atividade: 'Participação em concurso com tema afim ao curso', porEvento: '15 h na etapa eliminatória e 30 h se for selecionado', teto: 30, comprovante: 'Documentos comprobatórios e cópia do projeto apresentado, avaliados pelo professor orientador' },
+
+          { grupo: 'Estudos e visitas', atividade: 'Atividade comentada programada: vídeos, filmes e mostras relacionados ao curso', porEvento: '3 h por atividade', teto: 30, comprovante: 'Declaração do responsável pela atividade ou relatório do estudante, avaliado pelo professor responsável' },
+          { grupo: 'Estudos e visitas', atividade: 'Estudo de caso relacionado à área de ensino do curso, com orientação de professor com formação de nível superior', porEvento: '10 h por trabalho', teto: 30, comprovante: 'Cópia do estudo realizado, avaliada por professor de disciplina afim' },
+          { grupo: 'Estudos e visitas', atividade: 'Grupo de estudo voluntário, com carga horária mínima de 9 horas-aula, coordenado por professor da UEMG ou responsável com formação de nível superior', porEvento: '15 h por trabalho', teto: 30, comprovante: 'Declaração do professor da área, avaliada pelo coordenador do grupo' },
+          { grupo: 'Estudos e visitas', atividade: 'Visita técnica a empresa ou instituição, orientada por professor ou responsável técnico, fora das atividades de ensino de disciplina regular', porEvento: '5 h por visita', teto: 30, comprovante: 'Declaração do responsável que acompanhou a visita' }
         ],
-        tabelaNota: 'O PPC de Engenharia Civil não fixa limite por tipo de atividade como o de Direito: os critérios estão no regulamento do Apêndice 1. Confirme o enquadramento com a Coordenação antes de contar as horas.'
+        tabelaNota: 'Quadro A1.1 do Apêndice 1 do PPC de Engenharia Civil, transcrito na íntegra. Atenção a duas regras próprias deste curso: atividades de extensão NÃO entram aqui, porque são aproveitadas no componente curricular de Atividades de Extensão, com regimento próprio; e os casos omissos são avaliados pelo colegiado do curso. Duas observações sobre a apresentação: a divisão em grupos é só para facilitar a leitura, porque o quadro do PPC não separa as modalidades, e os itens 01 e 02 do quadro aparecem aqui abertos em linhas separadas, porque cada um reúne atividades com valores de hora diferentes.'
       },
 
       estagio: {

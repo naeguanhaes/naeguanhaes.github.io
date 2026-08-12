@@ -20,9 +20,19 @@ horas obter por semestre** e **o que pode ser contabilizado**.
   frente tem, e título "O que pode ser contabilizado".
 - sw em nae-v18.
 
-PENDENTE: a tabela do Direito ainda tem só o grupo Ensino, com 5 modalidades.
-O próprio PPC prevê mais, em pesquisa e extensão. Falta transcrever o resto,
-o que depende do PPC em mãos. Nenhuma modalidade nova deve ser inventada.
+RESOLVIDO no mesmo dia: com os dois PPCs em mãos, as tabelas foram
+transcritas na íntegra, direto do PDF, conferidas página a página.
+
+- **Direito**: de 5 para **25 modalidades**, do Quadro 02 do PPC, nos três
+  grupos que o próprio quadro usa: Ensino (11), Extensão (6) e Pesquisa (8).
+- **Engenharia Civil**: de 5 para **20 linhas**, do Quadro A1.1 do Apêndice 1.
+  São os 17 itens numerados do PPC, com os itens 01 e 02 abertos em linhas
+  separadas porque cada um reunia atividades de valor diferente. O PPC não
+  agrupa as modalidades, então a divisão em grupos é editorial e está avisada
+  na nota da tabela.
+- Duas regras próprias da Engenharia que faltavam no site: o lançamento é
+  feito pelo estudante direto no sistema acadêmico, e **atividade de extensão
+  não conta** como complementar, porque tem componente curricular próprio.
 
 ## 07/08/2026 · décima rodada (gerador de requerimentos e agendamento)
 

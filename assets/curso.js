@@ -338,8 +338,8 @@
       'Pesquisa': 'var(--lilas)',
       'Extensão': 'var(--verde)',
       'Eventos': 'var(--turquesa)',
-      'Representação': 'var(--coral)',
-      'Produção': 'var(--petroleo)'
+      'Atuação e vivência': 'var(--coral)',
+      'Estudos e visitas': 'var(--petroleo)'
     };
 
     aoTrocar(function (c) {
