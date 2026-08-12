@@ -1365,6 +1365,49 @@ html[data-fonte="3"] body { font-size: 21px; }
 .tabela-ppc th, .tabela-ppc td { text-align: left; padding: .6rem .7rem; border-bottom: 1px solid var(--line); vertical-align: top; }
 .tabela-ppc thead th { background: var(--surface-2); font-size: .82rem; letter-spacing: .01em; }
 .tabela-ppc td b { color: var(--azul-esc); font-size: .8rem; text-transform: uppercase; letter-spacing: .03em; }
+.tabela-ppc .ppc-teto { white-space: nowrap; font-variant-numeric: tabular-nums; font-weight: 700; color: var(--ink-2); }
+
+/* faixa que separa cada natureza de atividade dentro da tabela */
+.tabela-ppc .grupo-linha th {
+  background: color-mix(in srgb, var(--c) 13%, var(--surface));
+  color: color-mix(in srgb, var(--c) 82%, var(--ink));
+  font-size: .72rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase;
+  padding: .45rem .7rem; border-bottom: 2px solid var(--c);
+}
+.tabela-titulo { font-size: 1.16rem; margin-top: .4rem; }
+.grupo-selos { display: flex; flex-wrap: wrap; gap: .4rem; }
+.grupo-selo {
+  display: inline-flex; align-items: center; gap: .4rem;
+  font-size: .78rem; font-weight: 700; color: color-mix(in srgb, var(--c) 82%, var(--ink));
+  background: color-mix(in srgb, var(--c) 11%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--c) 30%, transparent);
+  border-radius: 99px; padding: .28rem .8rem;
+}
+.grupo-selo b {
+  background: var(--c); color: #fff; border-radius: 99px;
+  min-width: 1.3rem; text-align: center; font-size: .7rem; padding: .05rem .35rem;
+}
+.dica-rolagem-tabela { display: none; font-size: .74rem; color: var(--muted); }
+@media (max-width: 700px) { .dica-rolagem-tabela { display: block; } }
+
+/* ritmo por semestre das atividades complementares */
+.ritmo-caixa {
+  --c: var(--turquesa);
+  display: flex; align-items: center; gap: var(--s3); flex-wrap: wrap;
+  background: color-mix(in srgb, var(--c) 9%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--c) 28%, transparent);
+  border-radius: var(--radius-s); padding: var(--s2) var(--s3);
+}
+.ritmo-alvo {
+  display: flex; flex-direction: column; align-items: center; flex: none;
+  font-size: .68rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--muted); line-height: 1.2;
+}
+.ritmo-alvo b {
+  font-family: var(--serif); font-size: 2rem; font-weight: 600;
+  color: color-mix(in srgb, var(--c) 85%, var(--ink)); letter-spacing: -.01em;
+}
+.ritmo-txt { flex: 1 1 18rem; font-size: .88rem; color: var(--ink-2); }
 
 .ativ-form { display: flex; gap: .6rem; align-items: flex-end; flex-wrap: wrap; margin-block: var(--s2); }
 .ativ-form .field { flex: 1 1 14rem; }

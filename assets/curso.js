@@ -203,12 +203,52 @@
     }
     function guardarAtiv(c, lista) { U.guardar(chaveAtiv(c), JSON.stringify(lista)); }
 
+    function chavePeriodo(c) { return 'periodo-' + c.id; }
+
     function desenharAtiv(c) {
       var lancadas = lerAtiv(c);
       var soma = lancadas.reduce(function (s, a) { return s + (Number(a.horas) || 0); }, 0);
       var alvo = c.atividades.total;
       var porcento = Math.min(100, Math.round(soma / alvo * 100));
       var faltam = Math.max(0, alvo - soma);
+
+      /* ritmo: o total dividido pelos períodos do curso */
+      var periodos = (c.periodos && c.periodos.length) || c.integralizacao.min || 10;
+      var porSemestre = Math.ceil(alvo / periodos);
+
+      /* onde o estudante está, para dizer se o ritmo está em dia */
+      var meu = parseInt(U.ler(chavePeriodo(c)) || '0', 10);
+      var esperado = meu ? Math.min(alvo, Math.round(alvo / periodos * meu)) : 0;
+      var restamPeriodos = meu ? Math.max(0, periodos - meu) : 0;
+
+      var diagnostico = '';
+      if (meu) {
+        if (soma >= alvo) {
+          diagnostico = '<div class="calc-res boa">Carga completa. Agora é protocolar na Coordenação, se ainda não protocolou.</div>';
+        } else if (soma >= esperado) {
+          diagnostico = '<div class="calc-res boa">Ritmo em dia. Quem está no <b>' + meu + 'º período</b> ' +
+            'costuma ter cerca de <b>' + esperado + ' horas</b>, e você tem <b>' + soma + '</b>.' +
+            (restamPeriodos ? ' Faltam ' + faltam + ' horas em ' + restamPeriodos +
+              (restamPeriodos === 1 ? ' período' : ' períodos') + ', cerca de ' +
+              Math.ceil(faltam / restamPeriodos) + ' por semestre.' : '') + '</div>';
+        } else {
+          var atraso = esperado - soma;
+          diagnostico = '<div class="calc-res ' + (restamPeriodos ? 'olho' : 'ruim') + '">' +
+            'Atenção ao ritmo. No <b>' + meu + 'º período</b> o esperado seria cerca de <b>' + esperado +
+            ' horas</b>, e você tem <b>' + soma + '</b>: são <b>' + atraso + ' horas</b> de atraso.' +
+            (restamPeriodos
+              ? ' Ainda dá tempo: faltam ' + faltam + ' horas em ' + restamPeriodos +
+                (restamPeriodos === 1 ? ' período' : ' períodos') + ', cerca de ' +
+                Math.ceil(faltam / restamPeriodos) + ' por semestre.'
+              : ' Você está no último período: procure a Coordenação com urgência, porque sem estas horas não há colação de grau.') +
+            '</div>';
+        }
+      }
+
+      var opcoes = ['<option value="0"' + (meu ? '' : ' selected') + '>escolher…</option>'];
+      for (var p = 1; p <= periodos; p++) {
+        opcoes.push('<option value="' + p + '"' + (p === meu ? ' selected' : '') + '>' + p + 'º período</option>');
+      }
 
       atividades.innerHTML =
         '<div class="card col" style="--c: ' + c.cor + '">' +
@@ -218,6 +258,17 @@
           '<p>' + (faltam
             ? 'Faltam <b>' + faltam + ' horas</b> para completar as atividades complementares.'
             : 'Você já registrou a carga horária completa. Guarde os comprovantes e protocole na Coordenação.') + '</p>' +
+          '<div class="ritmo-caixa">' +
+            '<span class="ritmo-alvo"><b>' + porSemestre + ' h</b>por semestre</span>' +
+            '<span class="ritmo-txt">É o ritmo que zera a conta sem sufoco: <b>' + alvo + ' horas</b> ' +
+            'divididas pelos <b>' + periodos + ' períodos</b> do curso. Nada obriga a fazer exatamente ' +
+            'isso a cada semestre, mas quem segue esse ritmo chega tranquilo ao fim.</span>' +
+          '</div>' +
+          '<div class="minha-turma" style="border:0;padding-left:0">' +
+            '<label for="ativ-periodo">Estou no</label>' +
+            '<select id="ativ-periodo">' + opcoes.join('') + '</select>' +
+          '</div>' +
+          diagnostico +
           '<form class="ativ-form" id="ativ-form">' +
             '<div class="field">' +
               '<label for="ativ-desc">O que você fez</label>' +
@@ -265,6 +316,15 @@
           desenharAtiv(c);
         });
       });
+
+      var selPeriodo = atividades.querySelector('#ativ-periodo');
+      if (selPeriodo) {
+        selPeriodo.addEventListener('change', function () {
+          if (selPeriodo.value === '0') U.apagar(chavePeriodo(c));
+          else U.guardar(chavePeriodo(c), selPeriodo.value);
+          desenharAtiv(c);
+        });
+      }
     }
 
     aoTrocar(desenharAtiv);
@@ -273,25 +333,61 @@
   /* ── Tabela de modalidades das atividades ─────────── */
   var tabela = document.getElementById('atividades-tabela');
   if (tabela) {
+    var CORES_GRUPO = {
+      'Ensino': 'var(--azul)',
+      'Pesquisa': 'var(--lilas)',
+      'Extensão': 'var(--verde)',
+      'Eventos': 'var(--turquesa)',
+      'Representação': 'var(--coral)',
+      'Produção': 'var(--petroleo)'
+    };
+
     aoTrocar(function (c) {
       var a = c.atividades;
+
+      /* agrupa as modalidades por natureza, para o estudante enxergar
+         de cara em quais frentes ele pode buscar horas */
+      var ordem = [], porGrupo = {};
+      a.tabela.forEach(function (l) {
+        if (!porGrupo[l.grupo]) { porGrupo[l.grupo] = []; ordem.push(l.grupo); }
+        porGrupo[l.grupo].push(l);
+      });
+
+      var corpo = ordem.map(function (g) {
+        var cor = CORES_GRUPO[g] || 'var(--muted)';
+        return '<tr class="grupo-linha" style="--c: ' + cor + '">' +
+                 '<th scope="colgroup" colspan="4">' + U.escapar(g) + '</th>' +
+               '</tr>' +
+               porGrupo[g].map(function (l) {
+                 return '<tr>' +
+                   '<td>' + U.escapar(l.atividade) + '</td>' +
+                   '<td>' + U.escapar(l.porEvento) + '</td>' +
+                   '<td class="ppc-teto">' + l.teto + ' h</td>' +
+                   '<td>' + U.escapar(l.comprovante) + '</td></tr>';
+               }).join('');
+      }).join('');
+
+      var resumoGrupos = ordem.map(function (g) {
+        var cor = CORES_GRUPO[g] || 'var(--muted)';
+        return '<span class="grupo-selo" style="--c: ' + cor + '">' + U.escapar(g) +
+               '<b>' + porGrupo[g].length + '</b></span>';
+      }).join('');
+
       tabela.innerHTML =
         '<div class="stack-s">' +
           '<div class="note col"><p><b>Prazo</b> ' + U.escapar(a.prazo) + '</p></div>' +
           '<div class="note col"><p><b>Como protocolar</b> ' + U.escapar(a.comoProtocolar) + '</p></div>' +
+          '<h2 class="tabela-titulo">O que pode ser contabilizado</h2>' +
+          '<div class="grupo-selos">' + resumoGrupos + '</div>' +
           '<div class="rolagem-tabela">' +
             '<table class="tabela-ppc">' +
               '<caption class="so-leitor">Modalidades de atividade complementar aceitas em ' + U.escapar(c.nome) + '</caption>' +
               '<thead><tr><th scope="col">Atividade</th><th scope="col">Quanto vale</th>' +
               '<th scope="col">Teto</th><th scope="col">Comprovante</th></tr></thead>' +
-              '<tbody>' + a.tabela.map(function (l) {
-                return '<tr><td><b>' + U.escapar(l.grupo) + '</b><br>' + U.escapar(l.atividade) + '</td>' +
-                  '<td>' + U.escapar(l.porEvento) + '</td>' +
-                  '<td>' + l.teto + ' h</td>' +
-                  '<td>' + U.escapar(l.comprovante) + '</td></tr>';
-              }).join('') + '</tbody>' +
+              '<tbody>' + corpo + '</tbody>' +
             '</table>' +
           '</div>' +
+          '<p class="dica-rolagem-tabela">Arraste a tabela para o lado para ver o comprovante de cada modalidade.</p>' +
           '<p class="fonte-ppc">' + U.escapar(a.tabelaNota) + '</p>' +
         '</div>';
     });

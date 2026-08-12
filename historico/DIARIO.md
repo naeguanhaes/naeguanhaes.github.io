@@ -3,6 +3,27 @@
 Registro do que mudou e quando, do mais recente para o mais antigo.
 Ao fazer uma alteração relevante, acrescente uma entrada no topo.
 
+## 07/08/2026 · décima primeira rodada (ritmo das atividades complementares)
+
+Pedido do coordenador: o estudante precisa entender com clareza **quantas
+horas obter por semestre** e **o que pode ser contabilizado**.
+
+- Painel de atividades ganhou a **meta por semestre**, calculada do total
+  dividido pelos períodos do curso: 21 horas por semestre no Direito
+  (210 em 10 períodos) e 3 horas na Engenharia Civil (30 em 10).
+- Seletor **"estou no Nº período"**, guardado no aparelho. Com ele o site
+  compara o que a pessoa lançou com o esperado para aquele ponto do curso e
+  diz se o ritmo está em dia ou atrasado, sempre calculando quantas horas
+  por semestre faltam para fechar a conta a tempo.
+- Tabela de modalidades **agrupada por natureza** (Ensino, Pesquisa,
+  Extensão, Eventos), com selos no topo mostrando quantas modalidades cada
+  frente tem, e título "O que pode ser contabilizado".
+- sw em nae-v18.
+
+PENDENTE: a tabela do Direito ainda tem só o grupo Ensino, com 5 modalidades.
+O próprio PPC prevê mais, em pesquisa e extensão. Falta transcrever o resto,
+o que depende do PPC em mãos. Nenhuma modalidade nova deve ser inventada.
+
 ## 07/08/2026 · décima rodada (gerador de requerimentos e agendamento)
 
 - **`requerimentos.html`**, ferramenta nova: o estudante escolhe o pedido,
