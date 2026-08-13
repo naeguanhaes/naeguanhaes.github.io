@@ -139,12 +139,21 @@ As três já funcionam por endereço direto, para o coordenador revisar.
   documento do Colegiado oscila entre "ano de ingresso" (itens 5 a 8) e "data do
   ingresso" (itens 9 a 25), e o coordenador decidiu em 12/08/2026 que vale a data
   para todas as modalidades, para não conviverem dois critérios no mesmo quadro.
-  Não reintroduza a contagem por ano. Mais dois detalhes do documento original,
-  para quem for reconferir: a explicação do item 6 (defesa de mestrado ou
-  doutorado) repete por engano "trabalho de conclusão de curso de graduação",
-  copiada do item 5, e o site publica só a parte operante dela; e o item 4
-  contempla dois casos, quem dispensou as práticas reais e quem estagiou fora da
-  área jurídica. O PDF digitalizado da minuta ficou fora do repositório.
+  Não reintroduza a contagem por ano. **Outros dois pontos da minuta foram
+  examinados e o coordenador decidiu, em 12/08/2026, manter o site como está.
+  Não são pendências e não precisam ser levantados de novo:**
+  - **Item 6**, defesa de mestrado ou doutorado: a frase restritiva do documento
+    repete por engano "trabalho de conclusão de curso de graduação", copiada do
+    item 5. O site publica só a parte operante, o termo inicial, e omite a
+    menção equivocada à graduação. Se o Colegiado corrigir a ata, o site não
+    muda.
+  - **Item 4**, estágio profissional extracurricular: o texto admite leitura
+    restritiva (só conta para quem obteve dispensa das práticas reais) e leitura
+    ampla (conta para qualquer estágio, jurídico ou não). O site adotou a
+    **leitura ampla**, que preserva a última frase da minuta e mantém coerência
+    com o PPC e com `estagio.html`. Não estreite isso sem decisão do Colegiado.
+
+  O PDF digitalizado da minuta ficou fora do repositório.
 - **Cursos** (fonte: PPCs, em `assets/dados-curso.js`): Direito tem 4.230 horas,
   282 créditos, 10 a 14 semestres e **210 horas** de atividades complementares.
   Engenharia Civil tem 3.750 horas, 250 créditos, 10 a 15 semestres, **30 horas**
