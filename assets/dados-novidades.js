@@ -15,8 +15,22 @@
    ═══════════════════════════════════════════════════════ */
 
 window.DADOS_NOVIDADES = {
-  atualizadoEm: '2026-08-12',
+  atualizadoEm: '2026-08-13',
   itens: [
+    {
+      data: '2026-08-13',
+      titulo: 'Não recebi o auxílio. E agora?',
+      texto: 'Página nova sobre auxílios, INCLUA, monitoria e estágio na UEMG, com o passo a passo de quando o pagamento não cai: o que conferir no edital, para quem escrever e o que informar no e-mail.',
+      link: 'auxilios.html#nao-recebi',
+      textoLink: 'ver o passo a passo'
+    },
+    {
+      data: '2026-08-13',
+      titulo: 'Quem procurar para cada assunto',
+      texto: 'Um roteiro de para quem escrever conforme o problema. Acesso ao AVA Moodle vai para a Coordenadoria de EaD, sempre com cópia para o NAE, que assim acompanha o seu caso de perto.',
+      link: 'contato.html#quem-procurar',
+      textoLink: 'ver o roteiro'
+    },
     {
       data: '2026-08-12',
       titulo: 'Atividades complementares: a partir de quando cada uma conta',
