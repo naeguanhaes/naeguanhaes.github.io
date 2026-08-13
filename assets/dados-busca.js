@@ -229,6 +229,12 @@ window.DADOS_BUSCA = {
       k: 'cartaz qr code imprimir divulgar mural'
     },
     {
+      t: 'Guia de bolso para imprimir',
+      d: 'Uma folha com contatos, acessos, regra de aprovação e os prazos do semestre.',
+      u: 'guia.html',
+      k: 'guia bolso folha papel imprimir entregar sala calouro resumo contatos prazos qr code sem internet'
+    },
+    {
       t: 'Instalar o site no celular',
       d: 'O NAE vira um aplicativo na sua tela inicial, e funciona até sem internet.',
       u: 'index.html',

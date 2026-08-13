@@ -19,6 +19,20 @@ window.DADOS_NOVIDADES = {
   itens: [
     {
       data: '2026-08-13',
+      titulo: 'Guia de bolso para imprimir',
+      texto: 'Uma folha A4 com dois guias iguais, para cortar ao meio e levar no bolso: contatos, padrão do e-mail e do Lyceum, regra de aprovação e os prazos do semestre, sempre atualizados na hora de imprimir.',
+      link: 'guia.html',
+      textoLink: 'abrir o guia'
+    },
+    {
+      data: '2026-08-13',
+      titulo: 'A busca perdoa erro de digitação',
+      texto: 'Digitou "matrcula" ou "psicolgico"? A busca entende e mostra o resultado certo. Ela também passou a procurar nas datas do calendário e nos avisos do NAE.',
+      link: 'index.html',
+      textoLink: 'experimentar'
+    },
+    {
+      data: '2026-08-13',
       titulo: 'A busca agora procura dentro das ementas',
       texto: 'Digite um assunto, como "ressalto hidráulico" ou "herança digital", e a busca mostra em quais disciplinas ele aparece. Clicando, a matriz abre já na disciplina certa.',
       link: 'matriz.html',

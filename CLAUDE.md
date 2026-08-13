@@ -185,7 +185,13 @@ Páginas no ar: `index`, `email`, `sistemas` (porta de entrada), `moodle`,
 `calculadora`, `cronometro`, `planner`, `requerimentos` (as ferramentas, cada
 uma na sua página, reunidas no grupo Ferramentas do menu),
 `mapa`, `apoio`, `avisos`, `sobre`, `contato`, `privacidade`,
-`cartaz` (imprimível), `404`, `offline`.
+`cartaz` e `guia` (imprimíveis), `404`, `offline`.
+
+As duas folhas imprimíveis não têm o menu nem o rodapé do site: são peças de
+papel, com CSS próprio e medidas em milímetros. O `cartaz` é para parede, o
+`guia` é para a mão do estudante, e as duas usam `assets/qr.js`. Ao mexer
+nelas, confira **imprimindo**, não só na tela: a regra de tela estreita precisa
+do `screen and`, senão vale também no papel, que tem 210 mm.
 Seção "Meu curso": `curso` (visão geral), `matriz`, `atividades`, `estagio`,
 `tcc`, `secretaria`. Todas alimentadas por `assets/dados-curso.js`.
 Páginas ocultas: `editais`, `calouro`, `semestres`.
@@ -218,6 +224,7 @@ Ferramentas, todas em `ferramentas/`:
 | `checar-frescor.js` | dados envelhecendo (roda todo mês, não bloqueia) |
 | `checar-links-externos.js` | endereços de fora que morreram |
 | `minificar.js` | recompacta para `assets/min/` e grava `origem.json` |
+| `lista-assets.js` | a lista dos `.js` e `.css` compactados, em um lugar só |
 | `gerar-ementas.js` | reescreve `dados-ementas.js` a partir de `fontes/` |
 | `gerar-sitemap.js` | `sitemap.xml` e `robots.txt` |
 | `gerar-dados-estruturados.js` | JSON-LD do NAE e do FAQ, lido do próprio HTML |

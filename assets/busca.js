@@ -34,11 +34,107 @@
     };
   });
 
-  /* ── Busca dentro das ementas ──────────────────────────
-     As 190 ementas somam 300 KB e só interessam a quem procura
-     um assunto. Por isso os dados entram sob demanda, na primeira
-     vez que alguém digita, e não no carregamento de toda página. */
-  var ementas = { estado: 'parado', indice: [] };
+  /* ── Vocabulário, para perdoar erro de digitação ───────
+     Quem digita no celular erra, e "matrcula" não pode devolver
+     nada. Guardamos aqui todas as palavras que existem no índice;
+     quando um termo não bate com nenhuma, procuramos a palavra mais
+     próxima, aceitando UMA diferença (letra trocada, faltando,
+     sobrando ou invertida). Só vale para termos de quatro letras
+     ou mais: em palavra curta, uma letra muda o sentido. */
+  var vocabulario = [];
+  (function montarVocabulario() {
+    var vistas = {};
+    indice.forEach(function (e) {
+      (e.nt + ' ' + e.nk + ' ' + e.nd).split(/\s+/).forEach(function (p) {
+        if (p.length >= 3 && !vistas[p]) { vistas[p] = 1; vocabulario.push(p); }
+      });
+    });
+  })();
+
+  var MIN_CORRECAO = 4;
+
+  function noVocabulario(t) {
+    for (var i = 0; i < vocabulario.length; i++) {
+      if (vocabulario[i].indexOf(t) !== -1) return true;
+    }
+    return false;
+  }
+
+  /* Verdadeiro quando dá para transformar a em b com no máximo uma
+     mudança: letra trocada, letra faltando, letra sobrando ou duas
+     letras vizinhas invertidas. Essa última é a que mais acontece
+     ("emial" por "email") e não sai de graça na conta clássica de
+     Levenshtein, por isso é tratada à parte.
+
+     Escrito à mão, e não com a matriz completa, porque roda a cada
+     letra digitada e só precisa responder sim ou não. */
+  function ateUmaDiferenca(a, b) {
+    var difTamanho = a.length - b.length;
+    if (difTamanho > 1 || difTamanho < -1) return false;
+
+    if (difTamanho === 0) {
+      var erradas = [];
+      for (var k = 0; k < a.length; k++) {
+        if (a.charAt(k) !== b.charAt(k)) {
+          erradas.push(k);
+          if (erradas.length > 2) return false;
+        }
+      }
+      if (erradas.length <= 1) return true;
+      /* duas diferenças só passam se forem vizinhas e trocadas de lugar */
+      var p = erradas[0], q = erradas[1];
+      return q === p + 1 && a.charAt(p) === b.charAt(q) && a.charAt(q) === b.charAt(p);
+    }
+
+    /* tamanhos diferentes: uma letra a mais de um lado */
+    var maior = difTamanho === 1 ? a : b;
+    var menor = difTamanho === 1 ? b : a;
+    var i = 0, j = 0, pulei = false;
+    while (i < maior.length && j < menor.length) {
+      if (maior.charAt(i) === menor.charAt(j)) { i++; j++; continue; }
+      if (pulei) return false;
+      pulei = true;
+      i++;
+    }
+    return true;
+  }
+
+  function palavraParecida(t) {
+    var melhor = null;
+    for (var i = 0; i < vocabulario.length; i++) {
+      var p = vocabulario[i];
+      if (Math.abs(p.length - t.length) > 1) continue;
+      if (!ateUmaDiferenca(t, p)) continue;
+      /* entre duas candidatas, fica a que começa igual: quem erra
+         costuma acertar a primeira letra */
+      if (!melhor || (p.charAt(0) === t.charAt(0) && melhor.charAt(0) !== t.charAt(0))) melhor = p;
+    }
+    return melhor;
+  }
+
+  /* Troca os termos que ninguém escreveu certo. Devolve a lista
+     corrigida e o que foi trocado, para a tela poder avisar. */
+  function corrigir(termos) {
+    var trocas = [];
+    var saida = termos.map(function (t) {
+      if (t.length < MIN_CORRECAO || noVocabulario(t)) return t;
+      var p = palavraParecida(t);
+      if (!p) return t;
+      trocas.push({ de: t, para: p });
+      return p;
+    });
+    return { termos: saida, trocas: trocas };
+  }
+
+  /* ── Dados que entram sob demanda ──────────────────────
+     As 190 ementas somam 300 KB e só interessam a quem procura um
+     assunto. O calendário e os avisos são pequenos, mas nem toda
+     página os carrega. Por isso os quatro entram na primeira vez
+     que alguém digita, e não no carregamento de toda página. */
+  var extras = { estado: 'parado' };
+  var ementas = { indice: [] };
+  var datas = { indice: [] };
+  var recados = { indice: [] };
 
   function carregarScript(src) {
     return new Promise(function (ok, erro) {
@@ -50,6 +146,11 @@
       s.onerror = erro;
       document.head.appendChild(s);
     });
+  }
+
+  /* páginas como a do calendário já trazem o arquivo: não baixe de novo */
+  function garantirDado(nome, src) {
+    return window[nome] ? Promise.resolve() : carregarScript(src);
   }
 
   function montarIndiceEmentas() {
@@ -80,21 +181,74 @@
     });
   }
 
-  function garantirEmentas() {
-    if (ementas.estado === 'pronto' || ementas.estado === 'carregando') return;
-    ementas.estado = 'carregando';
+  /* ── Datas do calendário ─────────────────────────────── */
+  function montarIndiceDatas() {
+    var C = window.DADOS_CALENDARIO;
+    if (!C) return;
+    (C.eventos || []).forEach(function (ev) {
+      datas.indice.push({ ev: ev, nt: U.normaliza(ev.titulo + ' ' + (ev.tipo || '')) });
+    });
+  }
+
+  /* "12/10" para um dia só, "01 a 04/09" para faixa */
+  function quandoFoi(ev) {
+    if (ev.semData) return 'data a definir';
+    var ini = U.dataBR(ev.ini).slice(0, 5);
+    if (!ev.fim || ev.fim === ev.ini) return ini;
+    var mesIgual = ev.ini.slice(0, 7) === ev.fim.slice(0, 7);
+    return mesIgual ? ev.ini.slice(8) + ' a ' + U.dataBR(ev.fim).slice(0, 5)
+                    : ini + ' a ' + U.dataBR(ev.fim).slice(0, 5);
+  }
+
+  /* ── Avisos do mural ─────────────────────────────────── */
+  function montarIndiceAvisos() {
+    var A = window.DADOS_AVISOS;
+    if (!A) return;
+    (A.avisos || []).forEach(function (av) {
+      recados.indice.push({ av: av, nt: U.normaliza(av.texto) });
+    });
+  }
+
+  function garantirExtras() {
+    if (extras.estado === 'pronto' || extras.estado === 'carregando') return;
+    extras.estado = 'carregando';
     Promise.all([
-      carregarScript('assets/dados-curso.js'),
-      carregarScript('assets/dados-ementas.js')
+      garantirDado('DADOS_CURSO', 'assets/dados-curso.js'),
+      garantirDado('DADOS_EMENTAS', 'assets/dados-ementas.js'),
+      garantirDado('DADOS_CALENDARIO', 'assets/dados-calendario.js'),
+      garantirDado('DADOS_AVISOS', 'assets/dados-avisos.js')
     ]).then(function () {
       montarIndiceEmentas();
-      ementas.estado = 'pronto';
+      montarIndiceDatas();
+      montarIndiceAvisos();
+      extras.estado = 'pronto';
       if (campo && campo.value) procurar(campo.value);
-    }).catch(function () { ementas.estado = 'falhou'; });
+    }).catch(function () { extras.estado = 'falhou'; });
+  }
+
+  /* procura em uma lista já normalizada, exigindo todos os termos */
+  function acharEm(lista, termos, quantos) {
+    if (extras.estado !== 'pronto') return [];
+    var achados = lista.filter(function (x) {
+      return termos.every(function (t) { return x.nt.indexOf(t) !== -1; });
+    });
+    return achados.slice(0, quantos);
+  }
+
+  /* datas: primeiro as que ainda vão acontecer */
+  function acharDatas(termos) {
+    var hoje = U.hojeISO();
+    var achados = acharEm(datas.indice, termos, 40).slice();
+    achados.sort(function (a, b) {
+      var fa = (a.ev.fim || a.ev.ini) >= hoje, fb = (b.ev.fim || b.ev.ini) >= hoje;
+      if (fa !== fb) return fa ? -1 : 1;
+      return a.ev.ini < b.ev.ini ? -1 : 1;
+    });
+    return achados.slice(0, 4);
   }
 
   function acharEmentas(termos) {
-    if (ementas.estado !== 'pronto') return [];
+    if (extras.estado !== 'pronto') return [];
     var achados = [];
     ementas.indice.forEach(function (d) {
       var pontos = 0, todos = true;
@@ -225,13 +379,16 @@
   }
 
   function procurar(texto) {
-    var termos = U.normaliza(texto).split(/\s+/).filter(Boolean);
+    var digitados = U.normaliza(texto).split(/\s+/).filter(Boolean);
 
-    if (!termos.length) {
+    if (!digitados.length) {
       caixaRes.innerHTML = '<p class="busca-dica">Digite acima ou toque em uma das dúvidas frequentes.</p>';
       avisar('');
       return;
     }
+
+    var conserto = corrigir(digitados);
+    var termos = conserto.termos;
 
     var achados = [];
     indice.forEach(function (e) {
@@ -251,15 +408,18 @@
     achados.sort(function (a, b) { return b.pontos - a.pontos; });
     achados = achados.slice(0, 8);
 
-    /* a partir de três letras vale procurar também dentro das ementas */
+    /* a partir de três letras vale procurar também no calendário,
+       nos avisos e dentro das ementas */
     var termoMaior = termos.some(function (t) { return t.length >= 3; });
-    if (termoMaior) garantirEmentas();
+    if (termoMaior) garantirExtras();
     var disciplinas = termoMaior ? acharEmentas(termos) : [];
+    var achadosData = termoMaior ? acharDatas(termos) : [];
+    var achadosAviso = termoMaior ? acharEm(recados.indice, termos, 3) : [];
 
-    if (!achados.length && !disciplinas.length) {
-      if (ementas.estado === 'carregando') {
-        caixaRes.innerHTML = '<p class="busca-dica">Procurando também nas ementas das disciplinas…</p>';
-        avisar('Procurando nas ementas.');
+    if (!achados.length && !disciplinas.length && !achadosData.length && !achadosAviso.length) {
+      if (extras.estado === 'carregando') {
+        caixaRes.innerHTML = '<p class="busca-dica">Procurando também nas datas, nos avisos e nas ementas…</p>';
+        avisar('Procurando.');
         return;
       }
       caixaRes.innerHTML =
@@ -269,13 +429,44 @@
       return;
     }
 
-    var html = achados.map(function (a) {
+    var html = '';
+
+    /* quando corrigimos a digitação, a pessoa precisa saber */
+    if (conserto.trocas.length) {
+      html += '<p class="busca-corrigido">Mostrando resultados para <b>' +
+        conserto.trocas.map(function (t) { return U.escapar(t.para); }).join('</b>, <b>') +
+        '</b></p>';
+    }
+
+    html += achados.map(function (a) {
       var it = a.e.item;
       return '<a class="busca-item" href="' + U.escapar(it.u) + '">' +
                '<span class="bi-t">' + U.escapar(it.t) + '</span>' +
                '<span class="bi-d">' + U.escapar(it.d) + '</span>' +
              '</a>';
     }).join('');
+
+    if (achadosData.length) {
+      html += '<p class="busca-secao">Datas no calendário</p>' +
+        achadosData.map(function (x) {
+          var ev = x.ev;
+          return '<a class="busca-item busca-data" href="calendario.html" style="--c: var(--lilas)">' +
+                   '<span class="bi-t"><span class="bi-quando">' + U.escapar(quandoFoi(ev)) + '</span>' +
+                     U.escapar(ev.titulo) + '</span>' +
+                 '</a>';
+        }).join('');
+    }
+
+    if (achadosAviso.length) {
+      html += '<p class="busca-secao">Avisos do NAE</p>' +
+        achadosAviso.map(function (x) {
+          var av = x.av;
+          return '<a class="busca-item" href="' + U.escapar(av.link || 'avisos.html') + '"' +
+                   ' style="--c: var(--turquesa)">' +
+                   '<span class="bi-d">' + U.escapar(av.texto) + '</span>' +
+                 '</a>';
+        }).join('');
+    }
 
     if (disciplinas.length) {
       html += '<p class="busca-secao">Aparece na ementa destas disciplinas</p>' +
@@ -293,7 +484,7 @@
 
     caixaRes.innerHTML = html;
 
-    var total = achados.length + disciplinas.length;
+    var total = achados.length + disciplinas.length + achadosData.length + achadosAviso.length;
     avisar(total === 1 ? '1 resultado. Use as setas para percorrer.'
                        : total + ' resultados. Use as setas para percorrer.');
   }

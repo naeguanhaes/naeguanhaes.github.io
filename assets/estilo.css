@@ -1417,6 +1417,20 @@ details.periodo.periodo-ok .periodo-h::after { content: " ✓"; color: var(--ver
 .bi-onde { font-size: .72rem; font-weight: 600; color: var(--muted); }
 .busca-disc .bi-d { font-style: italic; }
 
+/* data do calendário no resultado da busca */
+.busca-data { border-left: 3px solid var(--c, var(--lilas)); border-radius: 4px var(--radius-s) var(--radius-s) 4px; }
+.busca-data .bi-t { display: flex; align-items: baseline; gap: .55rem; flex-wrap: wrap; }
+.bi-quando {
+  font-variant-numeric: tabular-nums; font-weight: 800; font-size: .78rem;
+  color: var(--c, var(--lilas)); white-space: nowrap;
+}
+
+/* "mostrando resultados para ..." quando a digitação foi corrigida */
+.busca-corrigido {
+  margin: 0 .2rem .4rem; font-size: .82rem; color: var(--muted);
+}
+.busca-corrigido b { color: var(--ink); }
+
 /* disciplina apontada pela busca, ao chegar na matriz */
 .disciplina.disc-destaque {
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--ambar) 45%, transparent);

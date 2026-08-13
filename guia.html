@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Guia de bolso para imprimir · NAE Guanhães | UEMG</title>
+<meta name="description" content="Folha A4 com dois guias de bolso do estudante da UEMG Unidade Guanhães: contatos, acessos, regra de aprovação, prazos do semestre e QR code do site.">
+<link rel="icon" href="assets/favicon-nae.png" type="image/png">
+
+<style>
+  :root {
+    --navy:   #0B3251;
+    --blue:   #1A6BA0;
+    --cyan:   #1D93A9;
+    --green:  #2C9560;
+    --amber:  #D08D18;
+    --orange: #D1642B;
+    --rose:   #B03A5B;
+    --ink:    #0C1E2C;
+    --ink-2:  #274257;
+    --muted:  #5A7288;
+    --line:   #D8E4ED;
+
+    color-scheme: light;
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Cambria, Georgia, "Times New Roman", serif;
+    --sans:  "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+    --mono:  ui-monospace, "Cascadia Mono", Consolas, "SF Mono", Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: #E7EDF3;
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.45;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ── Barra de ações (some na impressão) ─────────────── */
+  .barra {
+    position: sticky; top: 0; z-index: 10;
+    display: flex; flex-wrap: wrap; align-items: center; gap: .8rem;
+    padding: .9rem 1.2rem;
+    background: #fff; border-bottom: 1px solid var(--line);
+    font-size: .9rem; color: var(--ink-2);
+  }
+  .barra b { color: var(--navy); }
+  .barra .btn {
+    margin-left: auto;
+    background: var(--navy); color: #fff; border: 0; border-radius: 999px;
+    font-family: var(--sans); font-size: .9rem; font-weight: 650;
+    padding: .55rem 1.3rem; cursor: pointer;
+  }
+  .barra .btn:hover { filter: brightness(1.15); }
+  .barra a { color: var(--blue); }
+
+  /* ── Folha A4 com dois guias iguais ─────────────────── */
+  .folha {
+    width: 210mm; height: 297mm;
+    margin: 10mm auto; padding: 0;
+    background: #fff;
+    box-shadow: 0 4px 26px rgba(11,50,81,.16);
+    display: flex; flex-direction: column;
+    overflow: hidden;
+  }
+
+  .corte {
+    height: 0; border-top: .3mm dashed #B9C9D6;
+    position: relative;
+  }
+  .corte::after {
+    content: "recorte aqui";
+    position: absolute; right: 4mm; top: -3.6mm;
+    background: #fff; padding: 0 2mm;
+    font-size: 2.5mm; letter-spacing: .14em; text-transform: uppercase; color: var(--muted);
+  }
+
+  /* ── Um guia (metade da folha) ──────────────────────── */
+  .guia {
+    height: 148.5mm; padding: 7mm 8mm 5mm;
+    display: flex; flex-direction: column;
+  }
+
+  .cab { display: flex; align-items: center; gap: 4mm; }
+  .cab .marca { height: 12mm; width: auto; display: block; }
+  .cab .tit { line-height: 1.1; }
+  .cab .tit h1, .cab .tit .h {
+    font-family: var(--serif); font-size: 6.4mm; font-weight: 700;
+    color: var(--navy); display: block; margin: 0; line-height: 1.1;
+  }
+  .cab .tit .sub {
+    font-size: 2.9mm; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--muted); font-weight: 700;
+  }
+  .cab .uni {
+    margin-left: auto; text-align: right;
+    font-size: 2.9mm; color: var(--muted); line-height: 1.45;
+  }
+  .cab .uni b { display: block; color: var(--ink-2); font-size: 3.2mm; }
+
+  .faixa {
+    height: 1.6mm; margin: 3mm 0 4mm;
+    background: linear-gradient(90deg, #40688B 0 62%, #D91F35 62% 100%);
+    border-radius: 1.5mm;
+  }
+
+  .miolo {
+    flex: 1; display: grid; grid-template-columns: 46mm 1fr; gap: 5mm;
+    min-height: 0;
+  }
+
+  /* coluna do QR */
+  .lado { display: flex; flex-direction: column; }
+  .qr-area svg { width: 44mm; height: 44mm; display: block; }
+  .lado .url {
+    font-family: var(--mono); font-size: 3mm; color: var(--navy);
+    font-weight: 600; word-break: break-all; margin-top: 1.5mm; text-align: center;
+  }
+  .lado .leg {
+    font-size: 2.7mm; color: var(--muted); text-align: center; margin-top: .8mm; line-height: 1.35;
+  }
+
+  .cartao-nae {
+    margin-top: auto;
+    background: #FCF4E8; border: .35mm solid #EBD6AE; border-radius: 2.5mm;
+    padding: 2.6mm 3mm; font-size: 2.9mm; color: var(--ink-2); line-height: 1.45;
+  }
+  .cartao-nae b { color: var(--navy); display: block; font-size: 3.1mm; margin-bottom: .6mm; }
+
+  /* coluna dos blocos */
+  .blocos { display: grid; grid-template-rows: auto auto 1fr; gap: 2.6mm; min-height: 0; }
+
+  .bloco {
+    border: .35mm solid var(--line); border-left: 1.2mm solid var(--c);
+    border-radius: 2.5mm; padding: 2.4mm 3.2mm;
+  }
+  .bloco h2 {
+    margin: 0 0 1.2mm; font-size: 2.7mm; font-weight: 800;
+    letter-spacing: .13em; text-transform: uppercase; color: var(--c);
+  }
+  .bloco p { margin: 0; font-size: 3.1mm; color: var(--ink-2); line-height: 1.42; }
+  .bloco p + p { margin-top: 1.2mm; }
+  .bloco b { color: var(--ink); }
+  .bloco .mono { font-family: var(--mono); font-size: 2.95mm; color: var(--navy); }
+
+  .datas { margin: 0; padding: 0; list-style: none; }
+  .datas li {
+    display: flex; gap: 2.5mm; align-items: baseline;
+    font-size: 3mm; color: var(--ink-2); padding: .55mm 0;
+    border-bottom: .25mm solid #EFF4F8;
+  }
+  .datas li:last-child { border-bottom: 0; }
+  .datas .q {
+    font-family: var(--mono); font-weight: 700; color: var(--navy);
+    flex: none; min-width: 17mm;
+  }
+  .datas .t { line-height: 1.3; }
+  .datas .vazio { color: var(--muted); }
+
+  .pe {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 3mm;
+    margin-top: 3mm; font-size: 2.7mm; color: var(--muted);
+  }
+  .pe b { color: var(--ink-2); }
+
+  /* ── Impressão ──────────────────────────────────────── */
+  @page { size: A4 portrait; margin: 0; }
+
+  @media print {
+    body { background: #fff; }
+    .barra { display: none; }
+    .folha { margin: 0; box-shadow: none; height: 296.4mm; }
+  }
+
+  /* Só para TELA estreita. O "screen" não é enfeite: a folha impressa
+     tem 210 mm de largura, menos que os 230 mm daqui, e sem ele a
+     impressão saía em uma coluna só e sem a segunda via. */
+  @media screen and (max-width: 230mm) {
+    .folha { width: 100%; height: auto; }
+    .guia { height: auto; padding: 6mm 5mm; }
+    .miolo { grid-template-columns: 1fr; }
+    .qr-area { display: flex; justify-content: center; }
+    .qr-area svg { width: min(60vw, 60mm); height: auto; }
+    .segunda { display: none; }
+    .corte { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="barra">
+  <span><b>Guia de bolso do NAE.</b> Uma folha A4 com dois guias iguais: imprima, corte ao meio e entregue nas salas.</span>
+  <span>Papel A4, sem redimensionar (escala 100%). Frente e verso dobra o número de guias por folha.</span>
+  <button class="btn" type="button" onclick="window.print()">Imprimir</button>
+</div>
+
+<section class="folha">
+
+  <!-- ══════════ GUIA 1 ══════════ -->
+  <div class="guia" data-guia>
+
+    <div class="cab">
+      <img class="marca" src="assets/logo-nae.png" width="1024" height="1024" alt="Marca do NAE">
+      <div class="tit">
+        <h1>Guia rápido</h1>
+        <span class="sub">Núcleo de Apoio ao Estudante</span>
+      </div>
+      <div class="uni">
+        <b>UEMG · Unidade Guanhães</b>
+        BR-259, nº 2250, Nova União<br>
+        (33) 3450-0939
+      </div>
+    </div>
+
+    <div class="faixa"></div>
+
+    <div class="miolo">
+
+      <div class="lado">
+        <div class="qr-area" data-qr></div>
+        <div class="url">naeguanhaes.github.io</div>
+        <div class="leg">Aponte a câmera. Horários, calendário, mapa, ementas e calculadora de faltas.</div>
+
+        <div class="cartao-nae">
+          <b>Onde fica o NAE</b>
+          Prédio do Administrativo. Atendimento terças e quintas, das 18h às 19h; quartas com agendamento.
+          <span class="mono">nae.guanhaes@uemg.br</span>
+        </div>
+      </div>
+
+      <div class="blocos">
+
+        <div class="bloco" style="--c: var(--blue)">
+          <h2>Seus acessos</h2>
+          <p><b>E-mail:</b> <span class="mono">prenome.matrícula@discente.uemg.br</span></p>
+          <p><b>Lyceum:</b> usuário é o Registro Acadêmico (xx-00000) e a primeira senha é a sua data de nascimento, só números. A senha trocada vale também no AVA Moodle.</p>
+        </div>
+
+        <div class="bloco" style="--c: var(--green)">
+          <h2>Para ser aprovado</h2>
+          <p><b>60</b> dos 100 pontos e <b>75%</b> de frequência. De 40 a 59 pontos, ainda há <b>exame especial</b>. Atestado médico: justificar em 48 horas.</p>
+        </div>
+
+        <div class="bloco" style="--c: var(--amber)">
+          <h2>Próximos prazos</h2>
+          <ul class="datas" data-datas>
+            <li class="vazio">Veja o calendário no site.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="pe">
+      <span>Sem sinal? O site funciona offline depois da primeira visita.</span>
+      <span>Precisa conversar? <b>CVV 188</b>, 24 horas, gratuito.</span>
+    </div>
+
+  </div>
+
+  <div class="corte"></div>
+
+</section>
+
+<script defer src="assets/dados-calendario.js"></script>
+<script defer src="assets/min/qr.min.js"></script>
+
+<script>
+/* ═══════════════════════════════════════════════════════
+   Preenche os próximos prazos a partir do calendário.
+
+   O guia é impresso e vai para a mão do estudante, então as
+   datas precisam ser as do dia em que se imprime, e não uma
+   lista digitada aqui que envelhece calada. Feriado fica de
+   fora: quem carrega um guia no bolso quer saber de prazo.
+   ═══════════════════════════════════════════════════════ */
+(function () {
+  'use strict';
+
+  var QUANTOS = 6;
+
+  function hojeISO() {
+    var d = new Date();
+    return d.getFullYear() + '-' +
+           String(d.getMonth() + 1).padStart(2, '0') + '-' +
+           String(d.getDate()).padStart(2, '0');
+  }
+
+  function curta(iso) { return iso.slice(8) + '/' + iso.slice(5, 7); }
+
+  function quando(ev) {
+    if (ev.semData) return 'a definir';
+    if (!ev.fim || ev.fim === ev.ini) return curta(ev.ini);
+    if (ev.ini.slice(0, 7) === ev.fim.slice(0, 7)) return ev.ini.slice(8) + ' a ' + curta(ev.fim);
+    return curta(ev.ini) + ' a ' + curta(ev.fim);
+  }
+
+  function escapar(s) {
+    return String(s).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  }
+
+  function preencher() {
+    var C = window.DADOS_CALENDARIO;
+    if (!C) return;
+    var hoje = hojeISO();
+
+    var proximos = (C.eventos || [])
+      .filter(function (ev) {
+        return ev.tipo !== 'feriado' && !ev.semData && (ev.fim || ev.ini) >= hoje;
+      })
+      .sort(function (a, b) { return a.ini < b.ini ? -1 : 1; })
+      .slice(0, QUANTOS);
+
+    var html = proximos.length
+      ? proximos.map(function (ev) {
+          return '<li><span class="q">' + escapar(quando(ev)) + '</span>' +
+                 '<span class="t">' + escapar(ev.titulo) + '</span></li>';
+        }).join('')
+      : '<li class="vazio">Não há mais prazos previstos para ' + escapar(C.ano) + '. Confira o calendário no site.</li>';
+
+    document.querySelectorAll('[data-datas]').forEach(function (ul) { ul.innerHTML = html; });
+  }
+
+  /* A folha leva DOIS guias iguais, para cortar ao meio. A cópia é feita
+     aqui, e não escrita duas vezes no HTML: assim ninguém corrige um
+     telefone em uma metade e esquece a outra. A cópia é escondida do
+     leitor de tela, que não precisa ouvir o mesmo texto duas vezes, e
+     perde o h1, porque a página só pode ter um. */
+  function duplicar() {
+    var original = document.querySelector('[data-guia]');
+    var corte = document.querySelector('.corte');
+    if (!original || !corte) return;
+
+    var copia = original.cloneNode(true);
+    copia.classList.add('segunda');
+    copia.setAttribute('aria-hidden', 'true');
+
+    var titulo = copia.querySelector('h1');
+    if (titulo) {
+      var span = document.createElement('span');
+      span.className = 'h';
+      span.textContent = titulo.textContent;
+      titulo.parentNode.replaceChild(span, titulo);
+    }
+    copia.querySelectorAll('img').forEach(function (im) { im.setAttribute('alt', ''); });
+
+    corte.parentNode.insertBefore(copia, corte.nextSibling);
+  }
+
+  function iniciar() { preencher(); duplicar(); }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', iniciar);
+  } else {
+    iniciar();
+  }
+})();
+</script>
+
+<script data-goatcounter="https://naeguanhaes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

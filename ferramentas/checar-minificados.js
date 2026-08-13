@@ -28,8 +28,10 @@ const ORIGEM = path.join(RAIZ, 'assets');
 const DESTINO = path.join(ORIGEM, 'min');
 const MANIFESTO = path.join(DESTINO, 'origem.json');
 
-const JS = ['site.js', 'busca.js', 'horarios.js', 'calendario.js', 'mapa.js', 'planner.js', 'curso.js', 'requerimentos.js'];
-const CSS = ['estilo.css'];
+/* a mesma lista que o minificar.js usa, para as duas nunca discordarem */
+const LISTA = require('./lista-assets.js');
+const JS = LISTA.JS;
+const CSS = LISTA.CSS;
 const FONTES = JS.concat(CSS);
 
 const problemas = [];

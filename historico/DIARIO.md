@@ -3,6 +3,43 @@
 Registro do que mudou e quando, do mais recente para o mais antigo.
 Ao fazer uma alteração relevante, acrescente uma entrada no topo.
 
+## 13/08/2026 · décima quinta rodada (busca que perdoa erro, datas na busca e guia de bolso)
+
+- **A busca perdoa erro de digitação.** Um vocabulário montado a partir do
+  próprio índice guarda todas as palavras que existem no site. Quando o termo
+  não bate com nenhuma, procuramos a mais próxima aceitando UMA diferença:
+  letra trocada, faltando, sobrando ou duas vizinhas invertidas. Essa última é
+  a mais comum de todas ("emial" por "email") e não sai de graça na conta
+  clássica de Levenshtein, por isso é tratada à parte. Só vale a partir de
+  quatro letras, porque em palavra curta uma letra muda o sentido. Quando
+  corrigimos, a tela diz "Mostrando resultados para ...", que é o mínimo de
+  honestidade com quem digitou outra coisa.
+- **A busca passou a olhar o calendário e os avisos.** Procurar "trancamento"
+  agora traz também a data limite, e "moodle" traz o aviso do NAE sobre o
+  assunto. As datas vêm com as futuras primeiro. Os quatro arquivos de dados
+  (curso, ementas, calendário e avisos) entram sob demanda, e quem já tem o
+  arquivo na página não baixa de novo.
+- **`guia.html`, o guia de bolso.** Uma folha A4 com dois guias iguais, para
+  cortar ao meio e entregar em sala: contatos do NAE e da unidade, padrão do
+  e-mail e do Lyceum, regra de aprovação e os próximos prazos, que são lidos do
+  calendário na hora de imprimir e por isso nunca saem velhos. Leva o QR do
+  site, para quem quiser continuar no celular. A segunda via é uma cópia feita
+  por código, não um bloco repetido no HTML: assim ninguém corrige um telefone
+  em uma metade e esquece a outra.
+- O gerador de QR saiu de dentro do `cartaz.html` e virou `assets/qr.js`, usado
+  pelas duas folhas. O cartaz encolheu 342 linhas.
+- **Dois defeitos apareceram no caminho, e os dois só apareceram porque a
+  impressão foi conferida de verdade, gerando o PDF:**
+  1. A regra de tela estreita (`max-width: 230mm`) valia também no papel, já
+     que a folha A4 tem 210 mm. O guia saía em uma coluna só e sem a segunda
+     via, e o cartaz saía com os itens empilhados. Faltava o `screen and`.
+     O cartaz tinha esse defeito desde que nasceu.
+  2. A lista dos arquivos compactados estava escrita duas vezes, no
+     `minificar.js` e no `checar-minificados.js`. Acrescentar o `qr.js` em um
+     e esquecer o outro reprovou a publicação sem motivo real. A lista virou
+     `ferramentas/lista-assets.js`, em um lugar só.
+- sw em nae-v28.
+
 ## 13/08/2026 · décima quarta rodada (busca nas ementas, aviso de prazo e revisão completa)
 
 Três pedidos do coordenador: busca dentro das ementas, aviso de prazo e uma
