@@ -1406,6 +1406,23 @@ details.periodo.periodo-ok .periodo-h::after { content: " ✓"; color: var(--ver
   border-radius: 99px; padding: .35rem .9rem;
 }
 
+/* resultado de busca que veio de dentro de uma ementa */
+.busca-secao {
+  font-size: .68rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--muted); margin: .7rem .2rem .1rem; padding-top: .5rem;
+  border-top: 1px solid var(--hair);
+}
+.busca-disc { border-left: 3px solid var(--c, var(--azul)); border-radius: 4px var(--radius-s) var(--radius-s) 4px; }
+.busca-disc .bi-t { display: flex; align-items: baseline; gap: .5rem; flex-wrap: wrap; }
+.bi-onde { font-size: .72rem; font-weight: 600; color: var(--muted); }
+.busca-disc .bi-d { font-style: italic; }
+
+/* disciplina apontada pela busca, ao chegar na matriz */
+.disciplina.disc-destaque {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--ambar) 45%, transparent);
+  border-color: var(--ambar);
+}
+
 /* ── Ementa e bibliografia da disciplina ───────────────── */
 .disc-ementa {
   grid-column: 1 / -1; justify-self: start;

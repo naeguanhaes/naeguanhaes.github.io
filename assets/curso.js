@@ -326,6 +326,39 @@
     ligarEmentas(optativasEl);
   }
 
+  /* Chegada pela busca: matriz.html?d=CHAVE troca para o curso dono da
+     disciplina, abre o período, abre a ementa e rola até ela. Fica aqui,
+     depois da matriz e das optativas, porque precisa das duas montadas. */
+  if (matriz || optativasEl) {
+    (function chegadaPelaBusca() {
+      var pedida = new URLSearchParams(window.location.search).get('d');
+      if (!pedida) return;
+
+      var dono = cursos.filter(function (c) {
+        return EMENTAS && EMENTAS[c.id] && EMENTAS[c.id][pedida];
+      })[0];
+      if (dono && dono.id !== atual) trocar(dono.id);
+
+      var seletor = '[data-ementa="' + pedida.replace(/"/g, '\\"') + '"]';
+      setTimeout(function () {
+        var btn = (matriz && matriz.querySelector(seletor)) ||
+                  (optativasEl && optativasEl.querySelector(seletor));
+        if (!btn) return;
+
+        var caixaPeriodo = btn.closest('details.periodo');
+        if (caixaPeriodo) caixaPeriodo.open = true;
+        if (btn.getAttribute('aria-expanded') !== 'true') btn.click();
+        btn.scrollIntoView({ behavior: U.reduzir ? 'auto' : 'smooth', block: 'center' });
+
+        var linha = btn.closest('li');
+        if (linha) {
+          linha.classList.add('disc-destaque');
+          setTimeout(function () { linha.classList.remove('disc-destaque'); }, 4000);
+        }
+      }, 150);
+    })();
+  }
+
   /* ── Atividades complementares ────────────────────── */
   var atividades = document.getElementById('atividades-painel');
   if (atividades) {

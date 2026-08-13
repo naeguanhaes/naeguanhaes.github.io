@@ -5,7 +5,7 @@
    isso apaga o cache antigo e busca tudo de novo.
    ═══════════════════════════════════════════════════════ */
 
-var VERSAO = 'nae-v21';
+var VERSAO = 'nae-v22';
 
 /* Arquivos de dados (avisos, horários, calendário, editais, semestres).
    Estes NÃO seguem a regra do cache primeiro: um aviso urgente precisa
@@ -89,6 +89,62 @@ self.addEventListener('activate', function (e) {
       }));
     }).then(function () { return self.clients.claim(); })
   );
+});
+
+/* Sincronização periódica, onde o navegador oferece (Android com o site
+   instalado). O sistema acorda o trabalhador de tempos em tempos, ele
+   busca o calendário novo e avisa dos prazos dos próximos três dias.
+   Sem isso, o aviso só aparece quando o estudante abre o site. */
+self.addEventListener('periodicsync', function (e) {
+  if (e.tag !== 'conferir-prazos') return;
+  e.waitUntil(conferirPrazos());
+});
+
+function conferirPrazos() {
+  return fetch('./assets/dados-calendario.js', { cache: 'reload' })
+    .then(function (r) { return r.text(); })
+    .then(function (texto) {
+      var dados = {};
+      /* o arquivo atribui a window.DADOS_CALENDARIO: aqui não há window */
+      new Function('window', texto)(dados);
+      var eventos = (dados.DADOS_CALENDARIO && dados.DADOS_CALENDARIO.eventos) || [];
+
+      var hoje = new Date();
+      var iso = function (d) {
+        return d.getFullYear() + '-' +
+               String(d.getMonth() + 1).padStart(2, '0') + '-' +
+               String(d.getDate()).padStart(2, '0');
+      };
+      var limite = new Date();
+      limite.setDate(limite.getDate() + 3);
+
+      var proximos = eventos.filter(function (ev) {
+        return !ev.semData && ev.tipo !== 'feriado' && ev.ini >= iso(hoje) && ev.ini <= iso(limite);
+      });
+
+      return Promise.all(proximos.map(function (ev) {
+        var dias = Math.round((new Date(ev.ini + 'T12:00:00') - new Date(iso(hoje) + 'T12:00:00')) / 86400000);
+        var quando = dias === 0 ? 'é hoje' : dias === 1 ? 'é amanhã' : 'em ' + dias + ' dias';
+        return self.registration.showNotification('NAE Guanhães', {
+          body: ev.titulo + ', ' + quando + '.',
+          icon: './assets/icone-192.png',
+          badge: './assets/favicon-nae.png',
+          tag: 'prazo-' + ev.ini
+        });
+      }));
+    })
+    .catch(function () {});
+}
+
+/* tocar no aviso abre o calendário */
+self.addEventListener('notificationclick', function (e) {
+  e.notification.close();
+  e.waitUntil(self.clients.matchAll({ type: 'window' }).then(function (abertas) {
+    for (var i = 0; i < abertas.length; i++) {
+      if (abertas[i].url.indexOf('calendario.html') !== -1) return abertas[i].focus();
+    }
+    return self.clients.openWindow('./calendario.html');
+  }));
 });
 
 self.addEventListener('fetch', function (e) {

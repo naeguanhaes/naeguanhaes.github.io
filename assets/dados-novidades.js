@@ -15,8 +15,22 @@
    ═══════════════════════════════════════════════════════ */
 
 window.DADOS_NOVIDADES = {
-  atualizadoEm: '2026-08-07',
+  atualizadoEm: '2026-08-13',
   itens: [
+    {
+      data: '2026-08-13',
+      titulo: 'A busca agora procura dentro das ementas',
+      texto: 'Digite um assunto, como "ressalto hidráulico" ou "herança digital", e a busca mostra em quais disciplinas ele aparece. Clicando, a matriz abre já na disciplina certa.',
+      link: 'matriz.html',
+      textoLink: 'abrir a matriz'
+    },
+    {
+      data: '2026-08-13',
+      titulo: 'Aviso no celular três dias antes do prazo',
+      texto: 'Na página do calendário dá para ligar um aviso que aparece quando falta pouco para matrícula, trancamento ou exame especial. Sem propaganda, só prazo.',
+      link: 'calendario.html',
+      textoLink: 'ligar os avisos'
+    },
     {
       data: '2026-08-12',
       titulo: 'Períodos que abrem ao clicar, na matriz',

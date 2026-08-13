@@ -34,6 +34,102 @@
     };
   });
 
+  /* ── Busca dentro das ementas ──────────────────────────
+     As 190 ementas somam 300 KB e só interessam a quem procura
+     um assunto. Por isso os dados entram sob demanda, na primeira
+     vez que alguém digita, e não no carregamento de toda página. */
+  var ementas = { estado: 'parado', indice: [] };
+
+  function carregarScript(src) {
+    return new Promise(function (ok, erro) {
+      if (document.querySelector('script[data-sob-demanda="' + src + '"]')) return ok();
+      var s = document.createElement('script');
+      s.src = src;
+      s.setAttribute('data-sob-demanda', src);
+      s.onload = ok;
+      s.onerror = erro;
+      document.head.appendChild(s);
+    });
+  }
+
+  function montarIndiceEmentas() {
+    var C = window.DADOS_CURSO, E = window.DADOS_EMENTAS;
+    if (!C || !E) return;
+    (C.cursos || []).forEach(function (c) {
+      var nomes = {};
+      (c.periodos || []).forEach(function (p) {
+        (p.disciplinas || []).forEach(function (d) {
+          nomes[d.cod || d.nome] = { nome: d.nome, periodo: p.n };
+        });
+      });
+      (c.optativas || []).forEach(function (o) { nomes['OPT:' + o] = { nome: o, optativa: true }; });
+
+      Object.keys(E[c.id] || {}).forEach(function (chave) {
+        var info = nomes[chave];
+        if (!info) return;
+        var e = E[c.id][chave];
+        ementas.indice.push({
+          curso: c.nome, cor: c.cor, chave: chave,
+          nome: info.nome,
+          onde: info.optativa ? 'optativa' : info.periodo + 'º período',
+          ementa: e.ementa,
+          nn: U.normaliza(info.nome),
+          ne: U.normaliza(e.ementa)
+        });
+      });
+    });
+  }
+
+  function garantirEmentas() {
+    if (ementas.estado === 'pronto' || ementas.estado === 'carregando') return;
+    ementas.estado = 'carregando';
+    Promise.all([
+      carregarScript('assets/dados-curso.js'),
+      carregarScript('assets/dados-ementas.js')
+    ]).then(function () {
+      montarIndiceEmentas();
+      ementas.estado = 'pronto';
+      if (campo && campo.value) procurar(campo.value);
+    }).catch(function () { ementas.estado = 'falhou'; });
+  }
+
+  function acharEmentas(termos) {
+    if (ementas.estado !== 'pronto') return [];
+    var achados = [];
+    ementas.indice.forEach(function (d) {
+      var pontos = 0, todos = true;
+      termos.forEach(function (t) {
+        var p = 0;
+        if (d.nn.indexOf(t) !== -1) p += 5;
+        if (d.ne.indexOf(t) !== -1) p += 2;
+        if (!p) todos = false;
+        pontos += p;
+      });
+      if (todos && pontos) achados.push({ d: d, pontos: pontos });
+    });
+    achados.sort(function (a, b) { return b.pontos - a.pontos; });
+    return achados.slice(0, 6);
+  }
+
+  /* mostra o pedaço da ementa onde a palavra aparece */
+  function trechoDa(d, termos) {
+    var pos = -1, achado = '';
+    termos.forEach(function (t) {
+      var i = d.ne.indexOf(t);
+      if (i !== -1 && (pos === -1 || i < pos)) { pos = i; achado = t; }
+    });
+    if (pos === -1) return cortaInteiro(d.ementa, 0, 110);
+    return cortaInteiro(d.ementa, Math.max(0, pos - 45), pos + achado.length + 75);
+  }
+
+  /* corta o trecho em espaço, para não terminar no meio de uma palavra */
+  function cortaInteiro(texto, ini, fim) {
+    if (ini > 0) { while (ini < texto.length && texto.charAt(ini) !== ' ') ini++; ini++; }
+    if (fim < texto.length) { while (fim > ini && texto.charAt(fim) !== ' ') fim--; }
+    else { fim = texto.length; }
+    return (ini > 0 ? '…' : '') + texto.slice(ini, fim).trim() + (fim < texto.length ? '…' : '');
+  }
+
   var painel = null, campo = null, caixaRes = null, anuncio = null, ultimoFoco = null;
 
   /* tudo que recebe foco dentro do diálogo, na ordem da tela */
@@ -155,7 +251,17 @@
     achados.sort(function (a, b) { return b.pontos - a.pontos; });
     achados = achados.slice(0, 8);
 
-    if (!achados.length) {
+    /* a partir de três letras vale procurar também dentro das ementas */
+    var termoMaior = termos.some(function (t) { return t.length >= 3; });
+    if (termoMaior) garantirEmentas();
+    var disciplinas = termoMaior ? acharEmentas(termos) : [];
+
+    if (!achados.length && !disciplinas.length) {
+      if (ementas.estado === 'carregando') {
+        caixaRes.innerHTML = '<p class="busca-dica">Procurando também nas ementas das disciplinas…</p>';
+        avisar('Procurando nas ementas.');
+        return;
+      }
       caixaRes.innerHTML =
         '<p class="busca-dica">Nada encontrado para <b>' + U.escapar(texto) + '</b>. ' +
         'Tente outra palavra, ou <a href="contato.html">pergunte ao NAE</a>.</p>';
@@ -163,7 +269,7 @@
       return;
     }
 
-    caixaRes.innerHTML = achados.map(function (a) {
+    var html = achados.map(function (a) {
       var it = a.e.item;
       return '<a class="busca-item" href="' + U.escapar(it.u) + '">' +
                '<span class="bi-t">' + U.escapar(it.t) + '</span>' +
@@ -171,8 +277,25 @@
              '</a>';
     }).join('');
 
-    avisar(achados.length === 1 ? '1 resultado. Use as setas para percorrer.'
-                                : achados.length + ' resultados. Use as setas para percorrer.');
+    if (disciplinas.length) {
+      html += '<p class="busca-secao">Aparece na ementa destas disciplinas</p>' +
+        disciplinas.map(function (a) {
+          var d = a.d;
+          return '<a class="busca-item busca-disc" href="matriz.html?d=' + encodeURIComponent(d.chave) + '"' +
+                   ' style="--c: ' + d.cor + '">' +
+                   '<span class="bi-t">' + U.escapar(d.nome) +
+                     '<span class="bi-onde">' + U.escapar(d.curso + ' · ' + d.onde) + '</span>' +
+                   '</span>' +
+                   '<span class="bi-d">' + U.escapar(trechoDa(d, termos)) + '</span>' +
+                 '</a>';
+        }).join('');
+    }
+
+    caixaRes.innerHTML = html;
+
+    var total = achados.length + disciplinas.length;
+    avisar(total === 1 ? '1 resultado. Use as setas para percorrer.'
+                       : total + ' resultados. Use as setas para percorrer.');
   }
 
   /* fala com quem usa leitor de tela, sem mudar nada na tela */

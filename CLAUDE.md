@@ -46,7 +46,7 @@ de mudanças estão na pasta [`historico/`](historico/CONTEXTO.md).
    `node ferramentas/gerar-dados-estruturados.js`, que reescreve o que o
    Google lê. As perguntas saem do próprio HTML, então não se digita nada
    duas vezes.
-8. Rode as seis inspeções. O workflow roda todas de novo e
+8. Rode as sete inspeções. O workflow roda todas de novo e
    **bloqueia a publicação** se qualquer uma falhar:
    ```bash
    node ferramentas/checar-dados.js
@@ -55,6 +55,7 @@ de mudanças estão na pasta [`historico/`](historico/CONTEXTO.md).
    node ferramentas/checar-consistencia.js
    node ferramentas/checar-minificados.js
    node ferramentas/checar-versao.js
+   node ferramentas/checar-ementas.js
    ```
 9. Commit e push na branch `main`, **sem perguntar**: o coordenador autorizou
    a publicação automática em 07/08/2026, porque o workflow já barra o deploy
@@ -83,7 +84,7 @@ As três já funcionam por endereço direto, para o coordenador revisar.
 ## Rotinas automáticas
 
 - **Publicação**: `.github/workflows/publicar.yml`, a cada push na `main`,
-  com as seis inspeções barrando o deploy quando encontram problema.
+  com as sete inspeções barrando o deploy quando encontram problema.
 - **Vigia dos links externos**: `.github/workflows/links-externos.yml`,
   toda segunda-feira às 09h. Se um endereço de fora morrer, abre uma tarefa
   no repositório avisando. Sites que bloqueiam robô ficam na lista
@@ -188,15 +189,29 @@ Ferramentas, todas em `ferramentas/`:
 | `checar-consistencia.js` | menu, rodapé, sintaxe dos scripts, busca, sitemap |
 | `checar-minificados.js` | `assets/min/` em dia com as origens |
 | `checar-versao.js` | cobra a troca da `VERSAO` do `sw.js` |
+| `checar-ementas.js` | prova que cada ementa e cada referência existem no PPC |
 | `checar-frescor.js` | dados envelhecendo (roda todo mês, não bloqueia) |
 | `checar-links-externos.js` | endereços de fora que morreram |
 | `minificar.js` | recompacta para `assets/min/` e grava `origem.json` |
+| `gerar-ementas.js` | reescreve `dados-ementas.js` a partir de `fontes/` |
 | `gerar-sitemap.js` | `sitemap.xml` e `robots.txt` |
 | `gerar-dados-estruturados.js` | JSON-LD do NAE e do FAQ, lido do próprio HTML |
 
+### Ementas: como mexer sem estragar
+
+`assets/dados-ementas.js` **não se edita à mão**. Ele sai de
+`node ferramentas/gerar-ementas.js`, que lê o texto puro dos dois PPCs em
+`fontes/` (extraído com `pdftotext -layout -enc UTF-8`). Depois de gerar,
+rode sempre `node ferramentas/checar-ementas.js`: ele confere letra por
+letra se cada ementa e cada referência existem mesmo no PPC, e ainda barra
+ementa longa demais ou com cabeçalho de outra seção dentro, que é como um
+erro de extração aparece. Quando um PPC novo for aprovado, troque o arquivo
+em `fontes/` (as instruções estão em `fontes/LEIA-ME.md`) e rode os dois.
+
 Gerados por ferramenta, não editar à mão: `sitemap.xml`, `robots.txt`,
-`assets/min/`, e os blocos entre "dados estruturados: inicio" e "fim" no
-`<head>` de `index`, `contato`, `email`, `sistemas`, `moodle` e `lyceum`.
+`assets/min/`, `assets/dados-ementas.js`, e os blocos entre "dados
+estruturados: inicio" e "fim" no `<head>` de `index`, `contato`, `email`,
+`sistemas`, `moodle` e `lyceum`.
 
 O restante está detalhado no `README.md`, em `historico/CONTEXTO.md` e, para
 o dia em que a coordenação mudar de mãos, em `historico/CONTINUIDADE.md`.

@@ -36,6 +36,8 @@ jobs:
         run: node ferramentas/checar-acessibilidade.js
       - name: Inspecionar a consistência (menu, rodapé, busca, sitemap)
         run: node ferramentas/checar-consistencia.js
+      - name: Provar que as ementas continuam iguais ao PPC
+        run: node ferramentas/checar-ementas.js
       - name: Conferir se assets/min está em dia com as origens
         run: node ferramentas/checar-minificados.js
       - name: Cobrar a troca da VERSAO do cache offline

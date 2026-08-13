@@ -3,6 +3,51 @@
 Registro do que mudou e quando, do mais recente para o mais antigo.
 Ao fazer uma alteração relevante, acrescente uma entrada no topo.
 
+## 13/08/2026 · décima quarta rodada (busca nas ementas, aviso de prazo e revisão completa)
+
+Três pedidos do coordenador: busca dentro das ementas, aviso de prazo e uma
+revisão de **todas** as ementas, não de uma amostra.
+
+- **Busca dentro das ementas.** Digitando um assunto, a busca mostra em quais
+  disciplinas ele aparece, com o trecho em volta da palavra. As ementas são
+  306 KB, então só são carregadas quando o termo tem três letras ou mais, e
+  ficam fora do custo de quem só quer achar o telefone do NAE. O resultado leva
+  para `matriz.html?d=CHAVE`, que troca o curso se preciso, abre o período,
+  abre a ementa e destaca a linha por alguns segundos.
+- **Aviso de prazo no aparelho**, na página do calendário. Sem servidor não há
+  como empurrar notificação de verdade, e o cartão diz isso com todas as
+  letras: o aviso é preparado no próprio aparelho e aparece quando o site ou o
+  aplicativo instalado é aberto. No Android, com o site instalado, o
+  `periodicsync` do trabalhador de serviço faz o sistema acordar o site
+  sozinho. Para garantia total, o cartão aponta para o botão que baixa as
+  datas para a agenda do celular.
+- **Revisão completa das ementas, e ela achou defeito de verdade.** A
+  conferência letra por letra dizia "nenhum problema", e estava certa: o texto
+  errado também existia no PPC. Faltava desconfiar do tamanho. Duas
+  disciplinas de Direito tinham engolido páginas inteiras do documento:
+  "Tópicos em Teoria do Direito" com 18.075 letras (a ementa real tem 239) e
+  "Elaboração de Projeto de TCC" com 10.601 letras de regulamento do Núcleo de
+  Práticas, sem nenhuma das 8 referências que lhe cabiam. Três causas:
+  1. a busca por `EMENTA` casava dentro de "Lei Compl**ementa**r", e a ementa
+     começava no meio de um artigo do regulamento;
+  2. sem bibliografia depois dela, a ementa não tinha onde parar e seguia
+     documento adentro;
+  3. no empate de nome, ganhava a ementa **mais longa**, ou seja, exatamente o
+     bloco que havia escorrido.
+- O extrator virou ferramenta do repositório, `ferramentas/gerar-ementas.js`,
+  em vez de um script solto: `dados-ementas.js` agora se regenera com um
+  comando. E o `checar-ementas.js` ganhou duas regras que teriam pego o
+  defeito no dia em que ele nasceu: ementa acima de 2.500 letras e cabeçalho
+  de outra seção ("3.4 ", "Art. 5", "9° Período") dentro da ementa.
+- Saldo da revisão: 190 ementas e **1.364** referências (eram 1.356; as 8 novas
+  são as do TCC 1 de Direito), zero problemas. Nove disciplinas seguem sem
+  ementa porque o PPC não traz mesmo: são atividades, extensão e estágio.
+- sw em nae-v22.
+
+A lição fica registrada: um inspetor que só compara com a fonte não percebe
+quando a fonte inteira foi copiada. Precisa também saber o tamanho e o formato
+que a coisa certa tem.
+
 ## 12/08/2026 · décima terceira rodada (períodos clicáveis e editais no ar)
 
 - Na matriz, cada período virou uma caixa que **abre ao clicar**, com resumo no

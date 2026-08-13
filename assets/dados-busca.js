@@ -157,6 +157,12 @@ window.DADOS_BUSCA = {
       k: 'calendario data prazo feriado recesso ferias matricula trancamento reopcao exame especial semestre inicio fim'
     },
     {
+      t: 'Ser avisado três dias antes do prazo',
+      d: 'Ligue o aviso no seu aparelho para matrícula, trancamento e exame especial.',
+      u: 'calendario.html',
+      k: 'aviso notificacao alerta lembrete prazo avisar tres dias antes matricula trancamento exame'
+    },
+    {
       t: 'Levar o calendário para o celular',
       d: 'Baixe o arquivo que coloca as datas no Google Agenda ou no iPhone.',
       u: 'calendario.html',

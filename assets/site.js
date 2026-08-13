@@ -525,6 +525,117 @@
   }
 
 
+  /* ── Aviso de prazo ───────────────────────────────────
+     Sem servidor não existe notificação enviada de fora: o site é só
+     arquivos parados no GitHub. O que dá para fazer, e é honesto dizer,
+     é avisar quando o estudante abre o site ou o aplicativo instalado.
+     Onde o navegador oferece sincronização periódica (Android com o site
+     instalado), o próprio sistema abre o site de tempos em tempos e o
+     aviso chega sozinho. */
+  (function avisoDePrazo() {
+    var DIAS = 3;
+    var botao = document.getElementById('btn-avisos-prazo');
+    var estado = document.getElementById('avisos-prazo-estado');
+
+    function suportado() {
+      return 'Notification' in window && location.protocol === 'https:';
+    }
+
+    function proximos() {
+      if (!window.DADOS_CALENDARIO) return [];
+      var hoje = hojeISO();
+      var limite = new Date();
+      limite.setDate(limite.getDate() + DIAS);
+      var ate = hojeISO(limite);
+      return (window.DADOS_CALENDARIO.eventos || []).filter(function (ev) {
+        return !ev.semData && ev.tipo !== 'feriado' && ev.ini >= hoje && ev.ini <= ate;
+      });
+    }
+
+    function jaAvisou(ev) {
+      return (ler('avisado') || '').split('|').indexOf(ev.ini + ev.titulo) !== -1;
+    }
+    function marcarAvisado(ev) {
+      var lista = (ler('avisado') || '').split('|').filter(Boolean);
+      lista.push(ev.ini + ev.titulo);
+      guardar('avisado', lista.slice(-40).join('|'));
+    }
+
+    function disparar() {
+      if (!suportado() || Notification.permission !== 'granted') return 0;
+      var lista = proximos().filter(function (ev) { return !jaAvisou(ev); });
+      lista.forEach(function (ev) {
+        var dias = Math.round((new Date(ev.ini + 'T12:00:00') - new Date(hojeISO() + 'T12:00:00')) / 86400000);
+        var quando = dias === 0 ? 'é hoje' : dias === 1 ? 'é amanhã' : 'em ' + dias + ' dias';
+        try {
+          new Notification('NAE Guanhães', {
+            body: ev.titulo + ', ' + quando + '.',
+            icon: 'assets/icone-192.png',
+            badge: 'assets/favicon-nae.png',
+            tag: 'prazo-' + ev.ini
+          });
+          marcarAvisado(ev);
+        } catch (e) {}
+      });
+      return lista.length;
+    }
+
+    /* pede ao navegador para reabrir o site de vez em quando */
+    function pedirSincronizacao() {
+      if (!('serviceWorker' in navigator) || !('periodicSync' in ServiceWorkerRegistration.prototype)) return;
+      navigator.serviceWorker.ready.then(function (reg) {
+        if (!reg.periodicSync) return;
+        reg.periodicSync.register('conferir-prazos', { minInterval: 12 * 60 * 60 * 1000 }).catch(function () {});
+      });
+    }
+
+    function pintar() {
+      if (!botao || !estado) return;
+      if (!suportado()) {
+        botao.hidden = true;
+        estado.textContent = 'Este navegador não oferece aviso de prazo. Continue conferindo o calendário por aqui.';
+        return;
+      }
+      if (Notification.permission === 'granted') {
+        botao.hidden = true;
+        var quantos = proximos().length;
+        estado.innerHTML = '<b>Avisos ligados.</b> ' + (quantos
+          ? 'Há ' + quantos + (quantos === 1 ? ' prazo' : ' prazos') + ' nos próximos ' + DIAS + ' dias.'
+          : 'Nenhum prazo nos próximos ' + DIAS + ' dias.');
+      } else if (Notification.permission === 'denied') {
+        botao.hidden = true;
+        estado.textContent = 'Você bloqueou os avisos para este site. Para voltar atrás, libere as notificações nas configurações do navegador.';
+      } else {
+        botao.hidden = false;
+        estado.textContent = '';
+      }
+    }
+
+    if (botao) {
+      botao.addEventListener('click', function () {
+        if (!suportado()) return;
+        Notification.requestPermission().then(function (r) {
+          pintar();
+          if (r === 'granted') {
+            pedirSincronizacao();
+            var n = disparar();
+            toast(n ? 'Avisos ligados. Você tem prazo chegando.'
+                    : 'Avisos ligados. Nada nos próximos ' + DIAS + ' dias.');
+          } else {
+            toast('Tudo bem, os prazos continuam no calendário.');
+          }
+        });
+      });
+      pintar();
+    }
+
+    /* em toda visita, avisa o que ainda não avisou */
+    if (suportado() && Notification.permission === 'granted') {
+      pedirSincronizacao();
+      setTimeout(disparar, 1500);
+    }
+  })();
+
   /* ── Contagem regressiva do hero ──────────────────── */
   (function contagem() {
     var caixa = document.getElementById('contagem-hero');
