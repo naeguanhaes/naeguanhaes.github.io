@@ -48,6 +48,13 @@ A lição fica registrada: um inspetor que só compara com a fonte não percebe
 quando a fonte inteira foi copiada. Precisa também saber o tamanho e o formato
 que a coisa certa tem.
 
+Esta rodada foi feita em paralelo com outra, no computador de casa, que trouxe
+`auxilios.html`, o roteiro de "quem procurar" no contato e o termo inicial das
+atividades complementares de Direito. As duas se encontraram em um merge: os
+únicos choques reais foram a `VERSAO` do `sw.js` (que passou a nae-v26, acima
+das duas) e os arquivos gerados, que foram simplesmente refeitos. Sete
+inspeções passaram depois da junção.
+
 ## 12/08/2026 · décima terceira rodada (períodos clicáveis e editais no ar)
 
 - Na matriz, cada período virou uma caixa que **abre ao clicar**, com resumo no

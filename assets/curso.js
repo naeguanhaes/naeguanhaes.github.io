@@ -520,16 +520,23 @@
         porGrupo[l.grupo].push(l);
       });
 
+      /* a coluna do termo inicial só existe onde o curso tem essa regra.
+         Hoje é o caso de Direito, pela aditiva do Colegiado de 11/03/2026;
+         em Engenharia o quadro do PPC não trata do assunto. */
+      var temQuando = a.tabela.some(function (l) { return l.desdeQuando; });
+      var colunas = temQuando ? 5 : 4;
+
       var corpo = ordem.map(function (g) {
         var cor = CORES_GRUPO[g] || 'var(--muted)';
         return '<tr class="grupo-linha" style="--c: ' + cor + '">' +
-                 '<th scope="colgroup" colspan="4">' + U.escapar(g) + '</th>' +
+                 '<th scope="colgroup" colspan="' + colunas + '">' + U.escapar(g) + '</th>' +
                '</tr>' +
                porGrupo[g].map(function (l) {
                  return '<tr>' +
                    '<td>' + U.escapar(l.atividade) + '</td>' +
                    '<td>' + U.escapar(l.porEvento) + '</td>' +
                    '<td class="ppc-teto">' + l.teto + ' h</td>' +
+                   (temQuando ? '<td>' + U.escapar(l.desdeQuando || '') + '</td>' : '') +
                    '<td>' + U.escapar(l.comprovante) + '</td></tr>';
                }).join('');
       }).join('');
@@ -544,17 +551,24 @@
         '<div class="stack-s">' +
           '<div class="note col"><p><b>Prazo</b> ' + U.escapar(a.prazo) + '</p></div>' +
           '<div class="note col"><p><b>Como protocolar</b> ' + U.escapar(a.comoProtocolar) + '</p></div>' +
+          (a.termoInicial
+            ? '<div class="note alerta col"><p><b>A partir de quando conta</b> ' +
+              U.escapar(a.termoInicial) + '</p></div>'
+            : '') +
           '<h2 class="tabela-titulo">O que pode ser contabilizado</h2>' +
           '<div class="grupo-selos">' + resumoGrupos + '</div>' +
           '<div class="rolagem-tabela">' +
             '<table class="tabela-ppc">' +
               '<caption class="so-leitor">Modalidades de atividade complementar aceitas em ' + U.escapar(c.nome) + '</caption>' +
               '<thead><tr><th scope="col">Atividade</th><th scope="col">Quanto vale</th>' +
-              '<th scope="col">Teto</th><th scope="col">Comprovante</th></tr></thead>' +
+              '<th scope="col">Teto</th>' +
+              (temQuando ? '<th scope="col">A partir de quando conta</th>' : '') +
+              '<th scope="col">Comprovante</th></tr></thead>' +
               '<tbody>' + corpo + '</tbody>' +
             '</table>' +
           '</div>' +
-          '<p class="dica-rolagem-tabela">Arraste a tabela para o lado para ver o comprovante de cada modalidade.</p>' +
+          '<p class="dica-rolagem-tabela">Arraste a tabela para o lado para ver ' +
+            (temQuando ? 'o prazo e o comprovante' : 'o comprovante') + ' de cada modalidade.</p>' +
           '<p class="fonte-ppc">' + U.escapar(a.tabelaNota) + '</p>' +
         '</div>';
     });

@@ -181,6 +181,18 @@ window.DADOS_BUSCA = {
       k: 'edital editais bolsa bolsas auxilio assistencia estudantil monitoria extensao pesquisa inscricao prazo oportunidade ajuda financeira dinheiro'
     },
     {
+      t: 'Não recebi o auxílio. E agora?',
+      d: 'Passo a passo de quando o pagamento não cai: conferir o edital, para quem escrever e o que informar.',
+      u: 'auxilios.html#nao-recebi',
+      k: 'nao recebi nao caiu nao pagou pagamento atrasado auxilio bolsa paes inclua monitoria estagio deposito banco conta dados bancarios cpf reclamar cobrar atraso quem procurar nae uemg pema prograd'
+    },
+    {
+      t: 'Auxílios, bolsas e pagamentos',
+      d: 'Auxílio estudantil, Programa INCLUA, monitoria e estágio na UEMG, e o que fazer quando o pagamento falha.',
+      u: 'auxilios.html',
+      k: 'auxilio auxilios bolsa pagamento paes inclua programa monitoria estagio assistencia estudantil dados bancarios cpf matricula deposito'
+    },
+    {
       t: 'Apoio psicológico',
       d: 'CAPS gratuito em Guanhães, plataformas com preço social e o CVV 188.',
       u: 'apoio.html',
@@ -191,6 +203,12 @@ window.DADOS_BUSCA = {
       d: 'Prédio do Administrativo. Terças e quintas, das 18h às 19h.',
       u: 'contato.html',
       k: 'nae sala atendimento onde fica falar contato coordenacao jonatan horario predio administrativo'
+    },
+    {
+      t: 'Quem procurar para cada assunto',
+      d: 'A quem escrever conforme o problema. Acesso ao Moodle vai para a Coordenadoria de EaD, com cópia para o NAE.',
+      u: 'contato.html#quem-procurar',
+      k: 'quem procurar a quem recorrer contato certo suporte ajuda moodle ava acesso coordenadoria ead copia nae secretaria cadastro matricula disciplina coordenacao do curso email institucional encaminhar duvida'
     },
     {
       t: 'Contato da secretaria e da unidade',

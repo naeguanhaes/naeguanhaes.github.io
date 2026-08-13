@@ -32,6 +32,27 @@ window.DADOS_NOVIDADES = {
       textoLink: 'ligar os avisos'
     },
     {
+      data: '2026-08-13',
+      titulo: 'Não recebi o auxílio. E agora?',
+      texto: 'Página nova sobre auxílios, INCLUA, monitoria e estágio na UEMG, com o passo a passo de quando o pagamento não cai: o que conferir no edital, para quem escrever e o que informar no e-mail.',
+      link: 'auxilios.html#nao-recebi',
+      textoLink: 'ver o passo a passo'
+    },
+    {
+      data: '2026-08-13',
+      titulo: 'Quem procurar para cada assunto',
+      texto: 'Um roteiro de para quem escrever conforme o problema. Acesso ao AVA Moodle vai para a Coordenadoria de EaD, sempre com cópia para o NAE, que assim acompanha o seu caso de perto.',
+      link: 'contato.html#quem-procurar',
+      textoLink: 'ver o roteiro'
+    },
+    {
+      data: '2026-08-12',
+      titulo: 'Atividades complementares: a partir de quando cada uma conta',
+      texto: 'O Colegiado aprovou a regulamentação aditiva do Quadro 02. A regra é que só conta o que tem data posterior à sua matrícula no curso de Direito. A tabela agora mostra isso modalidade por modalidade, com as exceções.',
+      link: 'atividades.html',
+      textoLink: 'ver a tabela'
+    },
+    {
       data: '2026-08-12',
       titulo: 'Períodos que abrem ao clicar, na matriz',
       texto: 'Cada período virou uma caixa que abre e fecha, mostrando quantas disciplinas tem e quantas você já cursou. Fica bem mais fácil achar o seu.',

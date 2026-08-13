@@ -1531,6 +1531,24 @@ html[data-contraste="alto"] .etiqueta { border-color: #000; color: #000; }
 .req-guardar input { margin-top: .2rem; accent-color: var(--azul); }
 .req-acoes { display: flex; flex-wrap: wrap; gap: .6rem; }
 
+/* ── Modelo de e-mail para o aluno preencher e copiar ── */
+.modelo-email { display: flex; flex-direction: column; gap: .6rem; margin-top: var(--s2); }
+.modelo-cab {
+  display: flex; flex-direction: column; gap: .15rem;
+  font-size: .88rem; color: var(--ink-2);
+  border-left: 4px solid var(--c, var(--azul)); padding-left: .7rem;
+}
+.modelo-cab b { color: var(--ink); }
+.modelo-email textarea {
+  width: 100%; font-family: var(--mono); font-size: .88rem; line-height: 1.65;
+  padding: .8rem .9rem; border: 1px solid var(--line); border-radius: 10px;
+  background: var(--surface); color: var(--ink); resize: vertical; min-height: 24rem;
+}
+.modelo-email textarea:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }
+.modelo-acoes { display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; }
+html[data-contraste="alto"] .modelo-email textarea,
+html[data-contraste="alto"] .modelo-cab { border-color: #000; }
+
 /* a folha imita o papel que vai ser entregue na secretaria */
 .folha {
   background: #fff; border: 1px solid var(--line); border-radius: 4px;
