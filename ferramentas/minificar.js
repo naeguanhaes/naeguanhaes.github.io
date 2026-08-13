@@ -76,12 +76,15 @@ CSS.forEach(nome => {
   }
 });
 
-/* impressão digital das origens, para o inspetor conferir depois */
+/* Impressão digital das origens, para o inspetor conferir depois.
+   O fim de linha é normalizado antes de calcular, senão o mesmo arquivo
+   teria uma impressão no Windows (CR LF) e outra no servidor (LF).
+   O checar-minificados.js calcula do mesmo jeito. */
 if (!erro) {
   const digitais = {};
   JS.concat(CSS).forEach(nome => {
-    const conteudo = fs.readFileSync(path.join(ORIGEM, nome));
-    digitais[nome] = crypto.createHash('sha256').update(conteudo).digest('hex');
+    const conteudo = fs.readFileSync(path.join(ORIGEM, nome), 'utf8').replace(/\r\n/g, '\n');
+    digitais[nome] = crypto.createHash('sha256').update(conteudo, 'utf8').digest('hex');
   });
   fs.writeFileSync(path.join(DESTINO, 'origem.json'),
     JSON.stringify(digitais, null, 2) + '\n');

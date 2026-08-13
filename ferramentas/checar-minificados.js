@@ -34,8 +34,16 @@ const FONTES = JS.concat(CSS);
 
 const problemas = [];
 
+/* A impressão digital ignora o fim de linha.
+
+   O Windows guarda os arquivos com CR LF e o Linux só com LF, e o git
+   converte de um para o outro na hora do checkout. Sem normalizar, o mesmo
+   arquivo tem duas impressões diferentes: a inspeção passava na máquina do
+   coordenador e reprovava no servidor, dizendo que o compactado estava
+   desatualizado quando não estava. */
 function digital(arquivo) {
-  return crypto.createHash('sha256').update(fs.readFileSync(arquivo)).digest('hex');
+  const texto = fs.readFileSync(arquivo, 'utf8').replace(/\r\n/g, '\n');
+  return crypto.createHash('sha256').update(texto, 'utf8').digest('hex');
 }
 
 console.log('');
