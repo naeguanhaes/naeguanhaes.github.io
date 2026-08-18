@@ -1551,11 +1551,17 @@ html[data-contraste="alto"] .etiqueta { border-color: #000; color: #000; }
   border-bottom: 1px solid var(--ink); text-align: center;
   color: var(--muted); font-size: .95em;
 }
+.folha-vaga-media {
+  display: inline-block; min-width: 16rem;
+  border-bottom: 1px solid var(--ink); text-align: center;
+  color: var(--muted); font-size: .95em;
+}
 .folha-vaga-longa {
   border-bottom: 1px solid var(--ink); margin: 0 0 1.4rem; min-height: 1.6rem;
 }
 .folha .folha-lista li { margin-bottom: .6rem; }
 html[data-contraste="alto"] .folha-vaga,
+html[data-contraste="alto"] .folha-vaga-media,
 html[data-contraste="alto"] .folha-vaga-longa { border-color: #000; }
 
 /* ── Modelo de e-mail para o aluno preencher e copiar ── */
@@ -1650,7 +1656,8 @@ html[data-contraste="alto"] .modelo-cab { border-color: #000; }
   .pg-declaracao .folha {
     border: 0; padding: 0; max-width: none; font-size: 11.5pt; line-height: 1.7;
   }
-  .pg-declaracao .folha-vaga { color: #000; }
+  .pg-declaracao .folha-vaga,
+  .pg-declaracao .folha-vaga-media { color: #000; }
   .pg-declaracao main { padding: 0; }
 
   /* planner: quatro folhas A4, uma por página */
