@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[Nome do projeto] · projeto de extensão | NAE Guanhães</title>
+<meta name="description" content="Inscrições abertas para o projeto de extensão da UEMG Unidade Guanhães. Veja o que você vai fazer, quem pode participar e como se inscrever.">
+<link rel="icon" href="assets/favicon-nae.png" type="image/png">
+<meta name="theme-color" content="#40688B">
+<meta name="color-scheme" content="light">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/icone-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="NAE Guanhães">
+<meta name="mobile-web-app-capable" content="yes">
+<script>
+try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentElement.setAttribute("data-fonte",f);var c=localStorage.getItem("nae:contraste");if(c==="sim")document.documentElement.setAttribute("data-contraste","alto")}catch(e){}</script>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="assets/min/estilo.min.css">
+</head>
+<body class="pg-extensao">
+
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<div id="avisos"></div>
+
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="index.html">
+      <img class="marca" src="assets/logo-topo.webp" width="620" height="279" alt="NAE · Núcleo de Apoio ao Estudante · Unidade Guanhães">
+    </a>
+    <div class="unidade">
+      <b>UEMG · Unidade Guanhães</b><br>
+      Coordenação: Jonatan Barbosa Silva
+    </div>
+    <div class="topo-acoes">
+      <button class="btn-topo" type="button" data-fonte-menos aria-label="Diminuir o tamanho do texto" title="Texto menor">A-</button>
+      <button class="btn-topo" type="button" data-fonte-mais aria-label="Aumentar o tamanho do texto" title="Texto maior">A+</button>
+      <button class="btn-topo" type="button" data-contraste-btn aria-pressed="false" aria-label="Alternar o alto contraste" title="Ligar o alto contraste">◐</button>
+      <button class="btn-topo" type="button" data-abrir-busca aria-label="Buscar no site" title="Buscar no site (tecla /)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.8-3.8"></path></svg></button>
+    </div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Seções do site">
+  <div class="wrap nav-in">
+    <a class="nav-link" href="index.html" style="--c: var(--azul-esc)"><i class="dot"></i>Início</a>
+    <div class="nav-grupo" data-grupo="Sistemas" style="--c: var(--petroleo)">
+      <a class="nav-link" href="sistemas.html" style="--c: var(--petroleo)"><i class="dot"></i>Visão geral dos sistemas</a>
+      <a class="nav-link" href="email.html" style="--c: var(--azul)"><i class="dot"></i>E-mail institucional</a>
+      <a class="nav-link" href="moodle.html" style="--c: var(--petroleo)"><i class="dot"></i>AVA Moodle</a>
+      <a class="nav-link" href="lyceum.html" style="--c: var(--azul)"><i class="dot"></i>Lyceum e app UEMG+</a>
+    </div>
+    <div class="nav-grupo" data-grupo="Aulas e prazos" style="--c: var(--turquesa)">
+      <a class="nav-link" href="horarios.html" style="--c: var(--turquesa)"><i class="dot"></i>Horários de aulas</a>
+      <a class="nav-link" href="calendario.html" style="--c: var(--lilas)"><i class="dot"></i>Calendário acadêmico</a>
+      <a class="nav-link" href="mapa.html" style="--c: var(--verde)"><i class="dot"></i>Mapa do campus</a>
+    </div>
+    <div class="nav-grupo" data-grupo="Ferramentas" style="--c: var(--turquesa)">
+      <a class="nav-link" href="calculadora.html" style="--c: var(--turquesa)"><i class="dot"></i>Calculadora de média e faltas</a>
+      <a class="nav-link" href="cronometro.html" style="--c: var(--petroleo)"><i class="dot"></i>Cronômetro de estudos</a>
+      <a class="nav-link" href="planner.html" style="--c: var(--verde)"><i class="dot"></i>Planner do semestre</a>
+      <a class="nav-link" href="requerimentos.html" style="--c: var(--azul)"><i class="dot"></i>Gerador de requerimentos</a>
+    </div>
+    <div class="nav-grupo" data-grupo="Meu curso" style="--c: var(--azul)">
+      <a class="nav-link" href="curso.html" style="--c: var(--azul-esc)"><i class="dot"></i>Visão geral do curso</a>
+      <a class="nav-link" href="matriz.html" style="--c: var(--azul)"><i class="dot"></i>Matriz curricular</a>
+      <a class="nav-link" href="atividades.html" style="--c: var(--coral)"><i class="dot"></i>Atividades complementares</a>
+      <a class="nav-link" href="estagio.html" style="--c: var(--verde)"><i class="dot"></i>Estágio</a>
+      <a class="nav-link" href="tcc.html" style="--c: var(--lilas)"><i class="dot"></i>Trabalho de Conclusão</a>
+      <a class="nav-link" href="declaracao-ia.html" style="--c: var(--rosa)"><i class="dot"></i>Declaração de uso de IA</a>
+      <a class="nav-link" href="secretaria.html" style="--c: var(--turquesa)"><i class="dot"></i>Secretaria e regras</a>
+    </div>
+    <div class="nav-grupo" data-grupo="Editais e bolsas" style="--c: var(--ambar)">
+      <a class="nav-link" href="editais.html" style="--c: var(--ambar)"><i class="dot"></i>Editais abertos</a>
+      <a class="nav-link" href="auxilios.html" style="--c: var(--coral)"><i class="dot"></i>Auxílios e pagamentos</a>
+    </div>
+    <a class="nav-link" href="apoio.html" style="--c: var(--rosa)"><i class="dot"></i>Apoio psicológico</a>
+    <a class="nav-link" href="avisos.html" style="--c: var(--turquesa)"><i class="dot"></i>Avisos</a>
+    <div class="nav-grupo" data-grupo="Sobre o NAE" style="--c: var(--ambar)">
+      <a class="nav-link" href="sobre.html" style="--c: var(--ambar)"><i class="dot"></i>O que é o NAE</a>
+      <a class="nav-link" href="contato.html" style="--c: var(--coral)"><i class="dot"></i>Fale com o NAE</a>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap stack" id="conteudo">
+
+  <nav class="trilha" aria-label="Você está aqui" style="--c: var(--verde)">
+    <a href="index.html">Início</a><span class="separa">›</span><a href="editais.html">Editais e bolsas</a><span class="separa">›</span><span aria-current="page">Projeto de extensão</span>
+  </nav>
+
+  <div class="ext-rascunho">
+    <p>
+      <b>Esta página é um rascunho.</b> O visual está pronto, o conteúdo não.
+      Tudo que aparece <span class="ext-falta">marcado em amarelo</span> é texto de
+      exemplo, esperando o edital. A página está fora do menu e com
+      <b>noindex</b>, então não aparece na busca do site nem no Google.
+    </p>
+  </div>
+
+  <div class="hero">
+    <div class="hero-in">
+      <span class="eyebrow">Projeto de extensão · UEMG Guanhães</span>
+      <h1><span class="ext-falta">[Nome do projeto]</span></h1>
+      <p><span class="ext-falta">[Uma frase dizendo o que o projeto faz e para quem, do jeito que você contaria a um aluno no corredor.]</span></p>
+      <a class="hero-contagem" href="#inscricao" id="ext-contagem" data-encerra="2026-09-30">
+        <span class="pulso" aria-hidden="true"></span>
+        <span id="ext-contagem-txt">Inscrições abertas</span>
+      </a>
+      <div class="hero-acoes">
+        <a class="btn" href="#inscricao">Quero me inscrever →</a>
+        <a class="btn ghost" href="#o-que-e">Entender o projeto</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="ext-numeros">
+    <div class="ext-numero" style="--c: var(--verde)">
+      <b class="ext-falta">[12]</b><span>vagas para estudantes</span>
+    </div>
+    <div class="ext-numero" style="--c: var(--turquesa)">
+      <b class="ext-falta">[6h]</b><span>por semana</span>
+    </div>
+    <div class="ext-numero" style="--c: var(--lilas)">
+      <b class="ext-falta">[1]</b><span>semestre de duração</span>
+    </div>
+    <div class="ext-numero" style="--c: var(--ambar)">
+      <b>15h</b><span>de atividade complementar por semestre</span>
+    </div>
+  </div>
+
+  <div class="col stack-s" id="o-que-e">
+    <div class="titulo-sec" style="--c: var(--verde)">
+      <span class="eyebrow" style="--c: var(--verde)">O projeto</span>
+      <h2>O que você vai fazer</h2>
+    </div>
+  </div>
+
+  <div class="ext-grade">
+    <div class="ext-item" style="--c: var(--verde)">
+      <span class="ext-ico" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"></path><path d="M5 8h14"></path><path d="M7 21h10"></path></svg>
+      </span>
+      <h3 class="ext-falta">[Atividade 1]</h3>
+      <p class="ext-falta">[O que o aluno faz na prática nesta frente. Duas linhas bastam.]</p>
+    </div>
+    <div class="ext-item" style="--c: var(--turquesa)">
+      <span class="ext-ico" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 00-3-3.87"></path></svg>
+      </span>
+      <h3 class="ext-falta">[Atividade 2]</h3>
+      <p class="ext-falta">[O que o aluno faz na prática nesta frente.]</p>
+    </div>
+    <div class="ext-item" style="--c: var(--lilas)">
+      <span class="ext-ico" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"></path></svg>
+      </span>
+      <h3 class="ext-falta">[Atividade 3]</h3>
+      <p class="ext-falta">[O que o aluno faz na prática nesta frente.]</p>
+    </div>
+    <div class="ext-item" style="--c: var(--coral)">
+      <span class="ext-ico" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 00-7.8 7.8l1.1 1L12 21l7.7-7.6 1.1-1a5.5 5.5 0 000-7.8z"></path></svg>
+      </span>
+      <h3 class="ext-falta">[Atividade 4]</h3>
+      <p class="ext-falta">[O que o aluno faz na prática nesta frente.]</p>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="card reveal" style="--c: var(--azul)">
+      <span class="rotulo">Requisitos</span>
+      <h2>Quem pode se inscrever</h2>
+      <ul class="limpa" style="--c: var(--azul)">
+        <li class="ext-falta">[Estar matriculado em qual curso e a partir de qual período.]</li>
+        <li class="ext-falta">[Disponibilidade de horário exigida.]</li>
+        <li class="ext-falta">[Pré-requisito de disciplina, se houver.]</li>
+        <li class="ext-falta">[Outros critérios do edital.]</li>
+      </ul>
+    </div>
+
+    <div class="card reveal" style="--c: var(--ambar)">
+      <span class="rotulo">Vale horas</span>
+      <h2>Conta como atividade complementar</h2>
+      <p>
+        Participar de projeto de extensão da UEMG vale <b>15 horas por semestre</b>,
+        até o teto de <b>90 horas</b>, no grupo Extensão do Quadro 02.
+      </p>
+      <p>
+        Isso vale para o curso de <b>Direito</b>. Em <b>Engenharia Civil</b> a extensão
+        não entra como atividade complementar, porque é aproveitada no componente
+        curricular próprio de Atividades de Extensão, que tem regimento à parte.
+      </p>
+      <div><a class="btn ghost" href="atividades.html" style="--c: var(--ambar)">Ver a tabela de horas →</a></div>
+    </div>
+  </div>
+
+  <div class="col stack-s">
+    <div class="titulo-sec" style="--c: var(--turquesa)">
+      <span class="eyebrow" style="--c: var(--turquesa)">Processo seletivo</span>
+      <h2>Como se inscrever</h2>
+    </div>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <span class="step-num">1</span>
+      <h3 class="step-title">Separe os documentos</h3>
+      <div class="step-body"><p class="ext-falta">[O que o aluno precisa ter em mãos: histórico, comprovante de matrícula, currículo, carta de intenção.]</p></div>
+    </div>
+    <div class="step">
+      <span class="step-num">2</span>
+      <h3 class="step-title">Faça a inscrição</h3>
+      <div class="step-body"><p class="ext-falta">[Formulário, e-mail ou entrega presencial, com o endereço ou o link.]</p></div>
+    </div>
+    <div class="step">
+      <span class="step-num">3</span>
+      <h3 class="step-title">Seleção</h3>
+      <div class="step-body"><p class="ext-falta">[Como é a escolha: análise de histórico, entrevista, prova. E a data.]</p></div>
+    </div>
+    <div class="step">
+      <span class="step-num">4</span>
+      <h3 class="step-title">Resultado</h3>
+      <div class="step-body"><p class="ext-falta">[Quando e onde sai o resultado, e o que o selecionado faz em seguida.]</p></div>
+    </div>
+  </div>
+
+  <div class="stack-m">
+    <div class="titulo-sec col" style="--c: var(--lilas)">
+      <span class="eyebrow" style="--c: var(--lilas)">Dúvidas comuns</span>
+      <h2>Perguntas frequentes</h2>
+    </div>
+    <div>
+      <details class="faq">
+        <summary>Preciso ter feito alguma disciplina antes?</summary>
+        <p class="ext-falta">[Resposta.]</p>
+      </details>
+      <details class="faq">
+        <summary>O projeto tem bolsa ou é voluntário?</summary>
+        <p class="ext-falta">[Resposta. Se tiver bolsa, o valor e por quanto tempo.]</p>
+      </details>
+      <details class="faq">
+        <summary>Consigo conciliar com as aulas e com o estágio?</summary>
+        <p class="ext-falta">[Resposta, dizendo os horários das atividades.]</p>
+      </details>
+      <details class="faq">
+        <summary>Recebo certificado no fim?</summary>
+        <p class="ext-falta">[Resposta, lembrando que o certificado é o que comprova as horas.]</p>
+      </details>
+    </div>
+  </div>
+
+  <div class="ext-chamada" id="inscricao">
+    <h2>Bora?</h2>
+    <p>
+      As inscrições vão até <span class="ext-falta">[30 de setembro]</span>.
+      <span class="ext-falta">[Uma frase final de incentivo.]</span>
+    </p>
+    <div class="hero-acoes" style="justify-content: center">
+      <a class="btn ext-falta" href="#inscricao">Fazer a inscrição →</a>
+    </div>
+    <div class="compartilhar">
+      <a class="btn ghost" data-compartilhar
+         data-titulo="Projeto de extensão · UEMG Guanhães"
+         data-texto="Inscrições abertas para o projeto de extensão da UEMG Guanhães:">Compartilhar</a>
+    </div>
+  </div>
+
+  <div class="note col">
+    <p>
+      <b>Ficou com dúvida?</b> Fale com o NAE por
+      <a href="mailto:nae.guanhaes@uemg.br">nae.guanhaes@uemg.br</a> ou passe na sala,
+      no Prédio do Administrativo, terças e quintas das 18h às 19h.
+    </p>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <p>NAE · Núcleo de Apoio ao Estudante · UEMG Unidade Guanhães<br>Coordenação: Jonatan Barbosa Silva</p>
+    <div class="foot-links">
+      <a href="index.html">Início</a>
+      <a href="calendario.html">Calendário</a>
+      <a href="contato.html">Contato</a>
+      <a href="avisos.html">Avisos</a>
+      <a href="privacidade.html">Privacidade</a>
+    </div>
+    <p class="assinatura">Desenvolvido por <b>Jonatan Barbosa Silva</b></p>
+    <p class="foot-versao">Site conferido e atualizado em 13 de agosto de 2026</p>
+  </div>
+</footer>
+
+<script defer src="assets/dados-avisos.js"></script>
+<script defer src="assets/min/site.min.js"></script>
+<script defer src="assets/dados-busca.js"></script>
+<script defer src="assets/min/busca.min.js"></script>
+<script>
+/* contagem regressiva do prazo de inscrição, no selo do hero */
+document.addEventListener('DOMContentLoaded', function () {
+  'use strict';
+  var U = window.NAE, selo = document.getElementById('ext-contagem');
+  if (!U || !selo) return;
+  var txt = document.getElementById('ext-contagem-txt');
+  var encerra = selo.getAttribute('data-encerra');
+  if (!encerra) return;
+
+  var hoje = U.hojeISO();
+  var faltam = Math.round(
+    (new Date(encerra + 'T12:00:00') - new Date(hoje + 'T12:00:00')) / 86400000);
+
+  if (faltam < 0)       txt.textContent = 'Inscrições encerradas';
+  else if (faltam === 0) txt.textContent = 'Último dia de inscrição';
+  else if (faltam === 1) txt.textContent = 'Falta 1 dia para encerrar';
+  else if (faltam <= 15) txt.textContent = 'Faltam ' + faltam + ' dias para encerrar';
+  else                   txt.textContent = 'Inscrições abertas até ' + U.dataBR(encerra).slice(0, 5);
+});
+</script>
+<script data-goatcounter="https://naeguanhaes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
