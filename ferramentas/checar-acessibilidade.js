@@ -28,13 +28,14 @@
 
 const fs = require('fs');
 const path = require('path');
+const { ehCopiaDeConflito } = require('./conflitos.js');
 
 const RAIZ = path.join(__dirname, '..');
 const problemas = [];
 const rel = p => path.relative(RAIZ, p).replace(/\\/g, '/');
 
 const paginas = fs.readdirSync(RAIZ)
-  .filter(f => f.endsWith('.html'))
+  .filter(f => f.endsWith('.html') && !ehCopiaDeConflito(f))
   .map(f => path.join(RAIZ, f));
 
 /* ── contraste ────────────────────────────────────────── */

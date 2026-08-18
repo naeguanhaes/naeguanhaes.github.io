@@ -1,0 +1,10 @@
+# Copias de conflito criadas pelo OneDrive quando o mesmo arquivo e
+# editado em dois computadores antes de sincronizar. Nunca sao trabalho
+# novo: sao duplicatas do que ja esta no historico. Podem ser apagadas.
+*-MacBook*
+*-DESKTOP-*
+*conflicted copy*
+*copia em conflito*
+
+# Lixo do macOS
+.DS_Store

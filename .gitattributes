@@ -1,0 +1,13 @@
+# Fim de linha sempre LF dentro do repositorio.
+# Sem isto, editar em maquinas diferentes pela pasta do OneDrive faz o
+# git enxergar TODAS as linhas de TODOS os arquivos como alteradas, e o
+# diff util some no meio do ruido.
+* text=auto eol=lf
+
+# Binarios nao entram nessa normalizacao.
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.webp binary
+*.ico  binary
+*.pdf  binary

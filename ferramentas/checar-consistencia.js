@@ -23,11 +23,13 @@
 
 const fs = require('fs');
 const path = require('path');
+const { ehCopiaDeConflito } = require('./conflitos.js');
 
 const RAIZ = path.join(__dirname, '..');
 const problemas = [];
 
-const paginas = fs.readdirSync(RAIZ).filter(f => f.endsWith('.html')).sort();
+const paginas = fs.readdirSync(RAIZ)
+  .filter(f => f.endsWith('.html') && !ehCopiaDeConflito(f)).sort();
 const texto = {};
 paginas.forEach(p => { texto[p] = fs.readFileSync(path.join(RAIZ, p), 'utf8'); });
 

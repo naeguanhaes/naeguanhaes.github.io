@@ -17,6 +17,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { ehCopiaDeConflito } = require('./conflitos.js');
 
 const RAIZ = path.join(__dirname, '..');
 const erros = [];
@@ -29,6 +30,7 @@ function arquivosTexto(dir, lista) {
       if (!/\.git$|node_modules/.test(nome)) arquivosTexto(p, lista);
       return;
     }
+    if (ehCopiaDeConflito(nome)) return;
     if (/\.(html|js|css|md|webmanifest|yml)$/.test(nome)) lista.push(p);
   });
   return lista;

@@ -65,6 +65,35 @@ de mudanças estão na pasta [`historico/`](historico/CONTEXTO.md).
    pedindo confirmação. A publicação é feita pelo workflow
    `.github/workflows/publicar.yml` (GitHub Actions).
 
+## O repositório mora no OneDrive, e há mais de um computador
+
+O coordenador edita o site em máquinas diferentes, e a pasta é sincronizada
+pelo OneDrive. Isso já causou confusão uma vez, então:
+
+**Sempre comece a sessão com `git pull`, e dê `git push` antes de sair.**
+A publicação é feita pelo GitHub, não pelo OneDrive. O OneDrive só carrega os
+arquivos de um lado para o outro, sem entender de merge.
+
+Dois sintomas conhecidos, os dois já resolvidos e que não devem assustar:
+
+1. **Todos os arquivos aparecem modificados de uma vez**, com o mesmo número
+   de linhas inseridas e removidas. É troca de fim de linha, não conteúdo.
+   Confirme com `git diff --ignore-all-space --stat`: se vier vazio, é só isso.
+   O `.gitattributes` na raiz fixa tudo em LF para impedir a recaída.
+   Para limpar, `git checkout -- .`.
+2. **Arquivos com o nome da máquina no fim**, como
+   `index-MacBook Air de Jonatan.html`. São cópias que o OneDrive cria quando o
+   mesmo arquivo foi editado nos dois lados antes de sincronizar. **Nunca são
+   trabalho novo**, e o conteúdo delas está no histórico do git. Podem ser
+   apagadas. O `.gitignore` as esconde e o `ferramentas/conflitos.js` faz os
+   inspetores pularem elas, senão o `checar-consistencia` cobra menu, busca e
+   sitemap de páginas fantasma e trava a publicação.
+
+Em 13/08/2026 apareceram 40 dessas cópias de uma vez. Todas conferidas uma a
+uma, todas idênticas ao commit `7fc3afc`, que já estava mesclado em `e7c74d9`.
+Foram apagadas com autorização do coordenador. Se algum dia precisar do que
+havia nelas, `git show 7fc3afc:<arquivo>` devolve.
+
 ## Páginas prontas porém OCULTAS (decisão do coordenador)
 
 Existe um lembrete agendado para **11 de janeiro de 2027** trazendo estas três

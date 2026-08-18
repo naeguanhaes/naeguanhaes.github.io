@@ -18,6 +18,7 @@ const fs = require('fs');
 const path = require('path');
 const https = require('https');
 const http = require('http');
+const { ehCopiaDeConflito } = require('./conflitos.js');
 
 const RAIZ = path.join(__dirname, '..');
 
@@ -26,7 +27,8 @@ const RAIZ = path.join(__dirname, '..');
    confirmado que abre normalmente no navegador. */
 const TOLERADOS = [/apps\.apple\.com/, /play\.google\.com/, /instagram\.com/, /^https:\/\/www\.uemg\.br/];
 
-const paginas = fs.readdirSync(RAIZ).filter(f => f.endsWith('.html'));
+const paginas = fs.readdirSync(RAIZ)
+  .filter(f => f.endsWith('.html') && !ehCopiaDeConflito(f));
 const enderecos = new Map();
 
 paginas.forEach(nome => {

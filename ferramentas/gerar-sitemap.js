@@ -20,12 +20,14 @@
 
 const fs = require('fs');
 const path = require('path');
+const { ehCopiaDeConflito } = require('./conflitos.js');
 
 const RAIZ = path.join(__dirname, '..');
 const SITE = 'https://naeguanhaes.github.io/';
 const FORA = ['404.html', 'offline.html'];
 
-const paginas = fs.readdirSync(RAIZ).filter(f => f.endsWith('.html')).sort();
+const paginas = fs.readdirSync(RAIZ)
+  .filter(f => f.endsWith('.html') && !ehCopiaDeConflito(f)).sort();
 
 /* data local do arquivo. Nada de toISOString aqui: quem edita à noite
    no horário de Brasília veria a data do dia seguinte, em UTC */
