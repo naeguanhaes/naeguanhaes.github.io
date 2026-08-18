@@ -73,6 +73,12 @@ window.DADOS_BUSCA = {
       k: "tcc monografia artigo banca orientador defesa abnt linhas de pesquisa"
     },
     {
+      t: "Declaração de uso de IA",
+      d: "Modelo da declaração sobre ferramentas de Inteligência Artificial Generativa, para anexar ao trabalho.",
+      u: "declaracao-ia.html",
+      k: "declaracao ia inteligencia artificial generativa iagen chatgpt gemini copilot uso etica plagio tcc trabalho academico anexo assinatura resolucao transparencia ferramenta"
+    },
+    {
       t: "Exame especial, faltas e revisão de prova",
       d: "De 40 a 59 pontos ainda dá exame especial. Atestado tem 48 horas para justificar.",
       u: "secretaria.html",

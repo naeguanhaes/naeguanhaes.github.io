@@ -1545,6 +1545,19 @@ html[data-contraste="alto"] .etiqueta { border-color: #000; color: #000; }
 .req-guardar input { margin-top: .2rem; accent-color: var(--azul); }
 .req-acoes { display: flex; flex-wrap: wrap; gap: .6rem; }
 
+/* ── Declaração de uso de IA: as lacunas da folha ────── */
+.folha-vaga {
+  display: inline-block; min-width: 9rem;
+  border-bottom: 1px solid var(--ink); text-align: center;
+  color: var(--muted); font-size: .95em;
+}
+.folha-vaga-longa {
+  border-bottom: 1px solid var(--ink); margin: 0 0 1.4rem; min-height: 1.6rem;
+}
+.folha .folha-lista li { margin-bottom: .6rem; }
+html[data-contraste="alto"] .folha-vaga,
+html[data-contraste="alto"] .folha-vaga-longa { border-color: #000; }
+
 /* ── Modelo de e-mail para o aluno preencher e copiar ── */
 .modelo-email { display: flex; flex-direction: column; gap: .6rem; margin-top: var(--s2); }
 .modelo-cab {
@@ -1628,6 +1641,17 @@ html[data-contraste="alto"] .modelo-cab { border-color: #000; }
     border: 0; padding: 0; max-width: none; font-size: 11.5pt; line-height: 1.7;
   }
   .pg-requerimento main { padding: 0; }
+
+  /* declaração de IA: sai só a folha, que é o que vai anexado ao trabalho */
+  .pg-declaracao .topbar, .pg-declaracao .lede, .pg-declaracao .trilha,
+  .pg-declaracao .titulo-sec, .pg-declaracao .grid2, .pg-declaracao .card,
+  .pg-declaracao .note, .pg-declaracao .modelo-acoes,
+  .pg-declaracao footer { display: none !important; }
+  .pg-declaracao .folha {
+    border: 0; padding: 0; max-width: none; font-size: 11.5pt; line-height: 1.7;
+  }
+  .pg-declaracao .folha-vaga { color: #000; }
+  .pg-declaracao main { padding: 0; }
 
   /* planner: quatro folhas A4, uma por página */
   .pg-planner .topbar, .pg-planner .nav, .pg-planner footer,

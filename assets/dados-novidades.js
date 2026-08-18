@@ -19,6 +19,13 @@ window.DADOS_NOVIDADES = {
   itens: [
     {
       data: '2026-08-13',
+      titulo: 'Declaração de uso de IA nos trabalhos',
+      texto: 'Uma resolução nova exige declarar se e como você usou Inteligência Artificial no trabalho entregue. O modelo oficial está no site, pronto para imprimir ou copiar.',
+      link: 'declaracao-ia.html',
+      textoLink: 'ver o modelo'
+    },
+    {
+      data: '2026-08-13',
       titulo: 'Guia de bolso para imprimir',
       texto: 'Uma folha A4 com dois guias iguais, para cortar ao meio e levar no bolso: contatos, padrão do e-mail e do Lyceum, regra de aprovação e os prazos do semestre, sempre atualizados na hora de imprimir.',
       link: 'guia.html',
