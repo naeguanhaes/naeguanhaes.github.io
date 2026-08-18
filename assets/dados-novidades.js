@@ -19,6 +19,13 @@ window.DADOS_NOVIDADES = {
   itens: [
     {
       data: '2026-08-13',
+      titulo: 'A senha do primeiro acesso ao e-mail',
+      texto: 'Quem nunca entrou no e-mail institucional agora encontra no site como a senha inicial é montada, com exemplo, e o aviso de que os pedaços vão colados, sem o sinal de mais.',
+      link: 'email.html#primeira-senha',
+      textoLink: 'ver como montar'
+    },
+    {
+      data: '2026-08-13',
       titulo: 'Declaração de uso de IA nos trabalhos',
       texto: 'Uma resolução nova exige declarar se e como você usou Inteligência Artificial no trabalho entregue. O modelo oficial está no site, pronto para imprimir ou copiar.',
       link: 'declaracao-ia.html',

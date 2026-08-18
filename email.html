@@ -34,6 +34,14 @@
   "mainEntity": [
     {
       "@type": "Question",
+      "name": "Nunca entrei no e-mail. Qual é a senha?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A senha do primeiro acesso é #A, seguido dos 5 primeiros dígitos do seu CPF e das 2 primeiras letras do seu primeiro nome, a primeira maiúscula. Tudo junto, sem espaço e sem o sinal de mais: quem se chama Erica e tem CPF 123.456.789-00 entra com #A12345Er. Troque essa senha assim que entrar."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Não sei qual é a minha matrícula. Onde encontro?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -206,6 +214,41 @@
       <div class="note alerta">
         <p><b>Importante</b> O e-mail pessoal precisa estar atualizado no sistema acadêmico (Lyceum). Quem faz essa atualização é a <b>secretaria acadêmica da sua unidade</b>. Se você trocou de e-mail e não avisou, o token não chega.</p>
       </div>
+    </div>
+  </div>
+
+
+  <div class="card col reveal" id="primeira-senha" style="--c: var(--amber)">
+    <span class="rotulo">Primeiro acesso</span>
+    <h2>Qual é a sua primeira senha</h2>
+    <p>
+      Se você nunca entrou no e-mail institucional, a senha já existe: ela é montada
+      a partir dos seus dados, sempre da mesma forma. São três pedaços, <b>escritos
+      um colado no outro</b>.
+    </p>
+    <ul class="limpa" style="--c: var(--amber)">
+      <li><b><span class="addr">#A</span></b> a jogo da velha, depois um A maiúsculo. Igual para todo mundo.</li>
+      <li><b>Os 5 primeiros dígitos do seu CPF</b>, só números, sem ponto nem traço.</li>
+      <li><b>As 2 primeiras letras do seu primeiro nome</b>, a primeira maiúscula e a segunda minúscula.</li>
+    </ul>
+    <p>
+      Quem se chama <b>Erica</b> e tem CPF <b>123.456.789-00</b> entra com
+      <span class="addr">#A12345Er</span>.
+    </p>
+    <div class="note alerta">
+      <p>
+        <b>Não digite o sinal de mais</b> Os três pedaços vão grudados, sem espaço,
+        sem <span class="addr">+</span> e sem parênteses. A senha do exemplo tem
+        <b>9 caracteres</b>, nada além disso.
+      </p>
+    </div>
+    <div class="note">
+      <p>
+        <b>Depois de entrar, troque</b> Essa senha é conhecida e serve só para o
+        primeiro acesso. Troque por uma sua assim que conseguir entrar. Se ela não
+        funcionar, é sinal de que já foi trocada em algum momento: siga o
+        <a href="#passo-a-passo">passo a passo de recuperação</a> logo abaixo.
+      </p>
     </div>
   </div>
 
@@ -453,6 +496,10 @@
       <h2>Perguntas frequentes</h2>
     </div>
     <div>
+      <details class="faq">
+        <summary>Nunca entrei no e-mail. Qual é a senha?</summary>
+        <p>A senha do primeiro acesso é <b>#A</b>, seguido dos <b>5 primeiros dígitos do seu CPF</b> e das <b>2 primeiras letras do seu primeiro nome</b>, a primeira maiúscula. Tudo junto, sem espaço e sem o sinal de mais: quem se chama Erica e tem CPF 123.456.789-00 entra com #A12345Er. Troque essa senha assim que entrar.</p>
+      </details>
       <details class="faq">
         <summary>Não sei qual é a minha matrícula. Onde encontro?</summary>
         <p>Ela consta nos seus documentos de matrícula e no sistema acadêmico. Em caso de dúvida, procure a secretaria acadêmica da unidade ou o NAE.</p>

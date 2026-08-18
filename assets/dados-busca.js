@@ -187,6 +187,12 @@ window.DADOS_BUSCA = {
       k: 'edital editais bolsa bolsas auxilio assistencia estudantil monitoria extensao pesquisa inscricao prazo oportunidade ajuda financeira dinheiro'
     },
     {
+      t: 'Primeira senha do e-mail institucional',
+      d: 'Nunca entrou? A senha inicial é #A, mais 5 dígitos do CPF, mais 2 letras do primeiro nome.',
+      u: 'email.html#primeira-senha',
+      k: 'primeira senha senha inicial primeiro acesso nunca entrei nao sei a senha padrao email institucional discente cpf nome hashtag jogo da velha #A qual e minha senha'
+    },
+    {
       t: 'Não recebi o auxílio. E agora?',
       d: 'Passo a passo de quando o pagamento não cai: conferir o edital, para quem escrever e o que informar.',
       u: 'auxilios.html#nao-recebi',
