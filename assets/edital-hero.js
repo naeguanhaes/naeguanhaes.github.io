@@ -1,0 +1,98 @@
+/* ═══════════════════════════════════════════════════════
+   O edital aberto como segundo slide do bloco de cima
+   ───────────────────────────────────────────────────────
+   A página inicial abre com um carrossel. O primeiro slide é
+   fixo; o segundo é o edital de prazo mais apertado que ainda
+   não encerrou, montado a partir de assets/dados-editais.js.
+
+   Quando não há edital vivo, nenhum slide é criado: o site.js
+   encontra um slide só, desiste de montar o carrossel e o bloco
+   volta a ser um quadro parado, como era antes. Ou seja, a faixa
+   se retira sozinha quando o prazo vence.
+
+   ORDEM IMPORTA. Este arquivo precisa ser carregado DEPOIS de
+   dados-editais.js e ANTES de site.min.js. O site.js monta o
+   carrossel no ato em que roda, e não no DOMContentLoaded, então
+   o slide tem de estar no lugar antes dele. Scripts "defer"
+   executam na ordem em que aparecem no HTML, e todos depois da
+   página ter sido lida, então aqui o DOM já existe.
+
+   Por rodar antes do site.js, não dá para usar o window.NAE:
+   as três ajudas de que precisa estão embutidas abaixo.
+   ═══════════════════════════════════════════════════════ */
+(function () {
+  'use strict';
+
+  var D = window.DADOS_EDITAIS;
+  var trilho = document.getElementById('hero-trilho');
+  if (!D || !trilho) return;
+
+  function doisDigitos(n) { return (n < 10 ? '0' : '') + n; }
+
+  /* data de hoje no fuso de quem está lendo, no formato AAAA-MM-DD */
+  function hojeISO() {
+    var d = new Date();
+    return d.getFullYear() + '-' + doisDigitos(d.getMonth() + 1) + '-' + doisDigitos(d.getDate());
+  }
+
+  /* de AAAA-MM-DD para DD/MM */
+  function diaMes(iso) {
+    var p = String(iso).split('-');
+    return p[2] + '/' + p[1];
+  }
+
+  function escapar(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+
+  function dias(a, b) {
+    return Math.round((new Date(b + 'T12:00:00') - new Date(a + 'T12:00:00')) / 86400000);
+  }
+
+  var hoje = hojeISO();
+
+  /* o que ainda não encerrou, prazo mais apertado primeiro */
+  var vivos = (D.itens || [])
+    .filter(function (e) { return e && e.encerra && hoje <= e.encerra; })
+    .sort(function (a, b) { return a.encerra < b.encerra ? -1 : 1; });
+  if (!vivos.length) return;
+
+  var e = vivos[0];
+  var texto, urgente = false;
+  var rotulo = 'Inscrições abertas';
+  var acao = 'Ver e se inscrever';
+
+  if (e.abre && hoje < e.abre) {
+    /* ainda vai abrir: anuncia sem prometer inscrição que não existe */
+    rotulo = 'Em breve';
+    acao = 'Conhecer o projeto';
+    texto = dias(hoje, e.abre) === 1
+      ? 'As inscrições abrem amanhã'
+      : 'As inscrições abrem em ' + diaMes(e.abre);
+  } else {
+    var faltam = dias(hoje, e.encerra);
+    urgente = faltam <= 5;
+    if (faltam === 0)      texto = 'ÚLTIMO DIA para se inscrever';
+    else if (faltam === 1) texto = 'Falta 1 dia para encerrar';
+    else if (faltam <= 15) texto = 'Faltam ' + faltam + ' dias para encerrar';
+    else                   texto = 'Inscrições até ' + diaMes(e.encerra);
+  }
+
+  var slide = document.createElement('div');
+  slide.className = 'hero hero-edital';
+  slide.innerHTML =
+    '<div class="hero-in">' +
+      '<span class="eyebrow">' + escapar(rotulo) + '</span>' +
+      '<h2>' + escapar(e.titulo) + '</h2>' +
+      '<p>' + escapar(e.resumo) + '</p>' +
+      '<span class="chamada-selo' + (urgente ? ' urgente' : '') + '">' +
+        '<span class="pulso" aria-hidden="true"></span>' + escapar(texto) +
+      '</span>' +
+      '<div class="hero-acoes">' +
+        '<a class="btn" href="' + escapar(e.link) + '">' + escapar(acao) + ' &rarr;</a>' +
+      '</div>' +
+    '</div>';
+  trilho.appendChild(slide);
+})();

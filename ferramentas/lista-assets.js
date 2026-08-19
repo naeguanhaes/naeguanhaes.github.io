@@ -23,7 +23,8 @@ module.exports = {
     'mapa.js',
     'planner.js',
     'curso.js',
-    'requerimentos.js'
+    'requerimentos.js',
+    'edital-hero.js'
   ],
   CSS: ['estilo.css']
 };

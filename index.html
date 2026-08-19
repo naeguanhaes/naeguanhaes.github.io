@@ -138,27 +138,30 @@
 
 <main class="wrap stack" id="conteudo">
 
-  <div class="hero">
-    <div class="hero-in">
-      <span class="eyebrow">UEMG · Unidade Guanhães</span>
-      <h1>Tudo o que o estudante precisa, em um lugar só</h1>
-      <p>Acesso ao e-mail institucional, horários das aulas, mapa do campus e o apoio do Núcleo. Escolha abaixo por onde começar.</p>
-      <div class="hero-acoes">
-        <button class="busca-pilula" type="button" data-abrir-busca>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.8-3.8"></path></svg>
-          O que você procura hoje?
-        </button>
-        <a class="btn" href="email.html">Guia do e-mail institucional →</a>
-        <button class="btn ghost" type="button" id="btn-instalar" hidden>Instalar no celular</button>
+  <section class="carrossel carrossel-hero" data-carrossel aria-label="Destaques do NAE">
+    <div class="trilho" id="hero-trilho">
+    <div class="hero">
+      <div class="hero-in">
+        <span class="eyebrow">UEMG · Unidade Guanhães</span>
+        <h1>Tudo o que o estudante precisa, em um lugar só</h1>
+        <p>Acesso ao e-mail institucional, horários das aulas, mapa do campus e o apoio do Núcleo. Escolha abaixo por onde começar.</p>
+        <div class="hero-acoes">
+          <button class="busca-pilula" type="button" data-abrir-busca>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.8-3.8"></path></svg>
+            O que você procura hoje?
+          </button>
+          <a class="btn" href="email.html">Guia do e-mail institucional →</a>
+          <button class="btn ghost" type="button" id="btn-instalar" hidden>Instalar no celular</button>
+        </div>
+        <a class="hero-contagem" id="contagem-hero" href="calendario.html" aria-label="Próxima data do calendário acadêmico" hidden></a>
       </div>
-      <a class="hero-contagem" id="contagem-hero" href="calendario.html" aria-label="Próxima data do calendário acadêmico" hidden></a>
+      <img class="hero-marca" src="assets/simbolo-nae.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     </div>
-    <img class="hero-marca" src="assets/simbolo-nae.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
-  </div>
+    </div>
+    <div class="pontos" role="group" aria-label="Selecionar destaque"></div>
+  </section>
 
   <section id="painel-agora" aria-label="Aula de hoje"></section>
-
-  <section id="destaque-edital" aria-label="Edital com inscrições abertas" hidden></section>
 
   <section class="carrossel" data-carrossel aria-label="Serviços do NAE">
     <div class="carrossel-topo">
@@ -346,71 +349,13 @@
 <script defer src="assets/dados-avisos.js"></script>
 <script defer src="assets/dados-novidades.js"></script>
 <script defer src="assets/dados-editais.js"></script>
+<script defer src="assets/min/edital-hero.min.js"></script>
 <script defer src="assets/dados-horarios.js"></script>
 <script defer src="assets/dados-calendario.js"></script>
 <script defer src="assets/min/site.min.js"></script>
 <script defer src="assets/dados-busca.js"></script>
 <script defer src="assets/min/busca.min.js"></script>
 <script defer src="assets/min/horarios.min.js"></script>
-<script>
-/* Chamada do edital aberto, no alto da página inicial.
-   Sai sozinha quando não há edital aberto, então ninguém precisa
-   lembrar de tirar a faixa depois que o prazo vence. */
-document.addEventListener('DOMContentLoaded', function () {
-  'use strict';
-  var U = window.NAE, D = window.DADOS_EDITAIS;
-  var caixa = document.getElementById('destaque-edital');
-  if (!U || !D || !caixa) return;
-
-  var hoje = U.hojeISO();
-
-  function dias(a, b) {
-    return Math.round((new Date(b + 'T12:00:00') - new Date(a + 'T12:00:00')) / 86400000);
-  }
-
-  /* o que ainda não encerrou, incluindo o que abre nos próximos dias.
-     Prazo mais apertado primeiro. */
-  var vivos = (D.itens || [])
-    .filter(function (e) { return hoje <= e.encerra; })
-    .sort(function (a, b) { return a.encerra < b.encerra ? -1 : 1; });
-
-  if (!vivos.length) return;
-
-  var e = vivos[0];
-  var texto, urgente = false, rotulo = 'Inscrições abertas';
-
-  if (hoje < e.abre) {
-    /* ainda vai abrir: anuncia sem convidar a clicar em vão */
-    var ate = dias(hoje, e.abre);
-    rotulo = 'Em breve';
-    texto = ate === 1 ? 'As inscrições abrem amanhã'
-          : 'As inscrições abrem em ' + U.dataBR(e.abre).slice(0, 5);
-  } else {
-    var faltam = dias(hoje, e.encerra);
-    urgente = faltam <= 5;
-    if (faltam === 0)      texto = 'ÚLTIMO DIA para se inscrever';
-    else if (faltam === 1) texto = 'Falta 1 dia para encerrar';
-    else if (faltam <= 15) texto = 'Faltam ' + faltam + ' dias para encerrar';
-    else                   texto = 'Inscrições até ' + U.dataBR(e.encerra).slice(0, 5);
-  }
-
-  caixa.className = 'chamada-edital reveal visivel';
-  caixa.innerHTML =
-    '<div class="chamada-edital-txt">' +
-      '<span class="eyebrow">' + U.escapar(rotulo) + '</span>' +
-      '<h2>' + U.escapar(e.titulo) + '</h2>' +
-      '<p>' + U.escapar(e.resumo) + '</p>' +
-    '</div>' +
-    '<div class="chamada-edital-acoes">' +
-      '<span class="chamada-selo' + (urgente ? ' urgente' : '') + '">' +
-        '<span class="pulso" aria-hidden="true"></span>' + U.escapar(texto) +
-      '</span>' +
-      '<a class="btn" href="' + U.escapar(e.link) + '">' +
-        (hoje < e.abre ? 'Conhecer o projeto →' : 'Ver e se inscrever →') + '</a>' +
-    '</div>';
-  caixa.hidden = false;
-});
-</script>
 <script data-goatcounter="https://naeguanhaes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
