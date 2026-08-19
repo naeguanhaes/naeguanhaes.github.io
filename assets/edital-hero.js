@@ -53,20 +53,20 @@
 
   var hoje = hojeISO();
 
-  /* o que ainda não encerrou, prazo mais apertado primeiro */
+  /* o que ainda nao encerrou, prazo mais apertado primeiro */
   var vivos = (D.itens || [])
     .filter(function (e) { return e && e.encerra && hoje <= e.encerra; })
     .sort(function (a, b) { return a.encerra < b.encerra ? -1 : 1; });
   if (!vivos.length) return;
 
   var e = vivos[0];
-  var texto, urgente = false;
-  var rotulo = 'Inscrições abertas';
-  var acao = 'Ver e se inscrever';
+  var d = e.destaque || {};
+
+  /* mesma redacao do selo da pagina do projeto, para as duas nao
+     divergirem quando o prazo aperta */
+  var texto, urgente = false, acao = d.acao || 'Ver e se inscrever';
 
   if (e.abre && hoje < e.abre) {
-    /* ainda vai abrir: anuncia sem prometer inscrição que não existe */
-    rotulo = 'Em breve';
     acao = 'Conhecer o projeto';
     texto = dias(hoje, e.abre) === 1
       ? 'As inscrições abrem amanhã'
@@ -74,24 +74,34 @@
   } else {
     var faltam = dias(hoje, e.encerra);
     urgente = faltam <= 5;
-    if (faltam === 0)      texto = 'ÚLTIMO DIA para se inscrever';
+    if (faltam === 0)      texto = 'Último dia de inscrição';
     else if (faltam === 1) texto = 'Falta 1 dia para encerrar';
     else if (faltam <= 15) texto = 'Faltam ' + faltam + ' dias para encerrar';
-    else                   texto = 'Inscrições até ' + diaMes(e.encerra);
+    else                   texto = 'Inscrições abertas até ' + diaMes(e.encerra);
   }
+
+  /* o campo texto do destaque entra como HTML, para o negrito. Vem do
+     proprio repositorio, nunca de fora. O resto e escapado. */
+  var corpo = d.texto || escapar(e.resumo);
+
+  var extra = (d.extraTexto && d.extraLink)
+    ? '<a class="btn ghost" href="' + escapar(d.extraLink) + '" target="_blank" rel="noopener noreferrer">' +
+        escapar(d.extraTexto) + '</a>'
+    : '';
 
   var slide = document.createElement('div');
   slide.className = 'hero hero-edital';
   slide.innerHTML =
     '<div class="hero-in">' +
-      '<span class="eyebrow">' + escapar(rotulo) + '</span>' +
-      '<h2>' + escapar(e.titulo) + '</h2>' +
-      '<p>' + escapar(e.resumo) + '</p>' +
-      '<span class="chamada-selo' + (urgente ? ' urgente' : '') + '">' +
+      '<span class="eyebrow">' + escapar(d.eyebrow || 'Inscrições abertas') + '</span>' +
+      '<h2>' + escapar(d.titulo || e.titulo) + '</h2>' +
+      '<p>' + corpo + '</p>' +
+      '<a class="hero-contagem' + (urgente ? ' urgente' : '') + '" href="' + escapar(e.link) + '">' +
         '<span class="pulso" aria-hidden="true"></span>' + escapar(texto) +
-      '</span>' +
+      '</a>' +
       '<div class="hero-acoes">' +
         '<a class="btn" href="' + escapar(e.link) + '">' + escapar(acao) + ' &rarr;</a>' +
+        extra +
       '</div>' +
     '</div>';
   trilho.appendChild(slide);

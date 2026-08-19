@@ -469,7 +469,10 @@
     window.addEventListener('resize', sincronizar);
 
     function avancar() { if (!pausado && !document.hidden) irPara(atual >= maximo() ? 0 : atual + 1); }
-    function iniciar() { if (!reduzir && !timer) timer = setInterval(avancar, 6000); }
+    /* cada carrossel pode pedir o seu ritmo com data-intervalo, em
+       milissegundos. Sem o atributo, seguem os 6 segundos de sempre. */
+    var intervalo = parseInt(car.getAttribute('data-intervalo'), 10) || 6000;
+    function iniciar() { if (!reduzir && !timer) timer = setInterval(avancar, intervalo); }
     function parar() { if (timer) { clearInterval(timer); timer = null; } }
     function reiniciar() { parar(); iniciar(); }
 

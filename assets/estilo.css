@@ -1579,19 +1579,16 @@ html[data-contraste="alto"] .folha-vaga-longa { border-color: #000; }
 .hero-edital::after { background: var(--ambar); opacity: .5; }
 .hero-edital .eyebrow { color: #9CE8C6; }
 .hero-edital .hero-in { max-width: 52ch; }
-/* o slide do edital usa h2, e a regra de cor do hero so alcanca h1 */
+/* o slide usa h2 por semântica, porque o h1 da página é o do primeiro
+   retângulo, mas veste o tamanho do h1 para ficar idêntico ao da
+   página do projeto */
 .hero-edital h2 {
   color: #fff; margin: 0;
-  font-size: clamp(1.3rem, 1rem + 1.8vw, 2rem); line-height: 1.18;
+  font-size: clamp(2.1rem, 1.3rem + 3vw, 3rem); letter-spacing: -.015em; line-height: 1.1;
 }
-.chamada-selo {
-  display: inline-flex; align-items: center; gap: .45rem; align-self: flex-start;
-  background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.4);
-  border-radius: 99px; padding: .38rem 1rem;
-  font-size: .85rem; font-weight: 650; font-variant-numeric: tabular-nums;
-}
-.chamada-selo.urgente { background: var(--marca-vermelho); border-color: transparent; }
-html[data-contraste="alto"] .chamada-selo { border-color: #fff; }
+
+/* na reta final o selo do prazo fica vermelho, aqui e na página do projeto */
+.hero-contagem.urgente { background: var(--marca-vermelho); border-color: transparent; }
 
 /* os botões da chamada final do projeto também precisam inverter,
    senão ficam azuis sobre o verde escuro */
@@ -1600,7 +1597,6 @@ html[data-contraste="alto"] .chamada-selo { border-color: #fff; }
 .ext-chamada .btn.ghost { background: rgba(255,255,255,.12); color: #fff; border-color: rgba(255,255,255,.5); }
 .ext-chamada .btn.ghost:hover { background: rgba(255,255,255,.24); color: #fff; }
 
-html[data-contraste="alto"] .chamada-selo { border-color: #fff; }
 
 /* ── Página de projeto de extensão ────────────────────── */
 /* Uma página de divulgação: mais cor e mais respiro que o

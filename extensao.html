@@ -93,7 +93,7 @@ try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentEleme
 
   <div class="hero">
     <div class="hero-in">
-      <span class="eyebrow">Projeto de extensão · NAE e Diretório Acadêmico</span>
+      <span class="eyebrow">Conexão Universitária · NAE e Diretório Acadêmico</span>
       <h1>Inteligência Artificial: limites éticos, jurídicos e técnicos</h1>
       <p>
         Um ciclo de Rodas de Conversa que junta <b>Direito e Engenharia Civil</b> na
@@ -469,6 +469,9 @@ document.addEventListener('DOMContentLoaded', function () {
   var hoje = U.hojeISO();
   var faltam = Math.round(
     (new Date(encerra + 'T12:00:00') - new Date(hoje + 'T12:00:00')) / 86400000);
+
+  /* na reta final o selo fica vermelho, igual ao da página inicial */
+  if (faltam >= 0 && faltam <= 5) selo.classList.add('urgente');
 
   if (faltam < 0)       txt.textContent = 'Inscrições encerradas';
   else if (faltam === 0) txt.textContent = 'Último dia de inscrição';

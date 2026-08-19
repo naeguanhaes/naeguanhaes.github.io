@@ -30,7 +30,22 @@ window.DADOS_EDITAIS = {
       tipo: 'extensao',
       abre: '2026-08-19',
       encerra: '2026-08-31',
-      link: 'extensao.html'
+      link: 'extensao.html',
+
+      /* Como este edital aparece no bloco de cima da pagina inicial.
+         E o mesmo hero da pagina do projeto, repetido ali, porque o
+         titulo e o resumo acima sao secos demais para uma vitrine.
+         Sem este bloco, a chamada cai no titulo e no resumo.
+         ATENCAO: o campo texto entra como HTML, para permitir o negrito.
+         So escreva aqui conteudo do proprio repositorio. */
+      destaque: {
+        eyebrow: 'Conexão Universitária · NAE e Diretório Acadêmico',
+        titulo: 'Inteligência Artificial: limites éticos, jurídicos e técnicos',
+        texto: 'Um ciclo de Rodas de Conversa que junta <b>Direito e Engenharia Civil</b> na mesma mesa para discutir quem responde quando a inteligência artificial erra, e o que ainda é insubstituível no trabalho humano.',
+        acao: 'Quero me inscrever',
+        extraTexto: 'Ler o edital completo',
+        extraLink: 'documentos/edital-nae-01-2026-rodas-de-conversa-ia.pdf'
+      }
     }
   ]
 };
