@@ -1575,7 +1575,16 @@ html[data-contraste="alto"] .folha-vaga-longa { border-color: #000; }
 .carrossel-hero .pontos { margin-top: -.3rem; }
 
 /* o slide do edital: mesmo formato do hero, outra cor */
-.hero-edital { background: linear-gradient(122deg, #0B4A38 0%, #1D6B4A 52%, #0F7C7B 100%); }
+/* O verde do projeto, usado no slide da inicial e na página do projeto.
+   São três camadas: um brilho no alto à direita, um calor âmbar embaixo
+   à esquerda e o degradê de verde para petróleo por baixo de tudo. */
+.hero-edital,
+.pg-extensao .hero {
+  background:
+    radial-gradient(115% 85% at 88% 6%, rgba(255,255,255,.17) 0%, rgba(255,255,255,0) 55%),
+    radial-gradient(95% 75% at 6% 104%, rgba(224,154,30,.30) 0%, rgba(224,154,30,0) 62%),
+    linear-gradient(122deg, #073B2C 0%, #17583F 40%, #0F7C7B 76%, #17919B 100%);
+}
 .hero-edital::after { background: var(--ambar); opacity: .5; }
 .hero-edital .eyebrow { color: #9CE8C6; }
 .hero-edital .hero-in { max-width: 52ch; }
@@ -1586,6 +1595,26 @@ html[data-contraste="alto"] .folha-vaga-longa { border-color: #000; }
   color: #fff; margin: 0;
   font-size: clamp(2.1rem, 1.3rem + 3vw, 3rem); letter-spacing: -.015em; line-height: 1.1;
 }
+
+/* números em destaque dentro do retângulo verde: o resumo que se lê
+   antes de qualquer texto */
+.hero-selos { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .2rem; }
+.hero-selo {
+  display: inline-flex; align-items: baseline; gap: .4rem;
+  background: rgba(255,255,255,.13); border: 1px solid rgba(255,255,255,.28);
+  border-radius: 14px; padding: .45rem .85rem;
+  font-size: .84rem; font-weight: 600; color: rgba(255,255,255,.92);
+}
+.hero-selo b {
+  font-family: var(--serif); font-size: 1.15rem; font-weight: 700; color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+html[data-contraste="alto"] .hero-selo { border-color: #fff; }
+
+/* dentro do retângulo verde o selo abraça o próprio texto, em vez de
+   esticar na largura toda. No primeiro retângulo fica como sempre foi. */
+.hero-edital .hero-contagem,
+.pg-extensao .hero-contagem { align-self: flex-start; }
 
 /* na reta final o selo do prazo fica vermelho, aqui e na página do projeto */
 .hero-contagem.urgente { background: var(--marca-vermelho); border-color: transparent; }
@@ -1601,9 +1630,7 @@ html[data-contraste="alto"] .folha-vaga-longa { border-color: #000; }
 /* ── Página de projeto de extensão ────────────────────── */
 /* Uma página de divulgação: mais cor e mais respiro que o
    resto do site, sem sair da paleta da marca. */
-.pg-extensao .hero {
-  background: linear-gradient(122deg, #0B4A38 0%, #1D6B4A 48%, #0F7C7B 100%);
-}
+
 .pg-extensao .hero::after { background: var(--ambar); opacity: .5; }
 .pg-extensao .hero-in { max-width: 54ch; }
 .pg-extensao .hero .eyebrow { color: #9CE8C6; }

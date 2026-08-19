@@ -42,6 +42,12 @@ window.DADOS_EDITAIS = {
         eyebrow: 'Conexão Universitária · NAE e Diretório Acadêmico',
         titulo: 'Inteligência Artificial: limites éticos, jurídicos e técnicos',
         texto: 'Um ciclo de Rodas de Conversa que junta <b>Direito e Engenharia Civil</b> na mesma mesa para discutir quem responde quando a inteligência artificial erra, e o que ainda é insubstituível no trabalho humano.',
+        numeros: [
+          { n: '17', r: 'vagas' },
+          { n: '15h', r: 'certificadas' },
+          { n: '4', r: 'encontros' },
+          { n: 'Sáb', r: '15h, online' }
+        ],
         acao: 'Quero me inscrever',
         extraTexto: 'Ler o edital completo',
         extraLink: 'documentos/edital-nae-01-2026-rodas-de-conversa-ia.pdf'

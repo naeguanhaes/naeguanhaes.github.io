@@ -84,6 +84,11 @@
      proprio repositorio, nunca de fora. O resto e escapado. */
   var corpo = d.texto || escapar(e.resumo);
 
+  var selos = (d.numeros || []).map(function (x) {
+    return '<span class="hero-selo"><b>' + escapar(x.n) + '</b>' + escapar(x.r) + '</span>';
+  }).join('');
+  if (selos) selos = '<div class="hero-selos">' + selos + '</div>';
+
   var extra = (d.extraTexto && d.extraLink)
     ? '<a class="btn ghost" href="' + escapar(d.extraLink) + '" target="_blank" rel="noopener noreferrer">' +
         escapar(d.extraTexto) + '</a>'
@@ -96,6 +101,7 @@
       '<span class="eyebrow">' + escapar(d.eyebrow || 'Inscrições abertas') + '</span>' +
       '<h2>' + escapar(d.titulo || e.titulo) + '</h2>' +
       '<p>' + corpo + '</p>' +
+      selos +
       '<a class="hero-contagem' + (urgente ? ' urgente' : '') + '" href="' + escapar(e.link) + '">' +
         '<span class="pulso" aria-hidden="true"></span>' + escapar(texto) +
       '</a>' +
