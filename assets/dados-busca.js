@@ -187,6 +187,12 @@ window.DADOS_BUSCA = {
       k: 'edital editais bolsa bolsas auxilio assistencia estudantil monitoria extensao pesquisa inscricao prazo oportunidade ajuda financeira dinheiro'
     },
     {
+      t: 'Rodas de Conversa sobre Inteligência Artificial',
+      d: 'Projeto de extensão do NAE e do DA. 17 vagas, 15 horas certificadas, inscrições até 31 de agosto.',
+      u: 'extensao.html',
+      k: 'extensao projeto extensionista voluntario roda de conversa rodas inteligencia artificial ia chatgpt etica direito engenharia civil vaga inscricao carta de motivacao certificado 15 horas edital 01/2026 nae diretorio academico da sabado teams'
+    },
+    {
       t: 'Primeira senha do e-mail institucional',
       d: 'Nunca entrou? A senha inicial é #A, mais 5 dígitos do CPF, mais 2 letras do primeiro nome.',
       u: 'email.html#primeira-senha',

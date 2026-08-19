@@ -22,7 +22,15 @@
    ═══════════════════════════════════════════════════════ */
 
 window.DADOS_EDITAIS = {
-  atualizadoEm: '2026-08-06',
+  atualizadoEm: '2026-08-18',
   itens: [
+    {
+      titulo: 'Edital NAE 01/2026 · Rodas de Conversa sobre Inteligência Artificial',
+      resumo: '17 vagas de extensionista voluntário para o ciclo "Inteligência Artificial: limites éticos, jurídicos e técnicos", que junta Direito e Engenharia Civil. Sem bolsa, com certificação de 15 horas de extensão.',
+      tipo: 'extensao',
+      abre: '2026-08-19',
+      encerra: '2026-08-31',
+      link: 'extensao.html'
+    }
   ]
 };
