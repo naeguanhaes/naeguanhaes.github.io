@@ -469,10 +469,16 @@
     window.addEventListener('resize', sincronizar);
 
     function avancar() { if (!pausado && !document.hidden) irPara(atual >= maximo() ? 0 : atual + 1); }
-    /* cada carrossel pode pedir o seu ritmo com data-intervalo, em
-       milissegundos. Sem o atributo, seguem os 6 segundos de sempre. */
-    var intervalo = parseInt(car.getAttribute('data-intervalo'), 10) || 6000;
-    function iniciar() { if (!reduzir && !timer) timer = setInterval(avancar, intervalo); }
+    /* cada carrossel pede o seu ritmo com data-intervalo, em milissegundos.
+       Sem o atributo, seguem os 6 segundos de sempre. Com data-intervalo="0"
+       o carrossel para de girar sozinho, mas continua respondendo ao arrasto,
+       ao teclado e as bolinhas: e um carrossel parado, nao um bloco fixo. */
+    var pedido = car.getAttribute('data-intervalo');
+    var intervalo = pedido === null ? 6000 : parseInt(pedido, 10);
+    if (isNaN(intervalo)) intervalo = 6000;
+    function iniciar() {
+      if (!reduzir && !timer && intervalo > 0) timer = setInterval(avancar, intervalo);
+    }
     function parar() { if (timer) { clearInterval(timer); timer = null; } }
     function reiniciar() { parar(); iniciar(); }
 

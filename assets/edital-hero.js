@@ -110,5 +110,7 @@
         extra +
       '</div>' +
     '</div>';
-  trilho.appendChild(slide);
+  /* entra na FRENTE do slide fixo: quem chega na página vê o edital
+     primeiro, e o outro continua a um arrasto de distância. */
+  trilho.insertBefore(slide, trilho.firstChild);
 })();
