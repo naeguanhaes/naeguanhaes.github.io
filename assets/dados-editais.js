@@ -45,8 +45,8 @@ window.DADOS_EDITAIS = {
         numeros: [
           { n: '17', r: 'vagas' },
           { n: '15h', r: 'certificadas' },
-          { n: '4', r: 'encontros' },
-          { n: 'Sáb', r: '15h, online' }
+          { n: '3', r: 'encontros online' },
+          { n: '1', r: 'oficina em escola' }
         ],
         acao: 'Quero me inscrever',
         extraTexto: 'Ler o edital completo',
