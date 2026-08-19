@@ -158,6 +158,8 @@
 
   <section id="painel-agora" aria-label="Aula de hoje"></section>
 
+  <section id="destaque-edital" aria-label="Edital com inscrições abertas" hidden></section>
+
   <section class="carrossel" data-carrossel aria-label="Serviços do NAE">
     <div class="carrossel-topo">
       <div class="titulo-sec" style="--c: var(--blue)">
@@ -343,12 +345,72 @@
 
 <script defer src="assets/dados-avisos.js"></script>
 <script defer src="assets/dados-novidades.js"></script>
+<script defer src="assets/dados-editais.js"></script>
 <script defer src="assets/dados-horarios.js"></script>
 <script defer src="assets/dados-calendario.js"></script>
 <script defer src="assets/min/site.min.js"></script>
 <script defer src="assets/dados-busca.js"></script>
 <script defer src="assets/min/busca.min.js"></script>
 <script defer src="assets/min/horarios.min.js"></script>
+<script>
+/* Chamada do edital aberto, no alto da página inicial.
+   Sai sozinha quando não há edital aberto, então ninguém precisa
+   lembrar de tirar a faixa depois que o prazo vence. */
+document.addEventListener('DOMContentLoaded', function () {
+  'use strict';
+  var U = window.NAE, D = window.DADOS_EDITAIS;
+  var caixa = document.getElementById('destaque-edital');
+  if (!U || !D || !caixa) return;
+
+  var hoje = U.hojeISO();
+
+  function dias(a, b) {
+    return Math.round((new Date(b + 'T12:00:00') - new Date(a + 'T12:00:00')) / 86400000);
+  }
+
+  /* o que ainda não encerrou, incluindo o que abre nos próximos dias.
+     Prazo mais apertado primeiro. */
+  var vivos = (D.itens || [])
+    .filter(function (e) { return hoje <= e.encerra; })
+    .sort(function (a, b) { return a.encerra < b.encerra ? -1 : 1; });
+
+  if (!vivos.length) return;
+
+  var e = vivos[0];
+  var texto, urgente = false, rotulo = 'Inscrições abertas';
+
+  if (hoje < e.abre) {
+    /* ainda vai abrir: anuncia sem convidar a clicar em vão */
+    var ate = dias(hoje, e.abre);
+    rotulo = 'Em breve';
+    texto = ate === 1 ? 'As inscrições abrem amanhã'
+          : 'As inscrições abrem em ' + U.dataBR(e.abre).slice(0, 5);
+  } else {
+    var faltam = dias(hoje, e.encerra);
+    urgente = faltam <= 5;
+    if (faltam === 0)      texto = 'ÚLTIMO DIA para se inscrever';
+    else if (faltam === 1) texto = 'Falta 1 dia para encerrar';
+    else if (faltam <= 15) texto = 'Faltam ' + faltam + ' dias para encerrar';
+    else                   texto = 'Inscrições até ' + U.dataBR(e.encerra).slice(0, 5);
+  }
+
+  caixa.className = 'chamada-edital reveal visivel';
+  caixa.innerHTML =
+    '<div class="chamada-edital-txt">' +
+      '<span class="eyebrow">' + U.escapar(rotulo) + '</span>' +
+      '<h2>' + U.escapar(e.titulo) + '</h2>' +
+      '<p>' + U.escapar(e.resumo) + '</p>' +
+    '</div>' +
+    '<div class="chamada-edital-acoes">' +
+      '<span class="chamada-selo' + (urgente ? ' urgente' : '') + '">' +
+        '<span class="pulso" aria-hidden="true"></span>' + U.escapar(texto) +
+      '</span>' +
+      '<a class="btn" href="' + U.escapar(e.link) + '">' +
+        (hoje < e.abre ? 'Conhecer o projeto →' : 'Ver e se inscrever →') + '</a>' +
+    '</div>';
+  caixa.hidden = false;
+});
+</script>
 <script data-goatcounter="https://naeguanhaes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>

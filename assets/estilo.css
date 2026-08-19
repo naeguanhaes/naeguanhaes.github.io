@@ -1564,6 +1564,54 @@ html[data-contraste="alto"] .folha-vaga,
 html[data-contraste="alto"] .folha-vaga-media,
 html[data-contraste="alto"] .folha-vaga-longa { border-color: #000; }
 
+/* ── Chamada de edital aberto, na página inicial ──────── */
+/* Montada a partir de assets/dados-editais.js: mostra o edital aberto
+   de prazo mais apertado e some sozinha quando nenhum está aberto. */
+.chamada-edital {
+  position: relative; overflow: hidden;
+  background: linear-gradient(122deg, #0B4A38 0%, #1D6B4A 52%, #0F7C7B 100%);
+  color: #fff; border-radius: 28px; box-shadow: var(--sh-2);
+  padding: clamp(1.5rem, 1rem + 3vw, 2.4rem);
+  display: grid; gap: var(--s3); align-items: center;
+}
+@media (min-width: 48rem) {
+  .chamada-edital { grid-template-columns: 1fr auto; }
+}
+.chamada-edital::after {
+  content: ""; position: absolute; right: -50px; top: -50px;
+  width: 190px; height: 190px; border-radius: 99px;
+  background: rgba(255,255,255,.07);
+}
+.chamada-edital-txt {
+  position: relative; z-index: 2;
+  display: flex; flex-direction: column; gap: .45rem; max-width: 54ch;
+}
+.chamada-edital .eyebrow { color: #9CE8C6; }
+.chamada-edital h2 { color: #fff; margin: 0; font-size: clamp(1.25rem, 1rem + 1.4vw, 1.7rem); }
+.chamada-edital p { color: rgba(255,255,255,.92); margin: 0; font-size: .97rem; }
+.chamada-edital-acoes {
+  position: relative; z-index: 2;
+  display: flex; flex-direction: column; gap: .7rem; align-items: flex-start;
+}
+.chamada-edital .btn { background: #fff; color: #12483A; box-shadow: 0 10px 26px -14px rgba(0,0,0,.6); }
+.chamada-edital .btn:hover { color: #12483A; }
+.chamada-selo {
+  display: inline-flex; align-items: center; gap: .45rem;
+  background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.4);
+  border-radius: 99px; padding: .38rem 1rem;
+  font-size: .85rem; font-weight: 650; font-variant-numeric: tabular-nums;
+}
+.chamada-selo.urgente { background: var(--marca-vermelho); border-color: transparent; }
+
+/* os botões da chamada final do projeto também precisam inverter,
+   senão ficam azuis sobre o verde escuro */
+.ext-chamada .btn { background: #fff; color: #12483A; box-shadow: 0 10px 26px -14px rgba(0,0,0,.6); }
+.ext-chamada .btn:hover { color: #12483A; }
+.ext-chamada .btn.ghost { background: rgba(255,255,255,.12); color: #fff; border-color: rgba(255,255,255,.5); }
+.ext-chamada .btn.ghost:hover { background: rgba(255,255,255,.24); color: #fff; }
+
+html[data-contraste="alto"] .chamada-selo { border-color: #fff; }
+
 /* ── Página de projeto de extensão ────────────────────── */
 /* Uma página de divulgação: mais cor e mais respiro que o
    resto do site, sem sair da paleta da marca. */
