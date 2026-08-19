@@ -110,6 +110,22 @@ conferir que já está no `sw.js` e anunciar em `assets/dados-novidades.js`.
 
 As três já funcionam por endereço direto, para o coordenador revisar.
 
+## Item TEMPORÁRIO no menu: Rodas de Conversa sobre IA
+
+`extensao.html` ocupa uma vaga fixa no menu, dentro do grupo "Editais e bolsas",
+**por decisão do coordenador em 18/08/2026**, para dar visibilidade ao ciclo
+enquanto o processo seletivo corre. É o único item do menu com prazo de validade.
+
+**Retirar do menu depois de 09/09/2026**, data do resultado final, quando o site
+deixa de ser o canal de publicação previsto no item 6.4 do edital. Para retirar:
+apague a linha do `extensao.html` do bloco `data-grupo="Editais e bolsas"` em
+todas as páginas de uma vez, porque o `checar-consistencia.js` exige o menu
+idêntico. A página continua no ar, na busca e no cartão de `editais.html`: só
+sai do menu.
+
+O ciclo em si vai até 10/12/2026. Se o coordenador quiser o link no menu até lá,
+é só manter e mudar a data acima.
+
 ## Rotinas automáticas
 
 - **Publicação**: `.github/workflows/publicar.yml`, a cada push na `main`,
