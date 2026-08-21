@@ -55,7 +55,10 @@
 
   /* o que ainda nao encerrou, prazo mais apertado primeiro */
   var vivos = (D.itens || [])
-    .filter(function (e) { return e && e.encerra && hoje <= e.encerra; })
+    .filter(function (e) {
+      /* naInicial: false tira o edital desta vitrine sem tirar da lista */
+      return e && e.encerra && hoje <= e.encerra && e.naInicial !== false;
+    })
     .sort(function (a, b) { return a.encerra < b.encerra ? -1 : 1; });
   if (!vivos.length) return;
 

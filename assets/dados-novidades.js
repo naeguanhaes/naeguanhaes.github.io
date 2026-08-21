@@ -18,13 +18,6 @@ window.DADOS_NOVIDADES = {
   atualizadoEm: '2026-08-18',
   itens: [
     {
-      data: '2026-08-18',
-      titulo: 'Inscrições abertas: Rodas de Conversa sobre IA',
-      texto: 'O NAE e o Diretório Acadêmico abrem 17 vagas de extensionista voluntário para discutir os limites éticos, jurídicos e técnicos da inteligência artificial, juntando Direito e Engenharia Civil. Com certificação de atividade de extensão. Inscrições até 31 de agosto.',
-      link: 'extensao.html',
-      textoLink: 'conhecer o projeto'
-    },
-    {
       data: '2026-08-13',
       titulo: 'A senha do primeiro acesso ao e-mail',
       texto: 'Quem nunca entrou no e-mail institucional agora encontra no site como a senha inicial é montada, com exemplo, e o aviso de que os pedaços vão colados, sem o sinal de mais.',

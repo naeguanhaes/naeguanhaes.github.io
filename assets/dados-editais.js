@@ -32,6 +32,14 @@ window.DADOS_EDITAIS = {
       encerra: '2026-08-31',
       link: 'extensao.html',
 
+      /* INTERRUPTOR DA PAGINA INICIAL.
+         Com false, o edital continua normalmente na lista de editais.html,
+         mas NAO aparece no retangulo do topo da pagina inicial.
+         Para trazer de volta, basta trocar para true.
+         Desligado em 19/08/2026 a pedido do coordenador, que vai revisar o
+         projeto antes de divulgar de novo na inicial. */
+      naInicial: false,
+
       /* Como este edital aparece no bloco de cima da pagina inicial.
          E o mesmo hero da pagina do projeto, repetido ali, porque o
          titulo e o resumo acima sao secos demais para uma vitrine.
