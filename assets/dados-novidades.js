@@ -20,7 +20,7 @@ window.DADOS_NOVIDADES = {
     {
       data: '2026-08-18',
       titulo: 'Inscrições abertas: Rodas de Conversa sobre IA',
-      texto: 'O NAE e o Diretório Acadêmico abrem 17 vagas de extensionista voluntário para discutir os limites éticos, jurídicos e técnicos da inteligência artificial, juntando Direito e Engenharia Civil. São 15 horas certificadas de extensão. Inscrições até 31 de agosto.',
+      texto: 'O NAE e o Diretório Acadêmico abrem 17 vagas de extensionista voluntário para discutir os limites éticos, jurídicos e técnicos da inteligência artificial, juntando Direito e Engenharia Civil. Com certificação de atividade de extensão. Inscrições até 31 de agosto.',
       link: 'extensao.html',
       textoLink: 'conhecer o projeto'
     },

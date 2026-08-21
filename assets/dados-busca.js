@@ -188,9 +188,9 @@ window.DADOS_BUSCA = {
     },
     {
       t: 'Rodas de Conversa sobre Inteligência Artificial',
-      d: 'Projeto de extensão do NAE e do DA. 17 vagas, 15 horas certificadas, inscrições até 31 de agosto.',
+      d: 'Projeto de extensão do NAE e do DA. 17 vagas, certificação de extensão, inscrições até 31 de agosto.',
       u: 'extensao.html',
-      k: 'extensao projeto extensionista voluntario roda de conversa rodas inteligencia artificial ia chatgpt etica direito engenharia civil vaga inscricao carta de motivacao certificado 15 horas edital 01/2026 nae diretorio academico da sabado teams'
+      k: 'extensao projeto extensionista voluntario roda de conversa rodas inteligencia artificial ia chatgpt etica direito engenharia civil vaga inscricao carta de motivacao certificado edital 01/2026 nae diretorio academico da sabado teams'
     },
     {
       t: 'Primeira senha do e-mail institucional',
