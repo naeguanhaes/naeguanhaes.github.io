@@ -22,44 +22,7 @@
    ═══════════════════════════════════════════════════════ */
 
 window.DADOS_EDITAIS = {
-  atualizadoEm: '2026-08-18',
+  atualizadoEm: '2026-08-19',
   itens: [
-    {
-      titulo: 'Edital NAE 01/2026 · Rodas de Conversa sobre Inteligência Artificial',
-      resumo: '17 vagas de extensionista voluntário para o ciclo "Inteligência Artificial: limites éticos, jurídicos e técnicos", que junta Direito e Engenharia Civil. Sem bolsa, com certificação de atividade de extensão.',
-      tipo: 'extensao',
-      abre: '2026-08-19',
-      encerra: '2026-08-31',
-      link: 'extensao.html',
-
-      /* INTERRUPTOR DA PAGINA INICIAL.
-         Com false, o edital continua normalmente na lista de editais.html,
-         mas NAO aparece no retangulo do topo da pagina inicial.
-         Para trazer de volta, basta trocar para true.
-         Desligado em 19/08/2026 a pedido do coordenador, que vai revisar o
-         projeto antes de divulgar de novo na inicial. */
-      naInicial: false,
-
-      /* Como este edital aparece no bloco de cima da pagina inicial.
-         E o mesmo hero da pagina do projeto, repetido ali, porque o
-         titulo e o resumo acima sao secos demais para uma vitrine.
-         Sem este bloco, a chamada cai no titulo e no resumo.
-         ATENCAO: o campo texto entra como HTML, para permitir o negrito.
-         So escreva aqui conteudo do proprio repositorio. */
-      destaque: {
-        eyebrow: 'Conexão Universitária · NAE e Diretório Acadêmico',
-        titulo: 'Inteligência Artificial: limites éticos, jurídicos e técnicos',
-        texto: 'Um ciclo de Rodas de Conversa que junta <b>Direito e Engenharia Civil</b> na mesma mesa para discutir quem responde quando a inteligência artificial erra, e o que ainda é insubstituível no trabalho humano.',
-        numeros: [
-          { n: '17', r: 'vagas' },
-          { n: '2', r: 'cursos juntos' },
-          { n: '3', r: 'encontros online' },
-          { n: '1', r: 'roda em escola' }
-        ],
-        acao: 'Quero me inscrever',
-        extraTexto: 'Ler o edital completo',
-        extraLink: 'documentos/edital-nae-01-2026-rodas-de-conversa-ia.pdf'
-      }
-    }
   ]
 };

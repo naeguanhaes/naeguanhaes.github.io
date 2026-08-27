@@ -110,21 +110,32 @@ conferir que já está no `sw.js` e anunciar em `assets/dados-novidades.js`.
 
 As três já funcionam por endereço direto, para o coordenador revisar.
 
-## Item TEMPORÁRIO no menu: Rodas de Conversa sobre IA
+## Rodas de Conversa sobre IA: RETIRADA do site em 27/08/2026
 
-`extensao.html` ocupa uma vaga fixa no menu, dentro do grupo "Editais e bolsas",
-**por decisão do coordenador em 18/08/2026**, para dar visibilidade ao ciclo
-enquanto o processo seletivo corre. É o único item do menu com prazo de validade.
+O Edital NAE 01/2026 e a pagina do projeto **sairam do site inteiro**, por decisao
+do coordenador, que vai reformular o projeto. Nada foi apagado: tudo continua no
+repositorio e no historico do git, pronto para voltar.
 
-**Retirar do menu depois de 09/09/2026**, data do resultado final, quando o site
-deixa de ser o canal de publicação previsto no item 6.4 do edital. Para retirar:
-apague a linha do `extensao.html` do bloco `data-grupo="Editais e bolsas"` em
-todas as páginas de uma vez, porque o `checar-consistencia.js` exige o menu
-idêntico. A página continua no ar, na busca e no cartão de `editais.html`: só
-sai do menu.
+O que foi feito, e o que desfazer para trazer de volta:
 
-O ciclo em si vai até 10/12/2026. Se o coordenador quiser o link no menu até lá,
-é só manter e mudar a data acima.
+| Onde | Como esta | Para reativar |
+| --- | --- | --- |
+| `assets/dados-editais.js` | lista `itens` vazia | recolocar o item, que esta no commit `58949a6` |
+| `extensao.html` | com `noindex` e comentario de pagina oculta | tirar o `noindex` e o comentario |
+| Menu de todas as paginas | sem o link | recolocar no grupo "Editais e bolsas" |
+| `assets/dados-busca.js` | sem a entrada | recolocar |
+| `sitemap.xml` | sem a pagina | sai sozinho do `gerar-sitemap.js` |
+| `assets/dados-novidades.js` | sem a novidade | recolocar |
+| `documentos/edital-...pdf` | segue no repositorio, sem link | nada a fazer |
+| `sw.js` | `extensao.html` segue no cache, como as outras ocultas | nada a fazer |
+
+A pagina continua funcionando por endereco direto, como as demais ocultas, para o
+coordenador revisar. O campo `naInicial` em `dados-editais.js`, criado para tirar um
+edital so da pagina inicial sem tirar da lista, continua valendo para editais futuros.
+
+**Cuidado ao reativar:** o PDF guardado fala em certificacao de 15 horas, e o site
+tinha sido limpo dessa contagem a pedido do coordenador. Alinhar os dois antes de
+publicar de novo.
 
 ## Rotinas automáticas
 
