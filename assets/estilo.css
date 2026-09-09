@@ -1579,7 +1579,12 @@ html[data-contraste="alto"] .folha-vaga-longa { border-color: #000; }
    O segundo slide é o edital aberto, montado a partir de
    assets/dados-editais.js, e simplesmente não nasce quando não há
    nenhum aberto: aí o carrossel volta a ser um bloco parado. */
-.carrossel-hero .trilho { gap: var(--s2); scroll-padding-inline: .4rem; }
+.carrossel-hero .trilho {
+  gap: var(--s2); scroll-padding-inline: .4rem;
+  /* impede o navegador de compensar a rolagem quando o slide do
+     edital entra na frente, o que faria a página abrir no slide errado */
+  overflow-anchor: none;
+}
 .carrossel-hero .trilho > * { flex: 0 0 100%; }
 @media (min-width: 940px) { .carrossel-hero .trilho > * { flex-basis: 100%; } }
 .carrossel-hero .pontos { margin-top: -.3rem; }

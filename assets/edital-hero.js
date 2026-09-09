@@ -117,4 +117,14 @@
   /* entra na FRENTE do slide fixo: quem chega na página vê o edital
      primeiro, e o outro continua a um arrasto de distância. */
   trilho.insertBefore(slide, trilho.firstChild);
+
+  /* Cinto e suspensório: ao inserir algo ANTES do que já estava visível, o
+     navegador pode compensar a rolagem para manter o conteúdo antigo na
+     tela (scroll anchoring), e aí a página abriria no slide fixo em vez de
+     no edital. Zerar a rolagem garante a abertura no lugar certo, sem
+     animação, antes de o site.js montar o carrossel. */
+  var comportamento = trilho.style.scrollBehavior;
+  trilho.style.scrollBehavior = 'auto';
+  trilho.scrollLeft = 0;
+  trilho.style.scrollBehavior = comportamento;
 })();
