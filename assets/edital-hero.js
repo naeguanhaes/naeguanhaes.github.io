@@ -98,7 +98,8 @@
     : '';
 
   var slide = document.createElement('div');
-  slide.className = 'hero hero-edital';
+  /* o tema de cor vem dos dados, para cada edital ter a sua */
+  slide.className = 'hero hero-edital' + (d.tema ? ' tema-' + d.tema : '');
   slide.innerHTML =
     '<div class="hero-in">' +
       '<span class="eyebrow">' + escapar(d.eyebrow || 'Inscrições abertas') + '</span>' +

@@ -15,8 +15,15 @@
    ═══════════════════════════════════════════════════════ */
 
 window.DADOS_NOVIDADES = {
-  atualizadoEm: '2026-08-18',
+  atualizadoEm: '2026-09-09',
   itens: [
+    {
+      data: '2026-09-09',
+      titulo: 'Inscrições abertas: 28º Seminário de Pesquisa e Extensão',
+      texto: 'A programação em Guanhães é de 09 a 13 de novembro. São quatro prazos diferentes, e o mais curto encerra em 15 de setembro. Atenção à ordem: todos precisam se inscrever como ouvinte, inclusive quem vai apresentar trabalho.',
+      link: 'seminario.html',
+      textoLink: 'ver todos os prazos'
+    },
     {
       data: '2026-08-13',
       titulo: 'A senha do primeiro acesso ao e-mail',

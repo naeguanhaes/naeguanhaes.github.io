@@ -1616,6 +1616,22 @@ html[data-contraste="alto"] .hero-selo { border-color: #fff; }
 .hero-edital .hero-contagem,
 .pg-extensao .hero-contagem { align-self: flex-start; }
 
+/* Variante roxa do retângulo, para o Seminário de Pesquisa e Extensão.
+   Mesma construção em três camadas do verde: brilho no alto à direita,
+   calor âmbar embaixo à esquerda e o degradê por baixo. */
+.hero-edital.tema-roxo,
+.pg-seminario .hero {
+  background:
+    radial-gradient(115% 85% at 88% 6%, rgba(255,255,255,.17) 0%, rgba(255,255,255,0) 55%),
+    radial-gradient(95% 75% at 6% 104%, rgba(224,154,30,.26) 0%, rgba(224,154,30,0) 62%),
+    linear-gradient(122deg, #241C52 0%, #3F3480 42%, #5B4EA6 78%, #7166B8 100%);
+}
+.hero-edital.tema-roxo .eyebrow,
+.pg-seminario .hero .eyebrow { color: #CFC6F5; }
+.pg-seminario .hero::after { background: var(--ambar); opacity: .5; }
+.pg-seminario .hero-in { max-width: 54ch; }
+.pg-seminario .hero-contagem { align-self: flex-start; }
+
 /* na reta final o selo do prazo fica vermelho, aqui e na página do projeto */
 .hero-contagem.urgente { background: var(--marca-vermelho); border-color: transparent; }
 

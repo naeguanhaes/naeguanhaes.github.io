@@ -187,6 +187,12 @@ window.DADOS_BUSCA = {
       k: 'edital editais bolsa bolsas auxilio assistencia estudantil monitoria extensao pesquisa inscricao prazo oportunidade ajuda financeira dinheiro'
     },
     {
+      t: '28º Seminário de Pesquisa e Extensão',
+      d: 'Todos os prazos e a ordem certa de se inscrever. Programação em Guanhães de 09 a 13 de novembro.',
+      u: 'seminario.html',
+      k: 'seminario pesquisa extensao 28 uemg resumo submissao apresentacao trabalho ouvinte inscricao prazo novembro evento congresso certificado atividade complementar poster comunicacao oral regulamento'
+    },
+    {
       t: 'Primeira senha do e-mail institucional',
       d: 'Nunca entrou? A senha inicial é #A, mais 5 dígitos do CPF, mais 2 letras do primeiro nome.',
       u: 'email.html#primeira-senha',
