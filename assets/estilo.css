@@ -175,6 +175,16 @@ p  { margin: 0; }
 }
 .nav-link .dot { width: .5rem; height: .5rem; border-radius: 99px 2px 99px 99px; background: var(--c); flex: none; opacity: .85; }
 .nav-link:hover { color: var(--ink); background: var(--surface-2); transform: translateY(-1px); }
+
+/* Aba de campanha, em destaque no menu. Combina com data-ate no HTML:
+   passada a data, o site.js retira o link e o destaque some junto. */
+.nav-link.nav-destaque {
+  color: #fff; background: var(--c); border-color: var(--c);
+  box-shadow: var(--sh-cor);
+}
+.nav-link.nav-destaque .dot { background: rgba(255,255,255,.85); opacity: 1; }
+.nav-link.nav-destaque:hover { color: #fff; filter: brightness(1.08); background: var(--c); }
+html[data-contraste="alto"] .nav-link.nav-destaque { border-color: #000; }
 .nav-link[aria-current="page"] {
   color: #fff; background: var(--c); border-color: var(--c); box-shadow: var(--sh-cor);
 }

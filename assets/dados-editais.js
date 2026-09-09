@@ -58,7 +58,43 @@ window.DADOS_EDITAIS = {
       abre: '2026-08-28',
       encerra: '2026-11-10',
       link: 'seminario.html',
-      naInicial: false
+
+      destaque: {
+        tema: 'roxo',
+        eyebrow: 'Pesquisa e extensão · UEMG',
+        titulo: '28º Seminário de Pesquisa e Extensão',
+        texto: 'A programação em Guanhães é de <b>09 a 13 de novembro</b>. Ainda dá tempo: a inscrição <b>como ouvinte</b> vai até 10 de novembro e é obrigatória para todos que forem participar.',
+        numeros: [
+          { n: '09 a 13/11', r: 'na Unidade' },
+          { n: '10/11', r: 'prazo do ouvinte' },
+          { n: 'Livre', r: 'para toda a Unidade' }
+        ],
+        acao: 'Ver todos os prazos',
+        extraTexto: 'Página de inscrições',
+        extraLink: 'https://www.uemg.br/28ed-seminario-pe-inscricao'
+      }
+    },
+    {
+      titulo: '28º Seminário de Pesquisa e Extensão · programação em Guanhães',
+      resumo: 'A semana do Seminário na Unidade Guanhães. Quem se inscreveu participa das atividades da programação.',
+      tipo: 'pesquisa',
+      abre: '2026-11-09',
+      encerra: '2026-11-13',
+      link: 'seminario.html',
+
+      destaque: {
+        tema: 'roxo',
+        eyebrow: 'Pesquisa e extensão · UEMG',
+        titulo: 'É esta semana: 28º Seminário de Pesquisa e Extensão',
+        texto: 'A programação da Unidade Guanhães acontece de <b>09 a 13 de novembro</b>. Confira os horários e participe.',
+        numeros: [
+          { n: '09 a 13/11', r: 'esta semana' },
+          { n: 'Guanhães', r: 'na Unidade' }
+        ],
+        acao: 'Ver a página do Seminário',
+        extraTexto: 'Regulamento',
+        extraLink: 'https://www.uemg.br/normas/regulamento'
+      }
     }
   ]
 };

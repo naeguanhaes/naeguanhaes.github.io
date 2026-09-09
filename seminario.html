@@ -75,6 +75,7 @@ try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentEleme
       <a class="nav-link" href="editais.html" style="--c: var(--ambar)"><i class="dot"></i>Editais abertos</a>
       <a class="nav-link" href="auxilios.html" style="--c: var(--coral)"><i class="dot"></i>Auxílios e pagamentos</a>
     </div>
+    <a class="nav-link nav-destaque" href="seminario.html" aria-current="page" data-ate="2026-11-13" style="--c: var(--lilas)"><i class="dot"></i>Seminário de Pesquisa</a>
     <a class="nav-link" href="apoio.html" style="--c: var(--rosa)"><i class="dot"></i>Apoio psicológico</a>
     <a class="nav-link" href="avisos.html" style="--c: var(--turquesa)"><i class="dot"></i>Avisos</a>
     <div class="nav-grupo" data-grupo="Sobre o NAE" style="--c: var(--ambar)">
@@ -250,13 +251,23 @@ try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentEleme
     </div>
   </div>
 
-  <div class="note col">
+  <div class="card col reveal" id="compartilhar" style="--c: var(--verde)">
+    <span class="rotulo">Espalhe a notícia</span>
+    <h2>Avise a sua turma</h2>
     <p>
-      <b>Dúvidas</b> Fale com o NAE por
-      <a href="mailto:nae.guanhaes@uemg.br">nae.guanhaes@uemg.br</a> ou passe na sala,
-      no Prédio do Administrativo, terças e quintas das 18h às 19h. As regras e os
-      prazos oficiais são os do regulamento da UEMG.
+      Muita gente perde o prazo do resumo por não ficar sabendo a tempo, ou faz só a
+      inscrição de apresentação e esquece a de ouvinte. Mandar no grupo da turma
+      resolve os dois.
     </p>
+    <div class="compartilhar">
+      <a class="btn" style="--c: var(--verde)" href="https://wa.me/?text=%2A28%C2%BA%20Semin%C3%A1rio%20de%20Pesquisa%20e%20Extens%C3%A3o%20da%20UEMG%2A%0A%0ANa%20Unidade%20Guanh%C3%A3es%2C%20de%2009%20a%2013%20de%20novembro%20de%202026.%20As%20inscri%C3%A7%C3%B5es%20j%C3%A1%20est%C3%A3o%20abertas%21%0A%0A%E2%9A%A0%EF%B8%8F%20Aten%C3%A7%C3%A3o%3A%20s%C3%A3o%20quatro%20prazos%20diferentes%2C%20e%20TODOS%20precisam%20se%20inscrever%20como%20ouvinte%2C%20inclusive%20quem%20vai%20apresentar%20trabalho.%0A%0A%F0%9F%93%85%20Submiss%C3%A3o%20de%20resumo%20at%C3%A9%2015/09%0A%F0%9F%93%85%20Inscri%C3%A7%C3%A3o%20como%20ouvinte%20at%C3%A9%2010/11%0A%0ATodos%20os%20prazos%20e%20a%20ordem%20certa%20de%20se%20inscrever%3A%0Ahttps%3A//naeguanhaes.github.io/seminario.html" target="_blank" rel="noopener noreferrer">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5 4.4.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"></path><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2z"></path></svg>
+        Compartilhar no WhatsApp
+      </a>
+      <a class="btn ghost" data-compartilhar style="--c: var(--verde)"
+         data-titulo="28º Seminário de Pesquisa e Extensão · UEMG Guanhães"
+         data-texto="Inscrições abertas para o 28º Seminário de Pesquisa e Extensão da UEMG. Em Guanhães, de 09 a 13 de novembro. Veja todos os prazos:">Outras formas de compartilhar</a>
+    </div>
   </div>
 
 </main>

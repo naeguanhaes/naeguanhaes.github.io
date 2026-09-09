@@ -137,6 +137,24 @@ edital so da pagina inicial sem tirar da lista, continua valendo para editais fu
 tinha sido limpo dessa contagem a pedido do coordenador. Alinhar os dois antes de
 publicar de novo.
 
+## Links de campanha no menu, com prazo de validade
+
+Um link do menu pode trazer `data-ate="AAAA-MM-DD"`. Passada a data, o `site.js`
+retira ele sozinho, em todas as páginas de uma vez. Serve para divulgação de evento,
+que por natureza acaba, e evita o item esquecido no menu meses depois.
+
+A classe `nav-destaque` deixa a aba preenchida na cor do `--c`, em vez do link
+comum. As duas coisas costumam andar juntas.
+
+**Em uso hoje:** `seminario.html`, em lilás, com `data-ate="2026-11-13"`, o último dia
+do 28º Seminário. Some do menu em 14/11 sem ninguém tocar em nada.
+
+O destaque do topo da página inicial segue a mesma lógica, mas pelos dados: em
+`assets/dados-editais.js` o Seminário tem três fases (resumo até 15/09, ouvinte até
+10/11, programação de 09 a 13/11), cada uma com o seu `destaque`. A vitrine mostra
+sempre a de prazo mais próximo e, passada a última, o topo volta a ser só o
+retângulo azul.
+
 ## Rotinas automáticas
 
 - **Publicação**: `.github/workflows/publicar.yml`, a cada push na `main`,
