@@ -190,7 +190,7 @@ window.DADOS_BUSCA = {
       t: '28º Seminário de Pesquisa e Extensão',
       d: 'Todos os prazos e a ordem certa de se inscrever. Programação em Guanhães de 09 a 13 de novembro.',
       u: 'seminario.html',
-      k: 'seminario pesquisa extensao 28 uemg resumo submissao apresentacao trabalho ouvinte inscricao prazo novembro evento congresso certificado atividade complementar poster comunicacao oral regulamento'
+      k: 'seminario pesquisa extensao 28 uemg resumo submissao apresentacao trabalho ouvinte inscricao prazo novembro evento congresso certificado atividade complementar poster comunicacao oral regulamento lattes curriculo lattes cnpq plataforma lattes 24 horas'
     },
     {
       t: 'Primeira senha do e-mail institucional',

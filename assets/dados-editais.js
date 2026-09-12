@@ -26,7 +26,7 @@ window.DADOS_EDITAIS = {
   itens: [
     {
       titulo: '28º Seminário de Pesquisa e Extensão · apresentação de trabalho',
-      resumo: 'Inscrição com apresentação e submissão do resumo. É o prazo mais curto do Seminário e não se repete. Lembre: antes disso, é preciso estar inscrito como ouvinte.',
+      resumo: 'Inscrição com apresentação e submissão do resumo. Exige Currículo Lattes, que leva até 24 horas para ser gerado. É o prazo mais curto do Seminário e não se repete.',
       tipo: 'pesquisa',
       abre: '2026-08-28',
       encerra: '2026-09-15',
@@ -40,11 +40,11 @@ window.DADOS_EDITAIS = {
         tema: 'roxo',
         eyebrow: 'Pesquisa e extensão · UEMG',
         titulo: '28º Seminário de Pesquisa e Extensão',
-        texto: 'Na Unidade Guanhães, a programação acontece de <b>09 a 13 de novembro</b>. As inscrições já estão abertas, e há <b>quatro prazos diferentes</b>. O mais curto é o da submissão de resumo.',
+        texto: 'Na Unidade Guanhães, a programação acontece de <b>09 a 13 de novembro</b>. Para submeter resumo é preciso ter <b>Currículo Lattes</b>, e ele pode levar <b>até 24 horas</b> para ficar pronto: se ainda não tem, faça hoje.',
         numeros: [
           { n: '09 a 13/11', r: 'na Unidade' },
           { n: '4', r: 'prazos distintos' },
-          { n: '15/09', r: 'prazo do resumo' }
+          { n: 'Lattes', r: 'exigido no resumo' }
         ],
         acao: 'Ver todos os prazos',
         extraTexto: 'Página de inscrições',
