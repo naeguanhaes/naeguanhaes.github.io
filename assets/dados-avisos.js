@@ -27,8 +27,16 @@
    ═══════════════════════════════════════════════════════ */
 
 window.DADOS_AVISOS = {
-  atualizadoEm: '2026-08-06',
+  atualizadoEm: '2026-09-15',
   avisos: [
+    {
+      tipo: 'atencao',
+      de: '2026-09-15',
+      ate: '2026-09-21',
+      texto: 'Prazo prorrogado: a submissão de trabalhos do 28º Seminário de Pesquisa e Extensão vai até 21 de setembro. Lembre que é preciso ter Currículo Lattes.',
+      link: 'seminario.html',
+      textoLink: 'ver os prazos'
+    },
     {
       tipo: 'novidade',
       ate: '2026-09-15',

@@ -22,14 +22,14 @@
    ═══════════════════════════════════════════════════════ */
 
 window.DADOS_EDITAIS = {
-  atualizadoEm: '2026-09-09',
+  atualizadoEm: '2026-09-15',
   itens: [
     {
       titulo: '28º Seminário de Pesquisa e Extensão · apresentação de trabalho',
-      resumo: 'Inscrição com apresentação e submissão do resumo. Exige Currículo Lattes, que leva até 24 horas para ser gerado. É o prazo mais curto do Seminário e não se repete.',
+      resumo: 'Prazo prorrogado de 15 para 21 de setembro. Inscrição com apresentação e submissão do resumo. Exige Currículo Lattes, que leva até 24 horas para ser gerado. É o prazo mais curto do Seminário e não se repete.',
       tipo: 'pesquisa',
       abre: '2026-08-28',
-      encerra: '2026-09-15',
+      encerra: '2026-09-21',
       link: 'seminario.html',
 
       /* Como aparece no retângulo do topo da página inicial.
@@ -38,12 +38,12 @@ window.DADOS_EDITAIS = {
          Só escreva aqui conteúdo do próprio repositório. */
       destaque: {
         tema: 'roxo',
-        eyebrow: 'Pesquisa e extensão · UEMG',
+        eyebrow: 'Prazo prorrogado · submissão até 21/09',
         titulo: '28º Seminário de Pesquisa e Extensão',
         texto: 'Na Unidade Guanhães, a programação acontece de <b>09 a 13 de novembro</b>. Para submeter resumo é preciso ter <b>Currículo Lattes</b>, e ele pode levar <b>até 24 horas</b> para ficar pronto: se ainda não tem, faça hoje.',
         numeros: [
           { n: '09 a 13/11', r: 'na Unidade' },
-          { n: '4', r: 'prazos distintos' },
+          { n: '21/09', r: 'resumo, prorrogado' },
           { n: 'Lattes', r: 'exigido no resumo' }
         ],
         acao: 'Ver todos os prazos',

@@ -15,19 +15,26 @@
    ═══════════════════════════════════════════════════════ */
 
 window.DADOS_NOVIDADES = {
-  atualizadoEm: '2026-09-11',
+  atualizadoEm: '2026-09-15',
   itens: [
+    {
+      data: '2026-09-15',
+      titulo: 'Seminário: prazo do resumo prorrogado até 21 de setembro',
+      texto: 'A Comissão Central do 28º Seminário de Pesquisa e Extensão prorrogou a submissão de trabalhos, que terminaria hoje, para 21 de setembro. Os outros prazos seguem iguais. Lembre do Currículo Lattes.',
+      link: 'seminario.html',
+      textoLink: 'ver os prazos'
+    },
     {
       data: '2026-09-11',
       titulo: 'Vai submeter resumo no Seminário? Faça o Lattes hoje',
-      texto: 'A submissão exige Currículo Lattes, e ele pode levar até 24 horas para ser gerado. Com o prazo terminando em 15 de setembro, quem deixar para a véspera perde a apresentação.',
+      texto: 'A submissão exige Currículo Lattes, e ele pode levar até 24 horas para ser gerado. Mesmo com o prazo prorrogado para 21 de setembro, quem deixar para a véspera perde a apresentação.',
       link: 'seminario.html',
       textoLink: 'ver o passo a passo'
     },
     {
       data: '2026-09-09',
       titulo: 'Inscrições abertas: 28º Seminário de Pesquisa e Extensão',
-      texto: 'A programação em Guanhães é de 09 a 13 de novembro. São quatro prazos diferentes, e o mais curto encerra em 15 de setembro. Atenção à ordem: todos precisam se inscrever como ouvinte, inclusive quem vai apresentar trabalho.',
+      texto: 'A programação em Guanhães é de 09 a 13 de novembro. São quatro prazos diferentes, e o mais curto, o da submissão de resumo, foi prorrogado para 21 de setembro. Atenção à ordem: todos precisam se inscrever como ouvinte, inclusive quem vai apresentar trabalho.',
       link: 'seminario.html',
       textoLink: 'ver todos os prazos'
     },
