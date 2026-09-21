@@ -94,6 +94,16 @@ uma, todas idênticas ao commit `7fc3afc`, que já estava mesclado em `e7c74d9`.
 Foram apagadas com autorização do coordenador. Se algum dia precisar do que
 havia nelas, `git show 7fc3afc:<arquivo>` devolve.
 
+## "No meu navegador aparece a versão antiga"
+
+Páginas e `assets/dados-*.js` vão pela rede primeiro. Scripts e estilos saem do cache
+do service worker. Por isso a primeira visita depois de uma publicação pode misturar
+página nova com script antigo: já fez o painel da inicial mostrar um destaque só e
+abrir no slide errado. Antes de caçar defeito, confira o site publicado direto
+(`curl` ou o navegador limpo). Desde a `nae-v51`, o `site.js` recarrega a página uma vez
+quando a versão nova assume o controle, o que resolve sozinho a partir da publicação
+seguinte. Para o usuário que viu a versão velha, basta recarregar a página.
+
 ## Páginas prontas porém OCULTAS (decisão do coordenador)
 
 Existe um lembrete agendado para **11 de janeiro de 2027** trazendo estas três

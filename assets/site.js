@@ -814,6 +814,21 @@
 
   /* ── Instalar o site (PWA) ────────────────────────── */
   if ('serviceWorker' in navigator && location.protocol === 'https:') {
+    /* Depois de cada publicação, a primeira visita recebe a página e os
+       dados novos, que vão pela rede, mas scripts e estilos ainda saem do
+       cache da versão anterior. Essa mistura já fez o painel da inicial
+       mostrar um destaque só e abrir no slide errado. Quando a versão nova
+       assume o controle, a página se recarrega UMA vez, e tudo passa a vir
+       da mesma versão. Na primeira visita de todas não recarrega: nada veio
+       do cache. Depois do recarregamento não há versão esperando, então não
+       entra em ciclo. */
+    var jaTinhaVersao = !!navigator.serviceWorker.controller;
+    var recarregando = false;
+    navigator.serviceWorker.addEventListener('controllerchange', function () {
+      if (!jaTinhaVersao || recarregando) return;
+      recarregando = true;
+      window.location.reload();
+    });
     window.addEventListener('load', function () {
       navigator.serviceWorker.register('sw.js').catch(function () {});
     });
