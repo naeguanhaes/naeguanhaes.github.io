@@ -22,10 +22,66 @@
    ═══════════════════════════════════════════════════════ */
 
 window.DADOS_EDITAIS = {
-  atualizadoEm: '2026-09-15',
+  atualizadoEm: '2026-09-21',
   itens: [
     {
+      titulo: 'PROPCTs · Bolsa para Povos e Comunidades Tradicionais',
+      resumo: 'Bolsa de R$ 1.400 por mês para estudantes pertencentes a povos e comunidades tradicionais, com a Unidade Guanhães incluída no edital. Cadastro de 21/09 a 05/10, pelo sistema do programa.',
+      tipo: 'assistencia',
+      abre: '2026-09-21',
+      encerra: '2026-10-05',
+      link: 'propcts.html',
+
+      destaque: {
+        tema: 'coral',
+        eyebrow: 'Assistência estudantil · Edital PROEX/COAC nº 05/2026',
+        titulo: 'Bolsa para Povos e Comunidades Tradicionais',
+        texto: 'Bolsa de <b>R$ 1.400 por mês</b> para estudantes indígenas, quilombolas, ciganos e de outros povos e comunidades tradicionais. O cadastro vai de <b>21 de setembro a 5 de outubro</b>, e a Unidade Guanhães está no edital.',
+        numeros: [
+          { n: 'R$ 1.400', r: 'por mês' },
+          { n: '05/10', r: 'fim do cadastro' },
+          { n: 'Guanhães', r: 'incluída' }
+        ],
+        acao: 'Ver quem pode e como se cadastrar',
+        extraTexto: 'Ir para o cadastro',
+        extraLink: 'http://propcts.uemg.br'
+      }
+    },
+    {
+      titulo: 'V Conecta Mente · Procrastinação Acadêmica',
+      resumo: 'Webinário sobre saúde mental e cuidado acadêmico, com a psicóloga Giselli Oliveira. Sexta, 06/11, das 17h às 18h30, ao vivo pela TV UEMG.',
+      tipo: 'outro',
+      abre: '2026-09-18',
+      encerra: '2026-11-06',
+      link: 'apoio.html#conecta-mente',
+      grupo: 'conecta-mente-v',
+      /* e evento, nao edital: aparece no painel da inicial, nao na lista */
+      naLista: false,
+
+      destaque: {
+        tema: 'vinho',
+        eyebrow: 'Webinário sobre Saúde Mental e Cuidado Acadêmico',
+        titulo: 'V Conecta Mente: Procrastinação Acadêmica',
+        texto: 'Por que adiamos aquilo que sabemos que precisamos fazer? Com a psicóloga <b>Giselli Oliveira</b>, ao vivo pela <b>TV UEMG</b>, na <b>sexta, 6 de novembro, das 17h às 18h30</b>.',
+        numeros: [
+          { n: '06/11', r: 'sexta-feira' },
+          { n: '17h', r: 'às 18h30' },
+          { n: 'TV UEMG', r: 'ao vivo' }
+        ],
+        rotuloPrazo: 'para o webinário',
+        textoLonge: 'Ao vivo em 06/11, às 17h',
+        textoUltimoDia: 'É hoje, às 17h, na TV UEMG',
+        acao: 'Inscreva-se',
+        acaoLink: 'https://lets.events/e/v-conecta-mente-webinario-sobre-saude-mental-e-cuidado-academico-2/',
+        extraTexto: 'Ver o cartaz',
+        extraLink: 'apoio.html#conecta-mente',
+        imagem: 'assets/eventos/conecta-mente-v.webp',
+        imagemAlt: 'Cartaz do V Conecta Mente, com a psicóloga Giselli Oliveira: Procrastinação Acadêmica, em 6 de novembro de 2026, das 17h às 18h30, ao vivo pela TV UEMG.'
+      }
+    },
+    {
       titulo: '28º Seminário de Pesquisa e Extensão · apresentação de trabalho',
+      grupo: 'seminario-28',
       resumo: 'Prazo prorrogado de 15 para 21 de setembro. Inscrição com apresentação e submissão do resumo. Exige Currículo Lattes, que leva até 24 horas para ser gerado. É o prazo mais curto do Seminário e não se repete.',
       tipo: 'pesquisa',
       abre: '2026-08-28',
@@ -53,6 +109,7 @@ window.DADOS_EDITAIS = {
     },
     {
       titulo: '28º Seminário de Pesquisa e Extensão · inscrição como ouvinte',
+      grupo: 'seminario-28',
       resumo: 'Obrigatória para TODOS que forem participar, inclusive quem vai apresentar trabalho. Faça esta primeiro, antes de qualquer outra inscrição do Seminário.',
       tipo: 'pesquisa',
       abre: '2026-08-28',
@@ -76,6 +133,7 @@ window.DADOS_EDITAIS = {
     },
     {
       titulo: '28º Seminário de Pesquisa e Extensão · programação em Guanhães',
+      grupo: 'seminario-28',
       resumo: 'A semana do Seminário na Unidade Guanhães. Quem se inscreveu participa das atividades da programação.',
       tipo: 'pesquisa',
       abre: '2026-11-09',

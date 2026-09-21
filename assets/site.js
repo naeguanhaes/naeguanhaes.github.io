@@ -139,16 +139,16 @@
     menu.appendChild(a);
   })();
 
-  /* ── Links de campanha, com prazo de validade ─────── */
+  /* ── Blocos de campanha, com prazo de validade ────── */
   (function linksComPrazo() {
-    /* Um link do menu pode trazer data-ate="AAAA-MM-DD". Passada a data,
-       ele se retira sozinho, em todas as páginas de uma vez, sem ninguém
+    /* Qualquer elemento, link do menu ou bloco de página, pode trazer
+       data-ate="AAAA-MM-DD". Passada a data, ele se retira sozinho, em todas as páginas de uma vez, sem ninguém
        precisar lembrar de editar 31 arquivos. Serve para divulgação de
        evento, que por natureza tem fim.
        Roda ANTES dos submenus, para o menu já se montar sem ele. */
     var hoje = hojeISO();
     Array.prototype.forEach.call(
-      document.querySelectorAll('.nav-link[data-ate]'),
+      document.querySelectorAll('[data-ate]'),
       function (a) {
         var ate = a.getAttribute('data-ate');
         if (ate && hoje > ate && a.parentNode) a.parentNode.removeChild(a);

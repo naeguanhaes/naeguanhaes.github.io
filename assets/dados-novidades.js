@@ -15,8 +15,22 @@
    ═══════════════════════════════════════════════════════ */
 
 window.DADOS_NOVIDADES = {
-  atualizadoEm: '2026-09-15',
+  atualizadoEm: '2026-09-21',
   itens: [
+    {
+      data: '2026-09-21',
+      titulo: 'Bolsa PROPCTs: cadastro aberto até 5 de outubro',
+      texto: 'Estudantes de povos e comunidades tradicionais podem receber R$ 1.400 por mês. A Unidade Guanhães está no edital. Atenção à conta: precisa ser corrente e no seu nome.',
+      link: 'propcts.html',
+      textoLink: 'ver quem pode'
+    },
+    {
+      data: '2026-09-21',
+      titulo: 'V Conecta Mente: Procrastinação Acadêmica',
+      texto: 'Webinário sobre saúde mental e cuidado acadêmico, com a psicóloga Giselli Oliveira. Sexta, 6 de novembro, das 17h às 18h30, ao vivo pela TV UEMG.',
+      link: 'apoio.html#conecta-mente',
+      textoLink: 'ver e se inscrever'
+    },
     {
       data: '2026-09-15',
       titulo: 'Seminário: prazo do resumo prorrogado até 21 de setembro',

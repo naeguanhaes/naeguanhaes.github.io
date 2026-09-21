@@ -13,6 +13,18 @@
 window.DADOS_BUSCA = {
   itens: [
     {
+      t: 'Bolsa PROPCTs · Povos e Comunidades Tradicionais',
+      d: 'R$ 1.400 por mês para estudantes indígenas, quilombolas, ciganos e de comunidades tradicionais. Cadastro até 05/10.',
+      u: 'propcts.html',
+      k: 'propcts bolsa povos comunidades tradicionais indigena quilombola cigano procan auxilio assistencia estudantil permanencia renda 1400 cadastro conta corrente edital proex coac 05 2026'
+    },
+    {
+      t: 'V Conecta Mente · Procrastinação Acadêmica',
+      d: 'Webinário sobre saúde mental, sexta, 06/11, das 17h às 18h30, ao vivo pela TV UEMG.',
+      u: 'apoio.html#conecta-mente',
+      k: 'conecta mente webinario saude mental procrastinacao adiar cuidado academico psicologa giselli oliveira tv uemg palestra evento novembro ansiedade estudo'
+    },
+    {
       t: "Gerador de requerimentos",
       d: "Monta o pedido de aproveitamento, trancamento ou adaptacao com a resolucao certa.",
       u: "requerimentos.html",

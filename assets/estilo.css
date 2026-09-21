@@ -1647,6 +1647,65 @@ html[data-contraste="alto"] .hero-selo { border-color: #fff; }
 .pg-seminario .hero-in { max-width: 54ch; }
 .pg-seminario .hero-contagem { align-self: flex-start; }
 
+/* Variante terracota, para editais de assistência estudantil (PROPCTs). */
+.hero-edital.tema-coral,
+.pg-propcts .hero {
+  background:
+    radial-gradient(115% 85% at 88% 6%, rgba(255,255,255,.15) 0%, rgba(255,255,255,0) 55%),
+    radial-gradient(95% 75% at 6% 104%, rgba(224,154,30,.30) 0%, rgba(224,154,30,0) 62%),
+    linear-gradient(122deg, #4A1C12 0%, #74301F 42%, #9A4630 78%, #B0553B 100%);
+}
+.hero-edital.tema-coral .eyebrow,
+.pg-propcts .hero .eyebrow { color: #FFD9C4; }
+.pg-propcts .hero::after { background: var(--ambar); opacity: .5; }
+.pg-propcts .hero-in { max-width: 56ch; }
+.pg-propcts .hero-contagem { align-self: flex-start; }
+
+/* Variante vinho, com a cor do cartaz do Conecta Mente. */
+.hero-edital.tema-vinho {
+  background:
+    radial-gradient(115% 85% at 88% 6%, rgba(255,255,255,.14) 0%, rgba(255,255,255,0) 55%),
+    radial-gradient(95% 75% at 6% 104%, rgba(212,146,40,.30) 0%, rgba(212,146,40,0) 62%),
+    linear-gradient(122deg, #3A0E18 0%, #5E1626 45%, #7A1F32 80%, #1F4D3A 130%);
+}
+.hero-edital.tema-vinho .eyebrow { color: #F5D08A; }
+
+/* Slide com imagem ao lado do texto, como o cartaz de um evento.
+   A imagem só aparece em tela larga: no celular o cartaz em pé deixaria
+   o bloco de cima alto demais, e ele está inteiro mais abaixo na página. */
+.hero-com-imagem { display: grid; gap: var(--s3); align-items: center; }
+.hero-imagem { position: relative; z-index: 2; margin: 0; display: none; }
+.hero-imagem img {
+  display: block; width: auto; max-width: 100%; max-height: 27rem;
+  border-radius: 16px; box-shadow: 0 18px 40px -18px rgba(0,0,0,.6);
+}
+@media (min-width: 880px) {
+  .hero-com-imagem { grid-template-columns: minmax(0, 1fr) auto; }
+  .hero-imagem { display: block; }
+}
+
+/* Cartaz de evento em página: a imagem inteira e as informações ao lado. */
+.evento-cartaz {
+  --c: var(--rosa);
+  display: grid; gap: var(--s3); align-items: start;
+  background: var(--surface); border: 1px solid var(--hair);
+  border-top: 4px solid var(--c);
+  border-radius: var(--radius); box-shadow: var(--sh-1);
+  padding: var(--s3);
+}
+@media (min-width: 760px) { .evento-cartaz { grid-template-columns: minmax(0, 20rem) 1fr; } }
+.evento-cartaz figure { margin: 0; }
+.evento-cartaz img {
+  display: block; width: 100%; max-width: 22rem; height: auto; margin-inline: auto;
+  border-radius: 12px; box-shadow: var(--sh-1);
+}
+.evento-cartaz .evento-info { display: flex; flex-direction: column; gap: .6rem; }
+.evento-cartaz h2 { margin: 0; }
+.evento-dados { display: grid; gap: .4rem; margin: .2rem 0 .4rem; padding: 0; list-style: none; }
+.evento-dados li { display: flex; gap: .5rem; color: var(--ink-2); }
+.evento-dados b { color: var(--ink); min-width: 5.5rem; }
+html[data-contraste="alto"] .evento-cartaz { border-color: #000; }
+
 /* na reta final o selo do prazo fica vermelho, aqui e na página do projeto */
 .hero-contagem.urgente { background: var(--marca-vermelho); border-color: transparent; }
 

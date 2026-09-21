@@ -136,7 +136,7 @@ try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentEleme
       <a href="privacidade.html">Privacidade</a>
     </div>
     <p class="assinatura">Desenvolvido por <b>Jonatan Barbosa Silva</b></p>
-    <p class="foot-versao">Site conferido e atualizado em 15 de setembro de 2026</p>
+    <p class="foot-versao">Site conferido e atualizado em 21 de setembro de 2026</p>
   </div>
 </footer>
 
@@ -173,6 +173,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /* encerrados somem depois de 30 dias */
   var itens = (D.itens || []).filter(function (e) {
+    /* naLista: false serve a eventos que so aparecem no painel da inicial,
+       como um webinario, que nao e edital */
+    if (e.naLista === false) return false;
     return !(hoje > e.encerra && dias(e.encerra, hoje) > 30);
   });
 
