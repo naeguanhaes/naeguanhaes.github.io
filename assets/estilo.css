@@ -634,7 +634,24 @@ details.faq p { margin-top: .6rem; color: var(--muted); font-size: .96rem; }
 }
 .chip:hover { color: var(--c); border-color: var(--c); }
 .chip[aria-pressed="true"] { background: var(--c); border-color: var(--c); color: #fff; }
-.busca { flex: 1 1 15rem; }
+.busca { flex: 1 1 15rem; position: relative; }
+
+/* Sugestões de professor que aparecem enquanto se digita nos horários */
+.sugestoes {
+  position: absolute; z-index: 30; left: 0; right: 0; top: calc(100% + .35rem);
+  margin: 0; padding: .3rem; list-style: none;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+  box-shadow: var(--sh-2); max-height: 20rem; overflow-y: auto;
+}
+.sugestoes li {
+  display: flex; flex-direction: column; gap: .1rem;
+  padding: .55rem .75rem; border-radius: 10px; cursor: pointer;
+}
+.sugestoes li:hover,
+.sugestoes li[aria-selected="true"] { background: color-mix(in srgb, var(--turquesa) 12%, var(--surface)); }
+.sug-nome { font-weight: 650; color: var(--ink); font-size: .93rem; }
+.sug-info { font-size: .8rem; color: var(--muted); }
+html[data-contraste="alto"] .sugestoes { border-color: #000; }
 .contagem { font-size: .82rem; color: var(--muted); font-variant-numeric: tabular-nums; }
 
 .turma {

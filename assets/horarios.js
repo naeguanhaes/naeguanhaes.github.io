@@ -494,11 +494,16 @@
     });
   }
 
+  /* O termo vale palavra por palavra, em qualquer ordem: "julio silva"
+     acha "Júlio César da Costa Silva", o que a busca pelo trecho inteiro
+     não conseguia. */
   function aplicar() {
     var visiveis = 0;
+    var palavras = termo ? termo.split(/\s+/).filter(Boolean) : [];
     artigos.forEach(function (a) {
       var okCurso = cursoAtivo === 'todos' || a.getAttribute('data-curso') === cursoAtivo;
-      var okTermo = !termo || U.normaliza(a.textContent).indexOf(termo) !== -1;
+      if (!a._texto) a._texto = U.normaliza(a.textContent);
+      var okTermo = palavras.every(function (p) { return a._texto.indexOf(p) !== -1; });
       var mostra = okCurso && okTermo;
       a.hidden = !mostra;
       if (mostra) visiveis++;
@@ -525,11 +530,132 @@
     });
 
     var campo = document.getElementById('in-busca');
+    var caixaSug = document.getElementById('sugestoes-prof');
+
+    /* ── Professores, para sugerir enquanto se digita ──
+       O nome sem o título ("Prof.", "Profa.", "Me.", "Dra."...), em palavras
+       normalizadas, e quantas aulas por semana cada um dá, para a sugestão
+       já dizer alguma coisa útil. */
+    var professores = Object.keys(D.professores).map(function (chave) {
+      var nome = D.professores[chave];
+      var aulas = 0;
+      D.turmas.forEach(function (t) {
+        t.linhas.forEach(function (l) {
+          (l.celulas || []).forEach(function (cel) { if (cel && cel[1] === chave) aulas++; });
+        });
+      });
+      return {
+        nome: nome,
+        aulas: aulas,
+        palavras: U.normaliza(nome).split(/\s+/).filter(function (p) { return p && !/\.$/.test(p); })
+      };
+    });
+
+    /* Cada palavra digitada precisa ser o COMEÇO de alguma palavra do nome:
+       "gab" acha Gabriella, "jul sil" acha Júlio... Silva. Quem bate no
+       primeiro nome vem antes. */
+    function acharProfessores(texto) {
+      var digitadas = U.normaliza(texto).split(/\s+/).filter(function (p) {
+        return p && !/^(prof|profa|prof\.|profa\.|me|me\.|ma|dr|dr\.|dra|dra\.|esp|esp\.)$/.test(p);
+      });
+      if (!digitadas.length) return [];
+      return professores.filter(function (p) {
+        return digitadas.every(function (d) {
+          return p.palavras.some(function (w) { return w.indexOf(d) === 0; });
+        });
+      }).sort(function (a, b) {
+        var pa = a.palavras[0].indexOf(digitadas[0]) === 0 ? 0 : 1;
+        var pb = b.palavras[0].indexOf(digitadas[0]) === 0 ? 0 : 1;
+        return pa - pb || a.palavras.join(' ').localeCompare(b.palavras.join(' '));
+      });
+    }
+
+    var sugestoes = [], ativa = -1;
+
+    function fecharSugestoes() {
+      if (!caixaSug) return;
+      caixaSug.hidden = true;
+      caixaSug.innerHTML = '';
+      sugestoes = []; ativa = -1;
+      campo.setAttribute('aria-expanded', 'false');
+      campo.removeAttribute('aria-activedescendant');
+    }
+
+    function marcarAtiva(i) {
+      ativa = i;
+      Array.prototype.forEach.call(caixaSug.children, function (li, k) {
+        li.setAttribute('aria-selected', k === i ? 'true' : 'false');
+      });
+      if (i >= 0) campo.setAttribute('aria-activedescendant', 'sug-prof-' + i);
+      else campo.removeAttribute('aria-activedescendant');
+    }
+
+    function mostrarSugestoes(texto) {
+      if (!caixaSug) return;
+      sugestoes = texto.trim() ? acharProfessores(texto).slice(0, 6) : [];
+      if (!sugestoes.length) { fecharSugestoes(); return; }
+      caixaSug.innerHTML = sugestoes.map(function (p, i) {
+        return '<li id="sug-prof-' + i + '" role="option" aria-selected="false" data-sug="' + i + '">' +
+                 '<span class="sug-nome">' + U.escapar(p.nome) + '</span>' +
+                 '<span class="sug-info">' + p.aulas + (p.aulas === 1 ? ' aula' : ' aulas') + ' na semana</span>' +
+               '</li>';
+      }).join('');
+      caixaSug.hidden = false;
+      campo.setAttribute('aria-expanded', 'true');
+      ativa = -1;
+    }
+
+    /* mostra todas as aulas de um professor e acende as células dele */
+    function escolherProfessor(nomeProf, rolar) {
+      if (!campo) return;
+      campo.value = nomeProf;
+      termo = U.normaliza(nomeProf);
+      cursoAtivo = 'todos';
+      document.querySelectorAll('.chip[data-curso]').forEach(function (o) {
+        o.setAttribute('aria-pressed', o.getAttribute('data-curso') === 'todos' ? 'true' : 'false');
+      });
+      fecharSugestoes();
+      aplicar();
+      realcarProfessor(nomeProf);
+      if (U.toast) U.toast('Mostrando todas as aulas de ' + nomeProf + '.');
+      if (rolar) campo.scrollIntoView({ behavior: U.reduzir ? 'auto' : 'smooth', block: 'center' });
+    }
+
     if (campo) {
       campo.addEventListener('input', function (e) {
         termo = U.normaliza(e.target.value.trim());
-        realcarProfessor(null);
         aplicar();
+        mostrarSugestoes(e.target.value);
+        /* se o que foi digitado só pode ser um professor, as aulas dele já
+           acendem na grade, sem precisar terminar o nome */
+        realcarProfessor(sugestoes.length === 1 ? sugestoes[0].nome : null);
+      });
+
+      campo.addEventListener('keydown', function (e) {
+        if (!sugestoes.length || caixaSug.hidden) return;
+        if (e.key === 'ArrowDown') { e.preventDefault(); marcarAtiva((ativa + 1) % sugestoes.length); }
+        else if (e.key === 'ArrowUp') { e.preventDefault(); marcarAtiva(ativa <= 0 ? sugestoes.length - 1 : ativa - 1); }
+        else if (e.key === 'Enter') {
+          var escolhida = ativa >= 0 ? sugestoes[ativa] : (sugestoes.length === 1 ? sugestoes[0] : null);
+          if (escolhida) { e.preventDefault(); escolherProfessor(escolhida.nome, false); }
+        }
+        else if (e.key === 'Escape') { fecharSugestoes(); }
+      });
+
+      campo.addEventListener('blur', function () {
+        /* espera o clique na sugestão acontecer antes de fechar a lista */
+        setTimeout(fecharSugestoes, 150);
+      });
+    }
+
+    if (caixaSug) {
+      /* mousedown, e não click: acontece antes de o campo perder o foco */
+      caixaSug.addEventListener('mousedown', function (e) {
+        var li = e.target.closest('[data-sug]');
+        if (!li) return;
+        e.preventDefault();
+        var p = sugestoes[+li.getAttribute('data-sug')];
+        if (p) escolherProfessor(p.nome, false);
       });
     }
 
@@ -538,17 +664,7 @@
       if (!alvo) return;
 
       if (alvo.hasAttribute('data-prof') && campo) {
-        var nomeProf = alvo.getAttribute('data-prof');
-        campo.value = nomeProf;
-        termo = U.normaliza(campo.value);
-        cursoAtivo = 'todos';
-        document.querySelectorAll('.chip[data-curso]').forEach(function (o) {
-          o.setAttribute('aria-pressed', o.getAttribute('data-curso') === 'todos' ? 'true' : 'false');
-        });
-        aplicar();
-        realcarProfessor(nomeProf);
-        if (U.toast) U.toast('Mostrando todas as aulas de ' + nomeProf + '.');
-        campo.scrollIntoView({ behavior: U.reduzir ? 'auto' : 'smooth', block: 'center' });
+        escolherProfessor(alvo.getAttribute('data-prof'), true);
         return;
       }
 
@@ -594,6 +710,12 @@
     /* chegada por link: horarios.html?sala=6 (do mapa) ou ?turma=dir-2 (link copiado) */
     var busca = new URLSearchParams(window.location.search);
     var alvoChegada = null;
+
+    var pedidoProf = busca.get('prof');
+    if (pedidoProf) {
+      var achado = professores.filter(function (p) { return p.nome === pedidoProf; })[0];
+      if (achado) setTimeout(function () { escolherProfessor(achado.nome, true); }, 60);
+    }
 
     var pedidoTurma = busca.get('turma');
     if (pedidoTurma) {

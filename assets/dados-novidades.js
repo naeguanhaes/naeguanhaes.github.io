@@ -19,6 +19,13 @@ window.DADOS_NOVIDADES = {
   itens: [
     {
       data: '2026-09-21',
+      titulo: 'Achar professor ficou mais fácil',
+      texto: 'Nos horários, basta começar a digitar o nome do professor: o site sugere na hora, sem acento e sem precisar do nome inteiro, e acende as aulas dele na grade. A busca do topo também encontra professores agora.',
+      link: 'horarios.html',
+      textoLink: 'experimentar'
+    },
+    {
+      data: '2026-09-21',
       titulo: 'Bolsa PROPCTs: cadastro aberto até 5 de outubro',
       texto: 'Estudantes de povos e comunidades tradicionais podem receber R$ 1.400 por mês. A Unidade Guanhães está no edital. Atenção à conta: precisa ser corrente e no seu nome.',
       link: 'propcts.html',

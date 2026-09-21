@@ -135,6 +135,7 @@
   var ementas = { indice: [] };
   var datas = { indice: [] };
   var recados = { indice: [] };
+  var docentes = { indice: [] };
 
   function carregarScript(src) {
     return new Promise(function (ok, erro) {
@@ -209,6 +210,45 @@
     });
   }
 
+  /* ── Professores dos horários ────────────────────────
+     Guardamos o nome em palavras sem o título, para "gab" achar
+     Gabriella. As palavras do nome também entram no vocabulário da
+     correção: sem isso, "carla" poderia ser "corrigida" para "carga". */
+  function montarIndiceProfessores() {
+    var H = window.DADOS_HORARIOS;
+    if (!H || !H.professores) return;
+    var vistas = {};
+    vocabulario.forEach(function (p) { vistas[p] = 1; });
+    Object.keys(H.professores).forEach(function (chave) {
+      var nome = H.professores[chave];
+      var palavras = U.normaliza(nome).split(/\s+/).filter(function (p) { return p && !/\.$/.test(p); });
+      var aulas = 0;
+      (H.turmas || []).forEach(function (t) {
+        (t.linhas || []).forEach(function (l) {
+          (l.celulas || []).forEach(function (cel) { if (cel && cel[1] === chave) aulas++; });
+        });
+      });
+      docentes.indice.push({ nome: nome, palavras: palavras, aulas: aulas });
+      palavras.forEach(function (p) {
+        if (p.length >= 3 && !vistas[p]) { vistas[p] = 1; vocabulario.push(p); }
+      });
+    });
+  }
+
+  /* cada palavra digitada tem de ser o começo de uma palavra do nome */
+  function acharProfessores(digitados) {
+    if (extras.estado !== 'pronto') return [];
+    var uteis = digitados.filter(function (d) {
+      return !/^(prof|profa|prof\.|profa\.|professor|professora|me|dr|dra|esp)\.?$/.test(d);
+    });
+    if (!uteis.length) return [];
+    return docentes.indice.filter(function (p) {
+      return uteis.every(function (d) {
+        return p.palavras.some(function (w) { return w.indexOf(d) === 0; });
+      });
+    }).slice(0, 5);
+  }
+
   function garantirExtras() {
     if (extras.estado === 'pronto' || extras.estado === 'carregando') return;
     extras.estado = 'carregando';
@@ -216,11 +256,13 @@
       garantirDado('DADOS_CURSO', 'assets/dados-curso.js'),
       garantirDado('DADOS_EMENTAS', 'assets/dados-ementas.js'),
       garantirDado('DADOS_CALENDARIO', 'assets/dados-calendario.js'),
-      garantirDado('DADOS_AVISOS', 'assets/dados-avisos.js')
+      garantirDado('DADOS_AVISOS', 'assets/dados-avisos.js'),
+      garantirDado('DADOS_HORARIOS', 'assets/dados-horarios.js')
     ]).then(function () {
       montarIndiceEmentas();
       montarIndiceDatas();
       montarIndiceAvisos();
+      montarIndiceProfessores();
       extras.estado = 'pronto';
       if (campo && campo.value) procurar(campo.value);
     }).catch(function () { extras.estado = 'falhou'; });
@@ -415,8 +457,12 @@
     var disciplinas = termoMaior ? acharEmentas(termos) : [];
     var achadosData = termoMaior ? acharDatas(termos) : [];
     var achadosAviso = termoMaior ? acharEm(recados.indice, termos, 3) : [];
+    /* nome de professor: usa o que foi digitado, sem a correção, e vale
+       desde que a lista já tenha chegado */
+    if (!termoMaior && digitados.some(function (t) { return t.length >= 2; })) garantirExtras();
+    var achadosProf = acharProfessores(digitados);
 
-    if (!achados.length && !disciplinas.length && !achadosData.length && !achadosAviso.length) {
+    if (!achados.length && !disciplinas.length && !achadosData.length && !achadosAviso.length && !achadosProf.length) {
       if (extras.estado === 'carregando') {
         caixaRes.innerHTML = '<p class="busca-dica">Procurando também nas datas, nos avisos e nas ementas…</p>';
         avisar('Procurando.');
@@ -436,6 +482,19 @@
       html += '<p class="busca-corrigido">Mostrando resultados para <b>' +
         conserto.trocas.map(function (t) { return U.escapar(t.para); }).join('</b>, <b>') +
         '</b></p>';
+    }
+
+    if (achadosProf.length) {
+      html += '<p class="busca-secao">Professores nos horários</p>' +
+        achadosProf.map(function (p) {
+          return '<a class="busca-item" href="horarios.html?prof=' + encodeURIComponent(p.nome) + '"' +
+                   ' style="--c: var(--turquesa)">' +
+                   '<span class="bi-t">' + U.escapar(p.nome) + '</span>' +
+                   '<span class="bi-d">Ver as ' + p.aulas + (p.aulas === 1 ? ' aula' : ' aulas') +
+                     ' da semana, com turma e sala</span>' +
+                 '</a>';
+        }).join('');
+      if (achados.length) html += '<p class="busca-secao">No site</p>';
     }
 
     html += achados.map(function (a) {
@@ -484,7 +543,7 @@
 
     caixaRes.innerHTML = html;
 
-    var total = achados.length + disciplinas.length + achadosData.length + achadosAviso.length;
+    var total = achados.length + disciplinas.length + achadosData.length + achadosAviso.length + achadosProf.length;
     avisar(total === 1 ? '1 resultado. Use as setas para percorrer.'
                        : total + ' resultados. Use as setas para percorrer.');
   }

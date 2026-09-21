@@ -120,7 +120,9 @@
     </div>
     <div class="busca">
       <label for="in-busca" style="position:absolute;left:-9999px">Buscar</label>
-      <input id="in-busca" type="search" placeholder="Buscar disciplina, professor, período ou sala…" autocomplete="off">
+      <input id="in-busca" type="search" placeholder="Buscar disciplina, professor, período ou sala…" autocomplete="off"
+             role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="sugestoes-prof">
+      <ul class="sugestoes" id="sugestoes-prof" role="listbox" aria-label="Professores encontrados" hidden></ul>
     </div>
     <span class="contagem" id="contagem"></span>
   </div>
