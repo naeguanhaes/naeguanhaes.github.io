@@ -104,6 +104,12 @@ abrir no slide errado. Antes de caçar defeito, confira o site publicado direto
 quando a versão nova assume o controle, o que resolve sozinho a partir da publicação
 seguinte. Para o usuário que viu a versão velha, basta recarregar a página.
 
+O GitHub Pages manda o navegador guardar cada arquivo por 10 minutos
+(`max-age=600`). Até a `nae-v54` o `sw.js` buscava "pela rede" passando por essa cópia,
+e o PILA sumiu do painel para quem abriu o site logo depois de publicar. Desde a
+`nae-v55` a instalação usa `cache: 'reload'` e páginas e dados usam `cache: 'no-cache'`.
+Não tire esses parâmetros.
+
 ## Páginas prontas porém OCULTAS (decisão do coordenador)
 
 Existe um lembrete agendado para **11 de janeiro de 2027** trazendo estas três
