@@ -15,8 +15,15 @@
    ═══════════════════════════════════════════════════════ */
 
 window.DADOS_NOVIDADES = {
-  atualizadoEm: '2026-09-21',
+  atualizadoEm: '2026-09-24',
   itens: [
+    {
+      data: '2026-09-24',
+      titulo: 'PILA 2027-1: intercâmbio com inscrição até 1º de outubro',
+      texto: 'Um semestre em universidade da Argentina, Colômbia, México ou Paraguai, com alojamento e alimentação. Há vagas para Direito e Engenharia Civil. Veja os requisitos e os documentos que precisam de assinatura.',
+      link: 'pila.html',
+      textoLink: 'ver vagas e documentos'
+    },
     {
       data: '2026-09-21',
       titulo: 'Achar professor ficou mais fácil',

@@ -22,8 +22,31 @@
    ═══════════════════════════════════════════════════════ */
 
 window.DADOS_EDITAIS = {
-  atualizadoEm: '2026-09-21',
+  atualizadoEm: '2026-09-24',
   itens: [
+    {
+      titulo: 'PILA Presencial 2027-1 · intercâmbio na América Latina',
+      resumo: 'Um semestre de graduação em universidades da Argentina, Colômbia, México e Paraguai, com alojamento e alimentação pela universidade de destino. 11 vagas. Exige de 40% a 90% do curso feito e coeficiente de 70. Inscrição até 01/10.',
+      tipo: 'outro',
+      abre: '2026-09-17',
+      encerra: '2026-10-01',
+      link: 'pila.html',
+
+      destaque: {
+        tema: 'musgo',
+        eyebrow: 'Intercâmbio · Edital AICI/UEMG nº 02/2026',
+        titulo: 'PILA 2027-1: um semestre na América Latina',
+        texto: 'São <b>11 vagas de graduação</b> na Argentina, Colômbia, México e Paraguai, com <b>alojamento e alimentação</b> pela universidade que recebe. Há opções para <b>Direito e Engenharia Civil</b>. Peça já a assinatura da coordenação e o histórico assinado pela secretaria.',
+        numeros: [
+          { n: '11', r: 'vagas na graduação' },
+          { n: '40% a 90%', r: 'do curso feito' },
+          { n: '01/10', r: 'fim da inscrição' }
+        ],
+        acao: 'Ver vagas e documentos',
+        extraTexto: 'Formulário de inscrição',
+        extraLink: 'https://forms.cloud.microsoft/r/FKVFxVyM8T'
+      }
+    },
     {
       titulo: 'PROPCTs · Bolsa para Povos e Comunidades Tradicionais',
       resumo: 'Bolsa de R$ 1.400 por mês para estudantes pertencentes a povos e comunidades tradicionais, com a Unidade Guanhães incluída no edital. Cadastro de 21/09 a 05/10, pelo sistema do programa.',

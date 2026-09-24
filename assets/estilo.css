@@ -1687,6 +1687,27 @@ html[data-contraste="alto"] .hero-selo { border-color: #fff; }
 }
 .hero-edital.tema-vinho .eyebrow { color: #F5D08A; }
 
+/* Variante musgo, com o verde e o creme do cartaz do PILA. */
+.hero-edital.tema-musgo,
+.pg-pila .hero {
+  background:
+    radial-gradient(115% 85% at 88% 6%, rgba(255,255,255,.15) 0%, rgba(255,255,255,0) 55%),
+    radial-gradient(95% 75% at 6% 104%, rgba(232,205,143,.30) 0%, rgba(232,205,143,0) 62%),
+    linear-gradient(122deg, #1F3521 0%, #36522F 42%, #4E6B45 78%, #5E7C53 100%);
+}
+.hero-edital.tema-musgo .eyebrow,
+.pg-pila .hero .eyebrow { color: #EBD49A; }
+.pg-pila .hero::after { background: #E8CD8F; opacity: .45; }
+.pg-pila .hero-in { max-width: 56ch; }
+.pg-pila .hero-contagem { align-self: flex-start; }
+
+/* Cartaz deitado de um edital, no alto da página, largura toda. */
+.banner-evento { margin: 0; }
+.banner-evento img {
+  display: block; width: 100%; height: auto;
+  border-radius: var(--radius); box-shadow: var(--sh-1);
+}
+
 /* Slide com imagem ao lado do texto, como o cartaz de um evento.
    A imagem só aparece em tela larga: no celular o cartaz em pé deixaria
    o bloco de cima alto demais, e ele está inteiro mais abaixo na página. */
@@ -1722,6 +1743,10 @@ html[data-contraste="alto"] .hero-selo { border-color: #fff; }
 .evento-dados li { display: flex; gap: .5rem; color: var(--ink-2); }
 .evento-dados b { color: var(--ink); min-width: 5.5rem; }
 html[data-contraste="alto"] .evento-cartaz { border-color: #000; }
+
+/* Cartaz deitado: a imagem ocupa a largura toda e as informações vêm embaixo. */
+@media (min-width: 760px) { .evento-cartaz.cartaz-deitado { grid-template-columns: 1fr; } }
+.evento-cartaz.cartaz-deitado img { max-width: 100%; }
 
 /* na reta final o selo do prazo fica vermelho, aqui e na página do projeto */
 .hero-contagem.urgente { background: var(--marca-vermelho); border-color: transparent; }

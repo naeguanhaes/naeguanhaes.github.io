@@ -5,7 +5,7 @@
    isso apaga o cache antigo e busca tudo de novo.
    ═══════════════════════════════════════════════════════ */
 
-var VERSAO = 'nae-v53';
+var VERSAO = 'nae-v54';
 
 /* Arquivos de dados (avisos, horários, calendário, editais, semestres).
    Estes NÃO seguem a regra do cache primeiro: um aviso urgente precisa
@@ -43,6 +43,7 @@ var ESSENCIAIS = [
   './editais.html',
   './seminario.html',
   './propcts.html',
+  './pila.html',
   './extensao.html',
   './auxilios.html',
   './calouro.html',

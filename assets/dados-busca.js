@@ -13,6 +13,12 @@
 window.DADOS_BUSCA = {
   itens: [
     {
+      t: 'PILA 2027-1 · Intercâmbio na América Latina',
+      d: 'Um semestre de graduação na Argentina, Colômbia, México ou Paraguai, com alojamento e alimentação. Inscrição até 01/10.',
+      u: 'pila.html',
+      k: 'pila intercambio mobilidade internacional exterior estudar fora semestre america latina argentina colombia mexico paraguai espanhol aici edital 02 2026 viagem universidade estrangeira rosario mar del plata nordeste santo tomas icesi'
+    },
+    {
       t: 'Bolsa PROPCTs · Povos e Comunidades Tradicionais',
       d: 'R$ 1.400 por mês para estudantes indígenas, quilombolas, ciganos e de comunidades tradicionais. Cadastro até 05/10.',
       u: 'propcts.html',
