@@ -5,7 +5,7 @@
    isso apaga o cache antigo e busca tudo de novo.
    ═══════════════════════════════════════════════════════ */
 
-var VERSAO = 'nae-v54';
+var VERSAO = 'nae-v55';
 
 /* Arquivos de dados (avisos, horários, calendário, editais, semestres).
    Estes NÃO seguem a regra do cache primeiro: um aviso urgente precisa
@@ -85,7 +85,12 @@ var ESSENCIAIS = [
 self.addEventListener('install', function (e) {
   e.waitUntil(
     caches.open(VERSAO)
-      .then(function (c) { return c.addAll(ESSENCIAIS); })
+      /* cache: 'reload' pula a cópia de 10 minutos que o navegador guarda
+         de cada arquivo do GitHub Pages. Sem isso, a versão nova podia
+         nascer com arquivos da versão anterior. */
+      .then(function (c) {
+        return c.addAll(ESSENCIAIS.map(function (u) { return new Request(u, { cache: 'reload' }); }));
+      })
       .then(function () { return self.skipWaiting(); })
   );
 });
@@ -166,8 +171,10 @@ self.addEventListener('fetch', function (e) {
   /* páginas: rede primeiro, para o aluno ver a versão nova;
      sem rede, entrega o que estiver guardado */
   if (req.mode === 'navigate') {
+    /* no-cache: confere com o servidor em vez de aceitar a cópia de até
+       10 minutos do navegador. Se nada mudou, a resposta é curtinha. */
     e.respondWith(
-      fetch(req)
+      fetch(new Request(req.url, { cache: 'no-cache', credentials: 'same-origin', redirect: 'manual' }))
         .then(function (resp) {
           var copia = resp.clone();
           caches.open(VERSAO).then(function (c) { c.put(req, copia); });
@@ -192,7 +199,7 @@ self.addEventListener('fetch', function (e) {
               if (!entregue && resp) { entregue = true; resolver(resp); }
             }
             var relogio = setTimeout(function () { entregar(guardado); }, PRAZO_DADOS);
-            fetch(req).then(function (resp) {
+            fetch(req, { cache: 'no-cache' }).then(function (resp) {
               clearTimeout(relogio);
               if (resp && resp.ok) c.put(req, resp.clone());
               entregar(resp);
