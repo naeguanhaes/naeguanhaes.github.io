@@ -162,14 +162,16 @@ que por natureza acaba, e evita o item esquecido no menu meses depois.
 A classe `nav-destaque` deixa a aba preenchida na cor do `--c`, em vez do link
 comum. As duas coisas costumam andar juntas.
 
-**Em uso hoje:** `seminario.html`, em lilás, com `data-ate="2026-11-13"`, o último dia
-do 28º Seminário. Some do menu em 14/11 sem ninguém tocar em nada.
+**Em uso hoje:** `wifi.html`, em turquesa, sem data de saída. O Seminário saiu do
+destaque em 26/09 (fim da submissão) e virou item de "Editais e bolsas", ainda com
+`data-ate="2026-11-13"`.
 
-O destaque do topo da página inicial segue a mesma lógica, mas pelos dados: em
-`assets/dados-editais.js` o Seminário tem três fases (resumo até 15/09, ouvinte até
-10/11, programação de 09 a 13/11), cada uma com o seu `destaque`. A vitrine mostra
-sempre a de prazo mais próximo e, passada a última, o topo volta a ser só o
-retângulo azul.
+**Página inicial (desde 26/09/2026):** o quadro de boas-vindas é fixo e baixo, a busca
+vem logo abaixo e o painel que gira só tem avisos de `assets/dados-editais.js`. Ordem
+do painel, pedida pelo coordenador: **aviso novo fica em primeiro por 10 dias**
+(campo `publicado`, a data em que entrou no site; preencha sempre ao criar um item),
+os demais pelo prazo. Itens do mesmo `grupo` (as fases do Seminário) aparecem uma
+vez só, a de prazo mais próximo. Sem nenhum item vivo o painel fica escondido.
 
 ## Rotinas automáticas
 

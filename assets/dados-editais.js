@@ -16,8 +16,10 @@
      link:     'https://www.uemg.br/...' // página oficial do edital
    },
 
-   ordem:    opcional. Posição no painel da página inicial (1 = primeiro).
-             Sem ele, o item entra depois dos numerados, pelo prazo.
+   publicado: dia em que o aviso entrou no site (AAAA-MM-DD). Nos 10 dias
+             seguintes ele abre o painel da página inicial, na frente de
+             todos; depois volta para o seu lugar pelo prazo. Ao publicar
+             um aviso novo, preencha com a data de hoje.
 
    O selo (em breve, aberto, encerra em X dias, encerrado)
    é calculado sozinho a partir das datas. Editais encerrados
@@ -34,7 +36,7 @@ window.DADOS_EDITAIS = {
       abre: '2026-09-26',
       encerra: '2026-10-09',
       link: 'wifi.html',
-      ordem: 1,
+      publicado: '2026-09-26',
       /* e aviso, nao edital: aparece no painel da inicial, nao na lista */
       naLista: false,
 
@@ -60,7 +62,7 @@ window.DADOS_EDITAIS = {
       abre: '2026-09-17',
       encerra: '2026-10-01',
       link: 'pila.html',
-      ordem: 2,
+      publicado: '2026-09-24',
 
       destaque: {
         tema: 'musgo',
@@ -84,7 +86,7 @@ window.DADOS_EDITAIS = {
       abre: '2026-09-21',
       encerra: '2026-10-05',
       link: 'propcts.html',
-      ordem: 3,
+      publicado: '2026-09-21',
 
       destaque: {
         tema: 'coral',
@@ -108,7 +110,7 @@ window.DADOS_EDITAIS = {
       abre: '2026-09-18',
       encerra: '2026-11-06',
       link: 'apoio.html#conecta-mente',
-      ordem: 4,
+      publicado: '2026-09-21',
       grupo: 'conecta-mente-v',
       /* e evento, nao edital: aparece no painel da inicial, nao na lista */
       naLista: false,
@@ -142,7 +144,6 @@ window.DADOS_EDITAIS = {
       abre: '2026-08-28',
       encerra: '2026-09-21',
       link: 'seminario.html',
-      ordem: 5,
 
       /* Como aparece no retângulo do topo da página inicial.
          Para tirar da vitrine sem tirar da lista, use naInicial: false.
@@ -171,7 +172,6 @@ window.DADOS_EDITAIS = {
       abre: '2026-08-28',
       encerra: '2026-11-10',
       link: 'seminario.html',
-      ordem: 5,
 
       destaque: {
         tema: 'roxo',
@@ -196,7 +196,6 @@ window.DADOS_EDITAIS = {
       abre: '2026-11-09',
       encerra: '2026-11-13',
       link: 'seminario.html',
-      ordem: 5,
 
       destaque: {
         tema: 'roxo',

@@ -54,17 +54,25 @@
 
   var hoje = hojeISO();
 
-  /* O que ainda não encerrou. Quem tem o campo "ordem" vem primeiro,
-     do menor para o maior número (é a ordem que o coordenador escolheu);
-     os sem "ordem" vêm depois, com o prazo mais apertado primeiro.
+  /* O que ainda não encerrou, em duas turmas:
+     1. os NOVOS, que entraram no site há menos de 10 dias (campo
+        "publicado"), do mais recente para o mais antigo;
+     2. todos os outros, com o prazo mais apertado primeiro.
+     Assim cada aviso novo abre o painel por 10 dias e depois volta
+     para o seu lugar pela data de encerramento.
      naInicial: false tira o item desta vitrine sem tirar da lista. */
-  function posicao(e) { return typeof e.ordem === 'number' ? e.ordem : Infinity; }
+  var DIAS_DE_NOVO = 10;
+  function novo(e) {
+    return !!e.publicado && e.publicado <= hoje && dias(e.publicado, hoje) < DIAS_DE_NOVO;
+  }
   var vivos = (D.itens || [])
     .filter(function (e) {
       return e && e.encerra && hoje <= e.encerra && e.naInicial !== false;
     })
     .sort(function (a, b) {
-      if (posicao(a) !== posicao(b)) return posicao(a) < posicao(b) ? -1 : 1;
+      var na = novo(a), nb = novo(b);
+      if (na !== nb) return na ? -1 : 1;
+      if (na && a.publicado !== b.publicado) return a.publicado > b.publicado ? -1 : 1;
       return a.encerra < b.encerra ? -1 : 1;
     });
   if (!vivos.length) return;
@@ -146,7 +154,7 @@
     return slide;
   }
 
-  /* Na ordem acima: primeiro os de "ordem" fixa, depois os demais pelo prazo. */
+  /* Na ordem acima: primeiro os novos, depois os demais pelo prazo. */
   escolhidos.forEach(function (e) { trilho.appendChild(montar(e)); });
   var painel = trilho.closest('[data-carrossel]');
   if (painel) painel.hidden = false;
