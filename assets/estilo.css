@@ -1591,11 +1591,32 @@ html[data-contraste="alto"] .folha-vaga,
 html[data-contraste="alto"] .folha-vaga-media,
 html[data-contraste="alto"] .folha-vaga-longa { border-color: #000; }
 
-/* ── Bloco de cima como carrossel ─────────────────────── */
-/* O quadrado grande da página inicial comporta mais de um destaque.
-   O segundo slide é o edital aberto, montado a partir de
-   assets/dados-editais.js, e simplesmente não nasce quando não há
-   nenhum aberto: aí o carrossel volta a ser um bloco parado. */
+/* ── Boas-vindas fixas, acima do painel ─────────────── */
+/* Retângulo baixo, o mesmo azul do hero, com o texto à esquerda e a
+   busca e o e-mail à direita. Não gira: o painel logo abaixo fica só
+   com o que é passageiro. */
+.hero-compacto {
+  border-radius: 22px;
+  padding: clamp(1.3rem, .9rem + 1.8vw, 2rem) clamp(1.3rem, .8rem + 2.6vw, 2.6rem);
+}
+.hero-compacto::before { width: 170px; height: 170px; right: -50px; top: -50px; border-radius: 0 0 0 170px; }
+.hero-compacto::after { width: 96px; height: 96px; left: -34px; bottom: -34px; border-radius: 0 96px 0 0; }
+.hero-compacto .hero-in { max-width: none; display: grid; gap: var(--s2); }
+.hero-compacto .hc-texto { display: flex; flex-direction: column; gap: .45rem; }
+.hero-compacto h1 { font-size: clamp(1.55rem, 1.1rem + 1.7vw, 2.2rem); letter-spacing: -.01em; }
+.hero-compacto p { font-size: 1rem; margin: 0; max-width: 58ch; }
+.hero-compacto .hc-lado { display: flex; flex-direction: column; gap: .7rem; align-items: flex-start; }
+.hero-compacto .hero-acoes { margin-top: 0; }
+@media (min-width: 940px) {
+  .hero-compacto .hero-in { grid-template-columns: minmax(0, 1fr) auto; align-items: center; column-gap: 2.4rem; }
+  .hero-compacto .hc-lado { align-items: flex-end; }
+  .hero-compacto .hero-acoes { justify-content: flex-end; max-width: 30rem; }
+}
+
+/* ── Painel da inicial como carrossel ─────────────────── */
+/* Só editais, eventos e avisos com prazo, montados a partir de
+   assets/dados-editais.js. Quando não há nenhum vivo, o painel
+   fica escondido (atributo hidden no HTML). */
 .carrossel-hero .trilho {
   gap: var(--s2); scroll-padding-inline: .4rem;
   /* impede o navegador de compensar a rolagem quando o slide do

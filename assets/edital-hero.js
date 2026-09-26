@@ -1,19 +1,20 @@
 /* ═══════════════════════════════════════════════════════
-   Os editais e eventos abertos como slides do bloco de cima
+   Os avisos e eventos com prazo, como slides do painel da inicial
    ───────────────────────────────────────────────────────
-   A página inicial abre com um carrossel. O primeiro slide é
-   fixo; o segundo é o edital de prazo mais apertado que ainda
-   não encerrou, montado a partir de assets/dados-editais.js.
+   O painel da página inicial só tem o que é passageiro: editais,
+   eventos e avisos, montados a partir de assets/dados-editais.js.
+   O quadro de boas-vindas ("Tudo que o estudante precisa...") fica
+   fixo ACIMA do painel, fora dele, desde 26/09/2026.
 
-   Quando não há edital vivo, nenhum slide é criado: o site.js
-   encontra um slide só, desiste de montar o carrossel e o bloco
-   volta a ser um quadro parado, como era antes. Ou seja, a faixa
-   se retira sozinha quando o prazo vence.
+   O painel nasce com o atributo hidden. Só aparece se houver ao
+   menos um item vivo; quando todos vencem, some sozinho e a página
+   não fica com um buraco. Com um slide só, o site.js não monta o
+   carrossel e ele vira um quadro parado.
 
    ORDEM IMPORTA. Este arquivo precisa ser carregado DEPOIS de
    dados-editais.js e ANTES de site.min.js. O site.js monta o
    carrossel no ato em que roda, e não no DOMContentLoaded, então
-   o slide tem de estar no lugar antes dele. Scripts "defer"
+   os slides têm de estar no lugar antes dele. Scripts "defer"
    executam na ordem em que aparecem no HTML, e todos depois da
    página ter sido lida, então aqui o DOM já existe.
 
@@ -139,16 +140,15 @@
     return slide;
   }
 
-  /* Todos entram na FRENTE do slide fixo, na ordem do prazo: quem chega
-     na página vê primeiro o prazo mais urgente, e o fixo fica por último. */
-  var fixo = trilho.firstElementChild;
-  escolhidos.forEach(function (e) { trilho.insertBefore(montar(e), fixo); });
+  /* Na ordem do prazo: quem chega na página vê primeiro o mais urgente. */
+  escolhidos.forEach(function (e) { trilho.appendChild(montar(e)); });
+  var painel = trilho.closest('[data-carrossel]');
+  if (painel) painel.hidden = false;
 
-  /* Cinto e suspensório: ao inserir algo ANTES do que já estava visível, o
-     navegador pode compensar a rolagem para manter o conteúdo antigo na
-     tela (scroll anchoring), e aí a página abriria no slide fixo. Zerar a
-     rolagem garante a abertura no primeiro destaque, sem animação, antes
-     de o site.js montar o carrossel. */
+  /* Cinto e suspensório: o navegador pode ter guardado uma rolagem
+     do trilho de uma visita anterior. Zerar garante a abertura no
+     primeiro destaque, sem animação, antes de o site.js montar o
+     carrossel. */
   var comportamento = trilho.style.scrollBehavior;
   trilho.style.scrollBehavior = 'auto';
   trilho.scrollLeft = 0;
