@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Status do projeto de extensão · Conexão Universitária | NAE Guanhães</title>
+<meta name="description" content="Etapas do Conexão Universitária, projeto de extensão do NAE da UEMG Guanhães: Fase 1, o site para os estudantes, e Fase 2, a parceria com a Secretaria Municipal de Educação sobre TEA e neurodivergências.">
+<link rel="icon" href="assets/favicon-nae.png" type="image/png">
+<meta name="theme-color" content="#40688B">
+<meta name="color-scheme" content="light">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/icone-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="NAE Guanhães">
+<meta name="mobile-web-app-capable" content="yes">
+<script>
+try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentElement.setAttribute("data-fonte",f);var c=localStorage.getItem("nae:contraste");if(c==="sim")document.documentElement.setAttribute("data-contraste","alto")}catch(e){}</script>
+<link rel="stylesheet" href="assets/min/estilo.min.css">
+</head>
+<body class="pg-status">
+
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<div id="avisos"></div>
+
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="index.html">
+      <img class="marca" src="assets/logo-topo.webp" width="620" height="279" alt="NAE · Núcleo de Apoio ao Estudante · Unidade Guanhães">
+    </a>
+    <div class="unidade">
+      <b>UEMG · Unidade Guanhães</b>
+    </div>
+    <div class="topo-acoes">
+      <button class="btn-topo" type="button" data-fonte-menos aria-label="Diminuir o tamanho do texto" title="Texto menor">A-</button>
+      <button class="btn-topo" type="button" data-fonte-mais aria-label="Aumentar o tamanho do texto" title="Texto maior">A+</button>
+      <button class="btn-topo" type="button" data-contraste-btn aria-pressed="false" aria-label="Alternar o alto contraste" title="Ligar o alto contraste">◐</button>
+      <button class="btn-topo" type="button" data-abrir-busca aria-label="Buscar no site" title="Buscar no site (tecla /)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.8-3.8"></path></svg></button>
+    </div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Seções do site">
+  <div class="wrap nav-in">
+    <a class="nav-link" href="index.html" style="--c: var(--azul-esc)"><i class="dot"></i>Início</a>
+    <a class="nav-link nav-destaque" href="wifi.html" style="--c: var(--turquesa)"><i class="dot"></i>Wi-Fi da Unidade</a>
+    <div class="nav-grupo" data-grupo="Sistemas" style="--c: var(--petroleo)">
+      <a class="nav-link" href="sistemas.html" style="--c: var(--petroleo)"><i class="dot"></i>Visão geral dos sistemas</a>
+      <a class="nav-link" href="email.html" style="--c: var(--azul)"><i class="dot"></i>E-mail institucional</a>
+      <a class="nav-link" href="moodle.html" style="--c: var(--petroleo)"><i class="dot"></i>AVA Moodle</a>
+      <a class="nav-link" href="lyceum.html" style="--c: var(--azul)"><i class="dot"></i>Lyceum e app UEMG+</a>
+    </div>
+    <div class="nav-grupo" data-grupo="Aulas e prazos" style="--c: var(--turquesa)">
+      <a class="nav-link" href="horarios.html" style="--c: var(--turquesa)"><i class="dot"></i>Horários de aulas</a>
+      <a class="nav-link" href="calendario.html" style="--c: var(--lilas)"><i class="dot"></i>Calendário acadêmico</a>
+      <a class="nav-link" href="mapa.html" style="--c: var(--verde)"><i class="dot"></i>Mapa do campus</a>
+    </div>
+    <div class="nav-grupo" data-grupo="Meu curso" style="--c: var(--azul)">
+      <a class="nav-link" href="curso.html" style="--c: var(--azul-esc)"><i class="dot"></i>Visão geral do curso</a>
+      <a class="nav-link" href="matriz.html" style="--c: var(--azul)"><i class="dot"></i>Matriz curricular</a>
+      <a class="nav-link" href="atividades.html" style="--c: var(--coral)"><i class="dot"></i>Atividades complementares</a>
+      <a class="nav-link" href="estagio.html" style="--c: var(--verde)"><i class="dot"></i>Estágio</a>
+      <a class="nav-link" href="tcc.html" style="--c: var(--lilas)"><i class="dot"></i>Trabalho de Conclusão</a>
+      <a class="nav-link" href="declaracao-ia.html" style="--c: var(--rosa)"><i class="dot"></i>Declaração de uso de IA</a>
+      <a class="nav-link" href="secretaria.html" style="--c: var(--turquesa)"><i class="dot"></i>Secretaria e regras</a>
+    </div>
+    <div class="nav-grupo" data-grupo="Editais e bolsas" style="--c: var(--ambar)">
+      <a class="nav-link" href="editais.html" style="--c: var(--ambar)"><i class="dot"></i>Editais abertos</a>
+      <a class="nav-link" href="auxilios.html" style="--c: var(--coral)"><i class="dot"></i>Auxílios e pagamentos</a>
+      <a class="nav-link" href="seminario.html" data-ate="2026-11-13" style="--c: var(--lilas)"><i class="dot"></i>28º Seminário de Pesquisa e Extensão</a>
+    </div>
+    <div class="nav-grupo" data-grupo="Ferramentas" style="--c: var(--turquesa)">
+      <a class="nav-link" href="calculadora.html" style="--c: var(--turquesa)"><i class="dot"></i>Calculadora de média e faltas</a>
+      <a class="nav-link" href="cronometro.html" style="--c: var(--petroleo)"><i class="dot"></i>Cronômetro de estudos</a>
+      <a class="nav-link" href="planner.html" style="--c: var(--verde)"><i class="dot"></i>Planner do semestre</a>
+      <a class="nav-link" href="requerimentos.html" style="--c: var(--azul)"><i class="dot"></i>Gerador de requerimentos</a>
+    </div>
+    <a class="nav-link" href="apoio.html" style="--c: var(--rosa)"><i class="dot"></i>Apoio psicológico</a>
+    <a class="nav-link" href="avisos.html" style="--c: var(--turquesa)"><i class="dot"></i>Avisos</a>
+    <div class="nav-grupo" data-grupo="Sobre o NAE" style="--c: var(--ambar)">
+      <a class="nav-link" href="sobre.html" style="--c: var(--ambar)"><i class="dot"></i>O que é o NAE</a>
+      <a class="nav-link" href="contato.html" style="--c: var(--coral)"><i class="dot"></i>Fale com o NAE</a>
+      <a class="nav-link" href="status-projeto.html" aria-current="page" style="--c: var(--verde)"><i class="dot"></i>Status do projeto de extensão</a>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap stack" id="conteudo">
+
+  <nav class="trilha" aria-label="Você está aqui" style="--c: var(--verde)">
+    <a href="index.html">Início</a><span class="separa">›</span><a href="sobre.html">Sobre o NAE</a><span class="separa">›</span><span aria-current="page">Status do projeto de extensão</span>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-in">
+      <span class="eyebrow">Projeto de extensão · Conexão Universitária</span>
+      <h1>Status do projeto de extensão</h1>
+      <p>
+        O <b>Conexão Universitária</b> é o projeto de extensão do NAE da UEMG Unidade
+        Guanhães. Esta página registra, fase por fase, o que já foi feito, o que está em
+        andamento e o que vem a seguir, desde o início do projeto.
+      </p>
+      <div class="hero-selos">
+        <span class="hero-selo"><b>04/08/2026</b>início</span>
+        <span class="hero-selo"><b>3</b>fases</span>
+        <span class="hero-selo"><b>2</b>em andamento</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="fase col" aria-labelledby="fase1-tit" style="--c: var(--verde)">
+    <div class="fase-topo">
+      <span class="fase-num">Fase 1</span>
+      <span class="fase-status andamento">Em andamento</span>
+    </div>
+    <h2 id="fase1-tit">Comunidade Acadêmica Local</h2>
+    <p class="fase-objetivo">
+      <b>Objetivo:</b> implantar um site para que os estudantes da UEMG Guanhães tenham
+      acesso facilitado à informação acadêmica, em linguagem clara, pelo celular e a
+      qualquer hora.
+    </p>
+    <div class="fase-numeros">
+      <div><b>33</b><span>páginas públicas</span></div>
+      <div><b>190</b><span>ementas dos dois cursos</span></div>
+      <div><b>1.364</b><span>referências bibliográficas</span></div>
+      <div><b>201</b><span>aulas semanais nos horários</span></div>
+    </div>
+  </section>
+
+  <section class="fase col" aria-labelledby="fase2-tit" style="--c: var(--lilas)">
+    <div class="fase-topo">
+      <span class="fase-num">Fase 2</span>
+      <span class="fase-status andamento">Em andamento</span>
+    </div>
+    <h2 id="fase2-tit">Parceria com a Secretaria Municipal de Educação</h2>
+    <p class="fase-objetivo">
+      <b>Objetivo:</b> parceria com a Secretaria Municipal de Educação de Guanhães/MG
+      para a implementação de políticas públicas voltadas para o <b>TEA</b> (Transtorno do
+      Espectro Autista) e as <b>neurodivergências</b>.
+    </p>
+    <p class="fase-objetivo">As etapas desta fase serão registradas abaixo, à medida que forem executadas.</p>
+  </section>
+
+  <section class="fase col" aria-labelledby="fase3-tit" style="--c: var(--ambar)">
+    <div class="fase-topo">
+      <span class="fase-num">Fase 3</span>
+      <span class="fase-status prevista">Prevista</span>
+    </div>
+    <h2 id="fase3-tit">Divulgação do Vestibular 2027</h2>
+    <p class="fase-objetivo">
+      <b>Objetivo:</b> divulgar o Vestibular 2027 da UEMG e os cursos da Unidade Guanhães.
+    </p>
+    <p class="fase-objetivo">As etapas desta fase serão registradas aqui quando ela começar.</p>
+  </section>
+
+  <div class="col stack-s">
+    <div class="titulo-sec" style="--c: var(--verde)">
+      <span class="eyebrow" style="--c: var(--verde)">Fase 1 · Comunidade Acadêmica Local</span>
+      <h2>Etapas executadas</h2>
+    </div>
+    <p class="lede">Da mais recente para a mais antiga.</p>
+  </div>
+
+  <ol class="linha-tempo col">
+    <li class="lt-item">
+      <time datetime="2026-09-26">26/09/2026</time>
+      <h3>Wi-Fi da Unidade e nova página inicial</h3>
+      <p>Página própria com as redes e a senha nova da internet do campus. A página inicial passa a ter um quadro fixo de boas-vindas, a busca em destaque e um painel só com avisos, em que cada aviso novo fica em primeiro por 10 dias.</p>
+    </li>
+    <li class="lt-item">
+      <time datetime="2026-09-24">24/09/2026</time>
+      <h3>Intercâmbio PILA 2027-1</h3>
+      <p>Resumo do edital em linguagem clara, com as vagas para Direito e Engenharia Civil, documentos e cronograma.</p>
+    </li>
+    <li class="lt-item">
+      <time datetime="2026-09-21">21/09/2026</time>
+      <h3>Assistência estudantil, saúde mental e busca por professor</h3>
+      <p>Página da bolsa PROPCTs para povos e comunidades tradicionais, divulgação do webinário V Conecta Mente e busca que sugere o nome do professor enquanto se digita.</p>
+    </li>
+    <li class="lt-item">
+      <time datetime="2026-09-09">09/09/2026</time>
+      <h3>28º Seminário de Pesquisa e Extensão</h3>
+      <p>Página com todos os prazos e a ordem certa de inscrição, aviso sobre o Currículo Lattes e a prorrogação da submissão de trabalhos.</p>
+    </li>
+    <li class="lt-item">
+      <time datetime="2026-08-18">18/08/2026</time>
+      <h3>Declaração de uso de inteligência artificial</h3>
+      <p>Modelo de declaração para o estudante anexar aos trabalhos acadêmicos, válido para os dois cursos.</p>
+    </li>
+    <li class="lt-item">
+      <time datetime="2026-08-13">13/08/2026</time>
+      <h3>Auxílios, pagamentos e a quem recorrer</h3>
+      <p>Roteiro de quem procurar para cada assunto e o passo a passo de quando o auxílio não é pago, com modelo de e-mail para copiar. A busca passa a tolerar erros de digitação.</p>
+    </li>
+    <li class="lt-item">
+      <time datetime="2026-08-12">12/08/2026</time>
+      <h3>Os Projetos Pedagógicos em linguagem clara</h3>
+      <p>Matriz curricular com as ementas e bibliografias das disciplinas e as tabelas de atividades complementares transcritas dos dois cursos.</p>
+    </li>
+    <li class="lt-item">
+      <time datetime="2026-08-07">07/08/2026</time>
+      <h3>Seção Meu curso e gerador de requerimentos</h3>
+      <p>Informações de estágio, TCC e secretaria reunidas, menu organizado por assunto e requerimentos prontos para imprimir e entregar.</p>
+    </li>
+    <li class="lt-item">
+      <time datetime="2026-08-06">06/08/2026</time>
+      <h3>Sistemas acadêmicos e ferramentas do estudante</h3>
+      <p>Guias do AVA Moodle e do Lyceum, busca interna, apoio psicológico, calculadora de média e faltas, planner, cronômetro de estudos e mural de avisos. O site passa a funcionar sem internet depois da primeira visita.</p>
+    </li>
+    <li class="lt-item">
+      <time datetime="2026-08-05">05/08/2026</time>
+      <h3>Identidade visual e endereço próprio</h3>
+      <p>Marca oficial do NAE, endereço naeguanhaes.github.io e instalação na tela do celular como aplicativo.</p>
+    </li>
+    <li class="lt-item marco">
+      <time datetime="2026-08-04">04/08/2026</time>
+      <h3>Início: o site no ar</h3>
+      <p>Primeira versão publicada, com o guia do e-mail institucional, os horários de 2026.2, o mapa do campus e o contato do NAE, além de cartaz com QR code para divulgação nas salas.</p>
+    </li>
+  </ol>
+
+  <div class="grid2">
+    <div class="card reveal" style="--c: var(--ambar)">
+      <span class="rotulo">Em preparação</span>
+      <h2>Próximas entregas da Fase 1</h2>
+      <ul class="limpa" style="--c: var(--ambar)">
+        <li><b>Guia "Comece por aqui"</b> para quem acaba de entrar na UEMG. Está pronto e será publicado com a chegada da próxima turma.</li>
+        <li><b>Arquivo dos horários</b> dos semestres encerrados, quando houver mais de um semestre para consultar.</li>
+      </ul>
+    </div>
+    <div class="card reveal" style="--c: var(--petroleo)">
+      <span class="rotulo">Qualidade</span>
+      <h2>Como o site se mantém confiável</h2>
+      <p>
+        Cada informação é conferida na fonte oficial. A cada atualização, inspeções
+        automáticas verificam links, acessibilidade e dados, e impedem a publicação se
+        encontrarem erro. O site não usa cookies e conta as visitas sem identificar quem acessa.
+      </p>
+    </div>
+  </div>
+
+  <div class="col stack-s">
+    <div class="titulo-sec" style="--c: var(--lilas)">
+      <span class="eyebrow" style="--c: var(--lilas)">Fase 2 · Secretaria Municipal de Educação</span>
+      <h2>Etapas executadas</h2>
+    </div>
+  </div>
+
+  <div class="note col">
+    <p>
+      <b>Fase 2 em andamento</b> As etapas da parceria com a Secretaria Municipal de
+      Educação de Guanhães serão registradas aqui, com data, conforme forem executadas.
+    </p>
+  </div>
+
+  <p class="fonte-ppc">Página atualizada em 26 de setembro de 2026.</p>
+
+</main>
+
+
+
+
+<footer>
+  <div class="wrap foot-in">
+    <p>NAE · Núcleo de Apoio ao Estudante · UEMG Unidade Guanhães<br>Coordenação: Jonatan Barbosa Silva</p>
+    <div class="foot-links">
+      <a href="index.html">Início</a>
+      <a href="calendario.html">Calendário</a>
+      <a href="contato.html">Contato</a>
+      <a href="avisos.html">Avisos</a>
+      <a href="privacidade.html">Privacidade</a>
+    </div>
+    <p class="assinatura">Site desenvolvido por <b>Jonatan Barbosa Silva</b></p>
+    <p class="foot-versao">Site conferido e atualizado em 26 de setembro de 2026</p>
+  </div>
+</footer>
+
+<script defer src="assets/dados-avisos.js"></script>
+<script defer src="assets/min/site.min.js"></script>
+<script defer src="assets/dados-busca.js"></script>
+<script defer src="assets/min/busca.min.js"></script>
+<script data-goatcounter="https://naeguanhaes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

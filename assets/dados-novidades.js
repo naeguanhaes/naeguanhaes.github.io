@@ -19,6 +19,13 @@ window.DADOS_NOVIDADES = {
   itens: [
     {
       data: '2026-09-26',
+      titulo: 'Acompanhe o projeto de extensão Conexão Universitária',
+      texto: 'Página nova com as etapas do projeto. A Fase 1 é este site, no ar desde 4 de agosto. A Fase 2, também em andamento, é a parceria com a Secretaria Municipal de Educação sobre TEA e neurodivergências.',
+      link: 'status-projeto.html',
+      textoLink: 'ver o status'
+    },
+    {
+      data: '2026-09-26',
       titulo: 'Wi-Fi da Unidade de volta, com nova senha',
       texto: 'São três redes, uma perto da cantina, outra do auditório e outra das salas do fundo, todas com a mesma senha. O laboratório de informática também está liberado.',
       link: 'wifi.html',

@@ -2029,3 +2029,64 @@ html[data-contraste="alto"] .modelo-cab { border-color: #000; }
 .ms-lateral b { font-size: .68rem; color: #333; }
 .ms-lateral i { background: #F3F5F7; border: 1px solid #E2E6EA; border-radius: 4px; padding: .28rem .45rem; font-style: normal; color: #444; }
 .ms-avatar { width: 1.6rem; height: 1.6rem; border-radius: 99px; background: #C9D6E0; display: inline-grid; place-items: center; font-size: .6rem; color: #33556B; font-weight: 700; }
+
+
+/* ── Status do projeto de extensão ────────────────────── */
+.pg-status .hero {
+  background:
+    radial-gradient(115% 85% at 88% 6%, rgba(255,255,255,.17) 0%, rgba(255,255,255,0) 55%),
+    radial-gradient(95% 75% at 6% 104%, rgba(224,154,30,.30) 0%, rgba(224,154,30,0) 62%),
+    linear-gradient(122deg, #073B2C 0%, #17583F 40%, #0F7C7B 76%, #17919B 100%);
+}
+.pg-status .hero .eyebrow { color: #9CE8C6; }
+.pg-status .hero::after { background: var(--ambar); opacity: .5; }
+.pg-status .hero-in { max-width: 56ch; }
+
+.fase {
+  --c: var(--verde);
+  background: var(--surface); border: 1px solid var(--hair); border-left: 6px solid var(--c);
+  border-radius: var(--radius); box-shadow: var(--sh-1);
+  padding: var(--s3); display: flex; flex-direction: column; gap: .7rem;
+}
+.fase-topo { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; }
+.fase-num {
+  font-size: .78rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--c);
+}
+.fase-status {
+  font-size: .78rem; font-weight: 700; border-radius: 99px; padding: .2rem .7rem;
+}
+.fase-status.andamento { background: #FFF1D6; color: #7A4B00; }
+.fase-status.concluida { background: #DDF3E6; color: #125C36; }
+.fase-status.prevista  { background: var(--surface-2); color: var(--muted); }
+.fase h2 { margin: 0; }
+.fase-objetivo { margin: 0; color: var(--ink-2); }
+.fase-numeros {
+  display: grid; gap: .6rem; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); margin-top: .3rem;
+}
+.fase-numeros div {
+  background: var(--surface-2); border-radius: 12px; padding: .7rem .8rem;
+  display: flex; flex-direction: column; gap: .1rem;
+}
+.fase-numeros b { font-family: var(--serif); font-size: 1.6rem; line-height: 1.1; color: var(--c); font-variant-numeric: tabular-nums; }
+.fase-numeros span { font-size: .84rem; color: var(--muted); }
+
+/* linha do tempo: um fio vertical com um ponto em cada etapa */
+.linha-tempo { list-style: none; margin: 0; padding: 0 0 0 1.6rem; position: relative; }
+.linha-tempo::before {
+  content: ""; position: absolute; left: .45rem; top: .4rem; bottom: .4rem;
+  width: 2px; background: var(--line);
+}
+.lt-item { position: relative; padding: 0 0 1.4rem; }
+.lt-item:last-child { padding-bottom: 0; }
+.lt-item::before {
+  content: ""; position: absolute; left: -1.6rem; top: .3rem;
+  width: .95rem; height: .95rem; border-radius: 50%;
+  background: var(--surface); border: 3px solid var(--verde);
+}
+.lt-item.marco::before { background: var(--verde); }
+.lt-item time { font-size: .82rem; font-weight: 700; color: var(--verde); letter-spacing: .02em; }
+.lt-item h3 { margin: .15rem 0 .25rem; font-size: 1.15rem; }
+.lt-item p { margin: 0; color: var(--ink-2); }
+html[data-contraste="alto"] .fase,
+html[data-contraste="alto"] .lt-item::before { border-color: #000; }
+

@@ -13,6 +13,12 @@
 window.DADOS_BUSCA = {
   itens: [
     {
+      t: 'Status do projeto de extensão · Conexão Universitária',
+      d: 'As etapas do projeto de extensão do NAE. Fase 1: o site para os estudantes. Fase 2: parceria com a Secretaria Municipal de Educação sobre TEA. Fase 3: Vestibular 2027.',
+      u: 'status-projeto.html',
+      k: 'status projeto extensao conexao universitaria fases fase 1 etapas andamento cronograma implantacao comunidade academica local historico site nae fase 2 parceria secretaria municipal de educacao guanhaes politicas publicas tea autismo espectro autista neurodivergencia neurodivergente inclusao fase 3 vestibular 2027 divulgacao'
+    },
+    {
       t: 'Wi-Fi da Unidade · redes e senha',
       d: 'Três redes, perto da cantina, do auditório e das salas do fundo, com a mesma senha. Laboratório de informática disponível.',
       u: 'wifi.html',
