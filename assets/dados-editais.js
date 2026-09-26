@@ -22,8 +22,33 @@
    ═══════════════════════════════════════════════════════ */
 
 window.DADOS_EDITAIS = {
-  atualizadoEm: '2026-09-24',
+  atualizadoEm: '2026-09-26',
   itens: [
+    {
+      titulo: 'Wi-Fi da Unidade de volta · redes e senha',
+      resumo: 'A internet da Unidade voltou com novas credenciais: três redes, a mesma senha para todas. O laboratório de informática também está disponível.',
+      tipo: 'outro',
+      abre: '2026-09-26',
+      encerra: '2026-10-09',
+      link: 'wifi.html',
+      /* e aviso, nao edital: aparece no painel da inicial, nao na lista */
+      naLista: false,
+
+      destaque: {
+        tema: 'wifi',
+        eyebrow: 'Internet na Unidade',
+        titulo: 'O Wi-Fi da Unidade voltou',
+        texto: 'São <b>três redes</b> pelo prédio, perto da cantina, do auditório e das salas do fundo, e <b>a mesma senha para todas</b>. O <b>laboratório de informática</b> também está disponível.',
+        numeros: [
+          { n: '3', r: 'redes' },
+          { n: '1', r: 'senha para todas' }
+        ],
+        semContagem: true,
+        acao: 'Ver as redes e a senha',
+        imagem: 'assets/eventos/wifi-quadrado.webp',
+        imagemAlt: 'O Wi-Fi da Unidade voltou. Três redes, a mesma senha para todas: Guanhaes@2026. UEMG - AP 01 perto da cantina, UEMG - AP 02 perto do auditório, UEMG - AP 03 perto das salas do fundo.'
+      }
+    },
     {
       titulo: 'PILA Presencial 2027-1 · intercâmbio na América Latina',
       resumo: 'Um semestre de graduação em universidades da Argentina, Colômbia, México e Paraguai, com alojamento e alimentação pela universidade de destino. 11 vagas. Exige de 40% a 90% do curso feito e coeficiente de 70. Inscrição até 01/10.',

@@ -21,7 +21,7 @@ window.DADOS_NOVIDADES = {
       data: '2026-09-26',
       titulo: 'Wi-Fi da Unidade de volta, com nova senha',
       texto: 'São três redes, uma perto da cantina, outra do auditório e outra das salas do fundo, todas com a mesma senha. O laboratório de informática também está liberado.',
-      link: 'sistemas.html#wifi',
+      link: 'wifi.html',
       textoLink: 'ver as redes'
     },
     {

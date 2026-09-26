@@ -34,7 +34,7 @@ window.DADOS_AVISOS = {
       de: '2026-09-26',
       ate: '2026-10-09',
       texto: 'A internet da Unidade voltou, com novas credenciais: três redes, a mesma senha para todas. O laboratório de informática também está disponível.',
-      link: 'sistemas.html#wifi',
+      link: 'wifi.html',
       textoLink: 'ver as redes e a senha'
     },
     {

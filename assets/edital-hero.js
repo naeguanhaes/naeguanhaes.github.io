@@ -125,9 +125,11 @@
         '<h2>' + escapar(d.titulo || e.titulo) + '</h2>' +
         '<p>' + corpo + '</p>' +
         selos +
-        '<a class="hero-contagem' + (urgente ? ' urgente' : '') + '" href="' + escapar(e.link) + '">' +
-          '<span class="pulso" aria-hidden="true"></span>' + escapar(texto) +
-        '</a>' +
+        /* semContagem: aviso que não é inscrição (o Wi-Fi) fica sem o selo do prazo */
+        (d.semContagem ? '' :
+          '<a class="hero-contagem' + (urgente ? ' urgente' : '') + '" href="' + escapar(e.link) + '">' +
+            '<span class="pulso" aria-hidden="true"></span>' + escapar(texto) +
+          '</a>') +
         '<div class="hero-acoes">' +
           '<a class="btn" href="' + escapar(link) + '"' + alvo(link) + '>' + escapar(acao) + ' &rarr;</a>' +
           extra +

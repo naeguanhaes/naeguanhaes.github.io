@@ -1748,6 +1748,23 @@ html[data-contraste="alto"] .evento-cartaz { border-color: #000; }
 .wifi-redes li { flex-wrap: wrap; column-gap: .6rem; row-gap: 0; }
 .wifi-redes b { white-space: nowrap; min-width: 8.4rem; }
 
+/* Página do Wi-Fi: a senha em letra grande, fácil de ler do outro lado da sala. */
+.wifi-senha-valor { margin: .2rem 0 0; }
+.wifi-senha-valor code {
+  display: inline-block; font-size: clamp(1.6rem, 1.1rem + 2.4vw, 2.5rem); font-weight: 700;
+  letter-spacing: .02em; color: var(--ink); background: var(--surface-2);
+  border: 1px solid var(--hair); border-radius: 14px; padding: .35rem .9rem;
+}
+
+/* Variante azul-petróleo do painel, com as cores do banner do Wi-Fi. */
+.hero-edital.tema-wifi {
+  background:
+    radial-gradient(115% 85% at 88% 6%, rgba(255,255,255,.16) 0%, rgba(255,255,255,0) 55%),
+    radial-gradient(95% 75% at 6% 104%, rgba(224,154,30,.30) 0%, rgba(224,154,30,0) 62%),
+    linear-gradient(125deg, #0B3A4A 0%, #135E73 45%, #1795AE 100%);
+}
+.hero-edital.tema-wifi .eyebrow { color: #FFD27A; }
+
 /* Cartaz deitado: a imagem ocupa a largura toda e as informações vêm embaixo. */
 @media (min-width: 760px) { .evento-cartaz.cartaz-deitado { grid-template-columns: 1fr; } }
 .evento-cartaz.cartaz-deitado img { max-width: 100%; }

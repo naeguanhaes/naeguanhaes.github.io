@@ -15,7 +15,7 @@ window.DADOS_BUSCA = {
     {
       t: 'Wi-Fi da Unidade · redes e senha',
       d: 'Três redes, perto da cantina, do auditório e das salas do fundo, com a mesma senha. Laboratório de informática disponível.',
-      u: 'sistemas.html#wifi',
+      u: 'wifi.html',
       k: 'wifi wi-fi wi fi internet rede senha conectar conexao ap 01 02 03 cantina auditorio laboratorio de informatica computador sem internet'
     },
     {
