@@ -14,7 +14,7 @@ de mudanças estão na pasta [`historico/`](historico/CONTEXTO.md).
    esquema de cor escuro. `color-scheme: light` em tudo.
 3. O nome oficial é **"Núcleo de Apoio ao Estudante"**, sempre e para tudo,
    como está na logo.
-4. Todo rodapé leva **"Desenvolvido por Jonatan Barbosa Silva"**.
+4. Todo rodapé leva **"Site desenvolvido por Jonatan Barbosa Silva"** (texto pedido pelo coordenador em 26/09/2026).
 5. As cores derivam da marca: azul `#40688B` e vermelho `#D91F35`
    (tokens em `assets/estilo.css`).
 6. Linguagem clara e acolhedora, voltada ao estudante. Tutoriais com passos
