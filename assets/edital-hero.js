@@ -54,13 +54,19 @@
 
   var hoje = hojeISO();
 
-  /* O que ainda não encerrou, prazo mais apertado primeiro.
+  /* O que ainda não encerrou. Quem tem o campo "ordem" vem primeiro,
+     do menor para o maior número (é a ordem que o coordenador escolheu);
+     os sem "ordem" vêm depois, com o prazo mais apertado primeiro.
      naInicial: false tira o item desta vitrine sem tirar da lista. */
+  function posicao(e) { return typeof e.ordem === 'number' ? e.ordem : Infinity; }
   var vivos = (D.itens || [])
     .filter(function (e) {
       return e && e.encerra && hoje <= e.encerra && e.naInicial !== false;
     })
-    .sort(function (a, b) { return a.encerra < b.encerra ? -1 : 1; });
+    .sort(function (a, b) {
+      if (posicao(a) !== posicao(b)) return posicao(a) < posicao(b) ? -1 : 1;
+      return a.encerra < b.encerra ? -1 : 1;
+    });
   if (!vivos.length) return;
 
   /* Um slide por evento. Itens com o mesmo "grupo" são fases do mesmo
@@ -140,7 +146,7 @@
     return slide;
   }
 
-  /* Na ordem do prazo: quem chega na página vê primeiro o mais urgente. */
+  /* Na ordem acima: primeiro os de "ordem" fixa, depois os demais pelo prazo. */
   escolhidos.forEach(function (e) { trilho.appendChild(montar(e)); });
   var painel = trilho.closest('[data-carrossel]');
   if (painel) painel.hidden = false;
