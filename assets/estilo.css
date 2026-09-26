@@ -1744,6 +1744,10 @@ html[data-contraste="alto"] .hero-selo { border-color: #fff; }
 .evento-dados b { color: var(--ink); min-width: 5.5rem; }
 html[data-contraste="alto"] .evento-cartaz { border-color: #000; }
 
+/* Wi-Fi: o nome da rede não quebra no meio; no celular a descrição desce. */
+.wifi-redes li { flex-wrap: wrap; column-gap: .6rem; row-gap: 0; }
+.wifi-redes b { white-space: nowrap; min-width: 8.4rem; }
+
 /* Cartaz deitado: a imagem ocupa a largura toda e as informações vêm embaixo. */
 @media (min-width: 760px) { .evento-cartaz.cartaz-deitado { grid-template-columns: 1fr; } }
 .evento-cartaz.cartaz-deitado img { max-width: 100%; }

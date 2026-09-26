@@ -27,8 +27,16 @@
    ═══════════════════════════════════════════════════════ */
 
 window.DADOS_AVISOS = {
-  atualizadoEm: '2026-09-15',
+  atualizadoEm: '2026-09-26',
   avisos: [
+    {
+      tipo: 'novidade',
+      de: '2026-09-26',
+      ate: '2026-10-09',
+      texto: 'A internet da Unidade voltou, com novas credenciais: três redes, a mesma senha para todas. O laboratório de informática também está disponível.',
+      link: 'sistemas.html#wifi',
+      textoLink: 'ver as redes e a senha'
+    },
     {
       tipo: 'atencao',
       de: '2026-09-15',

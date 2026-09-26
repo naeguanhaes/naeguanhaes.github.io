@@ -13,6 +13,12 @@
 window.DADOS_BUSCA = {
   itens: [
     {
+      t: 'Wi-Fi da Unidade · redes e senha',
+      d: 'Três redes, perto da cantina, do auditório e das salas do fundo, com a mesma senha. Laboratório de informática disponível.',
+      u: 'sistemas.html#wifi',
+      k: 'wifi wi-fi wi fi internet rede senha conectar conexao ap 01 02 03 cantina auditorio laboratorio de informatica computador sem internet'
+    },
+    {
       t: 'PILA 2027-1 · Intercâmbio na América Latina',
       d: 'Um semestre de graduação na Argentina, Colômbia, México ou Paraguai, com alojamento e alimentação. Inscrição até 01/10.',
       u: 'pila.html',
