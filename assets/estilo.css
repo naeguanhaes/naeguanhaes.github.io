@@ -2111,3 +2111,17 @@ html[data-contraste="alto"] .lt-item::before { border-color: #000; }
 .produto-status.andamento { background: #FFF1D6; color: #7A4B00; }
 .produto-status.entregue { background: #DDF3E6; color: #125C36; }
 
+/* público da Fase 2: barras simples, a largura é a proporção */
+.publico-barras { display: flex; flex-direction: column; gap: .9rem; margin: .4rem 0 .2rem; }
+.pb-linha { display: flex; flex-direction: column; gap: .3rem; }
+.pb-rot { font-size: .92rem; color: var(--ink-2); }
+.pb-barra {
+  display: flex; align-items: center; justify-content: flex-end;
+  width: var(--p); min-width: 4.5rem; height: 2.4rem; border-radius: 10px;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--c) 70%, #fff), var(--c));
+  padding: 0 .8rem; box-sizing: border-box;
+}
+.pb-barra b { color: #fff; font-family: var(--serif); font-size: 1.35rem; font-variant-numeric: tabular-nums; }
+.publico .fonte-ppc { margin-top: .2rem; }
+html[data-contraste="alto"] .pb-barra { background: #000; }
+
