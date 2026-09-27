@@ -2060,6 +2060,12 @@ html[data-contraste="alto"] .modelo-cab { border-color: #000; }
 .fase-status.prevista  { background: var(--surface-2); color: var(--muted); }
 .fase h2 { margin: 0; }
 .fase-objetivo { margin: 0; color: var(--ink-2); }
+.fase-sub { margin: -.35rem 0 0; font-weight: 600; color: var(--c); }
+.fase-destaque {
+  margin: .2rem 0 0; padding: .8rem 1rem; border-radius: 12px;
+  background: color-mix(in srgb, var(--c) 10%, var(--surface)); color: var(--ink);
+  border-left: 4px solid var(--c);
+}
 .fase-numeros {
   display: grid; gap: .6rem; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); margin-top: .3rem;
 }
