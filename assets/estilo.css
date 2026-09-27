@@ -2069,6 +2069,7 @@ html[data-contraste="alto"] .modelo-cab { border-color: #000; }
 }
 .fase-numeros b { font-family: var(--serif); font-size: 1.6rem; line-height: 1.1; color: var(--c); font-variant-numeric: tabular-nums; }
 .fase-numeros span { font-size: .84rem; color: var(--muted); }
+.fase-numeros .data b { font-size: 1.2rem; line-height: 1.35; }
 
 /* linha do tempo: um fio vertical com um ponto em cada etapa */
 .linha-tempo { list-style: none; margin: 0; padding: 0 0 0 1.6rem; position: relative; }
@@ -2089,4 +2090,18 @@ html[data-contraste="alto"] .modelo-cab { border-color: #000; }
 .lt-item p { margin: 0; color: var(--ink-2); }
 html[data-contraste="alto"] .fase,
 html[data-contraste="alto"] .lt-item::before { border-color: #000; }
+
+/* linha do tempo da Fase 2, na cor da fase */
+.linha-tempo.lt-lilas .lt-item::before { border-color: var(--lilas); }
+.linha-tempo.lt-lilas .lt-item.marco::before { background: var(--lilas); }
+.linha-tempo.lt-lilas .lt-item time { color: var(--lilas); }
+
+/* cronograma de produtos: situação de cada entrega */
+.tabela-produtos td:nth-child(3) { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.produto-status {
+  display: inline-block; white-space: nowrap; font-size: .78rem; font-weight: 700;
+  border-radius: 99px; padding: .15rem .6rem; background: var(--surface-2); color: var(--muted);
+}
+.produto-status.andamento { background: #FFF1D6; color: #7A4B00; }
+.produto-status.entregue { background: #DDF3E6; color: #125C36; }
 
