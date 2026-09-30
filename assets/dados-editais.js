@@ -27,8 +27,37 @@
    ═══════════════════════════════════════════════════════ */
 
 window.DADOS_EDITAIS = {
-  atualizadoEm: '2026-09-26',
+  atualizadoEm: '2026-09-30',
   itens: [
+    {
+      titulo: 'Yoga na ESMU · Pausa no dia para reconectar',
+      resumo: 'Aulas de yoga às quintas, das 11h20 às 12h10, com a professora Sônia Assis. Ação em parceria com o NAE-ESMU. Início em outubro.',
+      tipo: 'outro',
+      abre: '2026-09-30',
+      encerra: '2026-10-31',
+      link: 'apoio.html#yoga-esmu',
+      publicado: '2026-09-30',
+      /* e atividade, nao edital: aparece no painel da inicial, nao na lista */
+      naLista: false,
+
+      destaque: {
+        tema: 'salvia',
+        eyebrow: 'Bem-estar · parceria com o NAE-ESMU',
+        titulo: 'Yoga na ESMU: pausa no dia para reconectar',
+        texto: 'Um convite para <b>equilibrar corpo e mente</b>, relaxar e renovar as energias. Às <b>quintas, das 11h20 às 12h10</b>, com a professora <b>Sônia Assis</b>. Para discentes, docentes, técnicos e servidores.',
+        numeros: [
+          { n: 'Quintas', r: '11h20 às 12h10' },
+          { n: 'Outubro', r: 'início da turma' }
+        ],
+        semContagem: true,
+        acao: 'Garanta sua vaga',
+        acaoLink: 'https://forms.gle/ar9BFpTNwtG3p79fA',
+        extraTexto: 'Compartilhar no WhatsApp',
+        extraLink: 'https://wa.me/?text=%2AYoga%20na%20ESMU%2A%20%F0%9F%A7%98%0APausa%20no%20dia%20para%20reconectar.%20Uma%20a%C3%A7%C3%A3o%20em%20parceria%20com%20o%20NAE-ESMU.%0A%0AUm%20convite%20para%20equilibrar%20corpo%20e%20mente%2C%20relaxar%20e%20renovar%20as%20energias.%0A%0A%F0%9F%93%85%20Quintas-feiras%2C%20das%2011h20%20%C3%A0s%2012h10%0A%F0%9F%A7%98%E2%80%8D%E2%99%80%EF%B8%8F%20Professora%20S%C3%B4nia%20Assis%0A%F0%9F%97%93%EF%B8%8F%20In%C3%ADcio%20em%20outubro%0A%0APara%20discentes%2C%20docentes%2C%20t%C3%A9cnicos%20e%20servidores.%0A%0A%2AGaranta%20sua%20vaga:%2A%0Ahttps://forms.gle/ar9BFpTNwtG3p79fA',
+        imagem: 'assets/eventos/yoga-esmu.webp',
+        imagemAlt: 'Cartaz do Yoga na ESMU: uma tigela tibetana e uma mão em gesto de meditação. Quintas às 11h20, inscrição pelo link.'
+      }
+    },
     {
       titulo: 'Wi-Fi da Unidade de volta · redes e senha',
       resumo: 'A internet da Unidade voltou com novas credenciais: três redes, a mesma senha para todas. O laboratório de informática também está disponível.',

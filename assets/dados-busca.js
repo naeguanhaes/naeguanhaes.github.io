@@ -13,6 +13,12 @@
 window.DADOS_BUSCA = {
   itens: [
     {
+      t: 'Yoga na ESMU · parceria com o NAE-ESMU',
+      d: 'Quintas, das 11h20 às 12h10, com a professora Sônia Assis. Início em outubro. Inscrição pelo formulário.',
+      u: 'apoio.html#yoga-esmu',
+      k: 'yoga esmu meditacao relaxar bem-estar bem estar corpo mente saude mental pausa sonia assis quinta aula atividade fisica ansiedade estresse'
+    },
+    {
       t: 'Status do projeto de extensão · Conexão Universitária',
       d: 'As etapas do projeto de extensão do NAE. Fase 1: o site para os estudantes. Fase 2, Comunidade Externa: parceria com a Secretaria Municipal de Educação sobre TEA. Fase 3: Vestibular 2027.',
       u: 'status-projeto.html',
