@@ -53,7 +53,7 @@ window.DADOS_EDITAIS = {
         acao: 'Garanta sua vaga',
         acaoLink: 'https://forms.gle/ar9BFpTNwtG3p79fA',
         extraTexto: 'Compartilhar no WhatsApp',
-        extraLink: 'https://wa.me/?text=%2AYoga%20na%20ESMU%2A%20%F0%9F%A7%98%0APausa%20no%20dia%20para%20reconectar.%20Uma%20a%C3%A7%C3%A3o%20em%20parceria%20com%20o%20NAE-ESMU.%0A%0AUm%20convite%20para%20equilibrar%20corpo%20e%20mente%2C%20relaxar%20e%20renovar%20as%20energias.%0A%0A%F0%9F%93%85%20Quintas-feiras%2C%20das%2011h20%20%C3%A0s%2012h10%0A%F0%9F%A7%98%E2%80%8D%E2%99%80%EF%B8%8F%20Professora%20S%C3%B4nia%20Assis%0A%F0%9F%97%93%EF%B8%8F%20In%C3%ADcio%20em%20outubro%0A%0APara%20discentes%2C%20docentes%2C%20t%C3%A9cnicos%20e%20servidores.%0A%0A%2AGaranta%20sua%20vaga:%2A%0Ahttps://forms.gle/ar9BFpTNwtG3p79fA',
+        extraLink: 'https://wa.me/?text=%2AYoga%20na%20ESMU%2A%20%F0%9F%A7%98%0APausa%20no%20dia%20para%20reconectar.%20Uma%20a%C3%A7%C3%A3o%20em%20parceria%20com%20o%20NAE-ESMU.%0A%0AUm%20convite%20para%20equilibrar%20corpo%20e%20mente%2C%20relaxar%20e%20renovar%20as%20energias.%0A%0A%F0%9F%93%85%20Quintas-feiras%2C%20das%2011h20%20%C3%A0s%2012h10%0A%F0%9F%A7%98%E2%80%8D%E2%99%80%EF%B8%8F%20Professora%20S%C3%B4nia%20Assis%0A%F0%9F%97%93%EF%B8%8F%20In%C3%ADcio%20em%20outubro%0A%0APara%20discentes%2C%20docentes%2C%20t%C3%A9cnicos%20e%20servidores.%0A%0A%2AInforma%C3%A7%C3%B5es%20e%20inscri%C3%A7%C3%A3o%20no%20site%20do%20NAE:%2A%0Ahttps://naeguanhaes.github.io/apoio.html%23yoga-esmu',
         imagem: 'assets/eventos/yoga-esmu.webp',
         imagemAlt: 'Cartaz do Yoga na ESMU: uma tigela tibetana e uma mão em gesto de meditação. Quintas às 11h20, inscrição pelo link.'
       }

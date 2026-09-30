@@ -19,6 +19,11 @@ de mudanças estão na pasta [`historico/`](historico/CONTEXTO.md).
    (tokens em `assets/estilo.css`).
 6. Linguagem clara e acolhedora, voltada ao estudante. Tutoriais com passos
    numerados e títulos em negrito.
+7. **Todo botão de compartilhar (WhatsApp) leva para uma página do site do NAE**
+   (`https://naeguanhaes.github.io/...`), nunca direto para formulário, Google
+   Forms ou site de terceiros. O link externo de inscrição fica na página do site,
+   no botão de inscrição. Pedido do coordenador em 30/09/2026, para trazer
+   movimento ao site.
 
 ## Antes de publicar qualquer mudança (checklist)
 
