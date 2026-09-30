@@ -24,6 +24,9 @@ de mudanças estão na pasta [`historico/`](historico/CONTEXTO.md).
    Forms ou site de terceiros. O link externo de inscrição fica na página do site,
    no botão de inscrição. Pedido do coordenador em 30/09/2026, para trazer
    movimento ao site.
+8. **Mensagens de compartilhar sem emoji.** Pelo link wa.me, os emojis chegam no
+   WhatsApp como "�" (visto pelo coordenador em 30/09/2026). Use texto e, para
+   listas, o marcador `•`.
 
 ## Antes de publicar qualquer mudança (checklist)
 
