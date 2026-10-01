@@ -20,7 +20,7 @@ window.DADOS_NOVIDADES = {
     {
       data: '2026-09-30',
       titulo: 'Yoga na ESMU: inscrições abertas',
-      texto: 'Quintas, das 11h20 às 12h10, com a professora Sônia Assis, a partir de outubro. Uma ação em parceria com o NAE-ESMU, para discentes, docentes, técnicos e servidores.',
+      texto: 'Na Escola de Música da UEMG (ESMU), às quintas, das 11h20 às 12h10, com a professora Sônia Assis, a partir de outubro. Uma ação em parceria com o NAE-ESMU, para discentes, docentes, técnicos e servidores.',
       link: 'apoio.html#yoga-esmu',
       textoLink: 'ver e se inscrever'
     },

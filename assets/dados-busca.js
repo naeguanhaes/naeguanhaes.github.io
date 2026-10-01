@@ -14,9 +14,9 @@ window.DADOS_BUSCA = {
   itens: [
     {
       t: 'Yoga na ESMU · parceria com o NAE-ESMU',
-      d: 'Quintas, das 11h20 às 12h10, com a professora Sônia Assis. Início em outubro. Inscrição pelo formulário.',
+      d: 'Na Escola de Música da UEMG (ESMU), às quintas, das 11h20 às 12h10, com a professora Sônia Assis. Início em outubro.',
       u: 'apoio.html#yoga-esmu',
-      k: 'yoga esmu meditacao relaxar bem-estar bem estar corpo mente saude mental pausa sonia assis quinta aula atividade fisica ansiedade estresse'
+      k: 'yoga esmu escola de musica meditacao relaxar bem-estar bem estar corpo mente saude mental pausa sonia assis quinta aula atividade fisica ansiedade estresse'
     },
     {
       t: 'Status do projeto de extensão · Conexão Universitária',

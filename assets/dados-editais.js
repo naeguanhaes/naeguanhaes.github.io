@@ -31,7 +31,7 @@ window.DADOS_EDITAIS = {
   itens: [
     {
       titulo: 'Yoga na ESMU · Pausa no dia para reconectar',
-      resumo: 'Aulas de yoga às quintas, das 11h20 às 12h10, com a professora Sônia Assis. Ação em parceria com o NAE-ESMU. Início em outubro.',
+      resumo: 'Aulas de yoga na Escola de Música da UEMG (ESMU), às quintas, das 11h20 às 12h10, com a professora Sônia Assis. Ação em parceria com o NAE-ESMU. Início em outubro.',
       tipo: 'outro',
       abre: '2026-09-30',
       encerra: '2026-10-31',
@@ -42,10 +42,11 @@ window.DADOS_EDITAIS = {
 
       destaque: {
         tema: 'salvia',
-        eyebrow: 'Bem-estar · parceria com o NAE-ESMU',
+        eyebrow: 'Na Escola de Música da UEMG · parceria com o NAE-ESMU',
         titulo: 'Yoga na ESMU: pausa no dia para reconectar',
-        texto: 'Um convite para <b>equilibrar corpo e mente</b>, relaxar e renovar as energias. Às <b>quintas, das 11h20 às 12h10</b>, com a professora <b>Sônia Assis</b>. Para discentes, docentes, técnicos e servidores.',
+        texto: 'Um convite para <b>equilibrar corpo e mente</b>, relaxar e renovar as energias. Na <b>Escola de Música da UEMG (ESMU)</b>, às <b>quintas, das 11h20 às 12h10</b>, com a professora <b>Sônia Assis</b>. Para discentes, docentes, técnicos e servidores.',
         numeros: [
+          { n: 'ESMU', r: 'Escola de Música' },
           { n: 'Quintas', r: '11h20 às 12h10' },
           { n: 'Outubro', r: 'início da turma' }
         ],
@@ -53,7 +54,7 @@ window.DADOS_EDITAIS = {
         acao: 'Garanta sua vaga',
         acaoLink: 'https://forms.gle/ar9BFpTNwtG3p79fA',
         extraTexto: 'Compartilhar no WhatsApp',
-        extraLink: 'https://wa.me/?text=%2AYoga%20na%20ESMU%2A%0APausa%20no%20dia%20para%20reconectar.%20Uma%20a%C3%A7%C3%A3o%20em%20parceria%20com%20o%20NAE-ESMU.%0A%0AUm%20convite%20para%20equilibrar%20corpo%20e%20mente%2C%20relaxar%20e%20renovar%20as%20energias.%0A%0A%E2%80%A2%20Quintas-feiras%2C%20das%2011h20%20%C3%A0s%2012h10%0A%E2%80%A2%20Professora%20S%C3%B4nia%20Assis%0A%E2%80%A2%20In%C3%ADcio%20em%20outubro%0A%0APara%20discentes%2C%20docentes%2C%20t%C3%A9cnicos%20e%20servidores.%0A%0A%2AInforma%C3%A7%C3%B5es%20e%20inscri%C3%A7%C3%A3o%20no%20site%20do%20NAE:%2A%0Ahttps://naeguanhaes.github.io/apoio.html%23yoga-esmu',
+        extraLink: 'https://wa.me/?text=%2AYoga%20na%20ESMU%2A%0APausa%20no%20dia%20para%20reconectar.%20Uma%20a%C3%A7%C3%A3o%20em%20parceria%20com%20o%20NAE-ESMU.%0A%0AUm%20convite%20para%20equilibrar%20corpo%20e%20mente%2C%20relaxar%20e%20renovar%20as%20energias.%0A%0A%E2%80%A2%20Onde:%20Escola%20de%20M%C3%BAsica%20da%20UEMG%20%28ESMU%29%0A%E2%80%A2%20Quintas-feiras%2C%20das%2011h20%20%C3%A0s%2012h10%0A%E2%80%A2%20Professora%20S%C3%B4nia%20Assis%0A%E2%80%A2%20In%C3%ADcio%20em%20outubro%0A%0APara%20discentes%2C%20docentes%2C%20t%C3%A9cnicos%20e%20servidores.%0A%0A%2AInforma%C3%A7%C3%B5es%20e%20inscri%C3%A7%C3%A3o%20no%20site%20do%20NAE:%2A%0Ahttps://naeguanhaes.github.io/apoio.html%23yoga-esmu',
         imagem: 'assets/eventos/yoga-esmu.webp',
         imagemAlt: 'Cartaz do Yoga na ESMU: uma tigela tibetana e uma mão em gesto de meditação. Quintas às 11h20, inscrição pelo link.'
       }
