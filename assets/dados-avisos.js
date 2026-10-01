@@ -27,8 +27,16 @@
    ═══════════════════════════════════════════════════════ */
 
 window.DADOS_AVISOS = {
-  atualizadoEm: '2026-09-26',
+  atualizadoEm: '2026-09-30',
   avisos: [
+    {
+      tipo: 'atencao',
+      de: '2026-09-30',
+      ate: '2026-11-29',
+      texto: 'ENADE 2026, Engenharia Civil: formandos precisam preencher o Questionário do Estudante até 29/11 e fazer a prova em 29/11 para colar grau.',
+      link: 'enade.html',
+      textoLink: 'ver o passo a passo'
+    },
     {
       tipo: 'novidade',
       de: '2026-09-26',

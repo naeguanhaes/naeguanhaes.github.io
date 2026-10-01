@@ -30,6 +30,33 @@ window.DADOS_EDITAIS = {
   atualizadoEm: '2026-09-30',
   itens: [
     {
+      titulo: 'ENADE 2026 · Engenharia Civil',
+      resumo: 'Formandos de Engenharia Civil precisam do Questionário do Estudante e da prova, em 29/11, para colar grau. Ingressantes preenchem o questionário de 01/10 a 18/12.',
+      tipo: 'outro',
+      abre: '2026-09-30',
+      encerra: '2026-12-18',
+      link: 'enade.html',
+      publicado: '2026-09-30',
+      /* e obrigacao do curso, nao edital: so no painel da inicial */
+      naLista: false,
+
+      destaque: {
+        tema: 'enade',
+        eyebrow: 'Engenharia Civil · formandos e ingressantes',
+        titulo: 'ENADE 2026: sem ele, não tem colação de grau',
+        texto: 'Formando de Engenharia Civil: preencha o <b>Questionário do Estudante</b> no Sistema Enade <b>até 29/11</b> e faça a <b>prova em 29 de novembro</b>. Ingressantes preenchem o questionário de <b>01/10 a 18/12</b>.',
+        numeros: [
+          { n: '29/11', r: 'dia da prova' },
+          { n: '09/11', r: 'local da prova' },
+          { n: '18/12', r: 'questionário dos ingressantes' }
+        ],
+        semContagem: true,
+        acao: 'Ver o passo a passo',
+        extraTexto: 'Compartilhar no WhatsApp',
+        extraLink: 'https://wa.me/?text=%2AENADE%202026:%20Engenharia%20Civil%2A%0A%0AFormando:%20sem%20o%20Question%C3%A1rio%20do%20Estudante%20e%20sem%20a%20prova%2C%20n%C3%A3o%20tem%20cola%C3%A7%C3%A3o%20de%20grau.%0A%0A%E2%80%A2%20Concluintes:%20question%C3%A1rio%20no%20Sistema%20Enade%20at%C3%A9%2029/11%20e%20prova%20em%2029/11/2026%0A%E2%80%A2%20Local%20da%20prova:%20no%20Cart%C3%A3o%20de%20Confirma%C3%A7%C3%A3o%2C%20a%20partir%20de%2009/11%0A%E2%80%A2%20Ingressantes:%20question%C3%A1rio%20de%2001/10%20a%2018/12/2026%0A%0A%2APasso%20a%20passo%20no%20site%20do%20NAE:%2A%0Ahttps://naeguanhaes.github.io/enade.html'
+      }
+    },
+    {
       titulo: 'Yoga na ESMU · Pausa no dia para reconectar',
       resumo: 'Aulas de yoga na Escola de Música da UEMG (ESMU), às quintas, das 11h20 às 12h10, com a professora Sônia Assis. Ação em parceria com o NAE-ESMU. Início em outubro.',
       tipo: 'outro',

@@ -13,6 +13,12 @@
 window.DADOS_BUSCA = {
   itens: [
     {
+      t: 'ENADE 2026 · Engenharia Civil',
+      d: 'Questionário do Estudante e prova em 29/11: obrigatórios para o formando colar grau. Ingressantes: questionário até 18/12.',
+      u: 'enade.html',
+      k: 'enade 2026 exame nacional desempenho estudantes inep prova questionario do estudante sistema enade concluinte formando formatura colacao de grau colar grau diploma ingressante engenharia civil'
+    },
+    {
       t: 'Yoga na ESMU · parceria com o NAE-ESMU',
       d: 'Na Escola de Música da UEMG (ESMU), às quintas, das 11h20 às 12h10, com a professora Sônia Assis. Início em outubro.',
       u: 'apoio.html#yoga-esmu',

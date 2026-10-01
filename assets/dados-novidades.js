@@ -19,6 +19,13 @@ window.DADOS_NOVIDADES = {
   itens: [
     {
       data: '2026-09-30',
+      titulo: 'ENADE 2026: Engenharia Civil',
+      texto: 'Formandos precisam do Questionário do Estudante e da prova, em 29 de novembro, para colar grau. Ingressantes preenchem o questionário de 01/10 a 18/12.',
+      link: 'enade.html',
+      textoLink: 'ver o passo a passo'
+    },
+    {
+      data: '2026-09-30',
       titulo: 'Yoga na ESMU: inscrições abertas',
       texto: 'Na Escola de Música da UEMG (ESMU), às quintas, das 11h20 às 12h10, com a professora Sônia Assis, a partir de outubro. Uma ação em parceria com o NAE-ESMU, para discentes, docentes, técnicos e servidores.',
       link: 'apoio.html#yoga-esmu',
