@@ -1201,6 +1201,51 @@ html[data-fonte="3"] body { font-size: 21px; }
   .topo-acoes { margin-left: auto; }
 }
 
+/* engrenagem: abre um painel com A-, A+ e contraste */
+.topo-acoes { position: relative; }
+.ajustes { position: static; }
+.btn-ajustes[aria-expanded="true"] { background: var(--marca-azul); border-color: var(--marca-azul); color: #fff; }
+.btn-ajustes[aria-expanded="true"] svg { transform: rotate(60deg); }
+.btn-ajustes svg { transition: transform .25s; }
+.ajustes-painel {
+  position: absolute; top: calc(100% + .5rem); right: 0; z-index: 60;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+  box-shadow: var(--sh-2); padding: .75rem .8rem .8rem; min-width: max-content;
+}
+.ajustes-painel[hidden] { display: none; }
+.ajustes-tit {
+  display: block; font-size: .72rem; font-weight: 800; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: .5rem;
+}
+.ajustes-linha { display: flex; gap: .45rem; }
+.btn-contraste { padding-inline: .9rem; }
+
+/* caixa de busca do topo: abre o painel de busca do site */
+.busca-topo {
+  display: inline-flex; align-items: center; gap: .55rem; cursor: pointer;
+  width: 17rem; min-height: 2.9rem; padding: 0 .55rem 0 .95rem; border-radius: 99px;
+  background: var(--surface-2); border: 1px solid var(--line); color: var(--muted);
+  font-family: var(--sans); font-size: .9rem; text-align: left;
+  transition: border-color .16s, box-shadow .16s, background .16s;
+}
+.busca-topo svg { flex: none; color: var(--marca-azul); }
+.busca-topo .bt-texto { flex: 1; white-space: nowrap; }
+.busca-topo .bt-tecla {
+  font-family: var(--sans); font-size: .75rem; font-weight: 700; color: var(--muted);
+  border: 1px solid var(--line); border-radius: 6px; padding: .1rem .45rem; background: var(--surface);
+}
+.busca-topo:hover, .busca-topo:focus-visible { background: var(--surface); border-color: var(--marca-azul); box-shadow: var(--sh-2); }
+html[data-contraste="alto"] .busca-topo { border-color: #000; color: #000; }
+@media (max-width: 900px) { .busca-topo { width: 13rem; } }
+@media (max-width: 560px) {
+  .busca-topo { width: auto; padding-right: .95rem; }
+  .busca-topo .bt-tecla, .busca-topo .bt-resto { display: none; }
+}
+@media (pointer: coarse) {
+  .busca-topo { min-height: 3rem; }
+  .busca-topo .bt-tecla { display: none; }
+}
+
 /* ── Trilha de navegação (breadcrumb) ──────────────────── */
 .trilha {
   display: flex; flex-wrap: wrap; align-items: center; gap: .45rem;
@@ -2202,3 +2247,14 @@ html[data-contraste="alto"] .lt-item::before { border-color: #000; }
 .publico .fonte-ppc { margin-top: .2rem; }
 html[data-contraste="alto"] .pb-barra { background: #000; }
 
+
+/* Status do projeto: lista dos extensionistas voluntários */
+.lista-equipe {
+  list-style: none; padding: 0; margin: .4rem 0 0;
+  display: grid; gap: .45rem; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+}
+.lista-equipe li {
+  background: var(--surface-2); border-radius: 10px; padding: .55rem .8rem;
+  font-weight: 600; border-left: 3px solid var(--c);
+  display: flex; align-items: center;
+}

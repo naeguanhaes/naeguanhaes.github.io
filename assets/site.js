@@ -117,6 +117,30 @@
     });
   })();
 
+  /* ── Engrenagem do topo: A-, A+ e contraste ───────── */
+  (function ajustesDeLeitura() {
+    var botao = document.querySelector('[data-ajustes]');
+    var painel = document.getElementById('ajustes-painel');
+    if (!botao || !painel) return;
+
+    function abrir(sim) {
+      painel.hidden = !sim;
+      botao.setAttribute('aria-expanded', sim ? 'true' : 'false');
+    }
+    botao.addEventListener('click', function (e) {
+      e.stopPropagation();
+      abrir(painel.hidden);
+    });
+    /* clique fora ou Esc fecham; os botões de dentro deixam aberto,
+       para dar para apertar A+ duas vezes seguidas */
+    document.addEventListener('click', function (e) {
+      if (!painel.hidden && !painel.contains(e.target)) abrir(false);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !painel.hidden) { abrir(false); botao.focus(); }
+    });
+  })();
+
   /* ── Atalho da minha turma no menu ────────────────── */
   (function atalhoTurma() {
     var id = ler('turma');
