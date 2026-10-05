@@ -361,7 +361,14 @@
 
   /* ── Atividades complementares ────────────────────── */
   var atividades = document.getElementById('atividades-painel');
+  /* prepara o formulário com uma modalidade escolhida na tabela; quem
+     preenche é o painel, quando existe */
+  var prepararLancamento = null;
   if (atividades) {
+    /* índice do item em edição, ou null quando o formulário lança um novo */
+    var editando = null;
+    var cursoDoEditando = null;
+
     function chaveAtiv(c) { return 'atividades-' + c.id; }
     function lerAtiv(c) {
       var lista = [];
@@ -373,7 +380,10 @@
     function chavePeriodo(c) { return 'periodo-' + c.id; }
 
     function desenharAtiv(c) {
+      if (cursoDoEditando !== c.id) { editando = null; cursoDoEditando = c.id; }
       var lancadas = lerAtiv(c);
+      var emEdicao = editando !== null && lancadas[editando] ? lancadas[editando] : null;
+      if (!emEdicao) editando = null;
       var soma = lancadas.reduce(function (s, a) { return s + (Number(a.horas) || 0); }, 0);
       var alvo = c.atividades.total;
       var porcento = Math.min(100, Math.round(soma / alvo * 100));
@@ -436,23 +446,41 @@
             '<select id="ativ-periodo">' + opcoes.join('') + '</select>' +
           '</div>' +
           diagnostico +
-          '<form class="ativ-form" id="ativ-form">' +
+          '<form class="ativ-form' + (emEdicao ? ' editando' : '') + '" id="ativ-form">' +
+            (emEdicao ? '<p class="ativ-editando-aviso">Editando: <b>' + U.escapar(emEdicao.desc) + '</b></p>' : '') +
             '<div class="field">' +
               '<label for="ativ-desc">O que você fez</label>' +
-              '<input id="ativ-desc" type="text" autocomplete="off" placeholder="Monitoria de Direito Civil 1, 2026.1">' +
+              '<input id="ativ-desc" type="text" autocomplete="off" maxlength="160" placeholder="Monitoria de Direito Civil 1, 2026.1"' +
+              (emEdicao ? ' value="' + U.escapar(emEdicao.desc) + '"' : '') + '>' +
             '</div>' +
             '<div class="field campo-curto">' +
               '<label for="ativ-horas">Horas</label>' +
-              '<input id="ativ-horas" type="number" min="1" max="500" inputmode="numeric" placeholder="30">' +
+              '<input id="ativ-horas" type="number" min="1" max="500" inputmode="numeric" placeholder="30"' +
+              (emEdicao ? ' value="' + emEdicao.horas + '"' : '') + '>' +
             '</div>' +
-            '<button class="btn" type="submit" style="--c: ' + c.cor + '">Lançar</button>' +
+            '<div class="field campo-detalhes">' +
+              '<label for="ativ-det">Detalhes (opcional)</label>' +
+              '<textarea id="ativ-det" rows="2" maxlength="300" placeholder="Onde está o certificado, número do protocolo, observações">' +
+              (emEdicao && emEdicao.det ? U.escapar(emEdicao.det) : '') + '</textarea>' +
+            '</div>' +
+            '<div class="ativ-form-acoes">' +
+              '<button class="btn" type="submit" style="--c: ' + c.cor + '">' + (emEdicao ? 'Salvar alteração' : 'Lançar') + '</button>' +
+              (emEdicao ? '<button class="btn ghost" type="button" id="ativ-cancelar" style="--c: ' + c.cor + '">Cancelar</button>' : '') +
+            '</div>' +
           '</form>' +
           (lancadas.length
             ? '<ul class="ativ-lista">' + lancadas.map(function (a, i) {
-                return '<li><span>' + U.escapar(a.desc) + '</span>' +
+                return '<li' + (i === editando ? ' class="em-edicao"' : '') + '>' +
+                  '<div class="ativ-item-topo"><span>' + U.escapar(a.desc) + '</span>' +
                   '<b>' + a.horas + ' h</b>' +
-                  '<button class="btn-limpo" type="button" data-tirar="' + i + '" ' +
-                  'aria-label="Tirar ' + U.escapar(a.desc) + ' da lista">tirar</button></li>';
+                  '<span class="ativ-item-acoes">' +
+                    '<button class="btn-limpo" type="button" data-editar="' + i + '" ' +
+                    'aria-label="Editar ' + U.escapar(a.desc) + '">editar</button>' +
+                    '<button class="btn-limpo" type="button" data-tirar="' + i + '" ' +
+                    'aria-label="Tirar ' + U.escapar(a.desc) + ' da lista">tirar</button>' +
+                  '</span></div>' +
+                  (a.det ? '<p class="ativ-det">' + U.escapar(a.det) + '</p>' : '') +
+                '</li>';
               }).join('') + '</ul>'
             : '<p class="ativ-vazio">Nada lançado ainda. Comece pelo que você já fez neste semestre.</p>') +
           '<p class="progresso-nota">Esta conta fica só no seu aparelho e não vale como protocolo. ' +
@@ -464,21 +492,42 @@
         e.preventDefault();
         var desc = form.querySelector('#ativ-desc').value.trim();
         var horas = parseInt(form.querySelector('#ativ-horas').value, 10);
+        var det = form.querySelector('#ativ-det').value.trim();
         if (!desc || !horas || horas < 1) {
           U.toast('Escreva o que você fez e quantas horas foram.');
           return;
         }
+        var item = { desc: desc.slice(0, 160), horas: Math.min(horas, 500) };
+        if (det) item.det = det.slice(0, 300);
         var lista = lerAtiv(c);
-        lista.push({ desc: desc.slice(0, 90), horas: Math.min(horas, 500) });
+        var eraEdicao = editando !== null && lista[editando];
+        if (eraEdicao) lista[editando] = item;
+        else lista.push(item);
+        editando = null;
         guardarAtiv(c, lista);
         desenharAtiv(c);
-        U.toast('Atividade lançada.');
+        U.toast(eraEdicao ? 'Alteração salva.' : 'Atividade lançada.');
+      });
+
+      var cancelar = atividades.querySelector('#ativ-cancelar');
+      if (cancelar) {
+        cancelar.addEventListener('click', function () { editando = null; desenharAtiv(c); });
+      }
+
+      atividades.querySelectorAll('[data-editar]').forEach(function (b) {
+        b.addEventListener('click', function () {
+          editando = parseInt(b.getAttribute('data-editar'), 10);
+          desenharAtiv(c);
+          irParaFormulario('#ativ-desc');
+        });
       });
 
       atividades.querySelectorAll('[data-tirar]').forEach(function (b) {
         b.addEventListener('click', function () {
+          var i = parseInt(b.getAttribute('data-tirar'), 10);
           var lista = lerAtiv(c);
-          lista.splice(parseInt(b.getAttribute('data-tirar'), 10), 1);
+          lista.splice(i, 1);
+          if (editando !== null) editando = editando === i ? null : (editando > i ? editando - 1 : editando);
           guardarAtiv(c, lista);
           desenharAtiv(c);
         });
@@ -494,10 +543,47 @@
       }
     }
 
+    /* leva o estudante até o formulário, com um realce rápido */
+    function irParaFormulario(foco) {
+      var form = atividades.querySelector('#ativ-form');
+      if (!form) return;
+      form.scrollIntoView({ behavior: U.reduzir ? 'auto' : 'smooth', block: 'center' });
+      form.classList.remove('realce');
+      void form.offsetWidth;
+      form.classList.add('realce');
+      var campo = form.querySelector(foco);
+      if (campo) setTimeout(function () { campo.focus({ preventScroll: true }); }, U.reduzir ? 0 : 450);
+    }
+
+    prepararLancamento = function (c, desc, horas) {
+      editando = null;
+      desenharAtiv(c);
+      var form = atividades.querySelector('#ativ-form');
+      form.querySelector('#ativ-desc').value = desc.slice(0, 160);
+      if (horas) form.querySelector('#ativ-horas').value = horas;
+      irParaFormulario(horas ? '#ativ-desc' : '#ativ-horas');
+      U.toast(horas
+        ? 'Confira o nome e as horas e toque em Lançar.'
+        : 'Escreva quantas horas valem e toque em Lançar.');
+    };
+
     aoTrocar(desenharAtiv);
   }
 
   /* ── Tabela de modalidades das atividades ─────────── */
+  /* texto escapado, com trechos que viram link para o documento citado:
+     links = [{ texto: 'PPC de Direito', href: 'documentos/...pdf' }] */
+  function comLinks(texto, links) {
+    var html = U.escapar(texto || '');
+    (links || []).forEach(function (l) {
+      var t = U.escapar(l.texto);
+      var externo = /^https?:/.test(l.href) || /\.pdf$/i.test(l.href);
+      html = html.replace(t, '<a href="' + U.escapar(l.href) + '"' +
+        (externo ? ' target="_blank" rel="noopener noreferrer"' : '') + '>' + t + '</a>');
+    });
+    return html;
+  }
+
   var tabela = document.getElementById('atividades-tabela');
   if (tabela) {
     var CORES_GRUPO = {
@@ -526,14 +612,25 @@
       var temQuando = a.tabela.some(function (l) { return l.desdeQuando; });
       var colunas = temQuando ? 5 : 4;
 
+      /* com o painel na página, cada modalidade ganha um botão que a
+         leva para o formulário de lançamento */
+      var podeAdicionar = !!prepararLancamento;
+      if (podeAdicionar) colunas += 1;
+      function idGrupo(g) { return 'ativ-grupo-' + U.normaliza(g).replace(/[^a-z0-9]+/g, '-'); }
+
       var corpo = ordem.map(function (g) {
         var cor = CORES_GRUPO[g] || 'var(--muted)';
-        return '<tr class="grupo-linha" style="--c: ' + cor + '">' +
+        return '<tr class="grupo-linha" id="' + idGrupo(g) + '" style="--c: ' + cor + '">' +
                  '<th scope="colgroup" colspan="' + colunas + '">' + U.escapar(g) + '</th>' +
                '</tr>' +
                porGrupo[g].map(function (l) {
+                 var i = a.tabela.indexOf(l);
                  return '<tr>' +
                    '<td>' + U.escapar(l.atividade) + '</td>' +
+                   (podeAdicionar
+                     ? '<td class="col-adicionar"><button class="btn-adicionar" type="button" data-adicionar="' + i + '" ' +
+                       'aria-label="Adicionar ao meu somador: ' + U.escapar(l.atividade) + '">+ adicionar</button></td>'
+                     : '') +
                    '<td>' + U.escapar(l.porEvento) + '</td>' +
                    '<td class="ppc-teto">' + l.teto + ' h</td>' +
                    (temQuando ? '<td>' + U.escapar(l.desdeQuando || '') + '</td>' : '') +
@@ -543,8 +640,8 @@
 
       var resumoGrupos = ordem.map(function (g) {
         var cor = CORES_GRUPO[g] || 'var(--muted)';
-        return '<span class="grupo-selo" style="--c: ' + cor + '">' + U.escapar(g) +
-               '<b>' + porGrupo[g].length + '</b></span>';
+        return '<a class="grupo-selo" href="#' + idGrupo(g) + '" data-ir-grupo="' + idGrupo(g) + '" style="--c: ' + cor + '">' +
+               U.escapar(g) + '<b>' + porGrupo[g].length + '</b></a>';
       }).join('');
 
       tabela.innerHTML =
@@ -557,10 +654,13 @@
             : '') +
           '<h2 class="tabela-titulo">O que pode ser contabilizado</h2>' +
           '<div class="grupo-selos">' + resumoGrupos + '</div>' +
+          (podeAdicionar ? '<p class="dica-adicionar">Toque num grupo para ir direto a ele, e em <b>+ adicionar</b> para levar a modalidade ao seu somador lá em cima.</p>' : '') +
           '<div class="rolagem-tabela">' +
             '<table class="tabela-ppc">' +
               '<caption class="so-leitor">Modalidades de atividade complementar aceitas em ' + U.escapar(c.nome) + '</caption>' +
-              '<thead><tr><th scope="col">Atividade</th><th scope="col">Quanto vale</th>' +
+              '<thead><tr><th scope="col">Atividade</th>' +
+              (podeAdicionar ? '<th scope="col" class="col-adicionar"><span class="so-leitor">Adicionar ao somador</span></th>' : '') +
+              '<th scope="col">Quanto vale</th>' +
               '<th scope="col">Teto</th>' +
               (temQuando ? '<th scope="col">A partir de quando conta</th>' : '') +
               '<th scope="col">Comprovante</th></tr></thead>' +
@@ -569,8 +669,31 @@
           '</div>' +
           '<p class="dica-rolagem-tabela">Arraste a tabela para o lado para ver ' +
             (temQuando ? 'o prazo e o comprovante' : 'o comprovante') + ' de cada modalidade.</p>' +
-          '<p class="fonte-ppc">' + U.escapar(a.tabelaNota) + '</p>' +
+          '<p class="fonte-ppc">' + comLinks(a.tabelaNota, a.tabelaLinks) + '</p>' +
         '</div>';
+
+      /* selos: levam até o grupo na tabela */
+      tabela.querySelectorAll('[data-ir-grupo]').forEach(function (sel) {
+        sel.addEventListener('click', function (ev) {
+          var alvo = document.getElementById(sel.getAttribute('data-ir-grupo'));
+          if (!alvo) return;
+          ev.preventDefault();
+          alvo.scrollIntoView({ behavior: U.reduzir ? 'auto' : 'smooth', block: 'start' });
+          alvo.classList.remove('realce');
+          void alvo.offsetWidth;
+          alvo.classList.add('realce');
+        });
+      });
+
+      /* + adicionar: o nome da modalidade e, quando a tabela dá um
+         número fixo ("30 h por semestre"), as horas */
+      tabela.querySelectorAll('[data-adicionar]').forEach(function (b) {
+        b.addEventListener('click', function () {
+          var l = a.tabela[parseInt(b.getAttribute('data-adicionar'), 10)];
+          var m = /^(\d+)\s*h\b/.exec(l.porEvento || '');
+          prepararLancamento(c, l.atividade, m ? parseInt(m[1], 10) : 0);
+        });
+      });
     });
   }
 

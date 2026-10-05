@@ -231,6 +231,10 @@ window.DADOS_CURSO = {
           { grupo: 'Pesquisa', atividade: 'Participação em comissão organizadora de evento acadêmico-científico desenvolvido no âmbito de outras instituições de ensino superior', porEvento: '10 h por evento organizado', teto: 30, desdeQuando: 'Somente a partir da data da sua matrícula no curso de Direito desta unidade.', comprovante: 'Certificado ou declaração de participação' },
           { grupo: 'Pesquisa', atividade: 'Participação em grupo de estudos regularmente inscrito no âmbito da Coordenadoria de Pesquisa da Unidade', porEvento: '10 h por semestre', teto: 50, desdeQuando: 'Somente a partir da data da sua matrícula no curso de Direito desta unidade.', comprovante: 'Certificado ou declaração de participação' }
         ],
+        tabelaLinks: [
+          { texto: 'PPC de Direito', href: 'documentos/ppc-direito-guanhaes.pdf' },
+          { texto: 'regulamentação aditiva de Atividades Complementares', href: 'documentos/regulamentacao-aditiva-atividades-complementares-direito-2026.pdf' }
+        ],
         tabelaNota: 'Quadro 02 do PPC de Direito, transcrito na íntegra. A coluna "A partir de quando conta" vem da regulamentação aditiva de Atividades Complementares aprovada pelo Colegiado na Reunião nº 3 (2026-1), de 11 de março de 2026, que fixou o termo inicial de cada modalidade sem alterar as horas nem os tetos. Onde o texto do Colegiado fala em "ano de ingresso", a Coordenação definiu que vale sempre a data da matrícula do estudante, para não haver dois critérios diferentes dentro do mesmo quadro. O próprio PPC abre uma porta: outras atividades não descritas no quadro podem ser avaliadas e consideradas pela Coordenação do Curso. Na dúvida sobre o enquadramento ou sobre a data de um comprovante, pergunte antes de contar com as horas.'
       },
 
@@ -452,6 +456,7 @@ window.DADOS_CURSO = {
           { grupo: 'Estudos e visitas', atividade: 'Grupo de estudo voluntário, com carga horária mínima de 9 horas-aula, coordenado por professor da UEMG ou responsável com formação de nível superior', porEvento: '15 h por trabalho', teto: 30, comprovante: 'Declaração do professor da área, avaliada pelo coordenador do grupo' },
           { grupo: 'Estudos e visitas', atividade: 'Visita técnica a empresa ou instituição, orientada por professor ou responsável técnico, fora das atividades de ensino de disciplina regular', porEvento: '5 h por visita', teto: 30, comprovante: 'Declaração do responsável que acompanhou a visita' }
         ],
+        tabelaLinks: [{ texto: 'PPC de Engenharia Civil', href: 'documentos/ppc-engenharia-civil-guanhaes-2024.pdf' }],
         tabelaNota: 'Quadro A1.1 do Apêndice 1 do PPC de Engenharia Civil, transcrito na íntegra. Atenção a duas regras próprias deste curso: atividades de extensão NÃO entram aqui, porque são aproveitadas no componente curricular de Atividades de Extensão, com regimento próprio; e os casos omissos são avaliados pelo colegiado do curso. Duas observações sobre a apresentação: a divisão em grupos é só para facilitar a leitura, porque o quadro do PPC não separa as modalidades, e os itens 01 e 02 do quadro aparecem aqui abertos em linhas separadas, porque cada um reúne atividades com valores de hora diferentes.'
       },
 
