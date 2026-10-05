@@ -181,6 +181,27 @@ do painel, pedida pelo coordenador: **aviso novo fica em primeiro por 10 dias**
 os demais pelo prazo. Itens do mesmo `grupo` (as fases do Seminário) aparecem uma
 vez só, a de prazo mais próximo. Sem nenhum item vivo o painel fica escondido.
 
+## Atividades complementares: sugestões do Gabriel (05/10/2026), com backup
+
+O commit 8c671c6 aplicou as sugestões do extensionista Gabriel Henriques ao somador
+e à tabela de `atividades.html` (código em `assets/curso.js`, links da nota em
+`tabelaLinks` de `assets/dados-curso.js`):
+
+- os selos dos grupos (Ensino, Extensão, Pesquisa) levam ao trecho da tabela;
+- a coluna "+ adicionar" preenche o formulário, e o estudante confirma em "Lançar";
+- os itens lançados têm o botão "editar";
+- há um campo opcional "Detalhes";
+- a nota da tabela tem links para os PDFs em `documentos/` (PPCs e regulamentação aditiva).
+
+O estado anterior está na tag `backup-atividades-antes-sugestoes` (commit 9bf1316).
+Se o coordenador pedir para voltar:
+
+    git checkout backup-atividades-antes-sugestoes -- assets/curso.js assets/estilo.css assets/dados-curso.js
+    node ferramentas/minificar.js
+
+Depois disso, suba o `VERSAO` do `sw.js`, rode as inspeções e publique. Os PDFs de
+`documentos/` podem ficar no site.
+
 ## Rotinas automáticas
 
 - **Publicação**: `.github/workflows/publicar.yml`, a cada push na `main`,
