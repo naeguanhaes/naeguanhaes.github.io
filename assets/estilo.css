@@ -2259,3 +2259,4 @@ html[data-contraste="alto"] .pb-barra { background: #000; }
   display: flex; flex-direction: column; justify-content: center; gap: .1rem;
 }
 .lista-equipe .eq-curso { font-size: .82rem; font-weight: 500; color: var(--muted); }
+.eq-curso-card { font-size: .88rem; font-weight: 600; color: var(--muted); margin-top: -.2rem; }
