@@ -2256,5 +2256,6 @@ html[data-contraste="alto"] .pb-barra { background: #000; }
 .lista-equipe li {
   background: var(--surface-2); border-radius: 10px; padding: .55rem .8rem;
   font-weight: 600; border-left: 3px solid var(--c);
-  display: flex; align-items: center;
+  display: flex; flex-direction: column; justify-content: center; gap: .1rem;
 }
+.lista-equipe .eq-curso { font-size: .82rem; font-weight: 500; color: var(--muted); }
