@@ -27,8 +27,35 @@
    ═══════════════════════════════════════════════════════ */
 
 window.DADOS_EDITAIS = {
-  atualizadoEm: '2026-10-06',
+  atualizadoEm: '2026-10-07',
   itens: [
+    {
+      titulo: 'Assembleia Geral do Diretório Acadêmico · Estatuto Social',
+      resumo: 'O Diretório Acadêmico Sapientia et Justitia convoca todos os estudantes para apresentar, discutir e votar o Estatuto Social. Sexta, 9 de outubro, às 19h, na Unidade.',
+      tipo: 'outro',
+      abre: '2026-10-07',
+      encerra: '2026-10-09',
+      link: 'index.html#assembleia-da',
+      publicado: '2026-10-07',
+      /* e convocacao, nao edital: so no painel da inicial */
+      naLista: false,
+
+      destaque: {
+        tema: 'coral',
+        eyebrow: 'Diretório Acadêmico · convocação',
+        titulo: 'Assembleia Geral: vamos votar o Estatuto do DA',
+        texto: 'Todos os estudantes da UEMG Guanhães estão convocados. Pauta única: <b>apresentação, discussão e votação do Estatuto Social</b> do Diretório Acadêmico Sapientia et Justitia.',
+        numeros: [
+          { n: '09/10', r: 'sexta-feira' },
+          { n: '19h', r: 'início' },
+          { n: 'UEMG', r: 'Unidade Guanhães' }
+        ],
+        semContagem: true,
+        acao: 'Ver o edital e o Estatuto',
+        extraTexto: 'Compartilhar no WhatsApp',
+        extraLink: 'https://wa.me/?text=%2AAssembleia%20Geral%20do%20Diret%C3%B3rio%20Acad%C3%AAmico%20Sapientia%20et%20Justitia%2A%0ATodos%20os%20estudantes%20da%20UEMG%20Unidade%20Guanh%C3%A3es%20est%C3%A3o%20convocados.%0A%0APauta%20%C3%BAnica:%20o%20Estatuto%20Social%20do%20Diret%C3%B3rio%20Acad%C3%AAmico%0A%E2%80%A2%20Apresenta%C3%A7%C3%A3o%20do%20Estatuto%0A%E2%80%A2%20Discuss%C3%A3o%20e%20sugest%C3%B5es%20de%20altera%C3%A7%C3%A3o%0A%E2%80%A2%20Vota%C3%A7%C3%A3o%20para%20aprova%C3%A7%C3%A3o%0A%0A%E2%80%A2%20Sexta%2C%209%20de%20outubro%20de%202026%2C%20%C3%A0s%2019h%0A%E2%80%A2%20UEMG%20Unidade%20Guanh%C3%A3es%0A%0ASua%20participa%C3%A7%C3%A3o%20garante%20legitimidade%20e%20transpar%C3%AAncia%20%C3%A0s%20regras%20da%20entidade%20que%20representa%20os%20estudantes.%0A%0A%2AEdital%20e%20link%20do%20Estatuto%20no%20site%20do%20NAE:%2A%0Ahttps://naeguanhaes.github.io/%23assembleia-da'
+      }
+    },
     {
       titulo: 'Audiência Pública sobre o Plano Diretor de Guanhães',
       resumo: 'O Diretório Acadêmico leva 15 alunos, com participação certificada, à audiência sobre o Plano Diretor do Município. Segunda, 19 de outubro, às 14h, no Fórum da Comarca de Guanhães.',

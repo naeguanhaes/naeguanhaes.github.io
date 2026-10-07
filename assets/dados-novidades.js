@@ -15,8 +15,15 @@
    ═══════════════════════════════════════════════════════ */
 
 window.DADOS_NOVIDADES = {
-  atualizadoEm: '2026-10-06',
+  atualizadoEm: '2026-10-07',
   itens: [
+    {
+      data: '2026-10-07',
+      titulo: 'Assembleia Geral do Diretório Acadêmico',
+      texto: 'Todos os estudantes estão convocados para discutir e votar o Estatuto Social do DA Sapientia et Justitia. Sexta, 9 de outubro, às 19h, na Unidade.',
+      link: 'index.html#assembleia-da',
+      textoLink: 'ver o edital'
+    },
     {
       data: '2026-10-06',
       titulo: 'Audiência Pública sobre o Plano Diretor',
