@@ -2260,3 +2260,16 @@ html[data-contraste="alto"] .pb-barra { background: #000; }
 }
 .lista-equipe .eq-curso { font-size: .82rem; font-weight: 500; color: var(--muted); }
 .eq-curso-card { font-size: .88rem; font-weight: 600; color: var(--muted); margin-top: -.2rem; }
+
+/* Evento sem cartaz em imagem: as informações ocupam a largura toda */
+@media (min-width: 760px) { .evento-cartaz.evento-sem-cartaz { grid-template-columns: 1fr; } }
+.evento-sem-cartaz .evento-info { max-width: 72ch; }
+
+/* Variante fórum: azul institucional e dourado, para a Audiência Pública */
+.hero-edital.tema-forum {
+  background:
+    radial-gradient(115% 85% at 88% 6%, rgba(255,255,255,.14) 0%, rgba(255,255,255,0) 55%),
+    radial-gradient(95% 75% at 6% 104%, rgba(201,160,82,.32) 0%, rgba(201,160,82,0) 62%),
+    linear-gradient(122deg, #142636 0%, #1F3A52 45%, #2F4A63 80%, #5A4A2A 130%);
+}
+.hero-edital.tema-forum .eyebrow { color: #EBCB8B; }

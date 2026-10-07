@@ -27,8 +27,35 @@
    ═══════════════════════════════════════════════════════ */
 
 window.DADOS_EDITAIS = {
-  atualizadoEm: '2026-09-30',
+  atualizadoEm: '2026-10-06',
   itens: [
+    {
+      titulo: 'Audiência Pública sobre o Plano Diretor de Guanhães',
+      resumo: 'O Diretório Acadêmico leva 15 alunos, com participação certificada, à audiência sobre o Plano Diretor do Município. Segunda, 19 de outubro, às 14h, no Fórum da Comarca de Guanhães.',
+      tipo: 'outro',
+      abre: '2026-10-06',
+      encerra: '2026-10-19',
+      link: 'index.html#plano-diretor',
+      publicado: '2026-10-06',
+      /* e evento, nao edital: so no painel da inicial */
+      naLista: false,
+
+      destaque: {
+        tema: 'forum',
+        eyebrow: 'Diretório Acadêmico · participação certificada',
+        titulo: 'Audiência Pública sobre o Plano Diretor de Guanhães',
+        texto: 'O Diretório Acadêmico da UEMG Guanhães levará <b>15 alunos</b> para debater o planejamento e o futuro da cidade. A participação será <b>certificada</b>, conforme as regras da instituição.',
+        numeros: [
+          { n: '19/10', r: 'segunda-feira' },
+          { n: '14h', r: 'início' },
+          { n: '15', r: 'alunos com certificado' }
+        ],
+        semContagem: true,
+        acao: 'Ver local e detalhes',
+        extraTexto: 'Compartilhar no WhatsApp',
+        extraLink: 'https://wa.me/?text=%2AAudi%C3%AAncia%20P%C3%BAblica%20sobre%20o%20Plano%20Diretor%20de%20Guanh%C3%A3es%2A%0AO%20Diret%C3%B3rio%20Acad%C3%AAmico%20da%20UEMG%20Unidade%20Guanh%C3%A3es%20vai%20participar%20e%20levar%C3%A1%2015%20alunos%2C%20com%20participa%C3%A7%C3%A3o%20certificada.%0A%0A%E2%80%A2%20Segunda%2C%2019%20de%20outubro%20de%202026%2C%20%C3%A0s%2014h%0A%E2%80%A2%20Sal%C3%A3o%20do%20Tribunal%20do%20J%C3%BAri%20do%20F%C3%B3rum%20da%20Comarca%20de%20Guanh%C3%A3es%0A%E2%80%A2%20Rua%20Artur%20Luiz%20de%20Aguiar%2C%20n%C2%BA%20100%2C%20Bairro%20Acr%C3%B3pole%0A%0AParticipar%20tamb%C3%A9m%20%C3%A9%20construir%20a%20cidade%20que%20queremos.%0A%0A%2AInforma%C3%A7%C3%B5es%20no%20site%20do%20NAE:%2A%0Ahttps://naeguanhaes.github.io/%23plano-diretor'
+      }
+    },
     {
       titulo: 'ENADE 2026 · Engenharia Civil',
       resumo: 'Formandos de Engenharia Civil precisam do Questionário do Estudante e da prova, em 29/11, para colar grau. Ingressantes preenchem o questionário de 01/10 a 18/12.',

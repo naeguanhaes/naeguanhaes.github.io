@@ -15,8 +15,15 @@
    ═══════════════════════════════════════════════════════ */
 
 window.DADOS_NOVIDADES = {
-  atualizadoEm: '2026-09-30',
+  atualizadoEm: '2026-10-06',
   itens: [
+    {
+      data: '2026-10-06',
+      titulo: 'Audiência Pública sobre o Plano Diretor',
+      texto: 'O Diretório Acadêmico levará 15 alunos, com participação certificada. Segunda, 19 de outubro, às 14h, no Salão do Tribunal do Júri do Fórum de Guanhães.',
+      link: 'index.html#plano-diretor',
+      textoLink: 'ver os detalhes'
+    },
     {
       data: '2026-09-30',
       titulo: 'ENADE 2026: Engenharia Civil',
