@@ -2275,7 +2275,7 @@ html[data-contraste="alto"] .pb-barra { background: #000; }
 .hero-edital.tema-forum .eyebrow { color: #EBCB8B; }
 
 /* Foto de uma etapa na linha do tempo do projeto */
-.lt-foto { margin: .7rem 0 0; max-width: 30rem; }
+.lt-foto { margin: .7rem 0 0; max-width: 18rem; }
 .lt-foto img { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--hair); }
 
 /* linha do tempo da Fase 3, na cor da fase (texto em âmbar escuro, para dar contraste) */
