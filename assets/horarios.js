@@ -15,6 +15,7 @@
   var FIM_SEMESTRE = D.fimSemestre || '2026-12-12';
 
   var painel = document.getElementById('painel-agora');
+  var semanaAberta = false;      /* a grade da semana no painel começa fechada */
   var lista  = document.getElementById('lista-turmas');
 
   /* ── Auxiliares ───────────────────────────────────── */
@@ -126,7 +127,7 @@
     var corpo = '';
 
     if (!turma) {
-      corpo = '<p class="agora-vazio">Escolha a sua turma abaixo e esta caixa passa a mostrar a aula de hoje sempre que você abrir o site.</p>';
+      corpo = '<p class="agora-vazio">Depois de escolher, esta caixa mostra a aula de hoje sempre que você abrir o site, e o botão da grade da semana aparece aqui em cima.</p>';
     } else if (col < 0) {
       corpo = proximoDiaHTML(turma, hoje, 'Hoje é ' + U.DIAS_CURTOS[hoje.getDay()].toLowerCase() +
               ', não há aulas presenciais.');
@@ -149,20 +150,31 @@
       })
     ).join('');
 
+    /* a escolha da turma vem logo abaixo da data, em destaque e na cor do
+       curso; sem turma escolhida, a faixa chama a atenção para a escolha */
+    var cor = turma ? corDoCurso(turma.curso) : 'var(--marca-azul)';
     painel.className = 'agora';
     painel.innerHTML =
       '<div class="agora-topo">' +
         '<span class="dia">' + U.escapar(dataTexto) + '</span>' +
-        (turma ? '<span style="opacity:.85;font-size:.9rem">' + U.escapar(turma.curso + ' · ' + turma.periodo) + '</span>' : '') +
         '<span class="relogio">' + relogio + '</span>' +
       '</div>' +
-      '<div class="agora-corpo">' + corpo + '</div>' +
-      '<div class="minha-turma">' +
-        '<label for="sel-turma">Minha turma:</label>' +
+      '<div class="agora-turma' + (turma ? '' : ' sem-turma') + '" style="--c: ' + cor + '">' +
+        '<label for="sel-turma">Minha turma</label>' +
         '<select id="sel-turma">' + opcoes + '</select>' +
-        (turma ? '<button class="acao" type="button" id="esquecer-turma">esquecer</button>' : '') +
-        (turma ? '<a class="acao" href="horarios.html#' + turma.id + '">ver grade completa</a>' : '') +
-      '</div>';
+        (turma
+          ? '<button class="btn-semana" type="button" id="btn-semana" aria-expanded="' + (semanaAberta ? 'true' : 'false') + '" aria-controls="agora-semana">' +
+              (semanaAberta ? 'Fechar a grade da semana' : 'Grade da semana') + '</button>' +
+            '<button class="btn-limpo agora-esquecer" type="button" id="esquecer-turma">esquecer</button>'
+          : '<span class="agora-turma-dica">Escolha para ver as suas aulas de hoje e da semana</span>') +
+      '</div>' +
+      '<div class="agora-corpo">' + corpo + '</div>' +
+      (turma
+        ? '<div class="agora-semana" id="agora-semana" style="--c: ' + cor + '"' + (semanaAberta ? '' : ' hidden') + '>' +
+            semanaHTML(turma) +
+            '<p class="agora-semana-pe"><a href="horarios.html#' + turma.id + '">Ver na página de horários, com calendário, imagem e impressão →</a></p>' +
+          '</div>'
+        : '');
 
     var sel = document.getElementById('sel-turma');
     if (sel) {
@@ -172,13 +184,59 @@
         if (lista) marcarMinhaTurma();
       });
     }
+    var btSemana = document.getElementById('btn-semana');
+    if (btSemana) {
+      btSemana.addEventListener('click', function () {
+        semanaAberta = !semanaAberta;
+        montarPainel();
+        var b = document.getElementById('btn-semana');
+        if (b) b.focus();
+        if (semanaAberta) {
+          var caixa = document.getElementById('agora-semana');
+          if (caixa) caixa.scrollIntoView({ behavior: U.reduzir ? 'auto' : 'smooth', block: 'nearest' });
+        }
+      });
+    }
     var esquecer = document.getElementById('esquecer-turma');
     if (esquecer) {
       esquecer.addEventListener('click', function () {
+        semanaAberta = false;
         U.apagar('turma'); montarPainel();
         if (lista) marcarMinhaTurma();
       });
     }
+  }
+
+  /* a semana da turma, dia por dia, com as aulas seguidas já juntas;
+     a coluna EaD vira uma linha com as disciplinas da parte a distância */
+  function semanaHTML(turma) {
+    var colHoje = colunaDeHoje();
+    var dias = [0, 1, 2, 3, 4].map(function (col) {
+      var aulas = aulasDoDia(turma, col);
+      return '<div class="semana-dia' + (col === colHoje ? ' hoje' : '') + '">' +
+        '<h4>' + DIAS[col] + (col === colHoje ? ' <span class="semana-hoje">hoje</span>' : '') + '</h4>' +
+        (aulas.length
+          ? '<ul>' + aulas.map(function (a) {
+              var d = marcador(a.disciplina);
+              return '<li><span class="hora">' + U.escapar(a.rotulo) + '</span>' +
+                     '<span class="disciplina">' + U.escapar(d.nome) + d.tag + '</span>' +
+                     (a.professor ? '<span class="prof">' + U.escapar(a.professor) + '</span>' : '') + '</li>';
+            }).join('') + '</ul>'
+          : '<p class="semana-livre">Sem aula presencial</p>') +
+      '</div>';
+    }).join('');
+    var ead = [];
+    turma.linhas.forEach(function (l) {
+      var cel = l.celulas[5];
+      if (cel && ead.indexOf(cel[0]) === -1) ead.push(cel[0]);
+    });
+    return '<h3 class="agora-semana-tit">Semana do ' + U.escapar(turma.periodo) + ' de ' + U.escapar(turma.curso) +
+             ' <span>' + U.escapar(turma.sala) + '</span></h3>' +
+           '<div class="semana-grade">' + dias + '</div>' +
+           (ead.length
+             ? '<p class="semana-ead"><b>Parte a distância (EaD):</b> ' +
+                 ead.map(function (n) { return U.escapar(marcador(n).nome); }).join(', ') + '</p>'
+             : '');
   }
 
   /* ── Grade completa ───────────────────────────────── */

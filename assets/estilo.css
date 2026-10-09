@@ -2306,3 +2306,59 @@ html[data-contraste="alto"] a.titulo-link { text-decoration: underline; }
 .progresso-fase-topo b { font-family: var(--serif); font-size: 1.25rem; color: var(--ink); }
 .progresso-fase-topo span { color: var(--muted); font-weight: 600; font-size: .92rem; }
 .progresso-fase .barra { height: .8rem; }
+
+/* Painel da aula de hoje: escolha da turma em destaque, logo abaixo da data */
+.agora-turma {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .55rem .8rem;
+  padding: .85rem var(--s3);
+  background: color-mix(in srgb, var(--c) 12%, var(--surface));
+  border-bottom: 1px solid color-mix(in srgb, var(--c) 25%, var(--surface));
+}
+.agora-turma label {
+  font-size: .78rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--c);
+}
+.agora-turma select {
+  font-family: var(--sans); font-size: 1.02rem; font-weight: 700; color: #fff;
+  background: var(--c); border: 0; border-radius: 99px;
+  padding: .6rem 2.4rem .6rem 1.1rem; min-height: 44px; cursor: pointer;
+  box-shadow: 0 6px 16px -8px var(--c);
+  appearance: none; -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right .9rem center;
+}
+.agora-turma select option { color: var(--ink); background: #fff; font-weight: 500; }
+.agora-turma select:focus-visible { outline: 3px solid color-mix(in srgb, var(--c) 45%, #fff); outline-offset: 2px; }
+.agora-turma.sem-turma select { animation: chama-turma 2.4s ease-in-out 3; }
+@keyframes chama-turma { 0%, 100% { box-shadow: 0 6px 16px -8px var(--c); } 50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--c) 30%, transparent); } }
+@media (prefers-reduced-motion: reduce) { .agora-turma.sem-turma select { animation: none; } }
+.agora-turma-dica { font-size: .9rem; color: var(--ink-2); font-weight: 600; }
+.btn-semana {
+  font-family: var(--sans); font-size: .92rem; font-weight: 700; cursor: pointer;
+  color: var(--c); background: var(--surface); border: 2px solid var(--c);
+  border-radius: 99px; padding: .5rem 1rem; min-height: 44px;
+  transition: background .16s, color .16s;
+}
+.btn-semana:hover, .btn-semana[aria-expanded="true"] { background: var(--c); color: #fff; }
+.agora-esquecer { margin-left: auto; font-size: .85rem; }
+html[data-contraste="alto"] .agora-turma select { background: #000; }
+html[data-contraste="alto"] .btn-semana { border-color: #000; color: #000; }
+
+/* a grade da semana, aberta pelo botão */
+.agora-semana { padding: 0 var(--s3) var(--s3); border-top: 1px dashed var(--line); }
+.agora-semana-tit { font-size: 1.05rem; margin: var(--s2) 0 .7rem; }
+.agora-semana-tit span { font-family: var(--sans); font-size: .85rem; font-weight: 600; color: var(--muted); margin-left: .4rem; }
+.semana-grade { display: grid; gap: .6rem; grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr)); }
+.semana-dia { background: var(--surface-2); border-radius: var(--radius-s); padding: .7rem .8rem; border-top: 4px solid color-mix(in srgb, var(--c) 35%, var(--surface)); }
+.semana-dia.hoje { border-top-color: var(--c); background: color-mix(in srgb, var(--c) 9%, var(--surface)); }
+.semana-dia h4 { margin: 0 0 .45rem; font-size: .95rem; display: flex; align-items: center; gap: .4rem; }
+.semana-hoje { font-family: var(--sans); font-size: .62rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #fff; background: var(--c); border-radius: 99px; padding: .1rem .5rem; }
+.semana-dia ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .55rem; }
+.semana-dia li { display: flex; flex-direction: column; gap: .05rem; }
+.semana-dia .hora { font-family: var(--mono); font-size: .76rem; color: var(--ink-2); }
+.semana-dia .disciplina { font-weight: 700; font-size: .9rem; color: var(--ink); line-height: 1.3; }
+.semana-dia .prof { font-size: .76rem; color: var(--muted); font-style: italic; }
+.semana-livre { margin: 0; font-size: .85rem; color: var(--muted); }
+.semana-ead { margin: .7rem 0 0; font-size: .88rem; color: var(--ink-2); }
+.agora-semana-pe { margin: .6rem 0 0; font-size: .88rem; }
+.semana-dia .disciplina { display: flex; flex-wrap: wrap; align-items: center; gap: .25rem .4rem; min-width: 0; }
+.semana-dia .disciplina .tag { margin-left: 0; }
