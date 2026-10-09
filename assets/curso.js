@@ -483,8 +483,19 @@
                 '</li>';
               }).join('') + '</ul>'
             : '<p class="ativ-vazio">Nada lançado ainda. Comece pelo que você já fez neste semestre.</p>') +
+          '<div class="ativ-arquivo">' +
+            (lancadas.length
+              ? (c.atividades.requerimento
+                  ? '<a class="btn" href="requerimentos.html?tipo=atividades" data-ativ-req style="--c: ' + c.cor + '">Montar o requerimento</a>'
+                  : '<button class="btn" type="button" data-ativ-copiar style="--c: ' + c.cor + '">Copiar a lista</button>') +
+                '<button class="btn ghost" type="button" data-ativ-baixar style="--c: ' + c.cor + '">Baixar minha lista</button>'
+              : '') +
+            '<label class="btn ghost" style="--c: ' + c.cor + '">Carregar uma lista salva' +
+              '<input type="file" accept=".json,application/json" data-ativ-carregar class="so-leitor"></label>' +
+          '</div>' +
           '<p class="progresso-nota">Esta conta fica só no seu aparelho e não vale como protocolo. ' +
-          'O que vale é o requerimento entregue à Coordenação do Curso, com os comprovantes.</p>' +
+          'O que vale é o requerimento entregue à Coordenação do Curso, com os comprovantes. ' +
+          'Para não perder a lista ao trocar de celular, baixe o arquivo e guarde no e-mail ou na nuvem.</p>' +
         '</div>';
 
       var form = atividades.querySelector('#ativ-form');
@@ -532,6 +543,92 @@
           desenharAtiv(c);
         });
       });
+
+      /* ── a lista fora do aparelho: arquivo, requerimento e cópia ── */
+      function linhasDaLista(lista) {
+        return lista.map(function (a) {
+          return '- ' + a.desc + ': ' + a.horas + (a.horas === 1 ? ' hora' : ' horas') + (a.det ? ' (' + a.det + ')' : '');
+        });
+      }
+
+      var btBaixar = atividades.querySelector('[data-ativ-baixar]');
+      if (btBaixar) {
+        btBaixar.addEventListener('click', function () {
+          var arquivo = {
+            formato: 'nae-atividades-complementares', versao: 1,
+            curso: c.id, periodo: parseInt(U.ler(chavePeriodo(c)) || '0', 10) || null,
+            salvoEm: new Date().toISOString().slice(0, 10), itens: lerAtiv(c)
+          };
+          var blob = new Blob([JSON.stringify(arquivo, null, 2)], { type: 'application/json' });
+          var a = document.createElement('a');
+          a.href = URL.createObjectURL(blob);
+          a.download = 'atividades-complementares-' + c.id + '-' + arquivo.salvoEm + '.json';
+          document.body.appendChild(a); a.click(); a.remove();
+          setTimeout(function () { URL.revokeObjectURL(a.href); }, 2000);
+          U.toast('Arquivo baixado. Guarde no e-mail ou na nuvem.');
+        });
+      }
+
+      var entrada = atividades.querySelector('[data-ativ-carregar]');
+      if (entrada) {
+        entrada.addEventListener('change', function () {
+          var f = entrada.files && entrada.files[0];
+          if (!f) return;
+          var leitor = new FileReader();
+          leitor.onload = function () {
+            var dados;
+            try { dados = JSON.parse(leitor.result); } catch (e) { dados = null; }
+            if (!dados || dados.formato !== 'nae-atividades-complementares' || !Array.isArray(dados.itens)) {
+              U.toast('Este arquivo não é uma lista de atividades baixada aqui no site.');
+              return;
+            }
+            if (dados.curso && dados.curso !== c.id) {
+              U.toast('Este arquivo é de outro curso. Troque o curso no topo da página e carregue de novo.');
+              return;
+            }
+            /* só passa o que tem a forma de um lançamento */
+            var itens = dados.itens.filter(function (a) {
+              return a && typeof a.desc === 'string' && a.desc.trim() && Number(a.horas) >= 1;
+            }).map(function (a) {
+              var item = { desc: a.desc.trim().slice(0, 160), horas: Math.min(parseInt(a.horas, 10), 500) };
+              if (typeof a.det === 'string' && a.det.trim()) item.det = a.det.trim().slice(0, 300);
+              return item;
+            });
+            var atuais = lerAtiv(c);
+            if (atuais.length && !window.confirm('Trocar os ' + atuais.length + ' lançamentos deste aparelho pelos ' +
+                itens.length + ' do arquivo?')) return;
+            guardarAtiv(c, itens);
+            if (dados.periodo >= 1 && dados.periodo <= 12) U.guardar(chavePeriodo(c), String(dados.periodo));
+            editando = null;
+            desenharAtiv(c);
+            U.toast(itens.length + (itens.length === 1 ? ' atividade carregada.' : ' atividades carregadas.'));
+          };
+          leitor.readAsText(f);
+        });
+      }
+
+      var btReq = atividades.querySelector('[data-ativ-req]');
+      if (btReq) {
+        btReq.addEventListener('click', function () {
+          var lista = lerAtiv(c);
+          var total = lista.reduce(function (s, a) { return s + (Number(a.horas) || 0); }, 0);
+          /* o requerimentos.js lê isto uma vez e apaga */
+          U.guardar('req-atividades', JSON.stringify({
+            curso: c.nome, periodo: U.ler(chavePeriodo(c)) || '',
+            lista: linhasDaLista(lista).join('\n'), total: total + ' horas'
+          }));
+        });
+      }
+
+      var btCopiar = atividades.querySelector('[data-ativ-copiar]');
+      if (btCopiar) {
+        btCopiar.addEventListener('click', function () {
+          var lista = lerAtiv(c);
+          var total = lista.reduce(function (s, a) { return s + (Number(a.horas) || 0); }, 0);
+          U.copiar(linhasDaLista(lista).join('\n') + '\nTotal: ' + total + ' horas',
+            function () { U.toast('Lista copiada.'); });
+        });
+      }
 
       var selPeriodo = atividades.querySelector('#ativ-periodo');
       if (selPeriodo) {

@@ -37,6 +37,9 @@
   var NAO_GUARDAR = ['cpf'];
 
   var tipoAtual = D.tipos[0];
+  /* requerimentos.html?tipo=atividades abre direto no modelo pedido */
+  var pedido = (location.search.match(/[?&]tipo=([a-z]+)/) || [])[1];
+  if (pedido) tipoAtual = D.tipos.filter(function (t) { return t.id === pedido; })[0] || tipoAtual;
   var valores = {};
 
   /* ── Memória local, só se a pessoa pedir ───────────── */
@@ -253,6 +256,17 @@
 
   /* ── Início ────────────────────────────────────────── */
   valores = lerSalvos();
+  /* lista vinda do somador de atividades complementares, usada uma vez */
+  var vindo = null;
+  try { vindo = JSON.parse(U.ler('req-atividades') || 'null'); } catch (e) { vindo = null; }
+  if (vindo && tipoAtual.id === 'atividades') {
+    valores.lista = vindo.lista || '';
+    valores.total = vindo.total || '';
+    if (!valores.curso && vindo.curso) valores.curso = vindo.curso;
+    if (!valores.periodo && vindo.periodo) valores.periodo = vindo.periodo;
+    U.apagar('req-atividades');
+    setTimeout(function () { U.toast('Suas atividades já estão no requerimento. Complete seus dados e confira.'); }, 400);
+  }
   desenharContexto();
   desenharForma();
   montar();

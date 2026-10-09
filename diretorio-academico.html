@@ -3,8 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Planner do semestre para imprimir · NAE Guanhães | UEMG</title>
-<meta name="description" content="Uma folha A4 com a grade da sua turma, as semanas do semestre e os prazos do calendário acadêmico, pronta para imprimir e colar na parede.">
+<title>Diretório Acadêmico Sapientia et Justitia · NAE Guanhães | UEMG</title>
+<meta name="description" content="Diretório Acadêmico Sapientia et Justitia, representação estudantil da UEMG Unidade Guanhães: contato, Estatuto e assembleias.">
+<!-- Página ainda oculta: sem link no menu e fora dos buscadores até o coordenador ativar. -->
+<meta name="robots" content="noindex">
 <link rel="icon" href="assets/favicon-nae.png" type="image/png">
 <meta name="theme-color" content="#40688B">
 <meta name="color-scheme" content="light">
@@ -14,20 +16,11 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="NAE Guanhães">
 <meta name="mobile-web-app-capable" content="yes">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="NAE Guanhães · Núcleo de Apoio ao Estudante">
-<meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="Planner do semestre para imprimir · NAE Guanhães | UEMG">
-<meta property="og:description" content="Uma folha A4 com a grade da sua turma, as semanas do semestre e os prazos do calendário acadêmico, pronta para imprimir e colar na parede.">
-<meta property="og:url" content="https://naeguanhaes.github.io/planner.html">
-<meta property="og:image" content="https://naeguanhaes.github.io/assets/og-nae.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<script>try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentElement.setAttribute("data-fonte",f);var c=localStorage.getItem("nae:contraste");if(c==="sim")document.documentElement.setAttribute("data-contraste","alto")}catch(e){}</script>
+<script>
+try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentElement.setAttribute("data-fonte",f);var c=localStorage.getItem("nae:contraste");if(c==="sim")document.documentElement.setAttribute("data-contraste","alto")}catch(e){}</script>
 <link rel="stylesheet" href="assets/min/estilo.min.css">
 </head>
-<body class="pg-planner">
+<body>
 
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
 
@@ -95,7 +88,7 @@
     <div class="nav-grupo" data-grupo="Ferramentas" style="--c: var(--turquesa)">
       <a class="nav-link" href="calculadora.html" style="--c: var(--turquesa)"><i class="dot"></i>Calculadora de média e faltas</a>
       <a class="nav-link" href="cronometro.html" style="--c: var(--petroleo)"><i class="dot"></i>Cronômetro de estudos</a>
-      <a class="nav-link" href="planner.html" aria-current="page" style="--c: var(--verde)"><i class="dot"></i>Planner do semestre</a>
+      <a class="nav-link" href="planner.html" style="--c: var(--verde)"><i class="dot"></i>Planner do semestre</a>
       <a class="nav-link" href="requerimentos.html" style="--c: var(--azul)"><i class="dot"></i>Gerador de requerimentos</a>
     </div>
     <a class="nav-link" href="apoio.html" style="--c: var(--rosa)"><i class="dot"></i>Apoio psicológico</a>
@@ -109,41 +102,66 @@
   </div>
 </nav>
 
+<main class="wrap stack" id="conteudo">
 
-<main class="wrap stack-m" id="conteudo">
-
-  <nav class="trilha" aria-label="Você está aqui" style="--c: var(--turquesa)">
-    <a href="index.html">Início</a><span class="separa">›</span><a href="horarios.html">Horários de Aulas</a><span class="separa">›</span><span aria-current="page">Planner do semestre</span>
-  </nav>
-
-  <div class="planner-ajuda col stack-s">
-    <div class="titulo-sec" style="--c: var(--turquesa)">
-      <span class="eyebrow" style="--c: var(--turquesa)">Para imprimir e colar na parede</span>
-      <h1>Planner do semestre</h1>
-    </div>
-    <p class="lede">
-      Um caderno de quatro folhas, montado a partir da grade da sua turma e do
-      calendário acadêmico: a sua semana, o mapa do semestre, o controle de notas
-      e o controle de faltas, com o limite de cada disciplina já calculado.
+  <div class="note alerta col">
+    <p>
+      <b>Rascunho oculto</b> Esta página ainda não está no menu nem nos buscadores.
+      Ela será ativada depois dos desdobramentos do Diretório Acadêmico, como a
+      votação do Estatuto.
     </p>
-    <ul class="limpa" style="--c: var(--turquesa)">
-      <li><b>Folha 1</b> a grade de aulas e a lista de disciplinas, com quantas aulas cada uma tem e quantas faltas você pode ter.</li>
-      <li><b>Folha 2</b> todas as semanas até o fim do semestre, com os prazos do calendário já marcados e espaço para as suas provas.</li>
-      <li><b>Folha 3</b> uma tabela para anotar cada nota e ver quanto falta para os 60 pontos.</li>
-      <li><b>Folha 4</b> quadradinhos para marcar falta a falta, mais anotações e os contatos úteis.</li>
-    </ul>
-    <div class="minha-turma" style="border:0;padding-left:0">
-      <label for="planner-turma">Turma:</label>
-      <select id="planner-turma"></select>
-      <button class="btn pequeno" type="button" id="planner-imprimir" style="--c: var(--turquesa)">🖨 Imprimir esta folha</button>
+  </div>
+
+  <div class="hero">
+    <div class="hero-in">
+      <span class="eyebrow">Representação estudantil · UEMG Unidade Guanhães</span>
+      <h1>Diretório Acadêmico Sapientia et Justitia</h1>
+      <p>
+        O Diretório Acadêmico é a entidade que representa os estudantes da UEMG
+        Unidade Guanhães. É por ele que a voz dos estudantes chega à Unidade e a
+        espaços de debate fora da universidade.
+      </p>
     </div>
   </div>
 
-  <div class="planner-folha" id="planner-folha"></div>
-
-  <div class="note planner-ajuda col">
-    <p><b>Dica de impressão</b> Na janela que abrir, escolha <b>papel A4</b> e marque a opção de imprimir cores de fundo, para as semanas com prazo saírem destacadas. Se preferir economizar tinta, deixe desmarcado: continua legível.</p>
+  <div class="grid2">
+    <div class="card" style="--c: var(--azul)">
+      <span class="rotulo">Contato</span>
+      <h2>Fale com o DA</h2>
+      <p>E-mail: <a href="mailto:ouvidoriadiretorioacademico2@gmail.com">ouvidoriadiretorioacademico2@gmail.com</a></p>
+      <p>Presidência: Rian Victor Felício da Silva.</p>
+    </div>
+    <div class="card" style="--c: var(--verde)">
+      <span class="rotulo">Estatuto Social</span>
+      <h2>As regras da entidade</h2>
+      <p>
+        O Estatuto define a estrutura, a organização, o funcionamento, os direitos, os
+        deveres e os princípios de atuação do Diretório Acadêmico. A proposta foi
+        apresentada à Assembleia Geral de 9 de outubro de 2026.
+      </p>
+      <p>Estatuto aprovado: a confirmar.</p>
+    </div>
   </div>
+
+  <div class="col stack-s">
+    <div class="titulo-sec" style="--c: var(--coral)">
+      <span class="eyebrow" style="--c: var(--coral)">Ações</span>
+      <h2>O que o DA tem feito</h2>
+    </div>
+  </div>
+
+  <ol class="linha-tempo col">
+    <li class="lt-item">
+      <time datetime="2026-10-19">19/10/2026</time>
+      <h3>Audiência Pública sobre o Plano Diretor de Guanhães</h3>
+      <p>O Diretório Acadêmico leva 15 alunos da Unidade, com participação certificada, à audiência sobre o Plano Diretor do Município.</p>
+    </li>
+    <li class="lt-item marco">
+      <time datetime="2026-10-09">09/10/2026</time>
+      <h3>Assembleia Geral do Estatuto Social</h3>
+      <p>Assembleia aberta a todos os estudantes, com apresentação, discussão e votação do Estatuto Social do Diretório Acadêmico.</p>
+    </li>
+  </ol>
 
 </main>
 
@@ -152,8 +170,6 @@
     <p>NAE · Núcleo de Apoio ao Estudante · UEMG Unidade Guanhães<br>Coordenação: Jonatan Barbosa Silva</p>
     <div class="foot-links">
       <a href="index.html">Início</a>
-      <a href="sistemas.html">Sistemas</a>
-      <a href="horarios.html">Horários</a>
       <a href="calendario.html">Calendário</a>
       <a href="contato.html">Contato</a>
       <a href="avisos.html">Avisos</a>
@@ -164,14 +180,11 @@
   </div>
 </footer>
 
-
 <script defer src="assets/dados-avisos.js"></script>
-<script defer src="assets/dados-horarios.js"></script>
-<script defer src="assets/dados-calendario.js"></script>
 <script defer src="assets/min/site.min.js"></script>
 <script defer src="assets/dados-busca.js"></script>
 <script defer src="assets/min/busca.min.js"></script>
-<script defer src="assets/min/planner.min.js"></script>
+<script defer src="assets/dados-editais.js"></script>
 <script data-goatcounter="https://naeguanhaes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>

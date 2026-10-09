@@ -178,6 +178,23 @@
         if (ate && hoje > ate && a.parentNode) a.parentNode.removeChild(a);
       }
     );
+    /* O contrário: data-desde="AAAA-MM-DD" deixa o elemento escondido
+       (o CSS esconde) até esse dia. Com os dois, um bloco "inscrições
+       abertas" dá lugar a um "inscrições encerradas" na data certa. */
+    Array.prototype.forEach.call(
+      document.querySelectorAll('[data-desde]'),
+      function (a) {
+        if (hoje >= a.getAttribute('data-desde')) a.removeAttribute('data-desde');
+      }
+    );
+    /* botão "Adicionar à agenda" sai sozinho depois do último dia do evento */
+    Array.prototype.forEach.call(
+      document.querySelectorAll('[data-agenda]'),
+      function (a) {
+        var fim = (a.getAttribute('data-fim') || a.getAttribute('data-inicio') || '').slice(0, 10);
+        if (fim && hoje > fim && a.parentNode) a.parentNode.removeChild(a);
+      }
+    );
   })();
 
   /* ── Submenus do topo ─────────────────────────────── */
@@ -722,7 +739,9 @@
       return '<div class="novidade">' +
                '<span class="quando">' + escapar(quando) + '</span>' +
                '<span class="oque">' +
-                 '<b>' + escapar(n.titulo) + '</b>' +
+                 /* com página, o título também leva até ela */
+                 (n.link ? '<b><a class="titulo-link" href="' + escapar(n.link) + '">' + escapar(n.titulo) + '</a></b>'
+                         : '<b>' + escapar(n.titulo) + '</b>') +
                  '<span>' + escapar(n.texto) +
                    (n.link ? ' <a href="' + escapar(n.link) + '">' + escapar(n.textoLink || 'ver') + ' →</a>' : '') +
                  '</span>' +
@@ -816,11 +835,63 @@
     pintar();
   })();
 
+  /* ── Adicionar à agenda (.ics) ─────────────────────── */
+  /* <button data-agenda data-titulo="..." data-inicio="2026-10-19T14:00"
+             data-fim="2026-10-19T16:00" data-local="..." data-descricao="...">
+     Sem hora (só AAAA-MM-DD), vira evento de dia inteiro; data-fim é o
+     último dia, inclusive. Horário de Brasília, que não tem mais verão. */
+  document.querySelectorAll('[data-agenda]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var ini = b.getAttribute('data-inicio');
+      var fim = b.getAttribute('data-fim') || ini;
+      var titulo = b.getAttribute('data-titulo') || document.title;
+      var esc = function (t) { return String(t || '').replace(/([,;\\])/g, '\\$1').replace(/\n/g, '\\n'); };
+      var comHora = ini.indexOf('T') > 0;
+      function utc(dt) {                       /* 2026-10-19T14:00 em Brasília -> 20261019T170000Z */
+        var d = new Date(dt + ':00-03:00');
+        return d.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
+      }
+      function dia(d, mais) {
+        var x = new Date(d + 'T12:00:00'); x.setDate(x.getDate() + (mais || 0));
+        return hojeISO(x).replace(/-/g, '');
+      }
+      var url = b.getAttribute('data-url') || (location.origin + location.pathname + location.hash);
+      var linhas = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//NAE Guanhaes//Agenda//PT-BR', 'CALSCALE:GREGORIAN',
+        'BEGIN:VEVENT',
+        'UID:' + ini.replace(/\W/g, '') + '-' + titulo.length + '@nae-guanhaes',
+        'DTSTAMP:' + utc(hojeISO() + 'T12:00'),
+        comHora ? 'DTSTART:' + utc(ini) : 'DTSTART;VALUE=DATE:' + dia(ini),
+        comHora ? 'DTEND:' + utc(fim) : 'DTEND;VALUE=DATE:' + dia(fim.slice(0, 10), 1),
+        'SUMMARY:' + esc(titulo),
+        'DESCRIPTION:' + esc((b.getAttribute('data-descricao') || '') + ' Mais informações: ' + url),
+        'LOCATION:' + esc(b.getAttribute('data-local') || ''),
+        'URL:' + url,
+        'BEGIN:VALARM', 'ACTION:DISPLAY', 'DESCRIPTION:' + esc(titulo),
+        comHora ? 'TRIGGER:-P1D' : 'TRIGGER:-PT15H',
+        'END:VALARM',
+        'END:VEVENT', 'END:VCALENDAR'];
+      var blob = new Blob([linhas.join('\r\n')], { type: 'text/calendar;charset=utf-8' });
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = nomeDoArquivo(titulo) + '.ics';
+      document.body.appendChild(a); a.click();
+      setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+      toast('Abra o arquivo para salvar na agenda do celular. Ele já vem com lembrete na véspera.');
+    });
+  });
+  function nomeDoArquivo(t) {
+    return String(t).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60) || 'evento';
+  }
+
   /* ── Compartilhar ─────────────────────────────────── */
   document.querySelectorAll('[data-compartilhar]').forEach(function (b) {
     var titulo = b.getAttribute('data-titulo') || document.title;
     var texto = b.getAttribute('data-texto') || '';
-    var url = b.getAttribute('data-url') || window.location.href;
+    /* o endereço vai com a marcação de origem, para o contador saber que
+       a visita veio de um compartilhamento */
+    var url = b.getAttribute('data-url') ||
+      (location.origin + location.pathname + '?utm_source=compartilhar' + location.hash);
 
     b.addEventListener('click', function (e) {
       if (navigator.share) {

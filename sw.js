@@ -5,7 +5,18 @@
    isso apaga o cache antigo e busca tudo de novo.
    ═══════════════════════════════════════════════════════ */
 
-var VERSAO = 'nae-v92';
+var VERSAO = 'nae-v93';
+
+/* Páginas que de propósito NÃO entram no cache do aparelho do aluno:
+   ficam no ar e são baixadas só quando alguém abre. O arquivo do que
+   já aconteceu não precisa funcionar sem internet, e os rascunhos
+   ocultos não devem ocupar espaço no celular de ninguém.
+   O inspetor de consistência aceita estas e cobra todas as outras. */
+var FORA_DO_CACHE = [
+  './eventos-passados.html',
+  './vestibular.html',
+  './diretorio-academico.html'
+];
 
 /* Arquivos de dados (avisos, horários, calendário, editais, semestres).
    Estes NÃO seguem a regra do cache primeiro: um aviso urgente precisa
@@ -175,17 +186,23 @@ self.addEventListener('fetch', function (e) {
   /* páginas: rede primeiro, para o aluno ver a versão nova;
      sem rede, entrega o que estiver guardado */
   if (req.mode === 'navigate') {
+    /* a cópia guardada é a da página sem a marcação de campanha
+       (?utm_source=...), para o link do WhatsApp abrir também sem rede */
+    var chave = url.search ? new Request(url.origin + url.pathname) : req;
     /* no-cache: confere com o servidor em vez de aceitar a cópia de até
        10 minutos do navegador. Se nada mudou, a resposta é curtinha. */
     e.respondWith(
       fetch(new Request(req.url, { cache: 'no-cache', credentials: 'same-origin', redirect: 'manual' }))
         .then(function (resp) {
-          var copia = resp.clone();
-          caches.open(VERSAO).then(function (c) { c.put(req, copia); });
+          var fora = FORA_DO_CACHE.some(function (f) { return url.pathname.slice(-f.length + 1) === f.slice(1); });
+          if (!fora) {
+            var copia = resp.clone();
+            caches.open(VERSAO).then(function (c) { c.put(chave, copia); });
+          }
           return resp;
         })
         .catch(function () {
-          return caches.match(req).then(function (r) { return r || caches.match('./offline.html'); });
+          return caches.match(chave, { ignoreSearch: true }).then(function (r) { return r || caches.match('./offline.html'); });
         })
     );
     return;

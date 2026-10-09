@@ -23,10 +23,20 @@ de mudanças estão na pasta [`historico/`](historico/CONTEXTO.md).
    (`https://naeguanhaes.github.io/...`), nunca direto para formulário, Google
    Forms ou site de terceiros. O link externo de inscrição fica na página do site,
    no botão de inscrição. Pedido do coordenador em 30/09/2026, para trazer
-   movimento ao site.
+   movimento ao site. Desde 09/10/2026 o endereço vai marcado com a origem,
+   `?utm_source=whatsapp&utm_campaign=<evento>` (antes do `#`), para o
+   GoatCounter mostrar quais divulgações trazem visitas.
 8. **Mensagens de compartilhar sem emoji.** Pelo link wa.me, os emojis chegam no
    WhatsApp como "�" (visto pelo coordenador em 30/09/2026). Use texto e, para
    listas, o marcador `•`.
+9. **Nada com data fica no ar depois da hora** (pedido em 09/10/2026). Todo
+   evento, prazo ou divulgação tem como sair ou mudar sozinho: veja a seção
+   "Eventos e prazos: o sistema que não deixa nada envelhecer".
+10. **Título de banner, aviso ou divulgação é clicável** quando o evento tem
+    página no site (pedido em 09/10/2026).
+11. A senha do Wi-Fi na página `wifi.html` é pública de propósito: a rede é
+    para os alunos e não alcança longe do prédio (decisão do coordenador em
+    09/10/2026).
 
 ## Antes de publicar qualquer mudança (checklist)
 
@@ -43,20 +53,27 @@ de mudanças estão na pasta [`historico/`](historico/CONTEXTO.md).
 4. Atualize a data do rodapé "Site conferido e atualizado em ..." nas páginas
    (uma troca de texto em todas de uma vez). O `checar-consistencia.js`
    reclama se uma página ficar para trás.
+4b. Evento, prazo ou divulgação nova? Siga a seção "Eventos e prazos" abaixo:
+   `data-ate` em tudo que vence, `publicado` no item de `dados-editais.js` e,
+   se o evento tiver página, `<meta name="nae:revisar-em">` com as datas em
+   que o texto vai precisar mudar.
 5. Mudança visível para o aluno? Acrescente um item no TOPO de
    `assets/dados-novidades.js`.
 6. Página ou seção nova? Inclua no índice `assets/dados-busca.js`, no menu de
    todas as páginas, na lista `ESSENCIAIS` do `sw.js` e rode
-   `node ferramentas/gerar-sitemap.js`.
+   `node ferramentas/gerar-sitemap.js`. Página que não deve ocupar o celular
+   do aluno (arquivo, rascunho oculto) vai em `FORA_DO_CACHE`, no topo do
+   `sw.js`, em vez de `ESSENCIAIS`.
 7. Mexeu em pergunta do FAQ (`email.html`, `sistemas.html`, `moodle.html`,
    `lyceum.html`) ou no endereço,
    telefone e horário de atendimento? Rode
    `node ferramentas/gerar-dados-estruturados.js`, que reescreve o que o
    Google lê. As perguntas saem do próprio HTML, então não se digita nada
    duas vezes.
-8. Rode as sete inspeções. O workflow roda todas de novo e
+8. Rode as oito inspeções. O workflow roda todas de novo e
    **bloqueia a publicação** se qualquer uma falhar:
    ```bash
+   node ferramentas/checar-eventos.js
    node ferramentas/checar-dados.js
    node ferramentas/checar-site.js
    node ferramentas/checar-acessibilidade.js
@@ -132,7 +149,14 @@ conferir que já está no `sw.js` e anunciar em `assets/dados-novidades.js`.
   grades de semestres encerrados. Aguardando existir mais de um semestre.
   As instruções de como arquivar estão dentro do próprio arquivo de índice.
 
-As três já funcionam por endereço direto, para o coordenador revisar.
+- **`vestibular.html`** (Vestibular 2027, Fase 3 do projeto): pronta com os
+  campos "a confirmar". Só vai ao ar quando o coordenador tiver as
+  informações oficiais do vestibular (pedido em 09/10/2026).
+- **`diretorio-academico.html`** (representação estudantil): aguardando os
+  desdobramentos do DA, como a aprovação do Estatuto.
+
+Todas já funcionam por endereço direto, para o coordenador revisar. As duas
+últimas estão em `FORA_DO_CACHE` no `sw.js`.
 
 ## Rodas de Conversa sobre IA: RETIRADA do site em 27/08/2026
 
@@ -201,6 +225,48 @@ Se o coordenador pedir para voltar:
 
 Depois disso, suba o `VERSAO` do `sw.js`, rode as inspeções e publique. Os PDFs de
 `documentos/` podem ficar no site.
+
+## Eventos e prazos: o sistema que não deixa nada envelhecer
+
+Pedido do coordenador em 09/10/2026: à medida que as datas chegam ou as
+inscrições fecham, o site se atualiza sozinho, e isso é conferido a cada
+publicação e todo dia de manhã.
+
+**O que muda sozinho no navegador, sem publicar nada:**
+- `data-ate="AAAA-MM-DD"`: o elemento some depois desse dia (menu, quadro de
+  evento, botão de inscrição, cartão de compartilhar).
+- `data-desde="AAAA-MM-DD"`: o elemento só aparece a partir desse dia (o CSS
+  esconde e o `site.js` revela). Junto com o `data-ate`, troca "inscrições
+  abertas" por "inscrições encerradas" na data certa. Exemplo: `pila.html` e
+  `propcts.html`, que ganharam o aviso de encerramento.
+- Botão "Adicionar à agenda" (`data-agenda`, com `data-inicio` e `data-fim`)
+  sai sozinho depois do último dia do evento.
+- Painel da página inicial e lista de editais: `abre`, `encerra` e
+  `publicado` em `assets/dados-editais.js`. A página "O que já aconteceu"
+  (`eventos-passados.html`) mostra sozinha tudo o que já encerrou ali; por
+  isso **não apague** itens encerrados de `dados-editais.js`.
+- Faixa de avisos: `de` e `ate` em `assets/dados-avisos.js`.
+
+**O que só uma pessoa reescreve:** o texto de uma página de evento. Para
+isso, toda página de evento tem `<meta name="nae:revisar-em" content="...">`
+com as datas em que o texto precisa ser relido (fim de uma fase, fim do
+evento). Depois de reler e acertar, tire a data da lista.
+
+**O inspetor `ferramentas/checar-eventos.js`** roda em toda publicação
+(bloqueia) e todo dia às 07h pelo workflow `eventos.yml` (abre tarefa no
+GitHub, que manda e-mail, e fecha sozinha quando tudo estiver em dia). Ele
+reprova: quadro de evento sem `data-ate`; link de inscrição ou formulário sem
+`data-ate` em volta; mensagem de WhatsApp que só cita datas passadas e ainda
+aparece; página de evento sem `nae:revisar-em` ou com data de revisão vencida;
+item de editais com destaque sem `publicado`. Para simular outro dia:
+`NAE_HOJE=2026-11-20 node ferramentas/checar-eventos.js`.
+
+Se o vigia apontar algo, o pedido ao Claude é: "resolva o que o vigia dos
+eventos apontou".
+
+**Prévia no WhatsApp:** as páginas de evento têm imagem própria em
+`assets/og/<pagina>.jpg` (1200x630), montada com o tema de cor do painel.
+Eventos que moram dentro da página inicial usam a prévia geral do site.
 
 ## Rotinas automáticas
 

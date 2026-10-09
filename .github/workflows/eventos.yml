@@ -1,0 +1,84 @@
+# Confere todo dia de manhã se algum evento, prazo ou página de evento
+# venceu ou precisa ser relida. O site já esconde sozinho o que tem data
+# (data-ate, data-desde, encerra), mas o texto de uma página só uma pessoa
+# pode reescrever: quando chega a data marcada em nae:revisar-em, ou
+# quando algo vencido ainda aparece, este vigia abre uma tarefa no
+# repositório, e o GitHub manda e-mail para a coordenação.
+# Não publica nem bloqueia nada: só avisa. Quem bloqueia é o mesmo
+# inspetor rodando no publicar.yml.
+name: Vigia dos eventos e prazos
+
+on:
+  schedule:
+    # todo dia, 07h de Brasília (10h UTC)
+    - cron: '0 10 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  conferir:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar o repositório
+        uses: actions/checkout@v4
+
+      - name: Conferir os eventos e prazos
+        id: teste
+        continue-on-error: true
+        run: node ferramentas/checar-eventos.js
+
+      - name: Abrir ou atualizar a tarefa quando algo venceu
+        if: steps.teste.outcome == 'failure'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            let corpo = 'O vigia diário encontrou evento ou prazo que precisa de atenção no site.';
+            try { corpo += '\n\n```\n' + fs.readFileSync('eventos.txt', 'utf8') + '```'; } catch (e) {}
+            corpo += '\n\nEnquanto isso não for resolvido, a próxima publicação do site fica bloqueada ' +
+                     'pelo mesmo inspetor. Peça ao Claude: "resolva o que o vigia dos eventos apontou".';
+            const titulo = 'Vigia dos eventos: informação para atualizar no site';
+            const abertas = await github.rest.issues.listForRepo({
+              owner: context.repo.owner, repo: context.repo.repo, state: 'open'
+            });
+            const jaExiste = abertas.data.find(i => i.title === titulo);
+            if (jaExiste) {
+              /* só comenta se a lista mudou, para não mandar o mesmo e-mail todo dia */
+              const coments = await github.rest.issues.listComments({
+                owner: context.repo.owner, repo: context.repo.repo, issue_number: jaExiste.number, per_page: 100
+              });
+              const ultimo = coments.data.length ? coments.data[coments.data.length - 1].body : jaExiste.body;
+              const semData = t => (t || '').replace(/com a data de hoje em Brasília: [0-9/]+/, '');
+              if (semData(ultimo) === semData(corpo)) return;
+              await github.rest.issues.createComment({
+                owner: context.repo.owner, repo: context.repo.repo,
+                issue_number: jaExiste.number, body: corpo
+              });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner, repo: context.repo.repo,
+                title: titulo, body: corpo
+              });
+            }
+
+      - name: Fechar a tarefa quando tudo estiver em dia
+        if: steps.teste.outcome == 'success'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const titulo = 'Vigia dos eventos: informação para atualizar no site';
+            const abertas = await github.rest.issues.listForRepo({
+              owner: context.repo.owner, repo: context.repo.repo, state: 'open'
+            });
+            const aberta = abertas.data.find(i => i.title === titulo);
+            if (!aberta) return;
+            await github.rest.issues.createComment({
+              owner: context.repo.owner, repo: context.repo.repo, issue_number: aberta.number,
+              body: 'Tudo em dia: nenhum evento ou prazo vencido aparecendo no site. Tarefa encerrada pelo vigia.'
+            });
+            await github.rest.issues.update({
+              owner: context.repo.owner, repo: context.repo.repo, issue_number: aberta.number, state: 'closed'
+            });

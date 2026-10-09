@@ -95,6 +95,7 @@ try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentEleme
       <a class="nav-link" href="sobre.html" style="--c: var(--ambar)"><i class="dot"></i>O que é o NAE</a>
       <a class="nav-link" href="contato.html" style="--c: var(--coral)"><i class="dot"></i>Fale com o NAE</a>
       <a class="nav-link" href="status-projeto.html" style="--c: var(--verde)"><i class="dot"></i>Status do projeto de extensão</a>
+      <a class="nav-link" href="eventos-passados.html" style="--c: var(--verde)"><i class="dot"></i>O que já aconteceu</a>
     </div>
   </div>
 </nav>
@@ -212,7 +213,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var cor = CORES[e.tipo] || CORES.outro;
     return '<div class="card reveal visivel" data-edital="' + U.escapar(e.tipo || 'outro') + '" style="--c: ' + cor + '">' +
       '<span class="rotulo">' + U.escapar(NOMES[e.tipo] || NOMES.outro) + '</span>' +
-      '<h2>' + U.escapar(e.titulo) + '</h2>' +
+      '<h2>' + (e.link ? '<a class="titulo-link" href="' + U.escapar(e.link) + '" target="_blank" rel="noopener noreferrer">' +
+        U.escapar(e.titulo) + '</a>' : U.escapar(e.titulo)) + '</h2>' +
       '<p>' + U.escapar(e.resumo) + '</p>' +
       '<div class="calc-res ' + s.classe + '">' + U.escapar(s.texto) + '</div>' +
       (e.link ? '<div><a class="btn ghost" style="--c: ' + cor + '" href="' + U.escapar(e.link) + '" target="_blank" rel="noopener noreferrer">Ler o edital completo →</a></div>' : '') +

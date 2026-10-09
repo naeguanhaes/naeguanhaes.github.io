@@ -25,6 +25,12 @@ window.DADOS_BUSCA = {
       k: 'yoga esmu escola de musica meditacao relaxar bem-estar bem estar corpo mente saude mental pausa sonia assis quinta aula atividade fisica ansiedade estresse'
     },
     {
+      t: 'O que já aconteceu · arquivo de eventos e editais',
+      d: 'Os editais, eventos e avisos que o NAE divulgou e que já terminaram, do mais recente para o mais antigo.',
+      u: 'eventos-passados.html',
+      k: 'arquivo historico eventos passados encerrados antigos editais terminados o que aconteceu registro seminario pila propcts conecta mente audiencia assembleia'
+    },
+    {
       t: 'Status do projeto de extensão · Conexão Universitária',
       d: 'As etapas do projeto de extensão do NAE. Fase 1: o site para os estudantes. Fase 2, Comunidade Externa: parceria com a Secretaria Municipal de Educação sobre TEA. Fase 3: Vestibular 2027.',
       u: 'status-projeto.html',

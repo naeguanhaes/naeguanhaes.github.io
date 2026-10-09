@@ -120,6 +120,7 @@
     if (selos) selos = '<div class="hero-selos">' + selos + '</div>';
 
     var link = d.acaoLink || e.link;
+    var linkTitulo = (e.link && !/^https?:/.test(e.link)) ? e.link : link;
     var extra = (d.extraTexto && d.extraLink)
       ? '<a class="btn ghost" href="' + escapar(d.extraLink) + '"' + alvo(d.extraLink) + '>' +
           escapar(d.extraTexto) + '</a>'
@@ -137,7 +138,9 @@
     slide.innerHTML =
       '<div class="hero-in">' +
         '<span class="eyebrow">' + escapar(d.eyebrow || 'Inscrições abertas') + '</span>' +
-        '<h2>' + escapar(d.titulo || e.titulo) + '</h2>' +
+        /* o título é clicável: leva à página do evento no site, quando
+           existe, e senão ao mesmo destino do botão principal */
+        '<h2><a class="titulo-link" href="' + escapar(linkTitulo) + '"' + alvo(linkTitulo) + '>' + escapar(d.titulo || e.titulo) + '</a></h2>' +
         '<p>' + corpo + '</p>' +
         selos +
         /* semContagem: aviso que não é inscrição (o Wi-Fi) fica sem o selo do prazo */

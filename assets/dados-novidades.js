@@ -15,8 +15,22 @@
    ═══════════════════════════════════════════════════════ */
 
 window.DADOS_NOVIDADES = {
-  atualizadoEm: '2026-10-07',
+  atualizadoEm: '2026-10-09',
   itens: [
+    {
+      data: '2026-10-09',
+      titulo: 'Atividades complementares: salve a sua lista e monte o requerimento',
+      texto: 'O somador agora baixa a sua lista em arquivo, para não perder ao trocar de celular, e no curso de Direito monta o requerimento para a Coordenação já com as atividades e as horas.',
+      link: 'atividades.html',
+      textoLink: 'abrir o somador'
+    },
+    {
+      data: '2026-10-09',
+      titulo: 'O que já aconteceu',
+      texto: 'Os editais e eventos que já terminaram saem da página inicial, mas ficam registrados numa página própria. Nos eventos, o botão "Adicionar à agenda" salva a data no celular com lembrete.',
+      link: 'eventos-passados.html',
+      textoLink: 'ver o arquivo'
+    },
     {
       data: '2026-10-07',
       titulo: 'Assembleia Geral do Diretório Acadêmico',

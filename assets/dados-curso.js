@@ -194,6 +194,8 @@ window.DADOS_CURSO = {
       atividades: {
         total: 210,
         prazo: 'Podem ser feitas desde o 1º semestre, de forma cumulativa, e precisam estar concluídas até o 10º semestre. Sem elas não há colação de grau, porque são componente curricular obrigatório das Diretrizes Curriculares.',
+        /* o somador oferece montar o requerimento em requerimentos.html?tipo=atividades */
+        requerimento: true,
         comoProtocolar: 'Os comprovantes vão em requerimento justificado e documentado, para a Coordenação do Curso validar. Depois a Coordenação comunica a Secretaria Acadêmica, que lança no histórico escolar.',
         termoInicial: 'A regra é esta: só conta o que tem data posterior à sua matrícula no curso de Direito desta unidade. Certificado de antes disso não é aproveitado, salvo em duas exceções apontadas na tabela: as disciplinas já cursadas e a monitoria de quem veio por transferência. Confira a coluna "A partir de quando conta" em cada modalidade antes de reunir os comprovantes.',
         /* Quadro 02 do PPC, transcrito inteiro: 25 modalidades em três grupos.

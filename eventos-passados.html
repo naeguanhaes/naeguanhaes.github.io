@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Planner do semestre para imprimir · NAE Guanhães | UEMG</title>
-<meta name="description" content="Uma folha A4 com a grade da sua turma, as semanas do semestre e os prazos do calendário acadêmico, pronta para imprimir e colar na parede.">
+<title>O que já aconteceu · NAE Guanhães | UEMG</title>
+<meta name="description" content="Arquivo dos editais, eventos e avisos que o NAE da UEMG Guanhães já divulgou, do mais recente para o mais antigo.">
 <link rel="icon" href="assets/favicon-nae.png" type="image/png">
 <meta name="theme-color" content="#40688B">
 <meta name="color-scheme" content="light">
@@ -14,20 +14,11 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="NAE Guanhães">
 <meta name="mobile-web-app-capable" content="yes">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="NAE Guanhães · Núcleo de Apoio ao Estudante">
-<meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="Planner do semestre para imprimir · NAE Guanhães | UEMG">
-<meta property="og:description" content="Uma folha A4 com a grade da sua turma, as semanas do semestre e os prazos do calendário acadêmico, pronta para imprimir e colar na parede.">
-<meta property="og:url" content="https://naeguanhaes.github.io/planner.html">
-<meta property="og:image" content="https://naeguanhaes.github.io/assets/og-nae.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<script>try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentElement.setAttribute("data-fonte",f);var c=localStorage.getItem("nae:contraste");if(c==="sim")document.documentElement.setAttribute("data-contraste","alto")}catch(e){}</script>
+<script>
+try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentElement.setAttribute("data-fonte",f);var c=localStorage.getItem("nae:contraste");if(c==="sim")document.documentElement.setAttribute("data-contraste","alto")}catch(e){}</script>
 <link rel="stylesheet" href="assets/min/estilo.min.css">
 </head>
-<body class="pg-planner">
+<body>
 
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
 
@@ -95,7 +86,7 @@
     <div class="nav-grupo" data-grupo="Ferramentas" style="--c: var(--turquesa)">
       <a class="nav-link" href="calculadora.html" style="--c: var(--turquesa)"><i class="dot"></i>Calculadora de média e faltas</a>
       <a class="nav-link" href="cronometro.html" style="--c: var(--petroleo)"><i class="dot"></i>Cronômetro de estudos</a>
-      <a class="nav-link" href="planner.html" aria-current="page" style="--c: var(--verde)"><i class="dot"></i>Planner do semestre</a>
+      <a class="nav-link" href="planner.html" style="--c: var(--verde)"><i class="dot"></i>Planner do semestre</a>
       <a class="nav-link" href="requerimentos.html" style="--c: var(--azul)"><i class="dot"></i>Gerador de requerimentos</a>
     </div>
     <a class="nav-link" href="apoio.html" style="--c: var(--rosa)"><i class="dot"></i>Apoio psicológico</a>
@@ -104,45 +95,37 @@
       <a class="nav-link" href="sobre.html" style="--c: var(--ambar)"><i class="dot"></i>O que é o NAE</a>
       <a class="nav-link" href="contato.html" style="--c: var(--coral)"><i class="dot"></i>Fale com o NAE</a>
       <a class="nav-link" href="status-projeto.html" style="--c: var(--verde)"><i class="dot"></i>Status do projeto de extensão</a>
-      <a class="nav-link" href="eventos-passados.html" style="--c: var(--verde)"><i class="dot"></i>O que já aconteceu</a>
+      <a class="nav-link" href="eventos-passados.html" aria-current="page" style="--c: var(--verde)"><i class="dot"></i>O que já aconteceu</a>
     </div>
   </div>
 </nav>
 
+<main class="wrap stack" id="conteudo">
 
-<main class="wrap stack-m" id="conteudo">
-
-  <nav class="trilha" aria-label="Você está aqui" style="--c: var(--turquesa)">
-    <a href="index.html">Início</a><span class="separa">›</span><a href="horarios.html">Horários de Aulas</a><span class="separa">›</span><span aria-current="page">Planner do semestre</span>
+  <nav class="trilha" aria-label="Você está aqui" style="--c: var(--verde)">
+    <a href="index.html">Início</a><span class="separa">›</span><a href="sobre.html">Sobre o NAE</a><span class="separa">›</span><span aria-current="page">O que já aconteceu</span>
   </nav>
 
-  <div class="planner-ajuda col stack-s">
-    <div class="titulo-sec" style="--c: var(--turquesa)">
-      <span class="eyebrow" style="--c: var(--turquesa)">Para imprimir e colar na parede</span>
-      <h1>Planner do semestre</h1>
+  <div class="col stack-s">
+    <div class="titulo-sec" style="--c: var(--verde)">
+      <span class="eyebrow" style="--c: var(--verde)">Arquivo</span>
+      <h1>O que já aconteceu</h1>
     </div>
     <p class="lede">
-      Um caderno de quatro folhas, montado a partir da grade da sua turma e do
-      calendário acadêmico: a sua semana, o mapa do semestre, o controle de notas
-      e o controle de faltas, com o limite de cada disciplina já calculado.
+      Os editais, eventos e avisos que o NAE divulgou e que já terminaram, do mais
+      recente para o mais antigo. Eles saem da página inicial quando o prazo vence,
+      mas o registro fica aqui.
     </p>
-    <ul class="limpa" style="--c: var(--turquesa)">
-      <li><b>Folha 1</b> a grade de aulas e a lista de disciplinas, com quantas aulas cada uma tem e quantas faltas você pode ter.</li>
-      <li><b>Folha 2</b> todas as semanas até o fim do semestre, com os prazos do calendário já marcados e espaço para as suas provas.</li>
-      <li><b>Folha 3</b> uma tabela para anotar cada nota e ver quanto falta para os 60 pontos.</li>
-      <li><b>Folha 4</b> quadradinhos para marcar falta a falta, mais anotações e os contatos úteis.</li>
-    </ul>
-    <div class="minha-turma" style="border:0;padding-left:0">
-      <label for="planner-turma">Turma:</label>
-      <select id="planner-turma"></select>
-      <button class="btn pequeno" type="button" id="planner-imprimir" style="--c: var(--turquesa)">🖨 Imprimir esta folha</button>
-    </div>
   </div>
 
-  <div class="planner-folha" id="planner-folha"></div>
+  <div id="passados-lista" class="stack"></div>
 
-  <div class="note planner-ajuda col">
-    <p><b>Dica de impressão</b> Na janela que abrir, escolha <b>papel A4</b> e marque a opção de imprimir cores de fundo, para as semanas com prazo saírem destacadas. Se preferir economizar tinta, deixe desmarcado: continua legível.</p>
+  <div class="note col">
+    <p>
+      <b>Precisa de um certificado ou de um resultado?</b> Quem responde é quem
+      organizou o evento ou publicou o edital. O NAE ajuda a encontrar o caminho:
+      <a href="contato.html">fale com o Núcleo</a>.
+    </p>
   </div>
 
 </main>
@@ -152,8 +135,6 @@
     <p>NAE · Núcleo de Apoio ao Estudante · UEMG Unidade Guanhães<br>Coordenação: Jonatan Barbosa Silva</p>
     <div class="foot-links">
       <a href="index.html">Início</a>
-      <a href="sistemas.html">Sistemas</a>
-      <a href="horarios.html">Horários</a>
       <a href="calendario.html">Calendário</a>
       <a href="contato.html">Contato</a>
       <a href="avisos.html">Avisos</a>
@@ -164,14 +145,81 @@
   </div>
 </footer>
 
-
 <script defer src="assets/dados-avisos.js"></script>
-<script defer src="assets/dados-horarios.js"></script>
-<script defer src="assets/dados-calendario.js"></script>
 <script defer src="assets/min/site.min.js"></script>
 <script defer src="assets/dados-busca.js"></script>
 <script defer src="assets/min/busca.min.js"></script>
-<script defer src="assets/min/planner.min.js"></script>
+<script defer src="assets/dados-editais.js"></script>
+<script>
+/* monta o arquivo com o que já encerrou em dados-editais.js.
+   Espera o DOMContentLoaded porque os scripts acima são defer */
+document.addEventListener('DOMContentLoaded', function () {
+  'use strict';
+  var U = window.NAE, D = window.DADOS_EDITAIS;
+  var caixa = document.getElementById('passados-lista');
+  if (!U || !D || !caixa) return;
+
+  var hoje = U.hojeISO();
+  var CORES = { assistencia: 'var(--coral)', monitoria: 'var(--azul)', extensao: 'var(--verde)', pesquisa: 'var(--lilas)', outro: 'var(--ambar)' };
+  var NOMES = { assistencia: 'Assistência estudantil', monitoria: 'Monitoria', extensao: 'Extensão', pesquisa: 'Pesquisa', outro: 'Evento ou aviso' };
+  var MESES = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
+
+  /* fases do mesmo evento (o mesmo "grupo") viram um registro só,
+     que vale quando a última fase termina */
+  var porChave = {};
+  (D.itens || []).forEach(function (e) {
+    var chave = e.grupo || e.titulo;
+    var r = porChave[chave];
+    if (!r) r = porChave[chave] = { itens: [] };
+    r.itens.push(e);
+  });
+  var registros = Object.keys(porChave).map(function (k) {
+    var its = porChave[k].itens.slice().sort(function (a, b) { return a.encerra < b.encerra ? -1 : 1; });
+    var ultimo = its[its.length - 1];
+    return {
+      titulo: its.length > 1 ? ultimo.titulo.split(' · ')[0] : ultimo.titulo,
+      resumo: its.length > 1 ? its[0].resumo : ultimo.resumo,
+      tipo: ultimo.tipo, link: ultimo.link,
+      abre: its[0].abre, encerra: ultimo.encerra
+    };
+  }).filter(function (r) { return r.encerra && r.encerra < hoje; })
+    .sort(function (a, b) { return a.encerra < b.encerra ? 1 : -1; });
+
+  if (!registros.length) {
+    caixa.innerHTML = '<div class="card col" style="--c: var(--verde)"><h2>Ainda não há nada no arquivo</h2>' +
+      '<p>Quando um edital ou evento terminar, ele aparece aqui.</p></div>';
+    return;
+  }
+
+  /* agrupa por mês de encerramento, mantendo a ordem */
+  var meses = [], porMes = {};
+  registros.forEach(function (r) {
+    var mes = MESES[+r.encerra.slice(5, 7) - 1] + ' de ' + r.encerra.slice(0, 4);
+    if (!porMes[mes]) { porMes[mes] = []; meses.push(mes); }
+    porMes[mes].push(r);
+  });
+
+  function cartao(r) {
+    var cor = CORES[r.tipo] || CORES.outro;
+    var interno = r.link && !/^https?:/.test(r.link);
+    var titulo = U.escapar(r.titulo);
+    return '<div class="card" style="--c: ' + cor + '">' +
+      '<span class="rotulo">' + U.escapar(NOMES[r.tipo] || NOMES.outro) + '</span>' +
+      '<h3>' + (r.link ? '<a class="titulo-link" href="' + U.escapar(r.link) + '"' +
+        (interno ? '' : ' target="_blank" rel="noopener noreferrer"') + '>' + titulo + '</a>' : titulo) + '</h3>' +
+      '<p>' + U.escapar(r.resumo || '') + '</p>' +
+      '<p class="passados-quando">' + (r.abre && r.abre !== r.encerra
+        ? 'De ' + U.dataBR(r.abre) + ' a ' + U.dataBR(r.encerra)
+        : 'Em ' + U.dataBR(r.encerra)) + '</p>' +
+    '</div>';
+  }
+
+  caixa.innerHTML = meses.map(function (mes) {
+    return '<h2 class="passados-mes">Encerrados em ' + mes + '</h2>' +
+      '<div class="grid2">' + porMes[mes].map(cartao).join('') + '</div>';
+  }).join('');
+});
+</script>
 <script data-goatcounter="https://naeguanhaes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>

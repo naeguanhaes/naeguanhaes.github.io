@@ -125,6 +125,34 @@ window.DADOS_REQUERIMENTOS = {
         'Solicito que o colegiado do curso defina a forma da adaptação, o conteúdo a ser ' +
         'cumprido, o professor responsável pela supervisão e o prazo, para que eu possa ' +
         'me organizar e cumprir integralmente o que for determinado.'
+    },
+
+    {
+      /* o somador de atividades.html preenche "lista" e "total" e abre
+         esta página com ?tipo=atividades. Só vale para Direito: em
+         Engenharia Civil o lançamento é feito no sistema acadêmico. */
+      id: 'atividades',
+      titulo: 'Atividades complementares',
+      cor: 'var(--verde)',
+      resumo: 'Para entregar à Coordenação do Curso de Direito os comprovantes das atividades complementares e pedir o registro das horas no histórico.',
+      objeto: 'a VALIDAÇÃO DAS ATIVIDADES COMPLEMENTARES abaixo relacionadas e o registro das respectivas horas',
+      base: 'regulamentação de Atividades Complementares do Projeto Pedagógico do Curso de Direito (Resolução COEPE/UEMG nº 458/2024) e na regulamentação aditiva aprovada pelo Colegiado do Curso em 11 de março de 2026',
+      quando: 'Ao longo do curso: as atividades podem ser feitas desde o 1º semestre, de forma cumulativa, e precisam estar concluídas até o 10º semestre.',
+      onde: 'Coordenação do Curso, que valida as atividades e comunica a Secretaria Acadêmica para o lançamento no histórico escolar.',
+      atencao: 'Este modelo serve para o curso de Direito. Cada modalidade tem teto de horas e um termo inicial: confira o quadro na página Atividades complementares antes de protocolar. Em Engenharia Civil o caminho é outro: o próprio estudante lança as atividades no sistema acadêmico, com o comprovante de cada uma.',
+      documentos: [
+        'Comprovante de cada atividade relacionada, como certificado, declaração ou histórico escolar, conforme a coluna "Comprovante" do quadro do PPC'
+      ],
+      campos: [
+        { id: 'lista', rotulo: 'Atividades e horas', tipo: 'longo', dica: 'Uma por linha, com as horas. O somador da página Atividades complementares preenche este campo para você' },
+        { id: 'total', rotulo: 'Total de horas pedidas', tipo: 'texto', dica: 'Exemplo: 75 horas' }
+      ],
+      corpo:
+        'Realizei as atividades complementares abaixo relacionadas, cujos comprovantes seguem anexos:\n\n' +
+        '{lista}\n\n' +
+        'Total de horas apresentadas neste requerimento: {total}.\n\n' +
+        'Requeiro a validação dessas atividades pela Coordenação do Curso e o posterior ' +
+        'registro das horas no meu histórico escolar.'
     }
 
   ]

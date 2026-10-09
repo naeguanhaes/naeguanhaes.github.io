@@ -27,7 +27,7 @@
    ═══════════════════════════════════════════════════════ */
 
 window.DADOS_EDITAIS = {
-  atualizadoEm: '2026-10-07',
+  atualizadoEm: '2026-10-09',
   itens: [
     {
       titulo: 'Assembleia Geral do Diretório Acadêmico · Estatuto Social',
@@ -53,7 +53,7 @@ window.DADOS_EDITAIS = {
         semContagem: true,
         acao: 'Ver o edital e o Estatuto',
         extraTexto: 'Compartilhar no WhatsApp',
-        extraLink: 'https://wa.me/?text=%2AAssembleia%20Geral%20do%20Diret%C3%B3rio%20Acad%C3%AAmico%20Sapientia%20et%20Justitia%2A%0ATodos%20os%20estudantes%20da%20UEMG%20Unidade%20Guanh%C3%A3es%20est%C3%A3o%20convocados.%0A%0APauta%20%C3%BAnica:%20o%20Estatuto%20Social%20do%20Diret%C3%B3rio%20Acad%C3%AAmico%0A%E2%80%A2%20Apresenta%C3%A7%C3%A3o%20do%20Estatuto%0A%E2%80%A2%20Discuss%C3%A3o%20e%20sugest%C3%B5es%20de%20altera%C3%A7%C3%A3o%0A%E2%80%A2%20Vota%C3%A7%C3%A3o%20para%20aprova%C3%A7%C3%A3o%0A%0A%E2%80%A2%20Sexta%2C%209%20de%20outubro%20de%202026%2C%20%C3%A0s%2019h%0A%E2%80%A2%20UEMG%20Unidade%20Guanh%C3%A3es%0A%0ASua%20participa%C3%A7%C3%A3o%20garante%20legitimidade%20e%20transpar%C3%AAncia%20%C3%A0s%20regras%20da%20entidade%20que%20representa%20os%20estudantes.%0A%0A%2AEdital%20e%20link%20do%20Estatuto%20no%20site%20do%20NAE:%2A%0Ahttps://naeguanhaes.github.io/%23assembleia-da'
+        extraLink: 'https://wa.me/?text=%2AAssembleia%20Geral%20do%20Diret%C3%B3rio%20Acad%C3%AAmico%20Sapientia%20et%20Justitia%2A%0ATodos%20os%20estudantes%20da%20UEMG%20Unidade%20Guanh%C3%A3es%20est%C3%A3o%20convocados.%0A%0APauta%20%C3%BAnica:%20o%20Estatuto%20Social%20do%20Diret%C3%B3rio%20Acad%C3%AAmico%0A%E2%80%A2%20Apresenta%C3%A7%C3%A3o%20do%20Estatuto%0A%E2%80%A2%20Discuss%C3%A3o%20e%20sugest%C3%B5es%20de%20altera%C3%A7%C3%A3o%0A%E2%80%A2%20Vota%C3%A7%C3%A3o%20para%20aprova%C3%A7%C3%A3o%0A%0A%E2%80%A2%20Sexta%2C%209%20de%20outubro%20de%202026%2C%20%C3%A0s%2019h%0A%E2%80%A2%20UEMG%20Unidade%20Guanh%C3%A3es%0A%0ASua%20participa%C3%A7%C3%A3o%20garante%20legitimidade%20e%20transpar%C3%AAncia%20%C3%A0s%20regras%20da%20entidade%20que%20representa%20os%20estudantes.%0A%0A%2AEdital%20e%20link%20do%20Estatuto%20no%20site%20do%20NAE:%2A%0Ahttps://naeguanhaes.github.io/%3Futm_source%3Dwhatsapp%26utm_campaign%3Dassembleia-da%23assembleia-da'
       }
     },
     {
@@ -80,7 +80,7 @@ window.DADOS_EDITAIS = {
         semContagem: true,
         acao: 'Ver local e detalhes',
         extraTexto: 'Compartilhar no WhatsApp',
-        extraLink: 'https://wa.me/?text=%2AAudi%C3%AAncia%20P%C3%BAblica%20sobre%20o%20Plano%20Diretor%20de%20Guanh%C3%A3es%2A%0AO%20Diret%C3%B3rio%20Acad%C3%AAmico%20da%20UEMG%20Unidade%20Guanh%C3%A3es%20vai%20participar%20e%20levar%C3%A1%2015%20alunos%2C%20com%20participa%C3%A7%C3%A3o%20certificada.%0A%0A%E2%80%A2%20Segunda%2C%2019%20de%20outubro%20de%202026%2C%20%C3%A0s%2014h%0A%E2%80%A2%20Sal%C3%A3o%20do%20Tribunal%20do%20J%C3%BAri%20do%20F%C3%B3rum%20da%20Comarca%20de%20Guanh%C3%A3es%0A%E2%80%A2%20Rua%20Artur%20Luiz%20de%20Aguiar%2C%20n%C2%BA%20100%2C%20Bairro%20Acr%C3%B3pole%0A%0AParticipar%20tamb%C3%A9m%20%C3%A9%20construir%20a%20cidade%20que%20queremos.%0A%0A%2AInforma%C3%A7%C3%B5es%20no%20site%20do%20NAE:%2A%0Ahttps://naeguanhaes.github.io/%23plano-diretor'
+        extraLink: 'https://wa.me/?text=%2AAudi%C3%AAncia%20P%C3%BAblica%20sobre%20o%20Plano%20Diretor%20de%20Guanh%C3%A3es%2A%0AO%20Diret%C3%B3rio%20Acad%C3%AAmico%20da%20UEMG%20Unidade%20Guanh%C3%A3es%20vai%20participar%20e%20levar%C3%A1%2015%20alunos%2C%20com%20participa%C3%A7%C3%A3o%20certificada.%0A%0A%E2%80%A2%20Segunda%2C%2019%20de%20outubro%20de%202026%2C%20%C3%A0s%2014h%0A%E2%80%A2%20Sal%C3%A3o%20do%20Tribunal%20do%20J%C3%BAri%20do%20F%C3%B3rum%20da%20Comarca%20de%20Guanh%C3%A3es%0A%E2%80%A2%20Rua%20Artur%20Luiz%20de%20Aguiar%2C%20n%C2%BA%20100%2C%20Bairro%20Acr%C3%B3pole%0A%0AParticipar%20tamb%C3%A9m%20%C3%A9%20construir%20a%20cidade%20que%20queremos.%0A%0A%2AInforma%C3%A7%C3%B5es%20no%20site%20do%20NAE:%2A%0Ahttps://naeguanhaes.github.io/%3Futm_source%3Dwhatsapp%26utm_campaign%3Dplano-diretor%23plano-diretor'
       }
     },
     {
@@ -107,7 +107,7 @@ window.DADOS_EDITAIS = {
         semContagem: true,
         acao: 'Ver o passo a passo',
         extraTexto: 'Compartilhar no WhatsApp',
-        extraLink: 'https://wa.me/?text=%2AENADE%202026:%20Engenharia%20Civil%2A%0A%0AFormando:%20sem%20o%20Question%C3%A1rio%20do%20Estudante%20e%20sem%20a%20prova%2C%20n%C3%A3o%20tem%20cola%C3%A7%C3%A3o%20de%20grau.%0A%0A%E2%80%A2%20Concluintes:%20question%C3%A1rio%20no%20Sistema%20Enade%20at%C3%A9%2029/11%20e%20prova%20em%2029/11/2026%0A%E2%80%A2%20Local%20da%20prova:%20no%20Cart%C3%A3o%20de%20Confirma%C3%A7%C3%A3o%2C%20a%20partir%20de%2009/11%0A%E2%80%A2%20Ingressantes:%20question%C3%A1rio%20de%2001/10%20a%2018/12/2026%0A%0A%2APasso%20a%20passo%20no%20site%20do%20NAE:%2A%0Ahttps://naeguanhaes.github.io/enade.html'
+        extraLink: 'https://wa.me/?text=%2AENADE%202026:%20Engenharia%20Civil%2A%0A%0AFormando:%20sem%20o%20Question%C3%A1rio%20do%20Estudante%20e%20sem%20a%20prova%2C%20n%C3%A3o%20tem%20cola%C3%A7%C3%A3o%20de%20grau.%0A%0A%E2%80%A2%20Concluintes:%20question%C3%A1rio%20no%20Sistema%20Enade%20at%C3%A9%2029/11%20e%20prova%20em%2029/11/2026%0A%E2%80%A2%20Local%20da%20prova:%20no%20Cart%C3%A3o%20de%20Confirma%C3%A7%C3%A3o%2C%20a%20partir%20de%2009/11%0A%E2%80%A2%20Ingressantes:%20question%C3%A1rio%20de%2001/10%20a%2018/12/2026%0A%0A%2APasso%20a%20passo%20no%20site%20do%20NAE:%2A%0Ahttps://naeguanhaes.github.io/enade.html%3Futm_source%3Dwhatsapp%26utm_campaign%3Denade'
       }
     },
     {
@@ -135,7 +135,7 @@ window.DADOS_EDITAIS = {
         acao: 'Garanta sua vaga',
         acaoLink: 'https://forms.gle/ar9BFpTNwtG3p79fA',
         extraTexto: 'Compartilhar no WhatsApp',
-        extraLink: 'https://wa.me/?text=%2AYoga%20na%20ESMU%2A%0APausa%20no%20dia%20para%20reconectar.%20Uma%20a%C3%A7%C3%A3o%20em%20parceria%20com%20o%20NAE-ESMU.%0A%0AUm%20convite%20para%20equilibrar%20corpo%20e%20mente%2C%20relaxar%20e%20renovar%20as%20energias.%0A%0A%E2%80%A2%20Onde:%20Escola%20de%20M%C3%BAsica%20da%20UEMG%20%28ESMU%29%0A%E2%80%A2%20Quintas-feiras%2C%20das%2011h20%20%C3%A0s%2012h10%0A%E2%80%A2%20Professora%20S%C3%B4nia%20Assis%0A%E2%80%A2%20In%C3%ADcio%20em%20outubro%0A%0APara%20discentes%2C%20docentes%2C%20t%C3%A9cnicos%20e%20servidores.%0A%0A%2AInforma%C3%A7%C3%B5es%20e%20inscri%C3%A7%C3%A3o%20no%20site%20do%20NAE:%2A%0Ahttps://naeguanhaes.github.io/apoio.html%23yoga-esmu',
+        extraLink: 'https://wa.me/?text=%2AYoga%20na%20ESMU%2A%0APausa%20no%20dia%20para%20reconectar.%20Uma%20a%C3%A7%C3%A3o%20em%20parceria%20com%20o%20NAE-ESMU.%0A%0AUm%20convite%20para%20equilibrar%20corpo%20e%20mente%2C%20relaxar%20e%20renovar%20as%20energias.%0A%0A%E2%80%A2%20Onde:%20Escola%20de%20M%C3%BAsica%20da%20UEMG%20%28ESMU%29%0A%E2%80%A2%20Quintas-feiras%2C%20das%2011h20%20%C3%A0s%2012h10%0A%E2%80%A2%20Professora%20S%C3%B4nia%20Assis%0A%E2%80%A2%20In%C3%ADcio%20em%20outubro%0A%0APara%20discentes%2C%20docentes%2C%20t%C3%A9cnicos%20e%20servidores.%0A%0A%2AInforma%C3%A7%C3%B5es%20e%20inscri%C3%A7%C3%A3o%20no%20site%20do%20NAE:%2A%0Ahttps://naeguanhaes.github.io/apoio.html%3Futm_source%3Dwhatsapp%26utm_campaign%3Dyoga-esmu%23yoga-esmu',
         imagem: 'assets/eventos/yoga-esmu.webp',
         imagemAlt: 'Cartaz do Yoga na ESMU: uma tigela tibetana e uma mão em gesto de meditação. Quintas às 11h20, inscrição pelo link.'
       }
@@ -255,6 +255,7 @@ window.DADOS_EDITAIS = {
       abre: '2026-08-28',
       encerra: '2026-09-21',
       link: 'seminario.html',
+      publicado: '2026-08-28',
 
       /* Como aparece no retângulo do topo da página inicial.
          Para tirar da vitrine sem tirar da lista, use naInicial: false.
@@ -276,6 +277,31 @@ window.DADOS_EDITAIS = {
       }
     },
     {
+      titulo: '28º Seminário de Pesquisa e Extensão · escolha das atividades',
+      grupo: 'seminario-28',
+      resumo: 'Inscrição nas atividades da programação de Guanhães, pela página de inscrições do Seminário. Quem ainda não fez a inscrição como ouvinte precisa fazer também.',
+      tipo: 'pesquisa',
+      abre: '2026-10-13',
+      encerra: '2026-10-30',
+      link: 'seminario.html',
+      publicado: '2026-10-09',
+
+      destaque: {
+        tema: 'roxo',
+        eyebrow: 'Pesquisa e extensão · UEMG',
+        titulo: '28º Seminário: escolha as suas atividades',
+        texto: 'De <b>13 a 30 de outubro</b>, a página de inscrições abre a escolha das atividades da programação em Guanhães, de 09 a 13 de novembro. A inscrição <b>como ouvinte</b> continua obrigatória para todos.',
+        numeros: [
+          { n: '13 a 30/10', r: 'escolha das atividades' },
+          { n: '10/11', r: 'prazo do ouvinte' },
+          { n: '09 a 13/11', r: 'na Unidade' }
+        ],
+        acao: 'Ver o passo a passo',
+        extraTexto: 'Página de inscrições',
+        extraLink: 'https://www.uemg.br/28ed-seminario-pe-inscricao'
+      }
+    },
+    {
       titulo: '28º Seminário de Pesquisa e Extensão · inscrição como ouvinte',
       grupo: 'seminario-28',
       resumo: 'Obrigatória para TODOS que forem participar, inclusive quem vai apresentar trabalho. Faça esta primeiro, antes de qualquer outra inscrição do Seminário.',
@@ -283,6 +309,7 @@ window.DADOS_EDITAIS = {
       abre: '2026-08-28',
       encerra: '2026-11-10',
       link: 'seminario.html',
+      publicado: '2026-08-28',
 
       destaque: {
         tema: 'roxo',
@@ -307,6 +334,7 @@ window.DADOS_EDITAIS = {
       abre: '2026-11-09',
       encerra: '2026-11-13',
       link: 'seminario.html',
+      publicado: '2026-08-28',
 
       destaque: {
         tema: 'roxo',

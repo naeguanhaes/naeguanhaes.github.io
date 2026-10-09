@@ -5,6 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Status do projeto de extensão · Conexão Universitária | NAE Guanhães</title>
 <meta name="description" content="Etapas do Conexão Universitária, projeto de extensão do NAE da UEMG Guanhães: Fase 1, o site para os estudantes, Fase 2, a parceria com a Secretaria Municipal de Educação sobre TEA e neurodivergências, e Fase 3, a divulgação do Vestibular 2027.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NAE Guanhães · Núcleo de Apoio ao Estudante">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Status do projeto de extensão · Conexão Universitária | NAE Guanhães">
+<meta property="og:description" content="Etapas do Conexão Universitária, projeto de extensão do NAE da UEMG Guanhães: Fase 1, o site para os estudantes, Fase 2, a parceria com a Secretaria Municipal de Educação sobre TEA e neurodivergências, e Fase 3, a divulgação do Vestibular 2027.">
+<meta property="og:url" content="https://naeguanhaes.github.io/status-projeto.html">
+<meta property="og:image" content="https://naeguanhaes.github.io/assets/og/status-projeto.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/favicon-nae.png" type="image/png">
 <meta name="theme-color" content="#40688B">
 <meta name="color-scheme" content="light">
@@ -95,6 +105,7 @@ try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentEleme
       <a class="nav-link" href="sobre.html" style="--c: var(--ambar)"><i class="dot"></i>O que é o NAE</a>
       <a class="nav-link" href="contato.html" style="--c: var(--coral)"><i class="dot"></i>Fale com o NAE</a>
       <a class="nav-link" href="status-projeto.html" aria-current="page" style="--c: var(--verde)"><i class="dot"></i>Status do projeto de extensão</a>
+      <a class="nav-link" href="eventos-passados.html" style="--c: var(--verde)"><i class="dot"></i>O que já aconteceu</a>
     </div>
   </div>
 </nav>
@@ -371,7 +382,15 @@ try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentEleme
   </div>
 
   <!-- Produto entregue: troque "A entregar" por "Entregue em DD/MM" e a classe para
-       "produto-status entregue". Em elaboracao: classe "produto-status andamento". -->
+       "produto-status entregue". Em elaboracao: troque por "Em elaboração" e a classe
+       "produto-status andamento". A barra abaixo se calcula sozinha a partir da tabela. -->
+  <div class="card col progresso-fase" id="progresso-fase2" style="--c: var(--lilas)" hidden>
+    <div class="progresso-fase-topo">
+      <b id="progresso-fase2-num"></b>
+      <span id="progresso-fase2-prox"></span>
+    </div>
+    <div class="barra" role="progressbar" aria-label="Produtos da Fase 2 entregues" aria-valuemin="0" aria-valuemax="4" id="progresso-fase2-barra"><span style="background: var(--lilas)"></span></div>
+  </div>
   <div class="rolagem-tabela">
     <table class="tabela-ppc tabela-produtos">
       <caption class="so-leitor">Cronograma de produtos da Fase 2 do Conexão Universitária</caption>
@@ -461,6 +480,33 @@ try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentEleme
   </div>
 </footer>
 
+<script>
+/* barra da Fase 2: conta os produtos entregues na tabela e mostra o próximo prazo */
+document.addEventListener('DOMContentLoaded', function () {
+  'use strict';
+  var caixa = document.getElementById('progresso-fase2');
+  var linhas = document.querySelectorAll('.tabela-produtos tbody tr');
+  if (!caixa || !linhas.length) return;
+  var total = linhas.length, entregues = 0, proximo = null;
+  Array.prototype.forEach.call(linhas, function (tr) {
+    var st = tr.querySelector('.produto-status');
+    var cel = tr.querySelectorAll('td');
+    if (st && st.classList.contains('entregue')) { entregues++; return; }
+    if (!proximo) proximo = { p: cel[0].textContent.trim(), prazo: cel[2].textContent.trim(),
+                              andamento: st && st.classList.contains('andamento') };
+  });
+  document.getElementById('progresso-fase2-num').textContent =
+    entregues + ' de ' + total + (entregues === 1 ? ' produto entregue' : ' produtos entregues');
+  document.getElementById('progresso-fase2-prox').textContent = proximo
+    ? 'Próximo: ' + proximo.p + ', prazo ' + proximo.prazo + (proximo.andamento ? ' (em elaboração)' : '')
+    : 'Todos os produtos foram entregues.';
+  var barra = document.getElementById('progresso-fase2-barra');
+  barra.setAttribute('aria-valuenow', entregues);
+  barra.setAttribute('aria-valuemax', total);
+  barra.querySelector('span').style.width = Math.round(100 * entregues / total) + '%';
+  caixa.hidden = false;
+});
+</script>
 <script defer src="assets/dados-avisos.js"></script>
 <script defer src="assets/min/site.min.js"></script>
 <script defer src="assets/dados-busca.js"></script>

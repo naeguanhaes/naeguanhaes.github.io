@@ -96,8 +96,15 @@ paginas.filter(p => temMenu(p) && !oculta(p)).forEach(p => {
 
 /* ── 5. cache offline ─────────────────────────────────── */
 const sw = fs.readFileSync(path.join(RAIZ, 'sw.js'), 'utf8');
+/* FORA_DO_CACHE, no sw.js, lista as páginas que ficam fora de propósito */
+const listaFora = (sw.match(/var FORA_DO_CACHE = \[([\s\S]*?)\]/) || [, ''])[1];
+const essenciais = sw.replace(/var FORA_DO_CACHE = \[[\s\S]*?\]/, '');
 paginas.forEach(p => {
-  if (sw.indexOf("'./" + p + "'") === -1) {
+  if (listaFora.indexOf("'./" + p + "'") !== -1) {
+    if (essenciais.indexOf("'./" + p + "'") !== -1) problemas.push('CACHE: ' + p + ' está em FORA_DO_CACHE e também na lista ESSENCIAIS do sw.js');
+    return;
+  }
+  if (essenciais.indexOf("'./" + p + "'") === -1) {
     problemas.push('CACHE: ' + p + ' não está na lista ESSENCIAIS do sw.js');
   }
 });

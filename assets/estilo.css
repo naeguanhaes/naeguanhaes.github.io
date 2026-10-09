@@ -2282,3 +2282,27 @@ html[data-contraste="alto"] .pb-barra { background: #000; }
 .linha-tempo.lt-ambar .lt-item::before { border-color: var(--ambar); }
 .linha-tempo.lt-ambar .lt-item.marco::before { background: var(--ambar); }
 .linha-tempo.lt-ambar .lt-item time { color: #8A5A00; }
+
+/* Somador: guardar a lista fora do aparelho */
+.ativ-arquivo { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .8rem; }
+.ativ-arquivo label.btn { cursor: pointer; }
+.ativ-arquivo label.btn:focus-within { outline: 3px solid var(--c); outline-offset: 2px; }
+
+/* data-desde: escondido até a data; o site.js tira o atributo no dia */
+[data-desde] { display: none !important; }
+
+/* títulos de avisos e eventos que levam a uma página */
+a.titulo-link { color: inherit; text-decoration: none; }
+a.titulo-link:hover, a.titulo-link:focus-visible { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .15em; }
+html[data-contraste="alto"] a.titulo-link { text-decoration: underline; }
+
+/* O que já aconteceu */
+.passados-mes { font-size: 1.15rem; margin: .4rem 0 0; color: var(--ink-2); }
+.passados-quando { font-size: .88rem; font-weight: 600; color: var(--muted); margin-top: .3rem; }
+
+/* Status do projeto: barra dos produtos da Fase 2 */
+.progresso-fase { gap: .55rem; }
+.progresso-fase-topo { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .3rem 1rem; align-items: baseline; }
+.progresso-fase-topo b { font-family: var(--serif); font-size: 1.25rem; color: var(--ink); }
+.progresso-fase-topo span { color: var(--muted); font-weight: 600; font-size: .92rem; }
+.progresso-fase .barra { height: .8rem; }
