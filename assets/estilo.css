@@ -2277,3 +2277,8 @@ html[data-contraste="alto"] .pb-barra { background: #000; }
 /* Foto de uma etapa na linha do tempo do projeto */
 .lt-foto { margin: .7rem 0 0; max-width: 30rem; }
 .lt-foto img { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--hair); }
+
+/* linha do tempo da Fase 3, na cor da fase (texto em âmbar escuro, para dar contraste) */
+.linha-tempo.lt-ambar .lt-item::before { border-color: var(--ambar); }
+.linha-tempo.lt-ambar .lt-item.marco::before { background: var(--ambar); }
+.linha-tempo.lt-ambar .lt-item time { color: #8A5A00; }
