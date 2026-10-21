@@ -15,8 +15,15 @@
    ═══════════════════════════════════════════════════════ */
 
 window.DADOS_NOVIDADES = {
-  atualizadoEm: '2026-10-09',
+  atualizadoEm: '2026-10-21',
   itens: [
+    {
+      data: '2026-10-21',
+      titulo: '1ª Mostra de Profissões: o DA procura voluntários',
+      texto: 'A Mostra apresenta os cursos de Direito e Engenharia Civil na sexta, 13 de novembro, a partir das 13h, na Unidade. A inscrição de voluntários é pelo formulário do Diretório Acadêmico.',
+      link: 'index.html#mostra-profissoes',
+      textoLink: 'ver e se inscrever'
+    },
     {
       data: '2026-10-09',
       titulo: 'Atividades complementares: salve a sua lista e monte o requerimento',

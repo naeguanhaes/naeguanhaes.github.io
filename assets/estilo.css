@@ -2362,3 +2362,12 @@ html[data-contraste="alto"] .btn-semana { border-color: #000; color: #000; }
 .agora-semana-pe { margin: .6rem 0 0; font-size: .88rem; }
 .semana-dia .disciplina { display: flex; flex-wrap: wrap; align-items: center; gap: .25rem .4rem; min-width: 0; }
 .semana-dia .disciplina .tag { margin-left: 0; }
+
+/* Variante mostra: azul-marinho e amarelo do cartaz da Mostra de Profissões */
+.hero-edital.tema-mostra {
+  background:
+    radial-gradient(115% 85% at 88% 6%, rgba(255,255,255,.12) 0%, rgba(255,255,255,0) 55%),
+    radial-gradient(95% 75% at 6% 104%, rgba(255,193,37,.32) 0%, rgba(255,193,37,0) 62%),
+    linear-gradient(122deg, #0E1F3A 0%, #15315A 50%, #1E4478 100%);
+}
+.hero-edital.tema-mostra .eyebrow { color: #FFC93C; }

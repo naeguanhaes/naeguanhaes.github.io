@@ -27,8 +27,38 @@
    ═══════════════════════════════════════════════════════ */
 
 window.DADOS_EDITAIS = {
-  atualizadoEm: '2026-10-09',
+  atualizadoEm: '2026-10-21',
   itens: [
+    {
+      titulo: '1ª Mostra de Profissões · voluntários',
+      resumo: 'O Diretório Acadêmico convida estudantes para serem voluntários na 1ª Mostra de Profissões, que apresenta os cursos de Direito e Engenharia Civil. Sexta, 13 de novembro, a partir das 13h, na Unidade.',
+      tipo: 'outro',
+      abre: '2026-10-21',
+      encerra: '2026-11-13',
+      link: 'index.html#mostra-profissoes',
+      publicado: '2026-10-21',
+      /* e evento, nao edital: so no painel da inicial */
+      naLista: false,
+
+      destaque: {
+        tema: 'mostra',
+        eyebrow: 'Diretório Acadêmico · chamada de voluntários',
+        titulo: '1ª Mostra de Profissões: seja voluntário',
+        texto: 'A Mostra apresenta os cursos de <b>Direito e Engenharia Civil</b>: áreas de atuação, atividades práticas e espaço para perguntas. O Diretório Acadêmico convida estudantes da Unidade para serem <b>voluntários</b>.',
+        numeros: [
+          { n: '13/11', r: 'sexta-feira' },
+          { n: '13h', r: 'a partir das' },
+          { n: 'UEMG', r: 'Unidade Guanhães' }
+        ],
+        semContagem: true,
+        acao: 'Quero ser voluntário',
+        acaoLink: 'https://forms.gle/DXUdKstRHQMz7xhm7',
+        extraTexto: 'Compartilhar no WhatsApp',
+        extraLink: 'https://wa.me/?text=%2A1%C2%AA%20Mostra%20de%20Profiss%C3%B5es%20da%20UEMG%20Unidade%20Guanh%C3%A3es%2A%0AO%20Diret%C3%B3rio%20Acad%C3%AAmico%20convida%20voc%C3%AA%20para%20ser%20volunt%C3%A1rio%20na%20Mostra%2C%20que%20apresenta%20os%20cursos%20de%20Direito%20e%20Engenharia%20Civil:%20%C3%A1reas%20de%20atua%C3%A7%C3%A3o%2C%20atividades%20pr%C3%A1ticas%20e%20espa%C3%A7o%20para%20perguntas.%0A%0A%E2%80%A2%20Sexta%2C%2013%20de%20novembro%20de%202026%2C%20a%20partir%20das%2013h%0A%E2%80%A2%20UEMG%20Unidade%20Guanh%C3%A3es%0A%0A%2AInforma%C3%A7%C3%B5es%20e%20inscri%C3%A7%C3%A3o%20de%20volunt%C3%A1rios%20no%20site%20do%20NAE:%2A%0Ahttps://naeguanhaes.github.io/%3Futm_source%3Dwhatsapp%26utm_campaign%3Dmostra-profissoes%23mostra-profissoes',
+        imagem: 'assets/eventos/mostra-profissoes-2026.webp',
+        imagemAlt: 'Cartaz da 1ª Mostra de Profissões da UEMG Unidade Guanhães, Direito e Engenharia Civil: 13 de novembro de 2026, a partir das 13h, realização do Diretório Acadêmico.'
+      }
+    },
     {
       titulo: 'Assembleia Geral do Diretório Acadêmico · Estatuto Social',
       resumo: 'O Diretório Acadêmico Sapientia et Justitia convoca todos os estudantes para apresentar, discutir e votar o Estatuto Social. Sexta, 9 de outubro, às 19h, na Unidade.',
