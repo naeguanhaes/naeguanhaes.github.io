@@ -384,7 +384,8 @@ try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentEleme
 
   <!-- Produto entregue: troque "A entregar" por "Entregue em DD/MM" e a classe para
        "produto-status entregue". Em elaboracao: troque por "Em elaboração" e a classe
-       "produto-status andamento". A barra abaixo se calcula sozinha a partir da tabela. -->
+       "produto-status andamento". Enviado e aguardando avaliação: "Em análise", com a
+       classe "produto-status analise". A barra abaixo se calcula sozinha a partir da tabela. -->
   <div class="card col progresso-fase" id="progresso-fase2" style="--c: var(--lilas)" hidden>
     <div class="progresso-fase-topo">
       <b id="progresso-fase2-num"></b>
@@ -397,7 +398,7 @@ try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentEleme
       <caption class="so-leitor">Cronograma de produtos da Fase 2 do Conexão Universitária</caption>
       <thead><tr><th scope="col">Produto</th><th scope="col">Descrição</th><th scope="col">Prazo</th><th scope="col">Situação</th></tr></thead>
       <tbody>
-        <tr><td><b>P1</b></td><td>Dossiê normativo: legislação municipal vigente, processo legislativo, legislação federal e estadual aplicável e análise crítica da minuta elaborada pela Secretaria.</td><td>16/10/2026</td><td><span class="produto-status">A entregar</span></td></tr>
+        <tr><td><b>P1</b></td><td>Dossiê normativo: legislação municipal vigente, processo legislativo, legislação federal e estadual aplicável e análise crítica da minuta elaborada pela Secretaria.</td><td>16/10/2026</td><td><span class="produto-status analise">Em análise</span></td></tr>
         <tr><td><b>P2</b></td><td>Relatório de pesquisa comparada, com identificação de boas práticas e de dispositivos replicáveis.</td><td>30/10/2026</td><td><span class="produto-status">A entregar</span></td></tr>
         <tr><td><b>P3</b></td><td>Minuta da proposta legislativa, com justificativa e análise de compatibilidade normativa.</td><td>04/12/2026</td><td><span class="produto-status">A entregar</span></td></tr>
         <tr><td><b>P4</b></td><td>Versão final revisada e validada, entregue formalmente ao Município.</td><td>18/12/2026</td><td><span class="produto-status">A entregar</span></td></tr>
@@ -488,19 +489,22 @@ document.addEventListener('DOMContentLoaded', function () {
   var caixa = document.getElementById('progresso-fase2');
   var linhas = document.querySelectorAll('.tabela-produtos tbody tr');
   if (!caixa || !linhas.length) return;
-  var total = linhas.length, entregues = 0, proximo = null;
+  var total = linhas.length, entregues = 0, proximo = null, emAnalise = [];
   Array.prototype.forEach.call(linhas, function (tr) {
     var st = tr.querySelector('.produto-status');
     var cel = tr.querySelectorAll('td');
     if (st && st.classList.contains('entregue')) { entregues++; return; }
+    /* enviado e aguardando avaliação: não é o próximo a fazer */
+    if (st && st.classList.contains('analise')) { emAnalise.push(cel[0].textContent.trim()); return; }
     if (!proximo) proximo = { p: cel[0].textContent.trim(), prazo: cel[2].textContent.trim(),
                               andamento: st && st.classList.contains('andamento') };
   });
   document.getElementById('progresso-fase2-num').textContent =
     entregues + ' de ' + total + (entregues === 1 ? ' produto entregue' : ' produtos entregues');
   document.getElementById('progresso-fase2-prox').textContent = proximo
-    ? 'Próximo: ' + proximo.p + ', prazo ' + proximo.prazo + (proximo.andamento ? ' (em elaboração)' : '')
-    : 'Todos os produtos foram entregues.';
+    ? 'Próximo: ' + proximo.p + ', prazo ' + proximo.prazo + (proximo.andamento ? ' (em elaboração)' : '') +
+      (emAnalise.length ? '. Em análise: ' + emAnalise.join(', ') : '')
+    : emAnalise.length ? 'Em análise: ' + emAnalise.join(', ') : 'Todos os produtos foram entregues.';
   var barra = document.getElementById('progresso-fase2-barra');
   barra.setAttribute('aria-valuenow', entregues);
   barra.setAttribute('aria-valuemax', total);

@@ -2238,6 +2238,7 @@ html[data-contraste="alto"] .lt-item::before { border-color: #000; }
 }
 .produto-status.andamento { background: #FFF1D6; color: #7A4B00; }
 .produto-status.entregue { background: #DDF3E6; color: #125C36; }
+.produto-status.analise { background: #E4E9FB; color: #2E3F8F; }
 
 /* público da Fase 2: barras simples, a largura é a proporção */
 .publico-barras { display: flex; flex-direction: column; gap: .9rem; margin: .4rem 0 .2rem; }
