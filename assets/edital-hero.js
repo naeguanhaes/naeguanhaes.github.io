@@ -126,9 +126,16 @@
           escapar(d.extraTexto) + '</a>'
       : '';
 
+    /* imagemLogo: a imagem é uma logo transparente (o Seminário), sem
+       moldura e visível também no celular; imagemCelular troca o arquivo
+       nas telas estreitas, para a versão compacta da logo */
+    var img = '<img src="' + escapar(d.imagem) + '" alt="' +
+          escapar(d.imagemAlt || '') + '" loading="lazy" decoding="async">';
+    if (d.imagemCelular) {
+      img = '<picture><source media="(max-width: 879px)" srcset="' + escapar(d.imagemCelular) + '">' + img + '</picture>';
+    }
     var imagem = d.imagem
-      ? '<figure class="hero-imagem"><img src="' + escapar(d.imagem) + '" alt="' +
-          escapar(d.imagemAlt || '') + '" loading="lazy" decoding="async"></figure>'
+      ? '<figure class="hero-imagem' + (d.imagemLogo ? ' hero-logo' : '') + '">' + img + '</figure>'
       : '';
 
     var slide = document.createElement('div');

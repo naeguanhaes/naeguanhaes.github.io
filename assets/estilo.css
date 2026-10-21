@@ -189,6 +189,12 @@ html[data-contraste="alto"] .nav-link.nav-destaque { border-color: #000; }
   color: #fff; background: var(--c); border-color: var(--c); box-shadow: var(--sh-cor);
 }
 .nav-link[aria-current="page"] .dot { background: rgba(255,255,255,.8); opacity: 1; }
+/* Símbolo P&e do 28º Seminário no lugar da bolinha, sobre um fundo
+   branco para ler bem também na aba ativa. */
+.nav-marca {
+  height: 1.15rem; width: auto; flex: none;
+  background: #fff; border-radius: 5px; padding: 1px 2px;
+}
 
 /* Submenus. Sem JavaScript, o .nav-grupo não existe para o leiaute
    (display: contents) e os links do grupo aparecem soltos na faixa,
@@ -2371,3 +2377,26 @@ html[data-contraste="alto"] .btn-semana { border-color: #000; color: #000; }
     linear-gradient(122deg, #0E1F3A 0%, #15315A 50%, #1E4478 100%);
 }
 .hero-edital.tema-mostra .eyebrow { color: #FFC93C; }
+
+/* ── Identidade do 28º Seminário de Pesquisa e Extensão ──
+   A logo oficial é PNG transparente: sem moldura e sem sombra de foto.
+   No retângulo (roxo) vai a versão branca; no celular, a versão
+   compacta aparece acima do texto, e no computador a com arabescos
+   fica ao lado. */
+.hero-imagem.hero-logo img {
+  border-radius: 0; box-shadow: none; max-height: none;
+  width: 100%; height: auto;
+  filter: drop-shadow(0 8px 22px rgba(20,12,60,.35));
+}
+.hero-imagem.hero-logo { display: block; order: -1; width: min(15rem, 72%); }
+@media (min-width: 880px) {
+  .hero-imagem.hero-logo { order: 0; width: clamp(17rem, 30vw, 23rem); }
+}
+.hero-com-imagem.hero:not(.hero-edital) { display: grid; }
+
+/* símbolo P&e ao lado de um evento do Seminário no calendário */
+.cal-marca {
+  height: 1.45em; width: auto; vertical-align: -.35em; margin-right: .4rem;
+}
+/* logo colorida em cartões claros (arquivo, linha do tempo) */
+.logo-seminario { display: block; width: 100%; max-width: 15rem; height: auto; margin: .2rem 0 .6rem; }

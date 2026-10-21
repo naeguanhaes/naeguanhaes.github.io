@@ -81,7 +81,7 @@ try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentEleme
     <div class="nav-grupo" data-grupo="Editais e bolsas" style="--c: var(--ambar)">
       <a class="nav-link" href="editais.html" style="--c: var(--ambar)"><i class="dot"></i>Editais abertos</a>
       <a class="nav-link" href="auxilios.html" style="--c: var(--coral)"><i class="dot"></i>Auxílios e pagamentos</a>
-      <a class="nav-link" href="seminario.html" data-ate="2026-11-13" style="--c: var(--lilas)"><i class="dot"></i>28º Seminário de Pesquisa e Extensão</a>
+      <a class="nav-link" href="seminario.html" data-ate="2026-11-13" style="--c: var(--lilas)"><img class="nav-marca" src="assets/seminario/marca.webp" alt="" width="15" height="20">28º Seminário de Pesquisa e Extensão</a>
     </div>
     <div class="nav-grupo" data-grupo="Ferramentas" style="--c: var(--turquesa)">
       <a class="nav-link" href="calculadora.html" style="--c: var(--turquesa)"><i class="dot"></i>Calculadora de média e faltas</a>
@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function () {
     return {
       titulo: its.length > 1 ? ultimo.titulo.split(' · ')[0] : ultimo.titulo,
       resumo: its.length > 1 ? its[0].resumo : ultimo.resumo,
-      tipo: ultimo.tipo, link: ultimo.link,
+      tipo: ultimo.tipo, link: ultimo.link, logo: ultimo.logo,
       abre: its[0].abre, encerra: ultimo.encerra
     };
   }).filter(function (r) { return r.encerra && r.encerra < hoje; })
@@ -205,6 +205,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var titulo = U.escapar(r.titulo);
     return '<div class="card" style="--c: ' + cor + '">' +
       '<span class="rotulo">' + U.escapar(NOMES[r.tipo] || NOMES.outro) + '</span>' +
+      (r.logo ? '<img class="logo-seminario" src="' + U.escapar(r.logo) + '" alt="" width="437" height="198" loading="lazy">' : '') +
       '<h3>' + (r.link ? '<a class="titulo-link" href="' + U.escapar(r.link) + '"' +
         (interno ? '' : ' target="_blank" rel="noopener noreferrer"') + '>' + titulo + '</a>' : titulo) + '</h3>' +
       '<p>' + U.escapar(r.resumo || '') + '</p>' +

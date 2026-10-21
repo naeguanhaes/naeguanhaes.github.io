@@ -32,6 +32,14 @@ window.DADOS_AVISOS = {
     {
       tipo: 'atencao',
       de: '2026-10-21',
+      ate: '2026-10-26',
+      texto: 'Sem aula na sexta, 23/10, e na segunda, 26/10: suspensão das atividades de ensino (Ofício Circular UEMG/PROGRAD nº 1/2026). Domingo, 25/10, é feriado municipal, aniversário de Guanhães.',
+      link: 'calendario.html',
+      textoLink: 'ver o calendário'
+    },
+    {
+      tipo: 'atencao',
+      de: '2026-10-21',
       ate: '2026-10-23',
       texto: '28º Seminário: a inscrição nas atividades vai só até 23/10, por formulário. Escolha as que combinam com você, não todas, e faça também a inscrição como ouvinte.',
       link: 'seminario.html',

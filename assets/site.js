@@ -716,10 +716,11 @@
 
     var dias = Math.round((new Date(proximo.ini + 'T12:00:00') - new Date(hoje + 'T12:00:00')) / 86400000);
     var quando = dataBR(proximo.ini).slice(0, 5);
+    var nome = proximo.curto || proximo.titulo;
     var texto;
-    if (dias === 0) texto = '<b>É hoje:</b> <span>' + escapar(proximo.titulo) + '</span>';
-    else if (dias === 1) texto = '<b>Amanhã:</b> <span>' + escapar(proximo.titulo) + '</span>';
-    else texto = 'Faltam <b>' + dias + ' dias</b> para: <span>' + escapar(proximo.titulo) + ' (' + quando + ')</span>';
+    if (dias === 0) texto = '<b>É hoje:</b> <span>' + escapar(nome) + '</span>';
+    else if (dias === 1) texto = '<b>Amanhã:</b> <span>' + escapar(nome) + '</span>';
+    else texto = 'Faltam <b>' + dias + ' dias</b> para: <span>' + escapar(nome) + ' (' + quando + ')</span>';
 
     caixa.innerHTML = '<span class="hc-dot" aria-hidden="true"></span>' + texto;
     caixa.hidden = false;

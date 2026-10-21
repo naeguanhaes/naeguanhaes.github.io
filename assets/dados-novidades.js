@@ -19,6 +19,13 @@ window.DADOS_NOVIDADES = {
   itens: [
     {
       data: '2026-10-21',
+      titulo: 'Calendário atualizado até dezembro',
+      texto: 'Entraram as suspensões de aula de 23 e 26/10, o feriado municipal de 25/10, a Semana de Pesquisa e Extensão (09 a 13/11) e as datas do TCC e das provas finais de Direito.',
+      link: 'calendario.html',
+      textoLink: 'ver o calendário'
+    },
+    {
+      data: '2026-10-21',
       titulo: '28º Seminário: atividades só até 23/10',
       texto: 'A inscrição nas atividades da programação de Guanhães vai até 23 de outubro, pelo formulário da Unidade. Escolha as que mais combinam com você e não esqueça a inscrição como ouvinte.',
       link: 'seminario.html',

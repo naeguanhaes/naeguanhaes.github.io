@@ -434,3 +434,14 @@ estruturados: inicio" e "fim" no `<head>` de `index`, `contato`, `email`,
 
 O restante está detalhado no `README.md`, em `historico/CONTEXTO.md` e, para
 o dia em que a coordenação mudar de mãos, em `historico/CONTINUIDADE.md`.
+
+## Identidade do 28º Seminário de Pesquisa e Extensão
+
+As logos oficiais estão em `assets/seminario/` (recortadas dos PNG do pacote "Logos PE"):
+`logo-branca.webp` e `logo-branca-arabesco.webp` para fundo escuro (o retângulo roxo),
+`logo.webp` e `logo-arabesco.webp` para fundo claro, e `marca.webp`, o símbolo P&e,
+usado como ícone no menu (`.nav-marca`) e no calendário (`marca: 'seminario'`).
+Tudo o que falar do Seminário leva a logo: carrossel (`imagemLogo`, `imagemCelular`
+no destaque), página do Seminário, arquivo de eventos (`logo` no item), linha do
+tempo do projeto e imagem de compartilhamento. Depois de 13/11 o menu sai sozinho
+pelo `data-ate`.

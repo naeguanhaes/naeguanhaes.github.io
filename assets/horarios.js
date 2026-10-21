@@ -41,6 +41,19 @@
     return d.getHours() * 60 + d.getMinutes();
   }
 
+  /* Dia sem aula pelo calendário acadêmico (feriado, recesso, suspensão):
+     devolve o evento, ou null. Só funciona onde a página carrega
+     dados-calendario.js; sem ele, o painel segue só a grade. */
+  function semAulaEm(d) {
+    var C = window.DADOS_CALENDARIO;
+    if (!C || !C.eventos) return null;
+    var iso = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' +
+              String(d.getDate()).padStart(2, '0');
+    return C.eventos.filter(function (ev) {
+      return ev.tipo === 'feriado' && ev.ini <= iso && iso <= ev.fim;
+    })[0] || null;
+  }
+
   /* ── Painel "hoje / agora" ────────────────────────── */
   function aulasDoDia(turma, col) {
     if (col < 0) return [];
@@ -94,7 +107,7 @@
     for (var passo = 1; passo <= 7; passo++) {
       var d = new Date(hoje.getFullYear(), hoje.getMonth(), hoje.getDate() + passo);
       var dia = d.getDay();
-      if (dia < 1 || dia > 5) continue;
+      if (dia < 1 || dia > 5 || semAulaEm(d)) continue;
       var aulas = aulasDoDia(turma, dia - 1);
       if (!aulas.length) continue;
 
@@ -125,12 +138,15 @@
     var relogio = String(hoje.getHours()).padStart(2, '0') + ':' + String(hoje.getMinutes()).padStart(2, '0');
 
     var corpo = '';
+    var folga = semAulaEm(hoje);
 
     if (!turma) {
       corpo = '<p class="agora-vazio">Depois de escolher, esta caixa mostra a aula de hoje sempre que você abrir o site, e o botão da grade da semana aparece aqui em cima.</p>';
     } else if (col < 0) {
       corpo = proximoDiaHTML(turma, hoje, 'Hoje é ' + U.DIAS_CURTOS[hoje.getDay()].toLowerCase() +
               ', não há aulas presenciais.');
+    } else if (folga) {
+      corpo = proximoDiaHTML(turma, hoje, 'Hoje não tem aula: <b>' + U.escapar(folga.titulo) + '</b>.');
     } else {
       var aulas = aulasDoDia(turma, col);
       if (!aulas.length) {
@@ -211,7 +227,17 @@
      a coluna EaD vira uma linha com as disciplinas da parte a distância */
   function semanaHTML(turma) {
     var colHoje = colunaDeHoje();
+    /* segunda-feira da semana mostrada: a atual, ou a próxima no fim de semana */
+    var h = new Date(), dow = h.getDay();
+    var segunda = new Date(h.getFullYear(), h.getMonth(), h.getDate() + (dow === 0 ? 1 : dow === 6 ? 2 : 1 - dow));
     var dias = [0, 1, 2, 3, 4].map(function (col) {
+      var folga = semAulaEm(new Date(segunda.getFullYear(), segunda.getMonth(), segunda.getDate() + col));
+      if (folga) {
+        return '<div class="semana-dia' + (col === colHoje ? ' hoje' : '') + '">' +
+          '<h4>' + DIAS[col] + (col === colHoje ? ' <span class="semana-hoje">hoje</span>' : '') + '</h4>' +
+          '<p class="semana-livre">Sem aula: ' + U.escapar(folga.titulo) + '</p>' +
+        '</div>';
+      }
       var aulas = aulasDoDia(turma, col);
       return '<div class="semana-dia' + (col === colHoje ? ' hoje' : '') + '">' +
         '<h4>' + DIAS[col] + (col === colHoje ? ' <span class="semana-hoje">hoje</span>' : '') + '</h4>' +

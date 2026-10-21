@@ -1,8 +1,16 @@
 /* ═══════════════════════════════════════════════════════
    DADOS · Calendário acadêmico
    ───────────────────────────────────────────────────────
-   Fonte: Resolução COEPE/UEMG nº 530, de 11 de dezembro de 2025.
+   Fonte: Resolução COEPE/UEMG nº 530, de 11 de dezembro de 2025, e o
+   calendário atualizado da Unidade Guanhães (recebido em 21/10/2026, com
+   as suspensões do Ofício Circular UEMG/PROGRAD nº 1/2026, o feriado
+   municipal e as datas do TCC e das provas finais de Direito).
    Este calendário é informativo; as datas oficiais estão na Resolução.
+
+   curto: (opcional) nome breve para a contagem do topo da página
+   inicial, quando o título é longo.
+   marca: 'seminario' (opcional) põe o símbolo P&e do 28º Seminário
+   ao lado do evento.
 
    tipo: 'letivo'  → início/fim de período e eventos acadêmicos
          'prazo'   → matrículas, inscrições, exames, trancamento
@@ -13,8 +21,8 @@
 
 window.DADOS_CALENDARIO = {
   ano: 2026,
-  atualizadoEm: '2026-08-05',
-  resolucao: 'Resolução COEPE/UEMG nº 530, de 11 de dezembro de 2025',
+  atualizadoEm: '2026-10-21',
+  resolucao: 'Resolução COEPE/UEMG nº 530, de 11 de dezembro de 2025, e calendário da Unidade Guanhães',
   fonteUrl: 'https://www.uemg.br/calendario-academico',
 
   eventos: [
@@ -63,13 +71,22 @@ window.DADOS_CALENDARIO = {
     { ini: '2026-10-12', fim: '2026-10-12', titulo: 'Feriado', tipo: 'feriado' },
     { ini: '2026-10-12', fim: '2026-10-17', titulo: 'Recesso', tipo: 'feriado' },
     { ini: '2026-10-15', fim: '2026-10-15', titulo: 'Dia do/a Professor/a', tipo: 'feriado' },
+    { ini: '2026-10-23', fim: '2026-10-23', titulo: 'Suspensão das atividades de ensino (Ofício Circular UEMG/PROGRAD nº 1/2026)', tipo: 'feriado', curto: 'Suspensão das aulas' },
+    { ini: '2026-10-25', fim: '2026-10-25', titulo: 'Aniversário de Guanhães/MG, feriado municipal', tipo: 'feriado' },
+    { ini: '2026-10-26', fim: '2026-10-26', titulo: 'Suspensão das atividades de ensino (Ofício Circular UEMG/PROGRAD nº 1/2026)', tipo: 'feriado', curto: 'Suspensão das aulas' },
     { ini: '2026-10-30', fim: '2026-10-31', titulo: 'Dia do/a Servidor/a Público/a, feriado e recesso', tipo: 'feriado' },
 
     { ini: '2026-11-02', fim: '2026-11-02', titulo: 'Feriado', tipo: 'feriado' },
     { ini: '2026-11-09', fim: '2026-11-13', titulo: 'Inscrição para transferência e obtenção de novo título 1-2027', tipo: 'prazo' },
-    { ini: '2026-11-11', fim: '2026-11-12', titulo: 'Seminário de Pesquisa e Extensão 2026', tipo: 'letivo' },
+    { ini: '2026-11-09', fim: '2026-11-09', titulo: 'Abertura da Semana de Pesquisa e Extensão da UEMG Guanhães 2026', tipo: 'letivo', curto: 'Abertura da Semana de Pesquisa e Extensão', marca: 'seminario' },
+    { ini: '2026-11-10', fim: '2026-11-12', titulo: 'Seminário de Pesquisa e Extensão 2026', tipo: 'letivo', marca: 'seminario' },
+    { ini: '2026-11-13', fim: '2026-11-13', titulo: 'Encerramento da Semana de Pesquisa e Extensão da UEMG Guanhães 2026', tipo: 'letivo', curto: 'Encerramento da Semana de Pesquisa e Extensão', marca: 'seminario' },
     { ini: '2026-11-15', fim: '2026-11-15', titulo: 'Proclamação da República, feriado', tipo: 'feriado' },
+    { ini: '2026-11-19', fim: '2026-11-19', titulo: 'Data-limite para entregar ao orientador o trabalho para revisão final do TCC de Direito', tipo: 'prazo', curto: 'Entrega do TCC ao orientador (Direito)' },
     { ini: '2026-11-20', fim: '2026-11-21', titulo: 'Dia Nacional de Zumbi e da Consciência Negra, feriado e recesso', tipo: 'feriado' },
+    { ini: '2026-11-30', fim: '2026-12-11', titulo: 'Provas finais do curso de Direito', tipo: 'prazo' },
+    { ini: '2026-12-04', fim: '2026-12-04', titulo: 'Data-limite para entregar na secretaria a versão para a banca do TCC de Direito', tipo: 'prazo', curto: 'Entrega do TCC na secretaria (Direito)' },
+    { ini: '2026-12-07', fim: '2026-12-11', titulo: 'Bancas de defesa do TCC de Direito', tipo: 'prazo' },
 
     { ini: '2026-12-12', fim: '2026-12-12', titulo: 'Término das aulas do 2º semestre letivo', tipo: 'letivo' },
     { ini: '2026-12-14', fim: '2026-12-17', titulo: 'Exame especial / Complementação de carga horária', tipo: 'prazo' },

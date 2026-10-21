@@ -54,7 +54,9 @@
     return '<div class="cal-evento ' + ev.tipo + ' ' + (e === 'passado' ? 'passado' : e === 'hoje' ? 'hoje' : '') + '"' +
            ' data-tipo="' + ev.tipo + '">' +
              '<span class="quando">' + U.escapar(comMes ? comMesHTML(ev) : quando(ev)) + '</span>' +
-             '<span class="oque">' + U.escapar(ev.titulo) + agora + '</span>' +
+             '<span class="oque">' + (ev.marca === 'seminario'
+               ? '<img class="cal-marca" src="assets/seminario/marca.webp" alt="" width="15" height="20">' : '') +
+               U.escapar(ev.titulo) + agora + '</span>' +
            '</div>';
   }
 

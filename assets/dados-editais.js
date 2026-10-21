@@ -280,6 +280,7 @@ window.DADOS_EDITAIS = {
     {
       titulo: '28º Seminário de Pesquisa e Extensão · apresentação de trabalho',
       grupo: 'seminario-28',
+      logo: 'assets/seminario/logo.webp',
       resumo: 'Prazo prorrogado de 15 para 21 de setembro. Inscrição com apresentação e submissão do resumo. Exige Currículo Lattes, que leva até 24 horas para ser gerado. É o prazo mais curto do Seminário e não se repete.',
       tipo: 'pesquisa',
       abre: '2026-08-28',
@@ -293,6 +294,10 @@ window.DADOS_EDITAIS = {
          Só escreva aqui conteúdo do próprio repositório. */
       destaque: {
         tema: 'roxo',
+        imagem: 'assets/seminario/logo-branca-arabesco.webp',
+        imagemCelular: 'assets/seminario/logo-branca.webp',
+        imagemLogo: true,
+        imagemAlt: 'Logo do 28º Seminário de Pesquisa e Extensão: Universidade do futuro e o futuro da Universidade, alicerces e perspectivas',
         eyebrow: 'Prazo prorrogado · submissão até 21/09',
         titulo: '28º Seminário de Pesquisa e Extensão',
         texto: 'Na Unidade Guanhães, a programação acontece de <b>09 a 13 de novembro</b>. Para submeter resumo é preciso ter <b>Currículo Lattes</b>, e ele pode levar <b>até 24 horas</b> para ficar pronto: se ainda não tem, faça hoje.',
@@ -309,6 +314,7 @@ window.DADOS_EDITAIS = {
     {
       titulo: '28º Seminário de Pesquisa e Extensão · escolha das atividades',
       grupo: 'seminario-28',
+      logo: 'assets/seminario/logo.webp',
       resumo: 'Inscrição nas atividades da programação de Guanhães, por formulário próprio, até 23/10. Escolha só as que combinam com os seus interesses. Quem ainda não fez a inscrição como ouvinte precisa fazer também.',
       tipo: 'pesquisa',
       abre: '2026-10-09',
@@ -318,6 +324,10 @@ window.DADOS_EDITAIS = {
 
       destaque: {
         tema: 'roxo',
+        imagem: 'assets/seminario/logo-branca-arabesco.webp',
+        imagemCelular: 'assets/seminario/logo-branca.webp',
+        imagemLogo: true,
+        imagemAlt: 'Logo do 28º Seminário de Pesquisa e Extensão: Universidade do futuro e o futuro da Universidade, alicerces e perspectivas',
         eyebrow: 'Pesquisa e extensão · UEMG',
         titulo: '28º Seminário: escolha as atividades até 23/10',
         texto: 'A inscrição nas atividades da programação de Guanhães vai <b>só até 23 de outubro</b>. Escolha as que mais combinam com os seus interesses, não todas, e lembre: é preciso também a inscrição <b>como ouvinte</b>.',
@@ -335,6 +345,7 @@ window.DADOS_EDITAIS = {
     {
       titulo: '28º Seminário de Pesquisa e Extensão · inscrição como ouvinte',
       grupo: 'seminario-28',
+      logo: 'assets/seminario/logo.webp',
       resumo: 'Obrigatória para TODOS que forem participar, inclusive quem vai apresentar trabalho. Faça esta primeiro, antes de qualquer outra inscrição do Seminário.',
       tipo: 'pesquisa',
       abre: '2026-08-28',
@@ -344,6 +355,10 @@ window.DADOS_EDITAIS = {
 
       destaque: {
         tema: 'roxo',
+        imagem: 'assets/seminario/logo-branca-arabesco.webp',
+        imagemCelular: 'assets/seminario/logo-branca.webp',
+        imagemLogo: true,
+        imagemAlt: 'Logo do 28º Seminário de Pesquisa e Extensão: Universidade do futuro e o futuro da Universidade, alicerces e perspectivas',
         eyebrow: 'Pesquisa e extensão · UEMG',
         titulo: '28º Seminário de Pesquisa e Extensão',
         texto: 'A programação em Guanhães é de <b>09 a 13 de novembro</b>. Ainda dá tempo: a inscrição <b>como ouvinte</b> vai até 10 de novembro e é obrigatória para todos que forem participar.',
@@ -360,6 +375,7 @@ window.DADOS_EDITAIS = {
     {
       titulo: '28º Seminário de Pesquisa e Extensão · programação em Guanhães',
       grupo: 'seminario-28',
+      logo: 'assets/seminario/logo.webp',
       resumo: 'A semana do Seminário na Unidade Guanhães. Quem se inscreveu participa das atividades da programação.',
       tipo: 'pesquisa',
       abre: '2026-11-09',
@@ -369,6 +385,10 @@ window.DADOS_EDITAIS = {
 
       destaque: {
         tema: 'roxo',
+        imagem: 'assets/seminario/logo-branca-arabesco.webp',
+        imagemCelular: 'assets/seminario/logo-branca.webp',
+        imagemLogo: true,
+        imagemAlt: 'Logo do 28º Seminário de Pesquisa e Extensão: Universidade do futuro e o futuro da Universidade, alicerces e perspectivas',
         eyebrow: 'Pesquisa e extensão · UEMG',
         titulo: 'É esta semana: 28º Seminário de Pesquisa e Extensão',
         texto: 'A programação da Unidade Guanhães acontece de <b>09 a 13 de novembro</b>. Confira os horários e participe.',
