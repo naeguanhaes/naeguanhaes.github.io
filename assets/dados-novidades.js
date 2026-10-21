@@ -19,6 +19,13 @@ window.DADOS_NOVIDADES = {
   itens: [
     {
       data: '2026-10-21',
+      titulo: '28º Seminário: logos e modelos de apresentação',
+      texto: 'Quem vai apresentar trabalho já encontra o pacote de logotipos de 2026 e os modelos oficiais de apresentação oral e de banner.',
+      link: 'seminario.html',
+      textoLink: 'ver onde baixar'
+    },
+    {
+      data: '2026-10-21',
       titulo: '1ª Mostra de Profissões: o DA procura voluntários',
       texto: 'A Mostra apresenta os cursos de Direito e Engenharia Civil na sexta, 13 de novembro, a partir das 13h, na Unidade. A inscrição de voluntários é pelo formulário do Diretório Acadêmico.',
       link: 'index.html#mostra-profissoes',

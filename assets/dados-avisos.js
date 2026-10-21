@@ -27,8 +27,16 @@
    ═══════════════════════════════════════════════════════ */
 
 window.DADOS_AVISOS = {
-  atualizadoEm: '2026-09-30',
+  atualizadoEm: '2026-10-21',
   avisos: [
+    {
+      tipo: 'novidade',
+      de: '2026-10-21',
+      ate: '2026-11-13',
+      texto: 'Vai apresentar trabalho no 28º Seminário de Pesquisa e Extensão? As logos do evento e os modelos de apresentação oral e de banner já estão disponíveis.',
+      link: 'seminario.html',
+      textoLink: 'ver onde baixar'
+    },
     {
       tipo: 'atencao',
       de: '2026-09-30',
