@@ -71,9 +71,9 @@ window.DADOS_CALENDARIO = {
     { ini: '2026-10-12', fim: '2026-10-12', titulo: 'Feriado', tipo: 'feriado' },
     { ini: '2026-10-12', fim: '2026-10-17', titulo: 'Recesso', tipo: 'feriado' },
     { ini: '2026-10-15', fim: '2026-10-15', titulo: 'Dia do/a Professor/a', tipo: 'feriado' },
-    { ini: '2026-10-23', fim: '2026-10-23', titulo: 'Suspensão das atividades de ensino (Ofício Circular UEMG/PROGRAD nº 1/2026)', tipo: 'feriado', curto: 'Suspensão das aulas' },
+    { ini: '2026-10-23', fim: '2026-10-23', titulo: 'Suspensão das atividades de ensino (Ofício Circular UEMG/PROGRAD nº 1/2026)', tipo: 'feriado', curto: 'Suspensão das atividades de ensino' },
     { ini: '2026-10-25', fim: '2026-10-25', titulo: 'Aniversário de Guanhães/MG, feriado municipal', tipo: 'feriado' },
-    { ini: '2026-10-26', fim: '2026-10-26', titulo: 'Suspensão das atividades de ensino (Ofício Circular UEMG/PROGRAD nº 1/2026)', tipo: 'feriado', curto: 'Suspensão das aulas' },
+    { ini: '2026-10-26', fim: '2026-10-26', titulo: 'Suspensão das atividades de ensino (Ofício Circular UEMG/PROGRAD nº 1/2026)', tipo: 'feriado', curto: 'Suspensão das atividades de ensino' },
     { ini: '2026-10-30', fim: '2026-10-31', titulo: 'Dia do/a Servidor/a Público/a, feriado e recesso', tipo: 'feriado' },
 
     { ini: '2026-11-02', fim: '2026-11-02', titulo: 'Feriado', tipo: 'feriado' },

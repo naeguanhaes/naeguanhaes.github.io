@@ -235,7 +235,7 @@
       if (folga) {
         return '<div class="semana-dia' + (col === colHoje ? ' hoje' : '') + '">' +
           '<h4>' + DIAS[col] + (col === colHoje ? ' <span class="semana-hoje">hoje</span>' : '') + '</h4>' +
-          '<p class="semana-livre">Sem aula: ' + U.escapar(folga.curto || folga.titulo) + '</p>' +
+          '<p class="semana-livre"><b>Sem aula</b><br>' + U.escapar(folga.curto || folga.titulo) + '</p>' +
         '</div>';
       }
       var aulas = aulasDoDia(turma, col);
