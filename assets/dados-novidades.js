@@ -19,6 +19,13 @@ window.DADOS_NOVIDADES = {
   itens: [
     {
       data: '2026-10-21',
+      titulo: '28º Seminário: atividades só até 23/10',
+      texto: 'A inscrição nas atividades da programação de Guanhães vai até 23 de outubro, pelo formulário da Unidade. Escolha as que mais combinam com você e não esqueça a inscrição como ouvinte.',
+      link: 'seminario.html',
+      textoLink: 'abrir o formulário'
+    },
+    {
+      data: '2026-10-21',
       titulo: '28º Seminário: logos e modelos de apresentação',
       texto: 'Quem vai apresentar trabalho já encontra o pacote de logotipos de 2026 e os modelos oficiais de apresentação oral e de banner.',
       link: 'seminario.html',

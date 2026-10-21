@@ -309,26 +309,27 @@ window.DADOS_EDITAIS = {
     {
       titulo: '28º Seminário de Pesquisa e Extensão · escolha das atividades',
       grupo: 'seminario-28',
-      resumo: 'Inscrição nas atividades da programação de Guanhães, pela página de inscrições do Seminário. Quem ainda não fez a inscrição como ouvinte precisa fazer também.',
+      resumo: 'Inscrição nas atividades da programação de Guanhães, por formulário próprio, até 23/10. Escolha só as que combinam com os seus interesses. Quem ainda não fez a inscrição como ouvinte precisa fazer também.',
       tipo: 'pesquisa',
-      abre: '2026-10-13',
-      encerra: '2026-10-30',
+      abre: '2026-10-09',
+      encerra: '2026-10-23',
       link: 'seminario.html',
-      publicado: '2026-10-09',
+      publicado: '2026-10-21',
 
       destaque: {
         tema: 'roxo',
         eyebrow: 'Pesquisa e extensão · UEMG',
-        titulo: '28º Seminário: escolha as suas atividades',
-        texto: 'De <b>13 a 30 de outubro</b>, a página de inscrições abre a escolha das atividades da programação em Guanhães, de 09 a 13 de novembro. A inscrição <b>como ouvinte</b> continua obrigatória para todos.',
+        titulo: '28º Seminário: escolha as atividades até 23/10',
+        texto: 'A inscrição nas atividades da programação de Guanhães vai <b>só até 23 de outubro</b>. Escolha as que mais combinam com os seus interesses, não todas, e lembre: é preciso também a inscrição <b>como ouvinte</b>.',
         numeros: [
-          { n: '13 a 30/10', r: 'escolha das atividades' },
+          { n: '23/10', r: 'fim da escolha das atividades' },
           { n: '10/11', r: 'prazo do ouvinte' },
           { n: '09 a 13/11', r: 'na Unidade' }
         ],
-        acao: 'Ver o passo a passo',
-        extraTexto: 'Página de inscrições',
-        extraLink: 'https://www.uemg.br/28ed-seminario-pe-inscricao'
+        acao: 'Inscrever-me nas atividades',
+        acaoLink: 'https://docs.google.com/forms/d/e/1FAIpQLSfRoORC9C_8fj7DJU_-0DgQ3uF3NsIf-gr9UEIwBN14jTHJoQ/viewform',
+        extraTexto: 'Compartilhar no WhatsApp',
+        extraLink: 'https://wa.me/?text=%2A28%C2%BA%20Semin%C3%A1rio%20de%20Pesquisa%20e%20Extens%C3%A3o%20da%20UEMG%2A%0A%0ANa%20Unidade%20Guanh%C3%A3es%2C%20de%2009%20a%2013%20de%20novembro%20de%202026.%0A%0A%E2%80%A2%20Inscri%C3%A7%C3%A3o%20nas%20atividades:%20s%C3%B3%20at%C3%A9%2023%20de%20outubro.%20Escolha%20as%20que%20mais%20combinam%20com%20os%20seus%20interesses%2C%20n%C3%A3o%20todas%0A%E2%80%A2%20Para%20participar%20da%20atividade%2C%20%C3%A9%20preciso%20ter%20tamb%C3%A9m%20a%20inscri%C3%A7%C3%A3o%20como%20ouvinte%2C%20at%C3%A9%2010%20de%20novembro%0A%E2%80%A2%20Os%20docentes%20de%20cada%20atividade%20est%C3%A3o%20no%20Instagram%20do%20Semin%C3%A1rio%0A%0A%2AFormul%C3%A1rio%2C%20prazos%20e%20passo%20a%20passo%20no%20site%20do%20NAE:%2A%0Ahttps://naeguanhaes.github.io/seminario.html%3Futm_source%3Dwhatsapp%26utm_campaign%3Dseminario'
       }
     },
     {
