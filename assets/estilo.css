@@ -2401,3 +2401,263 @@ html[data-contraste="alto"] .btn-semana { border-color: #000; color: #000; }
 }
 /* logo colorida em cartões claros (arquivo, linha do tempo) */
 .logo-seminario { display: block; width: 100%; max-width: 15rem; height: auto; margin: .2rem 0 .6rem; }
+
+/* ── Diretório Acadêmico Sapientia et Justitia ──
+   Paleta do próprio DA (Instagram @diretoriouemgghs e brasão): azul royal,
+   ouro mostarda, verde do Direito e amarelo dos destaques, com as formas
+   orgânicas em ouro que aparecem nas artes deles. A logo é PNG
+   transparente e usa a mesma figura .hero-logo do Seminário. */
+:root {
+  --da-azul: #0A2D6D; --da-mostarda: #C8963D; --da-verde: #0B7A36;
+  --da-amarelo: #F6DD15; --da-ouro: #8A6100; /* ouro escuro, para texto em fundo claro */
+}
+.pg-da .hero,
+.hero-edital.tema-da {
+  background:
+    radial-gradient(34% 42% at 104% -6%, #C8963D 0 62%, rgba(200,150,61,0) 63%),
+    radial-gradient(26% 30% at -4% 108%, #C8963D 0 62%, rgba(200,150,61,0) 63%),
+    linear-gradient(160deg, #0A2D6D 0%, #0C3480 100%);
+}
+.pg-da .hero { background: linear-gradient(160deg, #0A2D6D 0%, #0C3480 100%); }
+.pg-da .hero::before, .pg-da .hero::after { display: none; }
+.pg-da .hero .eyebrow,
+.hero-edital.tema-da .eyebrow { color: #E2B45A; }
+.pg-da .hero-imagem.hero-logo,
+.hero-edital.tema-da .hero-imagem.hero-logo { width: min(10rem, 48%); }
+@media (min-width: 880px) {
+  .pg-da .hero-imagem.hero-logo,
+  .hero-edital.tema-da .hero-imagem.hero-logo { width: clamp(13rem, 22vw, 17rem); }
+}
+
+.da-hero { isolation: isolate; }
+.da-blob { position: absolute; z-index: 0; fill: var(--da-mostarda); pointer-events: none; }
+.da-blob-a { width: 17rem; top: -5.5rem; right: -4.5rem; }
+.da-blob-b { width: 12rem; bottom: -5rem; left: -4rem; transform: rotate(160deg); }
+@media (max-width: 879px) { .da-blob-a { width: 11rem; top: -4rem; right: -4rem; } .da-blob-b { width: 8rem; } }
+.da-hero .hero-in, .da-hero .hero-imagem { position: relative; z-index: 1; }
+.da-lema {
+  font-family: var(--serif); font-style: italic; font-size: 1.15rem;
+  color: #E2B45A; margin: -.2rem 0 .2rem; letter-spacing: .02em;
+}
+.btn.da-btn-ouro { --c: var(--da-mostarda); background: var(--da-mostarda); border-color: var(--da-mostarda); color: #0A2D6D; }
+.btn.da-btn-ouro:hover { filter: brightness(1.07); color: #0A2D6D; }
+.btn.da-btn-azul { --c: var(--da-azul); }
+.da-ic { display: block; }
+.da-ic-p { display: inline-block; vertical-align: -.2em; }
+.da-pauta { margin: 0 0 .6rem; padding-left: 1.3rem; display: grid; gap: .3rem; }
+
+/* ingresso da Assembleia */
+.da-ingresso {
+  display: grid; grid-template-columns: 1fr; overflow: hidden;
+  background: var(--surface); border: 2px solid var(--da-mostarda); border-radius: var(--radius);
+  box-shadow: 0 1px 2px rgba(10,45,109,.06), 0 22px 40px -26px rgba(10,45,109,.55);
+}
+@media (min-width: 760px) { .da-ingresso { grid-template-columns: 11rem 1fr; } }
+.da-ingresso-data {
+  position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center;
+  justify-content: center; gap: .1rem; padding: 1.4rem 1rem; color: #fff; text-align: center;
+  background:
+    radial-gradient(60% 40% at 110% 105%, #C8963D 0 60%, rgba(200,150,61,0) 61%),
+    #0A2D6D;
+}
+@media (min-width: 760px) { .da-ingresso-data { border-right: 3px dashed var(--da-mostarda); } }
+@media (max-width: 759px) {
+  .da-ingresso-data { flex-direction: row; gap: .6rem; padding: .9rem 1rem; border-bottom: 3px dashed var(--da-mostarda); }
+}
+.da-dia-sem, .da-mes { font-size: .8rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #E2B45A; }
+.da-dia { font-family: var(--serif); font-size: 3.6rem; line-height: 1; font-weight: 600; }
+@media (max-width: 759px) { .da-dia { font-size: 2.2rem; } }
+.da-hora {
+  margin-top: .4rem; font-weight: 800; font-size: 1.05rem; color: #0A2D6D;
+  background: var(--da-amarelo); border-radius: 99px; padding: .15rem .8rem;
+}
+.da-ingresso-info { padding: clamp(1.1rem, .8rem + 1.5vw, 1.8rem); display: grid; gap: .7rem; }
+.da-ingresso-info h2 { color: var(--da-azul); }
+.da-faixa {
+  justify-self: start; font-size: .78rem; font-weight: 800; letter-spacing: .12em;
+  text-transform: uppercase; color: #0A2D6D; padding: .3rem .95rem .3rem .8rem;
+  background: var(--da-mostarda);
+  clip-path: polygon(0 0, 100% 0, calc(100% - .55rem) 50%, 100% 100%, 0 100%);
+}
+.da-contagem {
+  justify-self: start; margin: 0; font-weight: 600; color: #0A2D6D;
+  background: #FEF7C7; border: 1px solid #EEDA62; border-radius: 99px; padding: .3rem .9rem;
+}
+.da-pauta-tit { font-size: 1.05rem; margin-top: .3rem; }
+.da-passos { list-style: none; margin: 0; padding: 0; display: grid; gap: .6rem; counter-reset: passo; }
+@media (min-width: 900px) { .da-passos { grid-template-columns: repeat(3, 1fr); } }
+.da-passos li {
+  counter-increment: passo; position: relative; display: grid; gap: .45rem; align-content: start;
+  background: #F3F6FC; border: 1px solid #DAE2F2; border-radius: 14px; padding: .9rem 1rem;
+  color: var(--ink-2);
+}
+.da-passos li::after {
+  content: counter(passo); position: absolute; top: .6rem; right: .8rem;
+  font-family: var(--serif); font-size: 1.6rem; font-weight: 700; color: #C9D3EA;
+}
+.da-passos b { color: var(--da-azul); }
+.da-passo-ic, .da-ponto-ic, .da-motivo-ic, .da-documento-ic {
+  display: inline-grid; place-items: center; width: 2.9rem; height: 2.9rem; border-radius: 50%;
+  color: #0A2D6D; background: radial-gradient(circle at 30% 25%, #F1D08C, #C8963D 75%);
+  box-shadow: 0 0 0 3px #fff, 0 0 0 4px var(--da-mostarda);
+}
+.da-passo-ic .da-ic, .da-ponto-ic .da-ic, .da-motivo-ic .da-ic, .da-documento-ic .da-ic { width: 1.5rem; height: 1.5rem; }
+
+/* por que participar */
+.da-motivos { list-style: none; margin: 0; padding: 0; display: grid; gap: .8rem; }
+@media (min-width: 760px) { .da-motivos { grid-template-columns: repeat(2, 1fr); } }
+.da-motivo {
+  display: flex; gap: .9rem; align-items: flex-start; background: var(--surface);
+  border: 1px solid var(--hair); border-left: 5px solid var(--da-azul); border-radius: var(--radius);
+  padding: 1rem 1.1rem; box-shadow: var(--sh-1);
+}
+.da-motivo:nth-child(4n+2), .da-motivo:nth-child(4n+3) { border-left-color: var(--da-mostarda); }
+.da-motivo-ic { flex: none; }
+.da-motivo h3 { font-size: 1.08rem; color: var(--da-azul); margin-bottom: .2rem; }
+.da-motivo p { margin: 0; color: var(--ink-2); }
+
+/* dois cursos, com os emblemas do DA */
+.da-cursos { list-style: none; margin: 0; padding: 0; display: grid; gap: .9rem; }
+@media (min-width: 760px) { .da-cursos { grid-template-columns: repeat(2, 1fr); } }
+.da-curso {
+  position: relative; overflow: hidden; display: grid; grid-template-columns: 6.5rem 1fr; gap: 1rem;
+  align-items: center; border-radius: var(--radius); padding: 1.2rem; color: #fff; box-shadow: var(--sh-2);
+}
+.da-curso-dir { background: radial-gradient(45% 60% at 105% 110%, #C8963D 0 60%, rgba(200,150,61,0) 61%), var(--da-verde); }
+.da-curso-eng { background: radial-gradient(45% 60% at 105% 110%, #C8963D 0 60%, rgba(200,150,61,0) 61%), var(--da-azul); }
+.da-curso img { width: 100%; height: auto; filter: drop-shadow(0 6px 14px rgba(0,0,0,.35)); }
+.da-curso h3 { color: #fff; font-size: 1.2rem; }
+.da-curso p { margin: .25rem 0 0; color: #E6EEF9; position: relative; }
+.da-curso-lema { display: block; font-family: var(--serif); font-style: italic; color: #F3D58E; margin-top: .2rem; }
+
+/* estatuto em 6 pontos */
+.da-pontos { list-style: none; margin: 0; padding: 0; display: grid; gap: .9rem; }
+@media (min-width: 640px) { .da-pontos { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .da-pontos { grid-template-columns: repeat(3, 1fr); } }
+.da-ponto {
+  position: relative; display: grid; gap: .5rem; align-content: start;
+  background: linear-gradient(180deg, #F4F7FD 0%, #FFFFFF 55%);
+  border: 1px solid #DAE2F2; border-top: 4px solid var(--da-azul); border-radius: var(--radius);
+  padding: 1.1rem 1.1rem .9rem; box-shadow: var(--sh-1);
+}
+.da-ponto:nth-child(3n+2) { border-top-color: var(--da-mostarda); }
+.da-ponto:nth-child(3n) { border-top-color: var(--da-verde); }
+.da-ponto h3 { font-size: 1.12rem; color: var(--da-azul); }
+.da-ponto p { margin: 0; color: var(--ink-2); }
+.da-ponto-art { font-size: .78rem; font-weight: 700; color: var(--muted); letter-spacing: .04em; }
+
+.da-documento {
+  position: relative; overflow: hidden; display: grid; gap: .9rem; align-items: center; grid-template-columns: auto 1fr;
+  background: radial-gradient(30% 70% at 102% 110%, #C8963D 0 60%, rgba(200,150,61,0) 61%), var(--da-azul);
+  color: #fff; border-radius: var(--radius); padding: 1.1rem 1.2rem; box-shadow: var(--sh-1);
+}
+.da-documento h3 { color: #fff; font-size: 1.12rem; }
+.da-documento p { margin: .2rem 0 0; color: #DCE6F7; }
+.da-documento-acoes { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: .6rem; position: relative; }
+@media (min-width: 760px) {
+  .da-documento { grid-template-columns: auto 1fr auto; }
+  .da-documento-acoes { grid-column: auto; }
+}
+.da-documento .btn.da-btn-azul { --c: var(--da-amarelo); background: var(--da-amarelo); border-color: var(--da-amarelo); color: #0A2D6D; }
+.da-documento .btn.ghost { --c: #fff; color: #fff; border-color: rgba(255,255,255,.75); background: rgba(10,45,109,.6); }
+.da-nota { font-size: .86rem; color: var(--muted); margin: 0; }
+
+/* organograma em degraus */
+.da-org { list-style: none; margin: 0; padding: 0; display: grid; gap: .7rem; }
+.da-org > li {
+  display: flex; gap: 1rem; align-items: flex-start; border-radius: var(--radius);
+  padding: 1rem 1.1rem; border: 1px solid #DAE2F2; background: var(--surface); box-shadow: var(--sh-1);
+}
+.da-org > li.da-org-1 { background: var(--da-azul); border-color: transparent; }
+.da-org-1 h3 { color: #fff; }
+.da-org-1 p { color: #DCE6F7; }
+@media (min-width: 760px) { .da-org-2 { margin-left: 2.2rem; } .da-org-3 { margin-left: 4.4rem; } }
+.da-org-n {
+  flex: none; display: grid; place-items: center; width: 2.2rem; height: 2.2rem; border-radius: 50%;
+  font-weight: 800; color: #0A2D6D; background: var(--da-mostarda);
+}
+.da-org h3 { font-size: 1.1rem; color: var(--da-azul); margin-bottom: .25rem; }
+.da-org p { margin: 0; color: var(--ink-2); }
+.da-cargos { list-style: none; margin: .6rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: .4rem; }
+.da-cargos li {
+  font-size: .82rem; font-weight: 700; color: var(--da-azul);
+  background: #EEF2FB; border: 1px solid #D3DCF0; border-radius: 99px; padding: .2rem .7rem;
+}
+
+/* contato e próxima ação */
+.da-contato { position: relative; overflow: hidden; }
+.da-contato-logo { position: absolute; right: -1.6rem; bottom: -1.6rem; width: 8.5rem; height: auto; opacity: .1; pointer-events: none; }
+.da-contato p { position: relative; }
+.da-evento {
+  display: grid; grid-template-columns: 6.5rem 1fr; gap: 1rem; align-items: center;
+  text-decoration: none; color: inherit;
+}
+.da-evento img { width: 100%; height: auto; border-radius: 10px; box-shadow: var(--sh-1); }
+.da-evento > span { display: grid; gap: .3rem; }
+.da-evento-tit { font-family: var(--serif); font-size: 1.3rem; font-weight: 600; color: var(--da-azul); }
+.da-evento-txt { color: var(--ink-2); }
+.da-evento:hover .da-evento-tit { text-decoration: underline; }
+.da-linha .lt-item.marco::before { background: var(--da-mostarda); }
+
+/* chamada final */
+.da-chamada {
+  position: relative; overflow: hidden; display: grid; gap: 1.2rem; align-items: center; color: #fff;
+  border-radius: 24px; padding: clamp(1.2rem, 1rem + 2vw, 2rem);
+  background:
+    radial-gradient(28% 55% at 104% -8%, #C8963D 0 60%, rgba(200,150,61,0) 61%),
+    radial-gradient(20% 40% at -3% 108%, #C8963D 0 60%, rgba(200,150,61,0) 61%),
+    var(--da-azul);
+  box-shadow: var(--sh-2);
+}
+@media (min-width: 760px) { .da-chamada { grid-template-columns: 9rem 1fr; } }
+.da-chamada img { width: 7rem; height: auto; justify-self: center; filter: drop-shadow(0 8px 18px rgba(0,0,0,.35)); }
+@media (min-width: 760px) { .da-chamada img { width: 9rem; } }
+.da-chamada h2 { color: #fff; }
+.da-chamada p { color: #DCE6F7; }
+.da-chamada .btn.ghost { color: #fff; border-color: rgba(255,255,255,.75); background: rgba(10,45,109,.55); }
+.btn.da-btn-insta { --c: #fff; background: #fff; border-color: #fff; color: #0A2D6D; }
+
+/* Página própria do DA: sem o menu do NAE. No alto, a faixa de volta
+   ao site do NAE; depois, o cabeçalho com o brasão e as seções. */
+body.pg-da { background: #F4F6FB; }
+.da-volta { background: #fff; border-bottom: 1px solid #E3E8F2; font-size: .9rem; }
+.da-volta-in { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: .45rem; padding-bottom: .45rem; }
+.da-volta a { display: inline-flex; align-items: center; gap: .35rem; font-weight: 700; color: #22475F; text-decoration: none; }
+.da-volta a:hover { text-decoration: underline; }
+.da-volta-nae { display: inline-flex; align-items: center; gap: .5rem; color: var(--muted); font-size: .8rem; }
+.da-volta-nae img { height: 1.6rem; width: auto; }
+@media (max-width: 559px) { .da-volta-nae { display: none; } }
+
+.da-topo {
+  position: sticky; top: 0; z-index: 40; color: #fff;
+  background: var(--da-azul); border-bottom: 4px solid var(--da-mostarda);
+  box-shadow: 0 6px 18px -12px rgba(10,45,109,.7);
+}
+.da-topo-in { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: .6rem; padding-bottom: .5rem; }
+.da-marca { display: flex; align-items: center; gap: .7rem; color: #fff; text-decoration: none; }
+.da-marca img { width: 3.2rem; height: auto; filter: drop-shadow(0 3px 6px rgba(0,0,0,.35)); }
+.da-marca span { display: grid; line-height: 1.15; }
+.da-marca small { font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #E2B45A; }
+.da-marca b { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; }
+.da-topo .btn-topo { color: #fff; border-color: rgba(255,255,255,.35); background: rgba(255,255,255,.08); }
+.da-topo .ajustes-painel { color: var(--ink); }
+.da-topo .ajustes-painel .btn-topo { color: var(--ink); border-color: var(--hair); background: var(--surface); }
+.da-nav { background: #0C3480; }
+.da-nav-in { display: flex; gap: .3rem; overflow-x: auto; scrollbar-width: none; padding-top: .35rem; padding-bottom: .4rem; }
+.da-nav-in::-webkit-scrollbar { display: none; }
+.da-nav a {
+  flex: none; color: #fff; text-decoration: none; font-size: .88rem; font-weight: 650;
+  padding: .3rem .8rem; border-radius: 99px; border: 1px solid rgba(255,255,255,.22);
+}
+.da-nav a:hover { background: var(--da-mostarda); border-color: var(--da-mostarda); color: #0A2D6D; }
+.pg-da [id] { scroll-margin-top: 7.5rem; }
+.pg-da main { padding-top: 1.2rem; }
+
+.da-rodape { background: var(--da-azul); color: #DCE6F7; border-top: 4px solid var(--da-mostarda); }
+.da-rodape a { color: #fff; }
+.da-rodape b { color: #fff; }
+.da-rodape .foot-versao, .da-rodape .assinatura { color: #C7D4EC; }
+.da-rodape .foot-in p { color: #DCE6F7; }
+.da-rodape::before { display: none; }
+.da-org > li.da-org-1 h3 { color: #fff; }
+.da-org > li.da-org-1 p { color: #DCE6F7; }

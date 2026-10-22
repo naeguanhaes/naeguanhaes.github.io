@@ -152,11 +152,26 @@ conferir que já está no `sw.js` e anunciar em `assets/dados-novidades.js`.
 - **`vestibular.html`** (Vestibular 2027, Fase 3 do projeto): pronta com os
   campos "a confirmar". Só vai ao ar quando o coordenador tiver as
   informações oficiais do vestibular (pedido em 09/10/2026).
-- **`diretorio-academico.html`** (representação estudantil): aguardando os
-  desdobramentos do DA, como a aprovação do Estatuto.
+Todas já funcionam por endereço direto, para o coordenador revisar.
+`vestibular.html` está em `FORA_DO_CACHE` no `sw.js`.
 
-Todas já funcionam por endereço direto, para o coordenador revisar. As duas
-últimas estão em `FORA_DO_CACHE` no `sw.js`.
+## Página do Diretório Acadêmico (no ar desde 21/10/2026)
+
+`diretorio-academico.html` é de propósito uma **página com a cara do DA**, pedido do
+coordenador: não tem a barra nem o menu do NAE. No alto fica a faixa "Voltar ao site
+do NAE"; depois o cabeçalho próprio do DA (brasão, nome e as seções da página) e um
+rodapé azul que mantém as duas linhas obrigatórias ("Site desenvolvido por..." e a
+data). Como não tem `<nav class="nav">`, o `checar-consistencia` não cobra o menu
+dela; ela continua no índice da busca, no `ESSENCIAIS` do `sw.js` e no sitemap. O
+link "Diretório Acadêmico" do menu de todas as outras páginas leva para lá.
+
+Identidade, tirada do brasão e do Instagram @diretoriouemgghs: azul royal
+`--da-azul` (#0A2D6D), ouro mostarda `--da-mostarda` (#C8963D), verde do Direito
+`--da-verde`, amarelo `--da-amarelo` e as formas orgânicas em ouro. Arquivos em
+`assets/da/`: `logo.webp` (brasão), `simbolo.webp` (menu), `favicon-da.png` e os
+emblemas dos cursos tirados das artes do DA. No painel da inicial, `tema: 'da'`.
+A proposta do Estatuto está em `documentos/estatuto-da-proposta-2026.pdf` (sem os
+metadados de autoria). Depois da Assembleia de 28/10, trocar pelo texto aprovado.
 
 ## Rodas de Conversa sobre IA: RETIRADA do site em 27/08/2026
 

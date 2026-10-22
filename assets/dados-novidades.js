@@ -19,6 +19,13 @@ window.DADOS_NOVIDADES = {
   itens: [
     {
       data: '2026-10-21',
+      titulo: 'Página do Diretório Acadêmico',
+      texto: 'O DA Sapientia et Justitia ganhou página própria, com a identidade dele: convocação da Assembleia Geral de 28/10, às 19h, no Auditório, e a proposta do Estatuto para ler e baixar.',
+      link: 'diretorio-academico.html',
+      textoLink: 'ver a página do DA'
+    },
+    {
+      data: '2026-10-21',
       titulo: 'Calendário atualizado até dezembro',
       texto: 'Entraram as suspensões de aula de 23 e 26/10, o feriado municipal de 25/10, a Semana de Pesquisa e Extensão (09 a 13/11) e as datas do TCC e das provas finais de Direito.',
       link: 'calendario.html',

@@ -25,6 +25,12 @@ window.DADOS_BUSCA = {
       k: 'yoga esmu escola de musica meditacao relaxar bem-estar bem estar corpo mente saude mental pausa sonia assis quinta aula atividade fisica ansiedade estresse'
     },
     {
+      t: 'Diretório Acadêmico Sapientia et Justitia',
+      d: 'A representação estudantil da UEMG Guanhães: Assembleia Geral de 28/10, às 19h, no Auditório, para votar o Estatuto Social. Contato e ações do DA.',
+      u: 'diretorio-academico.html',
+      k: 'diretorio academico da sapientia et justitia representacao estudantil centro academico entidade estatuto social assembleia geral votacao convocacao edital auditorio presidencia rian ouvidoria contato mostra de profissoes audiencia plano diretor'
+    },
+    {
       t: 'O que já aconteceu · arquivo de eventos e editais',
       d: 'Os editais, eventos e avisos que o NAE divulgou e que já terminaram, do mais recente para o mais antigo.',
       u: 'eventos-passados.html',
