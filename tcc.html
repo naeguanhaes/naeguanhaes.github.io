@@ -130,6 +130,17 @@
       está o que o Projeto Pedagógico do seu curso exige.
     </p>
 
+    <section class="card col tcc-prazos" data-ate="2026-12-11" aria-labelledby="tcc-prazos-tit" style="--c: var(--lilas)">
+      <span class="rotulo">Direito · 2º semestre de 2026</span>
+      <h2 id="tcc-prazos-tit">As datas do TCC até a banca</h2>
+      <ol class="tcc-datas">
+        <li data-ate="2026-11-19" data-dia="2026-11-19"><span class="tcc-quando"><b>19/11</b>quinta</span><span><b>Entrega ao orientador</b> do trabalho para a revisão final.</span><span class="tcc-falta"></span></li>
+        <li data-ate="2026-12-04" data-dia="2026-12-04"><span class="tcc-quando"><b>04/12</b>sexta</span><span><b>Entrega na secretaria</b> da versão para a banca.</span><span class="tcc-falta"></span></li>
+        <li data-ate="2026-12-11" data-dia="2026-12-07"><span class="tcc-quando"><b>07 a 11/12</b>seg. a sex.</span><span><b>Bancas de defesa</b> do TCC.</span><span class="tcc-falta"></span></li>
+      </ol>
+      <p class="tcc-fonte">Fonte: calendário da Unidade Guanhães. Confirme com o seu orientador e com a Coordenação do Curso. <a href="calendario.html">Ver o calendário</a></p>
+    </section>
+
     <div data-curso-seletor></div>
     <div id="tcc-painel"></div>
 
@@ -167,6 +178,20 @@
 <script defer src="assets/min/site.min.js"></script>
 <script defer src="assets/dados-busca.js"></script>
 <script defer src="assets/min/busca.min.js"></script>
+<script>
+/* contagem regressiva das datas do TCC de Direito; cada linha sai sozinha
+   depois do seu dia (data-ate), e o quadro inteiro depois das bancas */
+document.addEventListener('DOMContentLoaded', function () {
+  var U = window.NAE; if (!U) return;
+  var hoje = U.hojeISO();
+  document.querySelectorAll('.tcc-datas [data-dia]').forEach(function (li) {
+    var alvo = li.querySelector('.tcc-falta'); if (!alvo) return;
+    var d = Math.round((new Date(li.getAttribute('data-dia') + 'T12:00:00') - new Date(hoje + 'T12:00:00')) / 86400000);
+    alvo.textContent = d > 1 ? 'faltam ' + d + ' dias' : d === 1 ? 'é amanhã' : d === 0 ? 'é hoje' : 'em andamento';
+    if (d <= 7) alvo.classList.add('perto');
+  });
+});
+</script>
 <script defer src="assets/dados-curso.js"></script>
 <script defer src="assets/min/curso.min.js"></script>
 <script data-goatcounter="https://naeguanhaes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>

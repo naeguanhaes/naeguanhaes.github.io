@@ -2788,3 +2788,63 @@ body.pg-da { background: #F4F6FB; }
   filter: drop-shadow(0 4px 5px rgba(0,0,0,.45));
 }
 .da-curso img { justify-self: center; }
+
+/* botão dos Stories do Instagram, nas cores da marca do app */
+.btn.btn-stories {
+  --c: #DD2A7B; color: #fff; border-color: transparent;
+  background: linear-gradient(45deg, #F58529 0%, #DD2A7B 50%, #8134AF 100%);
+}
+.btn.btn-stories:hover { color: #fff; filter: brightness(1.06); }
+/* botão "Ouvir esta página", na engrenagem */
+.btn-ouvir { width: 100%; justify-content: center; display: inline-flex; align-items: center; gap: .4rem; padding-inline: .9rem; }
+.ajustes-painel .ajustes-linha + .ajustes-linha { margin-top: .45rem; }
+
+/* próximas ações do DA (montadas a partir dos dados) */
+.da-proximas { list-style: none; margin: 0; padding: 0; display: grid; gap: .7rem; }
+.da-proxima {
+  display: flex; gap: 1rem; align-items: center; background: var(--surface);
+  border: 1px solid #DAE2F2; border-left: 5px solid var(--da-mostarda); border-radius: var(--radius);
+  padding: .9rem 1.1rem; box-shadow: var(--sh-1);
+}
+.da-proxima-data {
+  flex: none; display: grid; place-items: center; width: 4.2rem; height: 4.2rem; border-radius: 14px;
+  background: var(--da-azul); color: #E2B45A; font-size: .78rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
+}
+.da-proxima-data b { font-family: var(--serif); font-size: 1.7rem; line-height: 1; color: #fff; letter-spacing: 0; }
+.da-proxima h3 { font-size: 1.08rem; color: var(--da-azul); margin-bottom: .2rem; }
+.da-proxima p { margin: 0; color: var(--ink-2); font-size: .95rem; }
+
+/* resultado da Assembleia (rascunho oculto até o DA informar) */
+.da-resultado {
+  display: grid; grid-template-columns: auto 1fr; gap: 1.1rem; align-items: start;
+  background: #F2FAF4; border: 2px solid var(--da-verde); border-radius: var(--radius);
+  padding: clamp(1.1rem, .8rem + 1.5vw, 1.6rem); box-shadow: var(--sh-1);
+}
+.da-resultado-selo {
+  display: grid; place-items: center; width: 3.2rem; height: 3.2rem; border-radius: 50%;
+  background: var(--da-verde); color: #fff; font-size: 1.6rem; font-weight: 800;
+}
+.da-resultado h2 { color: var(--da-verde); margin: .5rem 0 .3rem; }
+.da-resultado p { color: var(--ink-2); }
+
+/* datas do TCC com contagem */
+.tcc-datas { list-style: none; margin: .4rem 0 .6rem; padding: 0; display: grid; gap: .55rem; }
+.tcc-datas li {
+  display: grid; grid-template-columns: 6.2rem 1fr auto; gap: .8rem; align-items: center;
+  background: var(--surface-2); border-radius: 12px; padding: .6rem .8rem; color: var(--ink-2);
+}
+.tcc-quando { display: grid; font-size: .78rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+.tcc-quando b { font-family: var(--serif); font-size: 1.15rem; color: var(--ink); text-transform: none; letter-spacing: 0; }
+.tcc-falta { font-size: .82rem; font-weight: 700; color: var(--lilas); white-space: nowrap; }
+.tcc-falta.perto { color: var(--vermelho); }
+.tcc-fonte { font-size: .85rem; color: var(--muted); margin: 0; }
+@media (max-width: 559px) { .tcc-datas li { grid-template-columns: 5rem 1fr; } .tcc-falta { grid-column: 2; } }
+
+/* ENADE: o dia da prova */
+.enade-horas { list-style: none; margin: .3rem 0 .2rem; padding: 0; display: grid; gap: .45rem; grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)); }
+.enade-horas li { background: var(--surface-2); border-radius: 12px; padding: .6rem .8rem; color: var(--ink-2); display: grid; gap: .1rem; }
+.enade-horas b { font-family: var(--serif); font-size: 1.5rem; color: var(--ink); }
+.enade-horas li.forte { background: #FDECEE; }
+.enade-horas li.forte b { color: var(--vermelho); }
+.enade-obs { font-size: .85rem; color: var(--muted); margin: 0; }
+.enade-levar { margin: .3rem 0 0; padding-left: 1.1rem; display: grid; gap: .3rem; color: var(--ink-2); }

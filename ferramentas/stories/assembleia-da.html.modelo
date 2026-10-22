@@ -1,0 +1,32 @@
+<!doctype html><html lang=pt-BR><head><meta charset=utf-8><link rel=stylesheet href="/assets/min/estilo.min.css"><style>
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#0A2D6D}
+.st{position:relative;width:1080px;height:1920px;overflow:hidden;color:#fff;font-family:var(--sans);
+ background:linear-gradient(170deg,#0A2D6D 0%,#0C3480 100%);display:flex;flex-direction:column;align-items:center;text-align:center;padding:220px 80px 0;box-sizing:border-box}
+.b1{position:absolute;width:620px;height:620px;border-radius:46% 54% 60% 40%/50% 42% 58% 50%;background:#C8963D;top:-300px;right:-260px}
+.b2{position:absolute;width:520px;height:520px;border-radius:58% 42% 40% 60%/45% 55% 45% 55%;background:#C8963D;bottom:-260px;left:-230px}
+.brasao{position:relative;width:360px;filter:drop-shadow(0 18px 30px rgba(0,0,0,.45))}
+.faixa{position:relative;margin-top:40px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;font-size:34px;color:#0A2D6D;background:#C8963D;padding:12px 34px;border-radius:99px}
+h1{position:relative;font-family:var(--serif);font-weight:600;font-size:100px;line-height:1.02;margin:36px 0 10px}
+.sub{position:relative;font-family:var(--serif);font-style:italic;font-size:52px;color:#E2B45A;margin:0}
+.ing{position:relative;margin-top:56px;display:grid;grid-template-columns:270px 1fr;width:900px;border:4px solid #C8963D;border-radius:36px;overflow:hidden;background:#fff;color:#0A2D6D;text-align:left}
+.ing .d{background:#0A2D6D;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:26px 10px;border-right:5px dashed #C8963D}
+.ing .d small{font-size:28px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#E2B45A}
+.ing .d b{font-family:var(--serif);font-size:130px;line-height:1}
+.ing .i{padding:30px 34px;display:grid;gap:12px;align-content:center;font-size:34px}
+.ing .i b{font-size:48px;line-height:1.1}
+.hora{display:inline-block;background:#F6DD15;border-radius:99px;padding:4px 22px;font-weight:800}
+.conv{position:relative;font-size:38px;margin:44px 0 0;line-height:1.35;max-width:880px}
+.rodape{position:relative;margin-top:auto;margin-bottom:230px;display:flex;flex-direction:column;align-items:center;gap:18px}
+.link{font-size:34px;font-weight:700;background:#fff;color:#0A2D6D;border-radius:99px;padding:16px 34px}
+.nae{display:flex;align-items:center;gap:14px;font-size:26px;color:#DCE6F7}.nae img{height:58px;background:#fff;border-radius:12px;padding:6px 10px}
+</style></head><body><div class=st><span class=b1></span><span class=b2></span>
+<img class=brasao src="/assets/da/logo.webp" alt="">
+<span class=faixa>Edital de convocação</span>
+<h1>Assembleia Geral</h1>
+<p class=sub>Vamos votar o Estatuto do DA</p>
+<div class=ing><div class=d><small>quarta</small><b>28</b><small>outubro</small></div>
+<div class=i><span><span class=hora>19h</span></span><b>Auditório da UEMG Guanhães</b><span>Todos os estudantes estão convocados</span></div></div>
+<p class=conv>Leia a proposta do Estatuto antes de ir: o link está no site do NAE.</p>
+<div class=rodape><span class=link>naeguanhaes.github.io/diretorio-academico.html</span>
+<span class=nae>Diretório Acadêmico Sapientia et Justitia</span></div>
+</div></body></html>

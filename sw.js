@@ -5,7 +5,7 @@
    isso apaga o cache antigo e busca tudo de novo.
    ═══════════════════════════════════════════════════════ */
 
-var VERSAO = 'nae-v112';
+var VERSAO = 'nae-v113';
 
 /* Páginas que de propósito NÃO entram no cache do aparelho do aluno:
    ficam no ar e são baixadas só quando alguém abre. O arquivo do que

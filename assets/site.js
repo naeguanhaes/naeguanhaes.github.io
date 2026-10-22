@@ -141,6 +141,82 @@
     });
   })();
 
+  /* ── Ouvir esta página (leitura em voz alta) ─────── */
+  /* Fica na engrenagem, junto de A-, A+ e contraste. Usa a voz do próprio
+     aparelho (Web Speech), em português, sem enviar nada para fora. Lê o
+     conteúdo principal em pedaços curtos, porque alguns navegadores cortam
+     falas longas. Sem suporte no navegador, o botão nem aparece. */
+  (function ouvirPagina() {
+    var painel = document.getElementById('ajustes-painel');
+    var principal = document.getElementById('conteudo');
+    if (!painel || !principal || !('speechSynthesis' in window) || !window.SpeechSynthesisUtterance) return;
+    var fala = window.speechSynthesis;
+
+    var linha = document.createElement('div');
+    linha.className = 'ajustes-linha';
+    var bt = document.createElement('button');
+    bt.type = 'button';
+    bt.className = 'btn-topo btn-ouvir';
+    bt.setAttribute('aria-pressed', 'false');
+    linha.appendChild(bt);
+    painel.appendChild(linha);
+
+    function rotulo(lendo) {
+      bt.innerHTML = lendo
+        ? '<span aria-hidden="true">■</span> Parar a leitura'
+        : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"></path><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"></path></svg> Ouvir esta página';
+      bt.setAttribute('aria-pressed', lendo ? 'true' : 'false');
+    }
+    rotulo(false);
+
+    function voz() {
+      var vozes = fala.getVoices() || [];
+      return vozes.filter(function (v) { return /^pt[-_]BR/i.test(v.lang); })[0] ||
+             vozes.filter(function (v) { return /^pt/i.test(v.lang); })[0] || null;
+    }
+
+    function pedacos() {
+      /* innerText já ignora o que está escondido na tela */
+      var texto = (principal.innerText || '').replace(/[→←■◐·]/g, ' ').replace(/[ \t]+/g, ' ');
+      var partes = [];
+      texto.split(/\n+/).forEach(function (bloco) {
+        bloco = bloco.trim();
+        if (!bloco) return;
+        (bloco.match(/[^.!?;:]+[.!?;:]*/g) || [bloco]).forEach(function (frase) {
+          frase = frase.trim();
+          while (frase.length > 220) {
+            var corte = frase.lastIndexOf(' ', 220);
+            if (corte < 60) corte = 220;
+            partes.push(frase.slice(0, corte));
+            frase = frase.slice(corte).trim();
+          }
+          if (frase) partes.push(frase);
+        });
+      });
+      return partes;
+    }
+
+    var lendo = false;
+    function parar() { lendo = false; fala.cancel(); rotulo(false); }
+
+    bt.addEventListener('click', function () {
+      if (lendo) { parar(); return; }
+      fala.cancel();
+      var fila = pedacos(), v = voz();
+      if (!fila.length) return;
+      lendo = true; rotulo(true);
+      fila.forEach(function (t, i) {
+        var u = new SpeechSynthesisUtterance(t);
+        u.lang = 'pt-BR';
+        if (v) u.voice = v;
+        u.rate = 1;
+        if (i === fila.length - 1) u.onend = function () { lendo = false; rotulo(false); };
+        fala.speak(u);
+      });
+    });
+    window.addEventListener('pagehide', function () { fala.cancel(); });
+  })();
+
   /* ── Atalho da minha turma no menu ────────────────── */
   (function atalhoTurma() {
     var id = ler('turma');
@@ -906,6 +982,32 @@
       b.setAttribute('target', '_blank');
       b.setAttribute('rel', 'noopener noreferrer');
     }
+  });
+
+  /* ── Compartilhar nos Stories do Instagram ────────── */
+  /* Botão com data-stories="caminho da imagem 1080x1920". No celular, a
+     folha de compartilhar do sistema recebe a imagem e o Instagram aparece
+     como opção (Story). Onde isso não existe (computador, navegador antigo),
+     a imagem é baixada para o estudante postar pelo app. */
+  document.querySelectorAll('[data-stories]').forEach(function (b) {
+    b.addEventListener('click', function (e) {
+      e.preventDefault();
+      var arq = b.getAttribute('data-stories');
+      var nome = arq.split('/').pop();
+      fetch(arq).then(function (r) { return r.blob(); }).then(function (blob) {
+        var arquivo = new File([blob], nome, { type: blob.type || 'image/jpeg' });
+        if (navigator.canShare && navigator.canShare({ files: [arquivo] })) {
+          return navigator.share({ files: [arquivo] }).catch(function () {});
+        }
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = nome;
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1500);
+        toast('Imagem baixada. No Instagram, crie um Story e escolha essa imagem.');
+      }).catch(function () { window.location.href = arq; });
+    });
   });
 
   /* ── Instalar o site (PWA) ────────────────────────── */

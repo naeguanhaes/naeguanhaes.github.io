@@ -19,6 +19,20 @@ window.DADOS_NOVIDADES = {
   itens: [
     {
       data: '2026-10-21',
+      titulo: 'Ouça qualquer página do site',
+      texto: 'Na engrenagem ao lado da busca, o botão "Ouvir esta página" lê o conteúdo em voz alta, com a voz do próprio celular.',
+      link: 'sobre.html',
+      textoLink: 'saber mais'
+    },
+    {
+      data: '2026-10-21',
+      titulo: 'Calculadora do exame especial',
+      texto: 'Coloque a nota final e a presença e veja se você está aprovado, se vai para o exame especial (14 a 17/12) ou o que fazer.',
+      link: 'calculadora.html#exame-especial',
+      textoLink: 'fazer a conta'
+    },
+    {
+      data: '2026-10-21',
       titulo: '1ª Mostra de Profissões ganhou página própria',
       texto: 'Tudo sobre a Mostra de 13/11 e as oito frentes em que os voluntários podem ajudar: recepção, oficinas, stands, tour pela universidade e mais.',
       link: 'mostra-profissoes.html',

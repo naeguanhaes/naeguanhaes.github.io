@@ -175,6 +175,29 @@
       </div>
     </div>
 
+    <div class="card reveal col" id="exame-especial" style="--c: var(--vermelho)">
+      <span class="rotulo">Fim do semestre</span>
+      <h2>Vou para o exame especial?</h2>
+      <div class="builder">
+        <div class="field">
+          <label for="calc-final">Sua nota final no semestre, de 0 a 100</label>
+          <input id="calc-final" type="number" inputmode="decimal" min="0" max="100" step="0.1" placeholder="ex.: 52">
+        </div>
+        <div class="field">
+          <label for="calc-freq">Sua presença na disciplina, em %</label>
+          <input id="calc-freq" type="number" inputmode="decimal" min="0" max="100" step="1" placeholder="ex.: 80">
+        </div>
+      </div>
+      <div class="calc-res" id="calc-exame-res" aria-live="polite">
+        Preencha os dois campos acima e o resultado aparece aqui.
+      </div>
+      <p style="font-size:.85rem;color:var(--muted)">
+        Regra da Resolução COEPE/UEMG nº 249/2020: quem fecha de 40 a 59 pontos, com pelo
+        menos 75% de presença, faz o exame especial, uma prova única sobre todo o conteúdo.
+        Tirando 60 nela, o professor lança 60. Em 2026, o exame especial é de 14 a 17/12.
+      </p>
+    </div>
+
     <div class="note col">
       <p>
         <b>Vale conferir</b> Esta calculadora usa a regra geral da UEMG. Algumas disciplinas,
@@ -312,6 +335,32 @@
     }
   }
 
+  function exame() {
+    var nf = num('calc-final');
+    var fr = num('calc-freq');
+    if (nf === null || fr === null) {
+      mostrar('calc-exame-res', '', 'Preencha os dois campos acima e o resultado aparece aqui.');
+      return;
+    }
+    if (nf < 0 || nf > 100 || fr < 0 || fr > 100) {
+      mostrar('calc-exame-res', 'olho', 'Confira os valores: a nota vai de 0 a 100 e a presença, de 0 a 100%.');
+      return;
+    }
+    if (fr < 75) {
+      mostrar('calc-exame-res', 'ruim', 'Com menos de <b>75% de presença</b>, a reprovação é por frequência, e o exame especial não resolve. Procure a secretaria e o professor para entender se alguma falta pode ser <a href="secretaria.html#faltas">justificada ou compensada</a>.');
+    } else if (nf >= 60) {
+      mostrar('calc-exame-res', 'boa', '<b>Aprovado.</b> Com ' + nf + ' pontos e ' + fr + '% de presença, você não precisa do exame especial.');
+    } else if (nf >= 40) {
+      mostrar('calc-exame-res', 'olho', '<b>Você vai para o exame especial.</b> Precisa tirar <b>60 de 100</b> na prova, que cobra todo o conteúdo do semestre; tirando 60, o professor lança 60. Em 2026 o exame é de <b>14 a 17/12</b>: confirme o dia e a sala com o professor.');
+    } else {
+      mostrar('calc-exame-res', 'ruim', 'Com menos de <b>40 pontos</b>, não há exame especial: a reprovação é por nota. Converse com o professor e a Coordenação do Curso, e <a href="contato.html">fale com o NAE</a> se precisar de apoio para o próximo semestre.');
+    }
+  }
+
+  ['calc-final', 'calc-freq'].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) el.addEventListener('input', exame);
+  });
   ['calc-obtidos', 'calc-distribuidos'].forEach(function (id) {
     var el = document.getElementById(id);
     if (el) el.addEventListener('input', nota);
