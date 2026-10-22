@@ -94,7 +94,7 @@
 </script>
 <!-- dados estruturados: fim -->
 </head>
-<body>
+<body class="pg-guia">
 
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
 
@@ -196,14 +196,15 @@
       Universidade. Abaixo, o passo a passo do <b>primeiro acesso</b> e da
       <b>redefinição de senha</b>, tela por tela.
     </p>
+    <p class="imprimir-linha"><button class="btn ghost pequeno" type="button" data-imprimir>Versão para imprimir</button> <span>Uma apostila A4 com todos os passos e as telas.</span></p>
   </div>
 
   <div class="stack-m">
     <div class="card reveal" id="meu-endereco" style="--c: var(--cyan)">
       <span class="rotulo">Descubra seu endereço</span>
       <h2>Qual é o seu e-mail?</h2>
-      <p>O endereço do discente segue sempre o padrão <b>prenome.matrícula@discente.uemg.br</b>. Preencha os dois campos para montar o seu:</p>
-      <div class="builder">
+      <p>O endereço do discente segue sempre o padrão <b>prenome.matrícula@discente.uemg.br</b>.<span class="so-tela"> Preencha os dois campos para montar o seu:</span></p>
+      <div class="builder so-tela">
         <div class="field">
           <label for="in-nome">Seu prenome (primeiro nome)</label>
           <input id="in-nome" type="text" autocomplete="off" placeholder="cicrano" spellcheck="false">
@@ -213,7 +214,7 @@
           <input id="in-mat" type="text" inputmode="numeric" autocomplete="off" placeholder="0000000" spellcheck="false">
         </div>
       </div>
-      <div class="result">
+      <div class="result so-tela">
         <span class="out" id="out-email" role="status" aria-live="polite">cicrano.0000000@discente.uemg.br</span>
         <button class="btn ghost" id="btn-copiar" type="button" style="--c: var(--cyan)">Copiar</button>
         <span class="copied" id="copiado" hidden>Copiado</span>
@@ -555,7 +556,7 @@
     <div><a class="btn" href="contato.html" style="--c: var(--orange)">Falar com o NAE →</a></div>
   </div>
 
-  <div class="card col reveal" style="--c: var(--azul)">
+  <div class="card col reveal so-tela" style="--c: var(--azul)">
     <span class="rotulo">Ajude um colega</span>
     <h2>Repasse este guia</h2>
     <p>Muita gente trava na mesma coisa e não sabe que existe ajuda. Copie a mensagem pronta e cole no grupo da sua turma.</p>

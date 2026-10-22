@@ -173,8 +173,12 @@ somar a cada nova ação.
 (grupo "Sobre o NAE", com JSON-LD de FAQ). Cada resposta leva à página que
 explica em detalhe: se uma regra mudar na página de origem, mudar aqui também.
 
-**Versão para imprimir: retirada em 22/10/2026** a pedido do coordenador, que não
-gostou do resultado no papel. **QR de outra página:** `data-qr="pagina.html"` no `qr.js`.
+**Versão para imprimir** (e-mail, Moodle e Lyceum, `body.pg-guia`, botão `data-imprimir`):
+refeita em 22/10/2026, porque a primeira saía com folhas em branco. O WebKit (Safari,
+iPhone) não quebra página dentro de flex e grid, nem mostra um `.reveal` que ainda está
+aparecendo; a folha de impressão transforma as caixas do guia em blocos e desliga as
+transições. O `site.js` monta o cabeçalho da apostila (marca, endereço e QR da página).
+Para conferir sem impressora: imprimir em PDF pelo navegador. **QR de outra página:** `data-qr="pagina.html"` no `qr.js`.
 
 ## Página do Diretório Acadêmico (no ar desde 21/10/2026)
 
@@ -514,13 +518,15 @@ pelo `data-ate`.
 bloco, o link do WhatsApp (`wa.me`), o botão dos Stories (`data-stories`) e o
 `data-compartilhar` em um botão "Compartilhar" que abre **WhatsApp** e **Instagram**.
 O HTML continua escrito do jeito antigo (link do WhatsApp com a mensagem pronta), e é
-isso que as inspeções leem. No Instagram: se a página tem imagem dos Stories (tabela
-`STORIES` no `site.js`, com validade), ela vai para os Stories; se não, abre a folha de
-compartilhar do celular (ou copia o link no computador). Evento novo com Stories:
-acrescentar a linha na tabela `STORIES`.
+isso que as inspeções leem. No Instagram vai sempre uma imagem 1080x1920 para os Stories:
+a da página ou do evento (tabela `STORIES` no `site.js`, por âncora ou por página, com
+validade) ou, sem nenhuma, a geral do NAE (`assets/stories/geral.jpg`). **Página ou
+evento novo que se compartilha ganha imagem própria** (pedido do coordenador): acrescentar
+o item em `ferramentas/stories/stories.json`, rodar `node ferramentas/stories/gerar.js`,
+capturar (ver o LEIA-ME da pasta) e pôr a linha na tabela `STORIES`.
 
 **Etiquetas de origem (GoatCounter):** todo link do site que sai pelo WhatsApp leva
-`utm_source=whatsapp&utm_campaign=<página>`; pelo Instagram, `utm_source=instagram`; os
+`utm_source=whatsapp&utm_campaign=<âncora do evento ou página>`; os
 QR codes (`qr.js`), `utm_source=qr&utm_campaign=<cartaz|guia|kit-vestibular>`. Todas as
 páginas têm `<link rel="canonical">`, para o contador registrar o endereço limpo, sem a
 etiqueta. Para o Instagram do NAE e do DA, usar na bio:

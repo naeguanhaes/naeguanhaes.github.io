@@ -348,14 +348,14 @@
   var svg = desenhar(qr);
   /* [data-qr] vazio leva à inicial; com um caminho (data-qr="vestibular.html"),
      o QR aponta para aquela página do site */
-  /* o endereço do QR leva a etiqueta de origem (utm_source=qr), com a
-     peça impressa como campanha (cartaz, guia, kit-vestibular), para o
-     GoatCounter separar as visitas que chegaram pelo papel */
+  /* o endereço do QR leva a origem (?ref=qr-<peça impressa>), que o
+     GoatCounter mostra em "Referrers". Cabe no máximo 58 caracteres (versão 6,
+     nível H): se a peça não couber, fica só ?ref=qr. */
   var peca = (location.pathname.split('/').pop() || 'inicio').replace(/\.html$/, '');
-  var etiqueta = '?utm_source=qr&utm_campaign=' + peca;
   document.querySelectorAll('[data-qr]').forEach(function (alvo) {
-    var caminho = alvo.getAttribute('data-qr');
-    alvo.innerHTML = desenhar(gerar(URL_SITE + caminho + etiqueta));
+    var endereco = URL_SITE + alvo.getAttribute('data-qr');
+    var comPeca = endereco + '?ref=qr-' + peca;
+    alvo.innerHTML = desenhar(gerar(comPeca.length <= CAPACIDADE[CAPACIDADE.length - 1] ? comPeca : endereco + '?ref=qr'));
   });
 
   window.NAE_QR = { url: URL_SITE, versao: qr.versao, tamanho: qr.tamanho, svg: svg, matriz: qr.matriz };

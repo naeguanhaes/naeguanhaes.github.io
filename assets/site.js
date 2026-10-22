@@ -961,6 +961,56 @@
       .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60) || 'evento';
   }
 
+  /* ── Versão para imprimir (guias do e-mail, Moodle e Lyceum) ── */
+  /* Botão com data-imprimir. Antes de abrir a impressão: monta o cabeçalho
+     da apostila (marca do NAE, endereço da página e QR para a versão
+     on-line), carrega as telas adiadas e abre as seções fechadas. O visual
+     do papel está na folha de estilo, em "VERSÃO PARA IMPRIMIR DOS GUIAS". */
+  var botoesImprimir = document.querySelectorAll('[data-imprimir]');
+  if (botoesImprimir.length) {
+    var abertosParaImprimir = [];
+    var prepararImpressao = function () {
+      var main = document.querySelector('main');
+      if (main && !document.querySelector('.impresso-topo')) {
+        var caminho = location.pathname.split('/').pop() || 'index.html';
+        var topo = document.createElement('div');
+        topo.className = 'impresso-topo';
+        topo.setAttribute('aria-hidden', 'true');
+        topo.innerHTML =
+          '<div><img src="assets/logo-topo.webp" alt="">' +
+          '<p>Guia do NAE · UEMG Unidade Guanhães · impresso em ' + dataBR(hojeISO()) + '</p>' +
+          '<p>Versão sempre atualizada: <b>naeguanhaes.github.io/' + escapar(caminho) + '</b></p></div>' +
+          '<div class="impresso-qr"><div data-qr="' + escapar(caminho) + '"></div>aponte a câmera</div>';
+        main.insertBefore(topo, main.firstChild);
+        var qr = document.createElement('script');
+        qr.src = 'assets/min/qr.min.js';
+        document.body.appendChild(qr);
+      }
+      document.querySelectorAll('main details:not([open])').forEach(function (d) {
+        d.open = true; abertosParaImprimir.push(d);
+      });
+      document.querySelectorAll('main .reveal').forEach(function (r) { r.style.transition = 'none'; r.classList.add('visivel'); });
+    };
+    window.addEventListener('beforeprint', prepararImpressao);
+    window.addEventListener('afterprint', function () {
+      abertosParaImprimir.forEach(function (d) { d.open = false; });
+      abertosParaImprimir = [];
+    });
+    botoesImprimir.forEach(function (b) {
+      b.addEventListener('click', function () {
+        prepararImpressao();
+        var esperas = Array.prototype.map.call(document.querySelectorAll('main img'), function (im) {
+          im.loading = 'eager';
+          if (im.complete) return Promise.resolve();
+          return new Promise(function (ok) { im.addEventListener('load', ok); im.addEventListener('error', ok); });
+        });
+        b.disabled = true;
+        Promise.race([Promise.all(esperas), new Promise(function (ok) { setTimeout(ok, 4000); })])
+          .then(function () { setTimeout(function () { b.disabled = false; window.print(); }, 300); });
+      });
+    });
+  }
+
   /* ── Compartilhar: um botão, WhatsApp ou Instagram ── */
   /* Pedido do coordenador (22/10/2026): onde houver compartilhamento, um
      botão só, "Compartilhar", que abre as duas opções. O HTML continua
@@ -968,31 +1018,60 @@
      Stories (data-stories) e o data-compartilhar; este bloco junta os que
      estão lado a lado em um "Compartilhar" e esconde os originais.
 
-     Todo endereço do site que sai daqui leva a etiqueta de origem
-     (utm_source = whatsapp, instagram ou qr; utm_campaign = a página),
-     que o GoatCounter mostra em "Campaigns" e "Referrers". */
+     No Instagram vai sempre uma imagem dos Stories (a da página, ou a geral
+     do NAE). Todo endereço do site que sai pelo WhatsApp leva a etiqueta de
+     origem (utm_source=whatsapp; utm_campaign = a âncora do evento ou a
+     página), que o GoatCounter mostra em "Campaigns" e "Referrers". */
   var SITE = 'https://naeguanhaes.github.io/';
   var ICONE_PARTILHA = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>';
   var ICONE_WHATS = '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a.9.9 0 00-.7.3 2.8 2.8 0 00-.9 2.1 4.9 4.9 0 001 2.6 11.2 11.2 0 004.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 001.7-1.2 2.1 2.1 0 00.1-1.2c0-.1-.2-.2-.4-.3z"/></svg>';
   var ICONE_INSTA = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>';
 
-  /* imagem pronta para os Stories, por página divulgada, com validade */
+  /* imagem pronta para os Stories, por página (ou por âncora, quando uma
+     página divulga mais de um evento), com validade opcional. Quem não tem
+     imagem própria, ou passou da validade, usa a geral do NAE. As imagens
+     saem de ferramentas/stories/ (stories.json + gerar.js). */
   var STORIES = {
     'mostra-profissoes': { img: 'assets/stories/mostra-profissoes.jpg', ate: '2026-11-13' },
-    'diretorio-academico': { img: 'assets/stories/assembleia-da.jpg', ate: '2026-10-28' }
+    'assembleia': { img: 'assets/stories/assembleia-da.jpg', ate: '2026-10-28' },
+    'diretorio-academico': { img: 'assets/stories/assembleia-da.jpg', ate: '2026-10-28' },
+    'seminario': { img: 'assets/stories/seminario.jpg', ate: '2026-11-10' },
+    'yoga-esmu': { img: 'assets/stories/yoga-esmu.jpg', ate: '2026-10-31' },
+    'conecta-mente': { img: 'assets/stories/conecta-mente.jpg', ate: '2026-11-06' },
+    'enade': { img: 'assets/stories/enade.jpg', ate: '2026-11-29' },
+    'horarios': { img: 'assets/stories/horarios.jpg' },
+    'calendario': { img: 'assets/stories/calendario.jpg' },
+    'lyceum': { img: 'assets/stories/lyceum.jpg' },
+    'moodle': { img: 'assets/stories/moodle.jpg' },
+    'wifi': { img: 'assets/stories/wifi.jpg' }
   };
+  var STORIES_GERAL = 'assets/stories/geral.jpg';
+  function imagemDosStories(url) {
+    var hoje = hojeISO();
+    var semSite = url.replace(SITE, '');
+    var ancora = (semSite.split('#')[1] || '');
+    var pagina = semSite.split(/[?#]/)[0].replace(/\.html$/, '') || 'inicio';
+    var achou = [STORIES[ancora], STORIES[pagina]].filter(function (s) {
+      return s && (!s.ate || hoje <= s.ate);
+    })[0];
+    return achou ? achou.img : STORIES_GERAL;
+  }
 
+  /* campanha = a âncora do evento (yoga-esmu, assembleia), ou a página */
   function campanhaDe(url) {
-    var c = url.replace(SITE, '').split(/[?#]/)[0].replace(/\.html$/, '');
-    return c || 'inicio';
+    var semSite = url.replace(SITE, '');
+    var ancora = semSite.split('#')[1];
+    if (ancora) return ancora;
+    return semSite.split(/[?#]/)[0].replace(/\.html$/, '') || 'inicio';
   }
   function etiquetar(url, fonte, campanha) {
     if (url.indexOf(SITE) !== 0) return url;
+    campanha = campanha || campanhaDe(url);
     var hash = '', i = url.indexOf('#');
     if (i >= 0) { hash = url.slice(i); url = url.slice(0, i); }
     var partes = url.split('?'), base = partes[0];
     var resto = (partes[1] || '').split('&').filter(function (p) { return p && !/^utm_/.test(p); });
-    resto.push('utm_source=' + fonte, 'utm_campaign=' + (campanha || campanhaDe(base)));
+    resto.push('utm_source=' + fonte, 'utm_campaign=' + campanha);
     return base + '?' + resto.join('&') + hash;
   }
   window.NAE.etiquetar = etiquetar;
@@ -1018,33 +1097,15 @@
     }).catch(function () { window.location.href = arq; });
   }
 
-  /* Instagram sem imagem pronta: a folha de compartilhar do celular
-     (onde o Instagram aparece, para o Direct ou os Stories); no computador,
-     o link é copiado para colar no Instagram. */
-  function linkNoInstagram(titulo, texto, url) {
-    if (navigator.share) {
-      navigator.share({ title: titulo, text: texto, url: url }).catch(function () {});
-      return;
-    }
-    copiarTexto(url, function () {
-      toast('Link copiado. No Instagram, cole no Direct ou na figurinha de link do Story.');
-    });
-  }
-
   function montarPartilha(grupo) {
     var wa = grupo.wa, comp = grupo.comp, st = grupo.stories;
-    var titulo = (comp && comp.getAttribute('data-titulo')) || document.title;
     var texto = (comp && comp.getAttribute('data-texto')) || '';
     var url = (comp && comp.getAttribute('data-url')) || (location.origin + location.pathname + location.hash);
     if (url.indexOf(location.origin) === 0 && location.origin !== SITE.slice(0, -1)) url = SITE + url.slice(location.origin.length + 1);
     var msg = wa ? textoDoWhats(wa.getAttribute('href')) : (texto + ' ' + url);
     var doSite = msg.match(RE_SITE);
     var alvo = doSite ? doSite[0] : url;
-    if (!texto) texto = msg.replace(RE_SITE, '').trim();
-    var campanha = campanhaDe(alvo);
-    var hoje = hojeISO();
-    var imgStories = st ? st.getAttribute('data-stories') :
-      (STORIES[campanha] && hoje <= STORIES[campanha].ate ? STORIES[campanha].img : null);
+    var imgStories = st ? st.getAttribute('data-stories') : imagemDosStories(alvo);
 
     var primeiro = grupo.ordem[0];
     var ref = primeiro.parentNode.matches('span[data-ate]') ? primeiro.parentNode : primeiro;
@@ -1085,8 +1146,7 @@
       }
     });
     cx.querySelector('.partilha-insta').addEventListener('click', function () {
-      if (imgStories) postarStories(imgStories);
-      else linkNoInstagram(titulo, texto, etiquetar(alvo, 'instagram'));
+      postarStories(imgStories);
     });
   }
   montarPartilha.n = 0;

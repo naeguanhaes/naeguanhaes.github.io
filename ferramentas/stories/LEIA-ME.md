@@ -8,3 +8,17 @@ As faixas de cima e de baixo (cerca de 220 px) ficam livres para a interface do
 Instagram. Os modelos terminam em `.html.modelo` para o inspetor do site não tratá-los como páginas;
 para usar, copie para a raiz com o nome terminando em `.html`. Os caminhos de imagem
 dos modelos começam em `/`, a raiz do site.
+
+## Imagens das páginas (22/10/2026)
+
+As imagens dos Stories das páginas do NAE (horários, calendário, Lyceum, Moodle, Wi-Fi,
+ENADE, Seminário, Yoga, Conecta Mente e a geral) saem de `stories.json` + `gerar.js`:
+
+1. Acrescente ou edite o item em `stories.json` (`print` para o celular com o print da
+   página, `cartaz` para um cartaz, `logo` para a marca do evento).
+2. `node ferramentas/stories/gerar.js` escreve `_stories_tmp/<id>.html`.
+3. Para os prints: capture a página com 780 px de largura e `zoom: 2` (fica como um
+   celular de 390 px) e salve em `_stories_tmp/print-<nome>.png`.
+4. Capture cada `_stories_tmp/<id>.html` em 1080x1920, salve como JPG em
+   `assets/stories/<id>.jpg` e apague `_stories_tmp/`.
+5. Ligue a imagem à página na tabela `STORIES` do `assets/site.js`.

@@ -19,6 +19,13 @@ window.DADOS_NOVIDADES = {
   itens: [
     {
       data: '2026-10-22',
+      titulo: 'Guias em papel e imagens para os Stories',
+      texto: 'Os guias do e-mail, do Moodle e do Lyceum viram uma apostila A4 com o botão "Versão para imprimir". E todo "Compartilhar" no Instagram agora manda uma imagem pronta para os Stories.',
+      link: 'email.html',
+      textoLink: 'ver o guia do e-mail'
+    },
+    {
+      data: '2026-10-22',
       titulo: 'Como chegar à Unidade',
       texto: 'Toque no mapa e o GPS do celular abre com a rota até a UEMG Guanhães, na BR-259.',
       link: 'mapa.html#como-chegar',

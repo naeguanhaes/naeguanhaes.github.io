@@ -2909,3 +2909,73 @@ body.pg-da { background: #F4F6FB; }
 .trilha[style*="--c: var(--ambar)"] [aria-current],
 [style*="--c: var(--ambar)"] .fase-num, [style*="--c: var(--ambar)"] .fase-numeros b { color: var(--ambar-txt); }
 .mapa-rota picture { display: block; }
+
+/* ═══════════════ VERSÃO PARA IMPRIMIR DOS GUIAS ═══════════════ */
+/* E-mail, Moodle e Lyceum (body.pg-guia). Uma apostila A4 limpa: cabeçalho do
+   NAE com o endereço e o QR da página, passos numerados, telas em tamanho
+   controlado e perguntas abertas. O WebKit (Safari, iPhone) não quebra página
+   dentro de flex e grid, e era isso que deixava folhas em branco: no papel,
+   os blocos grandes viram blocos simples. */
+.impresso-topo { display: none; }
+.imprimir-linha { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem .7rem; font-size: .9rem; color: var(--muted); }
+@media print {
+  /* sem isso, um passo que ainda estava aparecendo (.reveal) sai invisível */
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+  .pg-guia { font-size: 10pt; }
+  @page { size: A4 portrait; margin: 14mm 15mm 16mm; }
+  .pg-guia .topbar, .pg-guia footer, .pg-guia .imprimir-linha, .pg-guia .partilha,
+  .pg-guia .compartilhar, .pg-guia button, .pg-guia main .so-tela { display: none !important; }
+  .pg-guia main, .pg-guia main :where(.col, .stack, .stack-m, .stack-s) { max-width: none !important; width: auto !important; }
+  .pg-guia main { display: block !important; }
+  /* tudo o que é caixa dentro do guia vira bloco, menos as telas de exemplo
+     (.janela), o cabeçalho e o número do passo; :where mantém a regra fraca,
+     para as de cima (esconder) continuarem valendo */
+  .pg-guia main :where(div, section, article, details, figure, aside, dl):where(:not([hidden], .janela, .janela *, .impresso-topo, .impresso-topo *, .step-num, .so-tela)) {
+    display: block !important; overflow: visible !important;
+  }
+  .pg-guia main { padding: 0 !important; margin: 0 !important; }
+  .pg-guia main > * + *, .pg-guia .steps > * + *, .pg-guia .passo-corpo > * + *,
+  .pg-guia .secao-corpo > * + *, .pg-guia .step-body > * + * { margin-top: 3.5mm; }
+  .pg-guia .card { break-inside: auto; border: .3mm solid #C9D6E0; border-radius: 3mm; padding: 4mm 5mm; }
+  .pg-guia p, .pg-guia li { orphans: 3; widows: 3; }
+  .pg-guia h1 { font-size: 20pt; margin: 0; }
+  .pg-guia h2 { font-size: 14pt; break-after: avoid; }
+  .pg-guia .titulo-sec { break-after: avoid; margin-top: 6mm; }
+  .pg-guia .eyebrow { font-size: 7pt; }
+  .pg-guia .lede { font-size: 10.5pt; color: #333; }
+
+  /* cabeçalho da apostila, montado pelo site.js */
+  .impresso-topo {
+    display: grid !important; grid-template-columns: 1fr auto; gap: 5mm; align-items: center;
+    border-bottom: .6mm solid #22475F; padding-bottom: 3mm; margin-bottom: 5mm;
+  }
+  .impresso-topo img { height: 13mm; width: auto; }
+  .impresso-topo p { margin: 1.5mm 0 0; font-size: 8.5pt; color: #444; }
+  .impresso-topo .impresso-qr { width: 24mm; text-align: center; font-size: 6.5pt; color: #555; line-height: 1.2; }
+  .impresso-topo .impresso-qr svg { width: 24mm; height: 24mm; display: block; }
+
+  /* passos do e-mail: número, título e a tela logo abaixo */
+  .pg-guia .step { display: block !important; position: relative; padding-left: 11mm; break-inside: avoid; }
+  .pg-guia .step::before { display: none !important; }
+  .pg-guia .step-num { position: absolute; left: 0; top: 0; width: 7.5mm; height: 7.5mm; font-size: 10pt; }
+  .pg-guia .step-title { font-size: 11.5pt; }
+  .pg-guia .steps { margin-top: 5mm; }
+
+  /* passos do Moodle e seções do Lyceum: o título vira cabeçalho */
+  .pg-guia details { break-inside: auto; border: 0 !important; box-shadow: none !important; background: none !important; }
+  .pg-guia details.passo { break-inside: avoid; border-top: .3mm solid #C9D6E0 !important; padding-top: 3mm; }
+  .pg-guia details > summary { list-style: none; padding: 0 !important; background: none !important; font-weight: 700; }
+  .pg-guia details > summary .mais, .pg-guia details > summary::before { display: none !important; }
+  .pg-guia .secao-ico { display: none !important; }
+
+  /* telas: do tamanho de um celular deitado na folha, sem cortar */
+  .pg-guia figure.shot { break-inside: avoid; margin: 3mm 0 0; max-width: 125mm; }
+  .pg-guia .janela { box-shadow: none !important; border: .3mm solid #B8C6D2; zoom: .72; }
+  .pg-guia figure.shot img { max-height: 95mm; width: auto; max-width: 100%; }
+  .pg-guia figcaption { font-size: 8pt; }
+
+  /* perguntas frequentes: todas abertas, em lista corrida */
+  .pg-guia details.faq { padding: 0 0 2.5mm !important; margin: 0 !important; break-inside: avoid; }
+  .pg-guia details.faq p { margin-top: 1mm; color: #333; }
+  .pg-guia .note { break-inside: avoid; }
+}
