@@ -19,6 +19,13 @@ window.DADOS_NOVIDADES = {
   itens: [
     {
       data: '2026-10-21',
+      titulo: '1ª Mostra de Profissões ganhou página própria',
+      texto: 'Tudo sobre a Mostra de 13/11 e as oito frentes em que os voluntários podem ajudar: recepção, oficinas, stands, tour pela universidade e mais.',
+      link: 'mostra-profissoes.html',
+      textoLink: 'ver a página da Mostra'
+    },
+    {
+      data: '2026-10-21',
       titulo: 'Página do Diretório Acadêmico',
       texto: 'O DA Sapientia et Justitia ganhou página própria, com a identidade dele: convocação da Assembleia Geral de 28/10, às 19h, no Auditório, e a proposta do Estatuto para ler e baixar.',
       link: 'diretorio-academico.html',
@@ -49,7 +56,7 @@ window.DADOS_NOVIDADES = {
       data: '2026-10-21',
       titulo: '1ª Mostra de Profissões: o DA procura voluntários',
       texto: 'A Mostra apresenta os cursos de Direito e Engenharia Civil na sexta, 13 de novembro, a partir das 13h, na Unidade. A inscrição de voluntários é pelo formulário do Diretório Acadêmico.',
-      link: 'index.html#mostra-profissoes',
+      link: 'mostra-profissoes.html',
       textoLink: 'ver e se inscrever'
     },
     {

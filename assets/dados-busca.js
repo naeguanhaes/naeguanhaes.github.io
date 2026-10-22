@@ -31,6 +31,12 @@ window.DADOS_BUSCA = {
       k: 'diretorio academico da sapientia et justitia representacao estudantil centro academico entidade estatuto social assembleia geral votacao convocacao edital auditorio presidencia rian ouvidoria contato mostra de profissoes audiencia plano diretor'
     },
     {
+      t: '1ª Mostra de Profissões UEMG · seja voluntário',
+      d: 'Sexta, 13 de novembro, a partir das 13h: os cursos de Direito e Engenharia Civil para estudantes do Ensino Médio. O DA procura voluntários.',
+      u: 'mostra-profissoes.html',
+      k: 'mostra de profissoes feira cursos ensino medio voluntario voluntarios voluntariado equipe recepcao oficinas apresentacoes stands tour coffee break palestrantes diretorio academico 13 de novembro direito engenharia civil'
+    },
+    {
       t: 'O que já aconteceu · arquivo de eventos e editais',
       d: 'Os editais, eventos e avisos que o NAE divulgou e que já terminaram, do mais recente para o mais antigo.',
       u: 'eventos-passados.html',

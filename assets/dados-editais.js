@@ -31,11 +31,12 @@ window.DADOS_EDITAIS = {
   itens: [
     {
       titulo: '1ª Mostra de Profissões · voluntários',
+      org: 'da',
       resumo: 'O Diretório Acadêmico convida estudantes para serem voluntários na 1ª Mostra de Profissões, que apresenta os cursos de Direito e Engenharia Civil. Sexta, 13 de novembro, a partir das 13h, na Unidade.',
       tipo: 'outro',
       abre: '2026-10-21',
       encerra: '2026-11-13',
-      link: 'index.html#mostra-profissoes',
+      link: 'mostra-profissoes.html',
       publicado: '2026-10-21',
       /* e evento, nao edital: so no painel da inicial */
       naLista: false,
@@ -54,18 +55,19 @@ window.DADOS_EDITAIS = {
         acao: 'Quero ser voluntário',
         acaoLink: 'https://forms.gle/DXUdKstRHQMz7xhm7',
         extraTexto: 'Compartilhar no WhatsApp',
-        extraLink: 'https://wa.me/?text=%2A1%C2%AA%20Mostra%20de%20Profiss%C3%B5es%20da%20UEMG%20Unidade%20Guanh%C3%A3es%2A%0AO%20Diret%C3%B3rio%20Acad%C3%AAmico%20convida%20voc%C3%AA%20para%20ser%20volunt%C3%A1rio%20na%20Mostra%2C%20que%20apresenta%20os%20cursos%20de%20Direito%20e%20Engenharia%20Civil:%20%C3%A1reas%20de%20atua%C3%A7%C3%A3o%2C%20atividades%20pr%C3%A1ticas%20e%20espa%C3%A7o%20para%20perguntas.%0A%0A%E2%80%A2%20Sexta%2C%2013%20de%20novembro%20de%202026%2C%20a%20partir%20das%2013h%0A%E2%80%A2%20UEMG%20Unidade%20Guanh%C3%A3es%0A%0A%2AInforma%C3%A7%C3%B5es%20e%20inscri%C3%A7%C3%A3o%20de%20volunt%C3%A1rios%20no%20site%20do%20NAE:%2A%0Ahttps://naeguanhaes.github.io/%3Futm_source%3Dwhatsapp%26utm_campaign%3Dmostra-profissoes%23mostra-profissoes',
+        extraLink: 'https://wa.me/?text=%2A1%C2%AA%20Mostra%20de%20Profiss%C3%B5es%20UEMG%2A%0AO%20Diret%C3%B3rio%20Acad%C3%AAmico%20est%C3%A1%20formando%20uma%20equipe%20de%20estudantes%20volunt%C3%A1rios%20para%20organizar%20a%20Mostra%2C%20que%20apresenta%20os%20cursos%20de%20Direito%20e%20Engenharia%20Civil%20para%20estudantes%20do%20Ensino%20M%C3%A9dio.%0A%0A%E2%80%A2%20Sexta%2C%2013%20de%20novembro%20de%202026%2C%20a%20partir%20das%2013h%0A%E2%80%A2%20UEMG%20Unidade%20Guanh%C3%A3es%0A%0AD%C3%A1%20para%20ajudar%20na%20recep%C3%A7%C3%A3o%2C%20nas%20oficinas%20e%20apresenta%C3%A7%C3%B5es%2C%20nos%20stands%2C%20no%20tour%20pela%20universidade%2C%20no%20coffee%20break%20e%20mais.%0A%0A%2AFa%C3%A7a%20parte%20da%20equipe.%20Informa%C3%A7%C3%B5es%20e%20inscri%C3%A7%C3%A3o%20no%20site%20do%20NAE:%2A%0Ahttps://naeguanhaes.github.io/mostra-profissoes.html%3Futm_source%3Dwhatsapp%26utm_campaign%3Dmostra-profissoes',
         imagem: 'assets/eventos/mostra-profissoes-2026.webp',
         imagemAlt: 'Cartaz da 1ª Mostra de Profissões da UEMG Unidade Guanhães, Direito e Engenharia Civil: 13 de novembro de 2026, a partir das 13h, realização do Diretório Acadêmico.'
       }
     },
     {
       titulo: 'Assembleia Geral do Diretório Acadêmico · votação do Estatuto',
+      org: 'da',
       resumo: 'O Diretório Acadêmico Sapientia et Justitia convoca todos os estudantes para apresentar, discutir e votar o Estatuto Social. Quarta, 28 de outubro, às 19h, no Auditório da Unidade.',
       tipo: 'outro',
       abre: '2026-10-21',
       encerra: '2026-10-28',
-      link: 'diretorio-academico.html',
+      link: 'diretorio-academico.html#assembleia',
       publicado: '2026-10-21',
       /* e convocacao, nao edital: so no painel da inicial */
       naLista: false,
@@ -91,6 +93,7 @@ window.DADOS_EDITAIS = {
     },
     {
       titulo: 'Assembleia Geral do Diretório Acadêmico · Estatuto Social',
+      org: 'da',
       resumo: 'O Diretório Acadêmico Sapientia et Justitia convoca todos os estudantes para apresentar, discutir e votar o Estatuto Social. Sexta, 9 de outubro, às 19h, na Unidade.',
       tipo: 'outro',
       abre: '2026-10-07',
@@ -118,6 +121,7 @@ window.DADOS_EDITAIS = {
     },
     {
       titulo: 'Audiência Pública sobre o Plano Diretor de Guanhães',
+      org: 'da',
       resumo: 'O Diretório Acadêmico leva 15 alunos, com participação certificada, à audiência sobre o Plano Diretor do Município. Segunda, 19 de outubro, às 14h, no Fórum da Comarca de Guanhães.',
       tipo: 'outro',
       abre: '2026-10-06',

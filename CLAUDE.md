@@ -170,6 +170,15 @@ Identidade, tirada do brasão e do Instagram @diretoriouemgghs: azul royal
 `--da-verde`, amarelo `--da-amarelo` e as formas orgânicas em ouro. Arquivos em
 `assets/da/`: `logo.webp` (brasão), `simbolo.webp` (menu), `favicon-da.png` e os
 emblemas dos cursos tirados das artes do DA. No painel da inicial, `tema: 'da'`.
+A página do DA tem o seu próprio painel em movimento: o mesmo `edital-hero.js`, com
+`data-filtro="da"` no trilho, mostra só os itens de `dados-editais.js` que têm
+`org: 'da'` (Assembleia, Mostra de Profissões e os eventos do DA já encerrados). Evento
+novo do DA: ponha `org: 'da'` no item e ele aparece nos dois painéis.
+
+A 1ª Mostra de Profissões (13/11/2026) tem página própria, `mostra-profissoes.html`,
+nas cores do cartaz (azul-marinho e amarelo), com a chamada de voluntários e as oito
+frentes de trabalho; o formulário de voluntários sai em 12/11 pelo `data-ate`.
+
 A proposta do Estatuto está em `documentos/estatuto-da-proposta-2026.pdf` (sem os
 metadados de autoria). Depois da Assembleia de 28/10, trocar pelo texto aprovado.
 

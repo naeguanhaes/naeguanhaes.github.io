@@ -28,6 +28,10 @@
   var trilho = document.getElementById('hero-trilho');
   if (!D || !trilho) return;
 
+  /* data-filtro no trilho: painel só com os itens daquela organização
+     (campo org dos dados). A página do DA usa data-filtro="da". */
+  var filtro = trilho.getAttribute('data-filtro');
+
   function doisDigitos(n) { return (n < 10 ? '0' : '') + n; }
 
   /* data de hoje no fuso de quem está lendo, no formato AAAA-MM-DD */
@@ -67,7 +71,8 @@
   }
   var vivos = (D.itens || [])
     .filter(function (e) {
-      return e && e.encerra && hoje <= e.encerra && e.naInicial !== false;
+      if (!e || !e.encerra || hoje > e.encerra) return false;
+      return filtro ? e.org === filtro : e.naInicial !== false;
     })
     .sort(function (a, b) {
       var na = novo(a), nb = novo(b);
