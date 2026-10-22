@@ -176,7 +176,9 @@ A página do DA tem o seu próprio painel em movimento: o mesmo `edital-hero.js`
 novo do DA: ponha `org: 'da'` no item e ele aparece nos dois painéis.
 
 A 1ª Mostra de Profissões (13/11/2026) tem página própria, `mostra-profissoes.html`,
-nas cores do cartaz (azul-marinho e amarelo), com a chamada de voluntários e as oito
+que faz parte do espaço do DA (pedido do coordenador): mesmo cabeçalho, "Voltar ao site
+do NAE" e rodapé da página do DA, sem o menu do NAE, com a aba "Mostra de Profissões" na
+navegação do DA. Conteúdo nas cores do cartaz (azul-marinho e amarelo), com a chamada de voluntários e as oito
 frentes de trabalho; o formulário de voluntários sai em 12/11 pelo `data-ate`.
 
 A proposta do Estatuto está em `documentos/estatuto-da-proposta-2026.pdf` (sem os
