@@ -209,7 +209,9 @@ que por natureza acaba, e evita o item esquecido no menu meses depois.
 A classe `nav-destaque` deixa a aba preenchida na cor do `--c`, em vez do link
 comum. As duas coisas costumam andar juntas.
 
-**Em uso hoje:** `wifi.html`, em turquesa, sem data de saída. O Seminário saiu do
+**Em uso hoje:** nenhuma aba em destaque. O `wifi.html` foi aba destacada em turquesa até
+21/10/2026, quando o coordenador pediu para levá-lo para dentro do grupo, que passou a se
+chamar "Sistemas e Wi-Fi". O Seminário saiu do
 destaque em 26/09 (fim da submissão) e virou item de "Editais e bolsas", ainda com
 `data-ate="2026-11-13"`.
 
