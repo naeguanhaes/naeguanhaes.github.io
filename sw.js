@@ -5,7 +5,7 @@
    isso apaga o cache antigo e busca tudo de novo.
    ═══════════════════════════════════════════════════════ */
 
-var VERSAO = 'nae-v113';
+var VERSAO = 'nae-v114';
 
 /* Páginas que de propósito NÃO entram no cache do aparelho do aluno:
    ficam no ar e são baixadas só quando alguém abre. O arquivo do que
@@ -14,7 +14,11 @@ var VERSAO = 'nae-v113';
    O inspetor de consistência aceita estas e cobra todas as outras. */
 var FORA_DO_CACHE = [
   './eventos-passados.html',
-  './vestibular.html'
+  './vestibular.html',
+  './transferencia.html',
+  './rematricula.html',
+  './mural.html',
+  './kit-vestibular.html'
 ];
 
 /* Arquivos de dados (avisos, horários, calendário, editais, semestres).
@@ -58,6 +62,8 @@ var ESSENCIAIS = [
   './status-projeto.html',
   './diretorio-academico.html',
   './mostra-profissoes.html',
+  './glossario.html',
+  './perguntas-frequentes.html',
   './enade.html',
   './extensao.html',
   './auxilios.html',

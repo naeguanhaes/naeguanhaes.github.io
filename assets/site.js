@@ -1010,6 +1010,38 @@
     });
   });
 
+  /* ── Versão para imprimir ─────────────────────────── */
+  /* Botão com data-imprimir nos guias passo a passo. As telas dos passos
+     carregam sob demanda (loading="lazy") e sairiam em branco no papel:
+     antes de abrir a impressão, todas são carregadas. A folha de estilo de
+     impressão já abre os passos fechados e esconde menu e botões. */
+  if (document.querySelector('[data-imprimir]')) {
+    /* as perguntas fechadas também saem no papel, e voltam como estavam */
+    var abertosParaImprimir = [];
+    window.addEventListener('beforeprint', function () {
+      document.querySelectorAll('main details:not([open])').forEach(function (d) {
+        d.open = true; abertosParaImprimir.push(d);
+      });
+    });
+    window.addEventListener('afterprint', function () {
+      abertosParaImprimir.forEach(function (d) { d.open = false; });
+      abertosParaImprimir = [];
+    });
+  }
+  document.querySelectorAll('[data-imprimir]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var imgs = Array.prototype.slice.call(document.querySelectorAll('main img'));
+      var esperas = imgs.map(function (im) {
+        im.loading = 'eager';
+        if (im.complete) return Promise.resolve();
+        return new Promise(function (ok) { im.addEventListener('load', ok); im.addEventListener('error', ok); });
+      });
+      b.disabled = true;
+      Promise.race([Promise.all(esperas), new Promise(function (ok) { setTimeout(ok, 4000); })])
+        .then(function () { b.disabled = false; window.print(); });
+    });
+  });
+
   /* ── Instalar o site (PWA) ────────────────────────── */
   if ('serviceWorker' in navigator && location.protocol === 'https:') {
     /* Depois de cada publicação, a primeira visita recebe a página e os

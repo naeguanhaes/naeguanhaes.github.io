@@ -1,0 +1,10 @@
+<!-- Modelo de item do mural de oportunidades (mural.html).
+     Copie o <li> para dentro de <ul id="mural-lista">, troque os textos e
+     ponha em data-ate o último dia de inscrição (AAAA-MM-DD): no dia
+     seguinte o item some sozinho. O título é h2 porque vem logo depois do h1. -->
+<li class="card mural-item" data-ate="2026-12-31" style="--c: var(--coral)">
+  <span class="rotulo">Estágio</span>
+  <h2>Título da oportunidade</h2>
+  <p>Quem pode, o que oferece e até quando.</p>
+  <a href="https://endereco-oficial">Ver a oportunidade &rarr;</a>
+</li>

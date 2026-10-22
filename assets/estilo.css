@@ -2848,3 +2848,45 @@ body.pg-da { background: #F4F6FB; }
 .enade-horas li.forte b { color: var(--vermelho); }
 .enade-obs { font-size: .85rem; color: var(--muted); margin: 0; }
 .enade-levar { margin: .3rem 0 0; padding-left: 1.1rem; display: grid; gap: .3rem; color: var(--ink-2); }
+
+/* ═══════════════ GLOSSÁRIO E PERGUNTAS FREQUENTES ═══════════════ */
+.glo-ferramentas { display: grid; gap: .8rem; position: sticky; top: .5rem; z-index: 5; background: var(--paper); padding: .6rem 0; }
+.glo-ferramentas input { width: 100%; padding: .75rem 1rem; border: 1.5px solid var(--hair); border-radius: 12px; background: var(--surface); color: var(--ink); font: inherit; }
+.glo-ferramentas input:focus { outline: none; border-color: var(--azul); box-shadow: 0 0 0 3px color-mix(in srgb, var(--azul) 20%, transparent); }
+.glo-indice, .faq-indice { display: flex; flex-wrap: wrap; gap: .35rem; }
+.glo-indice a { min-width: 2.2rem; height: 2.2rem; display: grid; place-items: center; border-radius: 9px; background: var(--surface); border: 1px solid var(--hair); font-weight: 700; color: var(--azul-esc); text-decoration: none; }
+.glo-indice a:hover { background: var(--azul); color: #fff; border-color: var(--azul); }
+.glo-letra { font-size: 1.6rem; color: var(--azul); border-bottom: 2px solid color-mix(in srgb, var(--azul) 25%, transparent); padding-bottom: .2rem; margin-top: 1.6rem; scroll-margin-top: 9rem; }
+.glo-lista { display: grid; gap: .6rem; margin-top: .8rem; }
+.glo-item { background: var(--surface); border: 1px solid var(--hair); border-left: 4px solid var(--azul); border-radius: 12px; padding: .85rem 1rem; scroll-margin-top: 9rem; }
+.glo-item:target { box-shadow: 0 0 0 3px color-mix(in srgb, var(--azul) 30%, transparent); }
+.glo-item dt { font-weight: 800; color: var(--ink); }
+.glo-item dd { margin: .3rem 0 0; color: var(--muted); font-size: .96rem; }
+.glo-item dd a { white-space: nowrap; font-weight: 600; }
+.glo-vazio { margin-top: 1rem; }
+.faq-indice a { padding: .4rem .85rem; border-radius: 999px; background: color-mix(in srgb, var(--c) 12%, var(--surface)); color: var(--ink); border: 1px solid color-mix(in srgb, var(--c) 35%, var(--hair)); font-weight: 600; font-size: .92rem; text-decoration: none; }
+.faq-indice a:hover { background: var(--c); color: #fff; }
+.faq-grupo { scroll-margin-top: 1rem; }
+.faq-grupo-t { font-size: 1.3rem; padding-left: .7rem; border-left: 5px solid var(--c); }
+.faq-grupo details.faq p a { white-space: nowrap; font-weight: 600; }
+.imprimir-linha { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem .7rem; font-size: .9rem; color: var(--muted); }
+@media print {
+  .imprimir-linha { display: none !important; }
+  .passo-corpo img { max-height: 110mm; width: auto; max-width: 100%; }
+  .passo-corpo figure, .passo-corpo img { break-inside: avoid; }
+  details.passo { break-inside: avoid-page; }
+  .step, .janela, details.faq { break-inside: avoid; }
+}
+/* mural de oportunidades e kit do vestibular (rascunhos ocultos) */
+.mural { list-style: none; padding: 0; margin: 0; display: grid; gap: .8rem; }
+.mural:empty { display: none; }
+.mural-item a { font-weight: 600; }
+.kit-qr { display: grid; justify-items: center; text-align: center; gap: .6rem; }
+.kit-qr .qr-area svg { width: min(70vw, 16rem); height: auto; display: block; }
+@media print {
+  .pg-kit .titulo-sec, .pg-kit .lede, .pg-kit .note, .pg-kit .linha-tempo, .pg-kit .card:not(.kit-qr) { display: none !important; }
+  .pg-kit .kit-qr { border: 0; }
+  .pg-kit .kit-qr .qr-area svg { width: 120mm; }
+}
+.mural-item h2 { font-size: 1.15rem; margin: .2rem 0; }
+.kit-msg { overflow-wrap: anywhere; }

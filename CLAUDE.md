@@ -155,6 +155,27 @@ conferir que já está no `sw.js` e anunciar em `assets/dados-novidades.js`.
 Todas já funcionam por endereço direto, para o coordenador revisar.
 `vestibular.html` está em `FORA_DO_CACHE` no `sw.js`.
 
+Rascunhos ocultos criados em 21/10/2026 (todos em `FORA_DO_CACHE`, com `noindex`):
+- **`transferencia.html`**: transferência e obtenção de novo título 1-2027. A
+  inscrição (9 a 13/11/2026) é do calendário; edital, vagas e documentos "a confirmar".
+- **`rematricula.html`**: renovação de matrícula 2027/1. Datas "a confirmar" até
+  sair o calendário de 2027; o passo a passo com telas entra quando o Lyceum abrir.
+- **`mural.html`**: mural de oportunidades. Vai ao ar com o primeiro item; o
+  modelo de item está em `ferramentas/modelos/mural-item.html.modelo`.
+- **`kit-vestibular.html`**: material interno da Fase 3 (QR da página do
+  vestibular, mensagem pronta e roteiro de fala).
+No `status-projeto.html`, a Fase 3 tem o contador "estudantes alcançados" oculto
+(`hidden`), à espera do número informado pelo coordenador.
+
+**Glossário e perguntas frequentes** (no ar desde 21/10/2026): `glossario.html`
+(grupo "Meu curso" do menu, com filtro próprio) e `perguntas-frequentes.html`
+(grupo "Sobre o NAE", com JSON-LD de FAQ). Cada resposta leva à página que
+explica em detalhe: se uma regra mudar na página de origem, mudar aqui também.
+
+**Versão para imprimir:** botão com `data-imprimir` (e-mail, Moodle, Lyceum e o
+kit). O `site.js` carrega as imagens adiadas e abre as perguntas fechadas antes
+de imprimir. **QR de outra página:** `data-qr="pagina.html"` no `qr.js`.
+
 ## Página do Diretório Acadêmico (no ar desde 21/10/2026)
 
 `diretorio-academico.html` é de propósito uma **página com a cara do DA**, pedido do

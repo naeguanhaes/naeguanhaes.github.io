@@ -6,7 +6,8 @@
    todo elemento com [data-qr], e deixa o resultado em
    window.NAE_QR para quem quiser reaproveitar.
 
-   Usado por: cartaz.html (parede) e guia.html (bolso).
+   Usado por: cartaz.html (parede), guia.html (bolso) e
+   kit-vestibular.html (QR da página do vestibular).
    ═══════════════════════════════════════════════════════ */
 /* ═══════════════════════════════════════════════════════
    Gerador de QR Code (modo byte, correção de erro nível H)
@@ -345,7 +346,12 @@
 
   var qr = gerar(URL_SITE);
   var svg = desenhar(qr);
-  document.querySelectorAll('[data-qr]').forEach(function (alvo) { alvo.innerHTML = svg; });
+  /* [data-qr] vazio leva à inicial; com um caminho (data-qr="vestibular.html"),
+     o QR aponta para aquela página do site */
+  document.querySelectorAll('[data-qr]').forEach(function (alvo) {
+    var caminho = alvo.getAttribute('data-qr');
+    alvo.innerHTML = caminho ? desenhar(gerar(URL_SITE + caminho)) : svg;
+  });
 
   window.NAE_QR = { url: URL_SITE, versao: qr.versao, tamanho: qr.tamanho, svg: svg, matriz: qr.matriz };
 })();

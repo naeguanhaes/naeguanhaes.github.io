@@ -19,6 +19,20 @@ window.DADOS_NOVIDADES = {
   itens: [
     {
       data: '2026-10-21',
+      titulo: 'Glossário e perguntas frequentes',
+      texto: 'O que é crédito, ementa, trancamento? E quanto preciso para passar? Duas páginas novas respondem em poucas linhas.',
+      link: 'perguntas-frequentes.html',
+      textoLink: 'ver as perguntas'
+    },
+    {
+      data: '2026-10-21',
+      titulo: 'Guias dos sistemas em papel',
+      texto: 'Os guias do e-mail, do Moodle e do Lyceum têm agora o botão "Versão para imprimir", com todos os passos abertos.',
+      link: 'email.html',
+      textoLink: 'abrir o guia do e-mail'
+    },
+    {
+      data: '2026-10-21',
       titulo: 'Ouça qualquer página do site',
       texto: 'Na engrenagem ao lado da busca, o botão "Ouvir esta página" lê o conteúdo em voz alta, com a voz do próprio celular.',
       link: 'sobre.html',

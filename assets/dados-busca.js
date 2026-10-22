@@ -25,6 +25,18 @@ window.DADOS_BUSCA = {
       k: 'yoga esmu escola de musica meditacao relaxar bem-estar bem estar corpo mente saude mental pausa sonia assis quinta aula atividade fisica ansiedade estresse'
     },
     {
+      t: 'Glossário universitário',
+      d: 'O que quer dizer crédito, ementa, pré-requisito, exame especial, trancamento, colação de grau, PPC, RA e outras palavras da vida acadêmica.',
+      u: 'glossario.html',
+      k: 'glossario dicionario palavras termos significado o que e credito ementa pre-requisito prerrequisito exame especial trancamento colacao de grau ppc ra registro academico matriz periodo optativa obrigatoria aproveitamento de estudos frequencia lattes banca'
+    },
+    {
+      t: 'Perguntas frequentes',
+      d: 'Respostas curtas para as dúvidas que mais chegam ao NAE: senha do e-mail, Lyceum, Moodle, nota para passar, exame especial, falta, auxílios e atendimento.',
+      u: 'perguntas-frequentes.html',
+      k: 'perguntas frequentes faq duvidas comuns ajuda respostas senha email lyceum moodle nota para passar media exame especial falta atestado justificativa revisao de prova auxilio nao caiu atendimento horario nae psicologo'
+    },
+    {
       t: 'Diretório Acadêmico Sapientia et Justitia',
       d: 'A representação estudantil da UEMG Guanhães: Assembleia Geral de 28/10, às 19h, no Auditório, para votar o Estatuto Social. Contato e ações do DA.',
       u: 'diretorio-academico.html',
