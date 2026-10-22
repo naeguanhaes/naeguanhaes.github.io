@@ -2778,3 +2778,13 @@ body.pg-da { background: #F4F6FB; }
   max-width: 11rem; width: 100%; height: auto; border-radius: 0; box-shadow: none;
   filter: drop-shadow(0 10px 18px rgba(0,0,0,.4));
 }
+/* brasão do botão do DA "saltando" do botão: a coroa passa da borda de
+   cima, como em 3D. A faixa do menu ganhou um pouco de folga em cima
+   para a coroa não ser cortada pela rolagem lateral. */
+.nav-in { padding-top: .85rem; }
+.nav-link.nav-da { position: relative; padding-left: 3.4rem; }
+.nav-link.nav-da .nav-marca {
+  position: absolute; left: .35rem; bottom: .05rem; height: 2.95rem; margin: 0;
+  filter: drop-shadow(0 4px 5px rgba(0,0,0,.45));
+}
+.da-curso img { justify-self: center; }
