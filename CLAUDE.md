@@ -164,17 +164,17 @@ Rascunhos ocultos criados em 21/10/2026 (todos em `FORA_DO_CACHE`, com `noindex`
   modelo de item está em `ferramentas/modelos/mural-item.html.modelo`.
 - **`kit-vestibular.html`**: material interno da Fase 3 (QR da página do
   vestibular, mensagem pronta e roteiro de fala).
-No `status-projeto.html`, a Fase 3 tem o contador "estudantes alcançados" oculto
-(`hidden`), à espera do número informado pelo coordenador.
+No `status-projeto.html`, a Fase 3 tem o contador de escolas visitadas e de
+estudantes alcançados (30 na ação de 09/10/2026, informado pelo coordenador):
+somar a cada nova ação.
 
 **Glossário e perguntas frequentes** (no ar desde 21/10/2026): `glossario.html`
 (grupo "Meu curso" do menu, com filtro próprio) e `perguntas-frequentes.html`
 (grupo "Sobre o NAE", com JSON-LD de FAQ). Cada resposta leva à página que
 explica em detalhe: se uma regra mudar na página de origem, mudar aqui também.
 
-**Versão para imprimir:** botão com `data-imprimir` (e-mail, Moodle, Lyceum e o
-kit). O `site.js` carrega as imagens adiadas e abre as perguntas fechadas antes
-de imprimir. **QR de outra página:** `data-qr="pagina.html"` no `qr.js`.
+**Versão para imprimir: retirada em 22/10/2026** a pedido do coordenador, que não
+gostou do resultado no papel. **QR de outra página:** `data-qr="pagina.html"` no `qr.js`.
 
 ## Página do Diretório Acadêmico (no ar desde 21/10/2026)
 
@@ -506,3 +506,38 @@ Tudo o que falar do Seminário leva a logo: carrossel (`imagemLogo`, `imagemCelu
 no destaque), página do Seminário, arquivo de eventos (`logo` no item), linha do
 tempo do projeto e imagem de compartilhamento. Depois de 13/11 o menu sai sozinho
 pelo `data-ate`.
+
+
+## Compartilhar, como chegar, contraste e números do relatório (22/10/2026)
+
+**Botão único "Compartilhar"** (pedido do coordenador): o `site.js` junta, em cada
+bloco, o link do WhatsApp (`wa.me`), o botão dos Stories (`data-stories`) e o
+`data-compartilhar` em um botão "Compartilhar" que abre **WhatsApp** e **Instagram**.
+O HTML continua escrito do jeito antigo (link do WhatsApp com a mensagem pronta), e é
+isso que as inspeções leem. No Instagram: se a página tem imagem dos Stories (tabela
+`STORIES` no `site.js`, com validade), ela vai para os Stories; se não, abre a folha de
+compartilhar do celular (ou copia o link no computador). Evento novo com Stories:
+acrescentar a linha na tabela `STORIES`.
+
+**Etiquetas de origem (GoatCounter):** todo link do site que sai pelo WhatsApp leva
+`utm_source=whatsapp&utm_campaign=<página>`; pelo Instagram, `utm_source=instagram`; os
+QR codes (`qr.js`), `utm_source=qr&utm_campaign=<cartaz|guia|kit-vestibular>`. Todas as
+páginas têm `<link rel="canonical">`, para o contador registrar o endereço limpo, sem a
+etiqueta. Para o Instagram do NAE e do DA, usar na bio:
+`https://naeguanhaes.github.io/?utm_source=instagram&utm_campaign=bio`.
+
+**Como chegar:** mapa (OpenStreetMap, com marcador) em `assets/mapa/` nas páginas
+`mapa.html#como-chegar` e `contato.html`; o toque abre a rota no Google Maps até
+-18.7581882, -42.9480018 (localização enviada pelo coordenador). Versão própria para
+celular (`como-chegar-celular.webp`).
+
+**Teste de leitor de tela (22/10/2026):** axe-core 4.10 em 44 páginas. Corrigido:
+contraste do cinza (`--muted`) e das cores de texto sobre o fundo azulado, etiquetas
+dos horários, negrito das notas, selo dos avisos, eventos passados do calendário,
+âmbar em texto (passa a `--ambar-txt`), ordem dos títulos (horários e planner), o mapa
+do campus (`role="group"`) e a faixa "Voltar ao site do NAE" (agora `<nav>`). Ficaram
+de fora só o cartaz e o guia de bolso, que são folhas para imprimir.
+
+**Números do relatório:** `node ferramentas/contar-relatorio.js [AAAA-MM-DD]` conta
+sozinho o quadro "8.1 Conteúdo disponibilizado" (páginas, publicações, ementas,
+referências, disciplinas, atividades, turmas, calendário, novidades, inspeções).

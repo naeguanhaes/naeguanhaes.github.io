@@ -15,21 +15,28 @@
    ═══════════════════════════════════════════════════════ */
 
 window.DADOS_NOVIDADES = {
-  atualizadoEm: '2026-10-21',
+  atualizadoEm: '2026-10-22',
   itens: [
+    {
+      data: '2026-10-22',
+      titulo: 'Como chegar à Unidade',
+      texto: 'Toque no mapa e o GPS do celular abre com a rota até a UEMG Guanhães, na BR-259.',
+      link: 'mapa.html#como-chegar',
+      textoLink: 'ver o mapa'
+    },
+    {
+      data: '2026-10-22',
+      titulo: 'Compartilhar no WhatsApp ou no Instagram',
+      texto: 'O botão "Compartilhar" agora abre as duas opções. No Instagram, quando há imagem pronta, ela vai direto para os Stories.',
+      link: 'mostra-profissoes.html',
+      textoLink: 'experimentar'
+    },
     {
       data: '2026-10-21',
       titulo: 'Glossário e perguntas frequentes',
       texto: 'O que é crédito, ementa, trancamento? E quanto preciso para passar? Duas páginas novas respondem em poucas linhas.',
       link: 'perguntas-frequentes.html',
       textoLink: 'ver as perguntas'
-    },
-    {
-      data: '2026-10-21',
-      titulo: 'Guias dos sistemas em papel',
-      texto: 'Os guias do e-mail, do Moodle e do Lyceum têm agora o botão "Versão para imprimir", com todos os passos abertos.',
-      link: 'email.html',
-      textoLink: 'abrir o guia do e-mail'
     },
     {
       data: '2026-10-21',

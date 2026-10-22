@@ -961,84 +961,163 @@
       .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60) || 'evento';
   }
 
-  /* ── Compartilhar ─────────────────────────────────── */
-  document.querySelectorAll('[data-compartilhar]').forEach(function (b) {
-    var titulo = b.getAttribute('data-titulo') || document.title;
-    var texto = b.getAttribute('data-texto') || '';
-    /* o endereço vai com a marcação de origem, para o contador saber que
-       a visita veio de um compartilhamento */
-    var url = b.getAttribute('data-url') ||
-      (location.origin + location.pathname + '?utm_source=compartilhar' + location.hash);
+  /* ── Compartilhar: um botão, WhatsApp ou Instagram ── */
+  /* Pedido do coordenador (22/10/2026): onde houver compartilhamento, um
+     botão só, "Compartilhar", que abre as duas opções. O HTML continua
+     com o link do WhatsApp (wa.me, com a mensagem pronta), o botão dos
+     Stories (data-stories) e o data-compartilhar; este bloco junta os que
+     estão lado a lado em um "Compartilhar" e esconde os originais.
 
-    b.addEventListener('click', function (e) {
-      if (navigator.share) {
-        e.preventDefault();
-        navigator.share({ title: titulo, text: texto, url: url }).catch(function () {});
+     Todo endereço do site que sai daqui leva a etiqueta de origem
+     (utm_source = whatsapp, instagram ou qr; utm_campaign = a página),
+     que o GoatCounter mostra em "Campaigns" e "Referrers". */
+  var SITE = 'https://naeguanhaes.github.io/';
+  var ICONE_PARTILHA = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>';
+  var ICONE_WHATS = '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a.9.9 0 00-.7.3 2.8 2.8 0 00-.9 2.1 4.9 4.9 0 001 2.6 11.2 11.2 0 004.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 001.7-1.2 2.1 2.1 0 00.1-1.2c0-.1-.2-.2-.4-.3z"/></svg>';
+  var ICONE_INSTA = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>';
+
+  /* imagem pronta para os Stories, por página divulgada, com validade */
+  var STORIES = {
+    'mostra-profissoes': { img: 'assets/stories/mostra-profissoes.jpg', ate: '2026-11-13' },
+    'diretorio-academico': { img: 'assets/stories/assembleia-da.jpg', ate: '2026-10-28' }
+  };
+
+  function campanhaDe(url) {
+    var c = url.replace(SITE, '').split(/[?#]/)[0].replace(/\.html$/, '');
+    return c || 'inicio';
+  }
+  function etiquetar(url, fonte, campanha) {
+    if (url.indexOf(SITE) !== 0) return url;
+    var hash = '', i = url.indexOf('#');
+    if (i >= 0) { hash = url.slice(i); url = url.slice(0, i); }
+    var partes = url.split('?'), base = partes[0];
+    var resto = (partes[1] || '').split('&').filter(function (p) { return p && !/^utm_/.test(p); });
+    resto.push('utm_source=' + fonte, 'utm_campaign=' + (campanha || campanhaDe(base)));
+    return base + '?' + resto.join('&') + hash;
+  }
+  window.NAE.etiquetar = etiquetar;
+  var RE_SITE = /https:\/\/naeguanhaes\.github\.io\/[^\s"'<>)]*/g;
+  function textoDoWhats(href) {
+    try { return decodeURIComponent(((href.split('?text=')[1]) || '').replace(/\+/g, ' ')); } catch (e) { return ''; }
+  }
+
+  function postarStories(arq) {
+    var nome = arq.split('/').pop();
+    fetch(arq).then(function (r) { return r.blob(); }).then(function (blob) {
+      var arquivo = new File([blob], nome, { type: blob.type || 'image/jpeg' });
+      if (navigator.canShare && navigator.canShare({ files: [arquivo] })) {
+        return navigator.share({ files: [arquivo] }).catch(function () {});
       }
-      /* sem Web Share (desktop), o próprio href abre o WhatsApp */
-    });
-    if (!b.getAttribute('href')) {
-      b.setAttribute('href', 'https://wa.me/?text=' + encodeURIComponent(texto + ' ' + url));
-      b.setAttribute('target', '_blank');
-      b.setAttribute('rel', 'noopener noreferrer');
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = nome;
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1500);
+      toast('Imagem baixada. No Instagram, crie um Story e escolha essa imagem.');
+    }).catch(function () { window.location.href = arq; });
+  }
+
+  /* Instagram sem imagem pronta: a folha de compartilhar do celular
+     (onde o Instagram aparece, para o Direct ou os Stories); no computador,
+     o link é copiado para colar no Instagram. */
+  function linkNoInstagram(titulo, texto, url) {
+    if (navigator.share) {
+      navigator.share({ title: titulo, text: texto, url: url }).catch(function () {});
+      return;
     }
-  });
-
-  /* ── Compartilhar nos Stories do Instagram ────────── */
-  /* Botão com data-stories="caminho da imagem 1080x1920". No celular, a
-     folha de compartilhar do sistema recebe a imagem e o Instagram aparece
-     como opção (Story). Onde isso não existe (computador, navegador antigo),
-     a imagem é baixada para o estudante postar pelo app. */
-  document.querySelectorAll('[data-stories]').forEach(function (b) {
-    b.addEventListener('click', function (e) {
-      e.preventDefault();
-      var arq = b.getAttribute('data-stories');
-      var nome = arq.split('/').pop();
-      fetch(arq).then(function (r) { return r.blob(); }).then(function (blob) {
-        var arquivo = new File([blob], nome, { type: blob.type || 'image/jpeg' });
-        if (navigator.canShare && navigator.canShare({ files: [arquivo] })) {
-          return navigator.share({ files: [arquivo] }).catch(function () {});
-        }
-        var a = document.createElement('a');
-        a.href = URL.createObjectURL(blob);
-        a.download = nome;
-        document.body.appendChild(a);
-        a.click();
-        setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1500);
-        toast('Imagem baixada. No Instagram, crie um Story e escolha essa imagem.');
-      }).catch(function () { window.location.href = arq; });
-    });
-  });
-
-  /* ── Versão para imprimir ─────────────────────────── */
-  /* Botão com data-imprimir nos guias passo a passo. As telas dos passos
-     carregam sob demanda (loading="lazy") e sairiam em branco no papel:
-     antes de abrir a impressão, todas são carregadas. A folha de estilo de
-     impressão já abre os passos fechados e esconde menu e botões. */
-  if (document.querySelector('[data-imprimir]')) {
-    /* as perguntas fechadas também saem no papel, e voltam como estavam */
-    var abertosParaImprimir = [];
-    window.addEventListener('beforeprint', function () {
-      document.querySelectorAll('main details:not([open])').forEach(function (d) {
-        d.open = true; abertosParaImprimir.push(d);
-      });
-    });
-    window.addEventListener('afterprint', function () {
-      abertosParaImprimir.forEach(function (d) { d.open = false; });
-      abertosParaImprimir = [];
+    copiarTexto(url, function () {
+      toast('Link copiado. No Instagram, cole no Direct ou na figurinha de link do Story.');
     });
   }
-  document.querySelectorAll('[data-imprimir]').forEach(function (b) {
-    b.addEventListener('click', function () {
-      var imgs = Array.prototype.slice.call(document.querySelectorAll('main img'));
-      var esperas = imgs.map(function (im) {
-        im.loading = 'eager';
-        if (im.complete) return Promise.resolve();
-        return new Promise(function (ok) { im.addEventListener('load', ok); im.addEventListener('error', ok); });
-      });
-      b.disabled = true;
-      Promise.race([Promise.all(esperas), new Promise(function (ok) { setTimeout(ok, 4000); })])
-        .then(function () { b.disabled = false; window.print(); });
+
+  function montarPartilha(grupo) {
+    var wa = grupo.wa, comp = grupo.comp, st = grupo.stories;
+    var titulo = (comp && comp.getAttribute('data-titulo')) || document.title;
+    var texto = (comp && comp.getAttribute('data-texto')) || '';
+    var url = (comp && comp.getAttribute('data-url')) || (location.origin + location.pathname + location.hash);
+    if (url.indexOf(location.origin) === 0 && location.origin !== SITE.slice(0, -1)) url = SITE + url.slice(location.origin.length + 1);
+    var msg = wa ? textoDoWhats(wa.getAttribute('href')) : (texto + ' ' + url);
+    var doSite = msg.match(RE_SITE);
+    var alvo = doSite ? doSite[0] : url;
+    if (!texto) texto = msg.replace(RE_SITE, '').trim();
+    var campanha = campanhaDe(alvo);
+    var hoje = hojeISO();
+    var imgStories = st ? st.getAttribute('data-stories') :
+      (STORIES[campanha] && hoje <= STORIES[campanha].ate ? STORIES[campanha].img : null);
+
+    var primeiro = grupo.ordem[0];
+    var ref = primeiro.parentNode.matches('span[data-ate]') ? primeiro.parentNode : primeiro;
+    var cx = document.createElement('span');
+    cx.className = 'partilha';
+    /* a cor do botão vem do data-compartilhar (o fundo do bloco pode pedir
+       branco, como no DA); o verde do link do WhatsApp fica na opção dele */
+    var cor = (comp && comp.getAttribute('style')) || '';
+    var extraClasse = comp ? ['ghost', 'pequeno'].filter(function (c) { return comp.classList.contains(c); }).map(function (c) { return ' ' + c; }).join('') : '';
+    var id = 'partilha-' + (++montarPartilha.n);
+    cx.innerHTML =
+      '<button class="btn partilha-btn' + extraClasse + '" type="button" aria-expanded="false" aria-controls="' + id + '"' +
+        (cor ? ' style="' + escapar(cor) + '"' : '') + '>' + ICONE_PARTILHA + 'Compartilhar</button>' +
+      '<span class="partilha-opcoes" id="' + id + '" hidden>' +
+        '<a class="btn partilha-whats" target="_blank" rel="noopener noreferrer" href="#">' + ICONE_WHATS + 'WhatsApp</a>' +
+        '<button class="btn partilha-insta" type="button">' + ICONE_INSTA + 'Instagram</button>' +
+      '</span>';
+    ref.parentNode.insertBefore(cx, ref);
+    grupo.ordem.forEach(function (el) {
+      var fora = el.parentNode.matches('span[data-ate]') ? el.parentNode : el;
+      fora.hidden = true;
+    });
+
+    var botao = cx.querySelector('.partilha-btn');
+    var opcoes = cx.querySelector('.partilha-opcoes');
+    var linkWa = cx.querySelector('.partilha-whats');
+    linkWa.href = 'https://wa.me/?text=' + encodeURIComponent(
+      msg.replace(RE_SITE, function (u) { return etiquetar(u, 'whatsapp'); }));
+    botao.addEventListener('click', function () {
+      var abrir = opcoes.hidden;
+      opcoes.hidden = !abrir;
+      botao.setAttribute('aria-expanded', String(abrir));
+      if (abrir) linkWa.focus();
+    });
+    cx.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !opcoes.hidden) {
+        opcoes.hidden = true; botao.setAttribute('aria-expanded', 'false'); botao.focus();
+      }
+    });
+    cx.querySelector('.partilha-insta').addEventListener('click', function () {
+      if (imgStories) postarStories(imgStories);
+      else linkNoInstagram(titulo, texto, etiquetar(alvo, 'instagram'));
+    });
+  }
+  montarPartilha.n = 0;
+
+  /* junta, por bloco, o link do WhatsApp, os Stories e o data-compartilhar */
+  function juntarPartilhas(raiz) {
+    var grupos = [];
+    var fontes = raiz.querySelectorAll('a[href^="https://wa.me/"], [data-compartilhar], [data-stories]');
+    Array.prototype.forEach.call(fontes, function (el) {
+      if (el.closest('.partilha') || el.closest('[hidden]')) return;
+      var bloco = el.parentNode.matches('span[data-ate]') ? el.parentNode.parentNode : el.parentNode;
+      var g = null;
+      for (var i = 0; i < grupos.length; i++) if (grupos[i].bloco === bloco) g = grupos[i];
+      if (!g) { g = { bloco: bloco, ordem: [] }; grupos.push(g); }
+      g.ordem.push(el);
+      if (el.hasAttribute('data-stories')) g.stories = g.stories || el;
+      else if (el.hasAttribute('data-compartilhar')) g.comp = g.comp || el;
+      else g.wa = g.wa || el;
+    });
+    grupos.forEach(function (g) { montarPartilha(g); });
+  }
+  window.NAE.juntarPartilhas = juntarPartilhas;
+  juntarPartilhas(document);
+
+  /* fecha as opções ao tocar fora */
+  document.addEventListener('click', function (e) {
+    document.querySelectorAll('.partilha-opcoes:not([hidden])').forEach(function (o) {
+      if (!o.parentNode.contains(e.target)) {
+        o.hidden = true;
+        o.parentNode.querySelector('.partilha-btn').setAttribute('aria-expanded', 'false');
+      }
     });
   });
 

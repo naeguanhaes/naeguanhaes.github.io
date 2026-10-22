@@ -155,9 +155,9 @@
           '<span><b>Matrícula</b><i></i></span>' +
           '<span><b>E-mail institucional</b><i></i></span>' +
         '</div>' +
-        '<h3 class="planner-h">Grade de aulas</h3>' +
+        '<h2 class="planner-h">Grade de aulas</h2>' +
         '<table class="planner-grade"><thead>' + thead + '</thead><tbody>' + tbody + '</tbody></table>' +
-        '<h3 class="planner-h">Disciplinas do semestre</h3>' +
+        '<h2 class="planner-h">Disciplinas do semestre</h2>' +
         '<table class="planner-lista">' +
           '<thead><tr><th>Disciplina</th><th>Professor</th><th>Encontros por semana</th><th>Aulas por semana</th><th>Aulas no semestre</th><th>Limite de faltas</th></tr></thead>' +
           '<tbody>' + listaDisc + '</tbody>' +
@@ -185,7 +185,7 @@
     var folha2 =
       '<section class="planner-pagina" style="--c: ' + cor + '">' +
         cabecalhoFolha(t, 2, 'Mapa do semestre') +
-        '<h3 class="planner-h">Semana a semana, até ' + U.dataBR(FIM) + '</h3>' +
+        '<h2 class="planner-h">Semana a semana, até ' + U.dataBR(FIM) + '</h2>' +
         '<table class="planner-semanas">' +
           '<thead><tr><th>Nº</th><th>Semana</th><th>Datas do calendário acadêmico</th><th>Minhas provas e entregas</th></tr></thead>' +
           '<tbody>' + linhasSemana + '</tbody>' +
@@ -210,7 +210,7 @@
         '<div class="planner-regra">' +
           '<b>A regra</b> São <b>100 pontos</b> distribuídos no semestre. Para ser aprovado, você precisa somar <b>60 pontos</b> e ter <b>75% de presença</b>.' +
         '</div>' +
-        '<h3 class="planner-h">Anote cada nota assim que sair</h3>' +
+        '<h2 class="planner-h">Anote cada nota assim que sair</h2>' +
         '<table class="planner-notas-tab">' +
           '<thead><tr><th>Disciplina</th><th>Aval. 1</th><th>Aval. 2</th><th>Aval. 3</th><th>Aval. 4</th><th>Total</th><th>Faltam</th></tr></thead>' +
           '<tbody>' + linhasNota + '</tbody>' +
@@ -246,7 +246,7 @@
           'e das 20h50 às 22h30 são mais duas. Faltou a noite inteira, marque <b>quatro quadrados</b>. ' +
           'Os quadrados estão agrupados de quatro em quatro justamente por isso.' +
         '</div>' +
-        '<h3 class="planner-h">Marque um quadrado a cada falta</h3>' +
+        '<h2 class="planner-h">Marque um quadrado a cada falta</h2>' +
         '<table class="planner-faltas">' +
           '<thead><tr><th>Disciplina</th><th>Limite</th><th>Faltas usadas</th></tr></thead>' +
           '<tbody>' + linhasFalta + '</tbody>' +

@@ -305,7 +305,7 @@
            ' style="--c: ' + corDoCurso(t.curso) + '">' +
       '<div class="turma-head">' +
         '<span class="curso">' + U.escapar(t.curso) + '</span>' +
-        '<h3>' + U.escapar(t.periodo) + ' · ' + U.escapar(t.turma) + '</h3>' +
+        '<h2>' + U.escapar(t.periodo) + ' · ' + U.escapar(t.turma) + '</h2>' +
         '<span class="sala">' + U.escapar(t.sala) + '</span>' +
         '<span class="turma-acoes">' +
           '<button class="acao" type="button" data-minha="' + t.id + '">minha turma</button>' +

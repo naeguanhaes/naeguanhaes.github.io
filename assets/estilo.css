@@ -11,18 +11,19 @@
 
   /* família de apoio, harmonizada com o azul da marca.
      Todas as cores usadas em texto passam de 4.5 de contraste
-     sobre o branco, conforme as WCAG 2.1 nível AA. O âmbar é a
+     sobre o branco e sobre o fundo azulado (--paper), conferido com o
+     axe-core em 22/10/2026, conforme as WCAG 2.1 nível AA. O âmbar é a
      única exceção e serve apenas para faixas e ícones grandes. */
   --azul:     #35618A;
   --azul-esc: #22475F;
-  --turquesa: #148096;
-  --verde:    #28855D;
+  --turquesa: #12788D;
+  --verde:    #257B56;
   --ambar:    #E09A1E;
   --ambar-txt:#8A5E06;
-  --coral:    #BE563E;
-  --lilas:    #7166B8;
-  --petroleo: #0F7C7B;
-  --rosa:     #BD507C;
+  --coral:    #B2503A;
+  --lilas:    #6E63B4;
+  --petroleo: #0E7A79;
+  --rosa:     #B14B74;
   --vermelho: #D91F35;
 
   --paper:     #F2F6FA;
@@ -31,7 +32,7 @@
   --surface-2: #F5F9FC;
   --ink:       #16303F;
   --ink-2:     #35566C;
-  --muted:     #61798D;
+  --muted:     #5A7083;
   --line:      #D5E2EC;
   --hair:      #E8F0F6;
   --ring:      #35618A;
@@ -133,7 +134,7 @@ p  { margin: 0; }
 .aviso.novidade { --c: #157F95; }
 .aviso .selo {
   font-size: .66rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
-  background: rgba(255,255,255,.24); border-radius: 99px; padding: .16rem .65rem; flex: none;
+  background: rgba(0,0,0,.22); border-radius: 99px; padding: .16rem .65rem; flex: none;
 }
 .aviso a { color: #fff; font-weight: 700; }
 .aviso a:hover { color: #fff; }
@@ -284,7 +285,7 @@ main { padding-block: var(--s5) var(--s6); display: block; }
   display: flex; flex-direction: column; gap: .4rem;
   font-size: .96rem; color: var(--ink-2);
 }
-.note b { color: color-mix(in srgb, var(--c) 80%, var(--ink)); }
+.note b { color: color-mix(in srgb, var(--c) 50%, var(--ink)); }
 .note.alerta { --c: var(--vermelho); }
 .note.ok     { --c: var(--verde); }
 .note.info   { --c: var(--turquesa); }
@@ -585,7 +586,7 @@ figcaption { font-size: .8rem; color: var(--muted); font-style: italic; }
 .ms-sub { font-size: .76rem; color: #444; }
 .ms-input { border-bottom: 1px solid #666; padding: .3rem 0 .35rem; font-size: .88rem; min-height: 1.6rem; }
 .ms-input.box { border: 1px solid #8A8886; border-radius: 2px; padding: .38rem .5rem; }
-.ms-input.vazio { color: #9A9A9A; }
+.ms-input.vazio { color: #707070; }
 .ms-link { color: #0067B8; font-size: .8rem; }
 .ms-row { display: flex; justify-content: flex-end; gap: .5rem; align-items: center; }
 .ms-btn { background: #0067B8; color: #fff; padding: .36rem 1.4rem; font-size: .83rem; border-radius: 2px; display: inline-block; }
@@ -674,7 +675,7 @@ html[data-contraste="alto"] .sugestoes { border-color: #000; }
   padding: var(--s2) var(--s3); border-bottom: 1px solid var(--hair);
   background: color-mix(in srgb, var(--c) 7%, var(--surface));
 }
-.turma-head h3 { color: var(--ink); font-size: 1.16rem; }
+.turma-head h2 { color: var(--ink); font-size: 1.16rem; }
 .turma-head .curso {
   font-size: .65rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase;
   color: #fff; background: var(--c); border-radius: 99px; padding: .16rem .7rem;
@@ -730,10 +731,10 @@ table.grade td.realce {
 .doc button { background: none; border: 0; padding: 0; cursor: pointer; text-align: left; font: inherit; color: inherit; text-decoration: underline dotted; }
 .doc button:hover { color: var(--azul); }
 .tag { display: inline-block; font-size: .59rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; padding: .06rem .38rem; border-radius: 6px; margin-left: .3rem; vertical-align: 1px; }
-.tag.hib { background: color-mix(in srgb, var(--turquesa) 18%, var(--surface)); color: color-mix(in srgb, var(--turquesa) 88%, var(--ink)); }
-.tag.ead { background: color-mix(in srgb, var(--lilas) 18%, var(--surface)); color: color-mix(in srgb, var(--lilas) 88%, var(--ink)); }
-.tag.est { background: color-mix(in srgb, var(--ambar) 24%, var(--surface)); color: color-mix(in srgb, var(--ambar) 88%, var(--ink)); }
-.tag.opt { background: color-mix(in srgb, var(--coral) 18%, var(--surface)); color: color-mix(in srgb, var(--coral) 88%, var(--ink)); }
+.tag.hib { background: color-mix(in srgb, var(--turquesa) 18%, var(--surface)); color: color-mix(in srgb, var(--turquesa) 65%, var(--ink)); }
+.tag.ead { background: color-mix(in srgb, var(--lilas) 18%, var(--surface)); color: color-mix(in srgb, var(--lilas) 65%, var(--ink)); }
+.tag.est { background: color-mix(in srgb, var(--ambar) 24%, var(--surface)); color: var(--ambar-txt); }
+.tag.opt { background: color-mix(in srgb, var(--coral) 18%, var(--surface)); color: color-mix(in srgb, var(--coral) 65%, var(--ink)); }
 .vazio-busca { text-align: center; color: var(--muted); padding: var(--s4); font-style: italic; }
 
 /* ── Calendário ───────────────────────────────────────── */
@@ -756,7 +757,8 @@ table.grade td.realce {
 .cal-evento.letivo  { --c: var(--verde); }
 .cal-evento.prazo   { --c: var(--azul); }
 .cal-evento.feriado { --c: var(--vermelho); }
-.cal-evento.passado { opacity: .45; }
+.cal-evento.passado { filter: grayscale(1); }
+.cal-evento.passado .oque { color: var(--muted); }
 .cal-evento.hoje { box-shadow: 0 0 0 3px color-mix(in srgb, var(--turquesa) 32%, transparent); }
 .cal-evento .quando {
   font-family: var(--mono); font-size: .82rem; font-weight: 700; color: var(--c);
@@ -2792,7 +2794,7 @@ body.pg-da { background: #F4F6FB; }
 /* botão dos Stories do Instagram, nas cores da marca do app */
 .btn.btn-stories {
   --c: #DD2A7B; color: #fff; border-color: transparent;
-  background: linear-gradient(45deg, #F58529 0%, #DD2A7B 50%, #8134AF 100%);
+  background: linear-gradient(45deg, #C2410C 0%, #C13584 50%, #8134AF 100%);
 }
 .btn.btn-stories:hover { color: #fff; filter: brightness(1.06); }
 /* botão "Ouvir esta página", na engrenagem */
@@ -2869,14 +2871,6 @@ body.pg-da { background: #F4F6FB; }
 .faq-grupo { scroll-margin-top: 1rem; }
 .faq-grupo-t { font-size: 1.3rem; padding-left: .7rem; border-left: 5px solid var(--c); }
 .faq-grupo details.faq p a { white-space: nowrap; font-weight: 600; }
-.imprimir-linha { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem .7rem; font-size: .9rem; color: var(--muted); }
-@media print {
-  .imprimir-linha { display: none !important; }
-  .passo-corpo img { max-height: 110mm; width: auto; max-width: 100%; }
-  .passo-corpo figure, .passo-corpo img { break-inside: avoid; }
-  details.passo { break-inside: avoid-page; }
-  .step, .janela, details.faq { break-inside: avoid; }
-}
 /* mural de oportunidades e kit do vestibular (rascunhos ocultos) */
 .mural { list-style: none; padding: 0; margin: 0; display: grid; gap: .8rem; }
 .mural:empty { display: none; }
@@ -2890,3 +2884,28 @@ body.pg-da { background: #F4F6FB; }
 }
 .mural-item h2 { font-size: 1.15rem; margin: .2rem 0; }
 .kit-msg { overflow-wrap: anywhere; }
+/* como chegar: foto do mapa que abre a rota no GPS */
+.mapa-rota { position: relative; display: block; border-radius: 14px; overflow: hidden; border: 1px solid var(--hair); box-shadow: var(--sh-1); max-width: 560px; }
+.mapa-rota img { display: block; width: 100%; height: auto; transition: transform .3s ease; }
+.mapa-rota:hover img { transform: scale(1.03); }
+.mapa-rota-selo { position: absolute; left: .7rem; bottom: .7rem; background: #D91F35; color: #fff; font-weight: 700; font-size: .88rem; padding: .45rem .8rem; border-radius: 999px; box-shadow: 0 4px 12px rgba(0,0,0,.25); }
+.mapa-rota:focus-visible { outline: 3px solid var(--ring); outline-offset: 3px; }
+/* botão único "Compartilhar", que abre WhatsApp e Instagram (site.js) */
+.partilha { display: inline-flex; flex-wrap: wrap; align-items: center; gap: .5rem; }
+.partilha .btn svg { flex: none; }
+.partilha-btn { --c: var(--azul-esc); display: inline-flex; align-items: center; gap: .45rem; }
+.partilha-btn[aria-expanded="true"] { filter: brightness(.92); }
+.partilha-opcoes { display: inline-flex; flex-wrap: wrap; gap: .5rem; animation: partilha-abre .18s ease-out; }
+.partilha-opcoes .btn { display: inline-flex; align-items: center; gap: .4rem; color: #fff; border-color: transparent; }
+.btn.partilha-whats { --c: #0F7D42; background: #0F7D42; }
+.btn.partilha-insta { --c: #DD2A7B; background: linear-gradient(45deg, #C2410C 0%, #C13584 50%, #8134AF 100%); }
+.partilha-opcoes .btn:hover { color: #fff; filter: brightness(1.08); }
+@keyframes partilha-abre { from { opacity: 0; transform: translateX(-6px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .partilha-opcoes { animation: none; } }
+@media print { .partilha { display: none !important; } }
+/* âmbar em texto: o --ambar (#E09A1E) só passa em faixas e ícones; onde
+   um bloco usa --c: var(--ambar), o texto colorido sai no --ambar-txt */
+[style*="--c: var(--ambar)"] .eyebrow, .eyebrow[style*="--c: var(--ambar)"],
+.trilha[style*="--c: var(--ambar)"] [aria-current],
+[style*="--c: var(--ambar)"] .fase-num, [style*="--c: var(--ambar)"] .fase-numeros b { color: var(--ambar-txt); }
+.mapa-rota picture { display: block; }

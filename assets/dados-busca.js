@@ -25,6 +25,12 @@ window.DADOS_BUSCA = {
       k: 'yoga esmu escola de musica meditacao relaxar bem-estar bem estar corpo mente saude mental pausa sonia assis quinta aula atividade fisica ansiedade estresse'
     },
     {
+      t: 'Como chegar à UEMG Guanhães',
+      d: 'Mapa com a localização da Unidade, na BR-259, nº 2250. Toque no mapa para abrir a rota no GPS do celular.',
+      u: 'mapa.html#como-chegar',
+      k: 'como chegar endereco localizacao onde fica mapa gps rota google maps waze br-259 2250 nova uniao chegar na faculdade caminho'
+    },
+    {
       t: 'Glossário universitário',
       d: 'O que quer dizer crédito, ementa, pré-requisito, exame especial, trancamento, colação de grau, PPC, RA e outras palavras da vida acadêmica.',
       u: 'glossario.html',

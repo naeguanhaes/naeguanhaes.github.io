@@ -25,6 +25,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <script>try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentElement.setAttribute("data-fonte",f);var c=localStorage.getItem("nae:contraste");if(c==="sim")document.documentElement.setAttribute("data-contraste","alto")}catch(e){}</script>
+<link rel="canonical" href="https://naeguanhaes.github.io/mapa.html">
 <link rel="stylesheet" href="assets/min/estilo.min.css">
 </head>
 <body>
@@ -150,7 +151,7 @@
   <div id="mapa-lista" class="mapa-lista"></div>
 
   <div class="planta-caixa">
-    <svg class="planta" viewBox="0 0 1240 790" role="img" aria-labelledby="planta-t planta-d">
+    <svg class="planta" viewBox="0 0 1240 790" role="group" aria-labelledby="planta-t planta-d">
       <title id="planta-t">Planta da Unidade Guanhães da UEMG</title>
       <desc id="planta-d">Ala norte com banheiros, biblioteca e salas 1 a 7; pátio central; ala sul com cantina, laboratórios, auditório e salas 8, 9 e 10; sala 11 ao norte; prédio do administrativo com a sala do NAE e prédio anexo do NPJ ao sul.</desc>
 
@@ -434,13 +435,17 @@
     </div>
   </div>
 
-  <div class="card col reveal" style="--c: var(--green)">
+  <div class="card col reveal" id="como-chegar" style="--c: var(--green)">
     <span class="rotulo">Localização</span>
     <h2>Como chegar</h2>
     <p>Rodovia BR-259, nº 2250, Bairro Nova União, Guanhães/MG, CEP 39740-000.</p>
-    <div>
-      <a class="btn" style="--c: var(--green)" href="https://www.google.com/maps/search/?api=1&amp;query=UEMG+Unidade+Guanh%C3%A3es+BR-259+2250+Nova+Uni%C3%A3o+Guanh%C3%A3es+MG" target="_blank" rel="noopener noreferrer">Abrir no Google Maps →</a>
-    </div>
+    <a class="mapa-rota" href="https://www.google.com/maps/dir/?api=1&amp;destination=-18.7581882,-42.9480018" target="_blank" rel="noopener noreferrer" aria-label="Abrir a rota até a UEMG Unidade Guanhães no GPS do celular">
+      <picture>
+        <source media="(max-width: 600px)" srcset="assets/mapa/como-chegar-celular.webp" width="760" height="600">
+        <img src="assets/mapa/como-chegar.webp" srcset="assets/mapa/como-chegar-600.webp 600w, assets/mapa/como-chegar.webp 1200w" sizes="(min-width: 760px) 560px, 92vw" width="1200" height="700" alt="Mapa com o marcador da UEMG Unidade Guanhães às margens da BR-259, a oeste do centro de Guanhães" loading="lazy" decoding="async">
+      </picture>
+      <span class="mapa-rota-selo">Toque para abrir a rota no GPS</span>
+    </a>
   </div>
 
 </main>
