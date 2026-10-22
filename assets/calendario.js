@@ -45,6 +45,9 @@
     return U.dataBR(ev.ini).slice(0, 5) + ' a ' + U.dataBR(ev.fim).slice(0, 5);
   }
 
+  /* símbolos que um evento pode levar ao lado do nome (campo marca) */
+  var MARCAS = { seminario: 'assets/seminario/marca.webp', da: 'assets/da/simbolo.webp' };
+
   function itemHTML(ev, comMes) {
     var e = estado(ev);
     var agora = e !== 'hoje' ? ''
@@ -54,8 +57,8 @@
     return '<div class="cal-evento ' + ev.tipo + ' ' + (e === 'passado' ? 'passado' : e === 'hoje' ? 'hoje' : '') + '"' +
            ' data-tipo="' + ev.tipo + '">' +
              '<span class="quando">' + U.escapar(comMes ? comMesHTML(ev) : quando(ev)) + '</span>' +
-             '<span class="oque">' + (ev.marca === 'seminario'
-               ? '<img class="cal-marca" src="assets/seminario/marca.webp" alt="" width="15" height="20">' : '') +
+             '<span class="oque">' + (MARCAS[ev.marca]
+               ? '<img class="cal-marca" src="' + MARCAS[ev.marca] + '" alt="" width="15" height="20">' : '') +
                U.escapar(ev.titulo) + agora + '</span>' +
            '</div>';
   }

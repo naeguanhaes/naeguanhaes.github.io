@@ -35,8 +35,7 @@ try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentEleme
 
 <div class="da-volta">
   <div class="wrap da-volta-in">
-    <a href="index.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg> Voltar ao site do NAE</a>
-    <span class="da-volta-nae">página hospedada pelo <img src="assets/logo-topo.webp" width="620" height="279" alt="NAE · Núcleo de Apoio ao Estudante"></span>
+    <a href="index.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg><img src="assets/logo-topo.webp" width="620" height="279" alt="NAE · Núcleo de Apoio ao Estudante"><span>Voltar ao site do NAE</span></a>
   </div>
 </div>
 
@@ -259,6 +258,58 @@ try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentEleme
       </div>
     </div>
     <p class="da-nota">Resumo feito pelo NAE para facilitar a leitura. O que vale é o texto aprovado na Assembleia.</p>
+  </section>
+
+  <!-- RASCUNHO OCULTO (pedido do coordenador em 21/10/2026): "Conheça a Diretoria".
+       Só vai ao ar com os nomes, cargos e fotos enviados pelo DA. Para ativar: preencher
+       os cartões, trocar cada span da-membro-foto (a inicial) por uma imagem com a mesma
+       classe, guardada em assets/da/diretoria/ e com alt "Foto de" e o nome
+       (foto só com autorização da pessoa), tirar o atributo hidden e pôr o link
+       "Diretoria" no menu da página (.da-nav-in). -->
+  <section class="stack-s" id="diretoria" aria-labelledby="diretoria-tit" hidden>
+    <div class="titulo-sec" style="--c: var(--da-mostarda)">
+      <span class="eyebrow" style="--c: var(--da-ouro)">Gestão fundadora</span>
+      <h2 id="diretoria-tit">Conheça a Diretoria</h2>
+    </div>
+    <p class="lede">Os estudantes que estão construindo o Diretório Acadêmico. Procure por eles na Unidade com ideias, dúvidas e sugestões.</p>
+    <ul class="da-diretoria">
+      <li class="da-membro">
+        <span class="da-membro-foto" aria-hidden="true">R</span>
+        <span class="da-membro-cargo">Presidência</span>
+        <h3>Rian Victor Felício da Silva</h3>
+        <p>Direito, 7º período</p>
+      </li>
+      <li class="da-membro">
+        <span class="da-membro-foto" aria-hidden="true">?</span>
+        <span class="da-membro-cargo">Vice-Presidência</span>
+        <h3>Nome a confirmar</h3>
+        <p>Curso e período a confirmar</p>
+      </li>
+      <li class="da-membro">
+        <span class="da-membro-foto" aria-hidden="true">?</span>
+        <span class="da-membro-cargo">Secretariado-Geral</span>
+        <h3>Nome a confirmar</h3>
+        <p>Curso e período a confirmar</p>
+      </li>
+      <li class="da-membro">
+        <span class="da-membro-foto" aria-hidden="true">?</span>
+        <span class="da-membro-cargo">Tesouraria</span>
+        <h3>Nome a confirmar</h3>
+        <p>Curso e período a confirmar</p>
+      </li>
+      <li class="da-membro">
+        <span class="da-membro-foto" aria-hidden="true">?</span>
+        <span class="da-membro-cargo">Coordenação Executiva e de Assuntos Acadêmicos</span>
+        <h3>Nome a confirmar</h3>
+        <p>Curso e período a confirmar</p>
+      </li>
+      <li class="da-membro">
+        <span class="da-membro-foto" aria-hidden="true">?</span>
+        <span class="da-membro-cargo">Coordenação de Comunicação Institucional e Assuntos Sociais</span>
+        <h3>Nome a confirmar</h3>
+        <p>Curso e período a confirmar</p>
+      </li>
+    </ul>
   </section>
 
   <section class="stack-s" id="organizacao" aria-labelledby="org-tit">

@@ -9,8 +9,8 @@
 
    curto: (opcional) nome breve para a contagem do topo da página
    inicial, quando o título é longo.
-   marca: 'seminario' (opcional) põe o símbolo P&e do 28º Seminário
-   ao lado do evento.
+   marca: (opcional) põe um símbolo ao lado do evento: 'seminario' (o P&e
+   do 28º Seminário) ou 'da' (o brasão do Diretório Acadêmico).
 
    tipo: 'letivo'  → início/fim de período e eventos acadêmicos
          'prazo'   → matrículas, inscrições, exames, trancamento
@@ -74,6 +74,7 @@ window.DADOS_CALENDARIO = {
     { ini: '2026-10-23', fim: '2026-10-23', titulo: 'Suspensão das atividades de ensino (Ofício Circular UEMG/PROGRAD nº 1/2026)', tipo: 'feriado', curto: 'Suspensão das atividades de ensino' },
     { ini: '2026-10-25', fim: '2026-10-25', titulo: 'Aniversário de Guanhães/MG, feriado municipal', tipo: 'feriado' },
     { ini: '2026-10-26', fim: '2026-10-26', titulo: 'Suspensão das atividades de ensino (Ofício Circular UEMG/PROGRAD nº 1/2026)', tipo: 'feriado', curto: 'Suspensão das atividades de ensino' },
+    { ini: '2026-10-28', fim: '2026-10-28', titulo: 'Assembleia Geral do Diretório Acadêmico: votação do Estatuto Social, às 19h, no Auditório', tipo: 'letivo', curto: 'Assembleia Geral do DA', marca: 'da' },
     { ini: '2026-10-30', fim: '2026-10-31', titulo: 'Dia do/a Servidor/a Público/a, feriado e recesso', tipo: 'feriado' },
 
     { ini: '2026-11-02', fim: '2026-11-02', titulo: 'Feriado', tipo: 'feriado' },
@@ -81,6 +82,7 @@ window.DADOS_CALENDARIO = {
     { ini: '2026-11-09', fim: '2026-11-09', titulo: 'Abertura da Semana de Pesquisa e Extensão da UEMG Guanhães 2026', tipo: 'letivo', curto: 'Abertura da Semana de Pesquisa e Extensão', marca: 'seminario' },
     { ini: '2026-11-10', fim: '2026-11-12', titulo: 'Seminário de Pesquisa e Extensão 2026', tipo: 'letivo', marca: 'seminario' },
     { ini: '2026-11-13', fim: '2026-11-13', titulo: 'Encerramento da Semana de Pesquisa e Extensão da UEMG Guanhães 2026', tipo: 'letivo', curto: 'Encerramento da Semana de Pesquisa e Extensão', marca: 'seminario' },
+    { ini: '2026-11-13', fim: '2026-11-13', titulo: '1ª Mostra de Profissões da UEMG Guanhães, a partir das 13h', tipo: 'letivo', curto: '1ª Mostra de Profissões', marca: 'da' },
     { ini: '2026-11-15', fim: '2026-11-15', titulo: 'Proclamação da República, feriado', tipo: 'feriado' },
     { ini: '2026-11-19', fim: '2026-11-19', titulo: 'Data-limite para entregar ao orientador o trabalho para revisão final do TCC de Direito', tipo: 'prazo', curto: 'Entrega do TCC ao orientador (Direito)' },
     { ini: '2026-11-20', fim: '2026-11-21', titulo: 'Dia Nacional de Zumbi e da Consciência Negra, feriado e recesso', tipo: 'feriado' },

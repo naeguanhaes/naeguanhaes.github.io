@@ -2624,9 +2624,7 @@ body.pg-da { background: #F4F6FB; }
 .da-volta-in { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: .45rem; padding-bottom: .45rem; }
 .da-volta a { display: inline-flex; align-items: center; gap: .35rem; font-weight: 700; color: #22475F; text-decoration: none; }
 .da-volta a:hover { text-decoration: underline; }
-.da-volta-nae { display: inline-flex; align-items: center; gap: .5rem; color: var(--muted); font-size: .8rem; }
-.da-volta-nae img { height: 1.6rem; width: auto; }
-@media (max-width: 559px) { .da-volta-nae { display: none; } }
+.da-volta a img { height: 2rem; width: auto; margin: 0 .2rem 0 .1rem; }
 
 .da-topo {
   position: sticky; top: 0; z-index: 40; color: #fff;
@@ -2661,3 +2659,53 @@ body.pg-da { background: #F4F6FB; }
 .da-rodape::before { display: none; }
 .da-org > li.da-org-1 h3 { color: #fff; }
 .da-org > li.da-org-1 p { color: #DCE6F7; }
+
+/* Botões em destaque no menu, logo depois de Início: o DA nas cores do
+   brasão (azul com borda mostarda) e o Seminário no roxo da identidade
+   dele, este com data-ate até o último dia do evento. */
+.nav-link.nav-da {
+  background: var(--da-azul); border-color: var(--da-mostarda); color: #fff;
+  box-shadow: 0 6px 16px -10px rgba(10,45,109,.8);
+}
+.nav-link.nav-da:hover { background: #0C3480; border-color: var(--da-amarelo); color: #fff; filter: none; }
+.nav-link.nav-seminario {
+  background: linear-gradient(120deg, #241C52, #5B4EA6); border-color: #E2357F; color: #fff;
+  box-shadow: 0 6px 16px -10px rgba(36,28,82,.8);
+}
+.nav-link.nav-seminario:hover { color: #fff; filter: brightness(1.1); }
+.nav-link.nav-da .nav-marca, .nav-link.nav-seminario .nav-marca { background: #fff; }
+
+/* cartão fixo do DA na página inicial */
+.card.da-cartao {
+  position: relative; overflow: hidden; display: grid; align-content: start; gap: .5rem;
+  text-decoration: none; color: #fff; border: 0; border-top: 4px solid var(--da-mostarda);
+  background:
+    radial-gradient(38% 46% at 106% 108%, #C8963D 0 60%, rgba(200,150,61,0) 61%),
+    var(--da-azul);
+}
+.card.da-cartao::before, .card.da-cartao::after { display: none; }
+.da-cartao img { width: 5.5rem; height: auto; filter: drop-shadow(0 6px 12px rgba(0,0,0,.35)); }
+.da-cartao .rotulo { justify-self: start; color: #0A2D6D; background: var(--da-mostarda); }
+.da-cartao-tit { font-family: var(--serif); font-size: 1.45rem; font-weight: 600; line-height: 1.15; }
+.da-cartao-txt { color: #DCE6F7; }
+.da-cartao-btn {
+  justify-self: start; margin-top: .3rem; font-weight: 700; color: #0A2D6D;
+  background: var(--da-amarelo); border-radius: 99px; padding: .4rem 1rem;
+}
+.da-cartao:hover .da-cartao-btn { filter: brightness(1.05); text-decoration: underline; }
+
+/* Diretoria do DA (rascunho, ainda oculto) */
+.da-diretoria { list-style: none; margin: 0; padding: 0; display: grid; gap: .8rem; grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr)); }
+.da-membro {
+  display: grid; justify-items: center; text-align: center; gap: .35rem;
+  background: var(--surface); border: 1px solid #DAE2F2; border-top: 4px solid var(--da-mostarda);
+  border-radius: var(--radius); padding: 1.1rem .9rem; box-shadow: var(--sh-1);
+}
+.da-membro-foto {
+  width: 5.5rem; height: 5.5rem; border-radius: 50%; object-fit: cover;
+  display: grid; place-items: center; font-family: var(--serif); font-size: 1.6rem; color: #fff;
+  background: var(--da-azul); box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--da-mostarda);
+}
+.da-membro-cargo { font-size: .75rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--da-ouro); }
+.da-membro h3 { font-size: 1.05rem; color: var(--da-azul); }
+.da-membro p { margin: 0; font-size: .9rem; color: var(--ink-2); }

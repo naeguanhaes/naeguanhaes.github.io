@@ -67,6 +67,8 @@ try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentEleme
 <nav class="nav" aria-label="Seções do site">
   <div class="wrap nav-in">
     <a class="nav-link" href="index.html" style="--c: var(--azul-esc)"><i class="dot"></i>Início</a>
+    <a class="nav-link nav-destaque nav-da" href="diretorio-academico.html" style="--c: var(--da-azul)"><img class="nav-marca" src="assets/da/simbolo.webp" alt="" width="15" height="16">Diretório Acadêmico</a>
+    <a class="nav-link nav-destaque nav-seminario" href="seminario.html" aria-current="page" data-ate="2026-11-13" style="--c: #3F3480"><img class="nav-marca" src="assets/seminario/marca.webp" alt="" width="15" height="20">28º Seminário</a>
     <div class="nav-grupo" data-grupo="Sistemas e Wi-Fi" style="--c: var(--petroleo)">
       <a class="nav-link" href="sistemas.html" style="--c: var(--petroleo)"><i class="dot"></i>Visão geral dos sistemas</a>
       <a class="nav-link" href="email.html" style="--c: var(--azul)"><i class="dot"></i>E-mail institucional</a>
@@ -92,7 +94,6 @@ try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentEleme
     <div class="nav-grupo" data-grupo="Editais e bolsas" style="--c: var(--ambar)">
       <a class="nav-link" href="editais.html" style="--c: var(--ambar)"><i class="dot"></i>Editais abertos</a>
       <a class="nav-link" href="auxilios.html" style="--c: var(--coral)"><i class="dot"></i>Auxílios e pagamentos</a>
-      <a class="nav-link" href="seminario.html" aria-current="page" data-ate="2026-11-13" style="--c: var(--lilas)"><img class="nav-marca" src="assets/seminario/marca.webp" alt="" width="15" height="20">28º Seminário de Pesquisa e Extensão</a>
     </div>
     <div class="nav-grupo" data-grupo="Ferramentas" style="--c: var(--turquesa)">
       <a class="nav-link" href="calculadora.html" style="--c: var(--turquesa)"><i class="dot"></i>Calculadora de média e faltas</a>
@@ -102,7 +103,6 @@ try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentEleme
     </div>
     <a class="nav-link" href="apoio.html" style="--c: var(--rosa)"><i class="dot"></i>Apoio psicológico</a>
     <a class="nav-link" href="avisos.html" style="--c: var(--turquesa)"><i class="dot"></i>Avisos</a>
-    <a class="nav-link" href="diretorio-academico.html" style="--c: var(--da-azul)"><img class="nav-marca" src="assets/da/simbolo.webp" alt="" width="15" height="16">Diretório Acadêmico</a>
     <div class="nav-grupo" data-grupo="Sobre o NAE" style="--c: var(--ambar)">
       <a class="nav-link" href="sobre.html" style="--c: var(--ambar)"><i class="dot"></i>O que é o NAE</a>
       <a class="nav-link" href="contato.html" style="--c: var(--coral)"><i class="dot"></i>Fale com o NAE</a>
@@ -151,6 +151,25 @@ try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentEleme
       </picture>
     </figure>
   </div>
+
+  <!-- RASCUNHO OCULTO (pedido do coordenador em 21/10/2026): fase do certificado.
+       Só vai ao ar quando o coordenador souber, oficialmente, como os certificados
+       serão emitidos. Para ativar depois de 13/11: preencher os passos e a data, tirar
+       o atributo hidden, reescrever o retângulo do topo para a fase do certificado,
+       pôr de volta o link do Seminário no grupo "Editais e bolsas" do menu (o botão
+       em destaque sai sozinho em 13/11) e atualizar o nae:revisar-em. -->
+  <section class="card col" id="certificado" aria-labelledby="certificado-tit" style="--c: var(--lilas)" hidden>
+    <span class="rotulo">Depois do Seminário</span>
+    <h2 id="certificado-tit">Como pegar o seu certificado</h2>
+    <p>Disponível a partir de: <b>a confirmar</b>.</p>
+    <ol>
+      <li><b>Onde:</b> a confirmar.</li>
+      <li><b>Como entrar:</b> a confirmar.</li>
+      <li><b>O que conferir:</b> nome completo, carga horária e as atividades de que você participou.</li>
+      <li><b>Deu errado?</b> a confirmar a quem escrever.</li>
+    </ol>
+    <p>Para quem é de <b>Direito</b>, o certificado pode contar como atividade complementar: lance as horas no <a href="atividades.html">somador de horas</a>.</p>
+  </section>
 
   <div class="note ok col">
     <p>
@@ -358,6 +377,7 @@ try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentEleme
       <a href="calendario.html">Calendário</a>
       <a href="contato.html">Contato</a>
       <a href="avisos.html">Avisos</a>
+      <a href="diretorio-academico.html">Diretório Acadêmico</a>
       <a href="privacidade.html">Privacidade</a>
     </div>
     <p class="assinatura">Site desenvolvido por <b>Jonatan Barbosa Silva</b></p>

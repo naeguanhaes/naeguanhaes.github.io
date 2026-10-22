@@ -209,9 +209,21 @@ que por natureza acaba, e evita o item esquecido no menu meses depois.
 A classe `nav-destaque` deixa a aba preenchida na cor do `--c`, em vez do link
 comum. As duas coisas costumam andar juntas.
 
-**Em uso hoje:** nenhuma aba em destaque. O `wifi.html` foi aba destacada em turquesa até
-21/10/2026, quando o coordenador pediu para levá-lo para dentro do grupo, que passou a se
-chamar "Sistemas e Wi-Fi". O Seminário saiu do
+**Em uso hoje (desde 21/10/2026), logo depois de Início:**
+- `Diretório Acadêmico`, classe `nav-da`, nas cores do brasão, sem data de saída;
+- `28º Seminário`, classe `nav-seminario`, no roxo do evento, com `data-ate="2026-11-13"`
+  (último dia do Seminário). Ele saiu do grupo "Editais e bolsas"; quando a fase do
+  certificado for ao ar, o link volta para o grupo.
+
+O `wifi.html` foi aba destacada em turquesa até 21/10/2026, quando o coordenador pediu
+para levá-lo para dentro do grupo, que passou a se chamar "Sistemas e Wi-Fi".
+
+**Rascunhos ocultos dentro de páginas no ar** (atributo `hidden` + comentário com o passo
+a passo para ativar): a seção "Conheça a Diretoria" em `diretorio-academico.html`
+(aguarda nomes, cargos e fotos do DA) e a fase do certificado em `seminario.html`
+(aguarda o coordenador saber como os certificados serão emitidos).
+
+Antes, sobre o Seminário: ele saiu do
 destaque em 26/09 (fim da submissão) e virou item de "Editais e bolsas", ainda com
 `data-ate="2026-11-13"`.
 
