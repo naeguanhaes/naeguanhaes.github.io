@@ -2762,3 +2762,6 @@ body.pg-da { background: #F4F6FB; }
 .mp-area p { margin: 0; color: var(--ink-2); font-size: .95rem; }
 .pg-mostra .evento-cartaz figure img { max-width: 12rem; margin-inline: auto; display: block; }
 .da-nav a[aria-current="page"] { background: var(--da-mostarda); border-color: var(--da-mostarda); color: #0A2D6D; }
+/* brasão do botão do DA maior (pedido de 21/10/2026); a margem negativa
+   segura a altura do botão igual à dos outros do menu */
+.nav-link.nav-da .nav-marca { height: 2.35rem; margin: -.6rem -.05rem -.6rem -.25rem; }
