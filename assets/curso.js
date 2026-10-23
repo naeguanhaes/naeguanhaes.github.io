@@ -2,6 +2,7 @@
    NAE Guanhães · páginas do curso
    Lê window.DADOS_CURSO (assets/dados-curso.js) e monta:
      · o seletor de curso, que fica lembrado entre as visitas
+     · o mapa do curso período a período e o checklist da formatura
      · a matriz curricular com marcação do que já foi cursado
      · o somador de atividades complementares
      · os quadros de estágio, TCC e regras da secretaria
@@ -359,6 +360,91 @@
     })();
   }
 
+  /* ── Limites do PPC para as atividades complementares ── */
+  /* Cada lançamento pode trazer a modalidade do quadro do PPC (mod, o
+     índice na tabela) e o semestre (sem, "2026.1"). Com isso o somador
+     confere o limite por semestre ("30 h por semestre") e o teto da
+     modalidade; o que passa não entra na conta das horas que valem. O
+     valor por unidade ("1 h por defesa") não corta nada, porque um
+     lançamento pode juntar várias defesas.
+     Lançamento antigo, sem modalidade, é reconhecido pelo nome quando
+     ele é igual ao da tabela (o "+ adicionar" copia o nome). */
+  function limitesDa(l) {
+    var t = l.porEvento || '';
+    var nums = [], m, re = /(\d+)\s*h\b/g;
+    while ((m = re.exec(t))) nums.push(parseInt(m[1], 10));
+    if (!nums.length) return {};
+    return /por semestre/i.test(t) ? { semestre: nums[0] } : {};
+  }
+  function modalidadeDe(c, a) {
+    var tab = c.atividades.tabela;
+    if (typeof a.mod === 'number' && tab[a.mod]) return a.mod;
+    var d = U.normaliza(a.desc || '').trim();
+    for (var i = 0; i < tab.length; i++) {
+      var nome = U.normaliza(tab[i].atividade);
+      if (d === nome || (d.length > 25 && nome.indexOf(d) === 0)) return i;
+    }
+    return null;
+  }
+  function analisarAtividades(c, lista) {
+    var tab = c.atividades.tabela;
+    var itens = lista.map(function (a) {
+      var mod = modalidadeDe(c, a);
+      return { mod: mod, horas: Number(a.horas) || 0, conta: Number(a.horas) || 0, sem: a.sem || '', alertas: [], avisos: [] };
+    });
+    /* 1. sem o semestre, só um aviso: o lançamento pode juntar mais de um */
+    itens.forEach(function (it) {
+      if (it.mod === null || it.sem) return;
+      var lim = limitesDa(tab[it.mod]);
+      if (lim.semestre && it.horas > lim.semestre) {
+        it.avisos.push('Vale até ' + lim.semestre + ' h por semestre: diga o semestre, ou lance um item para cada');
+      }
+    });
+    /* 2. limite por semestre, somando a mesma modalidade no mesmo semestre */
+    var grupos = {};
+    itens.forEach(function (it) {
+      if (it.mod === null || !it.sem) return;
+      var lim = limitesDa(tab[it.mod]);
+      if (!lim.semestre) return;
+      var k = it.mod + '|' + it.sem;
+      (grupos[k] = grupos[k] || { lim: lim.semestre, sem: it.sem, itens: [] }).itens.push(it);
+    });
+    Object.keys(grupos).forEach(function (k) {
+      var g = grupos[k];
+      var soma = g.itens.reduce(function (s, it) { return s + it.conta; }, 0);
+      if (soma <= g.lim) return;
+      var sobra = soma - g.lim;
+      g.itens.forEach(function (it) { it.alertas.push('Passa do limite de ' + g.lim + ' h em ' + g.sem + ': são ' + soma + ' h'); });
+      for (var i = g.itens.length - 1; i >= 0 && sobra > 0; i--) {
+        var corte = Math.min(sobra, g.itens[i].conta);
+        g.itens[i].conta -= corte; sobra -= corte;
+      }
+    });
+    /* 3. teto da modalidade */
+    tab.forEach(function (l, mod) {
+      var daMod = itens.filter(function (it) { return it.mod === mod; });
+      var soma = daMod.reduce(function (s, it) { return s + it.conta; }, 0);
+      if (!daMod.length || soma <= l.teto) return;
+      var sobra = soma - l.teto;
+      daMod.forEach(function (it) { it.alertas.push('Passa do teto de ' + l.teto + ' h desta modalidade: são ' + soma + ' h'); });
+      for (var i = daMod.length - 1; i >= 0 && sobra > 0; i--) {
+        var corte = Math.min(sobra, daMod[i].conta);
+        daMod[i].conta -= corte; sobra -= corte;
+      }
+    });
+    return {
+      itens: itens,
+      lancadas: itens.reduce(function (s, it) { return s + it.horas; }, 0),
+      contam: itens.reduce(function (s, it) { return s + it.conta; }, 0)
+    };
+  }
+  /* semestres para o campo do formulário: seis anos para trás e um à frente */
+  function semestresRecentes() {
+    var ano = new Date().getFullYear(), lista = [];
+    for (var a = ano + 1; a >= ano - 6; a--) lista.push(a + '.2', a + '.1');
+    return lista;
+  }
+
   /* ── Atividades complementares ────────────────────── */
   var atividades = document.getElementById('atividades-painel');
   /* prepara o formulário com uma modalidade escolhida na tabela; quem
@@ -384,7 +470,8 @@
       var lancadas = lerAtiv(c);
       var emEdicao = editando !== null && lancadas[editando] ? lancadas[editando] : null;
       if (!emEdicao) editando = null;
-      var soma = lancadas.reduce(function (s, a) { return s + (Number(a.horas) || 0); }, 0);
+      var analise = analisarAtividades(c, lancadas);
+      var soma = analise.contam;
       var alvo = c.atividades.total;
       var porcento = Math.min(100, Math.round(soma / alvo * 100));
       var faltam = Math.max(0, alvo - soma);
@@ -427,14 +514,30 @@
         opcoes.push('<option value="' + p + '"' + (p === meu ? ' selected' : '') + '>' + p + 'º período</option>');
       }
 
+      function etiquetasDo(it) {
+        var l = it.mod !== null ? c.atividades.tabela[it.mod] : null;
+        var tags = l
+          ? '<span class="ativ-tag">' + U.escapar(l.grupo) + ' · teto ' + l.teto + ' h' + (it.sem ? ' · ' + U.escapar(it.sem) : '') + '</span>'
+          : '<span class="ativ-tag ativ-tag-sem">sem modalidade: escolha em editar para conferir o teto</span>';
+        tags += it.alertas.map(function (al) { return '<span class="ativ-tag ativ-tag-alerta">' + U.escapar(al) + '</span>'; }).join('');
+        tags += it.avisos.map(function (av) { return '<span class="ativ-tag ativ-tag-aviso">' + U.escapar(av) + '</span>'; }).join('');
+        if (it.conta < it.horas) tags += '<span class="ativ-tag ativ-tag-alerta">contam ' + it.conta + ' de ' + it.horas + ' h</span>';
+        return '<p class="ativ-tags">' + tags + '</p>';
+      }
+
       atividades.innerHTML =
         '<div class="card col" style="--c: ' + c.cor + '">' +
           '<span class="rotulo">' + U.escapar(c.nome) + '</span>' +
-          '<h2>' + soma + ' de ' + alvo + ' horas lançadas</h2>' +
+          '<h2>' + soma + ' de ' + alvo + ' horas que contam</h2>' +
           '<div class="barra"><span style="width: ' + porcento + '%; background: ' + c.cor + '"></span></div>' +
           '<p>' + (faltam
             ? 'Faltam <b>' + faltam + ' horas</b> para completar as atividades complementares.'
             : 'Você já registrou a carga horária completa. Guarde os comprovantes e protocole na Coordenação.') + '</p>' +
+          (analise.lancadas > analise.contam
+            ? '<div class="calc-res olho">Você lançou <b>' + analise.lancadas + ' horas</b>, mas pelas regras do PPC ' +
+              'contam <b>' + analise.contam + '</b>: ' + (analise.lancadas - analise.contam) + ' horas passam dos limites. ' +
+              'As etiquetas em vermelho na lista mostram onde.</div>'
+            : '') +
           '<div class="ritmo-caixa">' +
             '<span class="ritmo-alvo"><b>' + porSemestre + ' h</b>por semestre</span>' +
             '<span class="ritmo-txt">É o ritmo que zera a conta sem sufoco: <b>' + alvo + ' horas</b> ' +
@@ -458,6 +561,23 @@
               '<input id="ativ-horas" type="number" min="1" max="500" inputmode="numeric" placeholder="30"' +
               (emEdicao ? ' value="' + emEdicao.horas + '"' : '') + '>' +
             '</div>' +
+            '<div class="field campo-modalidade">' +
+              '<label for="ativ-mod">Modalidade do PPC (para conferir o teto)</label>' +
+              '<select id="ativ-mod"><option value="">não sei ou não está na tabela</option>' +
+              c.atividades.tabela.map(function (l, i) {
+                var sel = emEdicao && modalidadeDe(c, emEdicao) === i;
+                return '<option value="' + i + '"' + (sel ? ' selected' : '') + '>' +
+                  U.escapar(l.grupo + ': ' + (l.atividade.length > 70 ? l.atividade.slice(0, 68) + '…' : l.atividade)) +
+                  ' (teto ' + l.teto + ' h)</option>';
+              }).join('') + '</select>' +
+            '</div>' +
+            '<div class="field campo-curto">' +
+              '<label for="ativ-sem">Semestre</label>' +
+              '<select id="ativ-sem"><option value="">opcional</option>' +
+              semestresRecentes().map(function (sm) {
+                return '<option' + (emEdicao && emEdicao.sem === sm ? ' selected' : '') + '>' + sm + '</option>';
+              }).join('') + '</select>' +
+            '</div>' +
             '<div class="field campo-detalhes">' +
               '<label for="ativ-det">Detalhes (opcional)</label>' +
               '<textarea id="ativ-det" rows="2" maxlength="300" placeholder="Onde está o certificado, número do protocolo, observações">' +
@@ -480,6 +600,7 @@
                     'aria-label="Tirar ' + U.escapar(a.desc) + ' da lista">tirar</button>' +
                   '</span></div>' +
                   (a.det ? '<p class="ativ-det">' + U.escapar(a.det) + '</p>' : '') +
+                  etiquetasDo(analise.itens[i]) +
                 '</li>';
               }).join('') + '</ul>'
             : '<p class="ativ-vazio">Nada lançado ainda. Comece pelo que você já fez neste semestre.</p>') +
@@ -510,6 +631,10 @@
         }
         var item = { desc: desc.slice(0, 160), horas: Math.min(horas, 500) };
         if (det) item.det = det.slice(0, 300);
+        var mod = form.querySelector('#ativ-mod').value;
+        if (mod !== '') item.mod = parseInt(mod, 10);
+        var sem = form.querySelector('#ativ-sem').value;
+        if (sem) item.sem = sem;
         var lista = lerAtiv(c);
         var eraEdicao = editando !== null && lista[editando];
         if (eraEdicao) lista[editando] = item;
@@ -592,6 +717,8 @@
             }).map(function (a) {
               var item = { desc: a.desc.trim().slice(0, 160), horas: Math.min(parseInt(a.horas, 10), 500) };
               if (typeof a.det === 'string' && a.det.trim()) item.det = a.det.trim().slice(0, 300);
+              if (typeof a.mod === 'number' && c.atividades.tabela[a.mod]) item.mod = a.mod;
+              if (typeof a.sem === 'string' && /^\d{4}\.[12]$/.test(a.sem)) item.sem = a.sem;
               return item;
             });
             var atuais = lerAtiv(c);
@@ -611,7 +738,7 @@
       if (btReq) {
         btReq.addEventListener('click', function () {
           var lista = lerAtiv(c);
-          var total = lista.reduce(function (s, a) { return s + (Number(a.horas) || 0); }, 0);
+          var total = analisarAtividades(c, lista).contam;
           /* o requerimentos.js lê isto uma vez e apaga */
           U.guardar('req-atividades', JSON.stringify({
             curso: c.nome, periodo: U.ler(chavePeriodo(c)) || '',
@@ -652,11 +779,12 @@
       if (campo) setTimeout(function () { campo.focus({ preventScroll: true }); }, U.reduzir ? 0 : 450);
     }
 
-    prepararLancamento = function (c, desc, horas) {
+    prepararLancamento = function (c, desc, horas, mod) {
       editando = null;
       desenharAtiv(c);
       var form = atividades.querySelector('#ativ-form');
       form.querySelector('#ativ-desc').value = desc.slice(0, 160);
+      if (typeof mod === 'number') form.querySelector('#ativ-mod').value = String(mod);
       if (horas) form.querySelector('#ativ-horas').value = horas;
       irParaFormulario(horas ? '#ativ-desc' : '#ativ-horas');
       U.toast(horas
@@ -786,9 +914,10 @@
          número fixo ("30 h por semestre"), as horas */
       tabela.querySelectorAll('[data-adicionar]').forEach(function (b) {
         b.addEventListener('click', function () {
-          var l = a.tabela[parseInt(b.getAttribute('data-adicionar'), 10)];
+          var idx = parseInt(b.getAttribute('data-adicionar'), 10);
+          var l = a.tabela[idx];
           var m = /^(\d+)\s*h\b/.exec(l.porEvento || '');
-          prepararLancamento(c, l.atividade, m ? parseInt(m[1], 10) : 0);
+          prepararLancamento(c, l.atividade, m ? parseInt(m[1], 10) : 0, idx);
         });
       });
     });
@@ -829,6 +958,173 @@
       '<p class="fonte-ppc">Fonte: ' + U.escapar(c.fonte) + '.</p>' +
     '</div>';
   });
+
+  /* ── Leitura do que o estudante marcou em outras páginas ── */
+  /* a matriz guarda os códigos cursados; o somador, as horas lançadas */
+  function lerLista(chave) {
+    var lista = [];
+    try { lista = JSON.parse(U.ler(chave) || '[]'); } catch (e) { lista = []; }
+    return Array.isArray(lista) ? lista : [];
+  }
+  function disciplinasDo(c) {
+    var todas = [];
+    c.periodos.forEach(function (p) { p.disciplinas.forEach(function (d) { todas.push(d); }); });
+    return todas;
+  }
+
+  /* ── Mapa do curso, período a período (curso.html) ── */
+  /* As etiquetas de cada período saem das próprias disciplinas da matriz;
+     os textos, dos marcos do PPC em dados-curso.js. O ENADE vem do INEP. */
+  var ETIQUETAS = [
+    { re: /Estágio/i, rot: 'Estágio', cor: 'var(--verde)' },
+    { re: /Trabalho de Conclus/i, rot: 'TCC', cor: 'var(--lilas)' },
+    { re: /Atividades de Extensão/i, rot: 'Extensão', cor: 'var(--turquesa)' },
+    { re: /Atividades Complementares/i, rot: 'Atividades complementares', cor: 'var(--coral)' },
+    { re: /^Optativa/i, rot: 'Optativa', cor: 'var(--ambar-txt)' }
+  ];
+  var ENADE_MARCOS = {
+    1: 'ENADE: no ano em que o curso é avaliado, quem acabou de entrar preenche o Questionário do Estudante.',
+    9: 'ENADE: no ano em que o curso é avaliado, quem vai se formar preenche o questionário e faz a prova, condição para colar grau.'
+  };
+  var mapaEl = document.getElementById('curso-mapa');
+  if (mapaEl) {
+    var desenharMapa = function (c) {
+      var meu = parseInt(U.ler('periodo-' + c.id) || '0', 10);
+      var opcoes = '<option value="0">escolha</option>' + c.periodos.map(function (p) {
+        return '<option value="' + p.n + '"' + (p.n === meu ? ' selected' : '') + '>' + p.n + 'º período</option>';
+      }).join('');
+      var itens = c.periodos.map(function (p) {
+        var ch = p.disciplinas.reduce(function (s, d) { return s + d.ch; }, 0);
+        var etiquetas = ETIQUETAS.filter(function (e) {
+          return p.disciplinas.some(function (d) { return e.re.test(d.nome); });
+        }).map(function (e) {
+          return '<span class="mc-etiqueta" style="--c: ' + e.cor + '">' + e.rot + '</span>';
+        }).join('');
+        var marcos = (c.marcos || []).filter(function (m) { return m.p === p.n; }).map(function (m) {
+          return '<li>' + U.escapar(m.texto) + (m.link ? ' <a href="' + m.link + '">saiba mais</a>' : '') + '</li>';
+        });
+        if (ENADE_MARCOS[p.n]) marcos.push('<li>' + ENADE_MARCOS[p.n] + ' <a href="enade.html">saiba mais</a></li>');
+        var classe = p.n === meu ? ' mc-atual' : (meu && p.n < meu ? ' mc-feito' : '');
+        return '<li class="mc-item' + classe + '"' + (p.n === meu ? ' aria-current="step"' : '') + '>' +
+          '<span class="mc-num">' + p.n + 'º</span>' +
+          '<div class="mc-corpo">' +
+            '<p class="mc-resumo"><b>' + p.disciplinas.length + ' componentes · ' + ch + ' h</b>' +
+              (p.n === meu ? ' <span class="mc-aqui">você está aqui</span>' : '') + '</p>' +
+            (etiquetas ? '<p class="mc-etiquetas">' + etiquetas + '</p>' : '') +
+            (marcos.length ? '<ul class="mc-marcos">' + marcos.join('') + '</ul>' : '') +
+          '</div>' +
+        '</li>';
+      }).join('');
+      mapaEl.innerHTML =
+        '<div class="card col" style="--c: ' + c.cor + '">' +
+          '<span class="rotulo">Período a período</span>' +
+          '<h2>O mapa do curso de ' + U.escapar(c.nome) + '</h2>' +
+          '<p>Quando entram o estágio, o TCC, as optativas e o ENADE, e o que não pode ficar para depois.</p>' +
+          '<label class="mc-onde">Estou no <select id="mc-periodo">' + opcoes + '</select></label>' +
+          '<ol class="mapa-curso">' + itens + '</ol>' +
+          '<p class="fonte-ppc">Fonte: ' + U.escapar(c.fonte) + '. As disciplinas de cada período estão na <a href="matriz.html">matriz curricular</a>.</p>' +
+        '</div>';
+      document.getElementById('mc-periodo').addEventListener('change', function (e) {
+        var v = parseInt(e.target.value, 10);
+        if (v) U.guardar('periodo-' + c.id, String(v)); else U.apagar('periodo-' + c.id);
+        desenharMapa(c);
+        document.getElementById('mc-periodo').focus();
+      });
+    };
+    aoTrocar(desenharMapa);
+  }
+
+  /* ── Checklist da formatura (formatura.html) ──────── */
+  /* Os itens saem do PPC (dados-curso.js). Onde o estudante já marcou algo
+     na matriz ou no somador de horas, o item mostra quanto falta. As
+     caixinhas ficam guardadas só neste aparelho. */
+  var formEl = document.getElementById('formatura-lista');
+  if (formEl) {
+    var itensDaFormatura = function (c) {
+      var todas = disciplinasDo(c);
+      var feitas = lerLista('cursadas-' + c.id);
+      var marcadas = todas.filter(function (d) { return feitas.indexOf(d.cod) !== -1; }).length;
+      var horas = analisarAtividades(c, lerLista('atividades-' + c.id)).contam;
+      var periodosCom = function (re) {
+        return c.periodos.filter(function (p) { return p.disciplinas.some(function (d) { return re.test(d.nome); }); })
+          .map(function (p) { return p.n + 'º'; });
+      };
+      var itens = [
+        { id: 'disciplinas', titulo: 'Todas as disciplinas aprovadas',
+          texto: c.creditos + ' créditos e ' + c.cargaTotal.toLocaleString('pt-BR') + ' horas, incluídas as optativas. ' + (c.optativasNota || ''),
+          link: 'matriz.html', rotulo: 'Abrir a matriz',
+          auto: todas.length ? 'Na matriz, você marcou ' + marcadas + ' de ' + todas.length + ' componentes.' : '',
+          pronto: marcadas === todas.length }
+      ];
+      var ext = periodosCom(/Atividades de Extensão/i);
+      if (ext.length) itens.push({ id: 'extensao', titulo: 'Atividades de Extensão',
+        texto: 'Componente curricular com regimento próprio, do ' + ext[0] + ' ao ' + ext[ext.length - 1] + ' período. As atividades de extensão contam aqui, e não nas complementares.',
+        link: 'matriz.html', rotulo: 'Ver na matriz' });
+      itens.push(
+        { id: 'estagio', titulo: c.estagio.titulo + ', ' + c.estagio.horas + ' horas',
+          texto: c.estagio.quando + ' ' + (c.estagio.pontos[0] || ''), link: 'estagio.html', rotulo: 'Regras do estágio' },
+        { id: 'tcc', titulo: 'Trabalho de Conclusão de Curso',
+          texto: c.tcc.pontos.slice(0, 1).concat(c.tcc.pontos.filter(function (p) { return /banca/i.test(p); }).slice(0, 1)).join(' '),
+          link: 'tcc.html', rotulo: 'Tudo sobre o TCC' },
+        { id: 'atividades', titulo: 'Atividades complementares, ' + c.atividades.total + ' horas',
+          texto: c.atividades.prazo + ' ' + (c.atividades.comoProtocolar || ''),
+          link: 'atividades.html', rotulo: 'Somar as minhas horas',
+          auto: 'No somador, contam ' + horas + ' de ' + c.atividades.total + ' horas, já descontado o que passa dos tetos.',
+          pronto: horas >= c.atividades.total },
+        { id: 'enade', titulo: 'ENADE em dia',
+          texto: 'No ano em que o curso é avaliado, quem vai se formar precisa preencher o Questionário do Estudante e fazer a prova. Sem isso, a situação fica irregular e não há colação de grau.',
+          link: 'enade.html', rotulo: 'Entender o ENADE' },
+        { id: 'historico', titulo: 'Histórico conferido no Lyceum', dica: true,
+          texto: 'Confira o histórico antes do último semestre: disciplina faltando, nota ou hora complementar sem lançamento se resolvem com tempo.',
+          link: 'lyceum.html', rotulo: 'Como entrar no Lyceum' },
+        { id: 'colacao', titulo: 'Documentos e prazo da colação de grau', dica: true,
+          texto: 'A lista de documentos e as datas da colação são da Secretaria Acadêmica. Pergunte no início do último semestre, pelo secretaria.guanhaes@uemg.br.',
+          link: 'contato.html', rotulo: 'Contatos da Unidade' }
+      );
+      return itens;
+    };
+    var desenharFormatura = function (c) {
+      var chave = 'formatura-' + c.id;
+      var ok = lerLista(chave);
+      var itens = itensDaFormatura(c);
+      var feitos = itens.filter(function (i) { return ok.indexOf(i.id) !== -1; }).length;
+      var pct = Math.round(feitos / itens.length * 100);
+      formEl.innerHTML =
+        '<div class="progresso" role="group" aria-label="Progresso do checklist">' +
+          '<div class="progresso-topo"><b>' + feitos + ' de ' + itens.length + ' itens em dia</b>' +
+            '<span>' + U.escapar(c.nome) + '</span></div>' +
+          '<div class="barra"><span style="width: ' + pct + '%; background: ' + c.cor + '"></span></div>' +
+        '</div>' +
+        '<ul class="checklist">' + itens.map(function (i) {
+          var marcado = ok.indexOf(i.id) !== -1;
+          return '<li class="ck-item' + (marcado ? ' ck-ok' : '') + '" style="--c: ' + c.cor + '">' +
+            '<input type="checkbox" id="ck-' + i.id + '" data-ck="' + i.id + '"' + (marcado ? ' checked' : '') + '>' +
+            '<div class="ck-corpo">' +
+              '<label for="ck-' + i.id + '">' + U.escapar(i.titulo) + (i.dica ? ' <span class="ck-dica">recomendação do NAE</span>' : '') + '</label>' +
+              '<p>' + U.escapar(i.texto) + '</p>' +
+              (i.auto ? '<p class="ck-auto' + (i.pronto ? ' ck-auto-ok' : '') + '">' + U.escapar(i.auto) + '</p>' : '') +
+              '<a href="' + i.link + '">' + U.escapar(i.rotulo) + ' &rarr;</a>' +
+            '</div>' +
+          '</li>';
+        }).join('') + '</ul>' +
+        '<p class="progresso-nota">As marcações ficam só neste aparelho e não substituem o histórico oficial nem a conferência da Secretaria Acadêmica. ' +
+        '<button class="btn-texto" type="button" id="ck-limpar">Apagar as marcações</button></p>';
+      formEl.querySelectorAll('[data-ck]').forEach(function (cx) {
+        cx.addEventListener('change', function () {
+          var lista = lerLista(chave).filter(function (x) { return x !== cx.getAttribute('data-ck'); });
+          if (cx.checked) lista.push(cx.getAttribute('data-ck'));
+          U.guardar(chave, JSON.stringify(lista));
+          var id = cx.id;
+          desenharFormatura(c);
+          document.getElementById(id).focus();
+        });
+      });
+      document.getElementById('ck-limpar').addEventListener('click', function () {
+        U.apagar(chave); desenharFormatura(c);
+      });
+    };
+    aoTrocar(desenharFormatura);
+  }
 
   /* ── Regras que valem para os dois cursos ─────────── */
   var regras = document.getElementById('regras-lista');

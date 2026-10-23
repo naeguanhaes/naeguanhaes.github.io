@@ -31,6 +31,24 @@ window.DADOS_BUSCA = {
       k: 'como chegar endereco localizacao onde fica mapa gps rota google maps waze br-259 2250 nova uniao chegar na faculdade caminho'
     },
     {
+      t: 'Novidades do site',
+      d: 'Tudo o que entrou no site do NAE, mês a mês, da novidade mais recente para a mais antiga.',
+      u: 'novidades.html',
+      k: 'novidades do site o que mudou o que ha de novo atualizacoes historico lancamentos paginas novas ferramentas novas'
+    },
+    {
+      t: 'Checklist da formatura',
+      d: 'O que precisa estar em dia para colar grau: disciplinas, estágio, TCC, atividades complementares e ENADE, com caixinhas para marcar.',
+      u: 'formatura.html',
+      k: 'checklist formatura colacao de grau colar grau formar formando diploma o que falta para me formar requisitos estagio tcc atividades complementares enade historico documentos ultimo semestre'
+    },
+    {
+      t: 'Mapa do curso, período a período',
+      d: 'Quando entram o estágio, o TCC, as optativas, a extensão e o ENADE, do 1º ao 10º período, no Direito e na Engenharia Civil.',
+      u: 'curso.html#curso-mapa',
+      k: 'mapa do curso periodo a periodo linha do tempo trajetoria quando comeca estagio quando faco tcc optativas extensao enade semestre em que periodo'
+    },
+    {
       t: 'Glossário universitário',
       d: 'O que quer dizer crédito, ementa, pré-requisito, exame especial, trancamento, colação de grau, PPC, RA e outras palavras da vida acadêmica.',
       u: 'glossario.html',

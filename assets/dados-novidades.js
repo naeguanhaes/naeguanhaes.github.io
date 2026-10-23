@@ -11,12 +11,34 @@
    link:      opcional, para onde levar
    textoLink: opcional, o rótulo do link
 
-   Aparecem sempre as 4 mais recentes.
+   Aparecem as 4 mais recentes no quadro da inicial e do Sobre,
+   com o link para novidades.html, que mostra todas, mês a mês.
    ═══════════════════════════════════════════════════════ */
 
 window.DADOS_NOVIDADES = {
   atualizadoEm: '2026-10-22',
   itens: [
+    {
+      data: '2026-10-22',
+      titulo: 'Somador confere o teto de cada atividade',
+      texto: 'Escolha a modalidade do PPC e o semestre: o somador avisa quando uma atividade passa do teto ou do limite por semestre, e mostra só as horas que contam.',
+      link: 'atividades.html',
+      textoLink: 'conferir as minhas horas'
+    },
+    {
+      data: '2026-10-22',
+      titulo: 'Todas as novidades numa página',
+      texto: 'O que entrou no site desde agosto, mês a mês.',
+      link: 'novidades.html',
+      textoLink: 'ver as novidades'
+    },
+    {
+      data: '2026-10-22',
+      titulo: 'Mapa do curso e checklist da formatura',
+      texto: 'Veja, período a período, quando entram o estágio, o TCC e o ENADE, e marque o que já está em dia para colar grau.',
+      link: 'formatura.html',
+      textoLink: 'abrir o checklist'
+    },
     {
       data: '2026-10-22',
       titulo: 'Guias em papel e imagens para os Stories',

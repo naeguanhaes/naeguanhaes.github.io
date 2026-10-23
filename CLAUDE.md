@@ -547,3 +547,24 @@ de fora só o cartaz e o guia de bolso, que são folhas para imprimir.
 **Números do relatório:** `node ferramentas/contar-relatorio.js [AAAA-MM-DD]` conta
 sozinho o quadro "8.1 Conteúdo disponibilizado" (páginas, publicações, ementas,
 referências, disciplinas, atividades, turmas, calendário, novidades, inspeções).
+
+
+## Mapa do curso, checklist da formatura, tetos das atividades e novidades (22/10/2026)
+
+- **Mapa do curso** (`curso.html#curso-mapa`, montado pelo `curso.js`): do 1º ao 10º
+  período, com as etiquetas tiradas das disciplinas da matriz (Estágio, TCC, Extensão,
+  Optativa, Atividades complementares) e os textos de `marcos` em `dados-curso.js`, um
+  resumo do PPC por período. O ENADE (ingressante no 1º, concluinte no 9º) vem do INEP,
+  no próprio `curso.js`. O "Estou no" usa a mesma chave do somador e da matriz.
+- **Checklist da formatura** (`formatura.html`, menu "Meu curso"): itens do PPC por curso,
+  caixinhas guardadas no aparelho (`formatura-<curso>`), e o que o estudante já marcou na
+  matriz e no somador. Os dois últimos itens são recomendação do NAE, não regra do PPC.
+- **Tetos das atividades complementares** (pedido do coordenador): cada lançamento do
+  somador pode ter a modalidade do quadro do PPC (`mod`) e o semestre (`sem`). O somador
+  corta o que passa do teto da modalidade e do limite por semestre ("30 h por semestre"),
+  marca em vermelho e mostra as horas que contam. Lançamento antigo com o nome igual ao da
+  tabela é reconhecido sozinho. O valor por unidade ("1 h por defesa") não corta, porque um
+  lançamento pode juntar várias.
+- **Novidades do site** (`novidades.html`, menu "Sobre o NAE"): todas as novidades de
+  `dados-novidades.js`, por mês. O quadro da inicial e do Sobre mostra as 4 mais recentes e
+  o link "Ver todas as novidades".

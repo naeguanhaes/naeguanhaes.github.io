@@ -803,14 +803,19 @@
   })();
 
   /* ── Novidades do site ────────────────────────────── */
+  /* No quadro da inicial e do Sobre, as 4 mais recentes e o link para a
+     página com todas. Com data-todas (novidades.html), a lista inteira,
+     separada por mês. */
   (function novidades() {
     var caixa = document.getElementById('novidades-lista');
     if (!caixa || !window.DADOS_NOVIDADES) return;
 
-    var itens = (window.DADOS_NOVIDADES.itens || []).slice(0, 4);
+    var todas = window.DADOS_NOVIDADES.itens || [];
+    var completa = caixa.hasAttribute('data-todas');
+    var itens = completa ? todas : todas.slice(0, 4);
     if (!itens.length) { caixa.innerHTML = '<p class="agora-vazio">Nada de novo por aqui no momento.</p>'; return; }
 
-    caixa.innerHTML = itens.map(function (n) {
+    function linha(n) {
       var p = String(n.data).split('-');
       var quando = p[2] + '/' + p[1];
       return '<div class="novidade">' +
@@ -824,7 +829,27 @@
                  '</span>' +
                '</span>' +
              '</div>';
-    }).join('');
+    }
+
+    if (!completa) {
+      caixa.innerHTML = itens.map(linha).join('') +
+        (todas.length > itens.length
+          ? '<p class="novidades-mais"><a href="novidades.html">Ver todas as novidades (' + todas.length + ') →</a></p>'
+          : '');
+      return;
+    }
+    var html = '', mesAtual = '';
+    itens.forEach(function (n) {
+      var p = String(n.data).split('-');
+      var mes = MESES[parseInt(p[1], 10) - 1] + ' de ' + p[0];
+      if (mes !== mesAtual) {
+        if (mesAtual) html += '</div>';
+        html += '<h2 class="novidades-mes">' + mes.charAt(0).toUpperCase() + mes.slice(1) + '</h2><div class="novidades-lista">';
+        mesAtual = mes;
+      }
+      html += linha(n);
+    });
+    caixa.innerHTML = html + '</div>';
   })();
 
   /* ── Texto pronto para o grupo ────────────────────── */

@@ -7,8 +7,9 @@
      de 06/03/2024, publicada em 08/03/2024.
    · Engenharia Civil: PPC da Unidade Guanhães, 2024.
 
-   Estas páginas usam estes dados: matriz.html, atividades.html,
-   estagio.html, tcc.html e secretaria.html.
+   Estas páginas usam estes dados: curso.html, matriz.html,
+   atividades.html, estagio.html, tcc.html, secretaria.html e
+   formatura.html.
 
    REGRA DE OURO: nada aqui é chute. Se um número não está no
    PPC, ele não entra neste arquivo. Ao atualizar, cite sempre
@@ -240,6 +241,17 @@ window.DADOS_CURSO = {
         tabelaNota: 'Quadro 02 do PPC de Direito, transcrito na íntegra. A coluna "A partir de quando conta" vem da regulamentação aditiva de Atividades Complementares aprovada pelo Colegiado na Reunião nº 3 (2026-1), de 11 de março de 2026, que fixou o termo inicial de cada modalidade sem alterar as horas nem os tetos. Onde o texto do Colegiado fala em "ano de ingresso", a Coordenação definiu que vale sempre a data da matrícula do estudante, para não haver dois critérios diferentes dentro do mesmo quadro. O próprio PPC abre uma porta: outras atividades não descritas no quadro podem ser avaliadas e consideradas pela Coordenação do Curso. Na dúvida sobre o enquadramento ou sobre a data de um comprovante, pergunte antes de contar com as horas.'
       },
 
+      /* Marcos do curso, período a período, para o mapa da página "Meu
+         curso" e o checklist da formatura. Cada texto resume um ponto do
+         PPC já transcrito acima (atividades, estágio e TCC). */
+      marcos: [
+        { p: 1, texto: 'As atividades complementares já contam: guarde todo certificado desde o 1º semestre.', link: 'atividades.html' },
+        { p: 7, texto: 'Começa o estágio no Núcleo de Práticas Jurídicas, com Prática Real e Prática Simulada até o 10º período. A presença é obrigatória.', link: 'estagio.html' },
+        { p: 8, texto: 'Projeto do TCC: escolha do tema e do orientador, um docente da Unidade.', link: 'tcc.html' },
+        { p: 9, texto: 'Elaboração do TCC, em artigo ou monografia, com defesa oral diante de banca de três integrantes.', link: 'tcc.html' },
+        { p: 10, texto: 'Último prazo das 210 horas de atividades complementares: sem elas não há colação de grau.', link: 'atividades.html' }
+      ],
+
       estagio: {
         titulo: 'Estágio no Núcleo de Práticas Jurídicas',
         horas: 360,
@@ -461,6 +473,15 @@ window.DADOS_CURSO = {
         tabelaLinks: [{ texto: 'PPC de Engenharia Civil', href: 'documentos/ppc-engenharia-civil-guanhaes-2024.pdf' }],
         tabelaNota: 'Quadro A1.1 do Apêndice 1 do PPC de Engenharia Civil, transcrito na íntegra. Atenção a duas regras próprias deste curso: atividades de extensão NÃO entram aqui, porque são aproveitadas no componente curricular de Atividades de Extensão, com regimento próprio; e os casos omissos são avaliados pelo colegiado do curso. Duas observações sobre a apresentação: a divisão em grupos é só para facilitar a leitura, porque o quadro do PPC não separa as modalidades, e os itens 01 e 02 do quadro aparecem aqui abertos em linhas separadas, porque cada um reúne atividades com valores de hora diferentes.'
       },
+
+      /* Marcos do curso, período a período (ver o comentário no Direito). */
+      marcos: [
+        { p: 1, texto: 'As atividades complementares já contam: guarde todo certificado desde o 1º semestre.', link: 'atividades.html' },
+        { p: 2, texto: 'Começam as Atividades de Extensão, componente com regimento próprio, até o 5º período.' },
+        { p: 6, texto: 'O estágio supervisionado obrigatório, de 165 horas, já pode ser feito a partir deste período.', link: 'estagio.html' },
+        { p: 9, texto: 'TCC I: tema de sua escolha, com orientação de um professor da área. Pode ser em dupla.', link: 'tcc.html' },
+        { p: 10, texto: 'TCC II e banca. No início do semestre, entregue a Ficha de Avaliação (A1.2) das atividades complementares.', link: 'tcc.html' }
+      ],
 
       estagio: {
         titulo: 'Estágio supervisionado obrigatório',
