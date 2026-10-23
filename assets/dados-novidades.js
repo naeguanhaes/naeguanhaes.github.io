@@ -16,8 +16,15 @@
    ═══════════════════════════════════════════════════════ */
 
 window.DADOS_NOVIDADES = {
-  atualizadoEm: '2026-10-22',
+  atualizadoEm: '2026-10-23',
   itens: [
+    {
+      data: '2026-10-23',
+      titulo: '28º Seminário: atividades prorrogadas até 29/10',
+      texto: 'O prazo de inscrição nas atividades integradoras do Seminário foi prorrogado até 29 de outubro. Não esqueça também a inscrição como ouvinte, até 10/11.',
+      link: 'seminario.html',
+      textoLink: 'ver o passo a passo'
+    },
     {
       data: '2026-10-22',
       titulo: 'Somador confere o teto de cada atividade',

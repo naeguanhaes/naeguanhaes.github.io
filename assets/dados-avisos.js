@@ -56,8 +56,8 @@ window.DADOS_AVISOS = {
     {
       tipo: 'atencao',
       de: '2026-10-21',
-      ate: '2026-10-23',
-      texto: '28º Seminário: a inscrição nas atividades vai só até 23/10, por formulário. Escolha as que combinam com você, não todas, e faça também a inscrição como ouvinte.',
+      ate: '2026-10-29',
+      texto: '28º Seminário: a inscrição nas atividades foi prorrogada até 29/10, por formulário. Escolha as que combinam com você, não todas, e faça também a inscrição como ouvinte.',
       link: 'seminario.html',
       textoLink: 'ver o passo a passo'
     },
