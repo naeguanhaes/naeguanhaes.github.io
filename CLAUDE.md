@@ -251,6 +251,11 @@ comum. As duas coisas costumam andar juntas.
   (último dia do Seminário). Ele saiu do grupo "Editais e bolsas"; quando a fase do
   certificado for ao ar, o link volta para o grupo.
 
+**Seção atual ao lado do Início** (pedido do coordenador em 27/10/2026): o `site.js`
+(`atualAoLadoDoInicio`, depois dos submenus) move para logo depois de "Início" o item do
+menu que contém a página aberta (grupo ou link direto). É só no navegador: no HTML o menu
+continua idêntico em todas as páginas, na ordem oficial.
+
 O `wifi.html` foi aba destacada em turquesa até 21/10/2026, quando o coordenador pediu
 para levá-lo para dentro do grupo, que passou a se chamar "Sistemas e Wi-Fi".
 

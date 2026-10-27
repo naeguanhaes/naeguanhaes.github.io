@@ -397,6 +397,24 @@
     window.addEventListener('resize', function () { fechar(false); });
   })();
 
+  /* ── Página atual ao lado do Início ───────────────── */
+  (function atualAoLadoDoInicio() {
+    /* Pedido do coordenador (27/10/2026): a seção da página aberta vem
+       logo depois de "Início", para ficar à vista sem rolar a faixa.
+       Os demais itens mantêm a ordem; no HTML o menu segue igual em
+       todas as páginas, como o checar-consistencia exige. */
+    var faixa = document.querySelector('.nav-in');
+    if (!faixa) return;
+    var inicio = faixa.firstElementChild;
+    var atual = faixa.querySelector('.nav-botao.tem-atual') ||
+                faixa.querySelector('.nav-link[aria-current="page"]');
+    if (!inicio || !atual) return;
+    var item = atual.closest('.nav-grupo') || atual;
+    if (item.parentNode !== faixa || item === inicio) return;
+    faixa.insertBefore(item, inicio.nextSibling);
+    faixa.scrollLeft = 0;
+  })();
+
   /* ── Pista de rolagem do menu ─────────────────────── */
   (function pistaDoMenu() {
     /* a faixa de seções rola para os lados e não dava sinal disso:

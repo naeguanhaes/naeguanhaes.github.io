@@ -20,6 +20,11 @@ window.DADOS_NOVIDADES = {
   itens: [
     {
       data: '2026-10-27',
+      titulo: 'Menu: a seção aberta fica ao lado do Início',
+      texto: 'Ao entrar em uma página, o grupo dela no menu do topo passa a aparecer logo depois de "Início", sem precisar rolar a faixa.'
+    },
+    {
+      data: '2026-10-27',
       titulo: 'Matriz curricular: marcar várias de uma vez',
       texto: 'Marque de uma vez tudo do 1º período até onde você já chegou, ou um período inteiro com um toque. Depois é só desmarcar o que ficou para trás.',
       link: 'matriz.html',
