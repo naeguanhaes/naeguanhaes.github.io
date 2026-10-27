@@ -31,6 +31,12 @@ window.DADOS_BUSCA = {
       k: 'como chegar endereco localizacao onde fica mapa gps rota google maps waze br-259 2250 nova uniao chegar na faculdade caminho'
     },
     {
+      t: 'PEAES Veteranos 2027 · assistência estudantil',
+      d: 'Auxílios de moradia, transporte, alimentação, inclusão digital, creche, saúde, cultura e esporte. Inscrições até 16/11 no Sistema PEAES, com passo a passo, documentos e modelos.',
+      u: 'peaes.html',
+      k: 'peaes veteranos 2027 auxilio assistencia estudantil bolsa moradia transporte alimentacao inclusao digital creche saude cultura esporte pcd deficiencia apoio didatico renda per capita salario minimo cadunico procan documentos declaracao composicao familiar edital proex coac 06/2026 inscricao sistema peaes recurso resultado'
+    },
+    {
       t: 'Novidades do site',
       d: 'Tudo o que entrou no site do NAE, mês a mês, da novidade mais recente para a mais antiga.',
       u: 'novidades.html',

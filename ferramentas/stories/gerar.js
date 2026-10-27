@@ -26,7 +26,7 @@ fs.mkdirSync(SAIDA, { recursive: true });
 itens.forEach((d) => {
   let midia = '';
   if (d.print) midia = '<div class=cel><img src="print-' + d.print + '.png" alt=""></div>';
-  else if (d.cartaz) midia = '<img class=cartaz src="' + d.cartaz + '" alt="">';
+  else if (d.cartaz) midia = '<img class="cartaz' + (d.larga ? ' larga' : '') + '" src="' + d.cartaz + '" alt="">';
   else if (d.logo) midia = '<img class=logo src="' + d.logo + '" alt="">';
   const selos = (d.selos || []).map((s) => '<span><b>' + esc(s[0]) + '</b>' + esc(s[1]) + '</span>').join('');
   const link = 'naeguanhaes.github.io' + (d.link ? '/' + d.link.split('#')[0] : '');
@@ -45,6 +45,7 @@ p{position:relative;font-size:36px;line-height:1.3;margin:0;max-width:860px;colo
 .cel{width:500px;height:100%;max-height:900px;border:16px solid #0B1620;border-radius:64px;overflow:hidden;background:#fff;box-shadow:0 40px 80px -24px rgba(0,0,0,.6);transform:rotate(-3deg)}
 .cel img{width:100%;display:block}
 .cartaz{max-height:100%;max-width:640px;border-radius:24px;box-shadow:0 40px 80px -24px rgba(0,0,0,.6)}
+.cartaz.larga{max-width:920px;align-self:center}
 .logo{width:820px;align-self:center}
 .selos{position:relative;margin-top:40px;display:flex;gap:18px;flex-wrap:wrap;justify-content:center}
 .selos span{background:rgba(255,255,255,.12);border:2px solid rgba(255,255,255,.35);border-radius:22px;padding:14px 26px;font-size:32px}

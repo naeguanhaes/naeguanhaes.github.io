@@ -31,6 +31,14 @@ window.DADOS_AVISOS = {
   avisos: [
     {
       tipo: 'atencao',
+      de: '2026-10-27',
+      ate: '2026-11-16',
+      texto: 'PEAES Veteranos 2027: inscrições até 16/11, às 23h59, no Sistema PEAES. Quem já recebeu antes precisa se inscrever de novo.',
+      link: 'peaes.html',
+      textoLink: 'ver o passo a passo'
+    },
+    {
+      tipo: 'atencao',
       de: '2026-11-23',
       ate: '2026-12-11',
       texto: 'Direito: provas finais de 30/11 a 11/12. Quem fechar o semestre com 40 a 59 pontos e 75% de presença faz o exame especial, de 14 a 17/12.',

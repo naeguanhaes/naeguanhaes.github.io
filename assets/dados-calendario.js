@@ -72,6 +72,7 @@ window.DADOS_CALENDARIO = {
     { ini: '2026-10-12', fim: '2026-10-17', titulo: 'Recesso', tipo: 'feriado' },
     { ini: '2026-10-15', fim: '2026-10-15', titulo: 'Dia do/a Professor/a', tipo: 'feriado' },
     { ini: '2026-10-23', fim: '2026-10-23', titulo: 'Suspensão das atividades de ensino (Ofício Circular UEMG/PROGRAD nº 1/2026)', tipo: 'feriado', curto: 'Suspensão das atividades de ensino' },
+    { ini: '2026-10-23', fim: '2026-11-16', titulo: 'Inscrições no PEAES Veteranos 2027, pelo Sistema PEAES (até 23h59 do último dia)', tipo: 'prazo', curto: 'Inscrições no PEAES Veteranos 2027' },
     { ini: '2026-10-25', fim: '2026-10-25', titulo: 'Aniversário de Guanhães/MG, feriado municipal', tipo: 'feriado' },
     { ini: '2026-10-26', fim: '2026-10-26', titulo: 'Suspensão das atividades de ensino (Ofício Circular UEMG/PROGRAD nº 1/2026)', tipo: 'feriado', curto: 'Suspensão das atividades de ensino' },
     { ini: '2026-10-28', fim: '2026-10-28', titulo: 'Assembleia Geral do Diretório Acadêmico: votação do Estatuto Social, às 19h, no Auditório', tipo: 'letivo', curto: 'Assembleia Geral do DA', marca: 'da' },
@@ -85,14 +86,19 @@ window.DADOS_CALENDARIO = {
     { ini: '2026-11-13', fim: '2026-11-13', titulo: '1ª Mostra de Profissões da UEMG Guanhães, a partir das 13h', tipo: 'letivo', curto: '1ª Mostra de Profissões', marca: 'da' },
     { ini: '2026-11-15', fim: '2026-11-15', titulo: 'Proclamação da República, feriado', tipo: 'feriado' },
     { ini: '2026-11-19', fim: '2026-11-19', titulo: 'Data-limite para entregar ao orientador o trabalho para revisão final do TCC de Direito', tipo: 'prazo', curto: 'Entrega do TCC ao orientador (Direito)' },
+    { ini: '2026-11-19', fim: '2026-11-19', titulo: 'PEAES Veteranos 2027: lista das inscrições recebidas', tipo: 'prazo', curto: 'PEAES: lista das inscrições' },
     { ini: '2026-11-20', fim: '2026-11-21', titulo: 'Dia Nacional de Zumbi e da Consciência Negra, feriado e recesso', tipo: 'feriado' },
+    { ini: '2026-11-23', fim: '2026-11-24', titulo: 'PEAES Veteranos 2027: recurso contra a lista de inscrições', tipo: 'prazo', curto: 'PEAES: recurso das inscrições' },
     { ini: '2026-11-30', fim: '2026-12-11', titulo: 'Provas finais do curso de Direito', tipo: 'prazo' },
     { ini: '2026-12-04', fim: '2026-12-04', titulo: 'Data-limite para entregar na secretaria a versão para a banca do TCC de Direito', tipo: 'prazo', curto: 'Entrega do TCC na secretaria (Direito)' },
     { ini: '2026-12-07', fim: '2026-12-11', titulo: 'Bancas de defesa do TCC de Direito', tipo: 'prazo' },
 
+    { ini: '2026-12-09', fim: '2026-12-09', titulo: 'PEAES Veteranos 2027: resultado preliminar', tipo: 'prazo', curto: 'PEAES: resultado preliminar' },
+    { ini: '2026-12-10', fim: '2026-12-11', titulo: 'PEAES Veteranos 2027: recurso contra o resultado preliminar', tipo: 'prazo', curto: 'PEAES: recurso do resultado' },
     { ini: '2026-12-12', fim: '2026-12-12', titulo: 'Término das aulas do 2º semestre letivo', tipo: 'letivo' },
     { ini: '2026-12-14', fim: '2026-12-17', titulo: 'Exame especial / Complementação de carga horária', tipo: 'prazo' },
     { ini: '2026-12-18', fim: '2026-12-18', titulo: 'Término do 2º semestre letivo, fechamento do Lyceum', tipo: 'letivo' },
+    { ini: '2026-12-18', fim: '2026-12-18', titulo: 'PEAES Veteranos 2027: resultado final', tipo: 'prazo', curto: 'PEAES: resultado final' },
     { ini: '2026-12-24', fim: '2026-12-25', titulo: 'Natal, feriado', tipo: 'feriado' },
     { ini: '2026-12-31', fim: '2026-12-31', titulo: 'Recesso', tipo: 'feriado' }
   ]

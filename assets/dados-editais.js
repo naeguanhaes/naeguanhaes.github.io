@@ -27,8 +27,34 @@
    ═══════════════════════════════════════════════════════ */
 
 window.DADOS_EDITAIS = {
-  atualizadoEm: '2026-10-21',
+  atualizadoEm: '2026-10-27',
   itens: [
+    {
+      titulo: 'PEAES Veteranos 2027 · auxílios de assistência estudantil',
+      resumo: 'Moradia, transporte, alimentação, inclusão digital, creche, saúde, cultura, esporte e mais, para estudantes de baixa renda de todos os períodos. Inscrição pelo Sistema PEAES até 16/11, às 23h59.',
+      tipo: 'assistencia',
+      abre: '2026-10-23',
+      encerra: '2026-11-16',
+      link: 'peaes.html',
+      publicado: '2026-10-27',
+
+      destaque: {
+        tema: 'peaes',
+        imagem: 'assets/eventos/peaes-veteranos-2027.webp',
+        imagemAlt: 'Arte do PEAES Veteranos: três estudantes sorrindo em volta de uma mesa com livros e notebook, com o texto Apoio para você permanecer na universidade',
+        eyebrow: 'Edital PROEX/COAC nº 06/2026',
+        titulo: 'PEAES Veteranos 2027: inscrições até 16/11',
+        texto: 'Auxílio em dinheiro para você <b>permanecer na universidade</b>, em todos os períodos. Quem já recebeu antes precisa <b>se inscrever de novo</b>. Veja o passo a passo, os documentos e os modelos de declaração.',
+        numeros: [
+          { n: '16/11', r: 'fim das inscrições' },
+          { n: 'até 3', r: 'auxílios por estudante' },
+          { n: '1,5', r: 'salário mínimo por pessoa' }
+        ],
+        acao: 'Ver o passo a passo',
+        extraTexto: 'Compartilhar no WhatsApp',
+        extraLink: 'https://wa.me/?text=%2APEAES%20Veteranos%202027%20%C2%B7%20UEMG%2A%0AAux%C3%ADlio%20para%20voc%C3%AA%20permanecer%20na%20universidade%3A%20moradia%2C%20transporte%2C%20alimenta%C3%A7%C3%A3o%2C%20inclus%C3%A3o%20digital%20e%20mais.%0A%0A%E2%80%A2%20Inscri%C3%A7%C3%B5es%20de%2023%2F10%20a%2016%2F11%2C%20at%C3%A9%2023h59%2C%20no%20Sistema%20PEAES%0A%E2%80%A2%20Para%20todos%20os%20per%C3%ADodos%20da%20gradua%C3%A7%C3%A3o%2C%20com%20renda%20de%20at%C3%A9%201%2C5%20sal%C3%A1rio%20m%C3%ADnimo%20por%20pessoa%0A%E2%80%A2%20J%C3%A1%20recebeu%20antes%3F%20Precisa%20se%20inscrever%20de%20novo%0A%0A%2APasso%20a%20passo%2C%20documentos%20e%20modelos%20no%20site%20do%20NAE%3A%2A%0Ahttps%3A%2F%2Fnaeguanhaes.github.io%2Fpeaes.html'
+      }
+    },
     {
       titulo: '1ª Mostra de Profissões · voluntários',
       org: 'da',

@@ -568,3 +568,17 @@ referências, disciplinas, atividades, turmas, calendário, novidades, inspeçõ
 - **Novidades do site** (`novidades.html`, menu "Sobre o NAE"): todas as novidades de
   `dados-novidades.js`, por mês. O quadro da inicial e do Sobre mostra as 4 mais recentes e
   o link "Ver todas as novidades".
+
+## PEAES Veteranos 2027 (no ar desde 27/10/2026)
+
+`peaes.html` (menu "Editais e bolsas", primeiro item, com `data-ate="2026-12-18"`, o dia do
+resultado final) explica o Edital PROEX/COAC nº 06/2026: quem pode, simulador de renda
+(1,5 salário mínimo por pessoa; mínimo de 2026 = R$ 1.621,00, Decreto nº 12.797/2025, em
+`LIMITE` no script da página), os 10 auxílios com as vagas de Guanhães, passo a passo,
+dispensa do PROCAN 2025/2026, checklist de documentos (guardado em `peaes-2027-docs`),
+os 10 modelos de declaração (links do Forms tirados do Anexo III), cronograma, leitura
+do resultado, FAQ e o plantão do NAE. Cores tiradas da arte da PROEX (`.pg-peaes`,
+tokens `--pe-*` no `estilo.css`). Os PDFs oficiais estão em `documentos/peaes-2027/`;
+se a UEMG publicar retificação, trocar o arquivo e conferir o texto da página.
+Passo a passo e modelos saem em 16/11 pelo `data-ate`; o `nae:revisar-em` pede releitura
+em 17/11 (fase de resultados) e 19/12 (fim do processo).

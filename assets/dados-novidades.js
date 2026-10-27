@@ -16,8 +16,15 @@
    ═══════════════════════════════════════════════════════ */
 
 window.DADOS_NOVIDADES = {
-  atualizadoEm: '2026-10-23',
+  atualizadoEm: '2026-10-27',
   itens: [
+    {
+      data: '2026-10-27',
+      titulo: 'PEAES Veteranos 2027: página completa',
+      texto: 'Quem pode, os 10 auxílios e as vagas de Guanhães, passo a passo da inscrição, checklist dos documentos, modelos de declaração e o edital para baixar.',
+      link: 'peaes.html',
+      textoLink: 'ver a página'
+    },
     {
       data: '2026-10-23',
       titulo: '28º Seminário: atividades prorrogadas até 29/10',
