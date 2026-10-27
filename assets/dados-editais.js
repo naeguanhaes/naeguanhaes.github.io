@@ -30,6 +30,32 @@ window.DADOS_EDITAIS = {
   atualizadoEm: '2026-10-27',
   itens: [
     {
+      titulo: 'Estágio Institucional na UEMG · Seleção 2027',
+      resumo: 'Estágio remunerado dentro da UEMG, com bolsa de R$ 910,59 e R$ 275,00 de auxílio-transporte, 20 horas por semana. Cadastro de reserva, com seleção por prova escrita. Inscrição até 09/11, às 23h30. A Monitoria INCLUA tem edital em breve.',
+      tipo: 'outro',
+      abre: '2026-10-23',
+      encerra: '2026-11-09',
+      link: 'estagio-inclua.html',
+      publicado: '2026-10-27',
+
+      destaque: {
+        tema: 'selecao',
+        imagem: 'assets/eventos/selecao-estagio-inclua-2027-pessoas.webp',
+        imagemAlt: 'Ilustração de três estudantes conversando em volta de uma mesa com papéis e um notebook',
+        eyebrow: 'Edital PROEX/COAC nº 07/2026',
+        titulo: 'Estágio na UEMG: inscrições até 09/11',
+        texto: 'Estágio remunerado <b>dentro da universidade</b>, 20 horas por semana, com seleção por prova escrita. A PROEX não prevê novo edital em 2027. Veja quem pode, o passo a passo e a Monitoria INCLUA, que sai em breve.',
+        numeros: [
+          { n: '09/11', r: 'fim das inscrições' },
+          { n: 'R$ 1.185', r: 'por mês, com transporte' },
+          { n: '20 h', r: 'por semana' }
+        ],
+        acao: 'Ver como se inscrever',
+        extraTexto: 'Compartilhar no WhatsApp',
+        extraLink: 'https://wa.me/?text=%2AEst%C3%A1gio%20Institucional%20na%20UEMG%20%C2%B7%20Sele%C3%A7%C3%A3o%202027%2A%0AEst%C3%A1gio%20remunerado%20dentro%20da%20UEMG%2C%20na%20Unidade%20Guanh%C3%A3es.%0A%0A%E2%80%A2%20Bolsa%20de%20R%24%20910%2C59%20%2B%20R%24%20275%2C00%20de%20aux%C3%ADlio-transporte%0A%E2%80%A2%2020%20horas%20por%20semana%0A%E2%80%A2%20Inscri%C3%A7%C3%B5es%20at%C3%A9%2009%2F11%2C%20%C3%A0s%2023h30%2C%20pelo%20formul%C3%A1rio%20do%20edital%0A%E2%80%A2%20Sele%C3%A7%C3%A3o%20por%20prova%20escrita%2C%20de%2023%20a%2027%2F11%0A%0A%2APasso%20a%20passo%20e%20edital%20no%20site%20do%20NAE%3A%2A%0Ahttps%3A%2F%2Fnaeguanhaes.github.io%2Festagio-inclua.html'
+      }
+    },
+    {
       titulo: 'PEAES Veteranos 2027 · auxílios de assistência estudantil',
       resumo: 'Moradia, transporte, alimentação, inclusão digital, creche, saúde, cultura, esporte e mais, para estudantes de baixa renda de todos os períodos. Inscrição pelo Sistema PEAES até 16/11, às 23h59.',
       tipo: 'assistencia',

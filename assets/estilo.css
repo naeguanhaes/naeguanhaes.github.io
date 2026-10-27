@@ -3166,3 +3166,34 @@ body:has(.pg-peaes) { background: #FBF6EA; }
 a.pe-chamada { text-decoration: none; color: inherit; background: #FDF8EC; border-color: #EFE1C4; }
 a.pe-chamada h2 { color: #0B2438; }
 a.pe-chamada:hover { border-color: #AA4520; }
+
+/* ═══════════════ ESTÁGIO NA UEMG E MONITORIA INCLUA (estagio-inclua.html) ═══════════════ */
+/* Usa as peças da página do PEAES com a paleta da arte dos Processos
+   Seletivos: azul-marinho do título, terracota do sol, verde-oliva da onda,
+   mostarda e vinho das folhas. A arte é larga, então vai em cima do texto. */
+.pg-selecao {
+  --pe-navy: #10294A; --pe-terra: #A8471F; --pe-mostarda: #E0A23A; --pe-mostarda-txt: #85580E;
+  --pe-vinho: #7A2A2E; --pe-verde: #4A6329; --pe-creme: #FDF9ED; --pe-creme-2: #F5EBD3;
+}
+body:has(.pg-selecao) { background: #FBF7EC; }
+.pg-selecao section[id], .pg-selecao ol[id] { scroll-margin-top: 1rem; }
+@media (min-width: 980px) { .pe-hero.sel-hero { grid-template-columns: 1fr; } }
+.sel-hero .pe-hero-arte { order: -1; }
+.sel-hero .pe-hero-arte img { border-radius: 16px; box-shadow: 0 16px 34px -24px rgba(16,41,74,.5); }
+.sel-hero .pe-t1 { font-size: clamp(2.4rem, 7vw, 4.4rem); }
+.sel-hero .pe-t2 { font-size: clamp(1.6rem, 4.6vw, 2.8rem); color: var(--pe-verde); }
+.sel-hero .pe-lede { max-width: 68ch; }
+.pg-selecao .pe-blob-1 { background: var(--pe-terra); top: auto; bottom: -190px; right: auto; left: -170px; }
+.pg-selecao .pe-blob-2 { background: var(--pe-verde); }
+.pe-inclua { --c: var(--pe-vinho); background: var(--pe-creme); }
+.pg-selecao .tabela-ppc { min-width: 0; max-width: 40rem; background: #fff; border-radius: 12px; overflow: hidden; }
+.pg-selecao .tabela-ppc td:last-child, .pg-selecao .tabela-ppc th:last-child { text-align: right; white-space: nowrap; }
+@media (max-width: 560px) { .pe-arquivos a { flex-wrap: wrap; gap: .2rem 1rem; } .pe-arquivos a b { flex-basis: 100%; } }
+.hero-edital.tema-selecao {
+  background:
+    radial-gradient(90% 80% at 98% 100%, rgba(74,99,41,.75) 0%, rgba(74,99,41,0) 60%),
+    radial-gradient(70% 70% at 0% 0%, rgba(168,71,31,.6) 0%, rgba(168,71,31,0) 60%),
+    linear-gradient(125deg, #10294A 0%, #183659 60%, #22425F 100%);
+}
+.hero-edital.tema-selecao .eyebrow { color: #F2C27A; }
+.hero-edital.tema-selecao .hero-imagem img { max-height: none; width: min(30rem, 38vw); }

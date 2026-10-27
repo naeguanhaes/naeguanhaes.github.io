@@ -31,6 +31,12 @@ window.DADOS_BUSCA = {
       k: 'como chegar endereco localizacao onde fica mapa gps rota google maps waze br-259 2250 nova uniao chegar na faculdade caminho'
     },
     {
+      t: 'Estágio na UEMG e Monitoria INCLUA 2027',
+      d: 'Estágio Institucional Não Obrigatório com bolsa de R$ 910,59 e auxílio-transporte, 20 horas por semana. Inscrições até 09/11, prova escrita, cronograma e edital. Monitoria do Programa INCLUA, edital em breve.',
+      u: 'estagio-inclua.html',
+      k: 'estagio institucional nao obrigatorio remunerado uemg bolsa estagiario cadastro de reserva prova escrita redacao texto comissao local edital proex coac 07/2026 08/2026 monitoria inclua monitor paeei educacao especial inclusiva deficiencia autismo tea tdah plano de atendimento especializado pae auxilio transporte termo de compromisso tce'
+    },
+    {
       t: 'PEAES Veteranos 2027 · assistência estudantil',
       d: 'Auxílios de moradia, transporte, alimentação, inclusão digital, creche, saúde, cultura e esporte. Inscrições até 16/11 no Sistema PEAES, com passo a passo, documentos e modelos.',
       u: 'peaes.html',

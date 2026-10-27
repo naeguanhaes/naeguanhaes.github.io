@@ -32,6 +32,14 @@ window.DADOS_AVISOS = {
     {
       tipo: 'atencao',
       de: '2026-10-27',
+      ate: '2026-11-09',
+      texto: 'Estágio Institucional na UEMG: inscrições até 09/11, às 23h30. Bolsa de R$ 910,59 mais R$ 275,00 de transporte, 20 horas por semana.',
+      link: 'estagio-inclua.html',
+      textoLink: 'ver como se inscrever'
+    },
+    {
+      tipo: 'atencao',
+      de: '2026-10-27',
       ate: '2026-11-16',
       texto: 'PEAES Veteranos 2027: inscrições até 16/11, às 23h59, no Sistema PEAES. Quem já recebeu antes precisa se inscrever de novo.',
       link: 'peaes.html',

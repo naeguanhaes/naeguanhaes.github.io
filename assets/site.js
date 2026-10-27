@@ -1077,6 +1077,7 @@
   var STORIES = {
     'mostra-profissoes': { img: 'assets/stories/mostra-profissoes.jpg', ate: '2026-11-13' },
     'peaes': { img: 'assets/stories/peaes.jpg', ate: '2026-11-16' },
+    'estagio-inclua': { img: 'assets/stories/estagio-inclua.jpg', ate: '2026-11-09' },
     'assembleia': { img: 'assets/stories/assembleia-da.jpg', ate: '2026-10-28' },
     'diretorio-academico': { img: 'assets/stories/assembleia-da.jpg', ate: '2026-10-28' },
     'seminario': { img: 'assets/stories/seminario.jpg', ate: '2026-11-10' },

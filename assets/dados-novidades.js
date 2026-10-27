@@ -20,6 +20,13 @@ window.DADOS_NOVIDADES = {
   itens: [
     {
       data: '2026-10-27',
+      titulo: 'Estágio na UEMG e Monitoria INCLUA',
+      texto: 'Página do Estágio Institucional 2027: quem pode, passo a passo, a prova escrita, o cronograma e o edital para baixar. A Monitoria INCLUA entra quando o edital sair.',
+      link: 'estagio-inclua.html',
+      textoLink: 'ver a página'
+    },
+    {
+      data: '2026-10-27',
       titulo: 'Menu: a seção aberta fica ao lado do Início',
       texto: 'Ao entrar em uma página, o grupo dela no menu do topo passa a aparecer logo depois de "Início", sem precisar rolar a faixa.'
     },

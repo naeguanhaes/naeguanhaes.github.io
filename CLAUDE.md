@@ -591,3 +591,18 @@ tokens `--pe-*` no `estilo.css`). Os PDFs oficiais estão em `documentos/peaes-2
 se a UEMG publicar retificação, trocar o arquivo e conferir o texto da página.
 Passo a passo e modelos saem em 16/11 pelo `data-ate`; o `nae:revisar-em` pede releitura
 em 17/11 (fase de resultados) e 19/12 (fim do processo).
+
+## Estágio na UEMG e Monitoria INCLUA (no ar desde 27/10/2026)
+
+`estagio-inclua.html` (menu "Editais e bolsas", depois do PEAES, `data-ate="2026-12-14"`)
+explica o Edital PROEX/COAC nº 07/2026, Estágio Institucional Não Obrigatório: bolsa de
+R$ 910,59 + R$ 275,00 de transporte, 20 h semanais, cadastro de reserva em Guanhães,
+inscrição pelo Forms até 09/11 (23h30), prova escrita de 23 a 27/11, cronograma, recursos
+e convocação. Usa as peças `pe-*` do PEAES com a paleta da arte (`.pg-selecao`).
+**Pedido do coordenador: só o que diz respeito aos alunos.** Nada de comissões locais,
+adendos ou tarefas da Direção; a linha "Comissões Locais e apoio às Unidades Acadêmicas"
+foi apagada da arte. PDF em `documentos/estagio-inclua-2027/`.
+**Pendências:** (1) a seção `#inclua` espera o Edital nº 08/2026 (Monitoria INCLUA),
+"nos próximos dias" segundo a PROEX: trazer datas, valores, link da inscrição, o PDF,
+e estender o `data-ate` do menu; (2) turno, setor e atividades da vaga de Guanhães,
+quando a Unidade divulgar. O `nae:revisar-em` lembra em 03/11, 10/11, 19/11 e 15/12.
