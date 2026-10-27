@@ -568,6 +568,10 @@ referências, disciplinas, atividades, turmas, calendário, novidades, inspeçõ
 - **Novidades do site** (`novidades.html`, menu "Sobre o NAE"): todas as novidades de
   `dados-novidades.js`, por mês. O quadro da inicial e do Sobre mostra as 4 mais recentes e
   o link "Ver todas as novidades".
+- **Marcar em bloco na matriz** (pedido do coordenador, 27/10/2026): o quadro acima do
+  progresso marca do 1º até o período escolhido (sugere o anterior ao "Estou no"), e cada
+  período tem "Marcar todas deste período" / "Desmarcar este período". Marcar só
+  acrescenta; nada some sem o estudante pedir.
 
 ## PEAES Veteranos 2027 (no ar desde 27/10/2026)
 

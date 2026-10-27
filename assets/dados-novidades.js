@@ -20,6 +20,13 @@ window.DADOS_NOVIDADES = {
   itens: [
     {
       data: '2026-10-27',
+      titulo: 'Matriz curricular: marcar várias de uma vez',
+      texto: 'Marque de uma vez tudo do 1º período até onde você já chegou, ou um período inteiro com um toque. Depois é só desmarcar o que ficou para trás.',
+      link: 'matriz.html',
+      textoLink: 'abrir a matriz'
+    },
+    {
+      data: '2026-10-27',
       titulo: 'PEAES Veteranos 2027: página completa',
       texto: 'Quem pode, os 10 auxílios e as vagas de Guanhães, passo a passo da inscrição, checklist dos documentos, modelos de declaração e o edital para baixar.',
       link: 'peaes.html',

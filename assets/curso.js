@@ -189,6 +189,8 @@
       return saida;
     }
 
+    var marcadoAte = 0;
+
     function desenhar(c) {
       var feitas = lerCursadas(c);
       var lista = todas(c);
@@ -201,12 +203,18 @@
       /* o período que o estudante disse cursar, na página de atividades,
          já abre; sem essa informação, todos começam fechados */
       var meuPeriodo = parseInt(U.ler('periodo-' + c.id) || '0', 10);
+      /* ao redesenhar depois de uma marcação, os períodos abertos continuam abertos */
+      var jaDesenhado = !!matriz.querySelector('details.periodo');
+      var abertos = [];
+      matriz.querySelectorAll('details.periodo[open]').forEach(function (d) {
+        abertos.push(parseInt(d.getAttribute('data-periodo'), 10));
+      });
 
       matriz.innerHTML = c.periodos.map(function (p) {
         var chPeriodo = p.disciplinas.reduce(function (s, d) { return s + d.ch; }, 0);
         var feitasAqui = p.disciplinas.filter(function (d) { return feitas.indexOf(d.cod) !== -1; }).length;
         var completo = feitasAqui === p.disciplinas.length;
-        var abrir = p.n === meuPeriodo;
+        var abrir = jaDesenhado ? abertos.indexOf(p.n) !== -1 : p.n === meuPeriodo;
 
         return '<details class="periodo' + (completo ? ' periodo-ok' : '') + '"' +
                  ' style="--c: ' + c.cor + '"' + (abrir ? ' open' : '') + ' data-periodo="' + p.n + '">' +
@@ -246,6 +254,10 @@
               '</li>';
             }).join('') +
           '</ul>' +
+          '<div class="periodo-acoes">' +
+            '<button class="btn-limpo" type="button" data-marcar-periodo="' + p.n + '">' +
+              (completo ? 'Desmarcar este período' : 'Marcar todas deste período') + '</button>' +
+          '</div>' +
         '</details>';
       }).join('') +
       '<div class="periodos-topo">' +
@@ -263,6 +275,34 @@
         });
       }
 
+      /* Marcar em bloco, pedido do coordenador: no primeiro uso, ninguém
+         quer clicar disciplina por disciplina. Marcar só acrescenta;
+         desmarcar um período só tira as dele. */
+      function marcarPeriodos(numeros, marcar) {
+        var atuais = lerCursadas(c);
+        c.periodos.forEach(function (p) {
+          if (numeros.indexOf(p.n) === -1) return;
+          p.disciplinas.forEach(function (d) {
+            var onde = atuais.indexOf(d.cod);
+            if (marcar && onde === -1) atuais.push(d.cod);
+            if (!marcar && onde !== -1) atuais.splice(onde, 1);
+          });
+        });
+        guardarCursadas(c, atuais);
+        desenhar(c);
+      }
+
+      matriz.querySelectorAll('[data-marcar-periodo]').forEach(function (botao) {
+        botao.addEventListener('click', function () {
+          var n = parseInt(botao.getAttribute('data-marcar-periodo'), 10);
+          var marcar = botao.textContent.indexOf('Desmarcar') === -1;
+          marcarPeriodos([n], marcar);
+          var volta = matriz.querySelector('[data-marcar-periodo="' + n + '"]');
+          if (volta) volta.focus();
+          U.toast(marcar ? n + 'º período marcado.' : n + 'º período desmarcado.');
+        });
+      });
+
       matriz.querySelectorAll('input[data-cod]').forEach(function (caixa) {
         caixa.addEventListener('change', function () {
           var cod = caixa.getAttribute('data-cod');
@@ -272,12 +312,26 @@
           if (!caixa.checked && onde !== -1) atuais.splice(onde, 1);
           guardarCursadas(c, atuais);
           desenhar(c);
+          var volta = matriz.querySelector('input[data-cod="' + cod + '"]');
+          if (volta) volta.focus();
         });
       });
 
       if (resumoEl) {
         var porcento = horasTotais ? Math.round(horasFeitas / horasTotais * 100) : 0;
+        var ultimo = c.periodos.length ? c.periodos[c.periodos.length - 1].n : 0;
+        var sugerido = marcadoAte || (meuPeriodo > 1 ? Math.min(meuPeriodo - 1, ultimo) : 1);
+        var opcoes = c.periodos.map(function (p) {
+          return '<option value="' + p.n + '"' + (p.n === sugerido ? ' selected' : '') + '>' + p.n + 'º período</option>';
+        }).join('');
         resumoEl.innerHTML =
+          '<div class="matriz-rapido" style="--c: ' + c.cor + '">' +
+            '<label for="marcar-ate">' + (horasFeitas ? 'Marcar de uma vez' : 'Primeira vez aqui? Marque de uma vez') +
+              ' todas as disciplinas do 1º até o</label>' +
+            '<select id="marcar-ate">' + opcoes + '</select>' +
+            '<button class="btn ghost pequeno" type="button" id="marcar-ate-btn" style="--c: ' + c.cor + '">Marcar</button>' +
+            '<span class="matriz-rapido-nota">Depois, desmarque o que ficou para trás (dependência, optativa que você ainda não fez).</span>' +
+          '</div>' +
           '<div class="progresso" role="group" aria-label="Progresso no curso">' +
             '<div class="progresso-topo">' +
               '<b>' + porcento + '% da matriz</b>' +
@@ -290,6 +344,19 @@
             (horasFeitas ? ' <button class="btn-limpo" type="button" data-limpar-matriz>Limpar as marcações</button>' : '') +
             '</p>' +
           '</div>';
+
+        var marcarAte = resumoEl.querySelector('#marcar-ate-btn');
+        if (marcarAte) {
+          marcarAte.addEventListener('click', function () {
+            var ate = parseInt(resumoEl.querySelector('#marcar-ate').value, 10);
+            marcadoAte = ate;
+            var numeros = c.periodos.filter(function (p) { return p.n <= ate; }).map(function (p) { return p.n; });
+            marcarPeriodos(numeros, true);
+            var volta = resumoEl.querySelector('#marcar-ate-btn');
+            if (volta) volta.focus();
+            U.toast(ate === 1 ? '1º período marcado.' : 'Do 1º ao ' + ate + 'º período marcados.');
+          });
+        }
 
         var limpar = resumoEl.querySelector('[data-limpar-matriz]');
         if (limpar) {
