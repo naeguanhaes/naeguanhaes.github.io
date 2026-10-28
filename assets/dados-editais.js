@@ -337,7 +337,7 @@ window.DADOS_EDITAIS = {
       abre: '2026-09-18',
       encerra: '2026-11-06',
       link: 'apoio.html#conecta-mente',
-      publicado: '2026-09-21',
+      publicado: '2026-10-28',
       grupo: 'conecta-mente-v',
       /* e evento, nao edital: aparece no painel da inicial, nao na lista */
       naLista: false,
@@ -346,7 +346,7 @@ window.DADOS_EDITAIS = {
         tema: 'vinho',
         eyebrow: 'Webinário sobre Saúde Mental e Cuidado Acadêmico',
         titulo: 'V Conecta Mente: Procrastinação Acadêmica',
-        texto: 'Por que adiamos aquilo que sabemos que precisamos fazer? Com a psicóloga <b>Giselli Oliveira</b>, ao vivo pela <b>TV UEMG</b>, na <b>sexta, 6 de novembro, das 17h às 18h30</b>.',
+        texto: 'Por que adiamos aquilo que sabemos que precisamos fazer? Com a psicóloga <b>Giselli Oliveira</b>, ao vivo pela <b>TV UEMG</b>, na <b>sexta, 6 de novembro, das 17h às 18h30</b>. Com <b>certificado de participação</b>.',
         numeros: [
           { n: '06/11', r: 'sexta-feira' },
           { n: '17h', r: 'às 18h30' },

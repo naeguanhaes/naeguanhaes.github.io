@@ -30,6 +30,14 @@ window.DADOS_AVISOS = {
   atualizadoEm: '2026-10-21',
   avisos: [
     {
+      tipo: 'novidade',
+      de: '2026-10-28',
+      ate: '2026-11-06',
+      texto: 'V Conecta Mente: Procrastinação Acadêmica. Sexta, 06/11, das 17h às 18h30, ao vivo pela TV UEMG, com certificado de participação.',
+      link: 'apoio.html#conecta-mente',
+      textoLink: 'inscreva-se'
+    },
+    {
       tipo: 'atencao',
       de: '2026-10-27',
       ate: '2026-11-09',

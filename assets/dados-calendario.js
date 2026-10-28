@@ -80,6 +80,7 @@ window.DADOS_CALENDARIO = {
     { ini: '2026-10-30', fim: '2026-10-31', titulo: 'Dia do/a Servidor/a Público/a, feriado e recesso', tipo: 'feriado' },
 
     { ini: '2026-11-02', fim: '2026-11-02', titulo: 'Feriado', tipo: 'feriado' },
+    { ini: '2026-11-06', fim: '2026-11-06', titulo: 'V Conecta Mente: Procrastinação Acadêmica, webinário ao vivo pela TV UEMG, das 17h às 18h30', tipo: 'letivo', curto: 'V Conecta Mente (webinário, 17h)' },
     { ini: '2026-11-09', fim: '2026-11-13', titulo: 'Inscrição para transferência e obtenção de novo título 1-2027', tipo: 'prazo' },
     { ini: '2026-11-11', fim: '2026-11-11', titulo: 'Estágio Institucional: lista das inscrições', tipo: 'prazo', curto: 'Estágio: lista das inscrições' },
     { ini: '2026-11-18', fim: '2026-11-18', titulo: 'Estágio Institucional: convocação para a prova, pelo e-mail institucional', tipo: 'prazo', curto: 'Estágio: convocação para a prova' },
