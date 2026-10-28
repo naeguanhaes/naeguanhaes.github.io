@@ -22,3 +22,10 @@ ENADE, Seminário, Yoga, Conecta Mente e a geral) saem de `stories.json` + `gera
 4. Capture cada `_stories_tmp/<id>.html` em 1080x1920, salve como JPG em
    `assets/stories/<id>.jpg` e apague `_stories_tmp/`.
 5. Ligue a imagem à página na tabela `STORIES` do `assets/site.js`.
+
+## Quando o evento tem cartaz pronto (28/10/2026)
+
+Pedido do coordenador: ao compartilhar o V Conecta Mente, a imagem é o próprio banner do
+evento. `assets/stories/conecta-mente.jpg` é o cartaz inteiro sobre fundo creme (1000 px de
+largura, com 210 px livres em cima e embaixo), feito direto com Python, e por isso saiu de
+`stories.json`. Faça igual para evento que já chega com cartaz vertical.
