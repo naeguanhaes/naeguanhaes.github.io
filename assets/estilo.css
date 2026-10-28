@@ -1870,7 +1870,11 @@ html[data-contraste="alto"] .hero-selo { border-color: #fff; }
    A imagem só aparece em tela larga: no celular o cartaz em pé deixaria
    o bloco de cima alto demais, e ele está inteiro mais abaixo na página. */
 .hero-com-imagem { display: grid; gap: var(--s3); align-items: center; }
-.hero-imagem { position: relative; z-index: 2; margin: 0; display: none; }
+/* A imagem tem no máximo 28rem de largura: uma arte deitada (16:9), só
+   com o limite de altura, chegava a 768px e espremia o texto numa coluna
+   estreita. O slide ficava altíssimo, e o carrossel, que iguala a altura
+   de todos, deixava os outros com um vazio embaixo. */
+.hero-imagem { position: relative; z-index: 2; margin: 0; display: none; max-width: 28rem; }
 .hero-imagem img {
   display: block; width: auto; max-width: 100%; max-height: 27rem;
   border-radius: 16px; box-shadow: 0 18px 40px -18px rgba(0,0,0,.6);
@@ -3196,4 +3200,3 @@ body:has(.pg-selecao) { background: #FBF7EC; }
     linear-gradient(125deg, #10294A 0%, #183659 60%, #22425F 100%);
 }
 .hero-edital.tema-selecao .eyebrow { color: #F2C27A; }
-.hero-edital.tema-selecao .hero-imagem img { max-height: none; width: min(30rem, 38vw); }
