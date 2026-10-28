@@ -29,3 +29,8 @@ Pedido do coordenador: ao compartilhar o V Conecta Mente, a imagem é o próprio
 evento. `assets/stories/conecta-mente.jpg` é o cartaz inteiro sobre fundo creme (1000 px de
 largura, com 210 px livres em cima e embaixo), feito direto com Python, e por isso saiu de
 `stories.json`. Faça igual para evento que já chega com cartaz vertical.
+
+Para a prévia do WhatsApp, trocar só o `og:image` não basta quando o link já foi compartilhado:
+o WhatsApp guarda a prévia por endereço (e pelo `og:url`) e continua mostrando a imagem antiga.
+No Conecta Mente, os botões passaram a levar `apoio.html?evento=conecta-mente` e o `og:url`
+da página ganhou o mesmo `?evento`, para o WhatsApp buscar a prévia de novo.
