@@ -589,6 +589,9 @@ os 10 modelos de declaração (links do Forms tirados do Anexo III), cronograma,
 do resultado, FAQ e o plantão do NAE. Cores tiradas da arte da PROEX (`.pg-peaes`,
 tokens `--pe-*` no `estilo.css`). Os PDFs oficiais estão em `documentos/peaes-2027/`;
 se a UEMG publicar retificação, trocar o arquivo e conferir o texto da página.
+**O auxílio do PEAES que o estudante já recebe não entra como renda a declarar** (decisão do
+coordenador em 03/11/2026: o Anexo III cita a declaração do PEAES pelo NAE, mas não precisa);
+o item "Bolsa ou estágio" do checklist fala só de estágio institucional e monitor de acessibilidade.
 Passo a passo e modelos saem em 16/11 pelo `data-ate`; o `nae:revisar-em` pede releitura
 em 17/11 (fase de resultados) e 19/12 (fim do processo).
 
