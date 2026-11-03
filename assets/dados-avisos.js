@@ -30,6 +30,14 @@ window.DADOS_AVISOS = {
   atualizadoEm: '2026-10-21',
   avisos: [
     {
+      tipo: 'atencao',
+      de: '2026-11-03',
+      ate: '2026-11-11',
+      texto: 'UEMG + Permanência: R$ 500,00 extra para quem já teve benefício deferido no PEAES. Adesão pelo formulário até 11/11, sem nova análise socioeconômica.',
+      link: 'permanencia.html',
+      textoLink: 'ver se posso participar'
+    },
+    {
       tipo: 'novidade',
       de: '2026-10-28',
       ate: '2026-11-06',

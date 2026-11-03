@@ -16,8 +16,15 @@
    ═══════════════════════════════════════════════════════ */
 
 window.DADOS_NOVIDADES = {
-  atualizadoEm: '2026-10-27',
+  atualizadoEm: '2026-11-03',
   itens: [
+    {
+      data: '2026-11-03',
+      titulo: 'UEMG + Permanência 2026',
+      texto: 'Página da ação que paga R$ 500,00 a quem já teve PEAES deferido: quem pode, qual modalidade você recebe (com um teste de dois cliques), passo a passo da adesão até 11/11, cronograma e edital.',
+      link: 'permanencia.html',
+      textoLink: 'ver a página'
+    },
     {
       data: '2026-10-27',
       titulo: 'Estágio na UEMG e Monitoria INCLUA',

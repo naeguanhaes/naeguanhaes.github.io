@@ -605,4 +605,19 @@ foi apagada da arte. PDF em `documentos/estagio-inclua-2027/`.
 **Pendências:** (1) a seção `#inclua` espera o Edital nº 08/2026 (Monitoria INCLUA),
 "nos próximos dias" segundo a PROEX: trazer datas, valores, link da inscrição, o PDF,
 e estender o `data-ate` do menu; (2) turno, setor e atividades da vaga de Guanhães,
-quando a Unidade divulgar. O `nae:revisar-em` lembra em 03/11, 10/11, 19/11 e 15/12.
+quando a Unidade divulgar. O `nae:revisar-em` lembra em 10/11, 19/11 e 15/12 (em 03/11 o edital do INCLUA ainda não tinha saído).
+
+## UEMG + Permanência 2026 (no ar desde 03/11/2026)
+
+`permanencia.html` (menu "Editais e bolsas", depois do Estágio, `data-ate="2026-11-27"`, o dia
+do resultado final) explica o Edital PROEX/COAC nº 09/2026: auxílio extraordinário de
+R$ 500,00 em parcela única (competências de novembro e dezembro) para quem teve benefício
+deferido em um dos quatro editais do PEAES da lista (Veteranos 04/2024 e 05/2025, Calouros
+01/2025 e 04/2026), sem nova análise socioeconômica e sem disputa por vagas. Modalidade
+definida pela COAC (Apoio Didático-Pedagógico ou Inclusão Digital, item 3), com o teste
+"Descubra a sua modalidade" no script da página. Adesão pelo Forms `XTbPNqSrBc` até 11/11;
+recurso pelo Forms `VD8uYxyyxU` em 23 e 24/11 (links tirados das anotações do PDF).
+Paleta da arte em `.pg-perm`; painel da inicial com `tema: 'permanencia'`. PDFs em
+`documentos/uemg-permanencia-2026/`. A página lembra que **não substitui o PEAES Veteranos
+2027** (e o `peaes.html` tem uma chamada para cá). O `nae:revisar-em` pede releitura em
+12/11, 19/11 e 28/11; depois de 27/11 o processo acabou e a página pode sair do menu.

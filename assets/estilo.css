@@ -3200,3 +3200,39 @@ body:has(.pg-selecao) { background: #FBF7EC; }
     linear-gradient(125deg, #10294A 0%, #183659 60%, #22425F 100%);
 }
 .hero-edital.tema-selecao .eyebrow { color: #F2C27A; }
+
+/* ═══════════════ UEMG + PERMANÊNCIA 2026 (permanencia.html) ═══════════════ */
+/* Peças da página do PEAES com a paleta da arte da PROEX: azul-noite do
+   título, verde-musgo, laranja-urucum e o amarelo do sol, sobre o creme do
+   papel. A arte é bem larga, então vai inteira em cima do texto (sel-hero). */
+.pg-perm {
+  --pe-navy: #00192E; --pe-terra: #B02E09; --pe-mostarda: #FFA001; --pe-mostarda-txt: #8A5600;
+  --pe-vinho: #8F2A0E; --pe-verde: #305016; --pe-creme: #FFF7EA; --pe-creme-2: #FBEACC;
+}
+body:has(.pg-perm) { background: #FBF3E6; }
+.pg-perm .pe-blob-1 { background: var(--pe-terra); top: auto; bottom: -190px; right: auto; left: -170px; }
+.pg-perm .pe-blob-2 { background: var(--pe-mostarda); }
+.pg-perm .pe-t1 { font-size: clamp(2.3rem, 6.6vw, 4.2rem); }
+.pg-perm .pe-t2 { font-size: clamp(1.6rem, 4.6vw, 2.8rem); color: var(--pe-terra); }
+.pg-perm .pe-quem-ico { background: var(--pe-navy); }
+.pg-perm .pe-nao .pe-quem-ico { background: var(--pe-vinho); }
+.pm-editais { margin: .4rem 0 0; padding-left: 1.1rem; color: #3A4650; font-size: .93rem; }
+.pm-editais li + li { margin-top: .15rem; }
+.pm-pergunta { border: 0; margin: 0; padding: 0; }
+.pm-pergunta legend { font-weight: 800; color: var(--pe-navy); margin-bottom: .5rem; }
+.pm-opcoes { display: flex; flex-wrap: wrap; gap: .5rem; }
+.pm-opcoes input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.pm-opcoes label { cursor: pointer; padding: .55rem 1.1rem; min-height: 44px; display: inline-flex; align-items: center; border-radius: 99px; background: #fff; border: 1.5px solid #E2D2B0; font-weight: 700; color: var(--pe-navy); }
+.pm-opcoes input:checked + label { background: var(--pe-navy); border-color: var(--pe-navy); color: #fff; }
+.pm-opcoes input:focus-visible + label { outline: 3px solid var(--pe-mostarda); outline-offset: 2px; }
+/* painel da inicial e chamadas, nas cores da arte */
+.hero-edital.tema-permanencia {
+  background:
+    radial-gradient(85% 80% at 98% 100%, rgba(227,58,12,.62) 0%, rgba(227,58,12,0) 60%),
+    radial-gradient(70% 70% at 96% 0%, rgba(255,160,1,.42) 0%, rgba(255,160,1,0) 58%),
+    linear-gradient(125deg, #00192E 0%, #12301F 55%, #305016 100%);
+}
+.hero-edital.tema-permanencia .eyebrow { color: #FFC24D; }
+a.pe-chamada.pm-chamada { background: #FFF7EA; border-color: #F1DDBA; }
+a.pe-chamada.pm-chamada h2 { color: #00192E; }
+a.pe-chamada.pm-chamada:hover { border-color: #B02E09; }

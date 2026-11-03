@@ -31,6 +31,12 @@ window.DADOS_BUSCA = {
       k: 'como chegar endereco localizacao onde fica mapa gps rota google maps waze br-259 2250 nova uniao chegar na faculdade caminho'
     },
     {
+      t: 'UEMG + Permanência 2026 · Apoio à Formação',
+      d: 'Auxílio extra de R$ 500,00, em parcela única, para quem já teve benefício deferido no PEAES. Sem nova análise socioeconômica. Adesão até 11/11, modalidades, cronograma e edital.',
+      u: 'permanencia.html',
+      k: 'uemg mais permanencia apoio a formacao auxilio extra extraordinario 500 reais quinhentos parcela unica peaes deferido adesao formulario apoio didatico pedagogico inclusao digital livros material notebook edital proex coac 09/2026 assistencia estudantil dinheiro'
+    },
+    {
       t: 'Estágio na UEMG e Monitoria INCLUA 2027',
       d: 'Estágio Institucional Não Obrigatório com bolsa de R$ 910,59 e auxílio-transporte, 20 horas por semana. Inscrições até 09/11, prova escrita, cronograma e edital. Monitoria do Programa INCLUA, edital em breve.',
       u: 'estagio-inclua.html',

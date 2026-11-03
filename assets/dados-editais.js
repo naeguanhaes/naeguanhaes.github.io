@@ -27,8 +27,34 @@
    ═══════════════════════════════════════════════════════ */
 
 window.DADOS_EDITAIS = {
-  atualizadoEm: '2026-10-27',
+  atualizadoEm: '2026-11-03',
   itens: [
+    {
+      titulo: 'UEMG + Permanência · Apoio à Formação 2026',
+      resumo: 'Auxílio extra de R$ 500,00, em parcela única, para quem já teve benefício deferido no PEAES (editais de 2025 e 2026). Sem nova análise socioeconômica e sem disputa por vagas. Adesão pelo formulário até 11/11.',
+      tipo: 'assistencia',
+      abre: '2026-10-29',
+      encerra: '2026-11-11',
+      link: 'permanencia.html',
+      publicado: '2026-11-03',
+
+      destaque: {
+        tema: 'permanencia',
+        imagem: 'assets/eventos/uemg-permanencia-2026-pessoas.webp',
+        imagemAlt: 'Ilustração de três estudantes olhando para o alto, sobre formas em amarelo, laranja e verde',
+        eyebrow: 'Edital PROEX/COAC nº 09/2026',
+        titulo: 'UEMG + Permanência: R$ 500 para quem já teve PEAES',
+        texto: 'Auxílio extra, pago <b>de uma vez</b>, sem nova análise socioeconômica. Basta ter tido benefício deferido no PEAES e <b>fazer a adesão até 11/11</b>. Veja se você pode e qual modalidade recebe.',
+        numeros: [
+          { n: '11/11', r: 'fim da adesão' },
+          { n: 'R$ 500', r: 'em parcela única' },
+          { n: 'Sem', r: 'disputa por vagas' }
+        ],
+        acao: 'Ver se posso participar',
+        extraTexto: 'Compartilhar no WhatsApp',
+        extraLink: 'https://wa.me/?text=%2AUEMG%20%2B%20Perman%C3%AAncia%20%C2%B7%20Apoio%20%C3%A0%20Forma%C3%A7%C3%A3o%202026%2A%0AAux%C3%ADlio%20extra%20da%20UEMG%20para%20quem%20j%C3%A1%20teve%20benef%C3%ADcio%20deferido%20no%20PEAES.%0A%0A%E2%80%A2%20R%24%20500%2C00%2C%20pagos%20de%20uma%20vez%0A%E2%80%A2%20Sem%20nova%20an%C3%A1lise%20socioecon%C3%B4mica%20e%20sem%20mandar%20documentos%20de%20novo%0A%E2%80%A2%20Ades%C3%A3o%20at%C3%A9%2011%2F11%2C%20pelo%20formul%C3%A1rio%20do%20edital%0A%E2%80%A2%20N%C3%A3o%20tem%20disputa%20por%20vagas%3A%20recebe%20quem%20cumpre%20os%20requisitos%0A%0A%2AQuem%20pode%20e%20passo%20a%20passo%20no%20site%20do%20NAE%3A%2A%0Ahttps%3A%2F%2Fnaeguanhaes.github.io%2Fpermanencia.html'
+      }
+    },
     {
       titulo: 'Estágio Institucional na UEMG · Seleção 2027',
       resumo: 'Estágio remunerado dentro da UEMG, com bolsa de R$ 910,59 e R$ 275,00 de auxílio-transporte, 20 horas por semana. Cadastro de reserva, com seleção por prova escrita. Inscrição até 09/11, às 23h30. A Monitoria INCLUA tem edital em breve.',
