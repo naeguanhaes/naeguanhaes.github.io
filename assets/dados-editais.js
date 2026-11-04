@@ -30,6 +30,32 @@ window.DADOS_EDITAIS = {
   atualizadoEm: '2026-11-03',
   itens: [
     {
+      titulo: 'Prazos de entrega da Secretaria Acadêmica',
+      resumo: 'Informativo da Secretaria Acadêmica: declarações são entregues em até 3 dias e históricos em até 7 dias.',
+      tipo: 'outro',
+      abre: '2026-11-03',
+      encerra: '2026-11-17',
+      link: 'secretaria.html#prazos-entrega',
+      publicado: '2026-11-03',
+      /* e aviso, nao edital: aparece no painel da inicial, nao na lista */
+      naLista: false,
+
+      destaque: {
+        tema: 'secretaria',
+        eyebrow: 'Informativo da Secretaria Acadêmica',
+        titulo: 'Prazos de entrega dos requerimentos',
+        texto: 'Pediu uma <b>declaração</b>? Ela fica pronta em até <b>3 dias</b>. O <b>histórico</b> leva até <b>7 dias</b>. Precisa do documento para uma data certa? Peça com antecedência.',
+        numeros: [
+          { n: '3 dias', r: 'declarações' },
+          { n: '7 dias', r: 'históricos' }
+        ],
+        semContagem: true,
+        acao: 'Ver os prazos',
+        imagem: 'assets/secretaria/prazos-entrega.webp',
+        imagemAlt: 'Informativo da Secretaria Acadêmica da UEMG Guanhães, prazos de entrega dos requerimentos: declarações, prazo máximo de 3 dias; históricos, prazo máximo de 7 dias.'
+      }
+    },
+    {
       titulo: 'UEMG + Permanência · Apoio à Formação 2026',
       resumo: 'Auxílio extra de R$ 500,00, em parcela única, para quem já teve benefício deferido no PEAES (editais de 2025 e 2026). Sem nova análise socioeconômica e sem disputa por vagas. Adesão pelo formulário até 11/11.',
       tipo: 'assistencia',

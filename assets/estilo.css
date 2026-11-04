@@ -1927,6 +1927,15 @@ html[data-contraste="alto"] .evento-cartaz { border-color: #000; }
 }
 .hero-edital.tema-wifi .eyebrow { color: #FFD27A; }
 
+/* Variante da Secretaria, com o rosa e o pêssego do informativo dos prazos. */
+.hero-edital.tema-secretaria {
+  background:
+    radial-gradient(90% 80% at 96% 4%, rgba(255,196,140,.40) 0%, rgba(255,196,140,0) 58%),
+    radial-gradient(80% 70% at 2% 104%, rgba(232,120,160,.45) 0%, rgba(232,120,160,0) 62%),
+    linear-gradient(125deg, #4A1030 0%, #7A1F4E 50%, #A8386C 100%);
+}
+.hero-edital.tema-secretaria .eyebrow { color: #FFD3A8; }
+
 /* Variante sálvia, com o verde e o terracota do cartaz do Yoga na ESMU. */
 .hero-edital.tema-salvia {
   background:
