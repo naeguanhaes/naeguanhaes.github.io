@@ -3099,6 +3099,12 @@ body:has(.pg-peaes) { background: #FBF6EA; }
 .pe-calc-res.pe-acima { background: #F7E6E0; color: #5E2A17; border-left: 5px solid var(--pe-terra); }
 
 /* prazos de entrega da Secretaria Acadêmica (secretaria.html) */
+/* O informativo da Secretaria (a imagem como ela publicou) ao lado dos dois prazos. */
+.sec-informativo { display: grid; gap: 1.2rem; align-items: start; }
+@media (min-width: 760px) { .sec-informativo { grid-template-columns: 340px minmax(0, 1fr); } .sec-informativo .sec-prazos { grid-template-columns: 1fr; } }
+.sec-informativo-img { margin: 0; max-width: 340px; }
+.sec-informativo-img img { display: block; width: 100%; height: auto; border-radius: 14px; box-shadow: var(--sh-1); border: 1px solid var(--hair); }
+.sec-informativo-img figcaption { margin-top: .5rem; font-size: .88rem; color: var(--muted); }
 .sec-prazos { display: grid; gap: .8rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr)); }
 .sec-prazo { padding: 1rem 1.1rem; border-radius: 18px; background: var(--surface); border: 1px solid var(--hair); border-top: 6px solid var(--c); }
 .sec-prazo h3 { margin: 0; font-size: 1.1rem; }
