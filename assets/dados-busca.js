@@ -196,7 +196,7 @@ window.DADOS_BUSCA = {
       t: "Exame especial, faltas e revisão de prova",
       d: "De 40 a 59 pontos ainda dá exame especial. Atestado tem 48 horas para justificar.",
       u: "secretaria.html",
-      k: "exame especial 40 59 pontos reprovado falta atestado justificar 48 horas revisao de prova dispensa disciplina aproveitamento adaptacao proficiencia abreviacao secretaria"
+      k: "prazo de entrega declaracao declaracoes historico historico escolar 3 dias 7 dias quanto tempo demora secretaria academica documento exame especial 40 59 pontos reprovado falta atestado justificar 48 horas revisao de prova dispensa disciplina aproveitamento adaptacao proficiencia abreviacao secretaria"
     },
     {
       t: 'Ajuda com o e-mail institucional',

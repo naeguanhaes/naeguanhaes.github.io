@@ -30,6 +30,14 @@ window.DADOS_AVISOS = {
   atualizadoEm: '2026-10-21',
   avisos: [
     {
+      tipo: 'novidade',
+      de: '2026-11-03',
+      ate: '2026-11-17',
+      texto: 'Secretaria Acadêmica: declarações são entregues em até 3 dias e históricos em até 7 dias. Peça com antecedência.',
+      link: 'secretaria.html#prazos-entrega',
+      textoLink: 'ver os prazos'
+    },
+    {
       tipo: 'atencao',
       de: '2026-11-03',
       ate: '2026-11-11',

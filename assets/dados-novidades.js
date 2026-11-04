@@ -20,6 +20,13 @@ window.DADOS_NOVIDADES = {
   itens: [
     {
       data: '2026-11-03',
+      titulo: 'Prazos de entrega da Secretaria',
+      texto: 'Informativo da Secretaria Acadêmica: declarações em até 3 dias e históricos em até 7 dias. Os prazos estão na página da Secretaria e no gerador de requerimentos.',
+      link: 'secretaria.html#prazos-entrega',
+      textoLink: 'ver os prazos'
+    },
+    {
+      data: '2026-11-03',
       titulo: 'UEMG + Permanência 2026',
       texto: 'Página da ação que paga R$ 500,00 a quem já teve PEAES deferido: quem pode, qual modalidade você recebe (com um teste de dois cliques), passo a passo da adesão até 11/11, cronograma e edital.',
       link: 'permanencia.html',

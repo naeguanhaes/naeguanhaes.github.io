@@ -3098,6 +3098,12 @@ body:has(.pg-peaes) { background: #FBF6EA; }
 .pe-calc-res.pe-ok { background: #EAF0E2; color: #2F3D22; border-left: 5px solid var(--pe-verde); }
 .pe-calc-res.pe-acima { background: #F7E6E0; color: #5E2A17; border-left: 5px solid var(--pe-terra); }
 
+/* prazos de entrega da Secretaria Acadêmica (secretaria.html) */
+.sec-prazos { display: grid; gap: .8rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr)); }
+.sec-prazo { padding: 1rem 1.1rem; border-radius: 18px; background: var(--surface); border: 1px solid var(--hair); border-top: 6px solid var(--c); }
+.sec-prazo h3 { margin: 0; font-size: 1.1rem; }
+.sec-prazo p { margin: 0; color: var(--muted); font-size: .92rem; }
+.sec-prazo .sec-prazo-n b { font-family: var(--serif); font-size: 2rem; color: var(--ink); }
 .pe-auxilios { display: grid; gap: .8rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 15.5rem), 1fr)); }
 .pe-aux { position: relative; padding: 1.1rem 1.1rem 1rem; border-radius: 18px; background: #fff; border: 1px solid #EFE1C4; border-top: 6px solid var(--a); display: flex; flex-direction: column; gap: .3rem; }
 .pe-aux h3 { margin: 0; font-size: 1.12rem; color: var(--pe-navy); }
