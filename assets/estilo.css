@@ -266,8 +266,8 @@ main { padding-block: var(--s5) var(--s6); display: block; }
 }
 .card > * { position: relative; z-index: 1; }
 /* o título do cartão é h2 por semântica, mas continua com o tamanho de cartão */
-.card > h2 { font-size: 1.16rem; letter-spacing: -.005em; color: var(--ink); }
-.card > .rotulo {
+.card > h2, .card > .card-corpo > h2 { font-size: 1.16rem; letter-spacing: -.005em; color: var(--ink); }
+.card > .rotulo, .card > .card-corpo > .rotulo {
   display: inline-flex; align-items: center; gap: .45rem; align-self: flex-start;
   font-size: .67rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase;
   color: color-mix(in srgb, var(--c) 82%, var(--ink));
@@ -3106,6 +3106,30 @@ body:has(.pg-peaes) { background: #FBF6EA; }
 .pe-calc-res { padding: .8rem 1rem; border-radius: 12px; font-size: 1rem; }
 .pe-calc-res.pe-ok { background: #EAF0E2; color: #2F3D22; border-left: 5px solid var(--pe-verde); }
 .pe-calc-res.pe-acima { background: #F7E6E0; color: #5E2A17; border-left: 5px solid var(--pe-terra); }
+
+/* Guia de neurodiversidade (neurodiversidade.html): as 7 páginas do material, como
+   imagem, com o texto de cada uma logo abaixo para leitor de tela, busca e tela pequena. */
+.neuro-topo h1 { margin: 0; }
+.neuro-lema { margin: 0; font-family: var(--serif); font-size: clamp(1.2rem, 1rem + 1vw, 1.55rem); color: #2F6FB3; }
+.neuro-acoes { display: flex; flex-wrap: wrap; gap: .6rem; }
+.neuro-indice { display: flex; flex-wrap: wrap; gap: .4rem; }
+.neuro-indice a { padding: .4rem .85rem; border-radius: 99px; background: #fff; border: 1.5px solid #C9DDF2; color: #1E406E; font-weight: 600; font-size: .9rem; text-decoration: none; }
+.neuro-indice a:hover { background: #2F6FB3; border-color: #2F6FB3; color: #fff; }
+.neuro-paginas { display: grid; gap: 1.6rem; justify-content: center; }
+@media (min-width: 960px) { .neuro-paginas { grid-template-columns: repeat(2, 440px); gap: 2rem 2.4rem; } }
+.neuro-pagina { margin: 0; max-width: 440px; scroll-margin-top: 1rem; }
+.neuro-pagina img { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid #C9DDF2; box-shadow: 0 16px 34px -22px rgba(30,64,110,.45); }
+.neuro-pagina figcaption { font-style: normal; font-size: .95rem; color: var(--ink); }
+.neuro-num { display: block; margin-top: .6rem; font-weight: 800; color: #1E406E; font-size: .92rem; }
+.neuro-texto { margin-top: .35rem; }
+.neuro-texto > summary { cursor: pointer; color: #2F6FB3; font-weight: 700; font-size: .92rem; }
+.neuro-texto p, .neuro-texto ul { font-size: .95rem; margin: .5rem 0 0; }
+a.neuro-chamada { display: grid; gap: 1rem; text-decoration: none; color: inherit; }
+a.neuro-chamada .card-corpo { display: flex; flex-direction: column; gap: .55rem; }
+a.neuro-chamada .card-corpo .btn { align-self: flex-start; }
+a.neuro-chamada img { width: 7.5rem; height: auto; border-radius: 10px; border: 1px solid #C9DDF2; }
+@media (min-width: 640px) { a.neuro-chamada { grid-template-columns: 7.5rem 1fr; align-items: center; } }
+a.neuro-chamada:hover { border-color: #2F6FB3; }
 
 /* prazos de entrega da Secretaria Acadêmica (secretaria.html) */
 /* O informativo da Secretaria (a imagem como ela publicou) ao lado dos dois prazos. */

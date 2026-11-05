@@ -19,6 +19,13 @@ window.DADOS_NOVIDADES = {
   atualizadoEm: '2026-11-03',
   itens: [
     {
+      data: '2026-11-05',
+      titulo: 'Guia de neurodiversidade',
+      texto: 'As 7 páginas do guia "Neurodiversidade: valorize as capacidades, respeite os limites", com o texto de cada página e o PDF para baixar. Também na página de Apoio psicológico.',
+      link: 'neurodiversidade.html',
+      textoLink: 'ler o guia'
+    },
+    {
       data: '2026-11-03',
       titulo: 'Prazos de entrega da Secretaria',
       texto: 'Informativo da Secretaria Acadêmica: declarações em até 3 dias e históricos em até 7 dias. Os prazos estão na página da Secretaria e no gerador de requerimentos.',

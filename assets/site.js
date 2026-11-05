@@ -1083,6 +1083,7 @@
     'diretorio-academico': { img: 'assets/stories/assembleia-da.jpg', ate: '2026-10-28' },
     'seminario': { img: 'assets/stories/seminario.jpg', ate: '2026-11-10' },
     'yoga-esmu': { img: 'assets/stories/yoga-esmu.jpg', ate: '2026-10-31' },
+    'neurodiversidade': { img: 'assets/stories/neurodiversidade.jpg' },
     'conecta-mente': { img: 'assets/stories/conecta-mente.jpg', ate: '2026-11-06' },
     'enade': { img: 'assets/stories/enade.jpg', ate: '2026-11-29' },
     'horarios': { img: 'assets/stories/horarios.jpg' },

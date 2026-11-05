@@ -31,6 +31,12 @@ window.DADOS_BUSCA = {
       k: 'como chegar endereco localizacao onde fica mapa gps rota google maps waze br-259 2250 nova uniao chegar na faculdade caminho'
     },
     {
+      t: 'Neurodiversidade · guia',
+      d: 'Guia em 7 páginas para entender, respeitar e acolher as diferentes formas de ser, sentir e aprender: o que é neurodivergência, desafios no ambiente social, o papel do docente e como ajudar.',
+      u: 'neurodiversidade.html',
+      k: 'neurodiversidade neurodivergencia neurodivergente autismo tea espectro autista tdah deficit de atencao hiperatividade dislexia discalculia borderline tpb bipolar tab tod opositor desafiador inclusao acessibilidade lei brasileira de inclusao docente professor sensorial palmas diplomaticas acolher'
+    },
+    {
       t: 'UEMG + Permanência 2026 · Apoio à Formação',
       d: 'Auxílio extra de R$ 500,00, em parcela única, para quem já teve benefício deferido no PEAES. Sem nova análise socioeconômica. Adesão até 11/11, modalidades, cronograma e edital.',
       u: 'permanencia.html',

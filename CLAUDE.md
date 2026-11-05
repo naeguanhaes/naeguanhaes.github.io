@@ -624,3 +624,16 @@ Paleta da arte em `.pg-perm`; painel da inicial com `tema: 'permanencia'`. PDFs 
 `documentos/uemg-permanencia-2026/`. A página lembra que **não substitui o PEAES Veteranos
 2027** (e o `peaes.html` tem uma chamada para cá). O `nae:revisar-em` pede releitura em
 12/11, 19/11 e 28/11; depois de 27/11 o processo acabou e a página pode sair do menu.
+
+## Guia de neurodiversidade (no ar desde 05/11/2026)
+
+`neurodiversidade.html` (sem item próprio no menu: fica dentro de "Apoio psicológico", que a
+página marca como atual, e tem uma chamada em `apoio.html`) publica o guia
+"Neurodiversidade: valorize as capacidades, respeite os limites", material dos NAEs da
+Faculdade de Educação e da Faculdade de Políticas Públicas e Gestão de Negócios da UEMG (as
+logos estão nas páginas). As 7 páginas viraram imagens em `assets/neurodiversidade/`
+(`pagina-N.webp` e `-560.webp`), cada uma com o texto transcrito num "Ler o texto desta
+página", para leitor de tela, busca e tela pequena. O PDF para baixar
+(`documentos/neurodiversidade/`) foi refeito a partir das imagens, sem os metadados de
+autoria do Canva. Não tem data: não leva `data-ate` nem `nae:revisar-em`.
+
