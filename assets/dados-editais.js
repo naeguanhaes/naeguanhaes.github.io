@@ -63,6 +63,8 @@ window.DADOS_EDITAIS = {
       encerra: '2026-11-11',
       link: 'permanencia.html',
       publicado: '2026-11-03',
+      /* fixo acima do painel na inicial até o fim da adesão: fora do painel que gira */
+      naInicial: false,
 
       destaque: {
         tema: 'permanencia',
@@ -115,6 +117,8 @@ window.DADOS_EDITAIS = {
       encerra: '2026-11-16',
       link: 'peaes.html',
       publicado: '2026-10-27',
+      /* fixo acima do painel na inicial até o fim da inscrição: fora do painel que gira */
+      naInicial: false,
 
       destaque: {
         tema: 'peaes',

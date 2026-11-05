@@ -3107,6 +3107,40 @@ body:has(.pg-peaes) { background: #FBF6EA; }
 .pe-calc-res.pe-ok { background: #EAF0E2; color: #2F3D22; border-left: 5px solid var(--pe-verde); }
 .pe-calc-res.pe-acima { background: #F7E6E0; color: #5E2A17; border-left: 5px solid var(--pe-terra); }
 
+/* Anúncios fixos acima do painel da inicial (index.html): dois retângulos com a arte em
+   cima, nas cores de cada edital. Um sozinho ocupa a largura toda. */
+.fixos { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); }
+.fixo { display: flex; flex-direction: column; border-radius: 22px; overflow: hidden; text-decoration: none; color: #fff; box-shadow: 0 18px 38px -24px rgba(0,25,46,.6); transition: transform .2s ease, box-shadow .2s ease; }
+.fixo:hover { transform: translateY(-2px); box-shadow: 0 22px 44px -22px rgba(0,25,46,.7); color: #fff; }
+.fixo:focus-visible { outline: 3px solid var(--ambar); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { .fixo { transition: none; } .fixo:hover { transform: none; } }
+.fixo-arte { display: block; aspect-ratio: 4 / 1; overflow: hidden; }
+.fixo-arte img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.fixo-perm .fixo-arte img { object-position: left center; }
+.fixo-peaes .fixo-arte img { object-position: center top; }
+.fixo-corpo { flex: 1; display: flex; flex-direction: column; gap: .45rem; padding: 1.1rem 1.3rem 1.2rem; }
+.fixo-eyebrow { font-size: .72rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.fixo h2 { margin: 0; color: #fff; font-size: clamp(1.25rem, 1rem + 1vw, 1.55rem); line-height: 1.2; }
+.fixo-texto { font-size: .95rem; color: rgba(255,255,255,.9); flex: 1; }
+.fixo-rodape { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .6rem; margin-top: .3rem; }
+.fixo-prazo { display: inline-flex; align-items: center; padding: .3rem .8rem; border-radius: 99px; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.3); font-weight: 700; font-size: .88rem; }
+.fixo-ir { display: inline-flex; align-items: center; min-height: 44px; padding: .4rem 1.05rem; border-radius: 99px; background: #fff; font-weight: 800; font-size: .92rem; }
+.fixo-perm {
+  background:
+    radial-gradient(85% 80% at 98% 100%, rgba(227,58,12,.55) 0%, rgba(227,58,12,0) 60%),
+    linear-gradient(125deg, #00192E 0%, #12301F 55%, #305016 100%);
+}
+.fixo-perm .fixo-eyebrow { color: #FFC24D; }
+.fixo-perm .fixo-ir { color: #00192E; }
+.fixo-peaes {
+  background:
+    radial-gradient(90% 80% at 96% 100%, rgba(218,152,56,.42) 0%, rgba(218,152,56,0) 58%),
+    radial-gradient(80% 70% at 2% 104%, rgba(119,35,54,.6) 0%, rgba(119,35,54,0) 62%),
+    linear-gradient(125deg, #0B2438 0%, #15344B 55%, #1F4257 100%);
+}
+.fixo-peaes .fixo-eyebrow { color: #F2C27A; }
+.fixo-peaes .fixo-ir { color: #0B2438; }
+
 /* Guia de neurodiversidade (neurodiversidade.html): as 7 páginas do material, como
    imagem, com o texto de cada uma logo abaixo para leitor de tela, busca e tela pequena. */
 .neuro-topo h1 { margin: 0; }
