@@ -3496,3 +3496,10 @@ a.card.prazos-inicio:hover { border-color: var(--c); }
 .prazos-inicio-num b { font-family: var(--serif); font-size: 1.6rem; line-height: 1.05; color: var(--c); }
 .prazos-inicio-txt { color: var(--ink-2); font-size: .95rem; }
 .prazos-inicio-ir { font-weight: 800; color: var(--c); }
+/* compartilhar a grade especial */
+.esp-acoes { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; flex: none; }
+.esp-acoes .partilha-btn { background: #fff; color: #3F3480; border-color: #fff; }
+.esp-acoes .partilha-btn:hover { background: #FFC49A; border-color: #FFC49A; }
+.esp-pe a { font-weight: 700; color: #3F3480; }
+.sem-cartaz-baixar { margin: 0; font-size: .95rem; color: var(--muted); }
+.sem-cartaz-baixar a { font-weight: 700; }

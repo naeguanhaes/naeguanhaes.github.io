@@ -158,13 +158,50 @@
           '<h2 id="semana-especial-t">Nesta semana, no horário das aulas: ' + U.escapar(E.titulo) + '</h2>' +
           '<p>A grade abaixo troca as disciplinas pela programação do Seminário na Unidade Guanhães, noite por noite.</p>' +
         '</div>' +
-        '<a class="esp-btn" href="' + U.escapar(E.link) + '">Ver os cartazes →</a>' +
+        '<div class="esp-acoes">' +
+          '<a class="esp-btn" href="' + U.escapar(E.link) + '">Ver os cartazes →</a>' +
+          '<a class="btn" href="https://wa.me/?text=' + encodeURIComponent(mensagemEspecial(hoje)) + '" target="_blank" rel="noopener noreferrer">WhatsApp</a>' +
+          (E.stories ? '<button class="btn" type="button" data-stories="' + U.escapar(E.stories) + '">Stories</button>' : '') +
+        '</div>' +
       '</div>' +
       '<div class="rolagem esp-tabela"><table class="grade grade-esp">' +
         '<caption class="so-leitor">Programação do ' + U.escapar(E.titulo) + ', de ' + ini + ' a ' + fim + '</caption>' +
         '<thead>' + thead + '</thead><tbody>' + tbody + '</tbody></table></div>' +
       '<ol class="esp-dias">' + cartoes + '</ol>' +
-      '<p class="esp-pe">A grade normal das turmas continua logo abaixo, para consulta.</p>';
+      '<p class="esp-pe">' +
+        (E.stories ? '<a href="' + U.escapar(E.stories) + '" download="Horarios-semana-do-Seminario.jpg">Baixar a imagem da semana</a> · ' : '') +
+        'A grade normal das turmas continua logo abaixo, para consulta.</p>';
+    /* WhatsApp + Stories viram o "Compartilhar" do site (site.js) */
+    if (U.juntarPartilhas) U.juntarPartilhas(caixa);
+  }
+
+  /* mensagem pronta para o grupo da turma: o resumo de cada noite que
+     ainda vai acontecer, sem emoji, e o link da grade especial no site */
+  function mensagemEspecial(hoje) {
+    var CURTO = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
+    function juntar(l) { return l.length > 1 ? l.slice(0, -1).join(', ') + ' e ' + l[l.length - 1] : l[0]; }
+    var linhas = Object.keys(E.dias).sort().filter(function (dt) { return dt >= hoje; }).map(function (dt) {
+      var d = new Date(dt + 'T12:00:00');
+      var partes = E.dias[dt].map(function (f) {
+        var tipos = [], conta = {};
+        f.itens.forEach(function (it) {
+          var t = it.tipo.toLowerCase();
+          if (tipos.indexOf(t) === -1) tipos.push(t);
+          conta[t] = (conta[t] || 0) + 1;
+        });
+        tipos = tipos.map(function (t) { return conta[t] > 1 && !/s$/.test(t) ? t + 's' : t; });
+        if (f.resumo) tipos = [f.resumo];
+        var onde = f.itens.length === 1 && f.itens[0].onde && f.itens[0].onde !== 'UEMG Guanhães' && f.itens[0].onde !== 'On-line'
+          ? ' (' + f.itens[0].onde + ')' : '';
+        return (/^\d/.test(f.hora) ? f.hora + ' ' : '') + juntar(tipos) + onde;
+      });
+      return '• ' + CURTO[d.getDay()] + ' ' + dt.slice(8, 10) + '/' + dt.slice(5, 7) + ': ' + partes.join('; ');
+    });
+    return '*' + E.curto + ' na UEMG Guanhães*\n' +
+      'Nesta semana, no horário das aulas, acontece o ' + E.titulo + ':\n\n' +
+      linhas.join('\n') + '\n\n' +
+      '*Grade completa e cartazes no site do NAE:*\n' +
+      'https://naeguanhaes.github.io/horarios.html#semana-especial';
   }
 
   /* ── Painel "hoje / agora" ────────────────────────── */

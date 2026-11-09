@@ -24,13 +24,16 @@ window.DADOS_HORARIOS = {
      Fora de ini..fim nada disto aparece; passado o fim, pode
      apagar o bloco inteiro (ou trocar pelo próximo evento).
      dias['AAAA-MM-DD'] = lista de faixas { hora, itens }.
-     Um dia com uma faixa só ocupa a coluna inteira da grade. */
+     Um dia com uma faixa só ocupa a coluna inteira da grade.
+     resumo (opcional) troca a lista de tipos na mensagem do WhatsApp. */
   especial: {
     ini: '2026-11-09',
     fim: '2026-11-13',
     titulo: '28º Seminário de Pesquisa e Extensão',
     curto: 'Semana do Seminário',
     link: 'seminario.html#cartazes',
+    /* imagem dos Stories e para baixar, no botão Compartilhar da grade */
+    stories: 'assets/stories/semana-seminario.jpg',
     dias: {
       '2026-11-09': [
         { hora: '19h', itens: [
@@ -65,7 +68,7 @@ window.DADOS_HORARIOS = {
         ] }
       ],
       '2026-11-13': [
-        { hora: '19h', itens: [
+        { hora: '19h', resumo: 'duas sessões de cinema comentado', itens: [
           { tipo: 'Cinema comentado', titulo: 'Her: o futuro das relações, da tecnologia e da cidade', quem: 'Prof. Jonatan e Profa. Paula', onde: 'UEMG Guanhães' },
           { tipo: 'Direito e Cinema', titulo: 'Sessão especial de Sexta-Feira 13: A Prova do Inexplicável em "O Exorcismo de Emily Rose"', quem: 'Profa. Gabriella e Prof. Vinícius · extensionistas Cindy, Clênio e Kariny', onde: 'UEMG Guanhães' }
         ] }

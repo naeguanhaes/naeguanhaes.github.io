@@ -21,7 +21,7 @@ window.DADOS_NOVIDADES = {
     {
       data: '2026-11-09',
       titulo: 'Semana do Seminário nos horários',
-      texto: 'Nesta semana, a página de horários e a aula de hoje, na inicial, mostram a programação do 28º Seminário no lugar das disciplinas. Os cartazes de cada atividade estão na página do Seminário.',
+      texto: 'Nesta semana, a página de horários e a aula de hoje, na inicial, mostram a programação do 28º Seminário no lugar das disciplinas. Dá para compartilhar a grade no WhatsApp e nos Stories. Os cartazes de cada atividade, inclusive o novo das apresentações de resumos, estão na página do Seminário.',
       link: 'horarios.html',
       textoLink: 'ver a grade da semana'
     },

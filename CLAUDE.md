@@ -685,3 +685,11 @@ Na mesma data, na inicial:
 - o aviso da 1ª Mostra de Profissões abaixo da aula de hoje saiu;
 - os prazos da Secretaria saíram do painel (`naInicial: false`) e viraram um cartão ao lado
   das Novidades (`.prazos-inicio`, `data-ate="2026-11-17"`).
+
+Compartilhar a grade especial: o `horarios.js` monta um link do WhatsApp (mensagem gerada a
+partir de `especial.dias`, só com as noites que ainda vão acontecer; `resumo` numa faixa troca a
+lista de tipos) e um botão de Stories com `especial.stories`
+(`assets/stories/semana-seminario.jpg`), e chama `NAE.juntarPartilhas` para virar o
+"Compartilhar" do site. O cartaz da apresentação de resumos (11/11) foi feito pelo NAE no estilo
+dos cartazes da Unidade: `assets/seminario/cartazes/resumos*.webp` e o JPG para baixar; o QR leva a
+`seminario.html#apresentacoes`.
