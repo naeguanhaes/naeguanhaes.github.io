@@ -176,7 +176,6 @@
       '<ol class="esp-dias">' + cartoes + '</ol>' +
       '<p class="esp-pe">' +
         '<a href="https://wa.me/?text=' + encodeURIComponent(mensagemEspecial(hoje)) + '" target="_blank" rel="noopener noreferrer">Enviar em texto no WhatsApp</a> · ' +
-        (E.stories ? '<a href="' + U.escapar(E.stories) + '" download="Stories-semana-do-Seminario.jpg">Imagem para os Stories</a> · ' : '') +
         '<button class="btn-limpo esp-link" type="button" id="esp-link">Copiar link</button> · ' +
         'A grade normal das turmas continua logo abaixo, para consulta.</p>';
 

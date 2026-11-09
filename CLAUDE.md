@@ -690,9 +690,9 @@ Compartilhar a grade especial (pedido do coordenador: mandar a grade inteira, n�
 o botão "Compartilhar a grade" manda a IMAGEM `especial.imagem`
 (`assets/seminario/grade-semana-seminario.jpg`) pela folha de compartilhar do celular, ou baixa
 a imagem no computador; "Baixar em PDF" usa `especial.pdf`. No rodapé da grade ficam o texto para o
-WhatsApp (gerado de `especial.dias`; `resumo` numa faixa troca a lista de tipos), a imagem dos
-Stories (`especial.stories`) e Copiar link. A imagem e o PDF são uma captura da própria grade, sem
-o destaque de "hoje": mudou a programação, gere de novo os dois (e os Stories).
+WhatsApp (gerado de `especial.dias`; `resumo` numa faixa troca a lista de tipos) e Copiar link.
+Sem opção de Instagram/Stories nesta grade (pedido do coordenador em 09/11/2026). A imagem e o
+PDF são uma captura da própria grade, sem o destaque de "hoje": mudou a programação, gere os dois de novo.
 Na grade, a última faixa de cada dia desce até o fim; uma faixa sem hora (on-line) ocupa a coluna. O cartaz da apresentação de resumos (11/11) foi feito pelo NAE no estilo
 dos cartazes da Unidade: `assets/seminario/cartazes/resumos*.webp` e o JPG para baixar; o QR leva a
 `seminario.html#apresentacoes`.

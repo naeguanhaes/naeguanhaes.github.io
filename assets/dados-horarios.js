@@ -33,10 +33,9 @@ window.DADOS_HORARIOS = {
     curto: 'Semana do Seminário',
     link: 'seminario.html#cartazes',
     /* "Compartilhar a grade" manda a imagem da grade inteira; o PDF é a
-       mesma grade para baixar; stories é a versão em pé para o Instagram */
+       mesma grade para baixar. Sem opção de Instagram (pedido de 09/11). */
     imagem: 'assets/seminario/grade-semana-seminario.jpg',
     pdf: 'assets/seminario/grade-semana-seminario.pdf',
-    stories: 'assets/stories/semana-seminario.jpg',
     dias: {
       '2026-11-09': [
         { hora: '19h', itens: [
