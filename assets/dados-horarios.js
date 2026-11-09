@@ -31,8 +31,8 @@ window.DADOS_HORARIOS = {
     titulo: '28º Seminário de Pesquisa e Extensão',
     curto: 'Semana do Seminário',
     link: 'seminario.html#cartazes',
-    /* "Compartilhar a grade" manda a imagem da grade inteira; o PDF é a
-       mesma grade para baixar. Sem opção de Instagram (pedido de 09/11). */
+    /* a grade inteira da semana para baixar, em imagem e em PDF
+       (botões "Baixar imagem" e "Baixar PDF" no topo da grade) */
     imagem: 'assets/seminario/grade-semana-seminario.jpg',
     pdf: 'assets/seminario/grade-semana-seminario.pdf',
     dias: {

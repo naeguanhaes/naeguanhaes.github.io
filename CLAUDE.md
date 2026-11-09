@@ -686,13 +686,11 @@ Na mesma data, na inicial:
 - os prazos da Secretaria saíram do painel (`naInicial: false`) e viraram um cartão ao lado
   das Novidades (`.prazos-inicio`, `data-ate="2026-11-17"`).
 
-Compartilhar a grade especial (pedido do coordenador em 09/11/2026): SÓ WhatsApp. O botão
-"Compartilhar grade no WhatsApp" abre "Imagem da grade" e "PDF da grade"; cada um é um link wa.me
-que abre o WhatsApp direto com a mensagem: o link do arquivo escolhido (`especial.imagem` ou
-`especial.pdf`) e "Para mais informações, acesse:" com seminario.html. O wa.me não anexa arquivo,
-por isso o arquivo vai como link. (A primeira versão usava a folha de compartilhar do sistema e não
-abria o WhatsApp no Mac; o coordenador pediu que o toque leve direto ao WhatsApp com o texto.)
-Sem Instagram, sem copiar link. A imagem e o PDF são uma captura da própria grade, sem o
+Baixar a grade especial (decisão final do coordenador em 09/11/2026, depois de testar o
+compartilhar): só dois botões, "Baixar imagem" (`especial.imagem`) e "Baixar PDF" (`especial.pdf`),
+SEM compartilhar e sem mencionar WhatsApp. Já tentamos: folha de compartilhar do sistema (no Mac não
+abria o WhatsApp; no celular falhava sem aviso) e link wa.me com o link do arquivo (o WhatsApp não
+anexa arquivo pelo link). Não voltar a essas opções sem pedido. A imagem e o PDF são uma captura da própria grade, sem o
 destaque de "hoje": mudou a programação, gere os dois de novo.
 Na grade, a última faixa de cada dia desce até o fim; uma faixa sem hora (on-line) ocupa a coluna. O cartaz da apresentação de resumos (11/11) foi feito pelo NAE no estilo
 dos cartazes da Unidade: `assets/seminario/cartazes/resumos*.webp` e o JPG para baixar; o QR leva a

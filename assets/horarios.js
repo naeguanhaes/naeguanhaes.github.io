@@ -166,13 +166,8 @@
         '</div>' +
         '<div class="esp-acoes">' +
           '<a class="esp-btn" href="' + U.escapar(E.link) + '">Ver os cartazes →</a>' +
-          '<span class="esp-whats">' +
-            '<button class="btn esp-compartilhar" type="button" id="esp-compartilhar" aria-expanded="false" aria-controls="esp-opcoes">' + ICONE_WHATS + 'Compartilhar grade no WhatsApp</button>' +
-            '<span class="esp-opcoes" id="esp-opcoes" hidden>' +
-              (E.imagem ? '<a class="btn" href="' + linkWhats('imagem') + '" target="_blank" rel="noopener noreferrer">Imagem da grade</a>' : '') +
-              (E.pdf ? '<a class="btn" href="' + linkWhats('pdf') + '" target="_blank" rel="noopener noreferrer">PDF da grade</a>' : '') +
-            '</span>' +
-          '</span>' +
+          (E.imagem ? '<a class="btn" href="' + U.escapar(E.imagem) + '" download="Grade-semana-do-Seminario.jpg">' + ICONE_BAIXAR + 'Baixar imagem</a>' : '') +
+          (E.pdf ? '<a class="btn" href="' + U.escapar(E.pdf) + '" download="Grade-semana-do-Seminario.pdf">' + ICONE_BAIXAR + 'Baixar PDF</a>' : '') +
         '</div>' +
       '</div>' +
       '<div class="rolagem esp-tabela"><table class="grade grade-esp">' +
@@ -180,34 +175,12 @@
         '<thead>' + thead + '</thead><tbody>' + tbody + '</tbody></table></div>' +
       '<ol class="esp-dias">' + cartoes + '</ol>' +
       '<p class="esp-pe">A grade normal das turmas continua logo abaixo, para consulta.</p>';
-
-    var btWa = document.getElementById('esp-compartilhar');
-    var opcoes = document.getElementById('esp-opcoes');
-    if (btWa) btWa.addEventListener('click', function () {
-      var abrir = opcoes.hidden;
-      opcoes.hidden = !abrir;
-      btWa.setAttribute('aria-expanded', String(abrir));
-    });
   }
 
-  /* Compartilhar a grade no WhatsApp (pedido do coordenador em 09/11/2026):
-     só WhatsApp, e o aluno escolhe mandar a imagem ou o PDF da grade inteira.
-     O toque abre o WhatsApp direto com a mensagem pronta: o link do arquivo
-     escolhido e "Para mais informações, acesse:" com a página do Seminário.
-     (O link do WhatsApp não anexa arquivo; por isso o arquivo vai como link,
-     que abre a imagem ou o PDF com um toque.) */
-  var ICONE_WHATS = '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a.9.9 0 00-.7.3 2.8 2.8 0 00-.9 2.1 4.9 4.9 0 001 2.6 11.2 11.2 0 004.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 001.7-1.2 2.1 2.1 0 00.1-1.2c0-.1-.2-.2-.4-.3z"/></svg>';
-  function linkWhats(qual) {
-    var site = 'https://naeguanhaes.github.io/';
-    var ini = E.ini.slice(8, 10) + '/' + E.ini.slice(5, 7), fim = E.fim.slice(8, 10) + '/' + E.fim.slice(5, 7);
-    var texto = '*Grade da semana do ' + E.titulo + '*\n' +
-      'UEMG Guanhães, ' + ini + ' a ' + fim + '\n\n' +
-      (qual === 'pdf' ? 'PDF da grade completa:' : 'Imagem da grade completa:') + '\n' +
-      site + E[qual] + '\n\n' +
-      'Para mais informações, acesse:\n' +
-      site + 'seminario.html?utm_source=whatsapp&utm_campaign=semana-seminario';
-    return 'https://wa.me/?text=' + encodeURIComponent(texto);
-  }
+  /* Baixar a grade (pedido do coordenador em 09/11/2026): a imagem e o
+     PDF da grade inteira da semana, para o aluno guardar ou mandar para
+     quem quiser. Sem botão de compartilhar. */
+  var ICONE_BAIXAR = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>';
 
   /* ── Painel "hoje / agora" ────────────────────────── */
   function aulasDoDia(turma, col) {
