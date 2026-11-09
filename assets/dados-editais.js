@@ -44,7 +44,7 @@ window.DADOS_EDITAIS = {
         imagemAlt: 'INSS, Instituto Nacional do Seguro Social',
         eyebrow: 'Agência da Previdência Social de Guanhães',
         titulo: 'Estágio no INSS para estudantes de Direito',
-        texto: '<b>2 vagas</b> na agência de Guanhães, de manhã ou à tarde, com início em janeiro e fevereiro de 2027. A seleção é por <b>currículo e entrevista</b>: veja quem pode e como entregar.',
+        texto: '<b>2 vagas</b> na agência de Guanhães, de manhã ou à tarde, com início em janeiro e fevereiro de 2027. A seleção é por <b>currículo e entrevista</b>, e a <b>entrega do currículo é presencial</b>, na agência.',
         numeros: [
           { n: 'R$ 1.508', r: 'de bolsa por mês' },
           { n: '2', r: 'vagas' },

@@ -3154,6 +3154,12 @@ body:has(.pg-inss) { background: #F5F9FD; }
 .pg-inss .pe-t2 { font-size: clamp(1.4rem, 4vw, 2.3rem); color: var(--pe-terra); }
 .pg-inss .pe-selos span, .pg-inss .pe-indice a { border-color: #D3E3F5; }
 .pg-inss .pe-quem-item, .pg-inss .pe-aux, .pg-inss .pe-passos li { border-color: #D3E3F5; }
+.inss-presencial { display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: center; padding: 1.2rem 1.4rem; border-radius: 20px; background: #005BB8; color: #fff; box-shadow: 0 16px 34px -24px rgba(0,47,110,.7); }
+.inss-presencial h2 { margin: 0 0 .3rem; color: #fff; font-size: clamp(1.25rem, 1rem + 1vw, 1.6rem); }
+.inss-presencial p { margin: 0; color: rgba(255,255,255,.92); }
+.inss-presencial b { color: #fff; }
+.inss-presencial-ico { display: grid; place-items: center; width: 3.6rem; height: 3.6rem; border-radius: 50%; background: #FFBE39; color: #0A2F5C; }
+@media (max-width: 520px) { .inss-presencial { grid-template-columns: 1fr; } }
 .inss-marca { display: grid; gap: .8rem; justify-items: center; text-align: center; background: #fff; border-radius: 20px; padding: 1.6rem 1.4rem; box-shadow: 0 18px 40px -28px rgba(10,47,92,.5); }
 .inss-marca img { width: min(17rem, 80%); height: auto; border-radius: 0; box-shadow: none; }
 .inss-marca figcaption { font-size: .85rem; color: #4A5560; font-style: normal; }
