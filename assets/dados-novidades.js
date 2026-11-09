@@ -20,6 +20,13 @@ window.DADOS_NOVIDADES = {
   itens: [
     {
       data: '2026-11-09',
+      titulo: 'Programação do 28º Seminário',
+      texto: 'A programação da semana na Unidade Guanhães, dia a dia, e as 34 apresentações de resumos de quarta (11/11), por grupo de trabalho, com busca por nome ou título.',
+      link: 'seminario.html#programacao',
+      textoLink: 'ver a programação'
+    },
+    {
+      data: '2026-11-09',
       titulo: 'Estágio no INSS Guanhães',
       texto: 'Página da seleção de estagiários de Direito da Agência do INSS em Guanhães: a vaga, quem pode, o que colocar no currículo e onde entregar.',
       link: 'estagio-inss.html',

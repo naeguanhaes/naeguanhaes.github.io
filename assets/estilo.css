@@ -3107,6 +3107,39 @@ body:has(.pg-peaes) { background: #FBF6EA; }
 .pe-calc-res.pe-ok { background: #EAF0E2; color: #2F3D22; border-left: 5px solid var(--pe-verde); }
 .pe-calc-res.pe-acima { background: #F7E6E0; color: #5E2A17; border-left: 5px solid var(--pe-terra); }
 
+/* Seminário (seminario.html): programação dia a dia e as apresentações de resumos por grupo. */
+.sem-dias { list-style: none; margin: 0; padding: 0; display: grid; gap: .7rem; }
+.sem-dia { display: grid; grid-template-columns: 4.6rem 1fr; gap: 1rem; padding: 1rem 1.1rem; border-radius: 16px; background: var(--surface); border: 1px solid var(--hair); border-left: 5px solid var(--lilas); }
+.sem-data { display: flex; flex-direction: column; color: var(--muted); font-size: .82rem; }
+.sem-data b { font-family: var(--serif); font-size: 1.45rem; color: #3F3480; line-height: 1.1; }
+.sem-dia h3 { margin: 0 0 .3rem; font-size: 1.05rem; }
+.sem-dia p { margin: .3rem 0 0; font-size: .95rem; }
+.sem-lista { margin: .25rem 0 0; padding-left: 1.1rem; font-size: .95rem; }
+.sem-lista li + li { margin-top: .2rem; }
+.sem-dia time, .sem-trab time { font-weight: 800; color: #3F3480; white-space: nowrap; }
+@media (max-width: 520px) { .sem-dia { grid-template-columns: 1fr; gap: .4rem; } .sem-data { flex-direction: row; gap: .5rem; align-items: baseline; } }
+.sem-busca { display: grid; gap: .35rem; max-width: 30rem; }
+.sem-busca label { font-weight: 700; font-size: .9rem; }
+.sem-busca input { font: inherit; padding: .7rem .9rem; border-radius: 12px; border: 1.5px solid var(--line); background: var(--surface); color: var(--ink); }
+.sem-busca input:focus { outline: none; border-color: #3F3480; box-shadow: 0 0 0 3px color-mix(in srgb, #3F3480 20%, transparent); }
+.sem-busca-res { margin: 0; font-size: .88rem; color: var(--muted); }
+.sem-busca-res:empty { display: none; }
+.sem-gts { display: grid; gap: .6rem; }
+.sem-gt { background: var(--surface); border: 1px solid var(--hair); border-radius: 16px; padding: 0 1.1rem; }
+.sem-gt > summary { cursor: pointer; display: flex; flex-wrap: wrap; justify-content: space-between; gap: .3rem 1rem; padding: .9rem 0; }
+.sem-gt-nome { font-weight: 800; color: #3F3480; }
+.sem-gt-info { font-size: .88rem; color: var(--muted); }
+.sem-gt[open] > summary { border-bottom: 1px dashed var(--line); }
+.sem-gt-aval { margin: .7rem 0 0; font-size: .88rem; color: var(--muted); }
+.sem-trabs { list-style: none; margin: .4rem 0 .9rem; padding: 0; display: grid; }
+.sem-trab { display: grid; grid-template-columns: 3.4rem 1fr; gap: .8rem; padding: .65rem 0; border-top: 1px solid var(--hair); }
+.sem-trab:first-child { border-top: 0; }
+.sem-trab b { font-weight: 700; color: var(--ink); }
+.sem-quem { display: block; font-size: .9rem; color: var(--muted); margin-top: .15rem; }
+.sem-tipo { display: inline-block; font-size: .68rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; padding: .1rem .5rem; border-radius: 99px; margin-right: .2rem; }
+.sem-pesq { background: #ECE9FA; color: #3F3480; }
+.sem-ext { background: #E3F4EC; color: #1F6243; }
+
 /* ═══════════════ ESTÁGIO NO INSS (estagio-inss.html) ═══════════════ */
 /* Peças da página do PEAES nas cores da marca do INSS: o azul, o verde e o amarelo. */
 .pg-inss {
