@@ -156,8 +156,7 @@ Todas já funcionam por endereço direto, para o coordenador revisar.
 `vestibular.html` está em `FORA_DO_CACHE` no `sw.js`.
 
 Rascunhos ocultos criados em 21/10/2026 (todos em `FORA_DO_CACHE`, com `noindex`):
-- **`transferencia.html`**: transferência e obtenção de novo título 1-2027. A
-  inscrição (9 a 13/11/2026) é do calendário; edital, vagas e documentos "a confirmar".
+- ~~`transferencia.html`~~: **no ar desde 09/11/2026**, ver a seção "Transferência e novo título 2027.1".
 - **`rematricula.html`**: renovação de matrícula 2027/1. Datas "a confirmar" até
   sair o calendário de 2027; o passo a passo com telas entra quando o Lyceum abrir.
 - **`mural.html`**: mural de oportunidades. Vai ao ar com o primeiro item; o
@@ -650,3 +649,19 @@ Coelho Guimarães, 179) e entrevista. **O ofício não traz prazo**: o `nae:revi
 releitura em 23/11, 07/12 e 05/01. O PDF do ofício não foi publicado (tem nomes e um
 caminho de arquivo de outra pessoa). Logo do INSS em `assets/inss/` (o `cartao-inss.webp`,
 logo sobre fundo branco, vai no painel da inicial, `tema: 'inss'`).
+
+## Transferência e novo título 2027.1 (no ar desde 09/11/2026)
+
+`transferencia.html` (era rascunho oculto; menu "Editais e bolsas", depois do INSS,
+`data-ate="2026-12-18"`, o fim da matrícula) explica o Edital PROGRAD do Processo Seletivo de
+Transferência e Obtenção de Novo Título, 1º semestre de 2027. **Pedido do coordenador: só as
+vagas de Guanhães** (Direito, 3; Engenharia Civil, 10; as duas noturnas). Nada das outras
+Unidades nem da Escola de Música. Inscrição pelo Forms `ydzjduYjYV8kkcGS6` das 9h de 09/11
+às 17h de 13/11; seleção pelo CRA (média das notas do histórico; conceitos A=95 a E=55;
+mínimo 60), com calculadora na página; recursos pelos Forms `UiU7jMNnhPXXQyDx8` (lista) e
+`9E1b9ZLtQSVGhYTj9` (resultado preliminar); resultado final 11/12; matrícula presencial de
+14 a 18/12. Estudante da UEMG não entra por aqui (reopção de curso). Arte da Unidade em
+`assets/eventos/transferencia-2027-1*.webp`, cores em `.pg-transf`, painel `tema: 'transf'`.
+O PDF do edital (21 páginas, todas as Unidades) não foi copiado para o site: a página leva à
+página oficial. O `nae:revisar-em` pede releitura em 14/11, 04/12 e 19/12.
+

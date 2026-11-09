@@ -20,6 +20,13 @@ window.DADOS_NOVIDADES = {
   itens: [
     {
       data: '2026-11-09',
+      titulo: 'Transferência e novo título 2027.1',
+      texto: 'Página do processo seletivo de transferência e obtenção de novo título, só com as vagas de Guanhães: quem pode, documentos, cálculo da média (CRA), cronograma e matrícula.',
+      link: 'transferencia.html',
+      textoLink: 'ver a página'
+    },
+    {
+      data: '2026-11-09',
       titulo: 'Programação do 28º Seminário',
       texto: 'A programação da semana na Unidade Guanhães, dia a dia, e as 34 apresentações de resumos de quarta (11/11), por grupo de trabalho, com busca por nome ou título.',
       link: 'seminario.html#programacao',

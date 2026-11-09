@@ -31,6 +31,12 @@ window.DADOS_BUSCA = {
       k: 'como chegar endereco localizacao onde fica mapa gps rota google maps waze br-259 2250 nova uniao chegar na faculdade caminho'
     },
     {
+      t: 'Transferência e obtenção de novo título 2027.1',
+      d: 'Processo seletivo para quem estuda em outra instituição ou já tem diploma: 3 vagas em Direito e 10 em Engenharia Civil em Guanhães, inscrições de 9 a 13/11, seleção pelo CRA.',
+      u: 'transferencia.html',
+      k: 'transferencia transferir obtencao de novo titulo segunda graduacao diploma portador de diploma vagas remanescentes cra coeficiente de rendimento historico ingresso outra faculdade reopcao matricula'
+    },
+    {
       t: 'Estágio no INSS Guanhães · Direito',
       d: 'Seleção de estagiários de Direito na Agência da Previdência Social de Guanhães: 2 vagas, bolsa de R$ 1.508,42, 30 horas semanais, currículo e entrevista.',
       u: 'estagio-inss.html',

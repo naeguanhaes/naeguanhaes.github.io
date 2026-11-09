@@ -30,6 +30,32 @@ window.DADOS_EDITAIS = {
   atualizadoEm: '2026-11-03',
   itens: [
     {
+      titulo: 'Transferência e obtenção de novo título 2027.1',
+      resumo: 'Para quem estuda em outra instituição ou já tem diploma: 3 vagas em Direito e 10 em Engenharia Civil na UEMG Guanhães. Inscrição pelo formulário até as 17h de 13/11; seleção pela média do histórico (CRA).',
+      tipo: 'outro',
+      abre: '2026-11-09',
+      encerra: '2026-11-13',
+      link: 'transferencia.html',
+      publicado: '2026-11-09',
+
+      destaque: {
+        tema: 'transf',
+        imagem: 'assets/eventos/transferencia-2027-1-560.webp',
+        imagemAlt: 'Arte da Transferência e Obtenção de Novo Título, Edital 2027.1: Direito, 3 vagas; Engenharia Civil, 10 vagas; inscrições de 9 a 13 de novembro',
+        eyebrow: 'Edital PROGRAD · 1º semestre de 2027',
+        titulo: 'Transferência e novo título: inscrições até 13/11',
+        texto: 'Estuda em outra faculdade ou já tem diploma? Venha cursar <b>Direito</b> ou <b>Engenharia Civil</b> na UEMG Guanhães. A seleção é pela <b>média das notas do histórico</b>, sem prova.',
+        numeros: [
+          { n: '13/11', r: 'até as 17h' },
+          { n: '3', r: 'vagas em Direito' },
+          { n: '10', r: 'vagas em Engenharia Civil' }
+        ],
+        acao: 'Ver quem pode e como se inscrever',
+        extraTexto: 'Compartilhar no WhatsApp',
+        extraLink: 'https://wa.me/?text=%2ATransfer%C3%AAncia%20e%20obten%C3%A7%C3%A3o%20de%20novo%20t%C3%ADtulo%20%C2%B7%20UEMG%20Guanh%C3%A3es%2A%0APara%20quem%20estuda%20em%20outra%20faculdade%20ou%20j%C3%A1%20tem%20diploma%20e%20quer%20cursar%20Direito%20ou%20Engenharia%20Civil%20na%20UEMG%20Guanh%C3%A3es%20%281%C2%BA%20semestre%20de%202027%29.%0A%0A%E2%80%A2%20Direito%3A%203%20vagas%0A%E2%80%A2%20Engenharia%20Civil%3A%2010%20vagas%0A%E2%80%A2%20Inscri%C3%A7%C3%B5es%20de%209%20a%2013%2F11%2C%20at%C3%A9%20as%2017h%2C%20pela%20internet%0A%E2%80%A2%20Sele%C3%A7%C3%A3o%20pela%20m%C3%A9dia%20das%20notas%20do%20hist%C3%B3rico%2C%20sem%20prova%0A%0A%2AQuem%20pode%2C%20documentos%20e%20passo%20a%20passo%20no%20site%20do%20NAE%3A%2A%0Ahttps%3A%2F%2Fnaeguanhaes.github.io%2Ftransferencia.html'
+      }
+    },
+    {
       titulo: 'Estágio no INSS Guanhães · Direito',
       resumo: 'A Agência da Previdência Social de Guanhães vai selecionar estagiários de Direito: 2 vagas, bolsa de R$ 1.508,42 mais R$ 13,40 de transporte por dia, 30 horas por semana. Seleção por currículo e entrevista; o currículo é entregue na agência.',
       tipo: 'outro',

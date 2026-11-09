@@ -30,6 +30,14 @@ window.DADOS_AVISOS = {
   atualizadoEm: '2026-10-21',
   avisos: [
     {
+      tipo: 'atencao',
+      de: '2026-11-09',
+      ate: '2026-11-13',
+      texto: 'Transferência e obtenção de novo título 2027.1: 3 vagas em Direito e 10 em Engenharia Civil. Inscrições até as 17h de 13/11, pela internet.',
+      link: 'transferencia.html',
+      textoLink: 'ver como se inscrever'
+    },
+    {
       tipo: 'novidade',
       de: '2026-11-09',
       ate: '2026-11-13',

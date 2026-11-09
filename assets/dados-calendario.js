@@ -82,7 +82,7 @@ window.DADOS_CALENDARIO = {
 
     { ini: '2026-11-02', fim: '2026-11-02', titulo: 'Feriado', tipo: 'feriado' },
     { ini: '2026-11-06', fim: '2026-11-06', titulo: 'V Conecta Mente: Procrastinação Acadêmica, webinário ao vivo pela TV UEMG, das 17h às 18h30', tipo: 'letivo', curto: 'V Conecta Mente (webinário, 17h)' },
-    { ini: '2026-11-09', fim: '2026-11-13', titulo: 'Inscrição para transferência e obtenção de novo título 1-2027', tipo: 'prazo' },
+    { ini: '2026-11-09', fim: '2026-11-13', titulo: 'Inscrição para transferência e obtenção de novo título 2027.1, pelo formulário do edital (até as 17h do último dia)', tipo: 'prazo', curto: 'Transferência e novo título: inscrição' },
     { ini: '2026-11-12', fim: '2026-11-12', titulo: 'UEMG + Permanência: relação das inscrições recebidas', tipo: 'prazo', curto: 'UEMG + Permanência: inscrições recebidas' },
     { ini: '2026-11-11', fim: '2026-11-11', titulo: 'Estágio Institucional: lista das inscrições', tipo: 'prazo', curto: 'Estágio: lista das inscrições' },
     { ini: '2026-11-18', fim: '2026-11-18', titulo: 'Estágio Institucional: convocação para a prova, pelo e-mail institucional', tipo: 'prazo', curto: 'Estágio: convocação para a prova' },
@@ -102,11 +102,14 @@ window.DADOS_CALENDARIO = {
     { ini: '2026-11-30', fim: '2026-12-11', titulo: 'Provas finais do curso de Direito', tipo: 'prazo' },
     { ini: '2026-12-04', fim: '2026-12-04', titulo: 'Data-limite para entregar na secretaria a versão para a banca do TCC de Direito', tipo: 'prazo', curto: 'Entrega do TCC na secretaria (Direito)' },
     { ini: '2026-12-07', fim: '2026-12-11', titulo: 'Bancas de defesa do TCC de Direito', tipo: 'prazo' },
+    { ini: '2026-12-03', fim: '2026-12-03', titulo: 'Transferência e novo título 2027.1: resultado preliminar', tipo: 'prazo', curto: 'Transferência: resultado preliminar' },
     { ini: '2026-12-04', fim: '2026-12-04', titulo: 'Estágio Institucional: resultado preliminar', tipo: 'prazo', curto: 'Estágio: resultado preliminar' },
 
     { ini: '2026-12-09', fim: '2026-12-09', titulo: 'PEAES Veteranos 2027: resultado preliminar', tipo: 'prazo', curto: 'PEAES: resultado preliminar' },
     { ini: '2026-12-10', fim: '2026-12-11', titulo: 'PEAES Veteranos 2027: recurso contra o resultado preliminar', tipo: 'prazo', curto: 'PEAES: recurso do resultado' },
     { ini: '2026-12-12', fim: '2026-12-12', titulo: 'Término das aulas do 2º semestre letivo', tipo: 'letivo' },
+    { ini: '2026-12-11', fim: '2026-12-11', titulo: 'Transferência e novo título 2027.1: resultado final', tipo: 'prazo', curto: 'Transferência: resultado final' },
+    { ini: '2026-12-14', fim: '2026-12-18', titulo: 'Transferência e novo título 2027.1: matrícula presencial dos classificados na Secretaria Acadêmica', tipo: 'prazo', curto: 'Transferência: matrícula' },
     { ini: '2026-12-14', fim: '2026-12-14', titulo: 'Estágio Institucional: resultado final', tipo: 'prazo', curto: 'Estágio: resultado final' },
     { ini: '2026-12-14', fim: '2026-12-17', titulo: 'Exame especial / Complementação de carga horária', tipo: 'prazo' },
     { ini: '2026-12-18', fim: '2026-12-18', titulo: 'Término do 2º semestre letivo, fechamento do Lyceum', tipo: 'letivo' },

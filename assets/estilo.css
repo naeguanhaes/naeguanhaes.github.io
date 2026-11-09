@@ -3140,6 +3140,34 @@ body:has(.pg-peaes) { background: #FBF6EA; }
 .sem-pesq { background: #ECE9FA; color: #3F3480; }
 .sem-ext { background: #E3F4EC; color: #1F6243; }
 
+/* ═══════════════ TRANSFERÊNCIA E NOVO TÍTULO (transferencia.html) ═══════════════ */
+/* Peças da página do PEAES nas cores da arte da Unidade: roxo e verde-limão. */
+.pg-transf {
+  --pe-navy: #3B1270; --pe-terra: #6A22C9; --pe-mostarda: #CDFA7E; --pe-mostarda-txt: #4E6B12;
+  --pe-vinho: #8A2A5C; --pe-verde: #3B7A1A; --pe-creme: #F8F3FF; --pe-creme-2: #EFE5FD;
+}
+body:has(.pg-transf) { background: #F7F3FD; }
+.pg-transf .pe-hero { border-color: #E2D3FA; }
+.pg-transf .pe-blob-1 { background: #8F35E7; }
+.pg-transf .pe-blob-2 { background: #CDFA7E; }
+.pg-transf .pe-t1 { font-size: clamp(1.8rem, 7.2vw, 3.3rem); }
+.pg-transf .pe-t2 { font-size: clamp(1.4rem, 4vw, 2.3rem); color: var(--pe-terra); }
+.pg-transf .pe-selos span, .pg-transf .pe-indice a, .pg-transf .pe-quem-item, .pg-transf .pe-aux, .pg-transf .pe-passos li { border-color: #E2D3FA; }
+.pg-transf .pe-quem-ico { background: var(--pe-terra); }
+.pg-transf .pe-nao .pe-quem-ico { background: var(--pe-vinho); }
+.transf-arte img { max-width: 400px; margin-inline: auto; }
+.transf-calc { display: grid; gap: .35rem; }
+.transf-calc label { font-weight: 700; color: var(--pe-navy); }
+.transf-calc textarea { width: 100%; font: inherit; padding: .7rem .9rem; border-radius: 12px; border: 1.5px solid #D9C8F5; background: #fff; color: var(--ink); resize: vertical; }
+.transf-calc textarea:focus { outline: none; border-color: var(--pe-terra); box-shadow: 0 0 0 3px rgba(106,34,201,.2); }
+.hero-edital.tema-transf {
+  background:
+    radial-gradient(90% 80% at 96% 4%, rgba(205,250,126,.30) 0%, rgba(205,250,126,0) 58%),
+    radial-gradient(80% 70% at 2% 104%, rgba(143,53,231,.6) 0%, rgba(143,53,231,0) 62%),
+    linear-gradient(125deg, #2A0B57 0%, #4F1A9C 55%, #7A2FD6 100%);
+}
+.hero-edital.tema-transf .eyebrow { color: #CDFA7E; }
+
 /* ═══════════════ ESTÁGIO NO INSS (estagio-inss.html) ═══════════════ */
 /* Peças da página do PEAES nas cores da marca do INSS: o azul, o verde e o amarelo. */
 .pg-inss {
