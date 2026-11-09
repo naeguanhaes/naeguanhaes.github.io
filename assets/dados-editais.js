@@ -562,7 +562,8 @@ window.DADOS_EDITAIS = {
           { n: '10/11', r: 'prazo do ouvinte' },
           { n: 'Livre', r: 'para toda a Unidade' }
         ],
-        acao: 'Ver todos os prazos',
+        acao: 'Ver Programação',
+        acaoLink: 'seminario.html#programacao',
         extraTexto: 'Página de inscrições',
         extraLink: 'https://www.uemg.br/28ed-seminario-pe-inscricao'
       }
@@ -591,7 +592,8 @@ window.DADOS_EDITAIS = {
           { n: '09 a 13/11', r: 'esta semana' },
           { n: 'Guanhães', r: 'na Unidade' }
         ],
-        acao: 'Ver a página do Seminário',
+        acao: 'Ver Programação',
+        acaoLink: 'seminario.html#programacao',
         extraTexto: 'Regulamento',
         extraLink: 'https://www.uemg.br/normas/regulamento'
       }
