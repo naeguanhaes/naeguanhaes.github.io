@@ -169,8 +169,8 @@
           '<span class="esp-whats">' +
             '<button class="btn esp-compartilhar" type="button" id="esp-compartilhar" aria-expanded="false" aria-controls="esp-opcoes">' + ICONE_WHATS + 'Compartilhar grade no WhatsApp</button>' +
             '<span class="esp-opcoes" id="esp-opcoes" hidden>' +
-              '<button class="btn" type="button" data-enviar="imagem">Imagem da grade</button>' +
-              '<button class="btn" type="button" data-enviar="pdf">PDF da grade</button>' +
+              (E.imagem ? '<a class="btn" href="' + linkWhats('imagem') + '" target="_blank" rel="noopener noreferrer">Imagem da grade</a>' : '') +
+              (E.pdf ? '<a class="btn" href="' + linkWhats('pdf') + '" target="_blank" rel="noopener noreferrer">PDF da grade</a>' : '') +
             '</span>' +
           '</span>' +
         '</div>' +
@@ -187,67 +187,26 @@
       var abrir = opcoes.hidden;
       opcoes.hidden = !abrir;
       btWa.setAttribute('aria-expanded', String(abrir));
-      if (abrir) prepararArquivos();
-    });
-    caixa.querySelectorAll('[data-enviar]').forEach(function (b) {
-      b.addEventListener('click', function () { enviarGrade(b.getAttribute('data-enviar')); });
     });
   }
 
-  /* Enviar a grade pelo WhatsApp (pedido do coordenador em 09/11/2026): só
-     WhatsApp, e o aluno escolhe mandar a IMAGEM ou o PDF da grade inteira,
-     com a mensagem "para mais informações" e o link da página do Seminário.
-     O link do WhatsApp (wa.me) não leva arquivo; por isso, no celular o
-     arquivo vai pela folha de compartilhar do sistema (onde o aluno toca no
-     WhatsApp), e no computador o arquivo é baixado e o WhatsApp abre com a
-     mensagem, para anexar. Os arquivos são buscados quando o aluno abre as
-     opções, para o toque seguinte já compartilhar sem espera. */
+  /* Compartilhar a grade no WhatsApp (pedido do coordenador em 09/11/2026):
+     só WhatsApp, e o aluno escolhe mandar a imagem ou o PDF da grade inteira.
+     O toque abre o WhatsApp direto com a mensagem pronta: o link do arquivo
+     escolhido e "Para mais informações, acesse:" com a página do Seminário.
+     (O link do WhatsApp não anexa arquivo; por isso o arquivo vai como link,
+     que abre a imagem ou o PDF com um toque.) */
   var ICONE_WHATS = '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a.9.9 0 00-.7.3 2.8 2.8 0 00-.9 2.1 4.9 4.9 0 001 2.6 11.2 11.2 0 004.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 001.7-1.2 2.1 2.1 0 00.1-1.2c0-.1-.2-.2-.4-.3z"/></svg>';
-  var ARQUIVOS = {
-    imagem: { nome: 'Grade-semana-do-Seminario.jpg', tipo: 'image/jpeg' },
-    pdf: { nome: 'Grade-semana-do-Seminario.pdf', tipo: 'application/pdf' }
-  };
-  function mensagemGrade() {
-    return 'Grade da semana do ' + E.titulo + ' na UEMG Guanhães.\n' +
-           'Para mais informações, acesse: https://naeguanhaes.github.io/seminario.html?utm_source=whatsapp&utm_campaign=semana-seminario';
-  }
-  function podeMandarArquivo(tipo) {
-    try {
-      return !!(navigator.canShare && navigator.canShare({ files: [new File([''], 'teste', { type: tipo })] }));
-    } catch (e) { return false; }
-  }
-  function prepararArquivos() {
-    ['imagem', 'pdf'].forEach(function (k) {
-      var a = ARQUIVOS[k];
-      if (a.promessa || !E[k]) return;
-      a.promessa = fetch(E[k]).then(function (r) { return r.blob(); }).then(function (blob) {
-        a.arquivo = new File([blob], a.nome, { type: a.tipo });
-        return a.arquivo;
-      });
-    });
-  }
-  function enviarGrade(qual) {
-    var a = ARQUIVOS[qual];
-    if (!a || !E[qual]) return;
-    var texto = mensagemGrade();
-    if (podeMandarArquivo(a.tipo)) {
-      var mandar = function (arquivo) {
-        return navigator.share({ files: [arquivo], text: texto }).catch(function () {});
-      };
-      if (a.arquivo) { mandar(a.arquivo); return; }
-      prepararArquivos();
-      a.promessa.then(mandar).catch(function () { window.location.href = E[qual]; });
-      return;
-    }
-    /* computador: abre o WhatsApp com a mensagem e baixa o arquivo para anexar */
-    window.open('https://wa.me/?text=' + encodeURIComponent(texto), '_blank', 'noopener');
-    var link = document.createElement('a');
-    link.href = E[qual];
-    link.download = a.nome;
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
-    U.toast((qual === 'pdf' ? 'PDF baixado' : 'Imagem baixada') + '. No WhatsApp que abriu, anexe o arquivo junto com a mensagem.');
+  function linkWhats(qual) {
+    var site = 'https://naeguanhaes.github.io/';
+    var ini = E.ini.slice(8, 10) + '/' + E.ini.slice(5, 7), fim = E.fim.slice(8, 10) + '/' + E.fim.slice(5, 7);
+    var texto = '*Grade da semana do ' + E.titulo + '*\n' +
+      'UEMG Guanhães, ' + ini + ' a ' + fim + '\n\n' +
+      (qual === 'pdf' ? 'PDF da grade completa:' : 'Imagem da grade completa:') + '\n' +
+      site + E[qual] + '\n\n' +
+      'Para mais informações, acesse:\n' +
+      site + 'seminario.html?utm_source=whatsapp&utm_campaign=semana-seminario';
+    return 'https://wa.me/?text=' + encodeURIComponent(texto);
   }
 
   /* ── Painel "hoje / agora" ────────────────────────── */
