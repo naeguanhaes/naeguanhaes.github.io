@@ -20,6 +20,13 @@ window.DADOS_NOVIDADES = {
   itens: [
     {
       data: '2026-11-09',
+      titulo: 'Semana do Seminário nos horários',
+      texto: 'Nesta semana, a página de horários e a aula de hoje, na inicial, mostram a programação do 28º Seminário no lugar das disciplinas. Os cartazes de cada atividade estão na página do Seminário.',
+      link: 'horarios.html',
+      textoLink: 'ver a grade da semana'
+    },
+    {
+      data: '2026-11-09',
       titulo: 'Transferência e novo título 2027.1',
       texto: 'Página do processo seletivo de transferência e obtenção de novo título, só com as vagas de Guanhães: quem pode, documentos, cálculo da média (CRA), cronograma e matrícula.',
       link: 'transferencia.html',

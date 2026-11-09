@@ -17,6 +17,62 @@ window.DADOS_HORARIOS = {
   semestre: '2026.2',
   fonte: 'Quadro oficial de horários da UEMG · Unidade Guanhães',
 
+  /* ── Semana especial ─────────────────────────────────
+     Numa semana de evento, a programação toma o lugar da aula:
+     a página de horários abre com a grade do evento e o painel
+     "Aula de hoje" da inicial mostra as atividades do dia.
+     Fora de ini..fim nada disto aparece; passado o fim, pode
+     apagar o bloco inteiro (ou trocar pelo próximo evento).
+     dias['AAAA-MM-DD'] = lista de faixas { hora, itens }.
+     Um dia com uma faixa só ocupa a coluna inteira da grade. */
+  especial: {
+    ini: '2026-11-09',
+    fim: '2026-11-13',
+    titulo: '28º Seminário de Pesquisa e Extensão',
+    curto: 'Semana do Seminário',
+    link: 'seminario.html#cartazes',
+    dias: {
+      '2026-11-09': [
+        { hora: '19h', itens: [
+          { tipo: 'Mesa de abertura', titulo: 'Guanhães, Meio Ambiente e Segurança Jurídica: aspectos urbanísticos, econômicos e ambientais', quem: 'Thatiana Soares da Silva e Dr. Welbert de Souza Costa · mediação: Profa. Paula Ribeiro', onde: 'Câmara Municipal de Guanhães' }
+        ] }
+      ],
+      '2026-11-10': [
+        { hora: 'on-line', itens: [
+          { tipo: 'Programação on-line', titulo: 'Atividades on-line com todas as Unidades da UEMG', quem: 'Acompanhe de casa', onde: 'On-line' }
+        ] }
+      ],
+      '2026-11-11': [
+        { hora: '19h', itens: [
+          { tipo: 'Apresentações', titulo: 'Apresentação de resumos científicos', quem: 'Cinco Grupos de Trabalho · o GT 1 começa às 18h10', onde: 'UEMG Guanhães', link: 'seminario.html#apresentacoes' },
+          { tipo: 'Minicurso', titulo: 'Regularização urbana', quem: 'Profa. Gilese Horta B. Miranda', onde: 'UEMG Guanhães' }
+        ] },
+        { hora: '20h30', itens: [
+          { tipo: 'Oficina', titulo: 'Aprendizagem em Jogo: Oficina de Jogos de Mesa', quem: 'Profa. Paula Ribeiro e Prof. Luiz Otávio Menezes Teles', onde: 'UEMG Guanhães' },
+          { tipo: 'Palestra', titulo: 'O tornar-se mulher e o tornar-se mãe: sobre sujeitos iguais e distintos', quem: 'Profa. Gabriella de Morais e Prof. Franklin Flauzino', onde: 'UEMG Guanhães' }
+        ] }
+      ],
+      '2026-11-12': [
+        { hora: '19h', itens: [
+          { tipo: 'Mesa-redonda', titulo: 'Inteligência Artificial no Direito: aplicações, limites e desafios éticos na prática jurídica', quem: 'Profa. Thays Ferreira Ventura e Brendo Ferreira de Miranda', onde: 'UEMG Guanhães' },
+          { tipo: 'Minicurso', titulo: 'A reforma do Código Civil em debate: impactos jurídicos e sociais', quem: 'Profa. Gabriella de Morais', onde: 'UEMG Guanhães' },
+          { tipo: 'Minicurso', titulo: 'Topografia aplicada à Engenharia Civil', quem: 'Profa. Gilese Horta B. Miranda', onde: 'UEMG Guanhães' },
+          { tipo: 'Minicurso', titulo: 'Cartografia Cidadã: Leitura Urbana de Guanhães', quem: 'Profa. Paula Ribeiro, Ana Luiza dos Reis e Thomas Pinho C. Nunes', onde: 'UEMG Guanhães' },
+          { tipo: 'Mostra', titulo: 'Observação do céu noturno: uma experiência de divulgação científica', quem: 'Prof. Bruno de Sousa Ferreira e Prof. Júlio César Marques Jr.', onde: 'UEMG Guanhães' }
+        ] },
+        { hora: '20h30', itens: [
+          { tipo: 'Palestra', titulo: 'A exclusão da silvicultura do rol de atividades potencialmente poluidoras pela Lei nº 14.876/2024', quem: 'Profa. Thays Ferreira Ventura e Gustavo Elcino Pimenta', onde: 'UEMG Guanhães' }
+        ] }
+      ],
+      '2026-11-13': [
+        { hora: '19h', itens: [
+          { tipo: 'Cinema comentado', titulo: 'Her: o futuro das relações, da tecnologia e da cidade', quem: 'Prof. Jonatan e Profa. Paula', onde: 'UEMG Guanhães' },
+          { tipo: 'Direito e Cinema', titulo: 'Sessão especial de Sexta-Feira 13: A Prova do Inexplicável em "O Exorcismo de Emily Rose"', quem: 'Profa. Gabriella e Prof. Vinícius · extensionistas Cindy, Clênio e Kariny', onde: 'UEMG Guanhães' }
+        ] }
+      ]
+    }
+  },
+
   /* ── Aulas no semestre, por ritmo semanal ───────────────
      Cada faixa da grade dura 100 minutos e vale duas aulas
      de 50. Somando as faixas, uma disciplina tem 1, 2, 3 ou

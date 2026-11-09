@@ -184,7 +184,15 @@
     <span class="bb-dica" aria-hidden="true">e-mail, horários, professor, prazos</span>
   </button>
 
-  <!-- Dois anúncios fixos acima do painel (pedido do coordenador em 05/11/2026). Cada um sai
+  <!-- Só avisos e eventos com prazo. Nasce escondido: o edital-hero.js
+       monta os slides a partir de dados-editais.js e só então mostra. -->
+  <section class="carrossel carrossel-hero" data-carrossel data-intervalo="15000" aria-label="Destaques do NAE" hidden>
+    <div class="trilho" id="hero-trilho"></div>
+    <div class="pontos" role="group" aria-label="Selecionar destaque"></div>
+  </section>
+
+  <!-- Dois anúncios fixos logo abaixo do painel que gira (pedido do coordenador em 05/11/2026;
+       descidos para baixo do painel em 09/11/2026). Cada um sai
        sozinho no dia seguinte ao fim da inscrição, pelo data-ate; enquanto estão aqui, os dois
        itens ficam fora do painel que gira (naInicial: false em dados-editais.js). -->
   <div class="fixos" data-ate="2026-11-16">
@@ -208,38 +216,7 @@
     </a>
   </div>
 
-  <!-- Só avisos e eventos com prazo. Nasce escondido: o edital-hero.js
-       monta os slides a partir de dados-editais.js e só então mostra. -->
-  <section class="carrossel carrossel-hero" data-carrossel data-intervalo="15000" aria-label="Destaques do NAE" hidden>
-    <div class="trilho" id="hero-trilho"></div>
-    <div class="pontos" role="group" aria-label="Selecionar destaque"></div>
-  </section>
-
   <section id="painel-agora" aria-label="Aula de hoje"></section>
-
-  <section class="evento-cartaz reveal" id="mostra-profissoes" data-ate="2026-11-13" aria-labelledby="mostra-profissoes-tit" style="--c: #15315A">
-    <figure>
-      <img src="assets/eventos/mostra-profissoes-2026.webp" srcset="assets/eventos/mostra-profissoes-2026-480.webp 480w, assets/eventos/mostra-profissoes-2026.webp 800w" sizes="(min-width: 760px) 320px, 92vw" width="800" height="1200" alt="Cartaz da 1ª Mostra de Profissões da UEMG Unidade Guanhães, Direito e Engenharia Civil: apresentação dos cursos, áreas de atuação, atividades práticas e espaço para perguntas, em 13 de novembro de 2026, a partir das 13h. Realização do Diretório Acadêmico." loading="lazy" decoding="async">
-    </figure>
-    <div class="evento-info">
-      <span class="rotulo">Diretório Acadêmico · chamada de voluntários</span>
-      <h2 id="mostra-profissoes-tit"><a class="titulo-link" href="mostra-profissoes.html">1ª Mostra de Profissões da UEMG Unidade Guanhães</a></h2>
-      <p>Uma oportunidade para conhecer os cursos de <b>Direito e Engenharia Civil</b>, as áreas de atuação e vivenciar um pouco do ambiente universitário. O Diretório Acadêmico convida você para ser <b>voluntário</b>.</p>
-      <ul class="evento-dados">
-        <li><b>Quando</b> Sexta, 13 de novembro de 2026, a partir das 13h</li>
-        <li><b>Onde</b> UEMG Unidade Guanhães</li>
-        <li><b>Atividades</b> Apresentação dos cursos, áreas de atuação, atividades práticas e espaço para perguntas e interação</li>
-        <li><b>Realização</b> Diretório Acadêmico da UEMG Unidade Guanhães</li>
-      </ul>
-      <p><b>Venha conhecer seu futuro!</b></p>
-      <div class="compartilhar">
-        <a class="btn" data-ate="2026-11-12" style="--c: #15315A" href="https://forms.gle/DXUdKstRHQMz7xhm7" target="_blank" rel="noopener noreferrer">Quero ser voluntário →</a>
-        <a class="btn ghost" style="--c: #15315A" href="mostra-profissoes.html">Ver a página da Mostra</a>
-        <a class="btn" style="--c: var(--verde)" href="https://wa.me/?text=%2A1%C2%AA%20Mostra%20de%20Profiss%C3%B5es%20UEMG%2A%0AO%20Diret%C3%B3rio%20Acad%C3%AAmico%20est%C3%A1%20formando%20uma%20equipe%20de%20estudantes%20volunt%C3%A1rios%20para%20organizar%20a%20Mostra%2C%20que%20apresenta%20os%20cursos%20de%20Direito%20e%20Engenharia%20Civil%20para%20estudantes%20do%20Ensino%20M%C3%A9dio.%0A%0A%E2%80%A2%20Sexta%2C%2013%20de%20novembro%20de%202026%2C%20a%20partir%20das%2013h%0A%E2%80%A2%20UEMG%20Unidade%20Guanh%C3%A3es%0A%0AD%C3%A1%20para%20ajudar%20na%20recep%C3%A7%C3%A3o%2C%20nas%20oficinas%20e%20apresenta%C3%A7%C3%B5es%2C%20nos%20stands%2C%20no%20tour%20pela%20universidade%2C%20no%20coffee%20break%20e%20mais.%0A%0A%2AFa%C3%A7a%20parte%20da%20equipe.%20Informa%C3%A7%C3%B5es%20e%20inscri%C3%A7%C3%A3o%20no%20site%20do%20NAE:%2A%0Ahttps://naeguanhaes.github.io/mostra-profissoes.html%3Futm_source%3Dwhatsapp%26utm_campaign%3Dmostra-profissoes" target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5 4.4.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"></path><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2z"></path></svg> Compartilhar no WhatsApp</a>
-        <button class="btn ghost" type="button" data-agenda style="--c: #15315A" data-titulo="1ª Mostra de Profissões da UEMG Guanhães" data-inicio="2026-11-13T13:00" data-fim="2026-11-13T15:00" data-local="UEMG Unidade Guanhães" data-descricao="1ª Mostra de Profissões, com os cursos de Direito e Engenharia Civil. Realização do Diretório Acadêmico. Início às 13h; o horário de término não foi informado." data-url="https://naeguanhaes.github.io/mostra-profissoes.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M16 3v4M8 3v4M3 11h18M12 14v4M10 16h4"></path></svg> Adicionar à agenda</button>
-      </div>
-    </div>
-  </section>
 
   <section class="evento-cartaz evento-sem-cartaz reveal" id="assembleia-da" data-ate="2026-10-09" aria-labelledby="assembleia-da-tit" style="--c: #9A4630">
     <div class="evento-info">
@@ -481,10 +458,27 @@
     </a>
   </div>
 
-  <div class="card reveal col" style="--c: var(--turquesa)">
-    <span class="rotulo">Novidades</span>
-    <h2>O que há de novo no site</h2>
-    <div id="novidades-lista" class="novidades-lista"></div>
+  <!-- Prazos da Secretaria ao lado das Novidades (pedido do coordenador em 09/11/2026; antes
+       ficavam no painel que gira). Sai em 17/11 e as Novidades ocupam a largura toda. -->
+  <div class="grid2 novidades-par">
+    <a class="card reveal prazos-inicio" href="secretaria.html#prazos-entrega" data-ate="2026-11-17" style="--c: var(--rosa)">
+      <span class="rotulo">Informativo da Secretaria Acadêmica</span>
+      <h2>Prazos de entrega dos requerimentos</h2>
+      <span class="prazos-inicio-corpo">
+        <img src="assets/secretaria/prazos-entrega-480.webp" width="480" height="679" alt="Informativo da Secretaria Acadêmica da UEMG Guanhães, prazos de entrega dos requerimentos: declarações, prazo máximo de 3 dias; históricos, prazo máximo de 7 dias." loading="lazy" decoding="async">
+        <span class="prazos-inicio-num">
+          <span><b>3 dias</b>declarações</span>
+          <span><b>7 dias</b>históricos</span>
+        </span>
+      </span>
+      <span class="prazos-inicio-txt">Precisa do documento para uma data certa? Peça com antecedência.</span>
+      <span class="prazos-inicio-ir">Ver os prazos &rarr;</span>
+    </a>
+    <div class="card reveal" style="--c: var(--turquesa)">
+      <span class="rotulo">Novidades</span>
+      <h2>O que há de novo no site</h2>
+      <div id="novidades-lista" class="novidades-lista"></div>
+    </div>
   </div>
 
 </main>

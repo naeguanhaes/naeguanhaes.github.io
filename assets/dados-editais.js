@@ -90,8 +90,10 @@ window.DADOS_EDITAIS = {
       encerra: '2026-11-17',
       link: 'secretaria.html#prazos-entrega',
       publicado: '2026-11-03',
-      /* e aviso, nao edital: aparece no painel da inicial, nao na lista */
+      /* e aviso, nao edital. Desde 09/11 fica num cartao ao lado das
+         Novidades, la embaixo na inicial: fora do painel e da lista */
       naLista: false,
+      naInicial: false,
 
       destaque: {
         tema: 'secretaria',
@@ -373,8 +375,10 @@ window.DADOS_EDITAIS = {
       encerra: '2026-10-09',
       link: 'wifi.html',
       publicado: '2026-09-26',
-      /* e aviso, nao edital: aparece no painel da inicial, nao na lista */
+      /* e aviso, nao edital. Desde 09/11 fica num cartao ao lado das
+         Novidades, la embaixo na inicial: fora do painel e da lista */
       naLista: false,
+      naInicial: false,
 
       destaque: {
         tema: 'wifi',

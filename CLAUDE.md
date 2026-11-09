@@ -666,3 +666,22 @@ mínimo 60), com calculadora na página; recursos pelos Forms `UiU7jMNnhPXXQyDx8
 O PDF do edital (21 páginas, todas as Unidades) não foi copiado para o site: a página leva à
 página oficial. O `nae:revisar-em` pede releitura em 14/11, 04/12 e 19/12.
 
+
+## Semana especial nos horários (09/11/2026)
+
+Pedido do coordenador: na semana do 28º Seminário, a página de horários mostra a
+programação no lugar das disciplinas. Fica em `dados-horarios.js`, bloco `especial`
+(`ini`, `fim`, `dias['AAAA-MM-DD'] = [{ hora, itens: [{ tipo, titulo, quem, onde, link }] }]`).
+O `horarios.js` só usa o bloco entre `ini` e `fim`. Nesses dias:
+- a página abre com a grade do evento (`#semana-especial`); no celular ela vira cartões por dia;
+- o painel "Aula de hoje" da inicial mostra as atividades do dia, mesmo sem turma escolhida;
+- a "Grade da semana" troca as aulas pelas atividades.
+Depois de 13/11 pode apagar o bloco (ou trocar pelo próximo evento). Os cartazes de cada
+atividade estão em `assets/seminario/cartazes/` e na seção `#cartazes` de seminario.html,
+com janela de ampliar (dialog).
+
+Na mesma data, na inicial:
+- os dois anúncios fixos (Permanência e PEAES) desceram para logo abaixo do painel que gira;
+- o aviso da 1ª Mostra de Profissões abaixo da aula de hoje saiu;
+- os prazos da Secretaria saíram do painel (`naInicial: false`) e viraram um cartão ao lado
+  das Novidades (`.prazos-inicio`, `data-ate="2026-11-17"`).

@@ -54,6 +54,119 @@
     })[0] || null;
   }
 
+  /* ── Semana especial (evento no lugar da aula) ─────
+     D.especial traz a programação de cada dia. Num dia com
+     programação, o painel e a grade da semana mostram o evento
+     em vez das aulas; a página de horários abre com a grade dele. */
+  var E = D.especial && D.especial.dias ? D.especial : null;
+  function especialEm(d) {
+    return E ? (E.dias[U.hojeISO(d)] || null) : null;
+  }
+  function semanaEspecialAtiva() {
+    var hoje = U.hojeISO();
+    return !!E && E.ini <= hoje && hoje <= E.fim;
+  }
+
+  /* as atividades do dia no painel, no mesmo formato das aulas */
+  function especialPainelHTML(faixas) {
+    var linhas = [];
+    faixas.forEach(function (f) {
+      f.itens.forEach(function (it) {
+        linhas.push('<div class="agora-linha esp-linha">' +
+          '<span class="selo">' + U.escapar(it.tipo) + '</span>' +
+          '<span class="hora">' + U.escapar(f.hora) + '</span>' +
+          '<span class="disciplina">' + U.escapar(it.titulo) + '</span>' +
+          (it.onde ? '<span class="onde">' + U.escapar(it.onde) + '</span>' : '') +
+          (it.quem ? '<span class="prof">' + U.escapar(it.quem) + '</span>' : '') +
+        '</div>');
+      });
+    });
+    return '<p class="esp-aviso"><b>' + U.escapar(E.curto) + '.</b> Hoje, no horário das aulas, a programação do ' +
+             U.escapar(E.titulo) + ' é esta:</p>' +
+           linhas.join('') +
+           '<p class="esp-mais"><a href="' + U.escapar(E.link) + '">Ver os cartazes e a programação completa →</a></p>';
+  }
+
+  /* grade da semana do evento, para a página de horários */
+  function montarEspecial() {
+    var caixa = document.getElementById('semana-especial');
+    if (!caixa || !semanaEspecialAtiva()) return;
+    var hoje = U.hojeISO();
+    var datas = Object.keys(E.dias).sort();
+    /* as faixas de horário que aparecem em mais de um item viram linhas */
+    var horas = [];
+    datas.forEach(function (dt) {
+      E.dias[dt].forEach(function (f) {
+        if (/^\d/.test(f.hora) && horas.indexOf(f.hora) === -1) horas.push(f.hora);
+      });
+    });
+    horas.sort(function (a, b) { return U.minutosDe(a.replace('h', ':').replace(/:$/, ':00')) - U.minutosDe(b.replace('h', ':').replace(/:$/, ':00')); });
+
+    function itemHTML(it, horaSolta) {
+      var tit = it.link ? '<a href="' + U.escapar(it.link) + '">' + U.escapar(it.titulo) + '</a>' : U.escapar(it.titulo);
+      return '<div class="esp-item">' +
+        '<span class="esp-tipo">' + U.escapar(it.tipo) + (horaSolta && /^\d/.test(horaSolta) ? ' · ' + U.escapar(horaSolta) : '') + '</span>' +
+        '<span class="disc">' + tit + '</span>' +
+        (it.quem ? '<span class="doc">' + U.escapar(it.quem) + '</span>' : '') +
+        (it.onde && it.onde !== 'UEMG Guanhães' ? '<span class="esp-onde">' + U.escapar(it.onde) + '</span>' : '') +
+      '</div>';
+    }
+    function rotuloDia(dt) {
+      var d = new Date(dt + 'T12:00:00');
+      return { dia: U.DIAS_CURTOS[d.getDay()], data: dt.slice(8, 10) + '/' + dt.slice(5, 7) };
+    }
+    function classeDia(dt) { return dt === hoje ? 'hoje' : dt < hoje ? 'passou' : ''; }
+
+    var thead = '<tr><th>Horário</th>' + datas.map(function (dt) {
+      var r = rotuloDia(dt);
+      return '<th class="' + classeDia(dt) + '">' + r.dia + '<span class="esp-data">' + r.data +
+             (dt === hoje ? ' · hoje' : '') + '</span></th>';
+    }).join('') + '</tr>';
+
+    var tbody = horas.map(function (h, i) {
+      return '<tr><th scope="row">' + U.escapar(h) + '</th>' + datas.map(function (dt) {
+        var faixas = E.dias[dt];
+        if (faixas.length === 1) {
+          if (i > 0) return '';
+          return '<td class="' + classeDia(dt) + '" rowspan="' + horas.length + '">' +
+                 faixas[0].itens.map(function (it) { return itemHTML(it, faixas[0].hora); }).join('') + '</td>';
+        }
+        var f = faixas.filter(function (x) { return x.hora === h; })[0];
+        return '<td class="' + classeDia(dt) + (f ? '' : ' vaga') + '">' +
+               (f ? f.itens.map(function (it) { return itemHTML(it); }).join('') : '·') + '</td>';
+      }).join('') + '</tr>';
+    }).join('');
+
+    /* no celular, a mesma programação em cartões, um por dia */
+    var cartoes = datas.filter(function (dt) { return dt >= hoje; }).map(function (dt) {
+      var r = rotuloDia(dt);
+      return '<li class="esp-dia ' + classeDia(dt) + '"><h3>' + r.dia + ' <span>' + r.data + '</span>' +
+               (dt === hoje ? ' <em class="semana-hoje">hoje</em>' : '') + '</h3>' +
+             E.dias[dt].map(function (f) {
+               return '<div class="esp-faixa"><span class="esp-faixa-hora">' + U.escapar(f.hora) + '</span><div>' +
+                      f.itens.map(function (it) { return itemHTML(it); }).join('') + '</div></div>';
+             }).join('') + '</li>';
+    }).join('');
+
+    var ini = E.ini.slice(8, 10) + '/' + E.ini.slice(5, 7), fim = E.fim.slice(8, 10) + '/' + E.fim.slice(5, 7);
+    caixa.hidden = false;
+    caixa.innerHTML =
+      '<div class="esp-topo">' +
+        '<img class="esp-marca" src="assets/seminario/marca-branca.webp" alt="" width="30" height="40">' +
+        '<div>' +
+          '<span class="esp-eyebrow">Edição especial · ' + ini + ' a ' + fim + '</span>' +
+          '<h2 id="semana-especial-t">Nesta semana, no horário das aulas: ' + U.escapar(E.titulo) + '</h2>' +
+          '<p>A grade abaixo troca as disciplinas pela programação do Seminário na Unidade Guanhães, noite por noite.</p>' +
+        '</div>' +
+        '<a class="esp-btn" href="' + U.escapar(E.link) + '">Ver os cartazes →</a>' +
+      '</div>' +
+      '<div class="rolagem esp-tabela"><table class="grade grade-esp">' +
+        '<caption class="so-leitor">Programação do ' + U.escapar(E.titulo) + ', de ' + ini + ' a ' + fim + '</caption>' +
+        '<thead>' + thead + '</thead><tbody>' + tbody + '</tbody></table></div>' +
+      '<ol class="esp-dias">' + cartoes + '</ol>' +
+      '<p class="esp-pe">A grade normal das turmas continua logo abaixo, para consulta.</p>';
+  }
+
   /* ── Painel "hoje / agora" ────────────────────────── */
   function aulasDoDia(turma, col) {
     if (col < 0) return [];
@@ -107,7 +220,7 @@
     for (var passo = 1; passo <= 7; passo++) {
       var d = new Date(hoje.getFullYear(), hoje.getMonth(), hoje.getDate() + passo);
       var dia = d.getDay();
-      if (dia < 1 || dia > 5 || semAulaEm(d)) continue;
+      if (dia < 1 || dia > 5 || semAulaEm(d) || especialEm(d)) continue;
       var aulas = aulasDoDia(turma, dia - 1);
       if (!aulas.length) continue;
 
@@ -139,8 +252,11 @@
 
     var corpo = '';
     var folga = semAulaEm(hoje);
+    var evento = especialEm(hoje);
 
-    if (!turma) {
+    if (evento) {
+      corpo = especialPainelHTML(evento);
+    } else if (!turma) {
       corpo = '<p class="agora-vazio">Depois de escolher, esta caixa mostra a aula de hoje sempre que você abrir o site, e o botão da grade da semana aparece aqui em cima.</p>';
     } else if (col < 0) {
       corpo = proximoDiaHTML(turma, hoje, 'Hoje é ' + U.DIAS_CURTOS[hoje.getDay()].toLowerCase() +
@@ -231,7 +347,20 @@
     var h = new Date(), dow = h.getDay();
     var segunda = new Date(h.getFullYear(), h.getMonth(), h.getDate() + (dow === 0 ? 1 : dow === 6 ? 2 : 1 - dow));
     var dias = [0, 1, 2, 3, 4].map(function (col) {
-      var folga = semAulaEm(new Date(segunda.getFullYear(), segunda.getMonth(), segunda.getDate() + col));
+      var dataCol = new Date(segunda.getFullYear(), segunda.getMonth(), segunda.getDate() + col);
+      var evento = especialEm(dataCol);
+      if (evento) {
+        return '<div class="semana-dia esp-semana' + (col === colHoje ? ' hoje' : '') + '">' +
+          '<h4>' + DIAS[col] + (col === colHoje ? ' <span class="semana-hoje">hoje</span>' : '') + '</h4>' +
+          '<ul>' + evento.map(function (f) {
+            return f.itens.map(function (it) {
+              return '<li><span class="hora">' + U.escapar(f.hora) + '</span>' +
+                     '<span class="disciplina">' + U.escapar(it.tipo) + ': ' + U.escapar(it.titulo) + '</span></li>';
+            }).join('');
+          }).join('') + '</ul>' +
+        '</div>';
+      }
+      var folga = semAulaEm(dataCol);
       if (folga) {
         return '<div class="semana-dia' + (col === colHoje ? ' hoje' : '') + '">' +
           '<h4>' + DIAS[col] + (col === colHoje ? ' <span class="semana-hoje">hoje</span>' : '') + '</h4>' +
@@ -597,6 +726,8 @@
     if (sem) sem.hidden = visiveis > 0;
     if (cont) cont.textContent = visiveis + (visiveis === 1 ? ' turma' : ' turmas');
   }
+
+  montarEspecial();
 
   if (lista) {
     lista.innerHTML = D.turmas.map(montarTurma).join('') +
