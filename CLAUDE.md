@@ -686,7 +686,7 @@ Na mesma data, na inicial:
 - os prazos da Secretaria saíram do painel (`naInicial: false`) e viraram um cartão ao lado
   das Novidades (`.prazos-inicio`, `data-ate="2026-11-17"`).
 
-Enviar a grade especial (pedido do coordenador em 09/11/2026): SÓ WhatsApp. O botão "Enviar pelo
+Enviar a grade especial (pedido do coordenador em 09/11/2026): SÓ WhatsApp. O botão "Compartilhar grade no
 WhatsApp" abre duas opções, "Imagem da grade" (`especial.imagem`) e "PDF da grade" (`especial.pdf`),
 com a mensagem "Para mais informações, acesse:" e o link de seminario.html. O wa.me não leva
 arquivo: no celular o arquivo vai pela folha de compartilhar do sistema (o aluno toca no WhatsApp);

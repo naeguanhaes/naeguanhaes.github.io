@@ -167,7 +167,7 @@
         '<div class="esp-acoes">' +
           '<a class="esp-btn" href="' + U.escapar(E.link) + '">Ver os cartazes →</a>' +
           '<span class="esp-whats">' +
-            '<button class="btn esp-compartilhar" type="button" id="esp-compartilhar" aria-expanded="false" aria-controls="esp-opcoes">' + ICONE_WHATS + 'Enviar pelo WhatsApp</button>' +
+            '<button class="btn esp-compartilhar" type="button" id="esp-compartilhar" aria-expanded="false" aria-controls="esp-opcoes">' + ICONE_WHATS + 'Compartilhar grade no WhatsApp</button>' +
             '<span class="esp-opcoes" id="esp-opcoes" hidden>' +
               '<button class="btn" type="button" data-enviar="imagem">Imagem da grade</button>' +
               '<button class="btn" type="button" data-enviar="pdf">PDF da grade</button>' +
