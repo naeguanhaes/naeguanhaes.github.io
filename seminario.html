@@ -149,6 +149,13 @@ try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentEleme
         <span class="pulso" aria-hidden="true"></span>
         <span id="sem-contagem-txt">Prazos abertos</span>
       </a>
+      <form class="hero-busca" id="hero-busca" action="#apresentacoes" role="search" data-ate="2026-11-11">
+        <label for="hero-busca-campo">Vai apresentar resumo na quarta? Encontre o seu grupo e horário</label>
+        <span class="hero-busca-linha">
+          <input type="search" id="hero-busca-campo" placeholder="Seu nome ou parte do título" autocomplete="off">
+          <button class="btn" type="submit">Buscar</button>
+        </span>
+      </form>
       <div class="hero-acoes">
         <a data-ate="2026-11-10" class="btn" href="https://www.uemg.br/28ed-seminario-pe-inscricao" target="_blank" rel="noopener noreferrer">Fazer a inscrição →</a>
         <a class="btn" href="#cartazes" data-ate="2026-11-13">Ver os cartazes de cada noite</a>
@@ -216,65 +223,17 @@ try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentEleme
     </dialog>
   </section>
 
-  <!-- Programação de Guanhães e apresentações de resumos (recebidas em 09/11/2026). Cada dia
-       sai sozinho depois da data; as apresentações saem depois de 11/11. -->
-  <section class="col stack-s" id="programacao" aria-labelledby="programacao-t" data-ate="2026-11-13">
-    <div class="titulo-sec" style="--c: var(--lilas)">
-      <span class="eyebrow" style="--c: var(--lilas)">09 a 13 de novembro</span>
-      <h2 id="programacao-t">Programação na Unidade Guanhães</h2>
-    </div>
-    <ol class="sem-dias">
-      <li class="sem-dia" data-ate="2026-11-09">
-        <span class="sem-data"><b>09/11</b>segunda</span>
-        <div>
-          <h3>Abertura oficial · Câmara Municipal de Guanhães</h3>
-          <p><time>19h</time> Mesa <i>Guanhães, Meio Ambiente e Segurança Jurídica: aspectos urbanísticos, econômicos e ambientais</i>, com Thatiana Soares (SAAE Guanhães) e Dr. Welbert Costa. Moderação de Paula Ribeiro, coordenadora de Extensão da Unidade.</p>
-        </div>
-      </li>
-      <li class="sem-dia" data-ate="2026-11-10">
-        <span class="sem-data"><b>10/11</b>terça</span>
-        <div>
-          <h3>Programação on-line · todas as Unidades</h3>
-          <p>As atividades do dia são on-line: acompanhe de casa.</p>
-        </div>
-      </li>
-      <li class="sem-dia" data-ate="2026-11-11">
-        <span class="sem-data"><b>11/11</b>quarta</span>
-        <div>
-          <h3>Atividades presenciais na UEMG Guanhães</h3>
-          <p><time>19h às 20h30</time> <a href="#apresentacoes">Apresentação de resumos científicos</a> (o Grupo de Trabalho 1 começa às 18h10) e minicurso <i>Regularização Urbana</i>.</p>
-          <p><time>20h30</time> Oficina <i>Aprendizagem em Jogo: Oficina de Jogos de Mesa</i> e palestra <i>O tornar-se mulher e o tornar-se mãe: sobre sujeitos iguais e distintos</i>.</p>
-        </div>
-      </li>
-      <li class="sem-dia" data-ate="2026-11-12">
-        <span class="sem-data"><b>12/11</b>quinta</span>
-        <div>
-          <h3>Atividades presenciais na UEMG Guanhães</h3>
-          <p><time>19h</time></p>
-          <ul class="sem-lista">
-            <li>Mesa-redonda <i>Inteligência Artificial no Direito: aplicações, limites e desafios éticos na prática jurídica</i> (1h30)</li>
-            <li>Minicurso <i>Topografia Aplicada à Engenharia Civil</i> (4 horas)</li>
-            <li>Minicurso <i>A Reforma do Código Civil em Debate: impactos jurídicos e sociais</i> (4 horas)</li>
-            <li>Mostra <i>Observação do Céu Noturno: uma experiência de divulgação científica</i></li>
-            <li>Oficina <i>Cartografia Cidadã: Leitura Urbana de Guanhães</i> (4 horas)</li>
-          </ul>
-          <p><time>20h30</time> Palestra <i>A exclusão da silvicultura do rol de atividades potencialmente poluidoras pela Lei nº 14.876/2024: uma análise jurídica e ambiental do princípio da vedação ao retrocesso ambiental</i> (1h30).</p>
-        </div>
-      </li>
-      <li class="sem-dia" data-ate="2026-11-13">
-        <span class="sem-data"><b>13/11</b>sexta</span>
-        <div>
-          <h3>Sessões de cinema comentado · UEMG Guanhães</h3>
-          <p><time>19h</time> <i>Her: o futuro das relações, da tecnologia e da cidade</i> e <i>Direito e Cinema: sessão especial de Sexta-Feira 13, A Prova do Inexplicável em "O Exorcismo de Emily Rose"</i>.</p>
-        </div>
-      </li>
-    </ol>
-  </section>
-
-  <section class="col stack-s" id="apresentacoes" aria-labelledby="apresentacoes-t" data-ate="2026-11-11">
-    <div class="titulo-sec" style="--c: var(--lilas)">
-      <span class="eyebrow" style="--c: var(--lilas)">Quarta, 11/11 · UEMG Guanhães</span>
+  <!-- Apresentações de resumos em destaque, logo abaixo dos cartazes (pedido do coordenador em 09/11/2026). -->
+  <section class="sem-resumos stack-s" id="apresentacoes" aria-labelledby="apresentacoes-t" data-ate="2026-11-11">
+    <div class="sem-resumos-topo">
+      <span class="sem-resumos-selo">Quarta, 11/11 · UEMG Guanhães</span>
       <h2 id="apresentacoes-t">Apresentações de resumos</h2>
+      <ul class="sem-resumos-num">
+        <li><b>34</b>trabalhos</li>
+        <li><b>5</b>Grupos de Trabalho</li>
+        <li><b>18h10</b>início do GT 1</li>
+        <li><b>10 min</b>por apresentação</li>
+      </ul>
     </div>
     <p>São <b>34 trabalhos em 5 grupos</b>, com <b>10 minutos para cada apresentação</b>. O Grupo de Trabalho 1 começa mais cedo, às <b>18h10</b>; os demais, às 19h. Procure o seu nome ou o título do trabalho:</p>
     <p class="sem-cartaz-baixar"><a href="assets/seminario/cartazes/cartaz-apresentacao-resumos.jpg" download="Cartaz-apresentacao-de-resumos-28-Seminario.jpg">Baixar o cartaz das apresentações</a> · imagem para enviar à turma</p>
@@ -349,6 +308,61 @@ try{var f=localStorage.getItem("nae:fonte");if(f&&f!=="1")document.documentEleme
         </ol>
       </details>
     </div>
+  </section>
+
+  <!-- Programação de Guanhães e apresentações de resumos (recebidas em 09/11/2026). Cada dia
+       sai sozinho depois da data; as apresentações saem depois de 11/11. -->
+  <section class="col stack-s" id="programacao" aria-labelledby="programacao-t" data-ate="2026-11-13">
+    <div class="titulo-sec" style="--c: var(--lilas)">
+      <span class="eyebrow" style="--c: var(--lilas)">09 a 13 de novembro</span>
+      <h2 id="programacao-t">Programação na Unidade Guanhães</h2>
+    </div>
+    <ol class="sem-dias">
+      <li class="sem-dia" data-ate="2026-11-09">
+        <span class="sem-data"><b>09/11</b>segunda</span>
+        <div>
+          <h3>Abertura oficial · Câmara Municipal de Guanhães</h3>
+          <p><time>19h</time> Mesa <i>Guanhães, Meio Ambiente e Segurança Jurídica: aspectos urbanísticos, econômicos e ambientais</i>, com Thatiana Soares (SAAE Guanhães) e Dr. Welbert Costa. Moderação de Paula Ribeiro, coordenadora de Extensão da Unidade.</p>
+        </div>
+      </li>
+      <li class="sem-dia" data-ate="2026-11-10">
+        <span class="sem-data"><b>10/11</b>terça</span>
+        <div>
+          <h3>Programação on-line · todas as Unidades</h3>
+          <p>As atividades do dia são on-line: acompanhe de casa.</p>
+        </div>
+      </li>
+      <li class="sem-dia" data-ate="2026-11-11">
+        <span class="sem-data"><b>11/11</b>quarta</span>
+        <div>
+          <h3>Atividades presenciais na UEMG Guanhães</h3>
+          <p><time>19h às 20h30</time> <a href="#apresentacoes">Apresentação de resumos científicos</a> (o Grupo de Trabalho 1 começa às 18h10) e minicurso <i>Regularização Urbana</i>.</p>
+          <p><time>20h30</time> Oficina <i>Aprendizagem em Jogo: Oficina de Jogos de Mesa</i> e palestra <i>O tornar-se mulher e o tornar-se mãe: sobre sujeitos iguais e distintos</i>.</p>
+        </div>
+      </li>
+      <li class="sem-dia" data-ate="2026-11-12">
+        <span class="sem-data"><b>12/11</b>quinta</span>
+        <div>
+          <h3>Atividades presenciais na UEMG Guanhães</h3>
+          <p><time>19h</time></p>
+          <ul class="sem-lista">
+            <li>Mesa-redonda <i>Inteligência Artificial no Direito: aplicações, limites e desafios éticos na prática jurídica</i> (1h30)</li>
+            <li>Minicurso <i>Topografia Aplicada à Engenharia Civil</i> (4 horas)</li>
+            <li>Minicurso <i>A Reforma do Código Civil em Debate: impactos jurídicos e sociais</i> (4 horas)</li>
+            <li>Mostra <i>Observação do Céu Noturno: uma experiência de divulgação científica</i></li>
+            <li>Oficina <i>Cartografia Cidadã: Leitura Urbana de Guanhães</i> (4 horas)</li>
+          </ul>
+          <p><time>20h30</time> Palestra <i>A exclusão da silvicultura do rol de atividades potencialmente poluidoras pela Lei nº 14.876/2024: uma análise jurídica e ambiental do princípio da vedação ao retrocesso ambiental</i> (1h30).</p>
+        </div>
+      </li>
+      <li class="sem-dia" data-ate="2026-11-13">
+        <span class="sem-data"><b>13/11</b>sexta</span>
+        <div>
+          <h3>Sessões de cinema comentado · UEMG Guanhães</h3>
+          <p><time>19h</time> <i>Her: o futuro das relações, da tecnologia e da cidade</i> e <i>Direito e Cinema: sessão especial de Sexta-Feira 13, A Prova do Inexplicável em "O Exorcismo de Emily Rose"</i>.</p>
+        </div>
+      </li>
+    </ol>
   </section>
 
   <!-- RASCUNHO OCULTO (pedido do coordenador em 21/10/2026): fase do certificado.
@@ -642,6 +656,24 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     res.textContent = q ? (n ? n + (n === 1 ? ' trabalho encontrado' : ' trabalhos encontrados') : 'Nada encontrado. Confira a grafia ou procure o NAE.') : '';
   });
+  /* busca que vem do topo da página ou da página inicial: preenche o
+     campo das apresentações, filtra e rola até o resultado. O termo vem
+     guardado no navegador (sessionStorage), nunca no endereço, para o
+     nome de ninguém ir parar no contador de visitas. */
+  function buscar(termo) {
+    campo.value = termo;
+    campo.dispatchEvent(new Event('input'));
+    var sec = document.getElementById('apresentacoes');
+    if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  var formTopo = document.getElementById('hero-busca');
+  if (formTopo) formTopo.addEventListener('submit', function (e) {
+    e.preventDefault();
+    buscar(document.getElementById('hero-busca-campo').value.trim());
+  });
+  var vindo = '';
+  try { vindo = sessionStorage.getItem('nae:busca-resumo') || ''; sessionStorage.removeItem('nae:busca-resumo'); } catch (e) {}
+  if (vindo) setTimeout(function () { buscar(vindo); }, 150);
 });
 </script>
 <script>

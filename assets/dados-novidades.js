@@ -20,6 +20,13 @@ window.DADOS_NOVIDADES = {
   itens: [
     {
       data: '2026-11-09',
+      titulo: 'Busca das apresentações de resumos',
+      texto: 'Vai apresentar na quarta (11/11)? Digite o seu nome ou parte do título, na página inicial ou na do Seminário, e veja o seu Grupo de Trabalho, o horário e quem avalia.',
+      link: 'seminario.html#apresentacoes',
+      textoLink: 'buscar a minha apresentação'
+    },
+    {
+      data: '2026-11-09',
       titulo: 'Semana do Seminário nos horários',
       texto: 'Nesta semana, a página de horários e a aula de hoje, na inicial, mostram a programação do 28º Seminário no lugar das disciplinas. A grade inteira da semana pode ser baixada em imagem ou em PDF. Os cartazes de cada atividade, inclusive o novo das apresentações de resumos, estão na página do Seminário.',
       link: 'horarios.html',

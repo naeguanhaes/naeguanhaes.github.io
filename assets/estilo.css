@@ -3503,3 +3503,43 @@ a.card.prazos-inicio:hover { border-color: var(--c); }
 .esp-pe a { font-weight: 700; color: #3F3480; }
 .sem-cartaz-baixar { margin: 0; font-size: .95rem; color: var(--muted); }
 .sem-cartaz-baixar a { font-weight: 700; }
+
+/* Seminário: apresentações de resumos em destaque (seminario.html#apresentacoes) */
+.sem-resumos { position: relative; border-radius: var(--radius); padding: 1.5rem 1.4rem; background: var(--surface);
+  border: 3px solid transparent; background-image: linear-gradient(var(--surface), var(--surface)), linear-gradient(120deg, #3F3480, #D6317F, #F07A1E);
+  background-origin: border-box; background-clip: padding-box, border-box; box-shadow: 0 16px 34px -22px rgba(63,52,128,.6); }
+.sem-resumos-topo { display: grid; gap: .5rem; }
+.sem-resumos-selo { justify-self: start; background: #D6317F; color: #fff; font-weight: 800; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; padding: .3rem .8rem; border-radius: 999px; }
+.sem-resumos-topo h2 { margin: 0; color: #3F3480; font-size: clamp(1.6rem, 4.4vw, 2.3rem); }
+.sem-resumos-num { list-style: none; margin: .2rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem; }
+.sem-resumos-num li { display: flex; align-items: baseline; gap: .35rem; padding: .4rem .8rem; border-radius: 12px; background: color-mix(in srgb, #D6317F 8%, var(--surface)); font-size: .9rem; color: var(--ink-2); }
+.sem-resumos-num b { font-family: var(--serif); font-size: 1.25rem; color: #3F3480; }
+.sem-resumos .sem-busca { max-width: 36rem; padding: .9rem 1rem; border-radius: 14px; background: color-mix(in srgb, #3F3480 6%, var(--surface)); }
+.sem-resumos .sem-busca input { font-size: 1.05rem; padding: .75rem .9rem; }
+
+/* busca no topo da página do Seminário */
+.hero-busca { display: grid; gap: .4rem; margin: 1rem 0 .4rem; max-width: 32rem; }
+.hero-busca label { font-weight: 700; font-size: .95rem; }
+.hero-busca-linha { display: flex; gap: .5rem; }
+.hero-busca input { flex: 1; min-width: 0; font: inherit; padding: .7rem .95rem; border-radius: 999px; border: 0; background: #fff; color: #1F1033; }
+.hero-busca input:focus { outline: 3px solid #FFC49A; outline-offset: 1px; }
+
+/* inicial: banner das apresentações de resumos, com busca */
+.resumos-inicio { display: grid; grid-template-columns: 1fr; gap: 1.2rem; align-items: center; padding: 1.4rem;
+  border-radius: 22px; background: linear-gradient(130deg, #FCE8F1 0%, #F4EEFF 50%, #FFEBDC 100%); border: 1px solid #EBD3E4;
+  box-shadow: 0 18px 38px -26px rgba(63,52,128,.65); }
+.resumos-inicio-arte { display: none; }
+.resumos-inicio-arte img { display: block; width: 100%; height: auto; border-radius: 14px; box-shadow: 0 10px 24px -14px rgba(63,52,128,.7); }
+@media (min-width: 760px) {
+  .resumos-inicio { grid-template-columns: 190px 1fr; padding: 1.4rem 1.8rem 1.4rem 1.4rem; }
+  .resumos-inicio-arte { display: block; }
+}
+.resumos-inicio-eyebrow { display: block; font-size: .74rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #C21F6D; }
+.resumos-inicio h2 { margin: .3rem 0 .4rem; color: #3F3480; font-size: clamp(1.45rem, 3.6vw, 2rem); line-height: 1.15; }
+.resumos-inicio p { margin: 0 0 .9rem; color: var(--ink-2); max-width: 44rem; }
+.resumos-busca { display: flex; gap: .5rem; max-width: 34rem; }
+.resumos-busca input { flex: 1; min-width: 0; font: inherit; font-size: 1.05rem; padding: .8rem 1rem; border-radius: 999px; border: 2px solid #D9C2DD; background: #fff; color: var(--ink); }
+.resumos-busca input:focus { outline: none; border-color: #D6317F; box-shadow: 0 0 0 3px rgba(214,49,127,.2); }
+.resumos-busca .btn { --c: #3F3480; }
+.resumos-inicio-todas { display: inline-block; margin-top: .7rem; font-weight: 700; color: #3F3480; }
+.sem-resumos { scroll-margin-top: 6.5rem; }

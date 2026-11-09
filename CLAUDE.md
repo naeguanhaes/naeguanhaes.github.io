@@ -699,3 +699,10 @@ dos cartazes da Unidade: `assets/seminario/cartazes/resumos*.webp` e o JPG para 
 Menu (09/11/2026): o botão especial do Diretório Acadêmico mostra só "D.A" (com
 `aria-label="Diretório Acadêmico (D.A)"` e `title`), para liberar espaço no menu. Vale para
 todas as páginas com menu; página nova copia o menu já com "D.A".
+
+Apresentações de resumos (09/11/2026): a seção `#apresentacoes` de seminario.html fica em destaque
+(`.sem-resumos`) logo abaixo dos cartazes; o topo da página tem a busca (`#hero-busca`) e a inicial
+tem um banner com busca (`.resumos-inicio`, logo abaixo do painel que gira). Todos saem depois de
+11/11 pelo `data-ate`. O termo digitado na inicial vai para a página do Seminário pelo
+`sessionStorage` (`nae:busca-resumo`), NUNCA pelo endereço: o GoatCounter registra o endereço, e
+nome de estudante não pode ir parar lá. A busca procura nome de autor e título (não avaliadores).

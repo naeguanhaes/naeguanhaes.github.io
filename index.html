@@ -191,6 +191,23 @@
     <div class="pontos" role="group" aria-label="Selecionar destaque"></div>
   </section>
 
+  <!-- Apresentações de resumos do 28º Seminário (pedido do coordenador em 09/11/2026): a busca
+       leva o termo para a seção de apresentações de seminario.html, que filtra sozinha. Sai depois de 11/11. -->
+  <section class="resumos-inicio" data-ate="2026-11-11" aria-labelledby="resumos-inicio-t">
+    <a class="resumos-inicio-arte" href="seminario.html#apresentacoes" tabindex="-1" aria-hidden="true"><img src="assets/seminario/cartazes/resumos-480.webp" width="480" height="593" alt="" decoding="async"></a>
+    <div class="resumos-inicio-corpo">
+      <span class="resumos-inicio-eyebrow">28º Seminário de Pesquisa e Extensão · quarta, 11/11</span>
+      <h2 id="resumos-inicio-t">Apresentação de resumos: encontre o seu grupo</h2>
+      <p>São 34 trabalhos em 5 Grupos de Trabalho. O GT 1 começa às 18h10; os demais, às 19h. Digite o seu nome ou parte do título e veja o grupo, o horário e quem avalia.</p>
+      <form class="resumos-busca" id="resumos-busca" action="seminario.html#apresentacoes" role="search">
+        <label class="so-leitor" for="resumos-busca-campo">Nome ou título do trabalho</label>
+        <input type="search" id="resumos-busca-campo" placeholder="Seu nome ou parte do título" autocomplete="off">
+        <button class="btn" type="submit">Buscar</button>
+      </form>
+      <a class="resumos-inicio-todas" href="seminario.html#apresentacoes">Ver todas as apresentações &rarr;</a>
+    </div>
+  </section>
+
   <!-- Dois anúncios fixos logo abaixo do painel que gira (pedido do coordenador em 05/11/2026;
        descidos para baixo do painel em 09/11/2026). Cada um sai
        sozinho no dia seguinte ao fim da inscrição, pelo data-ate; enquanto estão aqui, os dois
@@ -523,6 +540,21 @@ document.addEventListener('DOMContentLoaded', function () {
     else if (n > 1) el.textContent = 'Faltam ' + n + ' dias';
   });
 });
+</script>
+<script>
+/* busca das apresentações de resumos: guarda o termo no navegador (não no
+   endereço) e abre a seção de apresentações do Seminário, que filtra */
+(function () {
+  var f = document.getElementById('resumos-busca');
+  if (!f) return;
+  f.addEventListener('submit', function (e) {
+    var termo = document.getElementById('resumos-busca-campo').value.trim();
+    if (!termo) return;
+    e.preventDefault();
+    try { sessionStorage.setItem('nae:busca-resumo', termo); } catch (err) {}
+    window.location.href = 'seminario.html#apresentacoes';
+  });
+})();
 </script>
 <script data-goatcounter="https://naeguanhaes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
