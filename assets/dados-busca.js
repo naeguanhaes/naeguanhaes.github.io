@@ -31,6 +31,12 @@ window.DADOS_BUSCA = {
       k: 'como chegar endereco localizacao onde fica mapa gps rota google maps waze br-259 2250 nova uniao chegar na faculdade caminho'
     },
     {
+      t: 'Estágio no INSS Guanhães · Direito',
+      d: 'Seleção de estagiários de Direito na Agência da Previdência Social de Guanhães: 2 vagas, bolsa de R$ 1.508,42, 30 horas semanais, currículo e entrevista.',
+      u: 'estagio-inss.html',
+      k: 'inss estagio previdencia social agencia guanhaes direito previdenciario bolsa 1508 curriculo entrevista vaga estagiario aps praca neria coelho guimaraes'
+    },
+    {
       t: 'Neurodiversidade · guia',
       d: 'Guia em 7 páginas para entender, respeitar e acolher as diferentes formas de ser, sentir e aprender: o que é neurodivergência, desafios no ambiente social, o papel do docente e como ajudar.',
       u: 'neurodiversidade.html',

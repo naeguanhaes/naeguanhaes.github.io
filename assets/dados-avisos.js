@@ -31,6 +31,14 @@ window.DADOS_AVISOS = {
   avisos: [
     {
       tipo: 'novidade',
+      de: '2026-11-09',
+      ate: '2026-11-30',
+      texto: 'Estágio no INSS Guanhães para estudantes de Direito: 2 vagas, bolsa de R$ 1.508,42. O currículo é entregue na agência.',
+      link: 'estagio-inss.html',
+      textoLink: 'como me candidatar'
+    },
+    {
+      tipo: 'novidade',
       de: '2026-11-03',
       ate: '2026-11-17',
       texto: 'Secretaria Acadêmica: declarações são entregues em até 3 dias e históricos em até 7 dias. Peça com antecedência.',

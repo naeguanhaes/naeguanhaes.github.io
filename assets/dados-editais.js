@@ -30,6 +30,33 @@ window.DADOS_EDITAIS = {
   atualizadoEm: '2026-11-03',
   itens: [
     {
+      titulo: 'Estágio no INSS Guanhães · Direito',
+      resumo: 'A Agência da Previdência Social de Guanhães vai selecionar estagiários de Direito: 2 vagas, bolsa de R$ 1.508,42 mais R$ 13,40 de transporte por dia, 30 horas por semana. Seleção por currículo e entrevista; o currículo é entregue na agência.',
+      tipo: 'outro',
+      abre: '2026-11-09',
+      encerra: '2026-11-30',
+      link: 'estagio-inss.html',
+      publicado: '2026-11-09',
+
+      destaque: {
+        tema: 'inss',
+        imagem: 'assets/inss/cartao-inss.webp',
+        imagemAlt: 'INSS, Instituto Nacional do Seguro Social',
+        eyebrow: 'Agência da Previdência Social de Guanhães',
+        titulo: 'Estágio no INSS para estudantes de Direito',
+        texto: '<b>2 vagas</b> na agência de Guanhães, de manhã ou à tarde, com início em janeiro e fevereiro de 2027. A seleção é por <b>currículo e entrevista</b>: veja quem pode e como entregar.',
+        numeros: [
+          { n: 'R$ 1.508', r: 'de bolsa por mês' },
+          { n: '2', r: 'vagas' },
+          { n: '30 h', r: 'por semana' }
+        ],
+        semContagem: true,
+        acao: 'Como me candidatar',
+        extraTexto: 'Compartilhar no WhatsApp',
+        extraLink: 'https://wa.me/?text=%2AEst%C3%A1gio%20no%20INSS%20em%20Guanh%C3%A3es%20%C2%B7%20Direito%2A%0AA%20Ag%C3%AAncia%20da%20Previd%C3%AAncia%20Social%20de%20Guanh%C3%A3es%20vai%20selecionar%20estagi%C3%A1rios%20do%20curso%20de%20Direito.%0A%0A%E2%80%A2%202%20vagas%2C%20com%20in%C3%ADcio%20em%2004%2F01%20e%2010%2F02%2F2027%0A%E2%80%A2%20Bolsa%20de%20R%24%201.508%2C42%20%2B%20R%24%2013%2C40%20de%20transporte%20por%20dia%0A%E2%80%A2%2030%20horas%20por%20semana%2C%20das%207h%20%C3%A0s%2013h%20ou%20das%2012h%20%C3%A0s%2018h%0A%E2%80%A2%20Sele%C3%A7%C3%A3o%20por%20curr%C3%ADculo%20e%20entrevista%3A%20o%20curr%C3%ADculo%20%C3%A9%20entregue%20na%20ag%C3%AAncia%0A%0A%2AQuem%20pode%20e%20como%20entregar%20no%20site%20do%20NAE%3A%2A%0Ahttps%3A%2F%2Fnaeguanhaes.github.io%2Festagio-inss.html'
+      }
+    },
+    {
       titulo: 'Prazos de entrega da Secretaria Acadêmica',
       resumo: 'Informativo da Secretaria Acadêmica: declarações são entregues em até 3 dias e históricos em até 7 dias.',
       tipo: 'outro',

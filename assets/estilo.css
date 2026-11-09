@@ -3107,6 +3107,34 @@ body:has(.pg-peaes) { background: #FBF6EA; }
 .pe-calc-res.pe-ok { background: #EAF0E2; color: #2F3D22; border-left: 5px solid var(--pe-verde); }
 .pe-calc-res.pe-acima { background: #F7E6E0; color: #5E2A17; border-left: 5px solid var(--pe-terra); }
 
+/* ═══════════════ ESTÁGIO NO INSS (estagio-inss.html) ═══════════════ */
+/* Peças da página do PEAES nas cores da marca do INSS: o azul, o verde e o amarelo. */
+.pg-inss {
+  --pe-navy: #0A2F5C; --pe-terra: #005BB8; --pe-mostarda: #FFBE39; --pe-mostarda-txt: #8A5A00;
+  --pe-vinho: #8A2A2A; --pe-verde: #007A37; --pe-creme: #F3F8FD; --pe-creme-2: #E3EEFA;
+}
+body:has(.pg-inss) { background: #F5F9FD; }
+.pg-inss .pe-hero { border-color: #D3E3F5; }
+.pg-inss .pe-blob-1 { background: #009845; opacity: .9; }
+.pg-inss .pe-blob-2 { background: var(--pe-mostarda); }
+.pg-inss .pe-t1 { font-size: clamp(2.5rem, 7.4vw, 4.4rem); }
+.pg-inss .pe-t2 { font-size: clamp(1.4rem, 4vw, 2.3rem); color: var(--pe-terra); }
+.pg-inss .pe-selos span, .pg-inss .pe-indice a { border-color: #D3E3F5; }
+.pg-inss .pe-quem-item, .pg-inss .pe-aux, .pg-inss .pe-passos li { border-color: #D3E3F5; }
+.inss-marca { display: grid; gap: .8rem; justify-items: center; text-align: center; background: #fff; border-radius: 20px; padding: 1.6rem 1.4rem; box-shadow: 0 18px 40px -28px rgba(10,47,92,.5); }
+.inss-marca img { width: min(17rem, 80%); height: auto; border-radius: 0; box-shadow: none; }
+.inss-marca figcaption { font-size: .85rem; color: #4A5560; font-style: normal; }
+.hero-edital.tema-inss {
+  background:
+    radial-gradient(90% 80% at 96% 4%, rgba(255,190,57,.40) 0%, rgba(255,190,57,0) 58%),
+    radial-gradient(80% 70% at 2% 104%, rgba(0,152,69,.55) 0%, rgba(0,152,69,0) 62%),
+    linear-gradient(125deg, #062B57 0%, #0A4A93 55%, #005BB8 100%);
+}
+.hero-edital.tema-inss .eyebrow { color: #FFD27A; }
+a.pe-chamada.inss-chamada { background: #F3F8FD; border-color: #D3E3F5; }
+a.pe-chamada.inss-chamada h2 { color: #0A2F5C; }
+a.pe-chamada.inss-chamada:hover { border-color: #005BB8; }
+
 /* Anúncios fixos acima do painel da inicial (index.html): dois retângulos com a arte em
    cima, nas cores de cada edital. Um sozinho ocupa a largura toda. */
 .fixos { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); }

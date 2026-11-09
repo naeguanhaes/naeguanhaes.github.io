@@ -19,6 +19,13 @@ window.DADOS_NOVIDADES = {
   atualizadoEm: '2026-11-03',
   itens: [
     {
+      data: '2026-11-09',
+      titulo: 'Estágio no INSS Guanhães',
+      texto: 'Página da seleção de estagiários de Direito da Agência do INSS em Guanhães: a vaga, quem pode, o que colocar no currículo e onde entregar.',
+      link: 'estagio-inss.html',
+      textoLink: 'ver a página'
+    },
+    {
       data: '2026-11-05',
       titulo: 'Guia de neurodiversidade',
       texto: 'As 7 páginas do guia "Neurodiversidade: valorize as capacidades, respeite os limites", com o texto de cada página e o PDF para baixar. Também na página de Apoio psicológico.',

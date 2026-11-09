@@ -637,3 +637,16 @@ página", para leitor de tela, busca e tela pequena. O PDF para baixar
 (`documentos/neurodiversidade/`) foi refeito a partir das imagens, sem os metadados de
 autoria do Canva. Não tem data: não leva `data-ate` nem `nae:revisar-em`.
 
+
+## Estágio no INSS Guanhães (no ar desde 09/11/2026)
+
+`estagio-inss.html` (menu "Editais e bolsas", depois da UEMG + Permanência,
+`data-ate="2027-01-04"`, o início da primeira vaga) divulga a seleção de estagiários de
+Direito da Agência da Previdência Social de Guanhães, a partir do Ofício nº 094/2026 da APS
+(06/11/2026) à coordenação do curso: 2 vagas (início em 04/01 e 10/02/2027), bolsa de
+R$ 1.508,42 + R$ 13,40 de transporte por dia, 30 h semanais (7h às 13h ou 12h às 18h),
+conclusão do curso até 31/12/2028 no máximo, currículo entregue na agência (Praça Néria
+Coelho Guimarães, 179) e entrevista. **O ofício não traz prazo**: o `nae:revisar-em` pede
+releitura em 23/11, 07/12 e 05/01. O PDF do ofício não foi publicado (tem nomes e um
+caminho de arquivo de outra pessoa). Logo do INSS em `assets/inss/` (o `cartao-inss.webp`,
+logo sobre fundo branco, vai no painel da inicial, `tema: 'inss'`).
