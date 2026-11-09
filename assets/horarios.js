@@ -126,14 +126,20 @@
     var tbody = horas.map(function (h, i) {
       return '<tr><th scope="row">' + U.escapar(h) + '</th>' + datas.map(function (dt) {
         var faixas = E.dias[dt];
-        if (faixas.length === 1) {
-          if (i > 0) return '';
-          return '<td class="' + classeDia(dt) + '" rowspan="' + horas.length + '">' +
+        /* a última faixa do dia desce até o fim da grade; uma faixa sem
+           hora (o dia on-line) ocupa a coluna inteira */
+        var semHora = faixas.length === 1 && horas.indexOf(faixas[0].hora) === -1;
+        if (semHora) {
+          return i > 0 ? '' : '<td class="' + classeDia(dt) + '" rowspan="' + horas.length + '">' +
                  faixas[0].itens.map(function (it) { return itemHTML(it, faixas[0].hora); }).join('') + '</td>';
         }
+        var ultima = faixas.reduce(function (m, x) { return Math.max(m, horas.indexOf(x.hora)); }, -1);
+        if (i > ultima) return '';
         var f = faixas.filter(function (x) { return x.hora === h; })[0];
-        return '<td class="' + classeDia(dt) + (f ? '' : ' vaga') + '">' +
-               (f ? f.itens.map(function (it) { return itemHTML(it); }).join('') : '·') + '</td>';
+        if (!f) return '<td class="' + classeDia(dt) + ' vaga">·</td>';
+        var desce = i === ultima ? horas.length - i : 1;
+        return '<td class="' + classeDia(dt) + '"' + (desce > 1 ? ' rowspan="' + desce + '"' : '') + '>' +
+               f.itens.map(function (it) { return itemHTML(it, faixas.length === 1 ? f.hora : ''); }).join('') + '</td>';
       }).join('') + '</tr>';
     }).join('');
 
@@ -160,8 +166,8 @@
         '</div>' +
         '<div class="esp-acoes">' +
           '<a class="esp-btn" href="' + U.escapar(E.link) + '">Ver os cartazes →</a>' +
-          '<a class="btn" href="https://wa.me/?text=' + encodeURIComponent(mensagemEspecial(hoje)) + '" target="_blank" rel="noopener noreferrer">WhatsApp</a>' +
-          (E.stories ? '<button class="btn" type="button" data-stories="' + U.escapar(E.stories) + '">Stories</button>' : '') +
+          (E.imagem ? '<button class="btn esp-compartilhar" type="button" id="esp-compartilhar">' + ICONE_IMAGEM + 'Compartilhar a grade</button>' : '') +
+          (E.pdf ? '<a class="btn esp-pdf" href="' + U.escapar(E.pdf) + '" download="Grade-semana-do-Seminario.pdf">Baixar em PDF</a>' : '') +
         '</div>' +
       '</div>' +
       '<div class="rolagem esp-tabela"><table class="grade grade-esp">' +
@@ -169,10 +175,43 @@
         '<thead>' + thead + '</thead><tbody>' + tbody + '</tbody></table></div>' +
       '<ol class="esp-dias">' + cartoes + '</ol>' +
       '<p class="esp-pe">' +
-        (E.stories ? '<a href="' + U.escapar(E.stories) + '" download="Horarios-semana-do-Seminario.jpg">Baixar a imagem da semana</a> · ' : '') +
+        '<a href="https://wa.me/?text=' + encodeURIComponent(mensagemEspecial(hoje)) + '" target="_blank" rel="noopener noreferrer">Enviar em texto no WhatsApp</a> · ' +
+        (E.stories ? '<a href="' + U.escapar(E.stories) + '" download="Stories-semana-do-Seminario.jpg">Imagem para os Stories</a> · ' : '') +
+        '<button class="btn-limpo esp-link" type="button" id="esp-link">Copiar link</button> · ' +
         'A grade normal das turmas continua logo abaixo, para consulta.</p>';
-    /* WhatsApp + Stories viram o "Compartilhar" do site (site.js) */
-    if (U.juntarPartilhas) U.juntarPartilhas(caixa);
+
+    var btImg = document.getElementById('esp-compartilhar');
+    if (btImg) btImg.addEventListener('click', function () { compartilharGrade(hoje); });
+    var btLink = document.getElementById('esp-link');
+    if (btLink) btLink.addEventListener('click', function () {
+      var url = 'https://naeguanhaes.github.io/horarios.html#semana-especial';
+      U.copiar(U.etiquetar ? U.etiquetar(url, 'link') : url, function () { U.toast('Link copiado. Agora é só colar onde quiser.'); });
+    });
+  }
+
+  /* Compartilhar a grade: manda a IMAGEM da grade inteira da semana (pedido
+     do coordenador em 09/11/2026). No celular abre a folha de compartilhar
+     do sistema (WhatsApp, Instagram...); no computador, baixa a imagem. */
+  var ICONE_IMAGEM = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>';
+  function compartilharGrade(hoje) {
+    var nome = 'Grade-semana-do-Seminario.jpg';
+    fetch(E.imagem).then(function (r) { return r.blob(); }).then(function (blob) {
+      var arquivo = new File([blob], nome, { type: 'image/jpeg' });
+      if (navigator.canShare && navigator.canShare({ files: [arquivo] })) {
+        return navigator.share({
+          files: [arquivo],
+          title: 'Grade da semana do ' + E.titulo,
+          text: 'Grade da semana do ' + E.titulo + ' na UEMG Guanhães. Cartazes e detalhes: https://naeguanhaes.github.io/horarios.html#semana-especial'
+        }).catch(function () {});
+      }
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = nome;
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1500);
+      U.toast('Imagem da grade baixada. Agora é só anexar no WhatsApp ou onde quiser.');
+    }).catch(function () { window.location.href = E.imagem; });
   }
 
   /* mensagem pronta para o grupo da turma: o resumo de cada noite que

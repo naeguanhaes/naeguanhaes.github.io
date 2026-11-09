@@ -686,10 +686,13 @@ Na mesma data, na inicial:
 - os prazos da Secretaria saíram do painel (`naInicial: false`) e viraram um cartão ao lado
   das Novidades (`.prazos-inicio`, `data-ate="2026-11-17"`).
 
-Compartilhar a grade especial: o `horarios.js` monta um link do WhatsApp (mensagem gerada a
-partir de `especial.dias`, só com as noites que ainda vão acontecer; `resumo` numa faixa troca a
-lista de tipos) e um botão de Stories com `especial.stories`
-(`assets/stories/semana-seminario.jpg`), e chama `NAE.juntarPartilhas` para virar o
-"Compartilhar" do site. O cartaz da apresentação de resumos (11/11) foi feito pelo NAE no estilo
+Compartilhar a grade especial (pedido do coordenador: mandar a grade inteira, não só texto):
+o botão "Compartilhar a grade" manda a IMAGEM `especial.imagem`
+(`assets/seminario/grade-semana-seminario.jpg`) pela folha de compartilhar do celular, ou baixa
+a imagem no computador; "Baixar em PDF" usa `especial.pdf`. No rodapé da grade ficam o texto para o
+WhatsApp (gerado de `especial.dias`; `resumo` numa faixa troca a lista de tipos), a imagem dos
+Stories (`especial.stories`) e Copiar link. A imagem e o PDF são uma captura da própria grade, sem
+o destaque de "hoje": mudou a programação, gere de novo os dois (e os Stories).
+Na grade, a última faixa de cada dia desce até o fim; uma faixa sem hora (on-line) ocupa a coluna. O cartaz da apresentação de resumos (11/11) foi feito pelo NAE no estilo
 dos cartazes da Unidade: `assets/seminario/cartazes/resumos*.webp` e o JPG para baixar; o QR leva a
 `seminario.html#apresentacoes`.
