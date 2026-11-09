@@ -66,14 +66,18 @@
   }
 
   function copiarTexto(texto, aoCopiar) {
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(texto).then(aoCopiar, function () {});
-    } else {
+    /* sem a área de transferência moderna (ou quando o navegador recusa), copia
+       pelo jeito antigo, com uma caixa de texto escondida */
+    function jeitoAntigo() {
       var ta = document.createElement('textarea');
-      ta.value = texto; document.body.appendChild(ta); ta.select();
-      try { document.execCommand('copy'); aoCopiar(); } catch (e) {}
+      ta.value = texto; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try { if (document.execCommand('copy')) aoCopiar(); } catch (e) {}
       document.body.removeChild(ta);
     }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(texto).then(aoCopiar, jeitoAntigo);
+    } else jeitoAntigo();
   }
 
   window.NAE = {
@@ -1068,6 +1072,7 @@
   var SITE = 'https://naeguanhaes.github.io/';
   var ICONE_PARTILHA = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>';
   var ICONE_WHATS = '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a.9.9 0 00-.7.3 2.8 2.8 0 00-.9 2.1 4.9 4.9 0 001 2.6 11.2 11.2 0 004.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 001.7-1.2 2.1 2.1 0 00.1-1.2c0-.1-.2-.2-.4-.3z"/></svg>';
+  var ICONE_LINK = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7.1-7.1l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7.1 7.1l1.7-1.7"/></svg>';
   var ICONE_INSTA = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>';
 
   /* imagem pronta para os Stories, por página (ou por âncora, quando uma
@@ -1171,6 +1176,7 @@
       '<span class="partilha-opcoes" id="' + id + '" hidden>' +
         '<a class="btn partilha-whats" target="_blank" rel="noopener noreferrer" href="#">' + ICONE_WHATS + 'WhatsApp</a>' +
         '<button class="btn partilha-insta" type="button">' + ICONE_INSTA + 'Instagram</button>' +
+        '<button class="btn partilha-link" type="button">' + ICONE_LINK + 'Copiar link</button>' +
       '</span>';
     ref.parentNode.insertBefore(cx, ref);
     grupo.ordem.forEach(function (el) {
@@ -1196,6 +1202,10 @@
     });
     cx.querySelector('.partilha-insta').addEventListener('click', function () {
       postarStories(imgStories);
+    });
+    /* copiar link: o endereço da página do site, com a etiqueta de origem "link" */
+    cx.querySelector('.partilha-link').addEventListener('click', function () {
+      copiarTexto(etiquetar(alvo, 'link'), function () { toast('Link copiado. Agora é só colar onde quiser.'); });
     });
   }
   montarPartilha.n = 0;

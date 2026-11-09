@@ -520,7 +520,8 @@ pelo `data-ate`.
 
 **Botão único "Compartilhar"** (pedido do coordenador): o `site.js` junta, em cada
 bloco, o link do WhatsApp (`wa.me`), o botão dos Stories (`data-stories`) e o
-`data-compartilhar` em um botão "Compartilhar" que abre **WhatsApp** e **Instagram**.
+`data-compartilhar` em um botão "Compartilhar" que abre **WhatsApp**, **Instagram** e **Copiar link**
+(este desde 09/11/2026, pedido do coordenador: copia o endereço da página com `utm_source=link`).
 O HTML continua escrito do jeito antigo (link do WhatsApp com a mensagem pronta), e é
 isso que as inspeções leem. No Instagram vai sempre uma imagem 1080x1920 para os Stories:
 a da página ou do evento (tabela `STORIES` no `site.js`, por âncora ou por página, com

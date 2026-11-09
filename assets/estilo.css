@@ -2923,6 +2923,7 @@ body.pg-da { background: #F4F6FB; }
 .partilha-opcoes { display: inline-flex; flex-wrap: wrap; gap: .5rem; animation: partilha-abre .18s ease-out; }
 .partilha-opcoes .btn { display: inline-flex; align-items: center; gap: .4rem; color: #fff; border-color: transparent; }
 .btn.partilha-whats { --c: #0F7D42; background: #0F7D42; }
+.btn.partilha-link { --c: #40688B; background: #40688B; }
 .btn.partilha-insta { --c: #DD2A7B; background: linear-gradient(45deg, #C2410C 0%, #C13584 50%, #8134AF 100%); }
 .partilha-opcoes .btn:hover { color: #fff; filter: brightness(1.08); }
 @keyframes partilha-abre { from { opacity: 0; transform: translateX(-6px); } to { opacity: 1; transform: none; } }
