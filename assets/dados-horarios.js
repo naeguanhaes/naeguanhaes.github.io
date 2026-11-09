@@ -24,8 +24,7 @@ window.DADOS_HORARIOS = {
      Fora de ini..fim nada disto aparece; passado o fim, pode
      apagar o bloco inteiro (ou trocar pelo próximo evento).
      dias['AAAA-MM-DD'] = lista de faixas { hora, itens }.
-     Na grade, um dia com uma faixa só ocupa a coluna da hora dela até o fim.
-     resumo (opcional) troca a lista de tipos na mensagem do WhatsApp. */
+     Na grade, um dia com uma faixa só ocupa a coluna da hora dela até o fim. */
   especial: {
     ini: '2026-11-09',
     fim: '2026-11-13',
@@ -48,10 +47,10 @@ window.DADOS_HORARIOS = {
         ] }
       ],
       '2026-11-11': [
-        { hora: '18h10', resumo: 'apresentações do GT 1', itens: [
+        { hora: '18h10', itens: [
           { tipo: 'Apresentações', titulo: 'Apresentação de resumos científicos: Grupo de Trabalho 1', quem: '5 trabalhos, até as 19h · avaliação: Profa. Gabriella e Profa. Paula', onde: 'UEMG Guanhães', link: 'seminario.html#gt1' }
         ] },
-        { hora: '19h', resumo: 'apresentações dos GTs 2 a 5 e minicurso de regularização urbana', itens: [
+        { hora: '19h', itens: [
           { tipo: 'Apresentações', titulo: 'Apresentação de resumos científicos: Grupos de Trabalho 2 a 5', quem: '29 trabalhos, 10 minutos para cada um', onde: 'UEMG Guanhães', link: 'seminario.html#apresentacoes' },
           { tipo: 'Minicurso', titulo: 'Regularização urbana', quem: 'Profa. Gilese Horta B. Miranda', onde: 'UEMG Guanhães' }
         ] },
@@ -76,7 +75,7 @@ window.DADOS_HORARIOS = {
         { hora: '13h', itens: [
           { tipo: 'Mostra de Profissões', titulo: '1ª Mostra de Profissões da UEMG Guanhães: Direito e Engenharia Civil', quem: 'Realização do Diretório Acadêmico · a partir das 13h', onde: 'UEMG Guanhães', link: 'mostra-profissoes.html' }
         ] },
-        { hora: '19h', resumo: 'duas sessões de cinema comentado', itens: [
+        { hora: '19h', itens: [
           { tipo: 'Cinema comentado', titulo: 'Her: o futuro das relações, da tecnologia e da cidade', quem: 'Prof. Jonatan e Profa. Paula', onde: 'UEMG Guanhães' },
           { tipo: 'Direito e Cinema', titulo: 'Sessão especial de Sexta-Feira 13: A Prova do Inexplicável em "O Exorcismo de Emily Rose"', quem: 'Profa. Gabriella e Prof. Vinícius · extensionistas Cindy, Clênio e Kariny', onde: 'UEMG Guanhães' }
         ] }

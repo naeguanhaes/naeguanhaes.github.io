@@ -3500,8 +3500,11 @@ a.card.prazos-inicio:hover { border-color: var(--c); }
 .esp-acoes { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; flex: none; }
 .esp-acoes .btn { background: #fff; color: #3F3480; border-color: #fff; display: inline-flex; align-items: center; gap: .45rem; }
 .esp-acoes .btn:hover { background: #FFC49A; border-color: #FFC49A; color: #1F1033; }
-.esp-acoes .btn.esp-pdf { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.7); }
-.esp-link { font: inherit; font-weight: 700; color: #3F3480; text-decoration: underline; }
+.esp-whats { display: inline-flex; flex-wrap: wrap; gap: .5rem; align-items: center; }
+.esp-acoes .btn.esp-compartilhar { background: #1F8F4E; border-color: #1F8F4E; color: #fff; }
+.esp-acoes .btn.esp-compartilhar:hover { background: #17733E; border-color: #17733E; color: #fff; }
+.esp-opcoes { display: inline-flex; flex-wrap: wrap; gap: .5rem; }
+.esp-opcoes[hidden] { display: none; }
 .esp-pe a { font-weight: 700; color: #3F3480; }
 .sem-cartaz-baixar { margin: 0; font-size: .95rem; color: var(--muted); }
 .sem-cartaz-baixar a { font-weight: 700; }
