@@ -696,3 +696,7 @@ destaque de "hoje": mudou a programação, gere os dois de novo.
 Na grade, a última faixa de cada dia desce até o fim; uma faixa sem hora (on-line) ocupa a coluna. O cartaz da apresentação de resumos (11/11) foi feito pelo NAE no estilo
 dos cartazes da Unidade: `assets/seminario/cartazes/resumos*.webp` e o JPG para baixar; o QR leva a
 `seminario.html#apresentacoes`.
+
+Menu (09/11/2026): o botão especial do Diretório Acadêmico mostra só "D.A" (com
+`aria-label="Diretório Acadêmico (D.A)"` e `title`), para liberar espaço no menu. Vale para
+todas as páginas com menu; página nova copia o menu já com "D.A".
