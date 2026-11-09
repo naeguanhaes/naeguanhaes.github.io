@@ -481,6 +481,9 @@
   (function avisos() {
     var caixa = document.getElementById('avisos');
     if (!caixa || !window.DADOS_AVISOS) return;
+    /* desligada a pedido do coordenador (09/11/2026): os avisos continuam
+       no mural (avisos.html), mas não aparecem mais no topo das páginas */
+    if (window.DADOS_AVISOS.faixaNoTopo === false) return;
 
     /* guarda TODOS os avisos que o aluno já fechou, não só o último:
        com um só, fechar o segundo fazia o primeiro voltar a aparecer */

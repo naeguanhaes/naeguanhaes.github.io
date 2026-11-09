@@ -1,7 +1,8 @@
 /* ═══════════════════════════════════════════════════════
    DADOS · Avisos do NAE
    ───────────────────────────────────────────────────────
-   A faixa de aviso aparece no topo de todas as páginas.
+   Os avisos aparecem no mural (avisos.html). A faixa no topo das
+   páginas está desligada (faixaNoTopo: false, logo abaixo).
    Para publicar um aviso, acrescente um item na lista abaixo.
    Para tirar do ar, apague o item (ou deixe a data 'ate' passar:
    avisos vencidos somem sozinhos).
@@ -28,6 +29,10 @@
 
 window.DADOS_AVISOS = {
   atualizadoEm: '2026-10-21',
+  /* faixa do topo DESLIGADA a pedido do coordenador (09/11/2026): os
+     avisos aparecem só no mural (avisos.html). Para religar, troque
+     para true (ou apague esta linha). */
+  faixaNoTopo: false,
   avisos: [
     {
       tipo: 'atencao',

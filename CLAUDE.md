@@ -706,3 +706,7 @@ tem um banner com busca (`.resumos-inicio`, logo abaixo do painel que gira). Tod
 11/11 pelo `data-ate`. O termo digitado na inicial vai para a página do Seminário pelo
 `sessionStorage` (`nae:busca-resumo`), NUNCA pelo endereço: o GoatCounter registra o endereço, e
 nome de estudante não pode ir parar lá. A busca procura nome de autor e título (não avaliadores).
+
+Faixa de avisos no topo (09/11/2026): DESLIGADA a pedido do coordenador ("não quero mais que
+fique aparecendo a aba lembretes no topo"). `faixaNoTopo: false` em dados-avisos.js; os avisos
+continuam no mural (avisos.html). Não religar sem pedido.
