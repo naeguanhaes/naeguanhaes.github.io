@@ -710,3 +710,20 @@ nome de estudante não pode ir parar lá. A busca procura nome de autor e títul
 Faixa de avisos no topo (09/11/2026): DESLIGADA a pedido do coordenador ("não quero mais que
 fique aparecendo a aba lembretes no topo"). `faixaNoTopo: false` em dados-avisos.js; os avisos
 continuam no mural (avisos.html). Não religar sem pedido.
+
+## Estágio no MPMG para pós-graduação em Direito (no ar desde 10/11/2026)
+
+`estagio-mpmg.html` (menu "Editais e bolsas", depois do INSS, `data-ate="2026-11-26"`, o dia da
+prova) divulga o Edital nº 1606/2026 do MPMG (Ceaf), de 09/11/2026: 1 vaga e cadastro de reserva na
+2ª Promotoria de Justiça da Comarca de Guanhães, bolsa de R$ 1.850,00 + R$ 18,00 de transporte por
+dia presencial, 6 h por dia (30 h semanais) presencial, inscrição pelo Forms de 16 a 23/11, prova
+escrita em 26/11 às 9h (Rua Barão do Rio Branco, 278, Centro; 100 pontos, mínimo 60), cotas (30%
+negros, 10% PcD, documentos por e-mail), recurso em 2 dias úteis, convocação por e-mail.
+**Pedido do coordenador: deixar claro que é para estudantes de PÓS-GRADUAÇÃO** (bacharéis em Direito
+matriculados em pós conveniada com a PGJ); estudante da graduação não pode. Isso está no título, na
+faixa logo abaixo do topo (`.mpmg-pos`), no banner da inicial e na mensagem do WhatsApp.
+**O link curto da arte (forms.office.com/r/DxgmdhNket) dava "página não encontrada" em 10/11**: a
+página usa o link do Forms tirado das anotações do PDF, e a linha do link foi cortada da arte
+(`assets/mpmg/arte-estagio-pos*.webp`). O PDF está em `documentos/estagio-mpmg-2026/`, sem os
+metadados de autoria. Cores da arte em `.pg-mpmg`; painel `tema: 'mpmg'`. O `nae:revisar-em` pede
+releitura em 16/11 (abertura), 24/11 (fim das inscrições) e 27/11 (depois da prova).

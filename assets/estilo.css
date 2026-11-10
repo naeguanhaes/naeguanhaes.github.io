@@ -3543,3 +3543,43 @@ a.card.prazos-inicio:hover { border-color: var(--c); }
 .resumos-busca .btn { --c: #3F3480; }
 .resumos-inicio-todas { display: inline-block; margin-top: .7rem; font-weight: 700; color: #3F3480; }
 .sem-resumos { scroll-margin-top: 6.5rem; }
+
+/* Estágio no MPMG para pós-graduação em Direito (estagio-mpmg.html): preto e vinho da arte do MPMG */
+.pg-mpmg {
+  --pe-navy: #1A1A1A; --pe-terra: #8E1B1B; --pe-mostarda: #D9A441; --pe-mostarda-txt: #7A5300;
+  --pe-vinho: #8E1B1B; --pe-verde: #2F6B3A; --pe-creme: #FBF4F3; --pe-creme-2: #F4E3E1;
+}
+body:has(.pg-mpmg) { background: #FBF7F6; }
+.pg-mpmg .pe-hero { border-color: #EBD6D3; }
+.pg-mpmg .pe-blob-1 { background: #8E1B1B; opacity: .85; }
+.pg-mpmg .pe-blob-2 { background: var(--pe-mostarda); }
+.pg-mpmg .pe-t1 { font-size: clamp(2.2rem, 6.4vw, 3.8rem); }
+.pg-mpmg .pe-t2 { font-size: clamp(1.35rem, 3.8vw, 2.1rem); color: var(--pe-terra); }
+.pg-mpmg .pe-selos span, .pg-mpmg .pe-indice a { border-color: #EBD6D3; }
+.pg-mpmg .pe-quem-item, .pg-mpmg .pe-aux, .pg-mpmg .pe-passos li { border-color: #EBD6D3; }
+.mpmg-cota { margin: .5rem 0 0; padding: .6rem .8rem; border-radius: 12px; background: var(--pe-creme); }
+.mpmg-arte img { width: 100%; max-width: 22rem; height: auto; border-radius: 18px; box-shadow: 0 18px 40px -24px rgba(0,0,0,.6); }
+.mpmg-pos { display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: center; padding: 1.2rem 1.4rem; border-radius: 20px;
+  background: linear-gradient(120deg, #141414 0%, #2A1414 55%, #8E1B1B 100%); color: #fff; box-shadow: 0 16px 34px -24px rgba(60,0,0,.75); }
+.mpmg-pos h2 { margin: 0 0 .3rem; color: #fff; font-size: clamp(1.25rem, 1rem + 1vw, 1.6rem); }
+.mpmg-pos p { margin: 0; color: rgba(255,255,255,.92); }
+.mpmg-pos b { color: #fff; }
+.mpmg-pos-ico { display: grid; place-items: center; width: 3.6rem; height: 3.6rem; border-radius: 50%; background: #D9A441; color: #1A1A1A; }
+@media (max-width: 520px) { .mpmg-pos { grid-template-columns: 1fr; } }
+.mpmg-prova { display: grid; gap: 1.2rem; align-items: start; padding: 1.4rem; border-radius: 20px; background: #fff; border: 1px solid #EBD6D3; box-shadow: var(--sh-1); }
+@media (min-width: 640px) { .mpmg-prova { grid-template-columns: 11rem 1fr; } }
+.mpmg-prova-data { display: grid; justify-items: center; text-align: center; padding: 1rem; border-radius: 16px; background: #8E1B1B; color: #fff; }
+.mpmg-prova-data b { font-family: var(--serif); font-size: 2.6rem; line-height: 1.05; }
+.mpmg-prova-data span { font-size: .85rem; font-weight: 700; letter-spacing: .04em; color: rgba(255,255,255,.9); }
+.mpmg-prova h2 { margin: 0 0 .4rem; }
+.mpmg-prova p { margin: 0 0 .6rem; }
+.hero-edital.tema-mpmg {
+  background:
+    radial-gradient(90% 80% at 96% 4%, rgba(217,164,65,.32) 0%, rgba(217,164,65,0) 58%),
+    radial-gradient(80% 70% at 2% 104%, rgba(142,27,27,.75) 0%, rgba(142,27,27,0) 62%),
+    linear-gradient(125deg, #0F0F0F 0%, #241010 55%, #5E1212 100%);
+}
+.hero-edital.tema-mpmg .eyebrow { color: #F2C77A; }
+a.pe-chamada.mpmg-chamada { background: #FBF4F3; border-color: #EBD6D3; }
+a.pe-chamada.mpmg-chamada h2 { color: #1A1A1A; }
+a.pe-chamada.mpmg-chamada:hover { border-color: #8E1B1B; }

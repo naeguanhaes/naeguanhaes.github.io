@@ -83,6 +83,32 @@ window.DADOS_EDITAIS = {
       }
     },
     {
+      titulo: 'Estágio no MPMG em Guanhães · pós-graduação em Direito',
+      resumo: 'Seleção da 2ª Promotoria de Justiça de Guanhães para estudantes de pós-graduação em Direito (quem já é bacharel em Direito): 1 vaga e cadastro de reserva, bolsa de R$ 1.850,00 mais R$ 18,00 de transporte por dia, 30 horas por semana, presencial. Inscrições de 16 a 23/11; prova escrita em 26/11, às 9h.',
+      tipo: 'outro',
+      abre: '2026-11-16',
+      encerra: '2026-11-23',
+      link: 'estagio-mpmg.html',
+      publicado: '2026-11-10',
+
+      destaque: {
+        tema: 'mpmg',
+        imagem: 'assets/mpmg/arte-estagio-pos.webp',
+        imagemAlt: 'Arte de divulgação do MPMG: Faça estágio no Ministério Público, pós-graduação em Direito. Inscrições de 16 a 23/11/2026 e prova em 26/11/2026, às 9h, em Guanhães.',
+        eyebrow: 'Ministério Público de Minas Gerais · Edital nº 1606/2026',
+        titulo: 'Estágio no MPMG para estudantes de pós-graduação em Direito',
+        texto: 'Para quem <b>já é formado em Direito</b> e está numa <b>pós-graduação em Direito</b>: 1 vaga na 2ª Promotoria de Justiça de Guanhães, com prova escrita em <b>26/11</b>. Estudante da graduação não pode participar.',
+        numeros: [
+          { n: 'R$ 1.850', r: 'de bolsa por mês' },
+          { n: '16 a 23/11', r: 'inscrições' },
+          { n: '26/11', r: 'prova escrita' }
+        ],
+        acao: 'Ver quem pode participar',
+        extraTexto: 'Compartilhar no WhatsApp',
+        extraLink: 'https://wa.me/?text=%2AEst%C3%A1gio%20no%20MPMG%20em%20Guanh%C3%A3es%20%C2%B7%20p%C3%B3s-gradua%C3%A7%C3%A3o%20em%20Direito%2A%0ASele%C3%A7%C3%A3o%20para%20estudantes%20de%20p%C3%B3s-gradua%C3%A7%C3%A3o%20em%20Direito%20%28quem%20j%C3%A1%20%C3%A9%20formado%20em%20Direito%29%20na%202%C2%AA%20Promotoria%20de%20Justi%C3%A7a%20de%20Guanh%C3%A3es.%0A%0A%E2%80%A2%201%20vaga%20e%20cadastro%20de%20reserva%0A%E2%80%A2%20Bolsa%20de%20R%24%201.850%2C00%20%2B%20R%24%2018%2C00%20de%20transporte%20por%20dia%0A%E2%80%A2%2030%20horas%20por%20semana%2C%20presencial%0A%E2%80%A2%20Inscri%C3%A7%C3%B5es%20de%2016%20a%2023%2F11%2C%20pela%20internet%0A%E2%80%A2%20Prova%20escrita%20em%2026%2F11%2C%20%C3%A0s%209h%2C%20em%20Guanh%C3%A3es%0A%0A%2AQuem%20pode%20e%20passo%20a%20passo%20no%20site%20do%20NAE%3A%2A%0Ahttps%3A%2F%2Fnaeguanhaes.github.io%2Festagio-mpmg.html'
+      }
+    },
+    {
       titulo: 'Prazos de entrega da Secretaria Acadêmica',
       resumo: 'Informativo da Secretaria Acadêmica: declarações são entregues em até 3 dias e históricos em até 7 dias.',
       tipo: 'outro',

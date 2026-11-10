@@ -19,6 +19,13 @@ window.DADOS_NOVIDADES = {
   atualizadoEm: '2026-11-03',
   itens: [
     {
+      data: '2026-11-10',
+      titulo: 'Estágio no MPMG para pós-graduação em Direito',
+      texto: 'Página da seleção de estagiário de pós-graduação em Direito da 2ª Promotoria de Justiça de Guanhães, para quem já é formado em Direito: a vaga, quem pode, a inscrição de 16 a 23/11 e a prova de 26/11.',
+      link: 'estagio-mpmg.html',
+      textoLink: 'ver a página'
+    },
+    {
       data: '2026-11-09',
       titulo: 'Busca das apresentações de resumos',
       texto: 'Vai apresentar na quarta (11/11)? Digite o seu nome ou parte do título, na página inicial ou na do Seminário, e veja o seu Grupo de Trabalho, o horário e quem avalia.',

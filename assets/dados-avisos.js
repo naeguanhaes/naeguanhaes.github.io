@@ -36,6 +36,14 @@ window.DADOS_AVISOS = {
   avisos: [
     {
       tipo: 'atencao',
+      de: '2026-11-10',
+      ate: '2026-11-23',
+      texto: 'Estágio no MPMG em Guanhães para estudantes de pós-graduação em Direito (já formados em Direito): bolsa de R$ 1.850,00. Inscrições de 16 a 23/11 e prova em 26/11.',
+      link: 'estagio-mpmg.html',
+      textoLink: 'ver quem pode participar'
+    },
+    {
+      tipo: 'atencao',
       de: '2026-11-09',
       ate: '2026-11-13',
       texto: 'Transferência e obtenção de novo título 2027.1: 3 vagas em Direito e 10 em Engenharia Civil. Inscrições até as 17h de 13/11, pela internet.',

@@ -43,6 +43,12 @@ window.DADOS_BUSCA = {
       k: 'inss estagio previdencia social agencia guanhaes direito previdenciario bolsa 1508 curriculo entrevista vaga estagiario aps praca neria coelho guimaraes'
     },
     {
+      t: 'Estágio no MPMG · pós-graduação em Direito',
+      d: 'Seleção de estagiário de pós-graduação em Direito (bacharéis) na 2ª Promotoria de Justiça de Guanhães: 1 vaga, bolsa de R$ 1.850,00, 30 horas semanais, prova escrita em 26/11.',
+      u: 'estagio-mpmg.html',
+      k: 'mpmg ministerio publico promotoria justica guanhaes estagio pos graduacao pos-graduacao especializacao bacharel direito bolsa 1850 prova edital 1606 ceaf estagiario residencia'
+    },
+    {
       t: 'Neurodiversidade · guia',
       d: 'Guia em 7 páginas para entender, respeitar e acolher as diferentes formas de ser, sentir e aprender: o que é neurodivergência, desafios no ambiente social, o papel do docente e como ajudar.',
       u: 'neurodiversidade.html',
