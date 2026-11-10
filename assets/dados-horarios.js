@@ -53,7 +53,7 @@ window.DADOS_HORARIOS = {
         ] },
         { hora: '19h', itens: [
           { tipo: 'Apresentações', titulo: 'Apresentação de resumos científicos: Grupos de Trabalho 2 a 5', quem: '29 trabalhos, 10 minutos para cada um', onde: 'UEMG Guanhães', link: 'seminario.html#apresentacoes' },
-          { tipo: 'Minicurso', titulo: 'Regularização urbana', quem: 'Profa. Gilese Horta B. Miranda', onde: 'UEMG Guanhães' }
+          { tipo: 'Minicurso', titulo: 'Regularização urbana', quem: 'Profa. Gisele Horta B. Miranda', onde: 'UEMG Guanhães' }
         ] },
         { hora: '20h30', itens: [
           { tipo: 'Oficina', titulo: 'Aprendizagem em Jogo: Oficina de Jogos de Mesa', quem: 'Profa. Paula Ribeiro e Prof. Luiz Otávio Menezes Teles', onde: 'UEMG Guanhães' },
@@ -64,7 +64,7 @@ window.DADOS_HORARIOS = {
         { hora: '19h', itens: [
           { tipo: 'Mesa-redonda', titulo: 'Inteligência Artificial no Direito: aplicações, limites e desafios éticos na prática jurídica', quem: 'Profa. Thays Ferreira Ventura e Brendo Ferreira de Miranda', onde: 'UEMG Guanhães' },
           { tipo: 'Minicurso', titulo: 'A reforma do Código Civil em debate: impactos jurídicos e sociais', quem: 'Profa. Gabriella de Morais', onde: 'UEMG Guanhães' },
-          { tipo: 'Minicurso', titulo: 'Topografia aplicada à Engenharia Civil', quem: 'Profa. Gilese Horta B. Miranda', onde: 'UEMG Guanhães' },
+          { tipo: 'Minicurso', titulo: 'Topografia aplicada à Engenharia Civil', quem: 'Profa. Gisele Horta B. Miranda', onde: 'UEMG Guanhães' },
           { tipo: 'Minicurso', titulo: 'Cartografia Cidadã: Leitura Urbana de Guanhães', quem: 'Profa. Paula Ribeiro, Ana Luiza dos Reis e Thomas Pinho C. Nunes', onde: 'UEMG Guanhães' },
           { tipo: 'Mostra', titulo: 'Observação do céu noturno: uma experiência de divulgação científica', quem: 'Prof. Bruno de Sousa Ferreira e Prof. Júlio César Marques Jr.', onde: 'UEMG Guanhães' }
         ] },
