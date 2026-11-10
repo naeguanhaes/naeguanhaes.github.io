@@ -49,10 +49,10 @@ window.DADOS_HORARIOS = {
       ],
       '2026-11-11': [
         { hora: '18h10', itens: [
-          { tipo: 'Apresentações', titulo: 'Apresentação de resumos científicos: Grupo de Trabalho 1', quem: '5 trabalhos, até as 19h · avaliação: Profa. Gabriella e Profa. Paula', onde: 'UEMG Guanhães', link: 'seminario.html#gt1' }
+          { tipo: 'Apresentações', titulo: 'Apresentação de resumos científicos: Grupo de Trabalho 1', quem: '5 trabalhos, até as 19h, na sala 1 · avaliação: Profa. Gabriella e Profa. Paula', onde: 'UEMG Guanhães', link: 'seminario.html#gt1' }
         ] },
         { hora: '19h', itens: [
-          { tipo: 'Apresentações', titulo: 'Apresentação de resumos científicos: Grupos de Trabalho 2 a 5', quem: '29 trabalhos, 10 minutos para cada um', onde: 'UEMG Guanhães', link: 'seminario.html#apresentacoes' },
+          { tipo: 'Apresentações', titulo: 'Apresentação de resumos científicos: Grupos de Trabalho 2 a 5', quem: '26 trabalhos, nas salas 1 a 4, 10 minutos para cada um', onde: 'UEMG Guanhães', link: 'seminario.html#apresentacoes' },
           { tipo: 'Minicurso', titulo: 'Regularização urbana', quem: 'Profa. Gisele Horta B. Miranda', onde: 'UEMG Guanhães' }
         ] },
         { hora: '20h30', itens: [

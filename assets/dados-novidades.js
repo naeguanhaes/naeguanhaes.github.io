@@ -20,6 +20,13 @@ window.DADOS_NOVIDADES = {
   itens: [
     {
       data: '2026-11-10',
+      titulo: 'Nova organização das apresentações de quarta',
+      texto: 'A Unidade reorganizou as apresentações de resumos de 11/11: agora são 31 trabalhos, com horários e avaliadores atualizados e a sala de cada Grupo de Trabalho. Confira o seu grupo de novo.',
+      link: 'seminario.html#apresentacoes',
+      textoLink: 'buscar a minha apresentação'
+    },
+    {
+      data: '2026-11-10',
       titulo: 'Estágio no MPMG para pós-graduação em Direito',
       texto: 'Página da seleção de estagiário de pós-graduação em Direito da 2ª Promotoria de Justiça de Guanhães, para quem já é formado em Direito: a vaga, quem pode, a inscrição de 16 a 23/11 e a prova de 26/11.',
       link: 'estagio-mpmg.html',
@@ -49,7 +56,7 @@ window.DADOS_NOVIDADES = {
     {
       data: '2026-11-09',
       titulo: 'Programação do 28º Seminário',
-      texto: 'A programação da semana na Unidade Guanhães, dia a dia, e as 34 apresentações de resumos de quarta (11/11), por grupo de trabalho, com busca por nome ou título.',
+      texto: 'A programação da semana na Unidade Guanhães, dia a dia, e as apresentações de resumos de quarta (11/11), por grupo de trabalho, com busca por nome ou título.',
       link: 'seminario.html#programacao',
       textoLink: 'ver a programação'
     },
