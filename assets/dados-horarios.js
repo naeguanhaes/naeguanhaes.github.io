@@ -24,7 +24,8 @@ window.DADOS_HORARIOS = {
      Fora de ini..fim nada disto aparece; passado o fim, pode
      apagar o bloco inteiro (ou trocar pelo próximo evento).
      dias['AAAA-MM-DD'] = lista de faixas { hora, itens }.
-     Na grade, um dia com uma faixa só ocupa a coluna da hora dela até o fim. */
+     Na grade, um dia com uma faixa só ocupa a coluna da hora dela até o fim.
+     Um item pode ter hora própria (hora: '19h10') dentro da faixa de 19h. */
   especial: {
     ini: '2026-11-09',
     fim: '2026-11-13',
@@ -42,8 +43,8 @@ window.DADOS_HORARIOS = {
         ] }
       ],
       '2026-11-10': [
-        { hora: 'on-line', itens: [
-          { tipo: 'Programação on-line', titulo: 'Atividades on-line com todas as Unidades da UEMG', quem: 'Acompanhe de casa', onde: 'On-line' }
+        { hora: '19h', itens: [
+          { hora: '19h10', tipo: 'Palestra de abertura', titulo: 'Palestra de abertura com o Dr. Álvaro Reischak de Oliveira (UFRGS)', quem: 'Coordenador do Laboratório de Pesquisa em Exercício da UFRGS e bolsista de produtividade do CNPq · acompanhe de casa', onde: 'On-line · YouTube /UEMGBR', link: 'seminario.html#cartazes' }
         ] }
       ],
       '2026-11-11': [

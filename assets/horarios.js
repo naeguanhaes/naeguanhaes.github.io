@@ -74,7 +74,7 @@
       f.itens.forEach(function (it) {
         linhas.push('<div class="agora-linha esp-linha">' +
           '<span class="selo">' + U.escapar(it.tipo) + '</span>' +
-          '<span class="hora">' + U.escapar(f.hora) + '</span>' +
+          '<span class="hora">' + U.escapar(it.hora || f.hora) + '</span>' +
           '<span class="disciplina">' + U.escapar(it.titulo) + '</span>' +
           (it.onde ? '<span class="onde">' + U.escapar(it.onde) + '</span>' : '') +
           (it.quem ? '<span class="prof">' + U.escapar(it.quem) + '</span>' : '') +
@@ -105,7 +105,7 @@
     function itemHTML(it, horaSolta) {
       var tit = it.link ? '<a href="' + U.escapar(it.link) + '">' + U.escapar(it.titulo) + '</a>' : U.escapar(it.titulo);
       return '<div class="esp-item">' +
-        '<span class="esp-tipo">' + U.escapar(it.tipo) + (horaSolta && /^\d/.test(horaSolta) ? ' · ' + U.escapar(horaSolta) : '') + '</span>' +
+        '<span class="esp-tipo">' + U.escapar(it.tipo) + ((it.hora || horaSolta) && /^\d/.test(it.hora || horaSolta) ? ' · ' + U.escapar(it.hora || horaSolta) : '') + '</span>' +
         '<span class="disc">' + tit + '</span>' +
         (it.quem ? '<span class="doc">' + U.escapar(it.quem) + '</span>' : '') +
         (it.onde && it.onde !== 'UEMG Guanhães' ? '<span class="esp-onde">' + U.escapar(it.onde) + '</span>' : '') +
@@ -149,7 +149,8 @@
       return '<li class="esp-dia ' + classeDia(dt) + '"><h3>' + r.dia + ' <span>' + r.data + '</span>' +
                (dt === hoje ? ' <em class="semana-hoje">hoje</em>' : '') + '</h3>' +
              E.dias[dt].map(function (f) {
-               return '<div class="esp-faixa"><span class="esp-faixa-hora">' + U.escapar(f.hora) + '</span><div>' +
+               var rotulo = f.itens.length === 1 && f.itens[0].hora ? f.itens[0].hora : f.hora;
+               return '<div class="esp-faixa"><span class="esp-faixa-hora">' + U.escapar(rotulo) + '</span><div>' +
                       f.itens.map(function (it) { return itemHTML(it); }).join('') + '</div></div>';
              }).join('') + '</li>';
     }).join('');
@@ -369,7 +370,7 @@
           '<h4>' + DIAS[col] + (col === colHoje ? ' <span class="semana-hoje">hoje</span>' : '') + '</h4>' +
           '<ul>' + evento.map(function (f) {
             return f.itens.map(function (it) {
-              return '<li><span class="hora">' + U.escapar(f.hora) + '</span>' +
+              return '<li><span class="hora">' + U.escapar(it.hora || f.hora) + '</span>' +
                      '<span class="disciplina">' + U.escapar(it.tipo) + ': ' + U.escapar(it.titulo) + '</span></li>';
             }).join('');
           }).join('') + '</ul>' +
