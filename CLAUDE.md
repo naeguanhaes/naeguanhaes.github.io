@@ -205,8 +205,10 @@ do NAE" e rodapé da página do DA, sem o menu do NAE, com a aba "Mostra de Prof
 navegação do DA. Conteúdo nas cores do cartaz (azul-marinho e amarelo), com a chamada de voluntários e as oito
 frentes de trabalho; o formulário de voluntários sai em 12/11 pelo `data-ate`.
 
-A proposta do Estatuto está em `documentos/estatuto-da-proposta-2026.pdf` (sem os
-metadados de autoria). Depois da Assembleia de 28/10, trocar pelo texto aprovado.
+**O Estatuto foi aprovado na Assembleia Geral de 28/10/2026** (informado pelo coordenador em
+11/11/2026): a seção `#resultado` está no ar e a seção do Estatuto virou "O Estatuto em 6 pontos".
+O PDF em `documentos/estatuto-da-proposta-2026.pdf` é o texto levado à Assembleia; se o DA mandar
+a versão final (registrada), trocar o arquivo. Presentes e placar da votação não foram informados.
 
 ## Rodas de Conversa sobre IA: RETIRADA do site em 27/08/2026
 
