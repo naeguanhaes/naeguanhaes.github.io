@@ -3583,3 +3583,11 @@ body:has(.pg-mpmg) { background: #FBF7F6; }
 a.pe-chamada.mpmg-chamada { background: #FBF4F3; border-color: #EBD6D3; }
 a.pe-chamada.mpmg-chamada h2 { color: #1A1A1A; }
 a.pe-chamada.mpmg-chamada:hover { border-color: #8E1B1B; }
+
+/* orientações para quem apresenta resumo (seminario.html#orientacoes) */
+.sem-orient { padding: 1rem 1.2rem; border-radius: 16px; background: #FFF6EC; border: 2px solid #F5C89A; scroll-margin-top: 6.5rem; }
+.sem-orient h3 { margin: 0 0 .5rem; color: #8A3A00; font-size: 1.15rem; }
+.sem-orient ol { margin: 0; padding-left: 1.3rem; display: grid; gap: .45rem; }
+.sem-orient li { color: var(--ink-2); }
+.sem-orient li::marker { font-weight: 800; color: #C2561A; }
+.resumos-inicio-lembrete { margin: .9rem 0 0; padding: .6rem .9rem; border-radius: 12px; background: #FFF6EC; border: 1px solid #F5C89A; color: var(--ink-2); font-size: .95rem; max-width: 44rem; }
