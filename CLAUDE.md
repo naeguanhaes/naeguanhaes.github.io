@@ -727,3 +727,8 @@ página usa o link do Forms tirado das anotações do PDF, e a linha do link foi
 (`assets/mpmg/arte-estagio-pos*.webp`). O PDF está em `documentos/estagio-mpmg-2026/`, sem os
 metadados de autoria. Cores da arte em `.pg-mpmg`; painel `tema: 'mpmg'`. O `nae:revisar-em` pede
 releitura em 16/11 (abertura), 24/11 (fim das inscrições) e 27/11 (depois da prova).
+
+Demandas ao DA (11/11/2026): seção `#demandas` em `diretorio-academico.html` (aba "Demandas" na
+navegação do DA e botão no topo), a partir do comunicado do DA: canal oficial
+`ouvidoriadiretorioacademico2@gmail.com`, modelo em PDF em `documentos/da/` (sem metadados de
+autoria), os campos do formulário e as orientações do próprio modelo. Sem data: é canal permanente.

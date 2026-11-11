@@ -106,7 +106,7 @@ window.DADOS_BUSCA = {
       t: 'Diretório Acadêmico Sapientia et Justitia',
       d: 'A representação estudantil da UEMG Guanhães: Assembleia Geral de 28/10, às 19h, no Auditório, para votar o Estatuto Social. Contato e ações do DA.',
       u: 'diretorio-academico.html',
-      k: 'diretorio academico da sapientia et justitia representacao estudantil centro academico entidade estatuto social assembleia geral votacao convocacao edital auditorio presidencia rian ouvidoria contato mostra de profissoes audiencia plano diretor'
+      k: 'demanda demandas ouvidoria reclamacao reclamacoes solicitacao sugestao modelo encaminhamento formulario diretorio academico da sapientia et justitia representacao estudantil centro academico entidade estatuto social assembleia geral votacao convocacao edital auditorio presidencia rian ouvidoria contato mostra de profissoes audiencia plano diretor'
     },
     {
       t: '1ª Mostra de Profissões UEMG · seja voluntário',

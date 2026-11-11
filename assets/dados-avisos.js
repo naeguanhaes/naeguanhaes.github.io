@@ -35,6 +35,14 @@ window.DADOS_AVISOS = {
   faixaNoTopo: false,
   avisos: [
     {
+      tipo: 'novidade',
+      de: '2026-11-11',
+      ate: '2026-12-11',
+      texto: 'Diretório Acadêmico: solicitações, reclamações e sugestões agora vão pelo modelo de encaminhamento em PDF, enviado ao e-mail da ouvidoria do DA.',
+      link: 'diretorio-academico.html#demandas',
+      textoLink: 'ver como encaminhar'
+    },
+    {
       tipo: 'atencao',
       de: '2026-11-10',
       ate: '2026-11-23',

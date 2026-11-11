@@ -3591,3 +3591,27 @@ a.pe-chamada.mpmg-chamada:hover { border-color: #8E1B1B; }
 .sem-orient li { color: var(--ink-2); }
 .sem-orient li::marker { font-weight: 800; color: #C2561A; }
 .resumos-inicio-lembrete { margin: .9rem 0 0; padding: .6rem .9rem; border-radius: 12px; background: #FFF6EC; border: 1px solid #F5C89A; color: var(--ink-2); font-size: .95rem; max-width: 44rem; }
+
+/* DA: encaminhamento de demandas (diretorio-academico.html#demandas) */
+.da-demandas { display: grid; gap: 1.1rem; padding: clamp(1.2rem, .9rem + 1.5vw, 1.9rem); border-radius: var(--radius);
+  background: #fff; border: 3px solid var(--da-mostarda); box-shadow: 0 18px 38px -28px rgba(10,45,109,.55); scroll-margin-top: 5rem; }
+.da-demandas-topo h2 { margin: .3rem 0 .4rem; color: var(--da-azul); font-size: clamp(1.5rem, 4vw, 2.1rem); }
+.da-demandas-topo p { margin: 0; max-width: 46rem; }
+.da-demandas-topo a { font-weight: 700; word-break: break-word; }
+.da-demandas-passos { list-style: none; margin: 0; padding: 0; display: grid; gap: .8rem; counter-reset: da-passo; }
+@media (min-width: 760px) { .da-demandas-passos { grid-template-columns: repeat(3, 1fr); } }
+.da-demandas-passos > li { counter-increment: da-passo; position: relative; padding: 1rem 1rem 1rem 3.4rem; border-radius: 16px;
+  background: color-mix(in srgb, var(--da-azul) 5%, #fff); border: 1px solid color-mix(in srgb, var(--da-azul) 14%, #fff); display: grid; gap: .45rem; align-content: start; }
+.da-demandas-passos > li::before { content: counter(da-passo); position: absolute; left: 1rem; top: 1rem; width: 1.8rem; height: 1.8rem; border-radius: 50%;
+  display: grid; place-items: center; background: var(--da-azul); color: #fff; font-weight: 800; }
+.da-demandas-passos h3 { margin: 0; color: var(--da-azul); font-size: 1.05rem; }
+.da-demandas-passos p, .da-demandas-passos ul { margin: 0; font-size: .95rem; color: var(--ink-2); }
+.da-demandas-passos ul { padding-left: 1.1rem; }
+.da-demandas-passos .btn { justify-self: start; margin-top: .2rem; }
+.da-demandas-info { display: grid; gap: .8rem; }
+@media (min-width: 760px) { .da-demandas-info { grid-template-columns: 1fr 1fr; } }
+.da-demandas-info > div { padding: .9rem 1rem; border-radius: 14px; background: color-mix(in srgb, var(--da-mostarda) 12%, #fff); }
+.da-demandas-info h3 { margin: 0 0 .3rem; color: var(--da-ouro); font-size: 1rem; }
+.da-demandas-info p { margin: 0; font-size: .95rem; color: var(--ink-2); }
+.da-demandas-pe { margin: 0; color: var(--ink-2); }
+.da-demandas-topo .rotulo { display: inline-block; padding: .25rem .75rem; border-radius: 999px; background: var(--da-mostarda); color: #1A1A1A; font-weight: 800; font-size: .74rem; letter-spacing: .1em; text-transform: uppercase; }

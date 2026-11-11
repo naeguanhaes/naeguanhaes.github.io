@@ -19,6 +19,13 @@ window.DADOS_NOVIDADES = {
   atualizadoEm: '2026-11-03',
   itens: [
     {
+      data: '2026-11-11',
+      titulo: 'Envie a sua demanda ao Diretório Acadêmico',
+      texto: 'O DA tem agora um canal oficial para solicitações, reclamações e sugestões: preencha o modelo em PDF e mande para o e-mail da ouvidoria do DA.',
+      link: 'diretorio-academico.html#demandas',
+      textoLink: 'ver como encaminhar'
+    },
+    {
       data: '2026-11-10',
       titulo: 'Nova organização das apresentações de quarta',
       texto: 'A Unidade reorganizou as apresentações de resumos de 11/11: agora são 31 trabalhos, com horários e avaliadores atualizados e a sala de cada Grupo de Trabalho. Confira o seu grupo de novo.',
