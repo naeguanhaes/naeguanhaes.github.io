@@ -310,7 +310,7 @@ window.DADOS_EDITAIS = {
       tipo: 'outro',
       abre: '2026-10-07',
       encerra: '2026-10-09',
-      link: 'index.html#assembleia-da',
+      link: 'diretorio-academico.html#resultado',
       publicado: '2026-10-07',
       /* e convocacao, nao edital: so no painel da inicial */
       naLista: false,
@@ -338,7 +338,7 @@ window.DADOS_EDITAIS = {
       tipo: 'outro',
       abre: '2026-10-06',
       encerra: '2026-10-19',
-      link: 'index.html#plano-diretor',
+      link: 'diretorio-academico.html',
       publicado: '2026-10-06',
       /* e evento, nao edital: so no painel da inicial */
       naLista: false,

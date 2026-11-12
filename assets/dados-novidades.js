@@ -272,15 +272,15 @@ window.DADOS_NOVIDADES = {
       data: '2026-10-07',
       titulo: 'Assembleia Geral do Diretório Acadêmico',
       texto: 'Todos os estudantes estão convocados para discutir e votar o Estatuto Social do DA Sapientia et Justitia. Sexta, 9 de outubro, às 19h, na Unidade.',
-      link: 'index.html#assembleia-da',
-      textoLink: 'ver o edital'
+      link: 'diretorio-academico.html#resultado',
+      textoLink: 'ver o resultado'
     },
     {
       data: '2026-10-06',
       titulo: 'Audiência Pública sobre o Plano Diretor',
       texto: 'O Diretório Acadêmico levará 15 alunos, com participação certificada. Segunda, 19 de outubro, às 14h, no Salão do Tribunal do Júri do Fórum de Guanhães.',
-      link: 'index.html#plano-diretor',
-      textoLink: 'ver os detalhes'
+      link: 'diretorio-academico.html',
+      textoLink: 'ver a página do DA'
     },
     {
       data: '2026-09-30',
