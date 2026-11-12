@@ -49,6 +49,12 @@ window.DADOS_BUSCA = {
       k: 'mpmg ministerio publico promotoria justica guanhaes estagio pos graduacao pos-graduacao especializacao bacharel direito bolsa 1850 prova edital 1606 ceaf estagiario residencia'
     },
     {
+      t: 'Aula magna com Djonga',
+      d: 'Aula magna com Djonga, um diálogo entre rap, literatura e educação: 18/11, às 10h, no Ginásio Poliesportivo de Guanhães. 30 vagas para estudantes da UEMG.',
+      u: 'aula-magna-djonga.html',
+      k: 'djonga rap aula magna literatura educacao fome grande sertao veredas guimaraes rosa odilon behrens ginasio poliesportivo convite palestra musica do sertao ao rap'
+    },
+    {
       t: 'Neurodiversidade · guia',
       d: 'Guia em 7 páginas para entender, respeitar e acolher as diferentes formas de ser, sentir e aprender: o que é neurodivergência, desafios no ambiente social, o papel do docente e como ajudar.',
       u: 'neurodiversidade.html',

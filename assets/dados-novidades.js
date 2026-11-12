@@ -19,6 +19,13 @@ window.DADOS_NOVIDADES = {
   atualizadoEm: '2026-11-03',
   itens: [
     {
+      data: '2026-11-12',
+      titulo: 'Aula magna com Djonga: 30 vagas para a UEMG',
+      texto: 'Convite aos estudantes: 18/11, às 10h, no Ginásio Poliesportivo de Guanhães. Manifeste interesse pelo formulário e aguarde a confirmação da vaga.',
+      link: 'aula-magna-djonga.html',
+      textoLink: 'ver como participar'
+    },
+    {
       data: '2026-11-11',
       titulo: 'Estatuto do DA aprovado',
       texto: 'O Estatuto Social do Diretório Acadêmico Sapientia et Justitia foi aprovado na Assembleia Geral de 28/10/2026. A página do DA traz o resumo em 6 pontos e o texto completo.',

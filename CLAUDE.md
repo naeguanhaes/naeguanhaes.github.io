@@ -734,3 +734,16 @@ Demandas ao DA (11/11/2026): seção `#demandas` em `diretorio-academico.html` (
 navegação do DA e botão no topo), a partir do comunicado do DA: canal oficial
 `ouvidoriadiretorioacademico2@gmail.com`, modelo em PDF em `documentos/da/` (sem metadados de
 autoria), os campos do formulário e as orientações do próprio modelo. Sem data: é canal permanente.
+
+## Aula magna com Djonga (no ar desde 12/11/2026)
+
+`aula-magna-djonga.html` (menu "Editais e bolsas", depois do MPMG, `data-ate="2026-11-18"`, o dia do
+encontro) divulga o convite aos estudantes da UEMG Guanhães: Aula magna com Djonga, "Um diálogo entre
+rap, literatura e educação", tema "O que nos move? A fome como experiência social, existencial e
+política", 18/11/2026 às 10h no Ginásio Poliesportivo de Guanhães, promovida pela E. E. Odilon
+Behrens (projeto "Do Sertão ao Rap"). **30 vagas para a UEMG, evento exclusivo para convidados**:
+manifestação de interesse pelo formulário (forms.gle/F4LqAUJbzg5W9E276) e confirmação da vaga.
+**O formulário não traz prazo**: o botão de inscrição sai depois de 17/11 pelo `data-ate`; se a
+organização informar um prazo, ajustar. Cartaz em `assets/eventos/aula-magna-djonga*.webp`
+(`-quadrado` no painel, `tema: 'djonga'`), cores em `.pg-djonga`. O `nae:revisar-em` pede releitura
+em 18/11 e 19/11; depois do evento a página pode sair do menu (já sai sozinha) e ir para o arquivo.

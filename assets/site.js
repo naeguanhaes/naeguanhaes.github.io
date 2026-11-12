@@ -1089,6 +1089,7 @@
     'transferencia': { img: 'assets/stories/transferencia.jpg', ate: '2026-11-13' },
     'estagio-inss': { img: 'assets/stories/estagio-inss.jpg', ate: '2027-01-04' },
     'estagio-mpmg': { img: 'assets/stories/estagio-mpmg.jpg', ate: '2026-11-26' },
+    'aula-magna-djonga': { img: 'assets/stories/aula-magna-djonga.jpg', ate: '2026-11-18' },
     'permanencia': { img: 'assets/stories/permanencia.jpg', ate: '2026-11-11' },
     'assembleia': { img: 'assets/stories/assembleia-da.jpg', ate: '2026-10-28' },
     'diretorio-academico': { img: 'assets/stories/assembleia-da.jpg', ate: '2026-10-28' },

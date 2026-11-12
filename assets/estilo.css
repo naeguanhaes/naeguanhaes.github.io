@@ -3615,3 +3615,32 @@ a.pe-chamada.mpmg-chamada:hover { border-color: #8E1B1B; }
 .da-demandas-info p { margin: 0; font-size: .95rem; color: var(--ink-2); }
 .da-demandas-pe { margin: 0; color: var(--ink-2); }
 .da-demandas-topo .rotulo { display: inline-block; padding: .25rem .75rem; border-radius: 999px; background: var(--da-mostarda); color: #1A1A1A; font-weight: 800; font-size: .74rem; letter-spacing: .1em; text-transform: uppercase; }
+
+/* Aula magna com Djonga (aula-magna-djonga.html): preto, vermelho e amarelo do cartaz */
+.pg-djonga {
+  --pe-navy: #141414; --pe-terra: #B3121B; --pe-mostarda: #F2B705; --pe-mostarda-txt: #7A5600;
+  --pe-vinho: #B3121B; --pe-verde: #1F7A3A; --pe-creme: #FFF8E6; --pe-creme-2: #FBEBC2;
+}
+body:has(.pg-djonga) { background: #FFFBF1; }
+.pg-djonga .pe-hero { border-color: #F0DDB0; }
+.pg-djonga .pe-blob-1 { background: #B3121B; opacity: .85; }
+.pg-djonga .pe-blob-2 { background: #F2B705; }
+.pg-djonga .pe-t1 { font-size: clamp(2.2rem, 6.4vw, 3.8rem); }
+.pg-djonga .pe-t2 { font-size: clamp(1.3rem, 3.6vw, 2rem); color: var(--pe-terra); }
+.pg-djonga .pe-selos span, .pg-djonga .pe-passos li { border-color: #F0DDB0; }
+.djonga-arte img { width: 100%; max-width: 20rem; height: auto; border-radius: 18px; box-shadow: 0 18px 40px -24px rgba(0,0,0,.6); }
+.djonga-vagas { display: grid; grid-template-columns: auto 1fr; gap: 1.1rem; align-items: center; padding: 1.2rem 1.4rem; border-radius: 20px;
+  background: linear-gradient(120deg, #141414 0%, #2B1010 60%, #B3121B 100%); color: #fff; box-shadow: 0 16px 34px -24px rgba(60,0,0,.75); }
+.djonga-vagas h2 { margin: 0 0 .3rem; color: #fff; font-size: clamp(1.25rem, 1rem + 1vw, 1.6rem); }
+.djonga-vagas p { margin: 0; color: rgba(255,255,255,.92); }
+.djonga-vagas b { color: #fff; }
+.djonga-vagas-num { display: grid; place-items: center; width: 4.2rem; height: 4.2rem; border-radius: 50%; background: #F2B705; color: #141414;
+  font-family: var(--serif); font-size: 1.9rem; font-weight: 800; }
+@media (max-width: 520px) { .djonga-vagas { grid-template-columns: 1fr; } }
+.hero-edital.tema-djonga {
+  background:
+    radial-gradient(90% 80% at 96% 4%, rgba(242,183,5,.30) 0%, rgba(242,183,5,0) 58%),
+    radial-gradient(80% 70% at 2% 104%, rgba(179,18,27,.75) 0%, rgba(179,18,27,0) 62%),
+    linear-gradient(125deg, #0E0E0E 0%, #221010 55%, #6E0E14 100%);
+}
+.hero-edital.tema-djonga .eyebrow { color: #F7CF4A; }

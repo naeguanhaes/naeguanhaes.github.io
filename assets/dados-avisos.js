@@ -44,6 +44,14 @@ window.DADOS_AVISOS = {
     },
     {
       tipo: 'atencao',
+      de: '2026-11-12',
+      ate: '2026-11-17',
+      texto: 'Aula magna com Djonga em 18/11, às 10h, no Ginásio Poliesportivo de Guanhães: 30 vagas para estudantes da UEMG, com manifestação de interesse e confirmação da vaga.',
+      link: 'aula-magna-djonga.html',
+      textoLink: 'ver como participar'
+    },
+    {
+      tipo: 'atencao',
       de: '2026-11-10',
       ate: '2026-11-23',
       texto: 'Estágio no MPMG em Guanhães para estudantes de pós-graduação em Direito (já formados em Direito): bolsa de R$ 1.850,00. Inscrições de 16 a 23/11 e prova em 26/11.',

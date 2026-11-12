@@ -85,6 +85,7 @@ window.DADOS_CALENDARIO = {
     { ini: '2026-11-09', fim: '2026-11-13', titulo: 'Inscrição para transferência e obtenção de novo título 2027.1, pelo formulário do edital (até as 17h do último dia)', tipo: 'prazo', curto: 'Transferência e novo título: inscrição' },
     { ini: '2026-11-12', fim: '2026-11-12', titulo: 'UEMG + Permanência: relação das inscrições recebidas', tipo: 'prazo', curto: 'UEMG + Permanência: inscrições recebidas' },
     { ini: '2026-11-11', fim: '2026-11-11', titulo: 'Estágio Institucional: lista das inscrições', tipo: 'prazo', curto: 'Estágio: lista das inscrições' },
+    { ini: '2026-11-18', fim: '2026-11-18', titulo: 'Aula magna com Djonga, às 10h, no Ginásio Poliesportivo de Guanhães (só para quem teve a vaga confirmada)', tipo: 'letivo', curto: 'Aula magna com Djonga' },
     { ini: '2026-11-18', fim: '2026-11-18', titulo: 'Estágio Institucional: convocação para a prova, pelo e-mail institucional', tipo: 'prazo', curto: 'Estágio: convocação para a prova' },
     { ini: '2026-11-09', fim: '2026-11-09', titulo: 'Abertura da Semana de Pesquisa e Extensão da UEMG Guanhães 2026', tipo: 'letivo', curto: 'Abertura da Semana de Pesquisa e Extensão', marca: 'seminario' },
     { ini: '2026-11-10', fim: '2026-11-12', titulo: 'Seminário de Pesquisa e Extensão 2026', tipo: 'letivo', marca: 'seminario' },
