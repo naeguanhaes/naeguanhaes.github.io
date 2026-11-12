@@ -1809,51 +1809,51 @@ html[data-contraste="alto"] .hero-selo { border-color: #fff; }
 /* Variante roxa do retângulo, para o Seminário de Pesquisa e Extensão.
    Mesma construção em três camadas do verde: brilho no alto à direita,
    calor âmbar embaixo à esquerda e o degradê por baixo. */
-.hero-edital.tema-roxo,
+.hero-edital.tema-roxo, .fixo.tema-roxo,
 .pg-seminario .hero {
   background:
     radial-gradient(115% 85% at 88% 6%, rgba(255,255,255,.17) 0%, rgba(255,255,255,0) 55%),
     radial-gradient(95% 75% at 6% 104%, rgba(224,154,30,.26) 0%, rgba(224,154,30,0) 62%),
     linear-gradient(122deg, #241C52 0%, #3F3480 42%, #5B4EA6 78%, #7166B8 100%);
 }
-.hero-edital.tema-roxo .eyebrow,
+.hero-edital.tema-roxo .eyebrow, .fixo.tema-roxo .fixo-eyebrow,
 .pg-seminario .hero .eyebrow { color: #CFC6F5; }
 .pg-seminario .hero::after { background: var(--ambar); opacity: .5; }
 .pg-seminario .hero-in { max-width: 54ch; }
 .pg-seminario .hero-contagem { align-self: flex-start; }
 
 /* Variante terracota, para editais de assistência estudantil (PROPCTs). */
-.hero-edital.tema-coral,
+.hero-edital.tema-coral, .fixo.tema-coral,
 .pg-propcts .hero {
   background:
     radial-gradient(115% 85% at 88% 6%, rgba(255,255,255,.15) 0%, rgba(255,255,255,0) 55%),
     radial-gradient(95% 75% at 6% 104%, rgba(224,154,30,.30) 0%, rgba(224,154,30,0) 62%),
     linear-gradient(122deg, #4A1C12 0%, #74301F 42%, #9A4630 78%, #B0553B 100%);
 }
-.hero-edital.tema-coral .eyebrow,
+.hero-edital.tema-coral .eyebrow, .fixo.tema-coral .fixo-eyebrow,
 .pg-propcts .hero .eyebrow { color: #FFD9C4; }
 .pg-propcts .hero::after { background: var(--ambar); opacity: .5; }
 .pg-propcts .hero-in { max-width: 56ch; }
 .pg-propcts .hero-contagem { align-self: flex-start; }
 
 /* Variante vinho, com a cor do cartaz do Conecta Mente. */
-.hero-edital.tema-vinho {
+.hero-edital.tema-vinho, .fixo.tema-vinho {
   background:
     radial-gradient(115% 85% at 88% 6%, rgba(255,255,255,.14) 0%, rgba(255,255,255,0) 55%),
     radial-gradient(95% 75% at 6% 104%, rgba(212,146,40,.30) 0%, rgba(212,146,40,0) 62%),
     linear-gradient(122deg, #3A0E18 0%, #5E1626 45%, #7A1F32 80%, #1F4D3A 130%);
 }
-.hero-edital.tema-vinho .eyebrow { color: #F5D08A; }
+.hero-edital.tema-vinho .eyebrow, .fixo.tema-vinho .fixo-eyebrow { color: #F5D08A; }
 
 /* Variante musgo, com o verde e o creme do cartaz do PILA. */
-.hero-edital.tema-musgo,
+.hero-edital.tema-musgo, .fixo.tema-musgo,
 .pg-pila .hero {
   background:
     radial-gradient(115% 85% at 88% 6%, rgba(255,255,255,.15) 0%, rgba(255,255,255,0) 55%),
     radial-gradient(95% 75% at 6% 104%, rgba(232,205,143,.30) 0%, rgba(232,205,143,0) 62%),
     linear-gradient(122deg, #1F3521 0%, #36522F 42%, #4E6B45 78%, #5E7C53 100%);
 }
-.hero-edital.tema-musgo .eyebrow,
+.hero-edital.tema-musgo .eyebrow, .fixo.tema-musgo .fixo-eyebrow,
 .pg-pila .hero .eyebrow { color: #EBD49A; }
 .pg-pila .hero::after { background: #E8CD8F; opacity: .45; }
 .pg-pila .hero-in { max-width: 56ch; }
@@ -1919,41 +1919,41 @@ html[data-contraste="alto"] .evento-cartaz { border-color: #000; }
 }
 
 /* Variante azul-petróleo do painel, com as cores do banner do Wi-Fi. */
-.hero-edital.tema-wifi {
+.hero-edital.tema-wifi, .fixo.tema-wifi {
   background:
     radial-gradient(115% 85% at 88% 6%, rgba(255,255,255,.16) 0%, rgba(255,255,255,0) 55%),
     radial-gradient(95% 75% at 6% 104%, rgba(224,154,30,.30) 0%, rgba(224,154,30,0) 62%),
     linear-gradient(125deg, #0B3A4A 0%, #135E73 45%, #1795AE 100%);
 }
-.hero-edital.tema-wifi .eyebrow { color: #FFD27A; }
+.hero-edital.tema-wifi .eyebrow, .fixo.tema-wifi .fixo-eyebrow { color: #FFD27A; }
 
 /* Variante da Secretaria, com o rosa e o pêssego do informativo dos prazos. */
-.hero-edital.tema-secretaria {
+.hero-edital.tema-secretaria, .fixo.tema-secretaria {
   background:
     radial-gradient(90% 80% at 96% 4%, rgba(255,196,140,.40) 0%, rgba(255,196,140,0) 58%),
     radial-gradient(80% 70% at 2% 104%, rgba(232,120,160,.45) 0%, rgba(232,120,160,0) 62%),
     linear-gradient(125deg, #4A1030 0%, #7A1F4E 50%, #A8386C 100%);
 }
-.hero-edital.tema-secretaria .eyebrow { color: #FFD3A8; }
+.hero-edital.tema-secretaria .eyebrow, .fixo.tema-secretaria .fixo-eyebrow { color: #FFD3A8; }
 
 /* Variante sálvia, com o verde e o terracota do cartaz do Yoga na ESMU. */
-.hero-edital.tema-salvia {
+.hero-edital.tema-salvia, .fixo.tema-salvia {
   background:
     radial-gradient(115% 85% at 88% 6%, rgba(255,255,255,.16) 0%, rgba(255,255,255,0) 55%),
     radial-gradient(95% 75% at 6% 104%, rgba(176,90,52,.35) 0%, rgba(176,90,52,0) 62%),
     linear-gradient(122deg, #26392E 0%, #3F5E4B 45%, #5E7F6B 80%, #7C9A86 100%);
 }
-.hero-edital.tema-salvia .eyebrow { color: #F2C9A8; }
+.hero-edital.tema-salvia .eyebrow, .fixo.tema-salvia .fixo-eyebrow { color: #F2C9A8; }
 
 /* Variante ENADE: o azul da marca com calor vermelho, para obrigação com prazo. */
-.hero-edital.tema-enade,
+.hero-edital.tema-enade, .fixo.tema-enade,
 .pg-enade .hero {
   background:
     radial-gradient(115% 85% at 88% 6%, rgba(255,255,255,.15) 0%, rgba(255,255,255,0) 55%),
     radial-gradient(95% 75% at 6% 104%, rgba(217,31,53,.35) 0%, rgba(217,31,53,0) 62%),
     linear-gradient(122deg, #16324A 0%, #23485F 45%, #35618A 85%, #40688B 100%);
 }
-.hero-edital.tema-enade .eyebrow,
+.hero-edital.tema-enade .eyebrow, .fixo.tema-enade .fixo-eyebrow,
 .pg-enade .hero .eyebrow { color: #FFC7CE; }
 .pg-enade .hero-in { max-width: 56ch; }
 .pg-enade .hero-contagem { align-self: flex-start; }
@@ -2300,13 +2300,13 @@ html[data-contraste="alto"] .pb-barra { background: #000; }
 .evento-sem-cartaz .evento-info { max-width: 72ch; }
 
 /* Variante fórum: azul institucional e dourado, para a Audiência Pública */
-.hero-edital.tema-forum {
+.hero-edital.tema-forum, .fixo.tema-forum {
   background:
     radial-gradient(115% 85% at 88% 6%, rgba(255,255,255,.14) 0%, rgba(255,255,255,0) 55%),
     radial-gradient(95% 75% at 6% 104%, rgba(201,160,82,.32) 0%, rgba(201,160,82,0) 62%),
     linear-gradient(122deg, #142636 0%, #1F3A52 45%, #2F4A63 80%, #5A4A2A 130%);
 }
-.hero-edital.tema-forum .eyebrow { color: #EBCB8B; }
+.hero-edital.tema-forum .eyebrow, .fixo.tema-forum .fixo-eyebrow { color: #EBCB8B; }
 
 /* Foto de uma etapa na linha do tempo do projeto */
 .lt-foto { margin: .7rem 0 0; max-width: 18rem; }
@@ -2398,13 +2398,13 @@ html[data-contraste="alto"] .btn-semana { border-color: #000; color: #000; }
 .semana-dia .disciplina .tag { margin-left: 0; }
 
 /* Variante mostra: azul-marinho e amarelo do cartaz da Mostra de Profissões */
-.hero-edital.tema-mostra {
+.hero-edital.tema-mostra, .fixo.tema-mostra {
   background:
     radial-gradient(115% 85% at 88% 6%, rgba(255,255,255,.12) 0%, rgba(255,255,255,0) 55%),
     radial-gradient(95% 75% at 6% 104%, rgba(255,193,37,.32) 0%, rgba(255,193,37,0) 62%),
     linear-gradient(122deg, #0E1F3A 0%, #15315A 50%, #1E4478 100%);
 }
-.hero-edital.tema-mostra .eyebrow { color: #FFC93C; }
+.hero-edital.tema-mostra .eyebrow, .fixo.tema-mostra .fixo-eyebrow { color: #FFC93C; }
 
 /* ── Identidade do 28º Seminário de Pesquisa e Extensão ──
    A logo oficial é PNG transparente: sem moldura e sem sombra de foto.
@@ -2439,7 +2439,7 @@ html[data-contraste="alto"] .btn-semana { border-color: #000; color: #000; }
   --da-amarelo: #F6DD15; --da-ouro: #8A6100; /* ouro escuro, para texto em fundo claro */
 }
 .pg-da .da-hero,
-.hero-edital.tema-da {
+.hero-edital.tema-da, .fixo.tema-da {
   background:
     radial-gradient(34% 42% at 104% -6%, #C8963D 0 62%, rgba(200,150,61,0) 63%),
     radial-gradient(26% 30% at -4% 108%, #C8963D 0 62%, rgba(200,150,61,0) 63%),
@@ -2448,7 +2448,7 @@ html[data-contraste="alto"] .btn-semana { border-color: #000; color: #000; }
 .pg-da .da-hero { background: linear-gradient(160deg, #0A2D6D 0%, #0C3480 100%); }
 .pg-da .da-hero::before, .pg-da .da-hero::after { display: none; }
 .pg-da .da-hero .eyebrow,
-.hero-edital.tema-da .eyebrow { color: #E2B45A; }
+.hero-edital.tema-da .eyebrow, .fixo.tema-da .fixo-eyebrow { color: #E2B45A; }
 .pg-da .da-hero .hero-imagem.hero-logo,
 .hero-edital.tema-da .hero-imagem.hero-logo { width: min(10rem, 48%); }
 @media (min-width: 880px) {
@@ -3161,13 +3161,13 @@ body:has(.pg-transf) { background: #F7F3FD; }
 .transf-calc label { font-weight: 700; color: var(--pe-navy); }
 .transf-calc textarea { width: 100%; font: inherit; padding: .7rem .9rem; border-radius: 12px; border: 1.5px solid #D9C8F5; background: #fff; color: var(--ink); resize: vertical; }
 .transf-calc textarea:focus { outline: none; border-color: var(--pe-terra); box-shadow: 0 0 0 3px rgba(106,34,201,.2); }
-.hero-edital.tema-transf {
+.hero-edital.tema-transf, .fixo.tema-transf {
   background:
     radial-gradient(90% 80% at 96% 4%, rgba(205,250,126,.30) 0%, rgba(205,250,126,0) 58%),
     radial-gradient(80% 70% at 2% 104%, rgba(143,53,231,.6) 0%, rgba(143,53,231,0) 62%),
     linear-gradient(125deg, #2A0B57 0%, #4F1A9C 55%, #7A2FD6 100%);
 }
-.hero-edital.tema-transf .eyebrow { color: #CDFA7E; }
+.hero-edital.tema-transf .eyebrow, .fixo.tema-transf .fixo-eyebrow { color: #CDFA7E; }
 
 /* ═══════════════ ESTÁGIO NO INSS (estagio-inss.html) ═══════════════ */
 /* Peças da página do PEAES nas cores da marca do INSS: o azul, o verde e o amarelo. */
@@ -3192,50 +3192,39 @@ body:has(.pg-inss) { background: #F5F9FD; }
 .inss-marca { display: grid; gap: .8rem; justify-items: center; text-align: center; background: #fff; border-radius: 20px; padding: 1.6rem 1.4rem; box-shadow: 0 18px 40px -28px rgba(10,47,92,.5); }
 .inss-marca img { width: min(17rem, 80%); height: auto; border-radius: 0; box-shadow: none; }
 .inss-marca figcaption { font-size: .85rem; color: #4A5560; font-style: normal; }
-.hero-edital.tema-inss {
+.hero-edital.tema-inss, .fixo.tema-inss {
   background:
     radial-gradient(90% 80% at 96% 4%, rgba(255,190,57,.40) 0%, rgba(255,190,57,0) 58%),
     radial-gradient(80% 70% at 2% 104%, rgba(0,152,69,.55) 0%, rgba(0,152,69,0) 62%),
     linear-gradient(125deg, #062B57 0%, #0A4A93 55%, #005BB8 100%);
 }
-.hero-edital.tema-inss .eyebrow { color: #FFD27A; }
+.hero-edital.tema-inss .eyebrow, .fixo.tema-inss .fixo-eyebrow { color: #FFD27A; }
 a.pe-chamada.inss-chamada { background: #F3F8FD; border-color: #D3E3F5; }
 a.pe-chamada.inss-chamada h2 { color: #0A2F5C; }
 a.pe-chamada.inss-chamada:hover { border-color: #005BB8; }
 
-/* Anúncios fixos acima do painel da inicial (index.html): dois retângulos com a arte em
-   cima, nas cores de cada edital. Um sozinho ocupa a largura toda. */
+/* Cartões fixos abaixo do painel da inicial (index.html, #fixos): os dois prazos que
+   encerram primeiro, montados pelo edital-hero.js com o tema de cor do painel
+   (.fixo.tema-X, junto das regras .hero-edital.tema-X). Um sozinho ocupa a largura toda. */
+.fixos[hidden] { display: none; }
 .fixos { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); }
 .fixo { display: flex; flex-direction: column; border-radius: 22px; overflow: hidden; text-decoration: none; color: #fff; box-shadow: 0 18px 38px -24px rgba(0,25,46,.6); transition: transform .2s ease, box-shadow .2s ease; }
 .fixo:hover { transform: translateY(-2px); box-shadow: 0 22px 44px -22px rgba(0,25,46,.7); color: #fff; }
 .fixo:focus-visible { outline: 3px solid var(--ambar); outline-offset: 3px; }
 @media (prefers-reduced-motion: reduce) { .fixo { transition: none; } .fixo:hover { transform: none; } }
-.fixo-arte { display: block; aspect-ratio: 4 / 1; overflow: hidden; }
+.fixo-arte { display: block; aspect-ratio: 3 / 1; overflow: hidden; background: rgba(0,0,0,.25); }
 .fixo-arte img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.fixo-perm .fixo-arte img { object-position: left center; }
-.fixo-peaes .fixo-arte img { object-position: center top; }
 .fixo-corpo { flex: 1; display: flex; flex-direction: column; gap: .45rem; padding: 1.1rem 1.3rem 1.2rem; }
 .fixo-eyebrow { font-size: .72rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
 .fixo h2 { margin: 0; color: #fff; font-size: clamp(1.25rem, 1rem + 1vw, 1.55rem); line-height: 1.2; }
 .fixo-texto { font-size: .95rem; color: rgba(255,255,255,.9); flex: 1; }
 .fixo-rodape { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .6rem; margin-top: .3rem; }
 .fixo-prazo { display: inline-flex; align-items: center; padding: .3rem .8rem; border-radius: 99px; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.3); font-weight: 700; font-size: .88rem; }
-.fixo-ir { display: inline-flex; align-items: center; min-height: 44px; padding: .4rem 1.05rem; border-radius: 99px; background: #fff; font-weight: 800; font-size: .92rem; }
-.fixo-perm {
-  background:
-    radial-gradient(85% 80% at 98% 100%, rgba(227,58,12,.55) 0%, rgba(227,58,12,0) 60%),
-    linear-gradient(125deg, #00192E 0%, #12301F 55%, #305016 100%);
-}
-.fixo-perm .fixo-eyebrow { color: #FFC24D; }
-.fixo-perm .fixo-ir { color: #00192E; }
-.fixo-peaes {
-  background:
-    radial-gradient(90% 80% at 96% 100%, rgba(218,152,56,.42) 0%, rgba(218,152,56,0) 58%),
-    radial-gradient(80% 70% at 2% 104%, rgba(119,35,54,.6) 0%, rgba(119,35,54,0) 62%),
-    linear-gradient(125deg, #0B2438 0%, #15344B 55%, #1F4257 100%);
-}
-.fixo-peaes .fixo-eyebrow { color: #F2C27A; }
-.fixo-peaes .fixo-ir { color: #0B2438; }
+.fixo-ir { display: inline-flex; align-items: center; min-height: 44px; padding: .4rem 1.05rem; border-radius: 99px; background: #fff; color: #141414; font-weight: 800; font-size: .92rem; }
+.fixo { background: linear-gradient(125deg, #0B2438 0%, #15344B 55%, #1F4257 100%); }
+.fixo-eyebrow { color: #F2C27A; }
+.fixo-texto b { color: #fff; }
+.fixo-urgente .fixo-prazo { background: #FFD24D; border-color: #FFD24D; color: #141414; }
 
 /* Guia de neurodiversidade (neurodiversidade.html): as 7 páginas do material, como
    imagem, com o texto de cada uma logo abaixo para leitor de tela, busca e tela pequena. */
@@ -3335,13 +3324,13 @@ a.neuro-chamada:hover { border-color: #2F6FB3; }
 .pe-atendimento { --c: var(--pe-navy); background: var(--pe-creme); }
 .pe-alerta { --c: var(--pe-terra); }
 /* painel da inicial e chamada em Auxílios, nas cores do PEAES */
-.hero-edital.tema-peaes {
+.hero-edital.tema-peaes, .fixo.tema-peaes {
   background:
     radial-gradient(90% 80% at 96% 4%, rgba(218,152,56,.45) 0%, rgba(218,152,56,0) 58%),
     radial-gradient(80% 70% at 2% 104%, rgba(119,35,54,.65) 0%, rgba(119,35,54,0) 62%),
     linear-gradient(125deg, #0B2438 0%, #15344B 55%, #1F4257 100%);
 }
-.hero-edital.tema-peaes .eyebrow { color: #F2C27A; }
+.hero-edital.tema-peaes .eyebrow, .fixo.tema-peaes .fixo-eyebrow { color: #F2C27A; }
 a.pe-chamada { text-decoration: none; color: inherit; background: #FDF8EC; border-color: #EFE1C4; }
 a.pe-chamada h2 { color: #0B2438; }
 a.pe-chamada:hover { border-color: #AA4520; }
@@ -3368,13 +3357,13 @@ body:has(.pg-selecao) { background: #FBF7EC; }
 .pg-selecao .tabela-ppc { min-width: 0; max-width: 40rem; background: #fff; border-radius: 12px; overflow: hidden; }
 .pg-selecao .tabela-ppc td:last-child, .pg-selecao .tabela-ppc th:last-child { text-align: right; white-space: nowrap; }
 @media (max-width: 560px) { .pe-arquivos a { flex-wrap: wrap; gap: .2rem 1rem; } .pe-arquivos a b { flex-basis: 100%; } }
-.hero-edital.tema-selecao {
+.hero-edital.tema-selecao, .fixo.tema-selecao {
   background:
     radial-gradient(90% 80% at 98% 100%, rgba(74,99,41,.75) 0%, rgba(74,99,41,0) 60%),
     radial-gradient(70% 70% at 0% 0%, rgba(168,71,31,.6) 0%, rgba(168,71,31,0) 60%),
     linear-gradient(125deg, #10294A 0%, #183659 60%, #22425F 100%);
 }
-.hero-edital.tema-selecao .eyebrow { color: #F2C27A; }
+.hero-edital.tema-selecao .eyebrow, .fixo.tema-selecao .fixo-eyebrow { color: #F2C27A; }
 
 /* ═══════════════ UEMG + PERMANÊNCIA 2026 (permanencia.html) ═══════════════ */
 /* Peças da página do PEAES com a paleta da arte da PROEX: azul-noite do
@@ -3401,13 +3390,13 @@ body:has(.pg-perm) { background: #FBF3E6; }
 .pm-opcoes input:checked + label { background: var(--pe-navy); border-color: var(--pe-navy); color: #fff; }
 .pm-opcoes input:focus-visible + label { outline: 3px solid var(--pe-mostarda); outline-offset: 2px; }
 /* painel da inicial e chamadas, nas cores da arte */
-.hero-edital.tema-permanencia {
+.hero-edital.tema-permanencia, .fixo.tema-permanencia {
   background:
     radial-gradient(85% 80% at 98% 100%, rgba(227,58,12,.62) 0%, rgba(227,58,12,0) 60%),
     radial-gradient(70% 70% at 96% 0%, rgba(255,160,1,.42) 0%, rgba(255,160,1,0) 58%),
     linear-gradient(125deg, #00192E 0%, #12301F 55%, #305016 100%);
 }
-.hero-edital.tema-permanencia .eyebrow { color: #FFC24D; }
+.hero-edital.tema-permanencia .eyebrow, .fixo.tema-permanencia .fixo-eyebrow { color: #FFC24D; }
 a.pe-chamada.pm-chamada { background: #FFF7EA; border-color: #F1DDBA; }
 a.pe-chamada.pm-chamada h2 { color: #00192E; }
 a.pe-chamada.pm-chamada:hover { border-color: #B02E09; }
@@ -3573,13 +3562,13 @@ body:has(.pg-mpmg) { background: #FBF7F6; }
 .mpmg-prova-data span { font-size: .85rem; font-weight: 700; letter-spacing: .04em; color: rgba(255,255,255,.9); }
 .mpmg-prova h2 { margin: 0 0 .4rem; }
 .mpmg-prova p { margin: 0 0 .6rem; }
-.hero-edital.tema-mpmg {
+.hero-edital.tema-mpmg, .fixo.tema-mpmg {
   background:
     radial-gradient(90% 80% at 96% 4%, rgba(217,164,65,.32) 0%, rgba(217,164,65,0) 58%),
     radial-gradient(80% 70% at 2% 104%, rgba(142,27,27,.75) 0%, rgba(142,27,27,0) 62%),
     linear-gradient(125deg, #0F0F0F 0%, #241010 55%, #5E1212 100%);
 }
-.hero-edital.tema-mpmg .eyebrow { color: #F2C77A; }
+.hero-edital.tema-mpmg .eyebrow, .fixo.tema-mpmg .fixo-eyebrow { color: #F2C77A; }
 a.pe-chamada.mpmg-chamada { background: #FBF4F3; border-color: #EBD6D3; }
 a.pe-chamada.mpmg-chamada h2 { color: #1A1A1A; }
 a.pe-chamada.mpmg-chamada:hover { border-color: #8E1B1B; }
@@ -3637,10 +3626,10 @@ body:has(.pg-djonga) { background: #FFFBF1; }
 .djonga-vagas-num { display: grid; place-items: center; width: 4.2rem; height: 4.2rem; border-radius: 50%; background: #F2B705; color: #141414;
   font-family: var(--serif); font-size: 1.9rem; font-weight: 800; }
 @media (max-width: 520px) { .djonga-vagas { grid-template-columns: 1fr; } }
-.hero-edital.tema-djonga {
+.hero-edital.tema-djonga, .fixo.tema-djonga {
   background:
     radial-gradient(90% 80% at 96% 4%, rgba(242,183,5,.30) 0%, rgba(242,183,5,0) 58%),
     radial-gradient(80% 70% at 2% 104%, rgba(179,18,27,.75) 0%, rgba(179,18,27,0) 62%),
     linear-gradient(125deg, #0E0E0E 0%, #221010 55%, #6E0E14 100%);
 }
-.hero-edital.tema-djonga .eyebrow { color: #F7CF4A; }
+.hero-edital.tema-djonga .eyebrow, .fixo.tema-djonga .fixo-eyebrow { color: #F7CF4A; }

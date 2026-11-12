@@ -747,3 +747,15 @@ manifestação de interesse pelo formulário (forms.gle/F4LqAUJbzg5W9E276) e con
 organização informar um prazo, ajustar. Cartaz em `assets/eventos/aula-magna-djonga*.webp`
 (`-quadrado` no painel, `tema: 'djonga'`), cores em `.pg-djonga`. O `nae:revisar-em` pede releitura
 em 18/11 e 19/11; depois do evento a página pode sair do menu (já sai sozinha) e ir para o arquivo.
+
+## Cartões fixos da inicial: os dois prazos mais críticos (12/11/2026)
+
+Pedido do coordenador: logo abaixo do painel que gira ficam **sempre os dois acontecimentos com o
+encerramento mais crítico**. Não são mais escritos à mão: o `edital-hero.js` preenche `#fixos` em
+`index.html` a partir de `dados-editais.js`, escolhendo os itens com inscrição já aberta e o `encerra`
+mais próximo. Ficam de fora os avisos sem prazo (`semContagem`), os itens com `naInicial: false` e a
+programação de evento marcada com `fixo: false` (o Seminário). Os dois escolhidos saem do painel que
+gira, para não aparecerem duas vezes; quando um vence, o próximo sobe sozinho. O cartão usa o tema de
+cor do painel (`.fixo.tema-X`, ao lado de cada `.hero-edital.tema-X` no CSS), a `imagem` do destaque
+recortada em 3:1 (`fixoPosicao` ajusta o recorte) e, se houver, um `fixoTexto` mais curto. Item novo
+com tema novo: escrever as duas regras juntas (`.hero-edital.tema-X, .fixo.tema-X`).

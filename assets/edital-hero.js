@@ -93,6 +93,55 @@
     escolhidos.push(e);
   });
 
+  /* ── Os dois cartões fixos logo abaixo do painel (index.html, #fixos) ──
+     Pedido do coordenador em 12/11/2026: ali ficam SEMPRE os dois
+     acontecimentos com o encerramento mais crítico, escolhidos sozinhos:
+     inscrição já aberta, prazo mais próximo primeiro. Ficam de fora os
+     avisos sem prazo (semContagem), o que tem naInicial: false e a
+     programação de evento marcada com fixo: false. Os dois
+     escolhidos saem do painel que gira, para não aparecerem duas vezes.
+     Campos opcionais no destaque: fixoTexto (texto curto do cartão) e
+     fixoPosicao (object-position da arte, padrão "center top"). */
+  var caixaFixos = !filtro && document.getElementById('fixos');
+  if (caixaFixos) {
+    var criticos = escolhidos.filter(function (e) {
+      var d = e.destaque || {};
+      return e.fixo !== false && !d.semContagem && (!e.abre || e.abre <= hoje);
+    }).sort(function (a, b) { return a.encerra < b.encerra ? -1 : a.encerra > b.encerra ? 1 : 0; })
+      .slice(0, 2);
+    criticos.forEach(function (e) { caixaFixos.appendChild(montarFixo(e)); });
+    if (criticos.length) {
+      caixaFixos.hidden = false;
+      escolhidos = escolhidos.filter(function (e) { return criticos.indexOf(e) < 0; });
+    }
+  }
+
+  function montarFixo(e) {
+    var d = e.destaque || {};
+    var faltam = dias(hoje, e.encerra), rotulo = d.rotuloPrazo || 'para encerrar', prazo;
+    if (faltam === 0)      prazo = d.textoUltimoDia || 'Último dia: hoje';
+    else if (faltam === 1) prazo = 'Falta 1 dia ' + rotulo;
+    else                   prazo = 'Faltam ' + faltam + ' dias ' + rotulo;
+    /* o cartão inteiro é um link: tira links de dentro do texto */
+    var texto = String(d.fixoTexto || d.texto || escapar(e.resumo)).replace(/<\/?a\b[^>]*>/g, '');
+    var link = e.link || d.acaoLink;
+    var a = document.createElement('a');
+    a.className = 'fixo' + (d.tema ? ' tema-' + d.tema : '') + (faltam <= 5 ? ' fixo-urgente' : '');
+    a.href = link;
+    if (externo(link)) { a.target = '_blank'; a.rel = 'noopener noreferrer'; }
+    a.innerHTML =
+      (d.imagem ? '<span class="fixo-arte"><img src="' + escapar(d.imagem) + '" alt="' + escapar(d.imagemAlt || '') +
+        '" loading="lazy" decoding="async" style="object-position:' + escapar(d.fixoPosicao || 'center top') + '"></span>' : '') +
+      '<span class="fixo-corpo">' +
+        '<span class="fixo-eyebrow">' + escapar(d.eyebrow || 'Prazo aberto') + '</span>' +
+        '<h2>' + escapar(d.titulo || e.titulo) + '</h2>' +
+        '<span class="fixo-texto">' + texto + '</span>' +
+        '<span class="fixo-rodape"><span class="fixo-prazo">' + escapar(prazo) + ' (' + diaMes(e.encerra) + ')</span>' +
+        '<span class="fixo-ir">' + escapar(d.acao || 'Ver e se inscrever') + ' &rarr;</span></span>' +
+      '</span>';
+    return a;
+  }
+
   function externo(url) { return /^https?:\/\//.test(url); }
   function alvo(url) { return externo(url) ? ' target="_blank" rel="noopener noreferrer"' : ''; }
 
@@ -172,7 +221,7 @@
   /* Na ordem acima: primeiro os novos, depois os demais pelo prazo. */
   escolhidos.forEach(function (e) { trilho.appendChild(montar(e)); });
   var painel = trilho.closest('[data-carrossel]');
-  if (painel) painel.hidden = false;
+  if (painel && escolhidos.length) painel.hidden = false;
 
   /* Cinto e suspensório: o navegador pode ter guardado uma rolagem
      do trilho de uma visita anterior. Zerar garante a abertura no

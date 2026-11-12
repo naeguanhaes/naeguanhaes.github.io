@@ -211,30 +211,10 @@
     </div>
   </section>
 
-  <!-- Dois anúncios fixos logo abaixo do painel que gira (pedido do coordenador em 05/11/2026;
-       descidos para baixo do painel em 09/11/2026). Cada um sai
-       sozinho no dia seguinte ao fim da inscrição, pelo data-ate; enquanto estão aqui, os dois
-       itens ficam fora do painel que gira (naInicial: false em dados-editais.js). -->
-  <div class="fixos" data-ate="2026-11-16">
-    <a class="fixo fixo-perm" href="permanencia.html" data-ate="2026-11-11">
-      <span class="fixo-arte"><img src="assets/eventos/uemg-permanencia-2026-640.webp" srcset="assets/eventos/uemg-permanencia-2026-640.webp 640w, assets/eventos/uemg-permanencia-2026.webp 1920w" sizes="(min-width: 900px) 560px, 92vw" width="640" height="150" decoding="async" alt="Arte da ação UEMG + Permanência, Apoio à formação, Edição 2026"></span>
-      <span class="fixo-corpo">
-        <span class="fixo-eyebrow">Edital PROEX/COAC nº 09/2026</span>
-        <h2>UEMG + Permanência: R$&nbsp;500 para quem já teve PEAES</h2>
-        <span class="fixo-texto">Auxílio extra, pago de uma vez, sem nova análise socioeconômica. Basta fazer a adesão pelo formulário.</span>
-        <span class="fixo-rodape"><span class="fixo-prazo" data-fixo-ate="2026-11-11">Adesão até 11/11</span><span class="fixo-ir">Ver se posso participar →</span></span>
-      </span>
-    </a>
-    <a class="fixo fixo-peaes" href="peaes.html" data-ate="2026-11-16">
-      <span class="fixo-arte"><img src="assets/eventos/peaes-veteranos-2027-640.webp" srcset="assets/eventos/peaes-veteranos-2027-640.webp 640w, assets/eventos/peaes-veteranos-2027.webp 1200w" sizes="(min-width: 900px) 560px, 92vw" width="640" height="360" decoding="async" alt="Arte do PEAES Veteranos: três estudantes sorrindo em volta de uma mesa com livros e notebook"></span>
-      <span class="fixo-corpo">
-        <span class="fixo-eyebrow">Edital PROEX/COAC nº 06/2026</span>
-        <h2>PEAES Veteranos 2027: inscrições até 16/11</h2>
-        <span class="fixo-texto">Auxílio para moradia, transporte, alimentação, inclusão digital e mais. Quem já recebe precisa se inscrever de novo.</span>
-        <span class="fixo-rodape"><span class="fixo-prazo" data-fixo-ate="2026-11-16">Inscrições até 16/11</span><span class="fixo-ir">Ver o passo a passo →</span></span>
-      </span>
-    </a>
-  </div>
+  <!-- Os dois acontecimentos com o encerramento mais crítico, fixos logo abaixo do painel
+       que gira (pedido do coordenador em 12/11/2026). O edital-hero.js escolhe e monta os
+       cartões a partir de assets/dados-editais.js; sem nenhum prazo aberto, a caixa fica escondida. -->
+  <div class="fixos" id="fixos" aria-label="Prazos que encerram primeiro" role="region" hidden></div>
 
   <section id="painel-agora" aria-label="Aula de hoje"></section>
 
@@ -531,19 +511,6 @@
 <script defer src="assets/dados-busca.js"></script>
 <script defer src="assets/min/busca.min.js"></script>
 <script defer src="assets/min/horarios.min.js"></script>
-<script>
-/* anúncios fixos: "Faltam N dias" no lugar da data, até o último dia */
-document.addEventListener('DOMContentLoaded', function () {
-  var U = window.NAE; if (!U) return;
-  var hoje = U.hojeISO();
-  document.querySelectorAll('[data-fixo-ate]').forEach(function (el) {
-    var n = Math.round((new Date(el.getAttribute('data-fixo-ate') + 'T12:00:00') - new Date(hoje + 'T12:00:00')) / 86400000);
-    if (n === 0) el.textContent = 'Último dia: hoje';
-    else if (n === 1) el.textContent = 'Falta 1 dia';
-    else if (n > 1) el.textContent = 'Faltam ' + n + ' dias';
-  });
-});
-</script>
 <script>
 /* busca das apresentações de resumos: guarda o termo no navegador (não no
    endereço) e abre a seção de apresentações do Seminário, que filtra */

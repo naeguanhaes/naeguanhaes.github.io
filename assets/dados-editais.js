@@ -40,6 +40,7 @@ window.DADOS_EDITAIS = {
 
       destaque: {
         tema: 'transf',
+        fixoPosicao: 'center 12%',
         imagem: 'assets/eventos/transferencia-2027-1-560.webp',
         imagemAlt: 'Arte da Transferência e Obtenção de Novo Título, Edital 2027.1: Direito, 3 vagas; Engenharia Civil, 10 vagas; inscrições de 9 a 13 de novembro',
         eyebrow: 'Edital PROGRAD · 1º semestre de 2027',
@@ -170,8 +171,6 @@ window.DADOS_EDITAIS = {
       encerra: '2026-11-11',
       link: 'permanencia.html',
       publicado: '2026-11-03',
-      /* fixo acima do painel na inicial até o fim da adesão: fora do painel que gira */
-      naInicial: false,
 
       destaque: {
         tema: 'permanencia',
@@ -224,8 +223,6 @@ window.DADOS_EDITAIS = {
       encerra: '2026-11-16',
       link: 'peaes.html',
       publicado: '2026-10-27',
-      /* fixo acima do painel na inicial até o fim da inscrição: fora do painel que gira */
-      naInicial: false,
 
       destaque: {
         tema: 'peaes',
@@ -634,6 +631,8 @@ window.DADOS_EDITAIS = {
       encerra: '2026-11-13',
       link: 'seminario.html',
       publicado: '2026-08-28',
+      /* programação do evento, não é prazo: fica fora dos dois cartões fixos */
+      fixo: false,
 
       destaque: {
         tema: 'roxo',
