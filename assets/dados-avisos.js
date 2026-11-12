@@ -46,6 +46,14 @@ window.DADOS_AVISOS = {
       tipo: 'atencao',
       de: '2026-11-12',
       ate: '2026-11-12',
+      texto: 'Seminário, hoje (12/11): sessão extra de cinema comentado, Narradores de Javé, às 20h10, na sala 11 (3º período de Engenharia). Sem inscrição prévia.',
+      link: 'seminario.html#cartazes',
+      textoLink: 'ver o cartaz'
+    },
+    {
+      tipo: 'atencao',
+      de: '2026-11-12',
+      ate: '2026-11-12',
       texto: 'Seminário, hoje (12/11): o minicurso A reforma do Código Civil em debate foi cancelado por motivo de saúde. Quem ia participar vai para as palestras do dia, no auditório, ou para o minicurso Cartografia Cidadã, aberto aos dois cursos.',
       link: 'seminario.html#cartazes',
       textoLink: 'ver a programação de hoje'

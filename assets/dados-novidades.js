@@ -20,6 +20,13 @@ window.DADOS_NOVIDADES = {
   itens: [
     {
       data: '2026-11-12',
+      titulo: 'Seminário: sessão extra de cinema hoje, às 20h10',
+      texto: 'Cinema comentado com Narradores de Javé, na sala 11 (3º período de Engenharia), com a Profa. Paula e o Prof. Vinícius. Sem inscrição prévia.',
+      link: 'seminario.html#cartazes',
+      textoLink: 'ver o cartaz'
+    },
+    {
+      data: '2026-11-12',
       titulo: 'Seminário: minicurso do Código Civil cancelado hoje',
       texto: 'Por motivo de saúde. Quem ia participar vai para as palestras do dia, no auditório, ou para o minicurso Cartografia Cidadã, aberto aos dois cursos.',
       link: 'seminario.html#cartazes',

@@ -71,6 +71,8 @@ window.DADOS_HORARIOS = {
           { tipo: 'Mostra', titulo: 'Observação do céu noturno: uma experiência de divulgação científica', quem: 'Prof. Bruno de Sousa Ferreira e Prof. Júlio César Marques Jr.', onde: 'UEMG Guanhães' }
         ] },
         { hora: '20h30', itens: [
+          /* sessão extra, divulgada pela Unidade em 12/11/2026 */
+          { hora: '20h10', tipo: 'Cinema comentado · sessão extra', titulo: 'Narradores de Javé', quem: 'Profa. Paula e Prof. Vinícius · sem inscrição prévia', onde: 'Sala 11 (3º período de Engenharia)' },
           { tipo: 'Palestra', titulo: 'A exclusão da silvicultura do rol de atividades potencialmente poluidoras pela Lei nº 14.876/2024', quem: 'Profa. Thays Ferreira Ventura e Gustavo Elcino Pimenta', onde: 'Auditório da UEMG Guanhães' }
         ] }
       ],
