@@ -45,6 +45,14 @@ window.DADOS_AVISOS = {
     {
       tipo: 'atencao',
       de: '2026-11-12',
+      ate: '2026-11-12',
+      texto: 'Seminário, hoje (12/11): o minicurso A reforma do Código Civil em debate foi cancelado por motivo de saúde. Quem ia participar vai para as palestras do dia, no auditório, ou para o minicurso Cartografia Cidadã, aberto aos dois cursos.',
+      link: 'seminario.html#cartazes',
+      textoLink: 'ver a programação de hoje'
+    },
+    {
+      tipo: 'atencao',
+      de: '2026-11-12',
       ate: '2026-11-17',
       texto: 'Aula magna com Djonga em 18/11, às 10h, no Ginásio Poliesportivo de Guanhães: 30 vagas para estudantes da UEMG, com manifestação de interesse e confirmação da vaga.',
       link: 'aula-magna-djonga.html',

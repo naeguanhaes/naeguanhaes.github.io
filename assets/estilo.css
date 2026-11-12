@@ -3633,3 +3633,14 @@ body:has(.pg-djonga) { background: #FFFBF1; }
     linear-gradient(125deg, #0E0E0E 0%, #221010 55%, #6E0E14 100%);
 }
 .hero-edital.tema-djonga .eyebrow, .fixo.tema-djonga .fixo-eyebrow { color: #F7CF4A; }
+
+/* atividade cancelada na semana especial (campo cancelado em dados-horarios.js) */
+.esp-cancelado .disc, .esp-cancelado .disciplina, .esp-cancelado .doc, .esp-cancelado .prof { text-decoration: line-through; text-decoration-color: rgba(176,0,32,.7); color: var(--muted); }
+.esp-selo-cancelado { display: inline-block; padding: .1rem .45rem; border-radius: 6px; background: #B00020; color: #fff; letter-spacing: .06em; }
+.esp-motivo { display: block; width: 100%; margin-top: .35rem; padding: .45rem .6rem; border-radius: 10px; background: #FFF1F1; border: 1px solid #F2C4C4; color: #7A0016; font-size: .88rem; font-weight: 600; font-style: normal; text-decoration: none; }
+.agora-linha.esp-linha.esp-cancelado .selo { background: #B00020; color: #fff; }
+.sem-cartaz-cancelado { position: relative; }
+.sem-cartaz-cancelado img { filter: grayscale(.85); opacity: .7; }
+.sem-cartaz-faixa { position: absolute; left: 0; right: 0; top: 42%; padding: .45rem .5rem; background: #B00020; color: #fff; font-weight: 800; text-align: center; letter-spacing: .06em; font-size: .95rem; }
+.sem-cancelado-aviso { margin: 0 0 .8rem; padding: .7rem .9rem; border-radius: 12px; background: #FFF1F1; border: 1px solid #F2C4C4; color: #7A0016; }
+.sem-lista .sem-riscado i { text-decoration: line-through; }

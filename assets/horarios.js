@@ -72,12 +72,13 @@
     var linhas = [];
     faixas.forEach(function (f) {
       f.itens.forEach(function (it) {
-        linhas.push('<div class="agora-linha esp-linha">' +
-          '<span class="selo">' + U.escapar(it.tipo) + '</span>' +
+        linhas.push('<div class="agora-linha esp-linha' + (it.cancelado ? ' esp-cancelado' : '') + '">' +
+          '<span class="selo">' + (it.cancelado ? 'Cancelado · ' : '') + U.escapar(it.tipo) + '</span>' +
           '<span class="hora">' + U.escapar(it.hora || f.hora) + '</span>' +
           '<span class="disciplina">' + U.escapar(it.titulo) + '</span>' +
           (it.onde ? '<span class="onde">' + U.escapar(it.onde) + '</span>' : '') +
           (it.quem ? '<span class="prof">' + U.escapar(it.quem) + '</span>' : '') +
+          (it.cancelado ? '<span class="esp-motivo">' + U.escapar(it.cancelado) + '</span>' : '') +
         '</div>');
       });
     });
@@ -104,11 +105,13 @@
 
     function itemHTML(it, horaSolta) {
       var tit = it.link ? '<a href="' + U.escapar(it.link) + '">' + U.escapar(it.titulo) + '</a>' : U.escapar(it.titulo);
-      return '<div class="esp-item">' +
-        '<span class="esp-tipo">' + U.escapar(it.tipo) + ((it.hora || horaSolta) && /^\d/.test(it.hora || horaSolta) ? ' · ' + U.escapar(it.hora || horaSolta) : '') + '</span>' +
+      /* cancelado: atividade que não acontece mais; o texto diz o porquê e para onde ir */
+      return '<div class="esp-item' + (it.cancelado ? ' esp-cancelado' : '') + '">' +
+        '<span class="esp-tipo">' + (it.cancelado ? '<b class="esp-selo-cancelado">Cancelado</b> ' : '') + U.escapar(it.tipo) + ((it.hora || horaSolta) && /^\d/.test(it.hora || horaSolta) ? ' · ' + U.escapar(it.hora || horaSolta) : '') + '</span>' +
         '<span class="disc">' + tit + '</span>' +
         (it.quem ? '<span class="doc">' + U.escapar(it.quem) + '</span>' : '') +
         (it.onde && it.onde !== 'UEMG Guanhães' ? '<span class="esp-onde">' + U.escapar(it.onde) + '</span>' : '') +
+        (it.cancelado ? '<span class="esp-motivo">' + U.escapar(it.cancelado) + '</span>' : '') +
       '</div>';
     }
     function rotuloDia(dt) {
@@ -370,8 +373,8 @@
           '<h4>' + DIAS[col] + (col === colHoje ? ' <span class="semana-hoje">hoje</span>' : '') + '</h4>' +
           '<ul>' + evento.map(function (f) {
             return f.itens.map(function (it) {
-              return '<li><span class="hora">' + U.escapar(it.hora || f.hora) + '</span>' +
-                     '<span class="disciplina">' + U.escapar(it.tipo) + ': ' + U.escapar(it.titulo) + '</span></li>';
+              return '<li' + (it.cancelado ? ' class="esp-cancelado"' : '') + '><span class="hora">' + U.escapar(it.hora || f.hora) + '</span>' +
+                     '<span class="disciplina">' + (it.cancelado ? 'Cancelado · ' : '') + U.escapar(it.tipo) + ': ' + U.escapar(it.titulo) + '</span></li>';
             }).join('');
           }).join('') + '</ul>' +
         '</div>';

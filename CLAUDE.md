@@ -759,3 +759,10 @@ gira, para não aparecerem duas vezes; quando um vence, o próximo sobe sozinho.
 cor do painel (`.fixo.tema-X`, ao lado de cada `.hero-edital.tema-X` no CSS), a `imagem` do destaque
 recortada em 3:1 (`fixoPosicao` ajusta o recorte) e, se houver, um `fixoTexto` mais curto. Item novo
 com tema novo: escrever as duas regras juntas (`.hero-edital.tema-X, .fixo.tema-X`).
+
+Atividade cancelada na semana especial (12/11/2026): o item de `dados-horarios.js` aceita
+`cancelado: 'motivo e para onde ir'`. A grade, os cartões do celular, o painel "Aula de hoje" e a grade
+da semana mostram o selo "Cancelado", o título riscado e o motivo. Primeiro uso: o minicurso "A reforma
+do Código Civil em debate" (12/11), cancelado por motivo de saúde; as palestras do dia foram para o
+auditório. Em seminario.html, o cartaz leva a faixa "CANCELADO" (`.sem-cartaz-cancelado`) e a noite tem
+o aviso `.sem-cancelado-aviso`. A imagem e o PDF da grade foram gerados de novo.

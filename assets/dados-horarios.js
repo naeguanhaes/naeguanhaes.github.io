@@ -62,14 +62,16 @@ window.DADOS_HORARIOS = {
       ],
       '2026-11-12': [
         { hora: '19h', itens: [
-          { tipo: 'Mesa-redonda', titulo: 'Inteligência Artificial no Direito: aplicações, limites e desafios éticos na prática jurídica', quem: 'Profa. Thays Ferreira Ventura e Brendo Ferreira de Miranda', onde: 'UEMG Guanhães' },
-          { tipo: 'Minicurso', titulo: 'A reforma do Código Civil em debate: impactos jurídicos e sociais', quem: 'Profa. Gabriella de Morais', onde: 'UEMG Guanhães' },
+          { tipo: 'Mesa-redonda', titulo: 'Inteligência Artificial no Direito: aplicações, limites e desafios éticos na prática jurídica', quem: 'Profa. Thays Ferreira Ventura e Brendo Ferreira de Miranda', onde: 'Auditório da UEMG Guanhães' },
+          { tipo: 'Minicurso', titulo: 'A reforma do Código Civil em debate: impactos jurídicos e sociais', quem: 'Profa. Gabriella de Morais', onde: 'UEMG Guanhães',
+            /* comunicado da Unidade em 12/11/2026 */
+            cancelado: 'Cancelado por motivo de saúde. Quem ia participar vai para as palestras do dia, no auditório, ou para o minicurso Cartografia Cidadã.' },
           { tipo: 'Minicurso', titulo: 'Topografia aplicada à Engenharia Civil', quem: 'Profa. Gisele Horta B. Miranda', onde: 'UEMG Guanhães' },
-          { tipo: 'Minicurso', titulo: 'Cartografia Cidadã: Leitura Urbana de Guanhães', quem: 'Profa. Paula Ribeiro, Ana Luiza dos Reis e Thomas Pinho C. Nunes', onde: 'UEMG Guanhães' },
+          { tipo: 'Minicurso', titulo: 'Cartografia Cidadã: Leitura Urbana de Guanhães', quem: 'Profa. Paula Ribeiro, Ana Luiza dos Reis e Thomas Pinho C. Nunes · para Direito e Engenharia Civil', onde: 'UEMG Guanhães' },
           { tipo: 'Mostra', titulo: 'Observação do céu noturno: uma experiência de divulgação científica', quem: 'Prof. Bruno de Sousa Ferreira e Prof. Júlio César Marques Jr.', onde: 'UEMG Guanhães' }
         ] },
         { hora: '20h30', itens: [
-          { tipo: 'Palestra', titulo: 'A exclusão da silvicultura do rol de atividades potencialmente poluidoras pela Lei nº 14.876/2024', quem: 'Profa. Thays Ferreira Ventura e Gustavo Elcino Pimenta', onde: 'UEMG Guanhães' }
+          { tipo: 'Palestra', titulo: 'A exclusão da silvicultura do rol de atividades potencialmente poluidoras pela Lei nº 14.876/2024', quem: 'Profa. Thays Ferreira Ventura e Gustavo Elcino Pimenta', onde: 'Auditório da UEMG Guanhães' }
         ] }
       ],
       '2026-11-13': [
