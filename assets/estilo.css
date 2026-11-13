@@ -3169,6 +3169,34 @@ body:has(.pg-transf) { background: #F7F3FD; }
 }
 .hero-edital.tema-transf .eyebrow, .fixo.tema-transf .fixo-eyebrow { color: #CDFA7E; }
 
+/* ═══════════════ VESTIBULAR UEMG 2027 (vestibular.html) ═══════════════ */
+/* Peças da página do PEAES nas cores da campanha do vestibular: roxo, lilás e verde-limão. */
+.pg-vest {
+  --pe-navy: #3F1D5C; --pe-terra: #7A3E9D; --pe-mostarda: #DBDC67; --pe-mostarda-txt: #5A5C0A;
+  --pe-vinho: #8A2A5C; --pe-verde: #5A2A80; --pe-creme: #F8F5FC; --pe-creme-2: #EEE7F7;
+}
+body:has(.pg-vest) { background: #F7F5FB; }
+.pg-vest .pe-hero { border-color: #E3D7F0; }
+.pg-vest .pe-blob-1 { background: #96A6D9; }
+.pg-vest .pe-blob-2 { background: #DBDC67; }
+.pg-vest .pe-t1 { font-size: clamp(2.3rem, 7.2vw, 4rem); }
+.pg-vest .pe-t2 { font-size: clamp(1.4rem, 4vw, 2.2rem); color: var(--pe-terra); }
+.pg-vest .pe-selos span, .pg-vest .pe-indice a, .pg-vest .pe-quem-item, .pg-vest .pe-aux, .pg-vest .pe-passos li { border-color: #E3D7F0; }
+.pg-vest .pe-quem-ico { background: var(--pe-terra); }
+.pg-vest .pe-crono::before { background: #E3D7F0; }
+.vest-arte img { max-width: 400px; margin-inline: auto; }
+.vest-banner { margin: 0; }
+.vest-banner img { display: block; width: 100%; height: auto; border-radius: 18px; }
+.vest-cat .pe-quem-item { grid-template-columns: 3.4rem 1fr; }
+.vest-cat .pe-quem-ico { width: 3.4rem; border-radius: 12px; font-size: .95rem; }
+.hero-edital.tema-vestibular, .fixo.tema-vestibular {
+  background:
+    radial-gradient(90% 80% at 96% 4%, rgba(219,220,103,.32) 0%, rgba(219,220,103,0) 58%),
+    radial-gradient(80% 70% at 2% 104%, rgba(150,166,217,.55) 0%, rgba(150,166,217,0) 62%),
+    linear-gradient(125deg, #2E1247 0%, #5A2A80 55%, #7A3E9D 100%);
+}
+.hero-edital.tema-vestibular .eyebrow, .fixo.tema-vestibular .fixo-eyebrow { color: #E4E57A; }
+
 /* ═══════════════ ESTÁGIO NO INSS (estagio-inss.html) ═══════════════ */
 /* Peças da página do PEAES nas cores da marca do INSS: o azul, o verde e o amarelo. */
 .pg-inss {

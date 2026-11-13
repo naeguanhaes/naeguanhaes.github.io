@@ -149,11 +149,8 @@ conferir que já está no `sw.js` e anunciar em `assets/dados-novidades.js`.
   grades de semestres encerrados. Aguardando existir mais de um semestre.
   As instruções de como arquivar estão dentro do próprio arquivo de índice.
 
-- **`vestibular.html`** (Vestibular 2027, Fase 3 do projeto): pronta com os
-  campos "a confirmar". Só vai ao ar quando o coordenador tiver as
-  informações oficiais do vestibular (pedido em 09/10/2026).
+- ~~`vestibular.html`~~: **no ar desde 13/11/2026**, ver a seção "Vestibular UEMG 2027".
 Todas já funcionam por endereço direto, para o coordenador revisar.
-`vestibular.html` está em `FORA_DO_CACHE` no `sw.js`.
 
 Rascunhos ocultos criados em 21/10/2026 (todos em `FORA_DO_CACHE`, com `noindex`):
 - ~~`transferencia.html`~~: **no ar desde 09/11/2026**, ver a seção "Transferência e novo título 2027.1".
@@ -779,3 +776,21 @@ disciplinas da UAB (cursos a distância). As datas da Unidade (TCC, provas finai
 25/10) ainda não existem para 2027: entram quando a Unidade mandar. **Em janeiro de 2027:** passar
 `ano` para 2027 e, se quiser, apagar os eventos de 2026 (e tirar 2026 de `anos`). O rascunho oculto
 `rematricula.html` já tem as datas de 2027/1; falta o passo a passo com as telas do Lyceum.
+
+## Vestibular UEMG 2027 (no ar desde 13/11/2026)
+
+`vestibular.html` (era rascunho oculto; aba destacada no menu logo depois do D.A, em roxo, com
+`data-ate="2027-01-17"`, o dia das provas) reúne o que a UEMG já divulgou em vestibular.uemg.br
+e no cartaz da campanha, enviados pelo coordenador em 13/11: **provas em 17/01/2027**, inscrições
+"de novembro a dezembro" (datas exatas só no edital), taxa de **R$ 30** com isenção para quem fez o
+último ano do ensino médio em escola pública ou está no CadÚnico com renda de até 1,5 salário mínimo
+por pessoa (pedida na inscrição, com termo de compromisso; documentos só na pré-matrícula), e a
+divisão das vagas das Resoluções Conun nº 727 e 729/2026: **75% Vestibular e 25% SiSU** (o SiSU é
+só ampla concorrência); dentro do Vestibular, 45% ampla concorrência, **50% PROCAN** e 5% Inclusão
+Regional, mais vagas adicionais para pessoas trans. **O edital e o cronograma ainda não tinham saído
+em 13/11** ("Em breve" no site oficial): quando saírem, trazer as datas exatas para o cronograma
+(`#pe-crono`), o link do edital e, se houver, o número de vagas de Guanhães. Cartaz e banner em
+`assets/eventos/vestibular-2027*.webp`, cores da campanha em `.pg-vest`, painel `tema: 'vestibular'`
+(com `semContagem` e `fixo: false`, porque ainda não há inscrição aberta com prazo). Stories em
+`assets/stories/vestibular.jpg` (o cartaz sobre o verde-limão). O `nae:revisar-em` pede releitura
+em 20/11, 01/12 e 18/01. `kit-vestibular.html` continua oculto (material interno).

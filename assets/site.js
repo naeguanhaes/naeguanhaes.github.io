@@ -1083,6 +1083,7 @@
      imagem própria, ou passou da validade, usa a geral do NAE. As imagens
      saem de ferramentas/stories/ (stories.json + gerar.js). */
   var STORIES = {
+    'vestibular': { img: 'assets/stories/vestibular.jpg', ate: '2027-01-17' },
     'mostra-profissoes': { img: 'assets/stories/mostra-profissoes.jpg', ate: '2026-11-13' },
     'peaes': { img: 'assets/stories/peaes.jpg', ate: '2026-11-16' },
     'estagio-inclua': { img: 'assets/stories/estagio-inclua.jpg', ate: '2026-11-09' },

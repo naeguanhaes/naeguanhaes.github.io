@@ -31,6 +31,12 @@ window.DADOS_BUSCA = {
       k: 'como chegar endereco localizacao onde fica mapa gps rota google maps waze br-259 2250 nova uniao chegar na faculdade caminho'
     },
     {
+      t: 'Vestibular UEMG 2027',
+      d: 'Provas em 17 de janeiro de 2027, inscrições de novembro a dezembro, taxa de R$ 30 com isenção para escola pública, vagas do PROCAN e da Inclusão Regional, e os cursos de Guanhães.',
+      u: 'vestibular.html',
+      k: 'vestibular 2027 uemg prova provas 17 de janeiro inscricao inscricoes taxa isencao isento cadunico escola publica sisu enem procan cotas reserva de vagas inclusao regional pessoas trans ampla concorrencia ingresso entrar na faculdade ensino medio calouro'
+    },
+    {
       t: 'Transferência e obtenção de novo título 2027.1',
       d: 'Processo seletivo para quem estuda em outra instituição ou já tem diploma: 3 vagas em Direito e 10 em Engenharia Civil em Guanhães, inscrições de 9 a 13/11, seleção pelo CRA.',
       u: 'transferencia.html',

@@ -20,6 +20,13 @@ window.DADOS_NOVIDADES = {
   itens: [
     {
       data: '2026-11-13',
+      titulo: 'Vestibular UEMG 2027: provas em 17 de janeiro',
+      texto: 'Inscrições de novembro a dezembro, taxa de R$ 30 com isenção para quem estudou em escola pública e metade das vagas do vestibular reservada pelo PROCAN. A página reúne o que já saiu e os cursos de Guanhães.',
+      link: 'vestibular.html',
+      textoLink: 'ver o Vestibular 2027'
+    },
+    {
+      data: '2026-11-13',
       titulo: 'Saiu o calendário acadêmico de 2027',
       texto: 'Aulas a partir de 1º de março para os veteranos, renovação de matrícula de 1 a 5 de fevereiro e Carnaval de 8 a 10/02. Na página do calendário, escolha o ano de 2027.',
       link: 'calendario.html?ano=2027',

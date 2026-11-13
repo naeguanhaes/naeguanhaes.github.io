@@ -36,6 +36,14 @@ window.DADOS_AVISOS = {
   avisos: [
     {
       tipo: 'novidade',
+      de: '2026-11-13',
+      ate: '2026-12-31',
+      texto: 'Vestibular UEMG 2027: provas em 17 de janeiro e inscrições de novembro a dezembro. Taxa de R$ 30, com isenção para quem fez o último ano do ensino médio em escola pública.',
+      link: 'vestibular.html',
+      textoLink: 'ver o que já saiu'
+    },
+    {
+      tipo: 'novidade',
       de: '2026-11-11',
       ate: '2026-12-11',
       texto: 'Diretório Acadêmico: solicitações, reclamações e sugestões agora vão pelo modelo de encaminhamento em PDF, enviado ao e-mail da ouvidoria do DA.',
