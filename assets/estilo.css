@@ -190,6 +190,41 @@ html[data-contraste="alto"] .nav-link.nav-destaque { border-color: #000; }
   color: #fff; background: var(--c); border-color: var(--c); box-shadow: var(--sh-cor);
 }
 .nav-link[aria-current="page"] .dot { background: rgba(255,255,255,.8); opacity: 1; }
+/* Aba do Vestibular 2027 (pedido do coordenador em 13/11/2026: "algo diferente e chamativo").
+   Um adesivo nas cores da campanha da UEMG: verde-limão, letras roxas e a estrela lilás do cartaz,
+   inclinado como na colagem. A estrela gira devagar e um brilho atravessa a aba de tempos em tempos;
+   quem pede menos movimento no aparelho vê tudo parado. */
+.nav-link.nav-vest {
+  position: relative; overflow: hidden; isolation: isolate;
+  background: linear-gradient(115deg, #EEF08A 0%, #DBDC67 55%, #C8D44E 100%);
+  border: 2px solid #7A3E9D; color: #4A1F6E;
+  font-weight: 900; text-transform: uppercase; letter-spacing: .05em; font-size: .82rem;
+  padding: .38rem .95rem .38rem .7rem; transform: rotate(-2deg);
+  box-shadow: 3px 3px 0 #7A3E9D;
+  animation: vest-pulo 3.2s ease-in-out infinite;
+}
+.nav-link.nav-vest b { font-weight: 900; color: #7A3E9D; }
+.nav-link.nav-vest:hover, .nav-link.nav-vest[aria-current="page"] {
+  background: linear-gradient(115deg, #F3F59A 0%, #E2E36F 55%, #CFDA55 100%);
+  color: #3F1D5C; border-color: #5A2A80; filter: none;
+  transform: rotate(0deg) translateY(-1px); box-shadow: 4px 4px 0 #5A2A80; animation: none;
+}
+.nav-vest-estrela { flex: none; fill: #96A6D9; stroke: #5A2A80; stroke-width: 1.4; stroke-linejoin: round; animation: vest-gira 9s linear infinite; }
+.nav-link.nav-vest::after {
+  content: ""; position: absolute; inset: -2px auto -2px -40%; width: 35%; z-index: -1;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,.75), transparent);
+  transform: skewX(-20deg); animation: vest-brilho 4.5s ease-in-out infinite;
+}
+@keyframes vest-gira { to { transform: rotate(360deg); } }
+@keyframes vest-brilho { 0%, 62% { left: -40%; } 100% { left: 120%; } }
+@keyframes vest-pulo { 0%, 88%, 100% { transform: rotate(-2deg); } 92% { transform: rotate(-2deg) translateY(-2px) scale(1.04); } 96% { transform: rotate(-2deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .nav-link.nav-vest, .nav-vest-estrela, .nav-link.nav-vest::after { animation: none; }
+  .nav-link.nav-vest::after { display: none; }
+}
+html[data-contraste="alto"] .nav-link.nav-vest { background: #fff; color: #000; border-color: #000; box-shadow: 3px 3px 0 #000; animation: none; }
+html[data-contraste="alto"] .nav-link.nav-vest b { color: #000; }
+html[data-contraste="alto"] .nav-link.nav-vest::after { display: none; }
 /* Símbolo P&e do 28º Seminário no lugar da bolinha, sobre um fundo
    branco para ler bem também na aba ativa. */
 .nav-marca {

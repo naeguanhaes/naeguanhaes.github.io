@@ -779,7 +779,7 @@ disciplinas da UAB (cursos a distância). As datas da Unidade (TCC, provas finai
 
 ## Vestibular UEMG 2027 (no ar desde 13/11/2026)
 
-`vestibular.html` (era rascunho oculto; aba destacada no menu logo depois do D.A, em roxo, com
+`vestibular.html` (era rascunho oculto; aba destacada no menu logo depois do D.A, com
 `data-ate="2027-01-17"`, o dia das provas) reúne o que a UEMG já divulgou em vestibular.uemg.br
 e no cartaz da campanha, enviados pelo coordenador em 13/11: **provas em 17/01/2027**, inscrições
 "de novembro a dezembro" (datas exatas só no edital), taxa de **R$ 30** com isenção para quem fez o
@@ -794,3 +794,9 @@ em 13/11** ("Em breve" no site oficial): quando saírem, trazer as datas exatas 
 (com `semContagem` e `fixo: false`, porque ainda não há inscrição aberta com prazo). Stories em
 `assets/stories/vestibular.jpg` (o cartaz sobre o verde-limão). O `nae:revisar-em` pede releitura
 em 20/11, 01/12 e 18/01. `kit-vestibular.html` continua oculto (material interno).
+
+**A aba do menu é um "adesivo" da campanha** (pedido do coordenador em 13/11: "algo diferente e
+chamativo"): classe `nav-vest`, verde-limão com letras roxas, levemente inclinada, sombra roxa
+chapada, a estrela lilás do cartaz em SVG (`.nav-vest-estrela`, gira devagar) e um brilho que
+atravessa a aba. Com `prefers-reduced-motion` tudo fica parado; no alto contraste vira branco e
+preto. O bloco do menu é igual em todas as páginas: mexeu na aba, troque em todas de uma vez.
