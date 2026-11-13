@@ -190,6 +190,15 @@ html[data-contraste="alto"] .nav-link.nav-destaque { border-color: #000; }
   color: #fff; background: var(--c); border-color: var(--c); box-shadow: var(--sh-cor);
 }
 .nav-link[aria-current="page"] .dot { background: rgba(255,255,255,.8); opacity: 1; }
+/* Início como uma casinha desenhada (pedido do coordenador em 13/11/2026). O nome continua
+   no aria-label e no title do link, para leitor de tela e para quem passa o mouse. */
+.nav-link.nav-inicio { padding: .4rem .72rem; }
+.nav-casa { width: 1.3rem; height: 1.3rem; flex: none; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.nav-casa .nav-casa-corpo { fill: color-mix(in srgb, var(--c) 14%, transparent); }
+.nav-casa .nav-casa-porta { fill: currentColor; fill-opacity: .22; }
+.nav-casa .nav-casa-janela { fill: currentColor; stroke: none; }
+.nav-link.nav-inicio[aria-current="page"] .nav-casa .nav-casa-corpo { fill: rgba(255,255,255,.16); }
+.nav-link.nav-inicio:hover .nav-casa { transform: translateY(-1px) rotate(-4deg); transition: transform .18s; }
 /* Aba do Vestibular 2027 (pedido do coordenador em 13/11/2026: "algo diferente e chamativo").
    Um adesivo nas cores da campanha da UEMG: verde-limão, letras roxas e a estrela lilás do cartaz,
    inclinado como na colagem. A estrela gira devagar e um brilho atravessa a aba de tempos em tempos;

@@ -451,9 +451,11 @@ Seção "Meu curso": `curso` (visão geral), `matriz`, `atividades`, `estagio`,
 `tcc`, `secretaria`. Todas alimentadas por `assets/dados-curso.js`.
 Páginas ocultas: `editais`, `calouro`, `semestres`.
 
-O menu tem 8 títulos, nesta ordem definida pelo coordenador: Início, Sistemas,
-Aulas e prazos, Ferramentas, Meu curso, Apoio psicológico, Avisos e Sobre o
-NAE. Cinco abrem submenu; Início, Apoio e Avisos são link direto. O contato
+O menu, na ordem definida pelo coordenador em 13/11/2026: **Início** (uma casinha desenhada em SVG,
+`nav-inicio`/`.nav-casa`, com o nome no `aria-label` e no `title`), as abas de campanha
+(**Vestibular 2027**, **D.A**, e o Seminário enquanto durar), depois **Aulas e prazos**, **Meu curso**,
+**Editais e bolsas**, **Sistemas e Wi-Fi**, **Ferramentas**, Apoio psicológico, Avisos e Sobre o NAE.
+Os grupos abrem submenu; Início, Apoio e Avisos são link direto. O contato
 mora dentro de Sobre o NAE. No HTML os links do grupo ficam soltos dentro de um
 `<div class="nav-grupo" data-grupo="...">`: sem JavaScript eles aparecem como
 links normais, e o `site.js` é que os recolhe no painel. Ao mexer no menu,
