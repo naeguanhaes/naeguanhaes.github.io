@@ -19,6 +19,13 @@ window.DADOS_NOVIDADES = {
   atualizadoEm: '2026-11-03',
   itens: [
     {
+      data: '2026-11-13',
+      titulo: 'Saiu o calendário acadêmico de 2027',
+      texto: 'Aulas a partir de 1º de março para os veteranos, renovação de matrícula de 1 a 5 de fevereiro e Carnaval de 8 a 10/02. Na página do calendário, escolha o ano de 2027.',
+      link: 'calendario.html?ano=2027',
+      textoLink: 'ver o calendário de 2027'
+    },
+    {
       data: '2026-11-12',
       titulo: 'Seminário: sessão extra de cinema hoje, às 20h10',
       texto: 'Cinema comentado com Narradores de Javé, na sala 11 (3º período de Engenharia), com a Profa. Paula e o Prof. Vinícius. Sem inscrição prévia.',

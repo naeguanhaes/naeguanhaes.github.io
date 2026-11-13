@@ -3644,3 +3644,9 @@ body:has(.pg-djonga) { background: #FFFBF1; }
 .sem-cartaz-faixa { position: absolute; left: 0; right: 0; top: 42%; padding: .45rem .5rem; background: #B00020; color: #fff; font-weight: 800; text-align: center; letter-spacing: .06em; font-size: .95rem; }
 .sem-cancelado-aviso { margin: 0 0 .8rem; padding: .7rem .9rem; border-radius: 12px; background: #FFF1F1; border: 1px solid #F2C4C4; color: #7A0016; }
 .sem-lista .sem-riscado i { text-decoration: line-through; }
+
+/* seletor de ano do calendário (calendario.html, desde o calendário de 2027) */
+.cal-anos { margin-bottom: -.4rem; }
+.cal-anos .chip { font-size: 1rem; }
+.cal-novo { display: inline-block; margin-left: .35rem; padding: .05rem .45rem; border-radius: 99px; background: var(--vermelho); color: #fff; font-size: .72rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+.chip[aria-pressed="true"] .cal-novo { background: #fff; color: var(--vermelho); }

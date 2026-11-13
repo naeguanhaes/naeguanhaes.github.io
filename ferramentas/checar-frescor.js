@@ -65,7 +65,7 @@ if (H && H.semestre && H.semestre !== semestreEsperado) {
 }
 
 /* ── 2. ano do calendário ─────────────────────────────── */
-if (C && C.ano && Number(C.ano) !== ANO) {
+if (C && C.ano && !(C.anos || [C.ano]).map(Number).includes(ANO)) {
   recados.push('O calendário acadêmico publicado é de **' + C.ano + '** e já estamos em **' +
     ANO + '**. Procure a resolução COEPE do ano corrente e atualize `assets/dados-calendario.js`.');
 }

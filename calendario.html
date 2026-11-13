@@ -131,12 +131,13 @@
 
   <div class="col stack-s">
     <div class="titulo-sec" style="--c: var(--lilas)">
-      <span class="eyebrow" style="--c: var(--lilas)">Ano de 2026</span>
+      <span class="eyebrow" style="--c: var(--lilas)">Anos de 2026 e 2027</span>
       <h1>Calendário acadêmico</h1>
     </div>
     <p class="lede">
       As datas que organizam o seu ano: início e fim de cada semestre, matrículas,
       trancamento, exames especiais, feriados e recessos.
+      <b>O calendário de 2027 já saiu</b>: escolha o ano logo acima das datas.
     </p>
   </div>
 
@@ -147,11 +148,11 @@
     <div class="compartilhar">
       <button class="btn ghost pequeno" type="button" id="cal-ics" style="--c: var(--turquesa)">📅 Baixar para o meu calendário</button>
       <a class="btn ghost pequeno" data-compartilhar
-         data-titulo="Calendário acadêmico 2026 · UEMG Guanhães"
-         data-texto="Calendário acadêmico 2026 da UEMG:"
+         data-titulo="Calendário acadêmico 2026 e 2027 · UEMG Guanhães"
+         data-texto="Calendário acadêmico da UEMG, com 2026 e o novo calendário de 2027:"
          data-url="https://naeguanhaes.github.io/calendario.html?utm_source=compartilhar"
          style="--c: var(--turquesa)">Enviar para um colega</a>
-      <button class="btn ghost" type="button" data-texto-grupo="Calendário acadêmico 2026 com feriados, prazos de matrícula, trancamento e exames, e dá para baixar para o celular:" data-titulo="Calendário acadêmico 2026" data-url="https://naeguanhaes.github.io/calendario.html?utm_source=grupo" style="--c: var(--lilas)">📋 Copiar mensagem para o grupo</button>
+      <button class="btn ghost" type="button" data-texto-grupo="Calendário acadêmico 2026 e 2027 com feriados, prazos de matrícula, trancamento e exames, e dá para baixar para o celular:" data-titulo="Calendário acadêmico 2026 e 2027" data-url="https://naeguanhaes.github.io/calendario.html?utm_source=grupo" style="--c: var(--lilas)">📋 Copiar mensagem para o grupo</button>
     </div>
   </div>
 
@@ -180,6 +181,8 @@
     </p>
   </div>
 
+  <div class="chips cal-anos" id="cal-anos" role="group" aria-label="Escolher o ano do calendário" hidden></div>
+
   <div class="filtros">
     <div class="chips" role="group" aria-label="Filtrar por tipo de data">
       <button class="chip" type="button" data-tipo="todos" aria-pressed="true" style="--c: var(--azul-esc)">Tudo</button>
@@ -193,8 +196,8 @@
 
   <p class="dica-mapa" style="display:flex;flex-wrap:wrap;gap:.6rem;align-items:center">
     <span class="atualizado" data-atualizado="calendario"></span>
-    Calendário de caráter informativo. As datas oficiais estão na
-    <b>Resolução COEPE/UEMG nº 530, de 11 de dezembro de 2025</b>, publicada em
+    Calendário de caráter informativo. As datas oficiais de <span id="cal-ano-rotulo">2026</span> estão na
+    <b id="cal-resolucao">Resolução COEPE/UEMG nº 530, de 11 de dezembro de 2025</b>, publicada em
     <a href="https://www.uemg.br/calendario-academico" target="_blank" rel="noopener noreferrer">uemg.br</a>.
   </p>
 

@@ -115,7 +115,8 @@ if (C) {
     const ok = (d) => /^\d{4}-\d{2}-\d{2}$/.test(d);
     if (!ok(ev.ini) || !ok(ev.fim)) { erros.push(`calendário, evento ${i + 1} (${ev.titulo}): data fora do formato AAAA-MM-DD`); return; }
     if (ev.fim < ev.ini) erros.push(`calendário: "${ev.titulo}" termina antes de começar`);
-    if (parseInt(ev.ini.slice(0, 4), 10) !== C.ano) alertas.push(`calendário: "${ev.titulo}" está fora do ano ${C.ano}`);
+    const anosOk = C.anos || [C.ano];
+    if (!anosOk.includes(parseInt(ev.ini.slice(0, 4), 10))) alertas.push(`calendário: "${ev.titulo}" está fora dos anos ${anosOk.join(', ')}`);
     if (!['letivo', 'prazo', 'feriado'].includes(ev.tipo)) erros.push(`calendário: "${ev.titulo}" com tipo inválido "${ev.tipo}"`);
   });
 }
@@ -135,7 +136,7 @@ const aulas = H.turmas.reduce((n, t) => n + t.linhas.reduce((m, l) => m + l.celu
 
 console.log('');
 console.log('  Horários ' + H.semestre + ' · ' + turmas + ' turmas, ' + aulas + ' aulas, ' + Object.keys(H.professores).length + ' professores');
-if (C) console.log('  Calendário ' + C.ano + ' · ' + C.eventos.length + ' datas');
+if (C) console.log('  Calendário ' + (C.anos || [C.ano]).join(' e ') + ' · ' + C.eventos.length + ' datas');
 if (A) console.log('  Avisos · ' + (A.avisos || []).length + ' cadastrados');
 console.log('');
 

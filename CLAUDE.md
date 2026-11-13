@@ -766,3 +766,16 @@ da semana mostram o selo "Cancelado", o título riscado e o motivo. Primeiro uso
 do Código Civil em debate" (12/11), cancelado por motivo de saúde; as palestras do dia foram para o
 auditório. Em seminario.html, o cartaz leva a faixa "CANCELADO" (`.sem-cartaz-cancelado`) e a noite tem
 o aviso `.sem-cancelado-aviso`. A imagem e o PDF da grade foram gerados de novo.
+
+## Calendário acadêmico de 2027 (no ar desde 13/11/2026)
+
+Resolução COEPE/UEMG nº 582, de 05/11/2026. Os 47 eventos de 2027 estão na MESMA lista `eventos` de
+`dados-calendario.js`, junto com os de 2026; `anos: [2026, 2027]` liga o seletor de ano em
+`calendario.html` (`#cal-anos`, montado pelo `calendario.js`; abre no ano corrente, e
+`calendario.html?ano=2027` abre direto em 2027) e `resolucoes` dá a fonte de cada ano no rodapé.
+Como tudo está numa lista só, a contagem do topo da inicial, os avisos de prazo, a busca, o planner e
+o "sem aula" dos horários já atravessam a virada do ano sozinhos. Ficou de fora a reoferta de
+disciplinas da UAB (cursos a distância). As datas da Unidade (TCC, provas finais, feriado municipal de
+25/10) ainda não existem para 2027: entram quando a Unidade mandar. **Em janeiro de 2027:** passar
+`ano` para 2027 e, se quiser, apagar os eventos de 2026 (e tirar 2026 de `anos`). O rascunho oculto
+`rematricula.html` já tem as datas de 2027/1; falta o passo a passo com as telas do Lyceum.

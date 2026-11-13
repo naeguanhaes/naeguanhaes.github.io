@@ -16,6 +16,13 @@
   var hoje = U.hojeISO();
   var tipoAtivo = 'todos';
 
+  /* Mais de um ano na lista (desde 13/11/2026, quando saiu o de 2027):
+     C.anos diz quais anos o seletor oferece. Abre no ano corrente. */
+  var anos = C.anos || [C.ano];
+  var anoAtual = new Date().getFullYear();
+  var anoSel = anos.indexOf(anoAtual) !== -1 ? anoAtual : anos[0];
+  function doAno(ev) { return parseInt(ev.ini.slice(0, 4), 10) === anoSel; }
+
   var ROTULO = { letivo: 'Período letivo', prazo: 'Prazo', feriado: 'Feriado / Recesso' };
 
   function diaDoMes(iso) { return parseInt(iso.split('-')[2], 10); }
@@ -81,14 +88,15 @@
   /* ── Ano mês a mês: o atual primeiro, os antigos escondidos ── */
   function montarAno() {
     if (!caixaAno) return;
-    var mesAtual = new Date().getMonth();
+    /* ano futuro: todos os meses à frente; ano que já passou: todos recolhidos */
+    var mesAtual = anoSel === anoAtual ? new Date().getMonth() : anoSel > anoAtual ? -1 : 12;
     var futuros = '', passados = '', mesesPassados = 0;
 
     for (var m = 0; m < 12; m++) {
-      var doMes = C.eventos.filter(function (ev) { return mesDe(ev.ini) === m; });
+      var doMes = C.eventos.filter(function (ev) { return doAno(ev) && mesDe(ev.ini) === m; });
       if (!doMes.length) continue;
       var sec = '<section class="cal-mes' + (m === mesAtual ? ' atual' : '') + '">' +
-                  '<h3>' + U.MESES[m] + (m === mesAtual ? ' · mês atual' : '') + '</h3>' +
+                  '<h3>' + U.MESES[m] + ' de ' + anoSel + (m === mesAtual ? ' · mês atual' : '') + '</h3>' +
                   '<div class="cal-lista">' + doMes.map(function (ev) { return itemHTML(ev, false); }).join('') + '</div>' +
                 '</section>';
       if (m < mesAtual) { passados += sec; mesesPassados++; }
@@ -137,8 +145,36 @@
     });
   });
 
+  /* seletor de ano e a fonte oficial de cada ano */
+  var caixaAnos = document.getElementById('cal-anos');
+  var fonte = document.getElementById('cal-resolucao');
+  var rotuloAno = document.getElementById('cal-ano-rotulo');
+  function mostrarFonte() {
+    if (fonte) fonte.textContent = (C.resolucoes && C.resolucoes[anoSel]) || C.resolucao;
+    if (rotuloAno) rotuloAno.textContent = String(anoSel);
+  }
+  if (caixaAnos && anos.length > 1) {
+    caixaAnos.innerHTML = anos.map(function (a) {
+      return '<button class="chip" type="button" data-ano="' + a + '" aria-pressed="' + (a === anoSel) + '" style="--c: var(--lilas)">' +
+             'Calendário de ' + a + (a > anoAtual ? ' <span class="cal-novo">novo</span>' : '') + '</button>';
+    }).join('');
+    caixaAnos.hidden = false;
+    caixaAnos.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-ano]');
+      if (!b) return;
+      anoSel = parseInt(b.getAttribute('data-ano'), 10);
+      caixaAnos.querySelectorAll('[data-ano]').forEach(function (o) { o.setAttribute('aria-pressed', o === b ? 'true' : 'false'); });
+      montarAno(); filtrar(); mostrarFonte();
+    });
+  }
+  /* calendario.html?ano=2027 abre direto no ano pedido */
+  var pedido = parseInt(new URLSearchParams(location.search).get('ano'), 10);
+  if (anos.indexOf(pedido) !== -1) anoSel = pedido;
+  if (caixaAnos) caixaAnos.querySelectorAll('[data-ano]').forEach(function (o) { o.setAttribute('aria-pressed', String(parseInt(o.getAttribute('data-ano'), 10) === anoSel)); });
+
   montarProximos();
   montarAno();
+  mostrarFonte();
 
   /* ── Baixar o calendário todo (.ics) ──────────────── */
   var btn = document.getElementById('cal-ics');
@@ -153,11 +189,11 @@
         var fimISO = U.hojeISO(fim).replace(/-/g, '');
         linhas.push(
           'BEGIN:VEVENT',
-          'UID:cal-' + i + '-' + C.ano + '@nae-guanhaes',
+          'UID:cal-' + i + '-' + ev.ini.slice(0, 4) + '@nae-guanhaes',
           'DTSTART;VALUE=DATE:' + ev.ini.replace(/-/g, ''),
           'DTEND;VALUE=DATE:' + fimISO,
           'SUMMARY:' + esc(ev.titulo),
-          'DESCRIPTION:' + esc(ROTULO[ev.tipo] + ' · ' + C.resolucao),
+          'DESCRIPTION:' + esc(ROTULO[ev.tipo] + ' · ' + ((C.resolucoes && C.resolucoes[ev.ini.slice(0, 4)]) || C.resolucao)),
           'END:VEVENT'
         );
       });
@@ -165,7 +201,7 @@
       var blob = new Blob([linhas.join('\r\n')], { type: 'text/calendar;charset=utf-8' });
       var a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
-      a.download = 'calendario-academico-' + C.ano + '.ics';
+      a.download = 'calendario-academico-' + anos.join('-') + '.ics';
       document.body.appendChild(a); a.click();
       setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
     });

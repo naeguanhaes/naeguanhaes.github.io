@@ -7,6 +7,14 @@
    municipal e as datas do TCC e das provas finais de Direito).
    Este calendário é informativo; as datas oficiais estão na Resolução.
 
+   2027 (desde 13/11/2026): Resolução COEPE/UEMG nº 582, de 05 de novembro
+   de 2026, só com as datas gerais da UEMG (a reoferta de disciplinas dos
+   cursos a distância, da UAB, ficou de fora: não vale para Guanhães).
+   Os eventos dos dois anos ficam na mesma lista `eventos`; `anos` diz quais
+   anos a página do calendário oferece no seletor, e `resolucoes` a fonte de
+   cada um. Em janeiro de 2027: passar `ano` para 2027 e, quando quiser,
+   apagar os eventos de 2026.
+
    curto: (opcional) nome breve para a contagem do topo da página
    inicial, quando o título é longo.
    marca: (opcional) põe um símbolo ao lado do evento: 'seminario' (o P&e
@@ -21,8 +29,13 @@
 
 window.DADOS_CALENDARIO = {
   ano: 2026,
-  atualizadoEm: '2026-10-21',
+  anos: [2026, 2027],
+  atualizadoEm: '2026-11-13',
   resolucao: 'Resolução COEPE/UEMG nº 530, de 11 de dezembro de 2025, e calendário da Unidade Guanhães',
+  resolucoes: {
+    2026: 'Resolução COEPE/UEMG nº 530, de 11 de dezembro de 2025, e calendário da Unidade Guanhães',
+    2027: 'Resolução COEPE/UEMG nº 582, de 05 de novembro de 2026'
+  },
   fonteUrl: 'https://www.uemg.br/calendario-academico',
 
   eventos: [
@@ -118,6 +131,66 @@ window.DADOS_CALENDARIO = {
     { ini: '2026-12-18', fim: '2026-12-18', titulo: 'Término do 2º semestre letivo, fechamento do Lyceum', tipo: 'letivo' },
     { ini: '2026-12-18', fim: '2026-12-18', titulo: 'PEAES Veteranos 2027: resultado final', tipo: 'prazo', curto: 'PEAES: resultado final' },
     { ini: '2026-12-24', fim: '2026-12-25', titulo: 'Natal, feriado', tipo: 'feriado' },
-    { ini: '2026-12-31', fim: '2026-12-31', titulo: 'Recesso', tipo: 'feriado' }
+    { ini: '2026-12-31', fim: '2026-12-31', titulo: 'Recesso', tipo: 'feriado' },
+
+    /* ── 2027 · Resolução COEPE/UEMG nº 582, de 05/11/2026 ── */
+    { ini: '2027-01-01', fim: '2027-01-31', titulo: 'Feriado / Recesso', tipo: 'feriado' },
+    { ini: '2027-01-01', fim: '2027-01-31', titulo: 'SISU (data a definir)', tipo: 'prazo', semData: true },
+
+    { ini: '2027-02-01', fim: '2027-02-01', titulo: 'Início do 1º semestre letivo de 2027', tipo: 'letivo' },
+    { ini: '2027-02-01', fim: '2027-02-05', titulo: 'Renovação de matrícula on-line dos veteranos (1º semestre de 2027)', tipo: 'prazo', curto: 'Renovação de matrícula 2027/1' },
+    { ini: '2027-02-01', fim: '2027-02-12', titulo: 'Atividades de Integração Acadêmica', tipo: 'prazo' },
+    { ini: '2027-02-08', fim: '2027-02-10', titulo: 'Carnaval', tipo: 'feriado' },
+    { ini: '2027-02-15', fim: '2027-02-19', titulo: 'Ajuste de matrícula, rematrícula (reingresso), trancamento e dispensa de disciplinas', tipo: 'prazo', curto: 'Ajuste de matrícula e trancamento' },
+    { ini: '2027-02-25', fim: '2027-02-25', titulo: 'Início da matrícula on-line dos calouros do Vestibular 2027 (Chamada Regular)', tipo: 'prazo', curto: 'Matrícula dos calouros 2027' },
+
+    { ini: '2027-03-01', fim: '2027-03-01', titulo: 'Início das aulas do 1º semestre de 2027, estudantes veteranos', tipo: 'letivo', curto: 'Início das aulas (veteranos)' },
+    { ini: '2027-03-03', fim: '2027-03-03', titulo: 'Prazo final da matrícula on-line dos calouros do Vestibular 2027 (Chamada Regular)', tipo: 'prazo', curto: 'Fim da matrícula dos calouros' },
+    { ini: '2027-03-08', fim: '2027-03-08', titulo: 'Início das aulas do 1º semestre de 2027, estudantes calouros', tipo: 'letivo', curto: 'Início das aulas (calouros)' },
+    { ini: '2027-03-12', fim: '2027-03-17', titulo: 'Pré-matrícula on-line dos calouros do Vestibular 2027 (excedentes)', tipo: 'prazo' },
+    { ini: '2027-03-15', fim: '2027-03-17', titulo: 'Inscrição em disciplinas eletivas', tipo: 'prazo' },
+    { ini: '2027-03-25', fim: '2027-03-27', titulo: 'Recesso / Feriado da Paixão de Cristo', tipo: 'feriado' },
+
+    { ini: '2027-04-05', fim: '2027-04-09', titulo: 'Inscrições para Reopção 2-2027', tipo: 'prazo' },
+    { ini: '2027-04-21', fim: '2027-04-21', titulo: 'Tiradentes, feriado', tipo: 'feriado' },
+
+    { ini: '2027-05-01', fim: '2027-05-01', titulo: 'Dia do Trabalho, feriado', tipo: 'feriado' },
+    { ini: '2027-05-07', fim: '2027-05-11', titulo: 'Inscrição para transferência e obtenção de novo título 2-2027', tipo: 'prazo' },
+    { ini: '2027-05-27', fim: '2027-05-29', titulo: 'Corpus Christi / Recesso', tipo: 'feriado' },
+
+    { ini: '2027-06-24', fim: '2027-06-24', titulo: 'Recesso: jogo do Brasil na Copa do Mundo (Lei nº 15.421/2026)', tipo: 'feriado', curto: 'Recesso: jogo do Brasil na Copa' },
+    { ini: '2027-06-29', fim: '2027-06-29', titulo: 'Recesso: jogo do Brasil na Copa do Mundo (Lei nº 15.421/2026)', tipo: 'feriado', curto: 'Recesso: jogo do Brasil na Copa' },
+
+    { ini: '2027-07-04', fim: '2027-07-04', titulo: 'Recesso: jogo do Brasil na Copa do Mundo (Lei nº 15.421/2026)', tipo: 'feriado', curto: 'Recesso: jogo do Brasil na Copa' },
+    { ini: '2027-07-10', fim: '2027-07-10', titulo: 'Término das aulas do 1º semestre letivo de 2027', tipo: 'letivo', curto: 'Fim das aulas do 1º semestre' },
+    { ini: '2027-07-12', fim: '2027-07-17', titulo: 'Exame especial / Complementação de carga horária', tipo: 'prazo' },
+    { ini: '2027-07-19', fim: '2027-07-19', titulo: 'Fechamento dos registros no Lyceum', tipo: 'letivo' },
+    { ini: '2027-07-20', fim: '2027-07-31', titulo: 'Recesso de aulas', tipo: 'feriado' },
+    { ini: '2027-07-27', fim: '2027-07-31', titulo: 'Renovação de matrícula on-line dos veteranos (2º semestre de 2027)', tipo: 'prazo', curto: 'Renovação de matrícula 2027/2' },
+    { ini: '2027-07-31', fim: '2027-07-31', titulo: 'Término do 1º semestre letivo de 2027', tipo: 'letivo' },
+
+    { ini: '2027-08-02', fim: '2027-08-02', titulo: 'Início do 2º semestre letivo e das aulas de 2027', tipo: 'letivo', curto: 'Início do 2º semestre de 2027' },
+    { ini: '2027-08-02', fim: '2027-08-06', titulo: 'Ajuste de matrícula, rematrícula (reingresso), trancamento e dispensa de disciplinas', tipo: 'prazo', curto: 'Ajuste de matrícula e trancamento' },
+    { ini: '2027-08-16', fim: '2027-08-18', titulo: 'Inscrição em disciplinas eletivas', tipo: 'prazo' },
+    { ini: '2027-08-31', fim: '2027-09-03', titulo: 'Inscrição para Reopção 1-2028', tipo: 'prazo' },
+
+    { ini: '2027-09-06', fim: '2027-09-07', titulo: 'Recesso / Feriado da Independência do Brasil', tipo: 'feriado' },
+
+    { ini: '2027-10-11', fim: '2027-10-16', titulo: 'Recesso', tipo: 'feriado' },
+    { ini: '2027-10-12', fim: '2027-10-12', titulo: 'Nossa Senhora Aparecida, feriado', tipo: 'feriado' },
+    { ini: '2027-10-15', fim: '2027-10-15', titulo: 'Dia do/a Professor/a', tipo: 'feriado' },
+    { ini: '2027-10-28', fim: '2027-10-28', titulo: 'Dia do/a Servidor/a Público/a, feriado', tipo: 'feriado' },
+
+    { ini: '2027-11-01', fim: '2027-11-02', titulo: 'Recesso / Feriado de Finados', tipo: 'feriado' },
+    { ini: '2027-11-08', fim: '2027-11-12', titulo: 'Inscrição para transferência e obtenção de novo título 1-2028', tipo: 'prazo' },
+    { ini: '2027-11-09', fim: '2027-11-11', titulo: 'Seminário de Pesquisa e Extensão 2027', tipo: 'letivo' },
+    { ini: '2027-11-15', fim: '2027-11-15', titulo: 'Proclamação da República, feriado', tipo: 'feriado' },
+    { ini: '2027-11-20', fim: '2027-11-20', titulo: 'Dia Nacional de Zumbi e da Consciência Negra, feriado', tipo: 'feriado' },
+
+    { ini: '2027-12-11', fim: '2027-12-11', titulo: 'Término das aulas do 2º semestre letivo de 2027', tipo: 'letivo', curto: 'Fim das aulas do 2º semestre' },
+    { ini: '2027-12-11', fim: '2027-12-17', titulo: 'Exame especial / Complementação de carga horária', tipo: 'prazo' },
+    { ini: '2027-12-18', fim: '2027-12-18', titulo: 'Fechamento dos registros no Lyceum', tipo: 'letivo' },
+    { ini: '2027-12-24', fim: '2027-12-25', titulo: 'Natal, feriado', tipo: 'feriado' },
+    { ini: '2027-12-30', fim: '2027-12-30', titulo: 'Recesso e término do 2º semestre letivo de 2027', tipo: 'letivo' }
   ]
 };
