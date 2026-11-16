@@ -141,8 +141,8 @@ window.DADOS_AVISOS = {
     {
       tipo: 'atencao',
       de: '2026-10-27',
-      ate: '2026-11-16',
-      texto: 'PEAES Veteranos 2027: inscrições até 16/11, às 23h59, no Sistema PEAES. Quem já recebeu antes precisa se inscrever de novo.',
+      ate: '2026-12-04',
+      texto: 'PEAES Veteranos 2027: inscrições prorrogadas até 04/12, às 23h59, no Sistema PEAES. Quem já recebeu antes precisa se inscrever de novo.',
       link: 'peaes.html',
       textoLink: 'ver o passo a passo'
     },

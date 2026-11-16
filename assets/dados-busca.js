@@ -80,7 +80,7 @@ window.DADOS_BUSCA = {
     },
     {
       t: 'PEAES Veteranos 2027 · assistência estudantil',
-      d: 'Auxílios de moradia, transporte, alimentação, inclusão digital, creche, saúde, cultura e esporte. Inscrições até 16/11 no Sistema PEAES, com passo a passo, documentos e modelos.',
+      d: 'Auxílios de moradia, transporte, alimentação, inclusão digital, creche, saúde, cultura e esporte. Inscrições até 04/12 no Sistema PEAES (prazo prorrogado), com passo a passo, documentos e modelos.',
       u: 'peaes.html',
       k: 'peaes veteranos 2027 auxilio assistencia estudantil bolsa moradia transporte alimentacao inclusao digital creche saude cultura esporte pcd deficiencia apoio didatico renda per capita salario minimo cadunico procan documentos declaracao composicao familiar edital proex coac 06/2026 inscricao sistema peaes recurso resultado'
     },

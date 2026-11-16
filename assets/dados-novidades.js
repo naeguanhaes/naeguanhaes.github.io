@@ -19,6 +19,13 @@ window.DADOS_NOVIDADES = {
   atualizadoEm: '2026-11-03',
   itens: [
     {
+      data: '2026-11-16',
+      titulo: 'PEAES Veteranos 2027: inscrições prorrogadas até 4 de dezembro',
+      texto: 'A PROEX retificou o cronograma. As inscrições no Sistema PEAES vão até 04/12, às 23h59, e o resultado final passou para 11 de janeiro de 2027. A previsão de pagamentos continua em março.',
+      link: 'peaes.html#cronograma',
+      textoLink: 'ver o cronograma novo'
+    },
+    {
       data: '2026-11-13',
       titulo: 'Vestibular UEMG 2027: provas em 17 de janeiro',
       texto: 'Inscrições de novembro a dezembro, taxa de R$ 30 com isenção para quem estudou em escola pública e metade das vagas do vestibular reservada pelo PROCAN. A página reúne o que já saiu e os cursos de Guanhães.',

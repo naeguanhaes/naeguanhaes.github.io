@@ -581,8 +581,8 @@ referências, disciplinas, atividades, turmas, calendário, novidades, inspeçõ
 
 ## PEAES Veteranos 2027 (no ar desde 27/10/2026)
 
-`peaes.html` (menu "Editais e bolsas", primeiro item, com `data-ate="2026-12-18"`, o dia do
-resultado final) explica o Edital PROEX/COAC nº 06/2026: quem pode, simulador de renda
+`peaes.html` (menu "Editais e bolsas", primeiro item, com `data-ate="2027-01-11"`, o dia do
+resultado final depois da retificação) explica o Edital PROEX/COAC nº 06/2026: quem pode, simulador de renda
 (1,5 salário mínimo por pessoa; mínimo de 2026 = R$ 1.621,00, Decreto nº 12.797/2025, em
 `LIMITE` no script da página), os 10 auxílios com as vagas de Guanhães, passo a passo,
 dispensa do PROCAN 2025/2026, checklist de documentos (guardado em `peaes-2027-docs`),
@@ -593,8 +593,12 @@ se a UEMG publicar retificação, trocar o arquivo e conferir o texto da página
 **O auxílio do PEAES que o estudante já recebe não entra como renda a declarar** (decisão do
 coordenador em 03/11/2026: o Anexo III cita a declaração do PEAES pelo NAE, mas não precisa);
 o item "Bolsa ou estágio" do checklist fala só de estágio institucional e monitor de acessibilidade.
-Passo a passo e modelos saem em 16/11 pelo `data-ate`; o `nae:revisar-em` pede releitura
-em 17/11 (fase de resultados) e 19/12 (fim do processo).
+**Prazo prorrogado** pela Retificação nº 01 do cronograma (PROEX, 13/11/2026, em
+`documentos/peaes-2027/retificacao-01-cronograma.pdf`, sem metadados): inscrições até **04/12**, lista em 09/12,
+recurso 10 e 11/12, resultado dos recursos 15/12, análise 16 a 23/12, resultado preliminar 30/12, recurso 04 e
+05/01/2027 e **resultado final 11/01/2027** (pagamentos seguem previstos para março de 2027). O menu saiu de
+`data-ate="2026-12-18"` para `2027-01-11`. Passo a passo e modelos saem em 04/12 pelo `data-ate`; o
+`nae:revisar-em` pede releitura em 05/12, 31/12 e 12/01/2027.
 
 ## Estágio na UEMG e Monitoria INCLUA (no ar desde 27/10/2026)
 
