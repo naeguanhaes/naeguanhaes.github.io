@@ -56,7 +56,7 @@ window.DADOS_BUSCA = {
     },
     {
       t: 'Aula magna com Djonga',
-      d: 'Aula magna com Djonga, um diálogo entre rap, literatura e educação: 18/11, às 10h, no Ginásio Poliesportivo de Guanhães. 30 vagas para estudantes da UEMG.',
+      d: 'Aula magna com Djonga, um diálogo entre rap, literatura e educação: 18/11, às 10h, no Ginásio Poliesportivo de Guanhães. Inscrições encerradas, com a lista de inscritos na página.',
       u: 'aula-magna-djonga.html',
       k: 'djonga rap aula magna literatura educacao fome grande sertao veredas guimaraes rosa odilon behrens ginasio poliesportivo convite palestra musica do sertao ao rap'
     },

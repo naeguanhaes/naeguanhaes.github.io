@@ -746,8 +746,11 @@ rap, literatura e educação", tema "O que nos move? A fome como experiência so
 política", 18/11/2026 às 10h no Ginásio Poliesportivo de Guanhães, promovida pela E. E. Odilon
 Behrens (projeto "Do Sertão ao Rap"). **30 vagas para a UEMG, evento exclusivo para convidados**:
 manifestação de interesse pelo formulário (forms.gle/F4LqAUJbzg5W9E276) e confirmação da vaga.
-**O formulário não traz prazo**: o botão de inscrição sai depois de 17/11 pelo `data-ate`; se a
-organização informar um prazo, ajustar. Cartaz em `assets/eventos/aula-magna-djonga*.webp`
+**Inscrições encerradas em 16/11** (informado pelo coordenador): os links do formulário e o
+compartilhar saíram, e a seção `#inscritos` mostra a lista de inscritos enviada pelo coordenador (só nome e
+período; 45 estudantes e a juíza da 2ª Vara), em tabela e no PDF `documentos/djonga/lista-de-inscritos.pdf`
+(sem metadados). A seção tem `data-ate="2026-11-18"`, mas **depois do evento apague a seção e o PDF**: os
+nomes não devem ficar no site além do dia do encontro (pedido: "até o dia dele"). Cartaz em `assets/eventos/aula-magna-djonga*.webp`
 (`-quadrado` no painel, `tema: 'djonga'`), cores em `.pg-djonga`. O `nae:revisar-em` pede releitura
 em 18/11 e 19/11; depois do evento a página pode sair do menu (já sai sozinha) e ir para o arquivo.
 

@@ -138,7 +138,7 @@ window.DADOS_EDITAIS = {
     },
     {
       titulo: 'Aula magna com Djonga · convite aos estudantes',
-      resumo: 'Aula magna com Djonga, um diálogo entre rap, literatura e educação: 18/11, às 10h, no Ginásio Poliesportivo de Guanhães. A UEMG tem 30 vagas, com manifestação de interesse pelo formulário e confirmação da vaga.',
+      resumo: 'Aula magna com Djonga, um diálogo entre rap, literatura e educação: 18/11, às 10h, no Ginásio Poliesportivo de Guanhães. Inscrições encerradas: a lista de inscritos está na página do evento.',
       tipo: 'outro',
       abre: '2026-11-12',
       encerra: '2026-11-18',
@@ -151,15 +151,15 @@ window.DADOS_EDITAIS = {
         imagemAlt: 'Cartaz: Convite aos estudantes da UEMG Guanhães. Aula magna com Djonga, um diálogo entre rap, literatura e educação.',
         eyebrow: 'Convite aos estudantes da UEMG Guanhães',
         titulo: 'Aula magna com Djonga',
-        texto: 'Um diálogo entre rap, literatura e educação, com o tema <b>“O que nos move? A fome como experiência social, existencial e política”</b>. Evento para convidados: manifeste interesse e aguarde a confirmação da vaga.',
+        texto: 'Um diálogo entre rap, literatura e educação, com o tema <b>“O que nos move? A fome como experiência social, existencial e política”</b>. Evento para convidados: <b>a lista de inscritos está fechada</b>. Confira o seu nome na página.',
+        rotuloPrazo: 'para o encontro',
+        textoUltimoDia: 'É hoje, às 10h',
         numeros: [
           { n: '18/11', r: 'quarta, às 10h' },
-          { n: '30', r: 'vagas para a UEMG' },
+          { n: 'Lista', r: 'de inscritos fechada' },
           { n: 'Ginásio', r: 'Poliesportivo de Guanhães' }
         ],
-        acao: 'Ver como participar',
-        extraTexto: 'Compartilhar no WhatsApp',
-        extraLink: 'https://wa.me/?text=%2AAula%20magna%20com%20Djonga%20%C2%B7%20convite%20aos%20estudantes%20da%20UEMG%20Guanh%C3%A3es%2A%0AUm%20di%C3%A1logo%20entre%20rap%2C%20literatura%20e%20educa%C3%A7%C3%A3o%2C%20com%20o%20tema%3A%20O%20que%20nos%20move%3F%20A%20fome%20como%20experi%C3%AAncia%20social%2C%20existencial%20e%20pol%C3%ADtica.%0A%0A%E2%80%A2%20Quarta%2C%2018%2F11%2C%20%C3%A0s%2010h%2C%20no%20Gin%C3%A1sio%20Poliesportivo%20de%20Guanh%C3%A3es%0A%E2%80%A2%20S%C3%B3%2030%20vagas%20para%20estudantes%20da%20UEMG%0A%E2%80%A2%20Manifesta%C3%A7%C3%A3o%20de%20interesse%20pelo%20formul%C3%A1rio%20e%20confirma%C3%A7%C3%A3o%20da%20vaga%0A%0A%2AComo%20participar%20no%20site%20do%20NAE%3A%2A%0Ahttps%3A%2F%2Fnaeguanhaes.github.io%2Faula-magna-djonga.html'
+        acao: 'Ver a lista de inscritos'
       }
     },
     {

@@ -20,6 +20,13 @@ window.DADOS_NOVIDADES = {
   itens: [
     {
       data: '2026-11-16',
+      titulo: 'Aula magna com Djonga: saiu a lista de inscritos',
+      texto: 'As inscrições estão encerradas. A lista da UEMG fica na página do evento até o dia do encontro, quarta, 18/11, às 10h, no Ginásio Poliesportivo de Guanhães.',
+      link: 'aula-magna-djonga.html#inscritos',
+      textoLink: 'ver a lista'
+    },
+    {
+      data: '2026-11-16',
       titulo: 'PEAES Veteranos 2027: inscrições prorrogadas até 4 de dezembro',
       texto: 'A PROEX retificou o cronograma. As inscrições no Sistema PEAES vão até 04/12, às 23h59, e o resultado final passou para 11 de janeiro de 2027. A previsão de pagamentos continua em março.',
       link: 'peaes.html#cronograma',
