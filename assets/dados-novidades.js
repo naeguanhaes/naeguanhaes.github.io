@@ -20,6 +20,13 @@ window.DADOS_NOVIDADES = {
   itens: [
     {
       data: '2026-11-17',
+      titulo: 'O portal em números: 1.469 visitas',
+      texto: 'Nova página dentro do status do projeto, com as páginas mais vistas, as visitas que chegam pelo WhatsApp, o uso no celular e o crescimento desde 20 de agosto.',
+      link: 'acessos.html',
+      textoLink: 'ver os acessos'
+    },
+    {
+      data: '2026-11-17',
       titulo: 'Natal que nos Une: proposta do Diretório Acadêmico',
       texto: 'Leve um enfeite ou uma decoração natalina para o espaço de convivência da Unidade até 08/12. Nos últimos dias de aula, uma confraternização para partilhar com os colegas, com data a confirmar.',
       link: 'diretorio-academico.html#natal',

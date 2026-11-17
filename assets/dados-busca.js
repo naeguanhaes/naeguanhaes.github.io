@@ -37,6 +37,12 @@ window.DADOS_BUSCA = {
       k: 'natal natalino natalina decoracao enfeite enfeites arvore confraternizacao festa fim de ano amigo partilha comida lanche diretorio academico da projeto natal compartilhado espaco de convivencia'
     },
     {
+      t: 'Acessos do portal',
+      d: 'O portal em números: 1.469 visitas de 20/08 a 17/11/2026, páginas mais vistas, visitas pelo WhatsApp, celular e computador. Dados do GoatCounter, sem cookies.',
+      u: 'acessos.html',
+      k: 'acessos visitas estatisticas numeros quantas pessoas usam goatcounter grafico paginas mais vistas whatsapp celular relatorio projeto de extensao conexao universitaria'
+    },
+    {
       t: 'Vestibular UEMG 2027',
       d: 'Provas em 17 de janeiro de 2027, inscrições de novembro a dezembro, taxa de R$ 30 com isenção para escola pública, vagas do PROCAN e da Inclusão Regional, e os cursos de Guanhães.',
       u: 'vestibular.html',

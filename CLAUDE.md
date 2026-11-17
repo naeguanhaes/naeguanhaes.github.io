@@ -822,3 +822,17 @@ confirmar** (as aulas terminam em 12/12). Seção `#natal` em `diretorio-academi
 âncora `natal`). Cartaz em `assets/da/natal-2026*.webp`. **Quando o DA confirmar a data da confraternização:**
 trocar o "data a confirmar" na seção, no item do painel, na novidade e pôr a data no calendário. O
 `nae:revisar-em` da página do DA pede releitura em 09/12.
+
+## Acessos do portal (no ar desde 17/11/2026)
+
+`acessos.html` ("O portal em números", pedido do coordenador: "uma página personalizada e colorida que fique
+dentro do status do projeto") mostra os números do GoatCounter: total de visitas (contador animado no topo),
+quatro cartões coloridos, o crescimento acumulado (534 em 09/10 e 578 em 21/10, dos relatórios de extensão,
+e o total atual), as páginas mais visitadas (a inicial soma "/" e "/index.html"), a origem (WhatsApp e acesso
+direto), as visitas por divulgação (`utm_campaign`), tela, sistema, navegador e países. Tudo em HTML e CSS
+(classes `ac-*`, barras com `--v` em % do maior valor, roscas com `conic-gradient`), sem biblioteca. **Não tem
+item no menu**: fica dentro do Status do projeto (trilha e chamada `.ac-chamada` no topo de `status-projeto.html`).
+**Para atualizar** com um PDF novo do GoatCounter: trocar os números na página (e as larguras `--v`, as fatias das
+roscas e as alturas `--h` do crescimento, acrescentando a coluna da data nova), a chamada em `status-projeto.html`,
+a busca e a fonte no fim da página. **O PDF exportado do GoatCounter traz o e-mail do coordenador no topo: nunca
+publicar o PDF, só os números.** Dados atuais: 20/08 a 17/11/2026, 1.469 visitas.
