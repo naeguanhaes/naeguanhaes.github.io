@@ -37,6 +37,12 @@ window.DADOS_BUSCA = {
       k: 'natal natalino natalina decoracao enfeite enfeites arvore confraternizacao festa fim de ano amigo partilha comida lanche diretorio academico da projeto natal compartilhado espaco de convivencia'
     },
     {
+      t: 'Tribunal do Júri · convite aos estudantes de Direito',
+      d: 'Sessões do Tribunal do Júri em 18/11, 19/11 e 26/11, às 9h, abertas aos estudantes de Direito. Cada sessão pode valer 2 horas de atividade complementar.',
+      u: 'tribunal-do-juri.html',
+      k: 'tribunal do juri juri sessao sessoes julgamento audiencia forum pratica juridica direito convite atividade complementar horas declaracao ouvinte formulario 2 penal'
+    },
+    {
       t: 'Acessos do portal',
       d: 'O portal em números: 1.469 visitas de 20/08 a 17/11/2026, páginas mais vistas, visitas pelo WhatsApp, celular e computador. Dados do GoatCounter, sem cookies.',
       u: 'acessos.html',

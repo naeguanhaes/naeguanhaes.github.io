@@ -836,3 +836,15 @@ item no menu**: fica dentro do Status do projeto (trilha e chamada `.ac-chamada`
 roscas e as alturas `--h` do crescimento, acrescentando a coluna da data nova), a chamada em `status-projeto.html`,
 a busca e a fonte no fim da página. **O PDF exportado do GoatCounter traz o e-mail do coordenador no topo: nunca
 publicar o PDF, só os números.** Dados atuais: 20/08 a 17/11/2026, 1.469 visitas.
+
+## Tribunal do Júri (no ar desde 17/11/2026)
+
+`tribunal-do-juri.html` (menu "Editais e bolsas", depois do Djonga, `data-ate="2026-11-26"`) divulga o convite da
+UEMG aos estudantes de Direito para acompanhar as sessões do Tribunal do Júri em **18/11 (quarta), 19/11 e 26/11
+(quintas), sempre às 9h**, com "Local: Tribunal do Júri" (o convite não dá endereço; não inventar). A página explica
+que, pelo PPC (Quadro 02), **participação em sessões de julgamento vale 2 h por sessão, teto de 30 h**, com a
+declaração de participação como ouvinte assinada pelo servidor público responsável (Formulário 2), e manda
+confirmar com a Coordenação como obter o modelo (o site não tem o Formulário 2). Convite em `assets/juri/`, cores em
+`.pg-juri`, painel `tema: 'juri'` (`semContagem`, `fixo: false`, `naLista: false`), calendário com as três sessões,
+aviso, novidade, busca, Stories e prévia `assets/og/tribunal-do-juri.jpg`. O `nae:revisar-em` pede releitura em
+20/11 e 27/11.

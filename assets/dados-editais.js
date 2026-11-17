@@ -30,6 +30,35 @@ window.DADOS_EDITAIS = {
   atualizadoEm: '2026-11-03',
   itens: [
     {
+      titulo: 'Tribunal do Júri · convite aos estudantes de Direito',
+      resumo: 'A UEMG convida os estudantes de Direito a acompanhar as sessões do Tribunal do Júri em 18/11, 19/11 e 26/11, sempre às 9h. Cada sessão pode valer 2 horas de atividade complementar.',
+      tipo: 'outro',
+      abre: '2026-11-17',
+      encerra: '2026-11-26',
+      link: 'tribunal-do-juri.html',
+      publicado: '2026-11-17',
+      fixo: false,
+      naLista: false,
+
+      destaque: {
+        tema: 'juri',
+        imagem: 'assets/juri/convite-juri-480.webp',
+        imagemAlt: 'Convite da UEMG aos estudantes de Direito: Tribunal do Júri, sessões em 18/11, 19/11 e 26/11, às 9h.',
+        eyebrow: 'Convite aos estudantes de Direito da UEMG',
+        titulo: 'Tribunal do Júri: três sessões, sempre às 9h',
+        texto: 'Acompanhe de perto a prática jurídica. Cada sessão pode valer <b>2 horas de atividade complementar</b>, com a declaração de participação assinada.',
+        numeros: [
+          { n: '18/11', r: 'quarta, às 9h' },
+          { n: '19/11', r: 'quinta, às 9h' },
+          { n: '26/11', r: 'quinta, às 9h' }
+        ],
+        semContagem: true,
+        acao: 'Ver as sessões e as horas',
+        extraTexto: 'Compartilhar no WhatsApp',
+        extraLink: 'https://wa.me/?text=%2ATribunal%20do%20J%C3%BAri%20%C2%B7%20convite%20aos%20estudantes%20de%20Direito%20da%20UEMG%20Guanh%C3%A3es%2A%0AA%20UEMG%20convida%20todos%20os%20estudantes%20do%20curso%20de%20Direito%20a%20acompanhar%20as%20sess%C3%B5es%20do%20Tribunal%20do%20J%C3%BAri.%0A%0A%E2%80%A2%20Quarta%2C%2018%2F11%2C%20%C3%A0s%209h%0A%E2%80%A2%20Quinta%2C%2019%2F11%2C%20%C3%A0s%209h%0A%E2%80%A2%20Quinta%2C%2026%2F11%2C%20%C3%A0s%209h%0A%E2%80%A2%20Cada%20sess%C3%A3o%20pode%20valer%202%20horas%20de%20atividade%20complementar%2C%20com%20a%20declara%C3%A7%C3%A3o%20de%20participa%C3%A7%C3%A3o%0A%0A%2ASess%C3%B5es%20e%20como%20contar%20as%20horas%2C%20no%20site%20do%20NAE%3A%2A%0Ahttps%3A%2F%2Fnaeguanhaes.github.io%2Ftribunal-do-juri.html%3Futm_source%3Dwhatsapp%26utm_campaign%3Dtribunal-do-juri'
+      }
+    },
+    {
       titulo: 'Natal que nos Une · Projeto Natal Compartilhado do DA',
       org: 'da',
       resumo: 'O Diretório Acadêmico convida cada estudante a levar um enfeite ou uma decoração natalina para o espaço de convivência da Unidade, de 17/11 até 08/12. Nos últimos dias de aula haverá uma confraternização, com data a confirmar.',

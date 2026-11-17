@@ -20,6 +20,13 @@ window.DADOS_NOVIDADES = {
   itens: [
     {
       data: '2026-11-17',
+      titulo: 'Convite: sessões do Tribunal do Júri em 18, 19 e 26/11',
+      texto: 'A UEMG convida os estudantes de Direito a acompanhar as sessões, sempre às 9h. Com a declaração de participação assinada, cada sessão pode valer 2 horas de atividade complementar.',
+      link: 'tribunal-do-juri.html',
+      textoLink: 'ver as sessões'
+    },
+    {
+      data: '2026-11-17',
       titulo: 'O portal em números: 1.469 visitas',
       texto: 'Nova página dentro do status do projeto, com as páginas mais vistas, as visitas que chegam pelo WhatsApp, o uso no celular e o crescimento desde 20 de agosto.',
       link: 'acessos.html',

@@ -37,6 +37,14 @@ window.DADOS_AVISOS = {
     {
       tipo: 'novidade',
       de: '2026-11-17',
+      ate: '2026-11-26',
+      texto: 'Tribunal do Júri: estudantes de Direito estão convidados para as sessões de 18/11, 19/11 e 26/11, às 9h. Cada sessão pode valer 2 horas de atividade complementar.',
+      link: 'tribunal-do-juri.html',
+      textoLink: 'ver as sessões'
+    },
+    {
+      tipo: 'novidade',
+      de: '2026-11-17',
       ate: '2026-12-08',
       texto: 'Natal que nos Une: o Diretório Acadêmico convida cada estudante a levar um enfeite de Natal para o espaço de convivência da Unidade, até 08/12.',
       link: 'diretorio-academico.html#natal',
