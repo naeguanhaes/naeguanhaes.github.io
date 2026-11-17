@@ -86,6 +86,7 @@ window.DADOS_CALENDARIO = {
     { ini: '2026-10-15', fim: '2026-10-15', titulo: 'Dia do/a Professor/a', tipo: 'feriado' },
     { ini: '2026-10-23', fim: '2026-10-23', titulo: 'Suspensão das atividades de ensino (Ofício Circular UEMG/PROGRAD nº 1/2026)', tipo: 'feriado', curto: 'Suspensão das atividades de ensino' },
     { ini: '2026-10-23', fim: '2026-12-04', titulo: 'Inscrições no PEAES Veteranos 2027, pelo Sistema PEAES (até 23h59 do último dia)', tipo: 'prazo', curto: 'Inscrições no PEAES Veteranos 2027' },
+    { ini: '2026-11-17', fim: '2026-12-08', titulo: 'Natal que nos Une (Diretório Acadêmico): prazo para levar enfeites e decorações natalinas para o espaço de convivência', tipo: 'prazo', curto: 'Natal do DA: enfeites até 08/12' },
     { ini: '2026-10-23', fim: '2026-11-09', titulo: 'Inscrições no Estágio Institucional da UEMG 2027, pelo formulário do edital (até 23h30 do último dia)', tipo: 'prazo', curto: 'Inscrições no Estágio Institucional' },
     { ini: '2026-10-29', fim: '2026-11-11', titulo: 'Adesão ao UEMG + Permanência 2026 (R$ 500 para quem já teve PEAES deferido), pelo formulário do edital', tipo: 'prazo', curto: 'Adesão ao UEMG + Permanência' },
     { ini: '2026-10-25', fim: '2026-10-25', titulo: 'Aniversário de Guanhães/MG, feriado municipal', tipo: 'feriado' },

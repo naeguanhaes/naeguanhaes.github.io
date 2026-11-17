@@ -19,6 +19,13 @@ window.DADOS_NOVIDADES = {
   atualizadoEm: '2026-11-03',
   itens: [
     {
+      data: '2026-11-17',
+      titulo: 'Natal que nos Une: proposta do Diretório Acadêmico',
+      texto: 'Leve um enfeite ou uma decoração natalina para o espaço de convivência da Unidade até 08/12. Nos últimos dias de aula, uma confraternização para partilhar com os colegas, com data a confirmar.',
+      link: 'diretorio-academico.html#natal',
+      textoLink: 'ver a proposta'
+    },
+    {
       data: '2026-11-16',
       titulo: 'Aula magna com Djonga: saiu a lista de inscritos',
       texto: 'As inscrições estão encerradas. A lista da UEMG fica na página do evento até o dia do encontro, quarta, 18/11, às 10h, no Ginásio Poliesportivo de Guanhães.',

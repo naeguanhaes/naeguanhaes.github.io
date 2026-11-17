@@ -809,3 +809,16 @@ chamativo"): classe `nav-vest`, verde-limão com letras roxas, levemente inclina
 chapada, a estrela lilás do cartaz em SVG (`.nav-vest-estrela`, gira devagar) e um brilho que
 atravessa a aba. Com `prefers-reduced-motion` tudo fica parado; no alto contraste vira branco e
 preto. O bloco do menu é igual em todas as páginas: mexeu na aba, troque em todas de uma vez.
+
+## Natal que nos Une, do DA (no ar desde 17/11/2026)
+
+Proposta do Diretório Acadêmico (cartaz enviado pelo coordenador em 17/11): o **Projeto Natal Compartilhado**,
+com decoração coletiva do espaço de convivência (cada estudante leva um enfeite ou decoração natalina **de
+17/11 até 08/12**) e uma partilha comunitária, confraternização nos últimos dias de aula com **data ainda a
+confirmar** (as aulas terminam em 12/12). Seção `#natal` em `diretorio-academico.html` (classe `.da-natal`,
+`data-ate="2026-12-12"`), antes das Demandas, e item na linha do tempo das ações. Item `org: 'da'` em
+`dados-editais.js` (aparece nos painéis da inicial e do DA, tema `natal`, com `rotuloPrazo`, `textoLonge` e
+`fixoTexto`), aviso, novidade, busca, calendário (prazo 17/11 a 08/12) e Stories (`assets/stories/natal-da.jpg`,
+âncora `natal`). Cartaz em `assets/da/natal-2026*.webp`. **Quando o DA confirmar a data da confraternização:**
+trocar o "data a confirmar" na seção, no item do painel, na novidade e pôr a data no calendário. O
+`nae:revisar-em` da página do DA pede releitura em 09/12.

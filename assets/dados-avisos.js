@@ -36,6 +36,14 @@ window.DADOS_AVISOS = {
   avisos: [
     {
       tipo: 'novidade',
+      de: '2026-11-17',
+      ate: '2026-12-08',
+      texto: 'Natal que nos Une: o Diretório Acadêmico convida cada estudante a levar um enfeite de Natal para o espaço de convivência da Unidade, até 08/12.',
+      link: 'diretorio-academico.html#natal',
+      textoLink: 'ver como vai funcionar'
+    },
+    {
+      tipo: 'novidade',
       de: '2026-11-13',
       ate: '2026-12-31',
       texto: 'Vestibular UEMG 2027: provas em 17 de janeiro e inscrições de novembro a dezembro. Taxa de R$ 30, com isenção para quem fez o último ano do ensino médio em escola pública.',

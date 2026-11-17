@@ -31,6 +31,12 @@ window.DADOS_BUSCA = {
       k: 'como chegar endereco localizacao onde fica mapa gps rota google maps waze br-259 2250 nova uniao chegar na faculdade caminho'
     },
     {
+      t: 'Natal que nos Une · Diretório Acadêmico',
+      d: 'Projeto Natal Compartilhado do DA: leve um enfeite ou uma decoração natalina para o espaço de convivência da Unidade até 08/12, e participe da confraternização nos últimos dias de aula.',
+      u: 'diretorio-academico.html#natal',
+      k: 'natal natalino natalina decoracao enfeite enfeites arvore confraternizacao festa fim de ano amigo partilha comida lanche diretorio academico da projeto natal compartilhado espaco de convivencia'
+    },
+    {
       t: 'Vestibular UEMG 2027',
       d: 'Provas em 17 de janeiro de 2027, inscrições de novembro a dezembro, taxa de R$ 30 com isenção para escola pública, vagas do PROCAN e da Inclusão Regional, e os cursos de Guanhães.',
       u: 'vestibular.html',
