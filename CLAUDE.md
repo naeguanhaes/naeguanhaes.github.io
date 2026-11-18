@@ -60,6 +60,10 @@ de mudanças estão na pasta [`historico/`](historico/CONTEXTO.md).
    que o texto vai precisar mudar.
 5. Mudança visível para o aluno? Acrescente um item no TOPO de
    `assets/dados-novidades.js`.
+5b. **Atualize também o Relatório de Extensão** (pedido do coordenador em 18/11/2026: "sempre atualizado à medida
+   que vamos colocando novas funcionalidades, oportunidades e mudanças no site"). Ele fica fora do repositório, na
+   pasta `DRIVE DO NAE/Relatório de Extensão/` (texto em `fontes/corpo.py`, figuras em `fontes/jpg/`, passo a passo
+   em `fontes/LEIA-ME.txt`). Nunca publicar o relatório no site.
 6. Página ou seção nova? Inclua no índice `assets/dados-busca.js`, no menu de
    todas as páginas, na lista `ESSENCIAIS` do `sw.js` e rode
    `node ferramentas/gerar-sitemap.js`. Página que não deve ocupar o celular
