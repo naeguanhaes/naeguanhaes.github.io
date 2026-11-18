@@ -866,9 +866,9 @@ instituições. Inscrição até 23h59 de 24/11 pelo Fale Conosco do TRE-MG ("Co
 remoção" > "Estágio (inscrição)"), com os documentos num único PDF. Recurso em 2 dias por sefot@tre-mg.jus.br.
 O PDF do edital não foi copiado (o site do TRE bloqueia download automático): os links levam ao site do TRE.
 Cores em `.pg-tre`, painel `tema: 'tre'`, prévia `assets/og/estagio-tre.jpg` e Stories `assets/stories/estagio-tre.jpg`.
-**Falta a logo do TRE-MG** (pedido do coordenador): o site do TRE não deixa baixar. Quando o coordenador mandar o
-arquivo, pôr em `assets/tre/`, colocar o `<img>` dentro de `.tre-marca` (o CSS já prevê), usar um cartão com a
-logo como `imagem` do item em `dados-editais.js` e refazer a prévia e o Stories com a logo no lugar da sigla.
+**Logo do TRE-MG** enviada pelo coordenador em 18/11 (o site do TRE não deixa baixar): `assets/tre/logo-tre.webp`
+(fundo azulado trocado por branco e recortada) no `.tre-marca` do topo, `assets/tre/cartao-tre.webp` (560x360) como
+`imagem` do painel, e a mesma logo na prévia e no Stories.
 O `nae:revisar-em` pede releitura em 25/11.
 
 ## Decisões do coordenador em 18/11/2026 (faxina e planos)

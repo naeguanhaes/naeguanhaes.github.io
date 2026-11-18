@@ -3660,9 +3660,7 @@ body:has(.pg-tre) { background: #F5F8FC; }
 .pg-tre .pe-quem-item, .pg-tre .pe-aux, .pg-tre .pe-passos li { border-color: #D5E1EF; }
 .tre-marca { display: grid; gap: .35rem; justify-items: center; text-align: center; background: #fff; border-radius: 20px;
   padding: 1.6rem 1.4rem; border-top: 6px solid #123E73; box-shadow: 0 18px 40px -28px rgba(14,42,79,.55); }
-.tre-marca img { width: min(18rem, 86%); height: auto; border-radius: 0; box-shadow: none; margin-bottom: .4rem; }
-.tre-marca-sigla { font-family: var(--serif); font-weight: 800; font-size: clamp(2.6rem, 2rem + 3vw, 3.6rem); line-height: 1; color: #123E73; letter-spacing: .02em; }
-.tre-marca-sigla span { color: #B88A16; }
+.tre-marca img { width: min(10.5rem, 46%); height: auto; border-radius: 0; box-shadow: none; margin-bottom: .2rem; }
 .tre-marca-zona { margin-top: .5rem; padding: .3rem .9rem; border-radius: 999px; background: #123E73; color: #fff; font-weight: 700; font-size: .95rem; }
 .tre-marca-zona b { color: #FFD66B; }
 .tre-marca-cidade { font-family: var(--serif); font-size: 1.3rem; font-weight: 700; color: #0E2A4F; }

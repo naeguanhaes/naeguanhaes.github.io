@@ -211,6 +211,8 @@ window.DADOS_EDITAIS = {
 
       destaque: {
         tema: 'tre',
+        imagem: 'assets/tre/cartao-tre.webp',
+        imagemAlt: 'TRE-MG, Tribunal Regional Eleitoral de Minas Gerais',
         eyebrow: 'Tribunal Regional Eleitoral de Minas Gerais · Edital nº 22/2026',
         titulo: 'Estágio no Cartório Eleitoral de São João Evangelista',
         fixoTexto: 'Direito, do 2º ao penúltimo período, com média global de 70% ou mais. Sem prova.',
