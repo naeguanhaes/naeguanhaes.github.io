@@ -109,6 +109,7 @@ window.DADOS_CALENDARIO = {
     { ini: '2026-11-13', fim: '2026-11-13', titulo: 'Encerramento da Semana de Pesquisa e Extensão da UEMG Guanhães 2026', tipo: 'letivo', curto: 'Encerramento da Semana de Pesquisa e Extensão', marca: 'seminario' },
     { ini: '2026-11-13', fim: '2026-11-13', titulo: '1ª Mostra de Profissões da UEMG Guanhães, a partir das 13h', tipo: 'letivo', curto: '1ª Mostra de Profissões', marca: 'da' },
     { ini: '2026-11-15', fim: '2026-11-15', titulo: 'Proclamação da República, feriado', tipo: 'feriado' },
+    { ini: '2026-11-12', fim: '2026-11-24', titulo: 'Estágio no TRE-MG (Cartório Eleitoral de São João Evangelista): inscrições pela internet, até as 23h59', tipo: 'prazo', curto: 'Estágio TRE-MG: inscrições' },
     { ini: '2026-11-16', fim: '2026-11-23', titulo: 'Estágio no MPMG para pós-graduação em Direito: inscrições pelo formulário do edital', tipo: 'prazo', curto: 'Estágio MPMG (pós): inscrições' },
     { ini: '2026-11-19', fim: '2026-11-19', titulo: 'Data-limite para entregar ao orientador o trabalho para revisão final do TCC de Direito', tipo: 'prazo', curto: 'Entrega do TCC ao orientador (Direito)' },
     { ini: '2026-11-19', fim: '2026-11-19', titulo: 'UEMG + Permanência: resultado preliminar', tipo: 'prazo', curto: 'UEMG + Permanência: resultado preliminar' },

@@ -20,6 +20,13 @@ window.DADOS_NOVIDADES = {
   itens: [
     {
       data: '2026-11-18',
+      titulo: 'Estágio no Cartório Eleitoral de São João Evangelista (TRE-MG)',
+      texto: 'Página da seleção de estagiários de Direito do Edital nº 22/2026 do TRE-MG, divulgada a pedido do cartório: a vaga, quem pode, os documentos e a inscrição até 24/11.',
+      link: 'estagio-tre.html',
+      textoLink: 'ver a página'
+    },
+    {
+      data: '2026-11-18',
       titulo: 'Estágio no INSS: estudantes dos primeiros períodos também podem concorrer',
       texto: 'O INSS retificou o ofício: a vaga é para quem tem previsão de concluir o curso em 31/12/2028 ou depois, para caberem os 2 anos de estágio. Quem está no 2º período, por exemplo, pode participar.',
       link: 'estagio-inss.html#quem-pode',

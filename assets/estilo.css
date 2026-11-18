@@ -3645,6 +3645,47 @@ a.pe-chamada.mpmg-chamada { background: #FBF4F3; border-color: #EBD6D3; }
 a.pe-chamada.mpmg-chamada h2 { color: #1A1A1A; }
 a.pe-chamada.mpmg-chamada:hover { border-color: #8E1B1B; }
 
+/* Estágio no TRE-MG, Cartório Eleitoral de São João Evangelista (estagio-tre.html): azul da Justiça Eleitoral */
+.pg-tre {
+  --pe-navy: #0E2A4F; --pe-terra: #123E73; --pe-mostarda: #E0B23A; --pe-mostarda-txt: #7A5300;
+  --pe-vinho: #123E73; --pe-verde: #2F6B3A; --pe-creme: #F2F6FB; --pe-creme-2: #E3ECF6;
+}
+body:has(.pg-tre) { background: #F5F8FC; }
+.pg-tre .pe-hero { border-color: #D5E1EF; }
+.pg-tre .pe-blob-1 { background: #123E73; opacity: .85; }
+.pg-tre .pe-blob-2 { background: var(--pe-mostarda); }
+.pg-tre .pe-t1 { font-size: clamp(2.1rem, 6vw, 3.6rem); }
+.pg-tre .pe-t2 { font-size: clamp(1.3rem, 3.6vw, 2rem); color: var(--pe-terra); }
+.pg-tre .pe-selos span, .pg-tre .pe-indice a { border-color: #D5E1EF; }
+.pg-tre .pe-quem-item, .pg-tre .pe-aux, .pg-tre .pe-passos li { border-color: #D5E1EF; }
+.tre-marca { display: grid; gap: .35rem; justify-items: center; text-align: center; background: #fff; border-radius: 20px;
+  padding: 1.6rem 1.4rem; border-top: 6px solid #123E73; box-shadow: 0 18px 40px -28px rgba(14,42,79,.55); }
+.tre-marca img { width: min(18rem, 86%); height: auto; border-radius: 0; box-shadow: none; margin-bottom: .4rem; }
+.tre-marca-sigla { font-family: var(--serif); font-weight: 800; font-size: clamp(2.6rem, 2rem + 3vw, 3.6rem); line-height: 1; color: #123E73; letter-spacing: .02em; }
+.tre-marca-sigla span { color: #B88A16; }
+.tre-marca-zona { margin-top: .5rem; padding: .3rem .9rem; border-radius: 999px; background: #123E73; color: #fff; font-weight: 700; font-size: .95rem; }
+.tre-marca-zona b { color: #FFD66B; }
+.tre-marca-cidade { font-family: var(--serif); font-size: 1.3rem; font-weight: 700; color: #0E2A4F; }
+.tre-marca figcaption { margin-top: .5rem; font-size: .85rem; color: #4A5560; font-style: normal; }
+.tre-local { display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: center; padding: 1.2rem 1.4rem; border-radius: 20px;
+  background: linear-gradient(120deg, #0E2A4F 0%, #123E73 60%, #1D5A9E 100%); color: #fff; box-shadow: 0 16px 34px -24px rgba(14,42,79,.75); }
+.tre-local h2 { margin: 0 0 .3rem; color: #fff; font-size: clamp(1.25rem, 1rem + 1vw, 1.6rem); }
+.tre-local p { margin: 0; color: rgba(255,255,255,.92); }
+.tre-local b { color: #fff; }
+.tre-local-ico { display: grid; place-items: center; width: 3.6rem; height: 3.6rem; border-radius: 50%; background: #E0B23A; color: #0E2A4F; }
+@media (max-width: 520px) { .tre-local { grid-template-columns: 1fr; } }
+.tre-impede { padding: 1rem 1.2rem; border-radius: 16px; background: #FFF6EC; border: 1px solid #F1D2A6; }
+.tre-impede h3 { margin: 0 0 .5rem; color: #7A3E00; font-size: 1.1rem; }
+.tre-impede ul, .tre-nao ul { --c: #123E73; }
+.tre-nao { border-left: 6px solid #B3261E; }
+.hero-edital.tema-tre, .fixo.tema-tre {
+  background:
+    radial-gradient(90% 80% at 96% 4%, rgba(224,178,58,.36) 0%, rgba(224,178,58,0) 58%),
+    radial-gradient(80% 70% at 2% 104%, rgba(29,90,158,.7) 0%, rgba(29,90,158,0) 62%),
+    linear-gradient(125deg, #081C38 0%, #0E2A4F 55%, #123E73 100%);
+}
+.hero-edital.tema-tre .eyebrow, .fixo.tema-tre .fixo-eyebrow { color: #FFD66B; }
+
 /* orientações para quem apresenta resumo (seminario.html#orientacoes) */
 .sem-orient { padding: 1rem 1.2rem; border-radius: 16px; background: #FFF6EC; border: 2px solid #F5C89A; scroll-margin-top: 6.5rem; }
 .sem-orient h3 { margin: 0 0 .5rem; color: #8A3A00; font-size: 1.15rem; }

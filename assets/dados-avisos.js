@@ -100,6 +100,14 @@ window.DADOS_AVISOS = {
     },
     {
       tipo: 'atencao',
+      de: '2026-11-18',
+      ate: '2026-11-24',
+      texto: 'Estágio de Direito no Cartório Eleitoral de São João Evangelista (TRE-MG): bolsa de R$ 1.183,00, do 2º ao penúltimo período, seleção pela média global. Inscrições até 24/11, pela internet.',
+      link: 'estagio-tre.html',
+      textoLink: 'ver quem pode participar'
+    },
+    {
+      tipo: 'atencao',
       de: '2026-11-10',
       ate: '2026-11-23',
       texto: 'Estágio no MPMG em Guanhães para estudantes de pós-graduação em Direito (já formados em Direito): bolsa de R$ 1.850,00. Inscrições de 16 a 23/11 e prova em 26/11.',

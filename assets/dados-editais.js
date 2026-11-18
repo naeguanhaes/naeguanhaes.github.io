@@ -201,6 +201,31 @@ window.DADOS_EDITAIS = {
       }
     },
     {
+      titulo: 'Estágio no TRE-MG em São João Evangelista · Direito',
+      resumo: 'Seleção do TRE-MG (Edital nº 22/2026) para o cadastro de reserva de estagiários de Direito do Cartório Eleitoral de São João Evangelista (257ª Zona): bolsa de R$ 1.183,00 mais R$ 21,00 de transporte por dia, 20 horas por semana. Do 2º ao penúltimo período, média global de 70% ou mais; seleção pela média, sem prova. Inscrições até 24/11.',
+      tipo: 'outro',
+      abre: '2026-11-12',
+      encerra: '2026-11-24',
+      link: 'estagio-tre.html',
+      publicado: '2026-11-18',
+
+      destaque: {
+        tema: 'tre',
+        eyebrow: 'Tribunal Regional Eleitoral de Minas Gerais · Edital nº 22/2026',
+        titulo: 'Estágio no Cartório Eleitoral de São João Evangelista',
+        fixoTexto: 'Direito, do 2º ao penúltimo período, com média global de 70% ou mais. Sem prova.',
+        texto: 'Seleção de estagiários de <b>Direito</b> para a 257ª Zona Eleitoral, do <b>2º ao penúltimo período</b>, com média global de <b>70% ou mais</b>. A classificação é pela <b>média global</b>, sem prova, e a inscrição é pela internet.',
+        numeros: [
+          { n: 'R$ 1.183', r: 'de bolsa por mês' },
+          { n: '20 h', r: 'por semana' },
+          { n: 'até 24/11', r: 'inscrições' }
+        ],
+        acao: 'Ver quem pode e como se inscrever',
+        extraTexto: 'Compartilhar no WhatsApp',
+        extraLink: 'https://wa.me/?text=%2AEst%C3%A1gio%20na%20Justi%C3%A7a%20Eleitoral%20%C2%B7%20Direito%2A%0AO%20Cart%C3%B3rio%20Eleitoral%20de%20S%C3%A3o%20Jo%C3%A3o%20Evangelista%20%28257%C2%AA%20Zona%29%20tem%20sele%C3%A7%C3%A3o%20de%20estagi%C3%A1rios%20de%20Direito%2C%20pelo%20Edital%20n%C2%BA%2022%2F2026%20do%20TRE-MG.%0A%0A%E2%80%A2%20Bolsa%20de%20R%24%201.183%2C00%20%2B%20R%24%2021%2C00%20de%20transporte%20por%20dia%0A%E2%80%A2%2020%20horas%20por%20semana%20%284%20horas%20por%20dia%29%2C%20no%20cart%C3%B3rio%0A%E2%80%A2%20Do%202%C2%BA%20ao%20pen%C3%BAltimo%20per%C3%ADodo%2C%20com%20m%C3%A9dia%20global%20de%2070%25%20ou%20mais%0A%E2%80%A2%20Sele%C3%A7%C3%A3o%20pela%20m%C3%A9dia%20global%2C%20sem%20prova%0A%E2%80%A2%20Inscri%C3%A7%C3%B5es%20at%C3%A9%2024%2F11%2C%20pela%20internet%0A%0A%2AQuem%20pode%20e%20passo%20a%20passo%20no%20site%20do%20NAE%3A%2A%0Ahttps%3A%2F%2Fnaeguanhaes.github.io%2Festagio-tre.html%3Futm_source%3Dwhatsapp%26utm_campaign%3Destagio-tre'
+      }
+    },
+    {
       titulo: 'Aula magna com Djonga · convite aos estudantes',
       resumo: 'Aula magna com Djonga, um diálogo entre rap, literatura e educação: 18/11, às 10h, no Ginásio Poliesportivo de Guanhães. Inscrições encerradas: a lista de inscritos está na página do evento.',
       tipo: 'outro',

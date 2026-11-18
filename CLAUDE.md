@@ -854,6 +854,23 @@ confirmar com a Coordenação como obter o modelo (o site não tem o Formulário
 aviso, novidade, busca, Stories e prévia `assets/og/tribunal-do-juri.jpg`. O `nae:revisar-em` pede releitura em
 20/11 e 27/11.
 
+## Estágio no TRE-MG, Cartório Eleitoral de São João Evangelista (no ar desde 18/11/2026)
+
+`estagio-tre.html` (menu "Editais e bolsas", depois do MPMG, `data-ate="2026-11-24"`) divulga o Edital nº 22/2026
+do TRE-MG (SEFOT, 13/11/2026, retificado em 16/11), a pedido do Cartório da **257ª Zona Eleitoral (São João
+Evangelista)**, que escreveu ao coordenador: cadastro de reserva de estagiários de Direito, bolsa de **R$ 1.183,00**
++ R$ 21,00 de transporte por dia presencial, 20 h semanais (4 h por dia), **do 2º ao penúltimo período**, média
+global de **70%**, CPF e título regular; impedidos os filiados a partido e quem tem parente até o 2º grau candidato
+ou agente político. **Sem prova**: classificação pela média global, por cidade e curso, com alternância entre
+instituições. Inscrição até 23h59 de 24/11 pelo Fale Conosco do TRE-MG ("Concurso/estágio/redistribuição e
+remoção" > "Estágio (inscrição)"), com os documentos num único PDF. Recurso em 2 dias por sefot@tre-mg.jus.br.
+O PDF do edital não foi copiado (o site do TRE bloqueia download automático): os links levam ao site do TRE.
+Cores em `.pg-tre`, painel `tema: 'tre'`, prévia `assets/og/estagio-tre.jpg` e Stories `assets/stories/estagio-tre.jpg`.
+**Falta a logo do TRE-MG** (pedido do coordenador): o site do TRE não deixa baixar. Quando o coordenador mandar o
+arquivo, pôr em `assets/tre/`, colocar o `<img>` dentro de `.tre-marca` (o CSS já prevê), usar um cartão com a
+logo como `imagem` do item em `dados-editais.js` e refazer a prévia e o Stories com a logo no lugar da sigla.
+O `nae:revisar-em` pede releitura em 25/11.
+
 ## Decisões do coordenador em 18/11/2026 (faxina e planos)
 
 - **Faxina:** saíram do HTML os trechos com `data-ate` vencido (Assembleia do DA de 28/10 na página do DA e na

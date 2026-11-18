@@ -73,6 +73,12 @@ window.DADOS_BUSCA = {
       k: 'mpmg ministerio publico promotoria justica guanhaes estagio pos graduacao pos-graduacao especializacao bacharel direito bolsa 1850 prova edital 1606 ceaf estagiario residencia'
     },
     {
+      t: 'Estágio no TRE-MG · Cartório Eleitoral de São João Evangelista',
+      d: 'Seleção de estagiários de Direito (Edital nº 22/2026 do TRE-MG) para a 257ª Zona Eleitoral: bolsa de R$ 1.183,00, 20 horas semanais, do 2º ao penúltimo período, seleção pela média global, inscrições até 24/11.',
+      u: 'estagio-tre.html',
+      k: 'tre tre-mg tribunal regional eleitoral justica eleitoral cartorio zona 257 sao joao evangelista estagio estagiario direito bolsa 1183 edital 22 cadastro reserva media global'
+    },
+    {
       t: 'Aula magna com Djonga',
       d: 'Aula magna com Djonga, um diálogo entre rap, literatura e educação: 18/11, às 10h, no Ginásio Poliesportivo de Guanhães. Inscrições encerradas, com a lista de inscritos na página.',
       u: 'aula-magna-djonga.html',
