@@ -57,6 +57,8 @@ jobs:
     steps:
       - name: Baixar o repositório
         uses: actions/checkout@v4
+      - name: Carimbar a data do rodapé com o dia da publicação
+        run: node ferramentas/carimbar-rodape.js
       - name: Configurar o Pages
         uses: actions/configure-pages@v5
       - name: Empacotar o site

@@ -50,9 +50,10 @@ de mudanças estão na pasta [`historico/`](historico/CONTEXTO.md).
    nae-v14 esses arquivos vão pela rede primeiro, então um aviso novo chega
    ao estudante no mesmo dia. O `checar-versao.js` sabe dessa diferença e
    não cobra à toa.
-4. Atualize a data do rodapé "Site conferido e atualizado em ..." nas páginas
-   (uma troca de texto em todas de uma vez). O `checar-consistencia.js`
-   reclama se uma página ficar para trás.
+4. A data do rodapé "Site conferido e atualizado em ..." é **automática** desde 18/11/2026:
+   o workflow roda `node ferramentas/carimbar-rodape.js` antes de empacotar, e o que vai ao ar
+   tem sempre a data do envio. Rodar o script à mão antes do commit deixa o repositório igual
+   ao que está no ar (o `checar-consistencia.js` exige a mesma data em todas as páginas).
 4b. Evento, prazo ou divulgação nova? Siga a seção "Eventos e prazos" abaixo:
    `data-ate` em tudo que vence, `publicado` no item de `dados-editais.js` e,
    se o evento tiver página, `<meta name="nae:revisar-em">` com as datas em
@@ -454,7 +455,9 @@ Páginas ocultas: `editais`, `calouro`, `semestres`.
 O menu, na ordem definida pelo coordenador em 13/11/2026: **Início** (uma casinha desenhada em SVG,
 `nav-inicio`/`.nav-casa`, com o nome no `aria-label` e no `title`), as abas de campanha
 (**Vestibular 2027**, **D.A**, e o Seminário enquanto durar), depois **Aulas e prazos**, **Meu curso**,
-**Editais e bolsas**, **Sistemas e Wi-Fi**, **Ferramentas**, Apoio psicológico, Avisos e Sobre o NAE.
+**Editais e bolsas**, **Eventos e convites** (desde 18/11/2026: convites e eventos que não são edital, como o
+Djonga, o Tribunal do Júri e o Natal do DA, todos com `data-ate`; quando todos vencem, o `site.js` tira o grupo
+vazio do menu), **Sistemas e Wi-Fi**, **Ferramentas**, Apoio psicológico, Avisos e Sobre o NAE.
 Os grupos abrem submenu; Início, Apoio e Avisos são link direto. O contato
 mora dentro de Sobre o NAE. No HTML os links do grupo ficam soltos dentro de um
 `<div class="nav-grupo" data-grupo="...">`: sem JavaScript eles aparecem como
@@ -850,3 +853,19 @@ confirmar com a Coordenação como obter o modelo (o site não tem o Formulário
 `.pg-juri`, painel `tema: 'juri'` (`semContagem`, `fixo: false`, `naLista: false`), calendário com as três sessões,
 aviso, novidade, busca, Stories e prévia `assets/og/tribunal-do-juri.jpg`. O `nae:revisar-em` pede releitura em
 20/11 e 27/11.
+
+## Decisões do coordenador em 18/11/2026 (faxina e planos)
+
+- **Faxina:** saíram do HTML os trechos com `data-ate` vencido (Assembleia do DA de 28/10 na página do DA e na
+  Mostra; Yoga da ESMU no Apoio). Os itens encerrados de `dados-editais.js` (PILA, Seminário) **ficam**: a página
+  "O que já aconteceu" usa esses itens, mesmo que o `checar-eventos` diga que "já podem sair".
+- **Não fazer por enquanto:** modelos dos Formulários 1, 2 e 3 das atividades complementares; kit escola do
+  vestibular (o material oficial da UEMG será distribuído); atualizar a página de acessos automaticamente pela
+  API do GoatCounter (melhor não guardar chave). **Canal do NAE no WhatsApp:** só em 2027, se o coordenador
+  continuar na coordenação.
+- **Relatório de extensão:** será atualizado a cada 15 dias; o coordenador pediu para ser lembrado.
+- **Contrato do coordenador (importante):** a continuidade depende da renovação do contrato. **A partir de
+  01/12/2026 o site fica enxuto**: só o Calendário acadêmico e "as informações padrões", que o coordenador vai
+  definir junto com o Claude antes dessa data. Rematrícula 2027/1 e Guia do calouro só vão ao ar se houver
+  renovação. Havendo renovação e continuidade da gestão, o site volta a ser como é hoje: **não apagar nada**,
+  esconder (como as páginas ocultas) para poder restaurar.

@@ -288,6 +288,13 @@
     if (!barra || !faixa) return;
 
     var grupos = Array.prototype.slice.call(faixa.querySelectorAll('.nav-grupo'));
+    /* grupo que ficou sem nenhum link (todos venceram pelo data-ate, como o
+       "Eventos e convites" entre um evento e outro) sai do menu */
+    grupos = grupos.filter(function (g) {
+      if (g.querySelector('a')) return true;
+      g.parentNode.removeChild(g);
+      return false;
+    });
     if (!grupos.length) return;
 
     var painelAberto = null, botaoAberto = null;
