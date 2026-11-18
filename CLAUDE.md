@@ -650,7 +650,9 @@ autoria do Canva. Não tem data: não leva `data-ate` nem `nae:revisar-em`.
 Direito da Agência da Previdência Social de Guanhães, a partir do Ofício nº 094/2026 da APS
 (06/11/2026) à coordenação do curso: 2 vagas (início em 04/01 e 10/02/2027), bolsa de
 R$ 1.508,42 + R$ 13,40 de transporte por dia, 30 h semanais (7h às 13h ou 12h às 18h),
-conclusão do curso até 31/12/2028 no máximo, currículo entregue na agência (Praça Néria
+**previsão de conclusão do curso em, no mínimo, 31/12/2028** (retificação enviada pelo INSS em 18/11/2026: o ofício
+dizia "no máximo"; a data serve para caber os 2 anos de estágio antes da formatura, e quem está no 2º período pode
+concorrer), currículo entregue na agência (Praça Néria
 Coelho Guimarães, 179) e entrevista. **O ofício não traz prazo**: o `nae:revisar-em` pede
 releitura em 23/11, 07/12 e 05/01. O PDF do ofício não foi publicado (tem nomes e um
 caminho de arquivo de outra pessoa). Logo do INSS em `assets/inss/` (o `cartao-inss.webp`,

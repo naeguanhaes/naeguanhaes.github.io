@@ -19,6 +19,13 @@ window.DADOS_NOVIDADES = {
   atualizadoEm: '2026-11-03',
   itens: [
     {
+      data: '2026-11-18',
+      titulo: 'Estágio no INSS: estudantes dos primeiros períodos também podem concorrer',
+      texto: 'O INSS retificou o ofício: a vaga é para quem tem previsão de concluir o curso em 31/12/2028 ou depois, para caberem os 2 anos de estágio. Quem está no 2º período, por exemplo, pode participar.',
+      link: 'estagio-inss.html#quem-pode',
+      textoLink: 'ver quem pode'
+    },
+    {
       data: '2026-11-17',
       titulo: 'Convite: sessões do Tribunal do Júri em 18, 19 e 26/11',
       texto: 'A UEMG convida os estudantes de Direito a acompanhar as sessões, sempre às 9h. Com a declaração de participação assinada, cada sessão pode valer 2 horas de atividade complementar.',

@@ -35,6 +35,14 @@ window.DADOS_AVISOS = {
   faixaNoTopo: false,
   avisos: [
     {
+      tipo: 'atencao',
+      de: '2026-11-18',
+      ate: '2026-12-07',
+      texto: 'Estágio no INSS: retificação. Podem concorrer estudantes de Direito com previsão de conclusão do curso em 31/12/2028 ou depois, inclusive quem está no 2º período.',
+      link: 'estagio-inss.html#quem-pode',
+      textoLink: 'ver quem pode'
+    },
+    {
       tipo: 'novidade',
       de: '2026-11-17',
       ate: '2026-11-26',
