@@ -229,7 +229,8 @@ window.DADOS_EDITAIS = {
     },
     {
       titulo: 'Aula magna com Djonga · convite aos estudantes',
-      resumo: 'Aula magna com Djonga, um diálogo entre rap, literatura e educação: 18/11, às 10h, no Ginásio Poliesportivo de Guanhães. Inscrições encerradas: a lista de inscritos está na página do evento.',
+      resumo: 'Aula magna com Djonga, um diálogo entre rap, literatura e educação, em 18/11, às 10h, no Ginásio Poliesportivo de Guanhães, com estudantes da UEMG entre os convidados.',
+      naInicial: false,
       tipo: 'outro',
       abre: '2026-11-12',
       encerra: '2026-11-18',

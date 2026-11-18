@@ -56,9 +56,9 @@ window.DADOS_NOVIDADES = {
     {
       data: '2026-11-16',
       titulo: 'Aula magna com Djonga: saiu a lista de inscritos',
-      texto: 'As inscrições estão encerradas. A lista da UEMG fica na página do evento até o dia do encontro, quarta, 18/11, às 10h, no Ginásio Poliesportivo de Guanhães.',
-      link: 'aula-magna-djonga.html#inscritos',
-      textoLink: 'ver a lista'
+      texto: 'As inscrições foram encerradas e a lista da UEMG ficou na página do evento até o dia do encontro (18/11), quando saiu do site.',
+      link: 'aula-magna-djonga.html',
+      textoLink: 'ver a página'
     },
     {
       data: '2026-11-16',

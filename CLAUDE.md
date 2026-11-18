@@ -755,7 +755,9 @@ manifestação de interesse pelo formulário (forms.gle/F4LqAUJbzg5W9E276) e con
 compartilhar saíram, e a seção `#inscritos` mostra a lista de inscritos enviada pelo coordenador (só nome e
 período; 45 estudantes e a juíza da 2ª Vara), em tabela e no PDF `documentos/djonga/lista-de-inscritos.pdf`
 (sem metadados). A seção tem `data-ate="2026-11-18"`, mas **depois do evento apague a seção e o PDF**: os
-nomes não devem ficar no site além do dia do encontro (pedido: "até o dia dele"). Cartaz em `assets/eventos/aula-magna-djonga*.webp`
+nomes não devem ficar no site além do dia do encontro (pedido: "até o dia dele"). **Removida em 18/11/2026, depois do encontro** (pedido do coordenador: "já foi, pode remover"): a seção `#inscritos` e o PDF
+da lista foram apagados, o link saiu do menu, o item do painel ganhou `naInicial: false` (fica em `dados-editais.js` para
+"O que já aconteceu") e a página ficou como registro do evento, com `nae:revisar-em` vazio (como `pila.html`). Cartaz em `assets/eventos/aula-magna-djonga*.webp`
 (`-quadrado` no painel, `tema: 'djonga'`), cores em `.pg-djonga`. O `nae:revisar-em` pede releitura
 em 18/11 e 19/11; depois do evento a página pode sair do menu (já sai sozinha) e ir para o arquivo.
 

@@ -93,10 +93,10 @@ window.DADOS_AVISOS = {
     {
       tipo: 'atencao',
       de: '2026-11-12',
-      ate: '2026-11-18',
-      texto: 'Aula magna com Djonga em 18/11, às 10h, no Ginásio Poliesportivo de Guanhães: as inscrições estão encerradas e a lista de inscritos está na página do evento.',
-      link: 'aula-magna-djonga.html#inscritos',
-      textoLink: 'ver a lista de inscritos'
+      ate: '2026-11-17',
+      texto: 'Aula magna com Djonga em 18/11, às 10h, no Ginásio Poliesportivo de Guanhães: as inscrições estão encerradas.',
+      link: 'aula-magna-djonga.html',
+      textoLink: 'ver a página'
     },
     {
       tipo: 'atencao',
