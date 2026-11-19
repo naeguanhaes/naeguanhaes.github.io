@@ -612,6 +612,40 @@ window.DADOS_EDITAIS = {
       }
     },
     {
+      titulo: 'VI Conecta Mente · Medo de fracassar e síndrome do impostor',
+      resumo: 'Webinário sobre saúde mental e cuidado acadêmico, com a psicóloga Isadora Louise. Sexta, 04/12, das 17h às 18h30, ao vivo pela TV UEMG, com certificado de participação.',
+      tipo: 'outro',
+      abre: '2026-11-19',
+      encerra: '2026-12-04',
+      link: 'apoio.html#conecta-mente',
+      publicado: '2026-11-19',
+      grupo: 'conecta-mente-vi',
+      /* e evento, nao edital: aparece no painel da inicial, nao na lista nem nos cartoes fixos */
+      naLista: false,
+      fixo: false,
+
+      destaque: {
+        tema: 'vinho',
+        eyebrow: 'Webinário sobre Saúde Mental e Cuidado Acadêmico',
+        titulo: 'VI Conecta Mente: Medo de fracassar e síndrome do impostor',
+        texto: 'Um espaço de reflexão e acolhimento sobre o medo de fracassar, a insegurança e o sentimento de não pertencimento na universidade. Com a psicóloga <b>Isadora Louise</b>, ao vivo pela <b>TV UEMG</b>, na <b>sexta, 4 de dezembro, das 17h às 18h30</b>. Com <b>certificado de participação</b>.',
+        numeros: [
+          { n: '04/12', r: 'sexta-feira' },
+          { n: '17h', r: 'às 18h30' },
+          { n: 'TV UEMG', r: 'ao vivo' }
+        ],
+        rotuloPrazo: 'para o webinário',
+        textoLonge: 'Ao vivo em 04/12, às 17h',
+        textoUltimoDia: 'É hoje, às 17h, na TV UEMG',
+        acao: 'Inscreva-se',
+        acaoLink: 'https://lets.events/e/vi-conecta-mente-webinario-sobre-saude-mental-e-cuidado-academico/',
+        extraTexto: 'Ver o cartaz',
+        extraLink: 'apoio.html#conecta-mente',
+        imagem: 'assets/eventos/conecta-mente-vi-800.webp',
+        imagemAlt: 'Cartaz do VI Conecta Mente, webinário sobre saúde mental e cuidado acadêmico da UEMG, PROEX/COAC e NAEs: Medo de fracassar e síndrome do impostor, em 4 de dezembro, das 17h às 18h30. Palestrante: psicóloga Isadora Louise. Apresentadora: Carla Paiva.'
+      }
+    },
+    {
       titulo: 'V Conecta Mente · Procrastinação Acadêmica',
       resumo: 'Webinário sobre saúde mental e cuidado acadêmico, com a psicóloga Giselli Oliveira. Sexta, 06/11, das 17h às 18h30, ao vivo pela TV UEMG.',
       tipo: 'outro',

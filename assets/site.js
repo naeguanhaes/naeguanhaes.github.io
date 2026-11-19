@@ -1106,7 +1106,7 @@
     'seminario': { img: 'assets/stories/seminario.jpg', ate: '2026-11-10' },
     'yoga-esmu': { img: 'assets/stories/yoga-esmu.jpg', ate: '2026-10-31' },
     'neurodiversidade': { img: 'assets/stories/neurodiversidade.jpg' },
-    'conecta-mente': { img: 'assets/stories/conecta-mente.jpg', ate: '2026-11-06' },
+    'conecta-mente': { img: 'assets/stories/conecta-mente-vi.jpg', ate: '2026-12-04' },
     'enade': { img: 'assets/stories/enade.jpg', ate: '2026-11-29' },
     'horarios': { img: 'assets/stories/horarios.jpg' },
     'calendario': { img: 'assets/stories/calendario.jpg' },

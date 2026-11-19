@@ -877,6 +877,16 @@ Cores em `.pg-tre`, painel `tema: 'tre'`, prévia `assets/og/estagio-tre.jpg` e 
 `imagem` do painel, e a mesma logo na prévia e no Stories.
 O `nae:revisar-em` pede releitura em 25/11.
 
+## VI Conecta Mente (no ar desde 19/11/2026)
+
+Convite da COAC/PROEX aos NAEs para divulgar o webinário "Medo de fracassar e síndrome do impostor", em **04/12/2026,
+das 17h às 18h30**, ao vivo pela TV UEMG, com a psicóloga Isadora Louise e apresentação de Carla Paiva; lista de presença
+e certificado; inscrição pelo lets.events. Fica em `apoio.html#conecta-mente` (o mesmo `id` do V Conecta Mente, cuja seção
+vencida foi trocada por esta; o item do V continua em `dados-editais.js` para "O que já aconteceu"), com o cartaz deitado
+(`.cartaz-deitado`, `assets/eventos/conecta-mente-vi*.webp`). Painel com `tema: 'vinho'`, `naLista: false` e `fixo: false`;
+link no grupo "Eventos e convites" do menu, aviso, novidade, busca, calendário e Stories (`assets/stories/conecta-mente-vi.jpg`).
+Tudo sai em 04/12 pelo `data-ate`; o `nae:revisar-em` de `apoio.html` pede releitura em 05/12.
+
 ## Decisões do coordenador em 18/11/2026 (faxina e planos)
 
 - **Faxina:** saíram do HTML os trechos com `data-ate` vencido (Assembleia do DA de 28/10 na página do DA e na

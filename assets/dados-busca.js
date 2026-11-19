@@ -181,10 +181,10 @@ window.DADOS_BUSCA = {
       k: 'propcts bolsa povos comunidades tradicionais indigena quilombola cigano procan auxilio assistencia estudantil permanencia renda 1400 cadastro conta corrente edital proex coac 05 2026'
     },
     {
-      t: 'V Conecta Mente · Procrastinação Acadêmica',
-      d: 'Webinário sobre saúde mental, sexta, 06/11, das 17h às 18h30, ao vivo pela TV UEMG.',
+      t: 'VI Conecta Mente · Medo de fracassar e síndrome do impostor',
+      d: 'Webinário sobre saúde mental, sexta, 04/12, das 17h às 18h30, ao vivo pela TV UEMG, com certificado.',
       u: 'apoio.html#conecta-mente',
-      k: 'conecta mente webinario saude mental procrastinacao adiar cuidado academico psicologa giselli oliveira tv uemg palestra evento novembro ansiedade estudo'
+      k: 'conecta mente webinario saude mental medo de fracassar fracasso sindrome do impostor impostora inseguranca autoestima pertencimento cuidado academico psicologa isadora louise tv uemg palestra evento dezembro ansiedade certificado'
     },
     {
       t: "Gerador de requerimentos",

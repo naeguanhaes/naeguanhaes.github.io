@@ -19,6 +19,13 @@ window.DADOS_NOVIDADES = {
   atualizadoEm: '2026-11-03',
   itens: [
     {
+      data: '2026-11-19',
+      titulo: 'VI Conecta Mente: Medo de fracassar e síndrome do impostor',
+      texto: 'Webinário da UEMG sobre saúde mental e cuidado acadêmico, com a psicóloga Isadora Louise, na sexta, 04/12, das 17h às 18h30, ao vivo pela TV UEMG. Com certificado de participação.',
+      link: 'apoio.html#conecta-mente',
+      textoLink: 'ver e se inscrever'
+    },
+    {
       data: '2026-11-18',
       titulo: 'Estágio no Cartório Eleitoral de São João Evangelista (TRE-MG)',
       texto: 'Página da seleção de estagiários de Direito do Edital nº 22/2026 do TRE-MG, divulgada a pedido do cartório: a vaga, quem pode, os documentos e a inscrição até 24/11.',

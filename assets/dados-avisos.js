@@ -156,6 +156,14 @@ window.DADOS_AVISOS = {
     },
     {
       tipo: 'novidade',
+      de: '2026-11-19',
+      ate: '2026-12-04',
+      texto: 'VI Conecta Mente: Medo de fracassar e síndrome do impostor. Sexta, 04/12, das 17h às 18h30, ao vivo pela TV UEMG, com certificado de participação.',
+      link: 'apoio.html#conecta-mente',
+      textoLink: 'inscreva-se'
+    },
+    {
+      tipo: 'novidade',
       de: '2026-10-28',
       ate: '2026-11-06',
       texto: 'V Conecta Mente: Procrastinação Acadêmica. Sexta, 06/11, das 17h às 18h30, ao vivo pela TV UEMG, com certificado de participação.',
