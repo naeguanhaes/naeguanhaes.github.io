@@ -594,7 +594,7 @@ resultado final depois da retificação) explica o Edital PROEX/COAC nº 06/2026
 `LIMITE` no script da página), os 10 auxílios com as vagas de Guanhães, passo a passo,
 dispensa do PROCAN 2025/2026, checklist de documentos (guardado em `peaes-2027-docs`),
 os 10 modelos de declaração (links do Forms tirados do Anexo III), cronograma, leitura
-do resultado, FAQ e o plantão do NAE. Cores tiradas da arte da PROEX (`.pg-peaes`,
+do resultado e FAQ. Cores tiradas da arte da PROEX (`.pg-peaes`,
 tokens `--pe-*` no `estilo.css`). Os PDFs oficiais estão em `documentos/peaes-2027/`;
 se a UEMG publicar retificação, trocar o arquivo e conferir o texto da página.
 **O auxílio do PEAES que o estudante já recebe não entra como renda a declarar** (decisão do
@@ -888,6 +888,15 @@ vencida foi trocada por esta; o item do V continua em `dados-editais.js` para "O
 (`.cartaz-deitado`, `assets/eventos/conecta-mente-vi*.webp`). Painel com `tema: 'vinho'`, `naLista: false` e `fixo: false`;
 link no grupo "Eventos e convites" do menu, aviso, novidade, busca, calendário e Stories (`assets/stories/conecta-mente-vi.jpg`).
 Tudo sai em 04/12 pelo `data-ate`; o `nae:revisar-em` de `apoio.html` pede releitura em 05/12.
+
+## Contato do NAE só em "Sobre o NAE" (decisão de 24/11/2026)
+
+Pedido do coordenador: "tire esse Dúvidas / Fale com o NAE de todas as páginas, deixe somente em Sobre o NAE". Saíram os
+cartões "Dúvidas · Fale com o NAE" e "Plantão tira-dúvidas · O NAE Guanhães ajuda você" do Vestibular, PEAES, Estágio na
+UEMG, UEMG + Permanência e INSS, e as frases com o e-mail do NAE nos cartões "A quem perguntar" do ENADE e do PILA. Na
+Transferência o cartão ficou só com a Secretaria Acadêmica. Os cartões de contato do próprio órgão (agência do INSS, MPMG,
+TRE-MG) continuam. O contato do NAE fica em `contato.html` (grupo "Sobre o NAE"). **Página nova não ganha cartão de
+plantão do NAE.**
 
 ## Decisões do coordenador em 18/11/2026 (faxina e planos)
 
