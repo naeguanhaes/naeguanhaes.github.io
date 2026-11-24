@@ -617,7 +617,9 @@ e convocação. Usa as peças `pe-*` do PEAES com a paleta da arte (`.pg-selecao
 **Pedido do coordenador: só o que diz respeito aos alunos.** Nada de comissões locais,
 adendos ou tarefas da Direção; a linha "Comissões Locais e apoio às Unidades Acadêmicas"
 foi apagada da arte. PDF em `documentos/estagio-inclua-2027/`.
-**Pendências:** (1) a seção `#inclua` espera o Edital nº 08/2026 (Monitoria INCLUA),
+**Prova marcada** (informado pelo coordenador em 24/11/2026): a convocação foi enviada por e-mail e a prova é em
+**27/11, às 17h, na sala do 7º período de Direito** (aviso na seção `#prova`, contagem do topo, cronograma, calendário,
+aviso e novidade). **Pendências:** (1) a seção `#inclua` espera o Edital nº 08/2026 (Monitoria INCLUA),
 "nos próximos dias" segundo a PROEX: trazer datas, valores, link da inscrição, o PDF,
 e estender o `data-ate` do menu; (2) turno, setor e atividades da vaga de Guanhães,
 quando a Unidade divulgar. O `nae:revisar-em` lembra em 10/11, 19/11 e 15/12 (em 03/11 o edital do INCLUA ainda não tinha saído).

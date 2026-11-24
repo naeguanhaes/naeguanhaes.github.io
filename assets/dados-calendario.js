@@ -119,7 +119,7 @@ window.DADOS_CALENDARIO = {
     { ini: '2026-11-23', fim: '2026-11-24', titulo: 'UEMG + Permanência: recurso contra o resultado preliminar', tipo: 'prazo', curto: 'UEMG + Permanência: recurso' },
     { ini: '2026-11-26', fim: '2026-11-26', titulo: 'Estágio no MPMG para pós-graduação em Direito: prova escrita, às 9h, na Rua Barão do Rio Branco, 278, Centro', tipo: 'prazo', curto: 'Estágio MPMG (pós): prova' },
     { ini: '2026-11-27', fim: '2026-11-27', titulo: 'UEMG + Permanência: resultado final', tipo: 'prazo', curto: 'UEMG + Permanência: resultado final' },
-    { ini: '2026-11-23', fim: '2026-11-27', titulo: 'Estágio Institucional: prova escrita, no dia e horário marcados pela Unidade', tipo: 'prazo', curto: 'Estágio: prova escrita' },
+    { ini: '2026-11-27', fim: '2026-11-27', titulo: 'Estágio Institucional: prova escrita, às 17h, na sala do 7º período de Direito', tipo: 'prazo', curto: 'Estágio: prova escrita' },
     { ini: '2026-11-30', fim: '2026-12-11', titulo: 'Provas finais do curso de Direito', tipo: 'prazo' },
     { ini: '2026-12-04', fim: '2026-12-04', titulo: 'VI Conecta Mente: webinário Medo de fracassar e síndrome do impostor, das 17h às 18h30, ao vivo pela TV UEMG', tipo: 'prazo', curto: 'VI Conecta Mente, 17h' },
     { ini: '2026-12-04', fim: '2026-12-04', titulo: 'Data-limite para entregar na secretaria a versão para a banca do TCC de Direito', tipo: 'prazo', curto: 'Entrega do TCC na secretaria (Direito)' },

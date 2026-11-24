@@ -19,6 +19,13 @@ window.DADOS_NOVIDADES = {
   atualizadoEm: '2026-11-03',
   itens: [
     {
+      data: '2026-11-24',
+      titulo: 'Estágio na UEMG: prova em 27/11, às 17h',
+      texto: 'A convocação foi enviada pelo e-mail institucional. A prova escrita do Estágio Institucional é na sexta, 27/11, às 17h, na sala do 7º período de Direito.',
+      link: 'estagio-inclua.html#prova',
+      textoLink: 'ver a prova'
+    },
+    {
       data: '2026-11-19',
       titulo: 'VI Conecta Mente: Medo de fracassar e síndrome do impostor',
       texto: 'Webinário da UEMG sobre saúde mental e cuidado acadêmico, com a psicóloga Isadora Louise, na sexta, 04/12, das 17h às 18h30, ao vivo pela TV UEMG. Com certificado de participação.',

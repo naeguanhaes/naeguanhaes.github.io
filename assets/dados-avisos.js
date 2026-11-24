@@ -36,6 +36,14 @@ window.DADOS_AVISOS = {
   avisos: [
     {
       tipo: 'atencao',
+      de: '2026-11-24',
+      ate: '2026-11-27',
+      texto: 'Estágio Institucional na UEMG: a convocação foi enviada pelo e-mail institucional. A prova é na sexta, 27/11, às 17h, na sala do 7º período de Direito.',
+      link: 'estagio-inclua.html#prova',
+      textoLink: 'ver a prova'
+    },
+    {
+      tipo: 'atencao',
       de: '2026-11-18',
       ate: '2026-12-07',
       texto: 'Estágio no INSS: retificação. Podem concorrer estudantes de Direito com previsão de conclusão do curso em 31/12/2028 ou depois, inclusive quem está no 2º período.',
