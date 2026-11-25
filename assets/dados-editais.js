@@ -30,6 +30,38 @@ window.DADOS_EDITAIS = {
   atualizadoEm: '2026-11-03',
   itens: [
     {
+      titulo: 'Prevenção à COVID-19 · comunicado do Diretório Acadêmico',
+      /* sem org: 'da' de propósito: vai só para o painel da inicial do NAE; na página do DA o
+         painel fica com o Natal logo abaixo do banner (pedido do coordenador em 25/11/2026) */
+      resumo: 'Com o aumento dos casos na cidade e na região, o DA pede que quem tiver sintomas gripais não venha à Unidade e apresente o atestado, recomenda máscara em ambientes fechados e evitar aglomerações.',
+      tipo: 'outro',
+      abre: '2026-11-25',
+      encerra: '2026-12-12',
+      link: 'diretorio-academico.html#prevencao',
+      publicado: '2026-11-25',
+      fixo: false,
+      naLista: false,
+
+      destaque: {
+        tema: 'da',
+        imagem: 'assets/da/prevencao-covid-560.webp',
+        imagemAlt: 'Arte do Diretório Acadêmico sobre a COVID-19: com sintoma gripal, não compareça à unidade e apresente o atestado; use máscara nas instalações; evite aglomerações na área de convivência.',
+        fixoPosicao: 'center 40%',
+        eyebrow: 'Comunicado · Diretório Acadêmico',
+        titulo: 'COVID-19: medidas de prevenção na Unidade',
+        texto: 'Diante do <b>aumento dos casos em Guanhães e na região</b>, o DA reforça: com sintomas gripais, fique em casa, procure atendimento e apresente o atestado.',
+        numeros: [
+          { n: 'Sintomas', r: 'não venha à Unidade' },
+          { n: 'Máscara', r: 'em ambientes fechados' },
+          { n: 'Mãos', r: 'sempre higienizadas' }
+        ],
+        semContagem: true,
+        acao: 'Ver as medidas',
+        extraTexto: 'Compartilhar no WhatsApp',
+        extraLink: 'https://wa.me/?text=%2APreven%C3%A7%C3%A3o%20%C3%A0%20COVID-19%20%C2%B7%20Diret%C3%B3rio%20Acad%C3%AAmico%20da%20UEMG%20Guanh%C3%A3es%2A%0ADiante%20do%20aumento%20dos%20casos%20na%20cidade%20e%20na%20regi%C3%A3o%2C%20o%20DA%20refor%C3%A7a%20as%20medidas%20de%20preven%C3%A7%C3%A3o%20na%20Unidade%3A%0A%0A%E2%80%A2%20Com%20sintomas%20gripais%20%28febre%2C%20tosse%2C%20coriza%2C%20dor%20de%20garganta%29%2C%20n%C3%A3o%20compare%C3%A7a%3A%20procure%20atendimento%20m%C3%A9dico%20e%20apresente%20o%20atestado%0A%E2%80%A2%20Use%20m%C3%A1scara%20nas%20depend%C3%AAncias%20da%20Universidade%2C%20principalmente%20em%20ambientes%20fechados%0A%E2%80%A2%20Evite%20aglomera%C3%A7%C3%B5es%20na%20%C3%A1rea%20de%20conviv%C3%AAncia%0A%E2%80%A2%20Mantenha%20as%20m%C3%A3os%20higienizadas%0A%0A%2AVeja%20o%20comunicado%20no%20site%20do%20NAE%3A%2A%0Ahttps%3A%2F%2Fnaeguanhaes.github.io%2Fdiretorio-academico.html%3Futm_source%3Dwhatsapp%26utm_campaign%3Dprevencao%23prevencao'
+      }
+    },
+    {
       titulo: 'Tribunal do Júri · convite aos estudantes de Direito',
       resumo: 'A UEMG convida os estudantes de Direito a acompanhar as sessões do Tribunal do Júri em 18/11, 19/11 e 26/11, sempre às 9h. Cada sessão pode valer 2 horas de atividade complementar.',
       tipo: 'outro',
@@ -463,7 +495,7 @@ window.DADOS_EDITAIS = {
       tipo: 'outro',
       abre: '2026-10-07',
       encerra: '2026-10-09',
-      link: 'diretorio-academico.html#resultado',
+      link: 'da-estatuto.html',
       publicado: '2026-10-07',
       /* e convocacao, nao edital: so no painel da inicial */
       naLista: false,

@@ -207,6 +207,14 @@ do NAE" e rodapé da página do DA, sem o menu do NAE, com a aba "Mostra de Prof
 navegação do DA. Conteúdo nas cores do cartaz (azul-marinho e amarelo), com a chamada de voluntários e as oito
 frentes de trabalho; o formulário de voluntários sai em 12/11 pelo `data-ate`.
 
+**Reorganização de 25/11/2026** (pedido do coordenador): a abertura da página do DA virou um **banner retangular baixo**,
+no formato das boas-vindas da inicial do NAE (`.hero-compacto.da-hero`), e logo abaixo vem o painel em movimento (hoje com
+o Natal). O destaque "Estatuto Social aprovado" e "O Estatuto em 6 pontos" foram para **`da-estatuto.html`**; "Como o DA
+se organiza" foi para **`da-organizacao.html`**. As duas páginas têm o cabeçalho, a navegação e o rodapé do DA, sem o menu
+do NAE (como a Mostra), e estão na busca, no `ESSENCIAIS` e no sitemap. Na navegação do DA, "Estatuto" e "Organização"
+levam às páginas novas, em todas as páginas do DA. O **contato do DA fica no fim da página**, depois de "Avise a sua
+turma". Ordem atual: banner, painel, Prevenção (até 12/12), Natal, Demandas, Os cursos, Ações, Avise a sua turma, Contato.
+
 **O Estatuto foi aprovado na Assembleia Geral de 28/10/2026** (informado pelo coordenador em
 11/11/2026): a seção `#resultado` está no ar e a seção do Estatuto virou "O Estatuto em 6 pontos".
 O PDF em `documentos/estatuto-da-proposta-2026.pdf` é o texto levado à Assembleia; se o DA mandar
@@ -852,7 +860,9 @@ região; com sintomas gripais, não vir à Unidade, procurar atendimento e apres
 especialmente em ambientes fechados; evitar aglomerações na área de convivência; higienizar as mãos. Seção `#prevencao`
 em `diretorio-academico.html`, antes do Natal (classe `.da-prevencao`, `data-ate="2026-12-12"`, o fim das aulas), com
 link na navegação do DA, a regra do atestado de 48 h (a mesma das perguntas frequentes), compartilhar, item na linha do
-tempo, aviso (`atencao`, até 12/12), novidade e busca. Arte em `assets/da/prevencao-covid*.webp`. Se o DA suspender as
+tempo, aviso (`atencao`, até 12/12), novidade e busca. Arte em `assets/da/prevencao-covid*.webp`. **No painel da inicial do NAE** (pedido do coordenador): item em
+`dados-editais.js` com `tema: 'da'`, `semContagem` e `encerra: '2026-12-12'`, **sem `org: 'da'`** de propósito, para o
+painel da página do DA continuar só com o Natal. Se o DA suspender as
 medidas antes, tirar a seção e encurtar o aviso.
 
 ## Acessos do portal (no ar desde 17/11/2026)

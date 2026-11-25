@@ -5,7 +5,7 @@
    isso apaga o cache antigo e busca tudo de novo.
    ═══════════════════════════════════════════════════════ */
 
-var VERSAO = 'nae-v182';
+var VERSAO = 'nae-v183';
 
 /* Páginas que de propósito NÃO entram no cache do aparelho do aluno:
    ficam no ar e são baixadas só quando alguém abre. O arquivo do que
@@ -62,6 +62,8 @@ var ESSENCIAIS = [
   './acessos.html',
   './diretorio-academico.html',
   './mostra-profissoes.html',
+  './da-estatuto.html',
+  './da-organizacao.html',
   './glossario.html',
   './perguntas-frequentes.html',
   './formatura.html',

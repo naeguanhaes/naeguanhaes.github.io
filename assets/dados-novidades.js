@@ -155,7 +155,7 @@ window.DADOS_NOVIDADES = {
       data: '2026-11-11',
       titulo: 'Estatuto do DA aprovado',
       texto: 'O Estatuto Social do Diretório Acadêmico Sapientia et Justitia foi aprovado na Assembleia Geral de 28/10/2026. A página do DA traz o resumo em 6 pontos e o texto completo.',
-      link: 'diretorio-academico.html#resultado',
+      link: 'da-estatuto.html',
       textoLink: 'ver na página do DA'
     },
     {
@@ -391,7 +391,7 @@ window.DADOS_NOVIDADES = {
       data: '2026-10-07',
       titulo: 'Assembleia Geral do Diretório Acadêmico',
       texto: 'Todos os estudantes estão convocados para discutir e votar o Estatuto Social do DA Sapientia et Justitia. Sexta, 9 de outubro, às 19h, na Unidade.',
-      link: 'diretorio-academico.html#resultado',
+      link: 'da-estatuto.html',
       textoLink: 'ver o resultado'
     },
     {

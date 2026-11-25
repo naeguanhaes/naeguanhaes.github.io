@@ -31,6 +31,18 @@ window.DADOS_BUSCA = {
       k: 'como chegar endereco localizacao onde fica mapa gps rota google maps waze br-259 2250 nova uniao chegar na faculdade caminho'
     },
     {
+      t: 'Estatuto Social do Diretório Acadêmico',
+      d: 'Aprovado na Assembleia Geral de 28/10/2026: quem faz parte, direitos, Assembleia, Diretoria, contas e eleições, em 6 pontos, e o PDF completo.',
+      u: 'da-estatuto.html',
+      k: 'estatuto social diretorio academico da regras assembleia geral aprovado 28/10 associado direitos deveres diretoria mandato eleicoes contas pdf artigos'
+    },
+    {
+      t: 'Como o Diretório Acadêmico se organiza',
+      d: 'Assembleia Geral Estudantil, Conselho de Centros Acadêmicos (CONCA) e Diretoria Executiva, com os seis cargos.',
+      u: 'da-organizacao.html',
+      k: 'organizacao diretorio academico da assembleia geral conca conselho centros academicos diretoria executiva cargos presidencia tesouraria secretariado'
+    },
+    {
       t: 'Prevenção à COVID-19 · Diretório Acadêmico',
       d: 'Comunicado do DA: com o aumento dos casos na região, quem tiver sintomas gripais não deve vir à Unidade e deve apresentar o atestado; máscara em ambientes fechados e evitar aglomerações.',
       u: 'diretorio-academico.html#prevencao',
@@ -152,7 +164,7 @@ window.DADOS_BUSCA = {
     },
     {
       t: 'Diretório Acadêmico Sapientia et Justitia',
-      d: 'A representação estudantil da UEMG Guanhães: Assembleia Geral de 28/10, às 19h, no Auditório, para votar o Estatuto Social. Contato e ações do DA.',
+      d: 'A representação estudantil da UEMG Guanhães: demandas ao DA, ações, Natal que nos Une, prevenção à COVID-19 e contato.',
       u: 'diretorio-academico.html',
       k: 'demanda demandas ouvidoria reclamacao reclamacoes solicitacao sugestao modelo encaminhamento formulario diretorio academico da sapientia et justitia representacao estudantil centro academico entidade estatuto social assembleia geral votacao convocacao edital auditorio presidencia rian ouvidoria contato mostra de profissoes audiencia plano diretor'
     },

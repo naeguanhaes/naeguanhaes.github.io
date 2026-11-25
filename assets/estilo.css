@@ -2501,6 +2501,9 @@ html[data-contraste="alto"] .btn-semana { border-color: #000; color: #000; }
 }
 
 .da-hero { isolation: isolate; }
+.da-hero.hero-compacto .hc-texto, .da-hero.hero-compacto .hc-lado { position: relative; z-index: 1; }
+.da-hero.hero-compacto h1 { font-family: var(--serif); }
+.da-volta-pagina { margin: 0; }
 .da-blob { position: absolute; z-index: 0; fill: var(--da-mostarda); pointer-events: none; }
 .da-blob-a { width: 17rem; top: -5.5rem; right: -4.5rem; }
 .da-blob-b { width: 12rem; bottom: -5rem; left: -4rem; transform: rotate(160deg); }
