@@ -213,7 +213,7 @@ o Natal). O destaque "Estatuto Social aprovado" e "O Estatuto em 6 pontos" foram
 se organiza" foi para **`da-organizacao.html`**. As duas páginas têm o cabeçalho, a navegação e o rodapé do DA, sem o menu
 do NAE (como a Mostra), e estão na busca, no `ESSENCIAIS` e no sitemap. Na navegação do DA, "Estatuto" e "Organização"
 levam às páginas novas, em todas as páginas do DA. O **contato do DA fica no fim da página**, depois de "Avise a sua
-turma". Ordem atual: banner, painel, Prevenção (até 12/12), Natal, Demandas, Os cursos, Ações, Avise a sua turma, Contato.
+turma". Ordem atual (o banner só tem o botão das demandas): banner, painel, Natal, Prevenção (até 12/12), Demandas, Os cursos, Ações, Avise a sua turma, Contato.
 
 **O Estatuto foi aprovado na Assembleia Geral de 28/10/2026** (informado pelo coordenador em
 11/11/2026): a seção `#resultado` está no ar e a seção do Estatuto virou "O Estatuto em 6 pontos".
