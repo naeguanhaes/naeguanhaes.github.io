@@ -19,6 +19,13 @@ window.DADOS_NOVIDADES = {
   atualizadoEm: '2026-11-03',
   itens: [
     {
+      data: '2026-11-25',
+      titulo: 'Estágio na UEMG: inscrições homologadas de Guanhães',
+      texto: 'A lista dos 14 estudantes de Guanhães com inscrição homologada está na página do Estágio na UEMG. A prova é na sexta, 27/11, às 17h, na sala do 7º período de Direito.',
+      link: 'estagio-inclua.html#inscritos',
+      textoLink: 'ver a lista'
+    },
+    {
       data: '2026-11-24',
       titulo: 'Estágio no Fórum de Guanhães (TJMG)',
       texto: 'Página da seleção de estagiários de Direito do Edital nº 05/2026 da Comarca de Guanhães: quem pode (a partir do 5º período), a inscrição por e-mail de 25/11 a 09/12 e a prova de 15/12.',

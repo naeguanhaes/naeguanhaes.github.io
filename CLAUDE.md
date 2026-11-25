@@ -619,7 +619,10 @@ adendos ou tarefas da Direção; a linha "Comissões Locais e apoio às Unidades
 foi apagada da arte. PDF em `documentos/estagio-inclua-2027/`.
 **Prova marcada** (informado pelo coordenador em 24/11/2026): a convocação foi enviada por e-mail e a prova é em
 **27/11, às 17h, na sala do 7º período de Direito** (aviso na seção `#prova`, contagem do topo, cronograma, calendário,
-aviso e novidade). **Pendências:** (1) a seção `#inclua` espera o Edital nº 08/2026 (Monitoria INCLUA),
+aviso e novidade). **Lista de inscritos de Guanhães** (pedido do coordenador em 24/11, a partir da homologação final da
+PROEX/COAC de 17/11): seção `#inscritos`, só os nomes dos 14 estudantes com inscrição homologada, em ordem alfabética,
+`data-ate="2026-12-14"`. **Depois do resultado final, apagar a seção** (nome de estudante não fica além do necessário).
+A planilha e o PDF da homologação têm CPF, endereço e matrícula: nunca publicar. **Pendências:** (1) a seção `#inclua` espera o Edital nº 08/2026 (Monitoria INCLUA),
 "nos próximos dias" segundo a PROEX: trazer datas, valores, link da inscrição, o PDF,
 e estender o `data-ate` do menu; (2) turno, setor e atividades da vaga de Guanhães,
 quando a Unidade divulgar. O `nae:revisar-em` lembra em 10/11, 19/11 e 15/12 (em 03/11 o edital do INCLUA ainda não tinha saído).

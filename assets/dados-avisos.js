@@ -54,9 +54,9 @@ window.DADOS_AVISOS = {
       tipo: 'atencao',
       de: '2026-11-24',
       ate: '2026-11-27',
-      texto: 'Estágio Institucional na UEMG: a convocação foi enviada pelo e-mail institucional. A prova é na sexta, 27/11, às 17h, na sala do 7º período de Direito.',
-      link: 'estagio-inclua.html#prova',
-      textoLink: 'ver a prova'
+      texto: 'Estágio Institucional na UEMG: saiu a lista das inscrições homologadas de Guanhães. A prova é na sexta, 27/11, às 17h, na sala do 7º período de Direito.',
+      link: 'estagio-inclua.html#inscritos',
+      textoLink: 'ver a lista'
     },
     {
       tipo: 'atencao',
