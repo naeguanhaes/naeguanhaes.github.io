@@ -3792,6 +3792,9 @@ body:has(.pg-djonga) { background: #FFFBF1; }
 
 /* ═══════════════ NATAL QUE NOS UNE (diretorio-academico.html#natal) ═══════════════ */
 /* Cores do cartaz do DA: vermelho natalino, verde de pinheiro e dourado. */
+.da-prevencao { background: linear-gradient(160deg, #F3F7FD 0%, #E7EEF9 100%); border: 1px solid #C9D6EC; }
+.da-prevencao h2 { color: var(--da-azul); font-family: var(--serif); }
+.da-prevencao .rotulo { color: #8E1B22; }
 .da-natal { background: linear-gradient(160deg, #FFF7F2 0%, #FBEDE6 100%); border: 1px solid #F0D3C8; }
 .da-natal h2 { color: #8E1B22; font-family: var(--serif); }
 .da-natal .rotulo { color: #1F4D2B; }

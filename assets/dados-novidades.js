@@ -20,6 +20,20 @@ window.DADOS_NOVIDADES = {
   itens: [
     {
       data: '2026-11-25',
+      titulo: 'COVID-19: medidas de prevenção do Diretório Acadêmico',
+      texto: 'Com o aumento dos casos na cidade e na região, o DA pede que quem tiver sintomas gripais fique em casa e apresente o atestado, recomenda máscara em ambientes fechados e evitar aglomerações.',
+      link: 'diretorio-academico.html#prevencao',
+      textoLink: 'ver o comunicado'
+    },
+    {
+      data: '2026-11-25',
+      titulo: 'Confraternização do DA em 08/12, no intervalo',
+      texto: 'O Diretório Acadêmico confirmou a data da confraternização do Natal que nos Une. Quem for pode levar algo para partilhar e confirmar a presença no formulário do DA.',
+      link: 'diretorio-academico.html#natal',
+      textoLink: 'confirmar presença'
+    },
+    {
+      data: '2026-11-25',
       titulo: 'Estágio na UEMG: inscrições homologadas de Guanhães',
       texto: 'A lista dos 14 estudantes de Guanhães com inscrição homologada está na página do Estágio na UEMG. A prova é na sexta, 27/11, às 17h, na sala do 7º período de Direito.',
       link: 'estagio-inclua.html#inscritos',

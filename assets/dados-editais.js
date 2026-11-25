@@ -61,7 +61,7 @@ window.DADOS_EDITAIS = {
     {
       titulo: 'Natal que nos Une · Projeto Natal Compartilhado do DA',
       org: 'da',
-      resumo: 'O Diretório Acadêmico convida cada estudante a levar um enfeite ou uma decoração natalina para o espaço de convivência da Unidade, de 17/11 até 08/12. Nos últimos dias de aula haverá uma confraternização, com data a confirmar.',
+      resumo: 'O Diretório Acadêmico convida cada estudante a levar um enfeite ou uma decoração natalina para o espaço de convivência da Unidade, de 17/11 até 08/12. A confraternização do DA é em 08/12, no horário do intervalo.',
       tipo: 'outro',
       abre: '2026-11-17',
       encerra: '2026-12-08',
@@ -77,19 +77,19 @@ window.DADOS_EDITAIS = {
         fixoPosicao: 'center 24%',
         eyebrow: 'Diretório Acadêmico · Projeto Natal Compartilhado',
         titulo: 'Natal que nos Une: leve um enfeite até 08/12',
-        texto: '<b>Um gesto de cada um, um Natal de todos!</b> Leve um enfeite ou uma decoração natalina para o espaço de convivência da Unidade. Nos últimos dias de aula, uma confraternização para partilhar com os colegas.',
+        texto: '<b>Um gesto de cada um, um Natal de todos!</b> Leve um enfeite ou uma decoração natalina para o espaço de convivência da Unidade. E em 08/12, no intervalo, a confraternização do DA: confirme a sua presença.',
         fixoTexto: 'Leve um enfeite ou uma decoração natalina para o espaço de convivência da Unidade.',
         numeros: [
           { n: '08/12', r: 'prazo das decorações' },
           { n: '1 enfeite', r: 'de cada estudante' },
-          { n: 'A confirmar', r: 'data da confraternização' }
+          { n: 'Intervalo', r: 'confraternização em 08/12' }
         ],
         rotuloPrazo: 'para levar as decorações',
         textoUltimoDia: 'Último dia para levar as decorações',
         textoLonge: 'Decorações até 08/12',
         acao: 'Ver como vai funcionar',
         extraTexto: 'Compartilhar no WhatsApp',
-        extraLink: 'https://wa.me/?text=%2ANatal%20que%20nos%20Une%20%C2%B7%20Diret%C3%B3rio%20Acad%C3%AAmico%20da%20UEMG%20Guanh%C3%A3es%2A%0AUm%20gesto%20de%20cada%20um%2C%20um%20Natal%20de%20todos%21%20O%20DA%20prop%C3%B5e%20o%20Projeto%20Natal%20Compartilhado%3A%0A%0A%E2%80%A2%20Decora%C3%A7%C3%A3o%20coletiva%3A%20leve%20um%20enfeite%20ou%20uma%20decora%C3%A7%C3%A3o%20natalina%20para%20o%20espa%C3%A7o%20de%20conviv%C3%AAncia%20da%20Unidade%2C%20de%2017%2F11%20at%C3%A9%2008%2F12%0A%E2%80%A2%20Partilha%20comunit%C3%A1ria%3A%20nos%20%C3%BAltimos%20dias%20de%20aula%2C%20confraterniza%C3%A7%C3%A3o%20em%20que%20cada%20um%20leva%20algo%20para%20comer%20ou%20beber%20%28data%20a%20confirmar%29%0A%0A%2AComo%20vai%20funcionar%2C%20no%20site%20do%20NAE%3A%2A%0Ahttps%3A%2F%2Fnaeguanhaes.github.io%2Fdiretorio-academico.html%3Futm_source%3Dwhatsapp%26utm_campaign%3Dnatal%23natal'
+        extraLink: 'https://wa.me/?text=%2ANatal%20que%20nos%20Une%20%C2%B7%20Diret%C3%B3rio%20Acad%C3%AAmico%20da%20UEMG%20Guanh%C3%A3es%2A%0AUm%20gesto%20de%20cada%20um%2C%20um%20Natal%20de%20todos%21%20O%20DA%20prop%C3%B5e%20o%20Projeto%20Natal%20Compartilhado%3A%0A%0A%E2%80%A2%20Decora%C3%A7%C3%A3o%20coletiva%3A%20leve%20um%20enfeite%20ou%20uma%20decora%C3%A7%C3%A3o%20natalina%20para%20o%20espa%C3%A7o%20de%20conviv%C3%AAncia%20da%20Unidade%2C%20at%C3%A9%2008%2F12%0A%E2%80%A2%20Confraterniza%C3%A7%C3%A3o%20do%20DA%3A%2008%2F12%2C%20no%20hor%C3%A1rio%20do%20intervalo.%20Cada%20um%20pode%20levar%20algo%20para%20partilhar%0A%0A%2AConfirme%20a%20sua%20presen%C3%A7a%20pelo%20site%20do%20NAE%3A%2A%0Ahttps%3A%2F%2Fnaeguanhaes.github.io%2Fdiretorio-academico.html%3Futm_source%3Dwhatsapp%26utm_campaign%3Dnatal%23natal'
       }
     },
     {

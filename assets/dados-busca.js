@@ -31,8 +31,14 @@ window.DADOS_BUSCA = {
       k: 'como chegar endereco localizacao onde fica mapa gps rota google maps waze br-259 2250 nova uniao chegar na faculdade caminho'
     },
     {
+      t: 'Prevenção à COVID-19 · Diretório Acadêmico',
+      d: 'Comunicado do DA: com o aumento dos casos na região, quem tiver sintomas gripais não deve vir à Unidade e deve apresentar o atestado; máscara em ambientes fechados e evitar aglomerações.',
+      u: 'diretorio-academico.html#prevencao',
+      k: 'covid covid-19 coronavirus corona gripe sintomas febre tosse coriza mascara prevencao saude atestado aglomeracao doenca diretorio academico da comunicado'
+    },
+    {
       t: 'Natal que nos Une · Diretório Acadêmico',
-      d: 'Projeto Natal Compartilhado do DA: leve um enfeite ou uma decoração natalina para o espaço de convivência da Unidade até 08/12, e participe da confraternização nos últimos dias de aula.',
+      d: 'Projeto Natal Compartilhado do DA: leve um enfeite ou uma decoração natalina para o espaço de convivência da Unidade até 08/12, e venha à confraternização do DA em 08/12, no horário do intervalo (confirme a presença pelo formulário).',
       u: 'diretorio-academico.html#natal',
       k: 'natal natalino natalina decoracao enfeite enfeites arvore confraternizacao festa fim de ano amigo partilha comida lanche diretorio academico da projeto natal compartilhado espaco de convivencia'
     },

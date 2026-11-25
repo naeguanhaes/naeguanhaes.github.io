@@ -36,6 +36,22 @@ window.DADOS_AVISOS = {
   avisos: [
     {
       tipo: 'atencao',
+      de: '2026-11-25',
+      ate: '2026-12-12',
+      texto: 'COVID-19: diante do aumento dos casos na região, o Diretório Acadêmico pede que quem tiver sintomas gripais não venha à Unidade, recomenda máscara em ambientes fechados e evitar aglomerações.',
+      link: 'diretorio-academico.html#prevencao',
+      textoLink: 'ver as medidas'
+    },
+    {
+      tipo: 'novidade',
+      de: '2026-11-25',
+      ate: '2026-12-08',
+      texto: 'Confraternização do Diretório Acadêmico: 08/12, no horário do intervalo. Cada um pode levar algo para partilhar; confirme a sua presença.',
+      link: 'diretorio-academico.html#natal',
+      textoLink: 'confirmar presença'
+    },
+    {
+      tipo: 'atencao',
       de: '2026-11-24',
       ate: '2026-12-09',
       texto: 'Estágio no Fórum de Guanhães (TJMG) para estudantes de Direito a partir do 5º período: bolsa de R$ 2.674,32. Inscrições por e-mail de 25/11 a 09/12 e prova em 15/12.',

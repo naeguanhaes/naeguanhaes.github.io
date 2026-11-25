@@ -838,6 +838,22 @@ confirmar** (as aulas terminam em 12/12). Seção `#natal` em `diretorio-academi
 âncora `natal`). Cartaz em `assets/da/natal-2026*.webp`. **Quando o DA confirmar a data da confraternização:**
 trocar o "data a confirmar" na seção, no item do painel, na novidade e pôr a data no calendário. O
 `nae:revisar-em` da página do DA pede releitura em 09/12.
+**Data confirmada em 25/11/2026** (comunicado do DA enviado pelo coordenador): a **confraternização é em 08/12, no
+horário do intervalo**; cada participante pode levar algo para partilhar. O item 2 da seção virou "Confraternização do
+DA" (com `data-desde` para depois), e a caixa `.note.info` traz o botão "Confirmar presença" para o Forms do DA
+(`data-ate="2026-12-08"`). O WhatsApp continua levando à página do DA, nunca ao formulário. Painel, aviso, novidade,
+busca, linha do tempo e calendário (08/12, `marca: 'da'`) foram acertados. O Stories e o cartaz são a arte do DA e
+continuam dizendo "data a confirmar": não dá para mexer na arte.
+
+## Prevenção à COVID-19, comunicado do DA (no ar desde 25/11/2026)
+
+Comunicado do Diretório Acadêmico com a arte enviada pelo coordenador: aumento dos casos de COVID-19 em Guanhães e na
+região; com sintomas gripais, não vir à Unidade, procurar atendimento e apresentar o atestado; máscara nas dependências,
+especialmente em ambientes fechados; evitar aglomerações na área de convivência; higienizar as mãos. Seção `#prevencao`
+em `diretorio-academico.html`, antes do Natal (classe `.da-prevencao`, `data-ate="2026-12-12"`, o fim das aulas), com
+link na navegação do DA, a regra do atestado de 48 h (a mesma das perguntas frequentes), compartilhar, item na linha do
+tempo, aviso (`atencao`, até 12/12), novidade e busca. Arte em `assets/da/prevencao-covid*.webp`. Se o DA suspender as
+medidas antes, tirar a seção e encurtar o aviso.
 
 ## Acessos do portal (no ar desde 17/11/2026)
 

@@ -92,6 +92,7 @@ window.DADOS_CALENDARIO = {
     { ini: '2026-11-25', fim: '2026-12-09', titulo: 'Estágio no TJMG (Fórum de Guanhães): inscrições por e-mail para gheadm@tjmg.jus.br', tipo: 'prazo', curto: 'Estágio TJMG: inscrições' },
     { ini: '2026-12-15', fim: '2026-12-15', titulo: 'Estágio no TJMG: prova das 8h às 12h, no Salão do Tribunal do Júri do Fórum de Guanhães', tipo: 'prazo', curto: 'Estágio TJMG: prova' },
     { ini: '2026-11-26', fim: '2026-11-26', titulo: 'Tribunal do Júri: sessão aberta aos estudantes de Direito, às 9h', tipo: 'prazo', curto: 'Tribunal do Júri, às 9h' },
+    { ini: '2026-12-08', fim: '2026-12-08', titulo: 'Confraternização do Diretório Acadêmico, no horário do intervalo', tipo: 'letivo', curto: 'Confraternização do DA', marca: 'da' },
     { ini: '2026-11-17', fim: '2026-12-08', titulo: 'Natal que nos Une (Diretório Acadêmico): prazo para levar enfeites e decorações natalinas para o espaço de convivência', tipo: 'prazo', curto: 'Natal do DA: enfeites até 08/12' },
     { ini: '2026-10-23', fim: '2026-11-09', titulo: 'Inscrições no Estágio Institucional da UEMG 2027, pelo formulário do edital (até 23h30 do último dia)', tipo: 'prazo', curto: 'Inscrições no Estágio Institucional' },
     { ini: '2026-10-29', fim: '2026-11-11', titulo: 'Adesão ao UEMG + Permanência 2026 (R$ 500 para quem já teve PEAES deferido), pelo formulário do edital', tipo: 'prazo', curto: 'Adesão ao UEMG + Permanência' },
