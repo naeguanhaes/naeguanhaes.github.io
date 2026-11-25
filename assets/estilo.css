@@ -3684,6 +3684,34 @@ body:has(.pg-tre) { background: #F5F8FC; }
 }
 .hero-edital.tema-tre .eyebrow, .fixo.tema-tre .fixo-eyebrow { color: #FFD66B; }
 
+/* Estágio no TJMG, Fórum da Comarca de Guanhães (estagio-tjmg.html): vinho da logo e azul-marinho do cartaz */
+.pg-tjmg {
+  --pe-navy: #0E2240; --pe-terra: #7F1A1C; --pe-mostarda: #D9A43A; --pe-mostarda-txt: #7A5300;
+  --pe-vinho: #7F1A1C; --pe-verde: #2F6B3A; --pe-creme: #FBF5F2; --pe-creme-2: #F2E3DD;
+}
+body:has(.pg-tjmg) { background: #FAF6F3; }
+.pg-tjmg .pe-hero { border-color: #ECD9D3; }
+.pg-tjmg .pe-blob-1 { background: #7F1A1C; opacity: .85; }
+.pg-tjmg .pe-blob-2 { background: var(--pe-mostarda); }
+.pg-tjmg .pe-t1 { font-size: clamp(2.1rem, 6vw, 3.6rem); }
+.pg-tjmg .pe-t2 { font-size: clamp(1.3rem, 3.6vw, 2rem); color: var(--pe-terra); }
+.pg-tjmg .pe-selos span, .pg-tjmg .pe-indice a { border-color: #ECD9D3; }
+.pg-tjmg .pe-quem-item, .pg-tjmg .pe-aux, .pg-tjmg .pe-passos li { border-color: #ECD9D3; }
+.tjmg-arte img { width: 100%; max-width: 22rem; height: auto; border-radius: 18px; box-shadow: 0 18px 40px -24px rgba(14,34,64,.55); }
+.tjmg-faixa { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.6rem; padding: 1rem 1.4rem; border-radius: 20px; background: #fff;
+  border-left: 6px solid #7F1A1C; box-shadow: 0 14px 30px -26px rgba(14,34,64,.6); }
+.tjmg-faixa img { width: min(15rem, 70%); height: auto; }
+.tjmg-faixa p { margin: 0; color: var(--ink-2); }
+.tjmg-prova { border-color: #ECD9D3; }
+.tjmg-prova .mpmg-prova-data { background: #0E2240; }
+.hero-edital.tema-tjmg, .fixo.tema-tjmg {
+  background:
+    radial-gradient(90% 80% at 96% 4%, rgba(217,164,58,.34) 0%, rgba(217,164,58,0) 58%),
+    radial-gradient(80% 70% at 2% 104%, rgba(127,26,28,.75) 0%, rgba(127,26,28,0) 62%),
+    linear-gradient(125deg, #0A1830 0%, #0E2240 55%, #3A1A28 100%);
+}
+.hero-edital.tema-tjmg .eyebrow, .fixo.tema-tjmg .fixo-eyebrow { color: #F2C77A; }
+
 /* orientações para quem apresenta resumo (seminario.html#orientacoes) */
 .sem-orient { padding: 1rem 1.2rem; border-radius: 16px; background: #FFF6EC; border: 2px solid #F5C89A; scroll-margin-top: 6.5rem; }
 .sem-orient h3 { margin: 0 0 .5rem; color: #8A3A00; font-size: 1.15rem; }

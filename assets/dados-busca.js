@@ -79,6 +79,12 @@ window.DADOS_BUSCA = {
       k: 'tre tre-mg tribunal regional eleitoral justica eleitoral cartorio zona 257 sao joao evangelista estagio estagiario direito bolsa 1183 edital 22 cadastro reserva media global'
     },
     {
+      t: 'Estágio no TJMG · Fórum da Comarca de Guanhães',
+      d: 'Seleção de estagiários de Direito (Edital nº 05/2026 da Comarca de Guanhães): a partir do 5º período, bolsa de R$ 2.674,32, inscrições por e-mail de 25/11 a 09/12 e prova em 15/12 no Fórum.',
+      u: 'estagio-tjmg.html',
+      k: 'tjmg tribunal de justica forum comarca guanhaes juizado especial estagio estagiario direito bolsa 2674 edital 05 cadastro reserva prova quinto periodo gheadm'
+    },
+    {
       t: 'Aula magna com Djonga',
       d: 'Aula magna com Djonga, um diálogo entre rap, literatura e educação, em 18/11/2026, no Ginásio Poliesportivo de Guanhães.',
       u: 'aula-magna-djonga.html',

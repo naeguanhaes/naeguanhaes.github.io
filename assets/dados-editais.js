@@ -151,9 +151,9 @@ window.DADOS_EDITAIS = {
       resumo: 'A Agência da Previdência Social de Guanhães vai selecionar estagiários de Direito com previsão de conclusão do curso em 31/12/2028 ou depois (inclusive o 2º período): 2 vagas, bolsa de R$ 1.508,42 mais R$ 13,40 de transporte por dia, 30 horas por semana. Seleção por currículo e entrevista; o currículo é entregue na agência.',
       tipo: 'outro',
       abre: '2026-11-09',
-      encerra: '2026-11-30',
-      link: 'estagio-inss.html',
-      publicado: '2026-11-09',
+      encerra: '2026-11-25',
+      link: 'estagio-inss.html#entrevistas',
+      publicado: '2026-11-24',
 
       destaque: {
         tema: 'inss',
@@ -161,17 +161,17 @@ window.DADOS_EDITAIS = {
         imagemAlt: 'INSS, Instituto Nacional do Seguro Social',
         eyebrow: 'Agência da Previdência Social de Guanhães',
         titulo: 'Estágio no INSS para estudantes de Direito',
-        fixoTexto: '2 vagas na agência de Guanhães, para quem se forma em 31/12/2028 ou depois.',
-        texto: '<b>2 vagas</b> na agência de Guanhães, de manhã ou à tarde, com início em janeiro e fevereiro de 2027. A seleção é por <b>currículo e entrevista</b>, e a <b>entrega do currículo é presencial</b>, na agência.',
+        fixoTexto: 'Currículos encerrados: entrevistas em 25/11, a partir das 14h, na agência.',
+        texto: 'O prazo para entregar currículos <b>terminou</b>. As entrevistas são na <b>quarta, 25/11, a partir das 14h</b>, na agência de Guanhães, e quem entregou no prazo <b>já foi convocado por e-mail</b>.',
         numeros: [
           { n: 'R$ 1.508', r: 'de bolsa por mês' },
           { n: '2', r: 'vagas' },
           { n: '30 h', r: 'por semana' }
         ],
         semContagem: true,
-        acao: 'Como me candidatar',
-        extraTexto: 'Compartilhar no WhatsApp',
-        extraLink: 'https://wa.me/?text=%2AEst%C3%A1gio%20no%20INSS%20em%20Guanh%C3%A3es%20%C2%B7%20Direito%2A%0AA%20Ag%C3%AAncia%20da%20Previd%C3%AAncia%20Social%20de%20Guanh%C3%A3es%20vai%20selecionar%20estagi%C3%A1rios%20do%20curso%20de%20Direito.%0A%0A%E2%80%A2%202%20vagas%2C%20com%20in%C3%ADcio%20em%2004%2F01%20e%2010%2F02%2F2027%0A%E2%80%A2%20Bolsa%20de%20R%24%201.508%2C42%20%2B%20R%24%2013%2C40%20de%20transporte%20por%20dia%0A%E2%80%A2%2030%20horas%20por%20semana%2C%20das%207h%20%C3%A0s%2013h%20ou%20das%2012h%20%C3%A0s%2018h%0A%E2%80%A2%20Para%20quem%20tem%20previs%C3%A3o%20de%20se%20formar%20em%2031%2F12%2F2028%20ou%20depois%3A%20quem%20est%C3%A1%20nos%20primeiros%20per%C3%ADodos%2C%20inclusive%20o%202%C2%BA%2C%20pode%20concorrer%0A%E2%80%A2%20Sele%C3%A7%C3%A3o%20por%20curr%C3%ADculo%20e%20entrevista%3A%20o%20curr%C3%ADculo%20%C3%A9%20entregue%20na%20ag%C3%AAncia%0A%0A%2AQuem%20pode%20e%20como%20entregar%20no%20site%20do%20NAE%3A%2A%0Ahttps%3A%2F%2Fnaeguanhaes.github.io%2Festagio-inss.html%3Futm_source%3Dwhatsapp%26utm_campaign%3Destagio-inss'
+        acao: 'Ver as entrevistas',
+        extraTexto: 'Ver a vaga',
+        extraLink: 'estagio-inss.html#vaga'
       }
     },
     {
@@ -198,6 +198,34 @@ window.DADOS_EDITAIS = {
         acao: 'Ver quem pode participar',
         extraTexto: 'Compartilhar no WhatsApp',
         extraLink: 'https://wa.me/?text=%2AEst%C3%A1gio%20no%20MPMG%20em%20Guanh%C3%A3es%20%C2%B7%20p%C3%B3s-gradua%C3%A7%C3%A3o%20em%20Direito%2A%0ASele%C3%A7%C3%A3o%20para%20estudantes%20de%20p%C3%B3s-gradua%C3%A7%C3%A3o%20em%20Direito%20%28quem%20j%C3%A1%20%C3%A9%20formado%20em%20Direito%29%20na%202%C2%AA%20Promotoria%20de%20Justi%C3%A7a%20de%20Guanh%C3%A3es.%0A%0A%E2%80%A2%201%20vaga%20e%20cadastro%20de%20reserva%0A%E2%80%A2%20Bolsa%20de%20R%24%201.850%2C00%20%2B%20R%24%2018%2C00%20de%20transporte%20por%20dia%0A%E2%80%A2%2030%20horas%20por%20semana%2C%20presencial%0A%E2%80%A2%20Inscri%C3%A7%C3%B5es%20de%2016%20a%2023%2F11%2C%20pela%20internet%0A%E2%80%A2%20Prova%20escrita%20em%2026%2F11%2C%20%C3%A0s%209h%2C%20em%20Guanh%C3%A3es%0A%0A%2AQuem%20pode%20e%20passo%20a%20passo%20no%20site%20do%20NAE%3A%2A%0Ahttps%3A%2F%2Fnaeguanhaes.github.io%2Festagio-mpmg.html'
+      }
+    },
+    {
+      titulo: 'Estágio no TJMG · Fórum da Comarca de Guanhães · Direito',
+      resumo: 'Seleção de estagiários de Direito para o cadastro de reserva da Comarca de Guanhães, incluído o Juizado Especial (Edital nº 05/2026): a partir do 5º período, bolsa de R$ 2.674,32 mais R$ 359,10 de auxílio-transporte por mês, 30 horas por semana. Inscrições por e-mail de 25/11 a 09/12; prova em 15/12, das 8h às 12h, no Fórum.',
+      tipo: 'outro',
+      abre: '2026-11-25',
+      encerra: '2026-12-09',
+      link: 'estagio-tjmg.html',
+      publicado: '2026-11-24',
+
+      destaque: {
+        tema: 'tjmg',
+        imagem: 'assets/tjmg/cartao-tjmg.webp',
+        imagemAlt: 'TJMG, Tribunal de Justiça do Estado de Minas Gerais',
+        eyebrow: 'Tribunal de Justiça de Minas Gerais · Edital nº 05/2026',
+        titulo: 'Estágio no Fórum de Guanhães para estudantes de Direito',
+        fixoTexto: 'A partir do 5º período: inscrições por e-mail até 09/12 e prova em 15/12.',
+        texto: 'Cadastro de reserva de estagiários de <b>Direito</b> na Comarca de Guanhães, incluído o Juizado Especial, para quem está <b>a partir do 5º período</b>. Inscrição <b>por e-mail</b>, de 25/11 a 09/12, e prova em <b>15/12</b>, no Fórum.',
+        numeros: [
+          { n: 'R$ 2.674', r: 'de bolsa por mês' },
+          { n: '30 h', r: 'por semana' },
+          { n: '15/12', r: 'prova' }
+        ],
+        acao: 'Ver como se inscrever',
+        acaoAntes: 'Ver quem pode',
+        extraTexto: 'Compartilhar no WhatsApp',
+        extraLink: 'https://wa.me/?text=%2AEst%C3%A1gio%20no%20F%C3%B3rum%20de%20Guanh%C3%A3es%20%28TJMG%29%20%C2%B7%20Direito%2A%0ASele%C3%A7%C3%A3o%20de%20estagi%C3%A1rios%20de%20Direito%20para%20a%20Comarca%20de%20Guanh%C3%A3es%2C%20inclu%C3%ADdo%20o%20Juizado%20Especial%2C%20pelo%20Edital%20n%C2%BA%2005%2F2026.%0A%0A%E2%80%A2%20A%20partir%20do%205%C2%BA%20per%C3%ADodo%0A%E2%80%A2%20Bolsa%20de%20R%24%202.674%2C32%20%2B%20R%24%20359%2C10%20de%20aux%C3%ADlio-transporte%20por%20m%C3%AAs%0A%E2%80%A2%2030%20horas%20por%20semana%20%286%20horas%20por%20dia%29%0A%E2%80%A2%20Inscri%C3%A7%C3%B5es%20por%20e-mail%2C%20de%2025%2F11%20a%2009%2F12%0A%E2%80%A2%20Prova%20em%2015%2F12%2C%20das%208h%20%C3%A0s%2012h%2C%20no%20F%C3%B3rum%0A%0A%2AQuem%20pode%20e%20passo%20a%20passo%20no%20site%20do%20NAE%3A%2A%0Ahttps%3A%2F%2Fnaeguanhaes.github.io%2Festagio-tjmg.html%3Futm_source%3Dwhatsapp%26utm_campaign%3Destagio-tjmg'
       }
     },
     {
@@ -310,28 +338,34 @@ window.DADOS_EDITAIS = {
     },
     {
       titulo: 'Estágio Institucional na UEMG · Seleção 2027',
-      resumo: 'Estágio remunerado dentro da UEMG, com bolsa de R$ 910,59 e R$ 275,00 de auxílio-transporte, 20 horas por semana. Cadastro de reserva, com seleção por prova escrita. Inscrição até 09/11, às 23h30. A Monitoria INCLUA tem edital em breve.',
+      resumo: 'Estágio remunerado dentro da UEMG, com bolsa de R$ 910,59 e R$ 275,00 de auxílio-transporte, 20 horas por semana. Inscrições encerradas em 09/11; a convocação foi enviada por e-mail e a prova escrita é em 27/11, às 17h, na sala do 7º período de Direito. Resultado preliminar em 04/12 e final em 14/12.',
       tipo: 'outro',
       abre: '2026-10-23',
-      encerra: '2026-11-09',
+      /* a inscrição fechou em 09/11; o item fica na inicial até o resultado final (pedido do coordenador em 24/11) */
+      encerra: '2026-12-14',
       link: 'estagio-inclua.html',
-      publicado: '2026-10-27',
+      publicado: '2026-11-24',
+      naLista: false,
+      fixo: false,
 
       destaque: {
         tema: 'selecao',
         imagem: 'assets/eventos/selecao-estagio-inclua-2027-pessoas.webp',
         imagemAlt: 'Ilustração de três estudantes conversando em volta de uma mesa com papéis e um notebook',
-        eyebrow: 'Edital PROEX/COAC nº 07/2026',
-        titulo: 'Estágio na UEMG: inscrições até 09/11',
-        texto: 'Estágio remunerado <b>dentro da universidade</b>, 20 horas por semana, com seleção por prova escrita. A PROEX não prevê novo edital em 2027. Veja quem pode, o passo a passo e a Monitoria INCLUA, que sai em breve.',
+        eyebrow: 'Estágio Institucional na UEMG · Edital PROEX/COAC nº 07/2026',
+        titulo: 'Estágio na UEMG: prova em 27/11, às 17h',
+        texto: 'A convocação foi enviada pelo <b>e-mail institucional</b>. A prova escrita é na <b>sexta, 27/11, às 17h</b>, na <b>sala do 7º período de Direito</b>. Veja na página a lista dos inscritos de Guanhães, o cronograma e tudo o que for divulgado até o resultado final.',
         numeros: [
-          { n: '09/11', r: 'fim das inscrições' },
-          { n: 'R$ 1.185', r: 'por mês, com transporte' },
-          { n: '20 h', r: 'por semana' }
+          { n: '27/11', r: 'prova, às 17h' },
+          { n: '04/12', r: 'resultado preliminar' },
+          { n: '14/12', r: 'resultado final' }
         ],
-        acao: 'Ver como se inscrever',
-        extraTexto: 'Compartilhar no WhatsApp',
-        extraLink: 'https://wa.me/?text=%2AEst%C3%A1gio%20Institucional%20na%20UEMG%20%C2%B7%20Sele%C3%A7%C3%A3o%202027%2A%0AEst%C3%A1gio%20remunerado%20dentro%20da%20UEMG%2C%20na%20Unidade%20Guanh%C3%A3es.%0A%0A%E2%80%A2%20Bolsa%20de%20R%24%20910%2C59%20%2B%20R%24%20275%2C00%20de%20aux%C3%ADlio-transporte%0A%E2%80%A2%2020%20horas%20por%20semana%0A%E2%80%A2%20Inscri%C3%A7%C3%B5es%20at%C3%A9%2009%2F11%2C%20%C3%A0s%2023h30%2C%20pelo%20formul%C3%A1rio%20do%20edital%0A%E2%80%A2%20Sele%C3%A7%C3%A3o%20por%20prova%20escrita%2C%20de%2023%20a%2027%2F11%0A%0A%2APasso%20a%20passo%20e%20edital%20no%20site%20do%20NAE%3A%2A%0Ahttps%3A%2F%2Fnaeguanhaes.github.io%2Festagio-inclua.html'
+        rotuloPrazo: 'para o resultado final',
+        textoLonge: 'Prova em 27/11, às 17h, na sala do 7º período',
+        textoUltimoDia: 'Resultado final hoje',
+        acao: 'Ver a seleção',
+        extraTexto: 'Ver o cronograma',
+        extraLink: 'estagio-inclua.html#cronograma'
       }
     },
     {

@@ -20,6 +20,20 @@ window.DADOS_NOVIDADES = {
   itens: [
     {
       data: '2026-11-24',
+      titulo: 'Estágio no Fórum de Guanhães (TJMG)',
+      texto: 'Página da seleção de estagiários de Direito do Edital nº 05/2026 da Comarca de Guanhães: quem pode (a partir do 5º período), a inscrição por e-mail de 25/11 a 09/12 e a prova de 15/12.',
+      link: 'estagio-tjmg.html',
+      textoLink: 'ver a página'
+    },
+    {
+      data: '2026-11-24',
+      titulo: 'Estágio no INSS: entrevistas em 25/11',
+      texto: 'O prazo para entregar currículos terminou. As entrevistas são em 25/11, a partir das 14h, na agência do INSS, e quem entregou no prazo já foi convocado por e-mail.',
+      link: 'estagio-inss.html#entrevistas',
+      textoLink: 'ver detalhes'
+    },
+    {
+      data: '2026-11-24',
       titulo: 'Estágio na UEMG: prova em 27/11, às 17h',
       texto: 'A convocação foi enviada pelo e-mail institucional. A prova escrita do Estágio Institucional é na sexta, 27/11, às 17h, na sala do 7º período de Direito.',
       link: 'estagio-inclua.html#prova',

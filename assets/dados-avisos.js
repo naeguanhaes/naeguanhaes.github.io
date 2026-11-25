@@ -37,6 +37,22 @@ window.DADOS_AVISOS = {
     {
       tipo: 'atencao',
       de: '2026-11-24',
+      ate: '2026-12-09',
+      texto: 'Estágio no Fórum de Guanhães (TJMG) para estudantes de Direito a partir do 5º período: bolsa de R$ 2.674,32. Inscrições por e-mail de 25/11 a 09/12 e prova em 15/12.',
+      link: 'estagio-tjmg.html',
+      textoLink: 'ver quem pode participar'
+    },
+    {
+      tipo: 'atencao',
+      de: '2026-11-24',
+      ate: '2026-11-25',
+      texto: 'Estágio no INSS: o prazo dos currículos terminou. As entrevistas são em 25/11, a partir das 14h, na agência do INSS, e quem entregou no prazo já foi convocado por e-mail.',
+      link: 'estagio-inss.html#entrevistas',
+      textoLink: 'ver detalhes'
+    },
+    {
+      tipo: 'atencao',
+      de: '2026-11-24',
       ate: '2026-11-27',
       texto: 'Estágio Institucional na UEMG: a convocação foi enviada pelo e-mail institucional. A prova é na sexta, 27/11, às 17h, na sala do 7º período de Direito.',
       link: 'estagio-inclua.html#prova',
@@ -141,7 +157,7 @@ window.DADOS_AVISOS = {
     {
       tipo: 'novidade',
       de: '2026-11-09',
-      ate: '2026-11-30',
+      ate: '2026-11-23',
       texto: 'Estágio no INSS Guanhães para estudantes de Direito: 2 vagas, bolsa de R$ 1.508,42. A entrega do currículo é presencial, na agência.',
       link: 'estagio-inss.html',
       textoLink: 'como me candidatar'

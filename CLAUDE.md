@@ -879,6 +879,26 @@ Cores em `.pg-tre`, painel `tema: 'tre'`, prévia `assets/og/estagio-tre.jpg` e 
 `imagem` do painel, e a mesma logo na prévia e no Stories.
 O `nae:revisar-em` pede releitura em 25/11.
 
+## Estágio no TJMG, Fórum da Comarca de Guanhães (no ar desde 25/11/2026)
+
+`estagio-tjmg.html` (menu "Editais e bolsas", depois do TRE, `data-ate="2026-12-15"`) divulga o Edital nº 05/2026 da
+Direção do Foro da Comarca de Guanhães (TJMG, publicado em 23/11): cadastro de reserva de estagiários de **Direito a
+partir do 5º período**, incluído o Juizado Especial; bolsa de **R$ 2.674,32** + **R$ 359,10** de auxílio-transporte
+mensal; 30 h semanais (6 h por dia). **Inscrição por e-mail** para gheadm@tjmg.jus.br, de **25/11 a 09/12** (edital e
+cartaz; o aviso no site do TJMG diz 12/12, e a página avisa para mandar até 09/12), com a mensagem e o assunto do cartaz,
+a cópia da identidade com foto e a ficha de inscrição (PDF no site do TJMG). Confirmação por e-mail até 18h de 10/12;
+senão, (33) 3421-8550. **Prova em 15/12, das 8h às 12h**, no Salão do Tribunal do Júri do Fórum (Rua Artur Luiz Aguiar,
+100, Acrópole); múltipla escolha e discursivas, mínimo de 50%; desempate por idade. Vedados: vínculo com advogado,
+policiais, guarda municipal, mandato eletivo, servidores e auxiliares do Judiciário de MG. Logo em `assets/tjmg/`
+(`logo-tjmg.webp`, `cartao-tjmg.webp`), cartaz em `assets/eventos/estagio-tjmg-2026*.webp`, cores em `.pg-tjmg`,
+painel `tema: 'tjmg'`, prévia e Stories próprios. Os PDFs do edital e da ficha ficam no site do TJMG (links diretos).
+O `nae:revisar-em` pede releitura em 10/12 e 16/12.
+
+**Na mesma data (24 e 25/11):** o Estágio Institucional da UEMG voltou para a página inicial até o resultado final
+(`encerra: '2026-12-14'`, `naLista: false`, `fixo: false`; pedido do coordenador: "tudo será divulgado por lá"); o INSS
+informou que o prazo dos currículos terminou e as **entrevistas são em 25/11, a partir das 14h, na APS**, com os
+convocados avisados por e-mail (seção `#entrevistas`, item do painel com `encerra: '2026-11-25'`, compartilhar escondido).
+
 ## VI Conecta Mente (no ar desde 19/11/2026)
 
 Convite da COAC/PROEX aos NAEs para divulgar o webinário "Medo de fracassar e síndrome do impostor", em **04/12/2026,
