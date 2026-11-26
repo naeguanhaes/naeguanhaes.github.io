@@ -30,6 +30,72 @@ window.DADOS_EDITAIS = {
   atualizadoEm: '2026-11-03',
   itens: [
     {
+      titulo: 'Trabalhe no Vestibular UEMG 2027 · atendente presencial',
+      resumo: 'A MSCONCURSOS seleciona estudantes da UEMG, maiores de 18 anos, para atender candidatos durante as inscrições do vestibular (04 a 29/12): R$ 700 líquidos. Inscrições de 26 a 30/11, pelo cadastro de colaboradores, com o comprovante de matrícula; escolha por sorteio.',
+      tipo: 'outro',
+      abre: '2026-11-26',
+      encerra: '2026-11-30',
+      link: 'vestibular-colaborador.html#atendente',
+      publicado: '2026-11-26',
+      grupo: 'vestibular-colaborador',
+      naLista: true,
+
+      destaque: {
+        tema: 'vestibular',
+        imagem: 'assets/eventos/vestibular-colaborador-560.webp',
+        imagemAlt: 'Arte do NAE: Trabalhe no Vestibular. Atendente, R$ 700 líquidos; fiscal, R$ 100 líquidos. Para estudantes da UEMG maiores de 18 anos.',
+        fixoPosicao: 'center 62%',
+        eyebrow: 'Vestibular UEMG 2027 · para estudantes da UEMG',
+        titulo: 'Trabalhe no Vestibular: atendente, R$ 700',
+        texto: 'Estudante da UEMG, maior de 18 anos: atenda os candidatos do vestibular de <b>04 a 29/12</b>, 4 horas por dia. <b>Inscrições até 30/11</b>, com o comprovante de matrícula. Para fiscal no dia da prova, inscrições de 03/12 a 03/01.',
+        fixoTexto: 'Atendente do vestibular: R$ 700 líquidos. Inscrições até 30/11, para estudantes da UEMG.',
+        numeros: [
+          { n: 'R$ 700', r: 'atendente, líquidos' },
+          { n: '30/11', r: 'fim das inscrições' },
+          { n: '01/12', r: 'treinamento virtual' }
+        ],
+        rotuloPrazo: 'para a inscrição de atendente',
+        textoUltimoDia: 'Último dia para se inscrever como atendente',
+        textoLonge: 'Inscrições de atendente até 30/11',
+        acao: 'Ver quem pode e como se inscrever',
+        extraTexto: 'Compartilhar no WhatsApp',
+        extraLink: 'https://wa.me/?text=%2ATrabalhe%20no%20Vestibular%20UEMG%202027%20%C2%B7%20para%20estudantes%20da%20UEMG%2A%0AA%20MSCONCURSOS%20abriu%20sele%C3%A7%C3%A3o%20de%20estudantes%20da%20UEMG%2C%20maiores%20de%2018%20anos%2C%20para%20trabalhar%20no%20vestibular%2C%20com%20escolha%20por%20sorteio%20eletr%C3%B4nico%3A%0A%0A%E2%80%A2%20Atendente%20presencial%3A%20R%24%20700%20l%C3%ADquidos%2C%20inscri%C3%A7%C3%B5es%20de%2026%20a%2030%2F11%2C%20atendimento%20de%2004%20a%2029%2F12%0A%E2%80%A2%20Fiscal%20no%20dia%20da%20prova%20%2817%2F01%2F2027%29%3A%20R%24%20100%20l%C3%ADquidos%2C%20inscri%C3%A7%C3%B5es%20de%2003%2F12%20a%2003%2F01%0A%0A%2AQuem%20pode%20e%20passo%20a%20passo%20no%20site%20do%20NAE%3A%2A%0Ahttps%3A%2F%2Fnaeguanhaes.github.io%2Fvestibular-colaborador.html%3Futm_source%3Dwhatsapp%26utm_campaign%3Dvestibular-colaborador'
+      }
+    },
+    {
+      titulo: 'Trabalhe no Vestibular UEMG 2027 · fiscal de prova',
+      resumo: 'A MSCONCURSOS seleciona estudantes da UEMG, maiores de 18 anos, para fiscalizar a prova do vestibular em 17/01/2027: R$ 100 líquidos. Inscrições de 03/12 a 03/01, pelo cadastro de colaboradores, com o comprovante de matrícula; escolha por sorteio.',
+      tipo: 'outro',
+      abre: '2026-12-03',
+      encerra: '2027-01-03',
+      link: 'vestibular-colaborador.html#fiscal',
+      publicado: '2026-11-26',
+      grupo: 'vestibular-colaborador',
+      naLista: true,
+
+      destaque: {
+        tema: 'vestibular',
+        imagem: 'assets/eventos/vestibular-colaborador-560.webp',
+        imagemAlt: 'Arte do NAE: Trabalhe no Vestibular. Atendente, R$ 700 líquidos; fiscal, R$ 100 líquidos. Para estudantes da UEMG maiores de 18 anos.',
+        fixoPosicao: 'center 62%',
+        eyebrow: 'Vestibular UEMG 2027 · para estudantes da UEMG',
+        titulo: 'Trabalhe no Vestibular: fiscal, R$ 100',
+        texto: 'Estudante da UEMG, maior de 18 anos: seja fiscal da prova do vestibular em <b>17/01/2027</b>, turno de até 8 horas. <b>Inscrições até 03/01</b>, com o comprovante de matrícula.',
+        fixoTexto: 'Fiscal da prova do vestibular (17/01): R$ 100 líquidos. Inscrições até 03/01.',
+        numeros: [
+          { n: 'R$ 100', r: 'fiscal, líquidos' },
+          { n: '03/01', r: 'fim das inscrições' },
+          { n: '17/01', r: 'dia da prova' }
+        ],
+        rotuloPrazo: 'para a inscrição de fiscal',
+        textoUltimoDia: 'Último dia para se inscrever como fiscal',
+        textoLonge: 'Inscrições de fiscal até 03/01',
+        acao: 'Ver quem pode e como se inscrever',
+        extraTexto: 'Compartilhar no WhatsApp',
+        extraLink: 'https://wa.me/?text=%2ATrabalhe%20no%20Vestibular%20UEMG%202027%20%C2%B7%20para%20estudantes%20da%20UEMG%2A%0AA%20MSCONCURSOS%20abriu%20sele%C3%A7%C3%A3o%20de%20estudantes%20da%20UEMG%2C%20maiores%20de%2018%20anos%2C%20para%20trabalhar%20no%20vestibular%2C%20com%20escolha%20por%20sorteio%20eletr%C3%B4nico%3A%0A%0A%E2%80%A2%20Atendente%20presencial%3A%20R%24%20700%20l%C3%ADquidos%2C%20inscri%C3%A7%C3%B5es%20de%2026%20a%2030%2F11%2C%20atendimento%20de%2004%20a%2029%2F12%0A%E2%80%A2%20Fiscal%20no%20dia%20da%20prova%20%2817%2F01%2F2027%29%3A%20R%24%20100%20l%C3%ADquidos%2C%20inscri%C3%A7%C3%B5es%20de%2003%2F12%20a%2003%2F01%0A%0A%2AQuem%20pode%20e%20passo%20a%20passo%20no%20site%20do%20NAE%3A%2A%0Ahttps%3A%2F%2Fnaeguanhaes.github.io%2Fvestibular-colaborador.html%3Futm_source%3Dwhatsapp%26utm_campaign%3Dvestibular-colaborador'
+      }
+    },
+    {
       titulo: 'Prevenção à COVID-19 · comunicado do Diretório Acadêmico',
       /* sem org: 'da' de propósito: vai só para o painel da inicial do NAE; na página do DA o
          painel fica com o Natal logo abaixo do banner (pedido do coordenador em 25/11/2026) */
@@ -69,6 +135,8 @@ window.DADOS_EDITAIS = {
       encerra: '2026-11-26',
       link: 'tribunal-do-juri.html',
       publicado: '2026-11-17',
+      /* sessão de 26/11 já começou: saiu da inicial (pedido do coordenador em 26/11/2026) */
+      naInicial: false,
       fixo: false,
       naLista: false,
 
@@ -378,7 +446,12 @@ window.DADOS_EDITAIS = {
       link: 'estagio-inclua.html',
       publicado: '2026-11-24',
       naLista: false,
-      fixo: false,
+      /* a data que conta para os cartões fixos é a da prova, depois a dos resultados */
+      marcos: [
+        { data: '2026-11-27', rotulo: 'para a prova', hoje: 'Prova hoje, às 17h' },
+        { data: '2026-12-04', rotulo: 'para o resultado preliminar', hoje: 'Resultado preliminar hoje' },
+        { data: '2026-12-14', rotulo: 'para o resultado final', hoje: 'Resultado final hoje' }
+      ],
 
       destaque: {
         tema: 'selecao',
@@ -686,9 +759,8 @@ window.DADOS_EDITAIS = {
       link: 'apoio.html#conecta-mente',
       publicado: '2026-11-19',
       grupo: 'conecta-mente-vi',
-      /* e evento, nao edital: aparece no painel da inicial, nao na lista nem nos cartoes fixos */
+      /* e evento, nao edital: fica fora da lista; perto do dia desce para os cartoes fixos (pedido de 26/11/2026) */
       naLista: false,
-      fixo: false,
 
       destaque: {
         tema: 'vinho',

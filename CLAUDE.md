@@ -928,6 +928,35 @@ O `nae:revisar-em` pede releitura em 10/12 e 16/12.
 informou que o prazo dos currículos terminou e as **entrevistas são em 25/11, a partir das 14h, na APS**, com os
 convocados avisados por e-mail (seção `#entrevistas`, item do painel com `encerra: '2026-11-25'`, compartilhar escondido).
 
+## Trabalhe no Vestibular UEMG 2027, atendente e fiscal (no ar desde 26/11/2026)
+
+`vestibular-colaborador.html` (menu "Editais e bolsas", antes da Transferência, `data-ate="2027-01-03"`) divulga o edital da
+**MSCONCURSOS** (Sarmento Concursos, 26/11/2026), enviado pelo coordenador: seleção por **sorteio eletrônico** de estudantes da
+UEMG maiores de 18 anos, matriculados em 2026/2 (graduação ou pós stricto sensu), com comprovante de matrícula do Lyceum enviado
+no cadastro (https://msconcursos.com.br/colaborador/). **Atendente presencial:** inscrições de **26 a 30/11**, treinamento virtual
+em **01/12** (obrigatório), atendimento de **04 a 29/12** (inscrição presencial do vestibular), 4 h por dia no horário da Unidade,
+**R$ 700 líquidos** por Pix em até 30 dias depois das inscrições + R$ 50 por plantão extra; falta sem aviso desconta R$ 50.
+**Fiscal:** inscrições de **03/12 a 03/01**, prova em **17/01/2027**, turno de até 8 h, **R$ 100 líquidos** no 1º dia útil depois.
+O PDF do edital **não foi publicado** (assinado digitalmente e com metadados de autoria; tirar os metadados quebraria a assinatura).
+O edital chama por engano o período de 04 a 29/12 de "Vestibular UEMG 2024". Dois itens em `dados-editais.js` com
+`grupo: 'vestibular-colaborador'` (atendente e fiscal), `tema: 'vestibular'`; arte, prévia e Stories feitos pelo NAE
+(`assets/eventos/vestibular-colaborador*.webp`, `assets/og/` e `assets/stories/vestibular-colaborador.jpg`). Chamada em
+`vestibular.html` (`.note.info`, `data-ate="2027-01-03"`). O `nae:revisar-em` pede releitura em 01/12, 03/12, 04/01 e 18/01.
+
+## Cartões fixos: o que está perto de acontecer desce (26/11/2026)
+
+Pedido do coordenador: "é para ir para debaixo as coisas que já estão próximas do dia de acontecimento ou fim". O
+`edital-hero.js` agora aceita no item o campo **`marcos: [{ data, rotulo, hoje }]`** (prova, dia do evento, resultado): para os
+cartões fixos vale o primeiro marco que ainda não passou; sem marco, vale o `encerra`. O cartão conta os dias até essa data, com o
+`rotulo` do marco (ou o `rotuloPrazo`) e o texto `hoje` no dia. `fixo: false` continua tirando um item dos cartões, mas só use
+quando não houver data que o estudante precise ver (COVID, Vestibular sem inscrição aberta). Item com `semContagem` entra nos
+cartões se tiver um marco. Primeiro uso: Estágio na UEMG (prova 27/11, resultados 04/12 e 14/12); o VI Conecta Mente perdeu o
+`fixo: false` (o dia do webinário é o `encerra`). **Evento novo com dia marcado: ponha `marcos` ou deixe o `encerra` no dia.**
+
+**Tribunal do Júri, 26/11/2026:** a última sessão começou e o coordenador pediu para tirar a notícia: saiu do menu, o item ganhou
+`naInicial: false`, o aviso terminou em 25/11, o compartilhar e as sessões saíram da página (que fica como registro, com
+`nae:revisar-em` vazio). O TRE-MG também ficou com `nae:revisar-em` vazio (inscrições encerradas em 24/11, a página já se ajusta sozinha).
+
 ## VI Conecta Mente (no ar desde 19/11/2026)
 
 Convite da COAC/PROEX aos NAEs para divulgar o webinário "Medo de fracassar e síndrome do impostor", em **04/12/2026,

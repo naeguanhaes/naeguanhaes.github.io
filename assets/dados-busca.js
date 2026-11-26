@@ -43,6 +43,12 @@ window.DADOS_BUSCA = {
       k: 'organizacao diretorio academico da assembleia geral conca conselho centros academicos diretoria executiva cargos presidencia tesouraria secretariado'
     },
     {
+      t: 'Trabalhe no Vestibular UEMG 2027 · atendente e fiscal',
+      d: 'Seleção da MSCONCURSOS para estudantes da UEMG: atendente presencial (R$ 700 líquidos, inscrições de 26 a 30/11) e fiscal da prova de 17/01 (R$ 100, inscrições de 03/12 a 03/01).',
+      u: 'vestibular-colaborador.html',
+      k: 'trabalhar vestibular atendente fiscal colaborador msconcursos remunerado renda extra trabalho bico dinheiro inscricao sorteio comprovante de matricula prova 17/01 janeiro'
+    },
+    {
       t: 'Prevenção à COVID-19 · Diretório Acadêmico',
       d: 'Comunicado do DA: com o aumento dos casos na região, quem tiver sintomas gripais não deve vir à Unidade e deve apresentar o atestado; máscara em ambientes fechados e evitar aglomerações.',
       u: 'diretorio-academico.html#prevencao',

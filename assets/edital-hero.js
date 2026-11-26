@@ -102,12 +102,22 @@
      escolhidos saem do painel que gira, para não aparecerem duas vezes.
      Campos opcionais no destaque: fixoTexto (texto curto do cartão) e
      fixoPosicao (object-position da arte, padrão "center top"). */
+  /* Pedido do coordenador em 26/11/2026: o que está PERTO DE ACONTECER também desce
+     para os cartões, não só o fim da inscrição. O campo opcional "marcos" do item
+     ([{ data, rotulo, hoje }]: a prova, o dia do evento) dá a data que conta: vale
+     o primeiro marco que ainda não passou; sem marco, vale o "encerra". */
+  function marco(e) {
+    var ms = (e.marcos || []).filter(function (m) { return m && m.data >= hoje; })
+      .sort(function (a, b) { return a.data < b.data ? -1 : 1; });
+    return ms[0] || null;
+  }
+  function chave(e) { var m = marco(e); return m ? m.data : e.encerra; }
   var caixaFixos = !filtro && document.getElementById('fixos');
   if (caixaFixos) {
     var criticos = escolhidos.filter(function (e) {
       var d = e.destaque || {};
-      return e.fixo !== false && !d.semContagem && (!e.abre || e.abre <= hoje);
-    }).sort(function (a, b) { return a.encerra < b.encerra ? -1 : a.encerra > b.encerra ? 1 : 0; })
+      return e.fixo !== false && (!d.semContagem || marco(e)) && (!e.abre || e.abre <= hoje);
+    }).sort(function (a, b) { var ca = chave(a), cb = chave(b); return ca < cb ? -1 : ca > cb ? 1 : 0; })
       .slice(0, 2);
     criticos.forEach(function (e) { caixaFixos.appendChild(montarFixo(e)); });
     if (criticos.length) {
@@ -118,8 +128,9 @@
 
   function montarFixo(e) {
     var d = e.destaque || {};
-    var faltam = dias(hoje, e.encerra), rotulo = d.rotuloPrazo || 'para encerrar', prazo;
-    if (faltam === 0)      prazo = d.textoUltimoDia || 'Último dia: hoje';
+    var m = marco(e), dataChave = m ? m.data : e.encerra;
+    var faltam = dias(hoje, dataChave), rotulo = (m && m.rotulo) || d.rotuloPrazo || 'para encerrar', prazo;
+    if (faltam === 0)      prazo = (m && m.hoje) || d.textoUltimoDia || 'Último dia: hoje';
     else if (faltam === 1) prazo = 'Falta 1 dia ' + rotulo;
     else                   prazo = 'Faltam ' + faltam + ' dias ' + rotulo;
     /* o cartão inteiro é um link: tira links de dentro do texto */
@@ -136,7 +147,7 @@
         '<span class="fixo-eyebrow">' + escapar(d.eyebrow || 'Prazo aberto') + '</span>' +
         '<h2>' + escapar(d.titulo || e.titulo) + '</h2>' +
         '<span class="fixo-texto">' + texto + '</span>' +
-        '<span class="fixo-rodape"><span class="fixo-prazo">' + escapar(prazo) + ' (' + diaMes(e.encerra) + ')</span>' +
+        '<span class="fixo-rodape"><span class="fixo-prazo">' + escapar(prazo) + ' (' + diaMes(dataChave) + ')</span>' +
         '<span class="fixo-ir">' + escapar(d.acao || 'Ver e se inscrever') + ' &rarr;</span></span>' +
       '</span>';
     return a;

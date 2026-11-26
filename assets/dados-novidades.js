@@ -19,6 +19,13 @@ window.DADOS_NOVIDADES = {
   atualizadoEm: '2026-11-03',
   itens: [
     {
+      data: '2026-11-26',
+      titulo: 'Trabalhe no Vestibular UEMG 2027: atendente e fiscal',
+      texto: 'A MSCONCURSOS abriu seleção de estudantes da UEMG para atender candidatos durante as inscrições (R$ 700 líquidos, inscrições até 30/11) e fiscalizar a prova de 17/01 (R$ 100, inscrições de 03/12 a 03/01).',
+      link: 'vestibular-colaborador.html',
+      textoLink: 'ver quem pode e como se inscrever'
+    },
+    {
       data: '2026-11-25',
       titulo: 'COVID-19: medidas de prevenção do Diretório Acadêmico',
       texto: 'Com o aumento dos casos na cidade e na região, o DA pede que quem tiver sintomas gripais fique em casa e apresente o atestado, recomenda máscara em ambientes fechados e evitar aglomerações.',

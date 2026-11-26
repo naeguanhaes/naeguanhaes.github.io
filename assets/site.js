@@ -1090,7 +1090,7 @@
      imagem própria, ou passou da validade, usa a geral do NAE. As imagens
      saem de ferramentas/stories/ (stories.json + gerar.js). */
   var STORIES = {
-    'tribunal-do-juri': { img: 'assets/stories/tribunal-do-juri.jpg', ate: '2026-11-26' },
+    'tribunal-do-juri': { img: 'assets/stories/tribunal-do-juri.jpg', ate: '2026-11-25' },
     'natal': { img: 'assets/stories/natal-da.jpg', ate: '2026-12-08' },
     'vestibular': { img: 'assets/stories/vestibular.jpg', ate: '2027-01-17' },
     'mostra-profissoes': { img: 'assets/stories/mostra-profissoes.jpg', ate: '2026-11-13' },
@@ -1101,6 +1101,7 @@
     'estagio-mpmg': { img: 'assets/stories/estagio-mpmg.jpg', ate: '2026-11-26' },
     'estagio-tre': { img: 'assets/stories/estagio-tre.jpg', ate: '2026-11-24' },
     'estagio-tjmg': { img: 'assets/stories/estagio-tjmg.jpg', ate: '2026-12-09' },
+    'vestibular-colaborador': { img: 'assets/stories/vestibular-colaborador.jpg', ate: '2027-01-03' },
     'permanencia': { img: 'assets/stories/permanencia.jpg', ate: '2026-11-11' },
     'assembleia': { img: 'assets/stories/assembleia-da.jpg', ate: '2026-10-28' },
     'diretorio-academico': { img: 'assets/stories/assembleia-da.jpg', ate: '2026-10-28' },

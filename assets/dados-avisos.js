@@ -36,6 +36,14 @@ window.DADOS_AVISOS = {
   avisos: [
     {
       tipo: 'atencao',
+      de: '2026-11-26',
+      ate: '2026-11-30',
+      texto: 'Trabalhe no Vestibular UEMG 2027: estudantes da UEMG podem se inscrever como atendente (R$ 700 líquidos) até 30/11. Para fiscal da prova (R$ 100), inscrições de 03/12 a 03/01.',
+      link: 'vestibular-colaborador.html',
+      textoLink: 'ver quem pode'
+    },
+    {
+      tipo: 'atencao',
       de: '2026-11-25',
       ate: '2026-12-12',
       texto: 'COVID-19: diante do aumento dos casos na região, o Diretório Acadêmico pede que quem tiver sintomas gripais não venha à Unidade, recomenda máscara em ambientes fechados e evitar aglomerações.',
@@ -85,7 +93,7 @@ window.DADOS_AVISOS = {
     {
       tipo: 'novidade',
       de: '2026-11-17',
-      ate: '2026-11-26',
+      ate: '2026-11-25',
       texto: 'Tribunal do Júri: estudantes de Direito estão convidados para as sessões de 18/11, 19/11 e 26/11, às 9h. Cada sessão pode valer 2 horas de atividade complementar.',
       link: 'tribunal-do-juri.html',
       textoLink: 'ver as sessões'
