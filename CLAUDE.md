@@ -990,6 +990,10 @@ plantão do NAE.**
   coordenador em 26/11/2026: o site enxuto começa em 01/01/2027** (não em 01/12), e só enquanto ele não for recontratado.
   Até lá o site continua como está. O site enxuto mostra só: **o que é o NAE** (Sobre o NAE e contato), **o calendário
   acadêmico de 2027**, **a página do D.A** (com as páginas do Estatuto e da Organização) e **as informações principais**;
-  todo o resto não deve constar. A lista exata das "informações principais" ainda vai ser confirmada com o coordenador
-  antes de 01/01. Rematrícula 2027/1 e Guia do calouro só vão ao ar se houver renovação. Havendo renovação, o site
+  todo o resto não deve constar. **Lista fechada em 26/11/2026.** Ficam: Início, Sobre o NAE e contato, calendário 2027,
+  D.A (`diretorio-academico`, `da-estatuto`, `da-organizacao`), Sistemas (e-mail, Lyceum, Moodle), Wi-Fi, mapa e como chegar,
+  Secretaria, perguntas frequentes e Ferramentas (calculadora, cronômetro, planner). Saem: apoio psicológico, "Meu curso"
+  (matriz, atividades complementares, estágio, TCC, formatura), horários, editais, estágios e eventos, avisos, novidades,
+  status do projeto e acessos, vestibular. Na virada, conferir os links das perguntas frequentes, da inicial e do Sobre que
+  levariam a páginas escondidas. Rematrícula 2027/1 e Guia do calouro só vão ao ar se houver renovação. Havendo renovação, o site
   continua como é hoje: **não apagar nada**, esconder (como as páginas ocultas) para poder restaurar.
