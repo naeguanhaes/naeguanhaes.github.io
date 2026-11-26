@@ -995,5 +995,7 @@ plantão do NAE.**
   Secretaria, perguntas frequentes e Ferramentas (calculadora, cronômetro, planner). Saem: apoio psicológico, "Meu curso"
   (matriz, atividades complementares, estágio, TCC, formatura), horários, editais, estágios e eventos, avisos, novidades,
   status do projeto e acessos, vestibular. Na virada, conferir os links das perguntas frequentes, da inicial e do Sobre que
-  levariam a páginas escondidas. Rematrícula 2027/1 e Guia do calouro só vão ao ar se houver renovação. Havendo renovação, o site
+  levariam a páginas escondidas.
+  **A mudança acontece em janeiro de 2027 por padrão.** Se o coordenador for renovado, ele avisa no chat e a mudança é
+  cancelada; sem esse aviso, aplicar. Rematrícula 2027/1 e Guia do calouro só vão ao ar se houver renovação. Havendo renovação, o site
   continua como é hoje: **não apagar nada**, esconder (como as páginas ocultas) para poder restaurar.
