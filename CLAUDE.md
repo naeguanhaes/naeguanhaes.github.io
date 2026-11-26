@@ -943,6 +943,19 @@ O edital chama por engano o período de 04 a 29/12 de "Vestibular UEMG 2024". Do
 (`assets/eventos/vestibular-colaborador*.webp`, `assets/og/` e `assets/stories/vestibular-colaborador.jpg`). Chamada em
 `vestibular.html` (`.note.info`, `data-ate="2027-01-03"`). O `nae:revisar-em` pede releitura em 01/12, 03/12, 04/01 e 18/01.
 
+## 1º Fórum Municipal de Letramento Racial (no ar desde 26/11/2026)
+
+`letramento-racial.html` (grupo "Eventos e convites" do menu, `data-ate="2026-11-27"`) divulga o convite da Prefeitura de
+Guanhães (Secretarias de Cultura e Turismo e de Assistência Social e Conselho Municipal de Promoção da Igualdade Racial),
+enviado pela Direção e repassado pelo coordenador: **sexta, 27/11/2026, das 13h às 17h, na Câmara Municipal** (o convite não dá
+endereço; não inventar). Programação dos cartazes, as três convidadas e o pedido da Direção ("sem prejuízo das atividades
+acadêmicas já programadas"). Cartazes em `assets/eventos/letramento-racial-*.webp`, cores em `.pg-letramento`, painel
+`tema: 'letramento'` (no dia, desce para os cartões fixos), aviso, novidade, busca, calendário, Stories e prévia próprios.
+O `nae:revisar-em` pede releitura em 28/11; depois do evento, a página fica como registro.
+
+**Selo do topo da inicial:** evento do calendário com `foraDaContagem: true` fica no calendário mas não vai para o selo
+"É hoje / Faltam N dias" (usado na última sessão do Júri, 26/11).
+
 ## Cartões fixos: o que está perto de acontecer desce (26/11/2026)
 
 Pedido do coordenador: "é para ir para debaixo as coisas que já estão próximas do dia de acontecimento ou fim". O

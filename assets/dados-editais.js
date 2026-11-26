@@ -30,6 +30,39 @@ window.DADOS_EDITAIS = {
   atualizadoEm: '2026-11-03',
   itens: [
     {
+      titulo: '1º Fórum Municipal de Letramento Racial',
+      resumo: 'Convite da Prefeitura de Guanhães: sexta, 27/11, das 13h às 17h, na Câmara Municipal. Palestra com a Profa. Dra. Adna Cândido de Paula (UFVJM) e oficina sobre situações de racismo no atendimento e nos serviços públicos.',
+      tipo: 'outro',
+      abre: '2026-11-26',
+      encerra: '2026-11-27',
+      link: 'letramento-racial.html',
+      publicado: '2026-11-26',
+      /* convite, nao edital: so nos paineis; no dia do evento desce para os cartoes fixos */
+      naLista: false,
+
+      destaque: {
+        tema: 'letramento',
+        imagem: 'assets/eventos/letramento-racial-programacao-560.webp',
+        imagemAlt: 'Cartaz do 1º Fórum Municipal de Letramento Racial: programação de 27 de novembro, das 13h às 17h, na Câmara Municipal.',
+        fixoPosicao: 'center 12%',
+        eyebrow: 'Prefeitura de Guanhães · convite aos estudantes',
+        titulo: '1º Fórum Municipal de Letramento Racial',
+        texto: 'Palestra com a <b>Profa. Dra. Adna Cândido de Paula</b> (UFVJM) e oficina sobre situações de racismo no atendimento e nos serviços públicos. <b>Sexta, 27/11, das 13h às 17h</b>, na Câmara Municipal.',
+        fixoTexto: 'Palestra e oficina sobre racismo e serviços públicos, na Câmara Municipal de Guanhães.',
+        numeros: [
+          { n: '27/11', r: 'sexta-feira' },
+          { n: '13h às 17h', r: 'palestra e oficina' },
+          { n: 'Câmara', r: 'Municipal de Guanhães' }
+        ],
+        rotuloPrazo: 'para o Fórum',
+        textoUltimoDia: 'É hoje, das 13h às 17h',
+        textoLonge: 'Sexta, 27/11, das 13h às 17h',
+        acao: 'Ver a programação',
+        extraTexto: 'Compartilhar no WhatsApp',
+        extraLink: 'https://wa.me/?text=%2A1%C2%BA%20F%C3%B3rum%20Municipal%20de%20Letramento%20Racial%20%C2%B7%20Guanh%C3%A3es%2A%0AA%20Prefeitura%20de%20Guanh%C3%A3es%20convida%20para%20uma%20tarde%20de%20palestra%20e%20oficina%20sobre%20racismo%2C%20pol%C3%ADticas%20p%C3%BAblicas%20e%20atendimento%20nos%20servi%C3%A7os%20p%C3%BAblicos.%0A%0A%E2%80%A2%20Sexta%2C%2027%2F11%2C%20das%2013h%20%C3%A0s%2017h%0A%E2%80%A2%20C%C3%A2mara%20Municipal%20de%20Guanh%C3%A3es%0A%E2%80%A2%20Palestra%20com%20a%20Profa.%20Dra.%20Adna%20C%C3%A2ndido%20de%20Paula%20%28UFVJM%29%0A%E2%80%A2%20Oficina%20pr%C3%A1tica%20sobre%20situa%C3%A7%C3%B5es%20de%20racismo%20no%20atendimento%0A%0A%2APrograma%C3%A7%C3%A3o%20completa%20no%20site%20do%20NAE%3A%2A%0Ahttps%3A%2F%2Fnaeguanhaes.github.io%2Fletramento-racial.html%3Futm_source%3Dwhatsapp%26utm_campaign%3Dletramento-racial'
+      }
+    },
+    {
       titulo: 'Trabalhe no Vestibular UEMG 2027 · atendente presencial',
       resumo: 'A MSCONCURSOS seleciona estudantes da UEMG, maiores de 18 anos, para atender candidatos durante as inscrições do vestibular (04 a 29/12): R$ 700 líquidos. Inscrições de 26 a 30/11, pelo cadastro de colaboradores, com o comprovante de matrícula; escolha por sorteio.',
       tipo: 'outro',

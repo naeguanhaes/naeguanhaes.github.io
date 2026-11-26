@@ -43,6 +43,12 @@ window.DADOS_BUSCA = {
       k: 'organizacao diretorio academico da assembleia geral conca conselho centros academicos diretoria executiva cargos presidencia tesouraria secretariado'
     },
     {
+      t: '1º Fórum Municipal de Letramento Racial',
+      d: 'Sexta, 27/11, das 13h às 17h, na Câmara Municipal de Guanhães: palestra com a Profa. Dra. Adna Cândido de Paula e oficina sobre racismo no atendimento e nos serviços públicos.',
+      u: 'letramento-racial.html',
+      k: 'letramento racial racismo antirracismo forum igualdade racial prefeitura camara municipal palestra oficina adna candido de paula ufvjm politicas publicas consciencia negra evento'
+    },
+    {
       t: 'Trabalhe no Vestibular UEMG 2027 · atendente e fiscal',
       d: 'Seleção da MSCONCURSOS para estudantes da UEMG: atendente presencial (R$ 700 líquidos, inscrições de 26 a 30/11) e fiscal da prova de 17/01 (R$ 100, inscrições de 03/12 a 03/01).',
       u: 'vestibular-colaborador.html',

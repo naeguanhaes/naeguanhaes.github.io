@@ -818,8 +818,10 @@
 
     var hoje = hojeISO();
     var proximo = (window.DADOS_CALENDARIO.eventos || [])
-      .filter(function (ev) { return !ev.semData && ev.ini >= hoje; })
+      .filter(function (ev) { return !ev.semData && !ev.foraDaContagem && ev.ini >= hoje; })
       .sort(function (a, b) { return a.ini < b.ini ? -1 : 1; })[0];
+    /* foraDaContagem: true deixa o evento no calendário sem ir para o selo do topo
+       (a última sessão do Júri, retirada da inicial a pedido do coordenador em 26/11/2026) */
     if (!proximo) { caixa.remove(); return; }
 
     var dias = Math.round((new Date(proximo.ini + 'T12:00:00') - new Date(hoje + 'T12:00:00')) / 86400000);
@@ -1101,6 +1103,7 @@
     'estagio-mpmg': { img: 'assets/stories/estagio-mpmg.jpg', ate: '2026-11-26' },
     'estagio-tre': { img: 'assets/stories/estagio-tre.jpg', ate: '2026-11-24' },
     'estagio-tjmg': { img: 'assets/stories/estagio-tjmg.jpg', ate: '2026-12-09' },
+    'letramento-racial': { img: 'assets/stories/letramento-racial.jpg', ate: '2026-11-27' },
     'vestibular-colaborador': { img: 'assets/stories/vestibular-colaborador.jpg', ate: '2027-01-03' },
     'permanencia': { img: 'assets/stories/permanencia.jpg', ate: '2026-11-11' },
     'assembleia': { img: 'assets/stories/assembleia-da.jpg', ate: '2026-10-28' },

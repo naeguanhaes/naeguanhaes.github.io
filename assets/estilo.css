@@ -3922,6 +3922,28 @@ body:has(.pg-juri) { background: #FBF7F2; }
 .pg-juri .pe-t2 { font-size: clamp(1.3rem, 3.6vw, 2rem); color: var(--pe-terra); }
 .pg-juri .pe-selos span, .pg-juri .pe-passos li { border-color: #EAD9C6; }
 .juri-arte img { width: 100%; max-width: 19rem; height: auto; border-radius: 18px; box-shadow: 0 18px 40px -24px rgba(0,0,0,.6); }
+/* 1º Fórum Municipal de Letramento Racial (letramento-racial.html), cores do cartaz: terracota, laranja e verde-água */
+.pg-letramento {
+  --pe-navy: #4A1A0E; --pe-terra: #8A3A1C; --pe-mostarda: #E8742A; --pe-mostarda-txt: #8A3A00;
+  --pe-vinho: #7A1E14; --pe-verde: #1F7A78; --pe-creme: #FBF2E8; --pe-creme-2: #F4E2CF;
+}
+body:has(.pg-letramento) { background: #FBF5EE; }
+.pg-letramento .pe-hero { border-color: #EED8C2; }
+.pg-letramento .pe-blob-1 { background: #E8742A; opacity: .8; }
+.pg-letramento .pe-blob-2 { background: #1F7A78; opacity: .7; }
+.pg-letramento .pe-t1 { font-size: clamp(2.3rem, 6.6vw, 3.9rem); }
+.pg-letramento .pe-t2 { font-size: clamp(1.3rem, 3.6vw, 2rem); color: var(--pe-terra); }
+.pg-letramento .pe-selos span, .pg-letramento .pe-quem-item, .pg-letramento .pe-crono li { border-color: #EED8C2; }
+.pg-letramento .pe-quem-ico { background: var(--pe-terra); }
+.letramento-arte img, .letramento-convidadas img { display: block; width: 100%; max-width: 22rem; height: auto; margin-inline: auto; border-radius: 18px; box-shadow: 0 18px 40px -24px rgba(0,0,0,.55); }
+.letramento-convidadas { margin: 0; }
+.hero-edital.tema-letramento, .fixo.tema-letramento {
+  background:
+    radial-gradient(90% 80% at 96% 4%, rgba(232,116,42,.38) 0%, rgba(232,116,42,0) 58%),
+    radial-gradient(80% 70% at 2% 104%, rgba(31,122,120,.55) 0%, rgba(31,122,120,0) 62%),
+    linear-gradient(125deg, #3A140A 0%, #6B2412 55%, #8A3A1C 100%);
+}
+.hero-edital.tema-letramento .eyebrow, .fixo.tema-letramento .fixo-eyebrow { color: #F6B07A; }
 .hero-edital.tema-juri, .fixo.tema-juri {
   background:
     radial-gradient(90% 80% at 96% 4%, rgba(242,183,5,.28) 0%, rgba(242,183,5,0) 58%),

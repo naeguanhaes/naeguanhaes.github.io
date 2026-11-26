@@ -20,6 +20,13 @@ window.DADOS_NOVIDADES = {
   itens: [
     {
       data: '2026-11-26',
+      titulo: 'Convite: 1º Fórum Municipal de Letramento Racial, em 27/11',
+      texto: 'A Prefeitura de Guanhães convida para a palestra da Profa. Dra. Adna Cândido de Paula (UFVJM) e uma oficina sobre racismo no atendimento e nos serviços públicos, na sexta, das 13h às 17h, na Câmara Municipal.',
+      link: 'letramento-racial.html',
+      textoLink: 'ver a programação'
+    },
+    {
+      data: '2026-11-26',
       titulo: 'Trabalhe no Vestibular UEMG 2027: atendente e fiscal',
       texto: 'A MSCONCURSOS abriu seleção de estudantes da UEMG para atender candidatos durante as inscrições (R$ 700 líquidos, inscrições até 30/11) e fiscalizar a prova de 17/01 (R$ 100, inscrições de 03/12 a 03/01).',
       link: 'vestibular-colaborador.html',

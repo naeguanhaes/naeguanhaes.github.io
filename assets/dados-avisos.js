@@ -35,6 +35,14 @@ window.DADOS_AVISOS = {
   faixaNoTopo: false,
   avisos: [
     {
+      tipo: 'novidade',
+      de: '2026-11-26',
+      ate: '2026-11-27',
+      texto: '1º Fórum Municipal de Letramento Racial: sexta, 27/11, das 13h às 17h, na Câmara Municipal de Guanhães, com palestra e oficina. Convite da Prefeitura aos estudantes.',
+      link: 'letramento-racial.html',
+      textoLink: 'ver a programação'
+    },
+    {
       tipo: 'atencao',
       de: '2026-11-26',
       ate: '2026-11-30',
