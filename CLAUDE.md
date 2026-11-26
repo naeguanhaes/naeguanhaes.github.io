@@ -986,8 +986,10 @@ plantão do NAE.**
   API do GoatCounter (melhor não guardar chave). **Canal do NAE no WhatsApp:** só em 2027, se o coordenador
   continuar na coordenação.
 - **Relatório de extensão:** será atualizado a cada 15 dias; o coordenador pediu para ser lembrado.
-- **Contrato do coordenador (importante):** a continuidade depende da renovação do contrato. **A partir de
-  01/12/2026 o site fica enxuto**: só o Calendário acadêmico e "as informações padrões", que o coordenador vai
-  definir junto com o Claude antes dessa data. Rematrícula 2027/1 e Guia do calouro só vão ao ar se houver
-  renovação. Havendo renovação e continuidade da gestão, o site volta a ser como é hoje: **não apagar nada**,
-  esconder (como as páginas ocultas) para poder restaurar.
+- **Contrato do coordenador (importante):** a continuidade depende da renovação do contrato. **Corrigido pelo
+  coordenador em 26/11/2026: o site enxuto começa em 01/01/2027** (não em 01/12), e só enquanto ele não for recontratado.
+  Até lá o site continua como está. O site enxuto mostra só: **o que é o NAE** (Sobre o NAE e contato), **o calendário
+  acadêmico de 2027**, **a página do D.A** (com as páginas do Estatuto e da Organização) e **as informações principais**;
+  todo o resto não deve constar. A lista exata das "informações principais" ainda vai ser confirmada com o coordenador
+  antes de 01/01. Rematrícula 2027/1 e Guia do calouro só vão ao ar se houver renovação. Havendo renovação, o site
+  continua como é hoje: **não apagar nada**, esconder (como as páginas ocultas) para poder restaurar.
