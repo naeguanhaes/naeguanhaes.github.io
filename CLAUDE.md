@@ -272,8 +272,14 @@ para levá-lo para dentro do grupo, que passou a se chamar "Sistemas e Wi-Fi".
 
 **Rascunhos ocultos dentro de páginas no ar** (atributo `hidden` + comentário com o passo
 a passo para ativar): a seção "Conheça a Diretoria" em `diretorio-academico.html`
-(aguarda nomes, cargos e fotos do DA) e a fase do certificado em `seminario.html`
-(aguarda o coordenador saber como os certificados serão emitidos).
+(aguarda nomes, cargos e fotos do DA).
+
+**Certificado do 28º Seminário (no ar desde 27/11/2026):** a ETOS liberou o certificado da **palestra de abertura** numa
+pasta do Google Drive (link no comunicado enviado pelo coordenador), que fica no ar **até 27/02/2027**. A seção `#certificado`
+de `seminario.html` (era o rascunho oculto) mostra o passo a passo, o botão para a pasta e o prazo, com `data-ate="2027-02-27"`;
+hero, contagem, menu ("28º Seminário: certificado", em "Editais e bolsas"), painel, aviso, novidade, busca e calendário
+acompanham. Se saírem os certificados das outras atividades, acrescentar na mesma seção. **Atenção ao site enxuto de
+janeiro:** o Seminário sai, mas o prazo do certificado vai até 27/02; decidir com o coordenador.
 
 Antes, sobre o Seminário: ele saiu do
 destaque em 26/09 (fim da submissão) e virou item de "Editais e bolsas", ainda com

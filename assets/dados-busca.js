@@ -43,6 +43,12 @@ window.DADOS_BUSCA = {
       k: 'organizacao diretorio academico da assembleia geral conca conselho centros academicos diretoria executiva cargos presidencia tesouraria secretariado'
     },
     {
+      t: '28º Seminário · certificado da palestra de abertura',
+      d: 'Como baixar o certificado de participação na palestra de abertura do 28º Seminário de Pesquisa e Extensão, na pasta do Google Drive, até 27/02/2027.',
+      u: 'seminario.html#certificado',
+      k: 'certificado certificados seminario pesquisa extensao palestra de abertura etos drive google baixar download atividade complementar horas declaracao'
+    },
+    {
       t: '1º Fórum Municipal de Letramento Racial',
       d: 'Sexta, 27/11, das 13h às 17h, na Câmara Municipal de Guanhães: palestra com a Profa. Dra. Adna Cândido de Paula e oficina sobre racismo no atendimento e nos serviços públicos.',
       u: 'letramento-racial.html',

@@ -20,6 +20,13 @@ window.DADOS_NOVIDADES = {
   itens: [
     {
       data: '2026-11-27',
+      titulo: '28º Seminário: certificado da palestra de abertura',
+      texto: 'A organização do Seminário disponibilizou o certificado de participação na palestra de abertura numa pasta do Google Drive. O link fica no ar até 27/02/2027.',
+      link: 'seminario.html#certificado',
+      textoLink: 'ver como baixar'
+    },
+    {
+      data: '2026-11-27',
       titulo: 'Vestibular UEMG 2027: saiu o edital',
       texto: 'Inscrições de 04 a 29/12, em vestibular.uemg.br, prova em 17/01, às 14h, também em Guanhães, e 30 vagas pelo Vestibular em cada curso da Unidade. A página tem o cronograma, o passo a passo e a divisão das vagas.',
       link: 'vestibular.html',

@@ -36,6 +36,14 @@ window.DADOS_AVISOS = {
   avisos: [
     {
       tipo: 'novidade',
+      de: '2026-11-27',
+      ate: '2027-02-27',
+      texto: '28º Seminário: saiu o certificado de participação na palestra de abertura. Baixe o seu até 27/02/2027, quando o link sai do ar.',
+      link: 'seminario.html#certificado',
+      textoLink: 'ver como baixar'
+    },
+    {
+      tipo: 'novidade',
       de: '2026-11-26',
       ate: '2026-11-27',
       texto: '1º Fórum Municipal de Letramento Racial: sexta, 27/11, das 13h às 17h, na Câmara Municipal de Guanhães, com palestra e oficina. Convite da Prefeitura aos estudantes.',

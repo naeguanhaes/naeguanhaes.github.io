@@ -30,6 +30,39 @@ window.DADOS_EDITAIS = {
   atualizadoEm: '2026-11-03',
   itens: [
     {
+      titulo: '28º Seminário de Pesquisa e Extensão · certificado da palestra de abertura',
+      logo: 'assets/seminario/logo.webp',
+      resumo: 'A ETOS disponibilizou o certificado de participação na palestra de abertura do 28º Seminário numa pasta do Google Drive. Baixe o seu até 27/02/2027: depois disso, o link sai do ar.',
+      tipo: 'pesquisa',
+      abre: '2026-11-27',
+      encerra: '2027-02-27',
+      link: 'seminario.html#certificado',
+      publicado: '2026-11-27',
+      naLista: false,
+
+      destaque: {
+        tema: 'roxo',
+        imagem: 'assets/seminario/logo-branca-arabesco.webp',
+        imagemCelular: 'assets/seminario/logo-branca.webp',
+        imagemLogo: true,
+        imagemAlt: 'Logo do 28º Seminário de Pesquisa e Extensão: Universidade do futuro e o futuro da Universidade, alicerces e perspectivas',
+        eyebrow: '28º Seminário de Pesquisa e Extensão',
+        titulo: 'Saiu o certificado da palestra de abertura',
+        texto: 'Procure o arquivo com o seu nome na pasta dos certificados e baixe o seu. <b>O link fica no ar até 27/02/2027.</b> Para quem é de Direito, vale como atividade complementar.',
+        fixoTexto: 'Baixe o certificado da palestra de abertura do Seminário até 27/02/2027.',
+        numeros: [
+          { n: '27/02', r: 'último dia para baixar' },
+          { n: '1 arquivo', r: 'com o seu nome' }
+        ],
+        rotuloPrazo: 'para baixar o certificado',
+        textoUltimoDia: 'Último dia para baixar o certificado',
+        textoLonge: 'Baixe até 27/02/2027',
+        acao: 'Ver como baixar',
+        extraTexto: 'Compartilhar no WhatsApp',
+        extraLink: 'https://wa.me/?text=%2A28%C2%BA%20Semin%C3%A1rio%20de%20Pesquisa%20e%20Extens%C3%A3o%20%C2%B7%20certificados%2A%0ASaiu%20o%20certificado%20de%20participa%C3%A7%C3%A3o%20na%20palestra%20de%20abertura%20do%2028%C2%BA%20Semin%C3%A1rio%20da%20UEMG.%20Baixe%20o%20seu%20at%C3%A9%2027%2F02%2F2027%3A%20depois%20disso%2C%20o%20link%20sai%20do%20ar.%0A%0A%2AComo%20baixar%2C%20no%20site%20do%20NAE%3A%2A%0Ahttps%3A%2F%2Fnaeguanhaes.github.io%2Fseminario.html%3Futm_source%3Dwhatsapp%26utm_campaign%3Dcertificado-seminario%23certificado'
+      }
+    },
+    {
       titulo: '1º Fórum Municipal de Letramento Racial',
       resumo: 'Convite da Prefeitura de Guanhães: sexta, 27/11, das 13h às 17h, na Câmara Municipal. Palestra com a Profa. Dra. Adna Cândido de Paula (UFVJM) e oficina sobre situações de racismo no atendimento e nos serviços públicos.',
       tipo: 'outro',

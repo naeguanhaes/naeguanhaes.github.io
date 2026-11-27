@@ -161,6 +161,7 @@ window.DADOS_CALENDARIO = {
     { ini: '2027-02-01', fim: '2027-02-12', titulo: 'Atividades de Integração Acadêmica', tipo: 'prazo' },
     { ini: '2027-02-08', fim: '2027-02-10', titulo: 'Carnaval', tipo: 'feriado' },
     { ini: '2027-02-15', fim: '2027-02-19', titulo: 'Ajuste de matrícula, rematrícula (reingresso), trancamento e dispensa de disciplinas', tipo: 'prazo', curto: 'Ajuste de matrícula e trancamento' },
+    { ini: '2027-02-27', fim: '2027-02-27', titulo: '28º Seminário: último dia para baixar o certificado da palestra de abertura', tipo: 'prazo', curto: 'Seminário: último dia do certificado' },
     { ini: '2027-02-25', fim: '2027-02-25', titulo: 'Início da matrícula on-line dos calouros do Vestibular 2027 (Chamada Regular)', tipo: 'prazo', curto: 'Matrícula dos calouros 2027' },
 
     { ini: '2027-03-01', fim: '2027-03-01', titulo: 'Início das aulas do 1º semestre de 2027, estudantes veteranos', tipo: 'letivo', curto: 'Início das aulas (veteranos)' },
