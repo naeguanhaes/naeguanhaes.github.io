@@ -836,8 +836,9 @@ edital (escola pública de MG ou comunitária conveniada; concluintes de 2026 se
 com os percentuais, **tabela das vagas de Guanhães** (Anexo II: por curso, 30 pelo Vestibular = AC 8, PROCAN I 10, II 1, III 1,
 IV 1, V 5, VI 2, Inclusão Regional 2, mais 1 vaga trans; as outras 10 são do SiSU) e a seção `#prova` (48 questões, 6 de cada
 disciplina, 2 pontos cada; redação de 60 pontos, 15 a 30 linhas, nota zero desclassifica; Guanhães é uma das 18 cidades de
-prova). O item do painel perdeu `semContagem` e `fixo: false` e ganhou `marcos` (29/12 e 17/01). Os PDFs não foram copiados:
-os links levam ao site do vestibular. O `nae:revisar-em` pede releitura em 04/12, 30/12, 18/01 e 20/02.
+prova). O item do painel perdeu `semContagem` e `fixo: false` e ganhou `marcos` (29/12 e 17/01). **Desde 27/11 os 9 arquivos de "Edital e anexos" estão no site** (pedido do coordenador), em
+`documentos/vestibular-2027/` (só o título trocado nos metadados; não tinham autoria pessoal), na seção `#arquivos` da página.
+Se a UEMG publicar retificação ou os formulários editáveis, trocar ou acrescentar o arquivo. A pasta "Partituras" (Música, BH) ficou de fora. O `nae:revisar-em` pede releitura em 04/12, 30/12, 18/01 e 20/02.
 `kit-vestibular.html` continua oculto (material interno).
 
 **A aba do menu é um "adesivo" da campanha** (pedido do coordenador em 13/11: "algo diferente e
