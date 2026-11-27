@@ -80,9 +80,9 @@ window.DADOS_BUSCA = {
     },
     {
       t: 'Vestibular UEMG 2027',
-      d: 'Provas em 17 de janeiro de 2027, inscrições de novembro a dezembro, taxa de R$ 30 com isenção para escola pública, vagas do PROCAN e da Inclusão Regional, e os cursos de Guanhães.',
+      d: 'Edital publicado: inscrições de 04 a 29/12/2026, prova em 17/01/2027 às 14h também em Guanhães, taxa de R$ 30 com isenção, 30 vagas pelo Vestibular em Direito e em Engenharia Civil, PROCAN e Inclusão Regional.',
       u: 'vestibular.html',
-      k: 'vestibular 2027 uemg prova provas 17 de janeiro inscricao inscricoes taxa isencao isento cadunico escola publica sisu enem procan cotas reserva de vagas inclusao regional pessoas trans ampla concorrencia ingresso entrar na faculdade ensino medio calouro'
+      k: 'vestibular 2027 uemg prova provas 17 de janeiro inscricao inscricoes taxa isencao isento cadunico escola publica sisu enem procan cotas reserva de vagas inclusao regional pessoas trans ampla concorrencia ingresso entrar na faculdade ensino medio calouro edital cronograma inscricao 04/12 29/12 prova 17/01 redacao cartao da prova msconcursos vagas guanhaes'
     },
     {
       t: 'Transferência e obtenção de novo título 2027.1',

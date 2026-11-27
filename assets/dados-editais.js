@@ -227,29 +227,34 @@ window.DADOS_EDITAIS = {
     },
     {
       titulo: 'Vestibular UEMG 2027',
-      resumo: 'Provas em 17 de janeiro de 2027 e inscrições de novembro a dezembro, pelo site do vestibular. Taxa de R$ 30, com isenção para quem fez o último ano do ensino médio em escola pública ou tem CadÚnico. O edital ainda vai sair.',
+      resumo: 'Edital publicado em 27/11. Inscrições de 04 a 29/12/2026, em vestibular.uemg.br; prova em 17/01/2027, às 14h, também em Guanhães. Taxa de R$ 30, com isenção para quem fez o último ano do ensino médio em escola pública ou está no CadÚnico. 30 vagas pelo Vestibular em Direito e 30 em Engenharia Civil.',
       tipo: 'outro',
       encerra: '2027-01-17',
       link: 'vestibular.html',
-      publicado: '2026-11-13',
-      fixo: false,
+      publicado: '2026-11-27',
+      /* edital de 27/11: nos cartões fixos, conta o fim das inscrições e depois a prova */
+      marcos: [
+        { data: '2026-12-29', rotulo: 'para o fim das inscrições', hoje: 'Último dia de inscrição, até 23h59' },
+        { data: '2027-01-17', rotulo: 'para a prova', hoje: 'Prova hoje, às 14h' }
+      ],
 
       destaque: {
         tema: 'vestibular',
         imagem: 'assets/eventos/vestibular-2027-560.webp',
-        imagemAlt: 'Cartaz do Vestibular UEMG 2027: provas em 17 de janeiro, inscrições de novembro a dezembro, vestibular.uemg.br',
+        imagemAlt: 'Cartaz do Vestibular UEMG 2027: provas em 17 de janeiro, inscrições em vestibular.uemg.br',
         eyebrow: 'Vestibular UEMG 2027',
-        titulo: 'Vestibular 2027: provas em 17 de janeiro',
-        texto: 'Universidade <b>pública e gratuita</b>, com Direito e Engenharia Civil à noite, aqui em Guanhães. Taxa de <b>R$ 30</b>, com isenção para quem estudou em <b>escola pública</b>.',
+        titulo: 'Vestibular 2027: saiu o edital, inscrições de 04 a 29/12',
+        texto: 'Universidade <b>pública e gratuita</b>, com Direito e Engenharia Civil à noite, aqui em Guanhães. <b>Inscrições de 04 a 29/12</b>, taxa de R$ 30 com isenção para escola pública, e <b>prova em 17/01, às 14h</b>, também em Guanhães.',
         numeros: [
-          { n: '17/01', r: 'provas' },
-          { n: 'Nov. a dez.', r: 'inscrições' },
-          { n: 'R$ 30', r: 'com isenção' }
+          { n: '04 a 29/12', r: 'inscrições' },
+          { n: '17/01', r: 'prova, às 14h' },
+          { n: '30 + 30', r: 'vagas em Guanhães' }
         ],
-        semContagem: true,
-        acao: 'Ver o que já saiu',
+        rotuloPrazo: 'para a prova',
+        textoLonge: 'Inscrições de 04 a 29/12',
+        acao: 'Ver datas, vagas e passo a passo',
         extraTexto: 'Compartilhar no WhatsApp',
-        extraLink: 'https://wa.me/?text=%2AVestibular%20UEMG%202027%2A%0AQuer%20estudar%20numa%20universidade%20p%C3%BAblica%20e%20gratuita%2C%20aqui%20em%20Guanh%C3%A3es%3F%20A%20UEMG%20Guanh%C3%A3es%20tem%20Direito%20e%20Engenharia%20Civil%2C%20%C3%A0%20noite.%0A%0A%E2%80%A2%20Provas%20em%2017%20de%20janeiro%20de%202027%0A%E2%80%A2%20Inscri%C3%A7%C3%B5es%20de%20novembro%20a%20dezembro%2C%20pelo%20site%20do%20vestibular%0A%E2%80%A2%20Taxa%20de%20R%24%2030%2C%20com%20isen%C3%A7%C3%A3o%20para%20quem%20fez%20o%20%C3%BAltimo%20ano%20do%20ensino%20m%C3%A9dio%20em%20escola%20p%C3%BAblica%20ou%20tem%20Cad%C3%9Anico%0A%E2%80%A2%20Metade%20das%20vagas%20do%20vestibular%20%C3%A9%20reservada%20pelo%20PROCAN%0A%0A%2AO%20que%20j%C3%A1%20se%20sabe%20e%20como%20funciona%2C%20no%20site%20do%20NAE%3A%2A%0Ahttps%3A%2F%2Fnaeguanhaes.github.io%2Fvestibular.html%3Futm_source%3Dwhatsapp%26utm_campaign%3Dvestibular'
+        extraLink: 'https://wa.me/?text=%2AVestibular%20UEMG%202027%2A%0AQuer%20estudar%20numa%20universidade%20p%C3%BAblica%20e%20gratuita%2C%20aqui%20em%20Guanh%C3%A3es%3F%20A%20UEMG%20Guanh%C3%A3es%20tem%20Direito%20e%20Engenharia%20Civil%2C%20%C3%A0%20noite.%20O%20edital%20saiu%3A%0A%0A%E2%80%A2%20Inscri%C3%A7%C3%B5es%20de%2004%20a%2029%2F12%2C%20em%20vestibular.uemg.br%0A%E2%80%A2%20Taxa%20de%20R%24%2030%2C%20com%20isen%C3%A7%C3%A3o%20para%20quem%20fez%20o%20%C3%BAltimo%20ano%20do%20ensino%20m%C3%A9dio%20em%20escola%20p%C3%BAblica%20ou%20est%C3%A1%20no%20Cad%C3%9Anico%0A%E2%80%A2%20Prova%20em%2017%2F01%2F2027%2C%20%C3%A0s%2014h%2C%20tamb%C3%A9m%20em%20Guanh%C3%A3es%0A%E2%80%A2%2030%20vagas%20pelo%20Vestibular%20em%20cada%20curso%0A%0A%2ADatas%2C%20vagas%20e%20passo%20a%20passo%20no%20site%20do%20NAE%3A%2A%0Ahttps%3A%2F%2Fnaeguanhaes.github.io%2Fvestibular.html%3Futm_source%3Dwhatsapp%26utm_campaign%3Dvestibular'
       }
     },
     {

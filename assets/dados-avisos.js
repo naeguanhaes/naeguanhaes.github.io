@@ -117,10 +117,10 @@ window.DADOS_AVISOS = {
     {
       tipo: 'novidade',
       de: '2026-11-13',
-      ate: '2026-12-31',
-      texto: 'Vestibular UEMG 2027: provas em 17 de janeiro e inscrições de novembro a dezembro. Taxa de R$ 30, com isenção para quem fez o último ano do ensino médio em escola pública.',
+      ate: '2026-12-29',
+      texto: 'Vestibular UEMG 2027: saiu o edital. Inscrições de 04 a 29/12, em vestibular.uemg.br, e prova em 17/01, às 14h, também em Guanhães. Taxa de R$ 30, com isenção para escola pública.',
       link: 'vestibular.html',
-      textoLink: 'ver o que já saiu'
+      textoLink: 'ver datas e vagas'
     },
     {
       tipo: 'novidade',

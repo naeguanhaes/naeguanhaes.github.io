@@ -826,7 +826,19 @@ em 13/11** ("Em breve" no site oficial): quando saírem, trazer as datas exatas 
 `assets/eventos/vestibular-2027*.webp`, cores da campanha em `.pg-vest`, painel `tema: 'vestibular'`
 (com `semContagem` e `fixo: false`, porque ainda não há inscrição aberta com prazo). Stories em
 `assets/stories/vestibular.jpg` (o cartaz sobre o verde-limão). O `nae:revisar-em` pede releitura
-em 20/11, 01/12 e 18/01. `kit-vestibular.html` continua oculto (material interno).
+em 20/11, 01/12 e 18/01. 
+**Edital publicado em 27/11/2026** (PROGRAD; organização da MSCONCURSOS; PDFs no Phoca Download de vestibular.uemg.br,
+categoria "Edital e anexos", id 96). A página ganhou: contagem no topo, botão "Ler o edital (PDF)", cronograma do Anexo I
+(inscrições das 12h de 04/12 às 23h59 de 29/12; taxa até 30/12; lista 05/01; homologação e cartão 11/01; **prova 17/01 às 14h,
+portões às 13h30**; gabarito 18/01; análise documental 20 e 29/01; classificação preliminar 03/02; **resultado final 19/02**;
+matrícula 25/02 a 03/03; aulas 08/03), passo a passo da inscrição (`#inscricao`, sai em 29/12), isenção com os detalhes do
+edital (escola pública de MG ou comunitária conveniada; concluintes de 2026 sem histórico podem pedir), categorias do PROCAN
+com os percentuais, **tabela das vagas de Guanhães** (Anexo II: por curso, 30 pelo Vestibular = AC 8, PROCAN I 10, II 1, III 1,
+IV 1, V 5, VI 2, Inclusão Regional 2, mais 1 vaga trans; as outras 10 são do SiSU) e a seção `#prova` (48 questões, 6 de cada
+disciplina, 2 pontos cada; redação de 60 pontos, 15 a 30 linhas, nota zero desclassifica; Guanhães é uma das 18 cidades de
+prova). O item do painel perdeu `semContagem` e `fixo: false` e ganhou `marcos` (29/12 e 17/01). Os PDFs não foram copiados:
+os links levam ao site do vestibular. O `nae:revisar-em` pede releitura em 04/12, 30/12, 18/01 e 20/02.
+`kit-vestibular.html` continua oculto (material interno).
 
 **A aba do menu é um "adesivo" da campanha** (pedido do coordenador em 13/11: "algo diferente e
 chamativo"): classe `nav-vest`, verde-limão com letras roxas, levemente inclinada, sombra roxa

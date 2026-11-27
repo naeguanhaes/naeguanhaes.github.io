@@ -19,6 +19,13 @@ window.DADOS_NOVIDADES = {
   atualizadoEm: '2026-11-03',
   itens: [
     {
+      data: '2026-11-27',
+      titulo: 'Vestibular UEMG 2027: saiu o edital',
+      texto: 'Inscrições de 04 a 29/12, em vestibular.uemg.br, prova em 17/01, às 14h, também em Guanhães, e 30 vagas pelo Vestibular em cada curso da Unidade. A página tem o cronograma, o passo a passo e a divisão das vagas.',
+      link: 'vestibular.html',
+      textoLink: 'ver datas, vagas e passo a passo'
+    },
+    {
       data: '2026-11-26',
       titulo: 'Convite: 1º Fórum Municipal de Letramento Racial, em 27/11',
       texto: 'A Prefeitura de Guanhães convida para a palestra da Profa. Dra. Adna Cândido de Paula (UFVJM) e uma oficina sobre racismo no atendimento e nos serviços públicos, na sexta, das 13h às 17h, na Câmara Municipal.',
